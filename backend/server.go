@@ -20,6 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to generate UUID: %v", err)
 	}
+
 	log.Printf("generated Version 4 UUID %v", u4)
 
 	// mux := http.NewServeMux()

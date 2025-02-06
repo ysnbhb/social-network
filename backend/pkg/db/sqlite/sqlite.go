@@ -19,10 +19,12 @@ func InitDB() error {
 		if err != nil {
 			return fmt.Errorf("failed to read SQL file: %v", err)
 		}
-		_, err = db.Exec("PRAGMA foreign_keys = ON;")
-		if err != nil {
-			return fmt.Errorf("failed to enable foreign keys: %v", err)
-		}
+
+		
+		// _, err = db.Exec("PRAGMA foreign_keys = ON;")
+		// if err != nil {
+		// 	return fmt.Errorf("failed to enable foreign keys: %v", err)
+		// }
 
 		_, err = db.Exec(string(sqlFile))
 		if err != nil {
