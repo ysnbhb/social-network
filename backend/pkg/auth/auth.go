@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"github.com/gofrs/uuid/v5"
+	"github.com/gofrs/uuid"
 )
 
 func GenerateSessionID() (string, error) {

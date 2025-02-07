@@ -6,7 +6,7 @@ import (
 
 	database "social-network/pkg/db/sqlite"
 
-	"github.com/gofrs/uuid/v5"
+	"github.com/gofrs/uuid"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -16,11 +16,12 @@ func main() {
 		log.Fatal(fmt.Errorf("failed to initialize database: %w", Err))
 	}
 
-	u2, err := uuid.NewV4()
+	u4, err := uuid.NewV4()
 	if err != nil {
 		log.Fatalf("failed to generate UUID: %v", err)
 	}
-	log.Printf("generated Version 4 UUID %v", u2)
+
+	log.Printf("generated Version 4 UUID %v", u4)
 
 	// mux := http.NewServeMux()
 
