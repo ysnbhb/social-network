@@ -1,36 +1,52 @@
-package database
+package db
 
 import (
-	"database/sql"
+	"embed"
 	"fmt"
-	"os"
+	"log"
+
+	"github.com/Boostport/migration"
 )
 
+var embedFS embed.FS
+
+var migrator migration.Driver
+
 func InitDB() error {
-	if _, err := os.Stat("./pkg/db/app.db"); os.IsNotExist(err) {
-		fmt.Println("Creating new database file...")
-		db, err := sql.Open("sqlite3", "./pkg/db/app.db")
-		if err != nil {
-			return fmt.Errorf("failed to open database: %v", err)
-		}
-		defer db.Close()
-
-		sqlFile, err := os.ReadFile("./pkg/db/sqlite/sqlite.sql")
-		if err != nil {
-			return fmt.Errorf("failed to read SQL file: %v", err)
-		}
-
-
-		// _, err = db.Exec("PRAGMA foreign_keys = ON;")
-		// if err != nil {
-		// 	return fmt.Errorf("failed to enable foreign keys: %v", err)
-		// }
-
-		_, err = db.Exec(string(sqlFile))
-		if err != nil {
-			return fmt.Errorf("failed to execute SQL: %v", err)
-		}
-
+	migrationSource := &migration.EmbedMigrationSource{
+		EmbedFS: embedFS,
+		Dir:     "migrations",
 	}
+
+	// Define the driver configuration
+	driverConfig := map[string]string{
+		"driver": "sqlite",
+		"dsn":    "file:./pkg/db/app.db",
+	}
+
+	// Create the driver dynamically
+	driver, err := migration.(driverConfig)
+	if err != nil {
+		return fmt.Errorf("failed to initialize driver: %v", err)
+	}
+	migrator = driver
+
+	// Apply pending migrations
+	log.Println("Applying migrations...")
+	applied, err := migration.Migrate(migrator, migrationSource, migration.Up, 0) // Apply all up migrations
+	if err != nil {
+		return fmt.Errorf("failed to apply migrations: %v", err)
+	}
+
+	log.Printf("Successfully applied %d migrations.\n", applied)
+	log.Println("Database initialized and migrations applied successfully.")
 	return nil
+}
+
+// GetDB returns the SQLite driver instance
+func GetDB() (migration.Driver, error) {
+	if migrator == nil {
+		return nil, fmt.Errorf("database not initialized")
+	}
+	return migrator, nil
 }
