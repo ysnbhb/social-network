@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -34,7 +35,13 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 
 	err = utils.HashPassword(&user)
 	if err != nil {
-		fmt.Println("hachong password:", err)
+		fmt.Println("hashing password:", err)
+		return
+	}
+
+	err = services.RegisterUser(user)
+	if err != nil {
+		fmt.Println("adding user to db:", err)
 		return
 	}
 	fmt.Println(user)
