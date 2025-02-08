@@ -1,4 +1,14 @@
 package app
 
-func SetupRoutes() {
+import (
+	"net/http"
+	"social-network/app/controllers"
+)
+
+func SetupRoutes() http.Handler {
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/api/signup", controllers.Signup)
+
+	return mux
 }

@@ -1,4 +1,4 @@
-package controllers
+package controllers //auth_controller.go
 
 import (
 	"encoding/json"
@@ -22,13 +22,13 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
-		fmt.Println("error decoding json signup")
+		fmt.Println("error decoding json signup", err.Error())
 		return
 	}
 
 	err = utils.ValidateUser(&user)
 	if err != nil {
-		fmt.Println("validating inputs of register:", err)
+		fmt.Println(err)
 		return
 	}
 
@@ -37,6 +37,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("hachong password:", err)
 		return
 	}
+	fmt.Println(user)
 	// insert to data base
 
 }
