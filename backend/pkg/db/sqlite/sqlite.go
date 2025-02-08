@@ -1,52 +1,71 @@
 package db
 
 import (
-	"embed"
+	"database/sql"
 	"fmt"
 	"log"
 
-	"github.com/Boostport/migration"
+	"github.com/golang-migrate/migrate/v4"
+	"github.com/golang-migrate/migrate/v4/database/sqlite3"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+	_ "github.com/mattn/go-sqlite3"
 )
 
-var embedFS embed.FS
-
-var migrator migration.Driver
+var db *sql.DB 
 
 func InitDB() error {
-	migrationSource := &migration.EmbedMigrationSource{
-		EmbedFS: embedFS,
-		Dir:     "migrations",
-	}
-
-	// Define the driver configuration
-	driverConfig := map[string]string{
-		"driver": "sqlite",
-		"dsn":    "file:./pkg/db/app.db",
-	}
-
-	// Create the driver dynamically
-	driver, err := migration.(driverConfig)
+	var err error
+	db, err = sql.Open("sqlite3", "./pkg/db/sqlite/database.db") 
 	if err != nil {
-		return fmt.Errorf("failed to initialize driver: %v", err)
+		return fmt.Errorf("failed to connect to database: %w", err)
 	}
-	migrator = driver
 
-	// Apply pending migrations
-	log.Println("Applying migrations...")
-	applied, err := migration.Migrate(migrator, migrationSource, migration.Up, 0) // Apply all up migrations
+	if err := runMigrations(); err != nil {
+		return fmt.Errorf("failed to apply migrations: %w", err)
+	}
+
+	log.Println("Database initialized successfully")
+	return nil
+}
+
+func CloseDB() error {
+	if db == nil {
+		return nil
+	}
+	return db.Close()
+}
+
+func runMigrations() error {
+	log.Println("Running database migrations...")
+
+	source := "file://pkg/db/migrations" 
+
+	driver, err := sqlite3.WithInstance(db, &sqlite3.Config{})
 	if err != nil {
-		return fmt.Errorf("failed to apply migrations: %v", err)
+		return fmt.Errorf("failed to initialize SQLite driver: %w", err)
 	}
 
-	log.Printf("Successfully applied %d migrations.\n", applied)
-	log.Println("Database initialized and migrations applied successfully.")
+	migrator, err := migrate.NewWithDatabaseInstance(
+		source,
+		"sqlite3",
+		driver,
+	)
+	if err != nil {
+		return fmt.Errorf("failed to initialize migrator: %w", err)
+	}
+
+	if err := migrator.Up(); err != nil {
+		return fmt.Errorf("migration failed: %w", err)
+	}
+
+	log.Println("Migrations applied successfully")
 	return nil
 }
 
 // GetDB returns the SQLite driver instance
-func GetDB() (migration.Driver, error) {
-	if migrator == nil {
-		return nil, fmt.Errorf("database not initialized")
-	}
-	return migrator, nil
-}
+// func GetDB() (migration.Driver, error) {
+// 	if migrator == nil {
+// 		return nil, fmt.Errorf("database not initialized")
+// 	}
+// 	return migrator, nil
+// }
