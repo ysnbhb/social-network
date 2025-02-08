@@ -7,5 +7,19 @@ import (
 
 func RegisterUser(user models.User) error {
 	err := repo.GetUserByEmail(user.Email)
-	return err
+	if err != nil {
+		return err
+	}
+
+	err = repo.GetUserByNickName(user.NickName)
+	if err != nil {
+		return err
+	}
+
+	err = repo.CreateUser(user)
+	if err != nil {
+		return err
+	}
+	
+	return nil
 }

@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"log"
 
@@ -11,11 +12,11 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var db *sql.DB 
+var db *sql.DB
 
 func InitDB() error {
 	var err error
-	db, err = sql.Open("sqlite3", "./pkg/db/sqlite/database.db") 
+	db, err = sql.Open("sqlite3", "./pkg/db/sqlite/database.db")
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
@@ -37,9 +38,7 @@ func CloseDB() error {
 
 func runMigrations() error {
 	log.Println("Running database migrations...")
-
-	source := "file://pkg/db/migrations" 
-
+	source := "file://pkg/db/migrations"
 	driver, err := sqlite3.WithInstance(db, &sqlite3.Config{})
 	if err != nil {
 		return fmt.Errorf("failed to initialize SQLite driver: %w", err)
@@ -54,11 +53,17 @@ func runMigrations() error {
 		return fmt.Errorf("failed to initialize migrator: %w", err)
 	}
 
+	// Attempt to apply migrations
 	if err := migrator.Up(); err != nil {
-		return fmt.Errorf("migration failed: %w", err)
+		if errors.Is(err, migrate.ErrNoChange) {
+			log.Println("No new migrations to apply")
+		} else {
+			return fmt.Errorf("migration failed: %w", err)
+		}
+	} else {
+		log.Println("Migrations applied successfully")
 	}
 
-	log.Println("Migrations applied successfully")
 	return nil
 }
 
