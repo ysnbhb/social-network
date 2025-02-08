@@ -28,7 +28,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 
 	err = utils.ValidateUser(&user)
 	if err != nil {
-		fmt.Println("validating inputs of register:", err)
+		fmt.Println(err)
 		return
 	}
 
