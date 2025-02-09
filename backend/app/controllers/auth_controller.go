@@ -11,8 +11,32 @@ import (
 )
 
 // Login handles user login.
-func Login() {
-	// check user is in database && Set the session ID in a cookie.
+func Login(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		fmt.Println("method not allowed in login")
+		return
+	}
+	var login models.Login
+
+	err := json.NewDecoder(r.Body).Decode(&login)
+	if err != nil {
+		fmt.Println("error decoding json lgoin")
+		return
+	}
+	err = services.LoginUser(&login)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	err = services.RegisterSession(login.Id, w)
+	if err != nil {
+		fmt.Println("adding session:", err)
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+    json.NewEncoder(w).Encode(map[string]string{"message": "User registered successfully"})
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -23,7 +47,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
-		fmt.Println("error decoding json signup", err.Error())
+		fmt.Println("error decoding json signup")
 		return
 	}
 	err = utils.ValidateUser(&user)
@@ -52,5 +76,5 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(map[string]string{"message": "User registered successfully"})
+    json.NewEncoder(w).Encode(map[string]string{"message": "User log in successfully"})
 }
