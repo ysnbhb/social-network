@@ -26,7 +26,6 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("error decoding json signup", err.Error())
 		return
 	}
-
 	err = utils.ValidateUser(&user)
 	if err != nil {
 		fmt.Println(err)

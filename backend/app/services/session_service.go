@@ -2,10 +2,11 @@ package services
 
 import (
 	"net/http"
+	"time"
+
 	"social-network/pkg/auth"
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
-	"time"
 )
 
 func RegisterSession(userId int, w http.ResponseWriter) error {
