@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -25,7 +26,6 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("error decoding json signup", err.Error())
 		return
 	}
-
 	err = utils.ValidateUser(&user)
 	if err != nil {
 		fmt.Println(err)
@@ -34,10 +34,23 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 
 	err = utils.HashPassword(&user)
 	if err != nil {
-		fmt.Println("hachong password:", err)
+		fmt.Println("hashing password:", err)
 		return
 	}
-	fmt.Println(user)
-	// insert to data base
 
+	err = services.RegisterUser(&user)
+	if err != nil {
+		fmt.Println("adding user to db:", err)
+		return
+	}
+
+	//Registring session front (cookies) and backend (database)
+	err = services.RegisterSession(user.Id, w)
+	if err != nil {
+		fmt.Println("adding session:", err)
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+    json.NewEncoder(w).Encode(map[string]string{"message": "User registered successfully"})
 }

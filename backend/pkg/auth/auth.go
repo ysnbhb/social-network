@@ -19,3 +19,8 @@ func AuthenticateUser(username, password string) (string, error) {
 	}
 	return sessionID, nil
 }
+
+// func ValidateUUID(uuidStr string) bool {
+// 	_, err := uuid.(uuidStr)
+// 	return err == nil
+// }
