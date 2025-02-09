@@ -1,13 +1,15 @@
-package handlers
+package controllers
 
 import (
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"social-network/pkg/models"
+	"social-network/pkg/utils"
 )
 
 func HandlePostReaction(w http.ResponseWriter, r *http.Request) {
+	
 	if r.Method != http.MethodPost {
 		fmt.Println("method not allowed in signup")
 		return
@@ -20,6 +22,12 @@ func HandlePostReaction(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	err = utils.ValidateReaction(&reactionRequest)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	var reactionResponse models.ReactionResponse
 	// response.LikesCount, response.DislikesCount = like.GetReactionCounts(request.CardID)
 	// response.UserReaction = like.GetUserReaction(request.UserId, request.CardID)
@@ -29,8 +37,6 @@ func HandlePostReaction(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("error decoding json reactionResponse", err.Error())
 		return
 	}
-
-	fmt.Println("Handling POST reaction")
 
 }
 
