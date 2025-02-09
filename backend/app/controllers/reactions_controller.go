@@ -8,10 +8,10 @@ import (
 	"social-network/pkg/utils"
 )
 
-func HandlePostReaction(w http.ResponseWriter, r *http.Request) {
+func PostReaction(w http.ResponseWriter, r *http.Request) {
 	
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed in signup")
+		fmt.Println("method not allowed")
 		return
 	}
 
