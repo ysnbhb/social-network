@@ -13,9 +13,6 @@ func CreatPost(postRequest *models.PostRequest) error {
 
 	query := `INSERT INTO posts(card_id, privacy) VALUES(?, ?);`
 	_, err = db.DB.Exec(query, cardId, postRequest.Privacy)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return err
+	
 }
