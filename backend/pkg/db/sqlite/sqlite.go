@@ -12,11 +12,11 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var db *sql.DB
+var DB *sql.DB
 
 func InitDB() error {
 	var err error
-	db, err = sql.Open("sqlite3", "./pkg/db/sqlite/database.db")
+	DB, err = sql.Open("sqlite3", "./pkg/db/sqlite/database.db")
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
@@ -30,16 +30,16 @@ func InitDB() error {
 }
 
 func CloseDB() error {
-	if db == nil {
+	if DB == nil {
 		return nil
 	}
-	return db.Close()
+	return DB.Close()
 }
 
 func runMigrations() error {
 	log.Println("Running database migrations...")
 	source := "file://pkg/db/migrations"
-	driver, err := sqlite3.WithInstance(db, &sqlite3.Config{})
+	driver, err := sqlite3.WithInstance(DB, &sqlite3.Config{})
 	if err != nil {
 		return fmt.Errorf("failed to initialize SQLite driver: %w", err)
 	}
@@ -66,11 +66,3 @@ func runMigrations() error {
 
 	return nil
 }
-
-// GetDB returns the SQLite driver instance
-// func GetDB() (migration.Driver, error) {
-// 	if migrator == nil {
-// 		return nil, fmt.Errorf("database not initialized")
-// 	}
-// 	return migrator, nil
-// }

@@ -3,22 +3,59 @@ package repo
 import (
 	"errors"
 
+	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
 
-func GetUserByEmail(email string) error {
-	// query := `SELECT u.email FROM users u WHERE email = ?`
-	// var user models.User
-	// row := db.QueryRow(query, email)
-	return errors.New("user email already exist")
-}
+func CreateUser(user *models.User) error {
+	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname) VALUES (?, ?, ?, ?, ?, ?)`
+	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName)
+	if err != nil {
+		return err
+	}
+	id, err := result.LastInsertId()
+	if err != nil {
+		return err
+	}
 
-func GetUserByNickName(nickname string) error {
-	return errors.New("user nickname already exist")
-}
-
-func CreateUser(user models.User) error {
-	// query := `INSERT INTO users (email, password, name) VALUES (?, ?, ?)`
-	// _, err := db.Exec(query, user.Email, user.Password, user.Name)
+	user.Id = int(id)
 	return nil
+}
+
+func CheckEmail(email string) error {
+	var exists bool
+	query := "SELECT EXISTS (select email from users where email=?)"
+	err := db.DB.QueryRow(query, email).Scan(&exists)
+	if err != nil || exists {
+		return errors.New("user email already exists")
+	}
+
+	return nil
+}
+
+func GetUserId(login *models.Login) {
+	query := `SELECT u.id FROM users u WHERE email = ?`
+	var userId int
+
+	db.DB.QueryRow(query, login.Email).Scan(&userId)
+	login.Id = userId
+}
+
+func CheckNickName(nickname string) error {
+	query := `SELECT u.nickname FROM users u WHERE nickname = ?`
+	var existingNickname string
+
+	db.DB.QueryRow(query, nickname).Scan(&existingNickname)
+	if existingNickname != "" {
+		return errors.New("user nickname already exist")
+	}
+	return nil
+}
+
+func GetPassword(login *models.Login)  {
+	query := `SELECT u.password_hash FROM users u WHERE email = ?`
+	var hachedPassword string
+
+	db.DB.QueryRow(query, login.Email).Scan(&hachedPassword)
+	login.HachedPassword = hachedPassword
 }

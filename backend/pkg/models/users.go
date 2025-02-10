@@ -15,3 +15,10 @@ type User struct {
 	CreatedAt   time.Time `json:"createdat"`
 	Status      string    `json:"status"`
 }
+
+type Login struct {
+	Id          int       `json:"id"`
+	Email       string    `json:"email"`
+	Password    string    `json:"password"`
+	HachedPassword string
+}
