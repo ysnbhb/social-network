@@ -36,7 +36,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(map[string]string{"message": "User registered successfully"})
+    json.NewEncoder(w).Encode(map[string]string{"message": "User loged in successfully"})
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -76,5 +76,5 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(map[string]string{"message": "User log in successfully"})
+    json.NewEncoder(w).Encode(map[string]string{"message": "User signUp successfully"})
 }
