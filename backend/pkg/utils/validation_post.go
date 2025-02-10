@@ -20,7 +20,7 @@ func ValidatePost(postRequest *models.PostRequest) error {
 		return errors.New("privacy must be 'public', 'private', or 'almostPrivate'")
 	}
 
-	if _, err := url.ParseRequestURI(postRequest.ImageUrl); err != nil {
+	if _, err := url.ParseRequestURI(postRequest.ImageUrl); err != nil && postRequest.ImageUrl != "" {
 		return errors.New("invalid imageUrl format")
 	}
 

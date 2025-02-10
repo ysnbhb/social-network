@@ -4,11 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
 
-func AddReaction(w http.ResponseWriter, r *http.Request) {
+func HandleReaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		fmt.Println("method not allowed")
 		return
@@ -27,16 +29,20 @@ func AddReaction(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var reactionResponse models.ReactionResponse
-	// response.LikesCount, response.DislikesCount = like.GetReactionCounts(request.CardID)
-	// response.UserReaction = like.GetUserReaction(request.UserId, request.CardID)
+	// reactionRequest.UserId = r.Context().Value("userId").(int)
+	err = repo.AddReaction(&reactionRequest)
+	if err != nil {
+		fmt.Println(err)
+	}
 
+	var reactionResponse models.ReactionResponse
+	reactionResponse.LikesCount, reactionResponse.DislikesCount = repo.GetReactionCounts(reactionRequest.CardId)
+	reactionResponse.UserReaction = reactionRequest.ReactionType
 	err = json.NewEncoder(w).Encode(reactionResponse)
 	if err != nil {
 		fmt.Println("error decoding json reactionResponse", err.Error())
 		return
 	}
-
 }
 
 func GetReaction(w http.ResponseWriter, r *http.Request) {

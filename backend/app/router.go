@@ -14,9 +14,9 @@ func SetupRoutes() http.Handler {
 	mux.HandleFunc("/api/login", controllers.Login)
 	mux.Handle("/api/logout", middleware.AuthMiddleware(http.HandlerFunc(controllers.Logout)))
 
-	mux.HandleFunc("/api/user/reactions", controllers.AddReaction)
+	mux.HandleFunc("/api/user/reactions", controllers.HandleReaction)
 
-	mux.HandleFunc("/api/posts", controllers.CreatePost)
+	mux.HandleFunc("/api/create/post", controllers.CreatePost)
 
 	mux.HandleFunc("/api/posts/comments", controllers.CreateComments)
 
