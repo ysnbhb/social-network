@@ -36,3 +36,16 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 
 	return nil
 }
+
+func ClearSession(w http.ResponseWriter) {
+    cookie := &http.Cookie{
+        Name:     "session_id", 
+        Value:    "",           
+        Path:     "/",          
+        HttpOnly: true,         
+        Secure:   true,         
+        SameSite: http.SameSiteStrictMode, 
+        MaxAge:   -1,   
+    }
+    http.SetCookie(w, cookie)
+}

@@ -78,3 +78,22 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
     json.NewEncoder(w).Encode(map[string]string{"message": "User signUp successfully"})
 }
+
+
+func Logout(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		fmt.Println("method not allowed in login")
+		return
+	}
+	userId := r.Context().Value("userid").(int)
+	err := services.LogoutUser(userId)
+	if err != nil {
+		fmt.Println("error in logout user")
+		return
+	}
+
+	services.ClearSession(w)
+
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(map[string]string{"message": "user loged out successful"})
+}

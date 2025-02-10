@@ -11,6 +11,8 @@ func SetupRoutes() http.Handler {
 
 	mux.HandleFunc("/api/signup", controllers.Signup)
 	mux.HandleFunc("/api/login", controllers.Login)
+	mux.HandleFunc("/api/logout", controllers.Logout)
+
 
 
 	mux.HandleFunc("/api/user/reactions", controllers.AddReaction)

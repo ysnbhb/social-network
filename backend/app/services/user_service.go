@@ -40,3 +40,8 @@ func LoginUser(user *models.Login) error {
 	}
 	return nil
 }
+
+func LogoutUser(userId int) error {
+	err := repo.DeletteSessionUser(userId)
+	return err
+}

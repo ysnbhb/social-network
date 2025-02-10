@@ -59,3 +59,13 @@ func GetPassword(login *models.Login)  {
 	db.DB.QueryRow(query, login.Email).Scan(&hachedPassword)
 	login.HachedPassword = hachedPassword
 }
+
+func DeletteSessionUser(userId int) error {
+	query := `DELETE FROM sessions WHERE user_id = ?`
+
+	_, err := db.DB.Exec(query, userId)
+	if err != nil {
+		return err
+	}
+	return nil
+}
