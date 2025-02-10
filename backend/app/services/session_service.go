@@ -27,8 +27,6 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 		Name:     "session_id",
 		Value:    session.UserUUID,
 		Path:     "/",
-		HttpOnly: true,
-		Secure:   true,
 		SameSite: http.SameSiteStrictMode,
 		MaxAge:   86400, // 1 day
 	}

@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"social-network/app/controllers"
+	"social-network/middleware"
 )
 
 func SetupRoutes() http.Handler {
@@ -11,9 +12,7 @@ func SetupRoutes() http.Handler {
 
 	mux.HandleFunc("/api/signup", controllers.Signup)
 	mux.HandleFunc("/api/login", controllers.Login)
-	mux.HandleFunc("/api/logout", controllers.Logout)
-
-
+	mux.Handle("/api/logout", middleware.AuthMiddleware(http.HandlerFunc(controllers.Logout)))
 
 	mux.HandleFunc("/api/user/reactions", controllers.AddReaction)
 

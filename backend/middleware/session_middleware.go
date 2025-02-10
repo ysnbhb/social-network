@@ -16,13 +16,13 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
-		user, err := repo.GetUserIdBySession(cookie.Value)
-		if err != nil || user == 0 {
+		userId, err := repo.GetUserIdBySession(cookie.Value)
+		if err != nil || userId == 0 {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
-		r = r.WithContext(context.WithValue(r.Context(), "userId", user))
-
+		ctx := context.WithValue(r.Context(), "userId", userId)
+		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)
 	})
 }

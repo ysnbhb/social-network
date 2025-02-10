@@ -17,7 +17,7 @@ func CreateSession(session *models.Session) error {
 
 func GetUserIdBySession(sessionID string) (int, error) {
     var userId int
-    query := `SELECT s.UserId FROM session s WHERE s.UserUUID = ?`
+    query := `SELECT s.user_id FROM sessions s WHERE s.user_uuid = ?`
     err := db.DB.QueryRow(query, sessionID).Scan(&userId)
     if err != nil {
         return 0, err

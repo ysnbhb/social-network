@@ -1,4 +1,4 @@
-package controllers //auth_controller.go
+package controllers // auth_controller.go
 
 import (
 	"encoding/json"
@@ -36,7 +36,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(map[string]string{"message": "User loged in successfully"})
+	json.NewEncoder(w).Encode(map[string]string{"message": "User logged in successfully"})
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -68,7 +68,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//Registring session front (cookies) and backend (database)
+	// Registring session front (cookies) and backend (database)
 	err = services.RegisterSession(user.Id, w)
 	if err != nil {
 		fmt.Println("adding session:", err)
@@ -76,16 +76,15 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(map[string]string{"message": "User signUp successfully"})
+	json.NewEncoder(w).Encode(map[string]string{"message": "User signUp successfully"})
 }
-
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		fmt.Println("method not allowed in login")
 		return
 	}
-	userId := r.Context().Value("userid").(int)
+	userId := r.Context().Value("userId").(int)
 	err := services.LogoutUser(userId)
 	if err != nil {
 		fmt.Println("error in logout user")
