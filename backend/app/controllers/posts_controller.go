@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -27,4 +29,10 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// postRequest.UserId = r.Context().Value("userId").(int)
+	err = repo.CreatPost(&postRequest)
+	if err != nil {
+		fmt.Println(err)
+	}
+	
 }

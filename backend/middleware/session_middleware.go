@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"context"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -20,7 +21,8 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
-		// r = r.WithContext(context.WithValue(r.Context(), "userId", user))
+		
+		r = r.WithContext(context.WithValue(r.Context(), "userId", user))
 
 		next.ServeHTTP(w, r)
 	})
