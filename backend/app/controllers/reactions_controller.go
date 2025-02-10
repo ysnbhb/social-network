@@ -8,8 +8,7 @@ import (
 	"social-network/pkg/utils"
 )
 
-func PostReaction(w http.ResponseWriter, r *http.Request) {
-	
+func AddReaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		fmt.Println("method not allowed")
 		return
@@ -40,7 +39,7 @@ func PostReaction(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func HandleGetReaction(w http.ResponseWriter, r *http.Request) {
+func GetReaction(w http.ResponseWriter, r *http.Request) {
 	// Logic for handling GET requests (e.g., fetching reactions)
 	fmt.Println("Handling GET reaction")
 }

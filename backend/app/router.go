@@ -10,8 +10,11 @@ func SetupRoutes() http.Handler {
 
 	mux.HandleFunc("/api/signup", controllers.Signup)
 
-	mux.HandleFunc("/api/user/reactions", controllers.PostReaction)
+	mux.HandleFunc("/api/user/reactions", controllers.AddReaction)
+
 	mux.HandleFunc("/api/posts", controllers.CreatePost)
+
+	mux.HandleFunc("/api/posts/comments", controllers.CreateComments)
 
 	return mux
 }

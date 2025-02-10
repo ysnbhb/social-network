@@ -4,11 +4,16 @@ import (
 	"errors"
 	"net/url"
 	"social-network/pkg/models"
+	"strings"
 )
 
 func ValidatePost(postRequest *models.PostRequest) error {
+	if strings.TrimSpace(postRequest.Content) == "" {
+		return errors.New("post content cannot be empty")
+	}
+
 	if len(postRequest.Content) > 2200 {
-		return errors.New("content length exceeds 2200 characters")
+		return errors.New("post content length exceeds 2200 characters")
 	}
 
 	if postRequest.Privacy != "public" && postRequest.Privacy != "private" && postRequest.Privacy != "almostPrivate" {
