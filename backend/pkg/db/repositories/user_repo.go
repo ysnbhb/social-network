@@ -2,6 +2,7 @@ package repo
 
 import (
 	"errors"
+	"log"
 
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
@@ -11,10 +12,12 @@ func CreateUser(user *models.User) error {
 	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname) VALUES (?, ?, ?, ?, ?, ?)`
 	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName)
 	if err != nil {
+		log.Println(err)
 		return err
 	}
 	id, err := result.LastInsertId()
 	if err != nil {
+		log.Println(err)
 		return err
 	}
 
@@ -27,6 +30,7 @@ func CheckEmail(email string) error {
 	query := "SELECT EXISTS (select email from users where email=?)"
 	err := db.DB.QueryRow(query, email).Scan(&exists)
 	if err != nil || exists {
+		log.Println(err)
 		return errors.New("user email already exists")
 	}
 
@@ -47,12 +51,13 @@ func CheckNickName(nickname string) error {
 
 	db.DB.QueryRow(query, nickname).Scan(&existingNickname)
 	if existingNickname != "" {
+		log.Println(errors.New("user nickname already exist"))
 		return errors.New("user nickname already exist")
 	}
 	return nil
 }
 
-func GetPassword(login *models.Login)  {
+func GetPassword(login *models.Login) {
 	query := `SELECT u.password_hash FROM users u WHERE email = ?`
 	var hachedPassword string
 

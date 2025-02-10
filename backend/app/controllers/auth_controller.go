@@ -2,7 +2,7 @@ package controllers // auth_controller.go
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"net/http"
 
 	"social-network/app/services"
@@ -13,86 +13,93 @@ import (
 // Login handles user login.
 func Login(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed in login")
+		utils.JsoneResponse(w, "method not allowed in login", http.StatusMethodNotAllowed)
+		log.Println("method not allowed in login")
 		return
 	}
 	var login models.Login
 
 	err := json.NewDecoder(r.Body).Decode(&login)
 	if err != nil {
-		fmt.Println("error decoding json lgoin")
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		log.Println("error decoding json lgoin")
 		return
 	}
 	err = services.LoginUser(&login)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println(err)
 		return
 	}
 
 	err = services.RegisterSession(login.Id, w)
 	if err != nil {
-		fmt.Println("adding session:", err)
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		log.Println("adding session:", err)
 		return
 	}
 
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(map[string]string{"message": "User logged in successfully"})
+	utils.JsoneResponse(w, "User logged in successfully", http.StatusBadRequest)
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed in signup")
+		utils.JsoneResponse(w, "Status Method Not Allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed in signup")
 		return
 	}
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
-		fmt.Println("error decoding json signup")
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		log.Println("error decoding json signup")
 		return
 	}
 	err = utils.ValidateUser(&user)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println(err)
 		return
 	}
 
 	err = utils.HashPassword(&user)
 	if err != nil {
-		fmt.Println("hashing password:", err)
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		log.Println("hashing password:", err)
 		return
 	}
 
 	err = services.RegisterUser(&user)
 	if err != nil {
-		fmt.Println("adding user to db:", err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("adding user to db:", err)
 		return
 	}
 
 	// Registring session front (cookies) and backend (database)
 	err = services.RegisterSession(user.Id, w)
 	if err != nil {
-		fmt.Println("adding session:", err)
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		log.Println("adding session:", err)
 		return
 	}
-
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(map[string]string{"message": "User signUp successfully"})
+	utils.JsoneResponse(w, "User signUp successfully", http.StatusBadRequest)
 }
 
 func Logout(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed in login")
+		utils.JsoneResponse(w, "method not allowed in login", http.StatusMethodNotAllowed)
+		log.Println("method not allowed in login")
 		return
 	}
 	userId := r.Context().Value("userId").(int)
 	err := services.LogoutUser(userId)
 	if err != nil {
-		fmt.Println("error in logout user")
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("error in logout user")
 		return
 	}
 
 	services.ClearSession(w)
-
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]string{"message": "user loged out successful"})
+	utils.JsoneResponse(w, "user loged out successful", http.StatusBadRequest)
 }

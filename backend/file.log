@@ -1,0 +1,50 @@
+2025/02/10 12:59:09 Starting server on :8080
+2025/02/10 13:01:13 Starting server on :8080
+2025/02/10 13:02:05 Starting server on :8080
+2025/02/10 13:02:09 error decoding json signup
+2025/02/10 13:02:46 Starting server on :8080
+2025/02/10 13:02:49 error decoding json signup
+2025/02/10 13:04:21 server.go:23: Starting server on :8080
+2025/02/10 13:04:24 auth_controller.go:51: error decoding json signup
+2025/02/10 13:04:44 server.go:23: Starting server on :8080
+2025/02/10 13:04:51 auth_controller.go:51: error decoding json signup
+2025/02/10 13:05:31 server.go:23: Starting server on :8080
+2025/02/10 13:05:59 user_service.go:25: not enough args to execute query: want 6 got 5
+2025/02/10 13:15:26 server.go:23: Starting server on :8080
+2025/02/10 13:15:33 user_service.go:25: not enough args to execute query: want 6 got 5
+This message will be displayed on the console and written to file.log.
+Another message for demonstration purposes.
+2025/02/10 14:18:32 server.go:23: Starting server on :8080
+2025/02/10 14:19:05 auth_controller.go:55: invalid first name
+2025/02/10 14:19:36 user_repo.go:33: <nil>
+2025/02/10 14:19:36 auth_controller.go:67: adding user to db: user email already exists
+This message will be displayed on the console and written to file.log.
+Another message for demonstration purposes.
+2025/02/10 14:27:18 server.go:23: Starting server on :8080
+2025/02/10 14:27:23 user_repo.go:33: <nil>
+2025/02/10 14:27:23 auth_controller.go:71: adding user to db: user email already exists
+2025/02/10 14:27:34 auth_controller.go:57: invalid email
+2025/02/10 14:27:59 auth_controller.go:57: invalid email
+2025/02/10 14:28:04 user_repo.go:33: <nil>
+2025/02/10 14:28:04 auth_controller.go:71: adding user to db: user email already exists
+2025/02/10 14:28:10 user_repo.go:54: user nickname already exist
+2025/02/10 14:28:10 auth_controller.go:71: adding user to db: user nickname already exist
+2025/02/10 14:28:27 user_repo.go:15: not enough args to execute query: want 6 got 5
+2025/02/10 14:28:27 user_service.go:25: not enough args to execute query: want 6 got 5
+2025/02/10 14:28:27 auth_controller.go:71: adding user to db: not enough args to execute query: want 6 got 5
+This message will be displayed on the console and written to file.log.
+Another message for demonstration purposes.
+2025/02/10 14:29:09 server.go:23: Starting server on :8080
+2025/02/10 14:29:12 server.go:3413: http: superfluous response.WriteHeader call from social-network/pkg/utils.JsoneResponse (json_response.go:10)
+This message will be displayed on the console and written to file.log.
+Another message for demonstration purposes.
+2025/02/10 14:30:05 server.go:23: Starting server on :8080
+2025/02/10 14:30:13 user_repo.go:33: <nil>
+2025/02/10 14:30:13 auth_controller.go:71: adding user to db: user email already exists
+2025/02/10 14:30:23 user_repo.go:54: user nickname already exist
+2025/02/10 14:30:23 auth_controller.go:71: adding user to db: user nickname already exist
+This message will be displayed on the console and written to file.log.
+Another message for demonstration purposes.
+2025/02/10 14:33:35 server.go:23: Starting server on :8080
+2025/02/10 14:33:42 user_repo.go:33: <nil>
+2025/02/10 14:33:42 auth_controller.go:71: adding user to db: user email already exists

@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"log"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
@@ -21,6 +22,7 @@ func RegisterUser(user *models.User) error {
 
 	err = repo.CreateUser(user)
 	if err != nil {
+		log.Println(err)
 		return err
 	}
 

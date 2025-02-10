@@ -7,6 +7,7 @@ import (
 
 	"social-network/app"
 	db "social-network/pkg/db/sqlite"
+	logexplore "social-network/pkg/log"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -16,7 +17,7 @@ func main() {
 		log.Fatal(fmt.Errorf("failed to initialize database: %w", err))
 	}
 	defer db.CloseDB()
-
+	logexplore.LogFile()
 	router := app.SetupRoutes()
 
 	log.Println("Starting server on :8080")
