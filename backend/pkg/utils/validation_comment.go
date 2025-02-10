@@ -2,6 +2,7 @@ package utils
 
 import (
 	"errors"
+	"log"
 	"social-network/pkg/models"
 	"strings"
 )
@@ -12,6 +13,7 @@ func ValidateComment(commentRequest *models.CommentRequest) error {
 	}
 
 	if len(commentRequest.Content) > 500 {
+		log.Println()
 		return errors.New("comment content length exceeds 500 characters")
 	}
 
