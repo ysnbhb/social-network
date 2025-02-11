@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@radix-ui/react-label"
 import imageSrc from '../../image/vecteezy_global-business-internet-network-connection-and-social_9276510.jpg';
- 
-
 import Image from "next/image";
 import { FcGoogle} from "react-icons/fc"
 import axios from "axios";
+import { useState } from "react";
 export default function Login(){
 
   const [email, setEmail] = useState("");
