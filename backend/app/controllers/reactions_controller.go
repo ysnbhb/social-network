@@ -3,6 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -12,35 +13,42 @@ import (
 
 func HandleReaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed")
+		utils.JsoneResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed")
 		return
 	}
 
 	var reactionRequest models.ReactionRequest
 	err := json.NewDecoder(r.Body).Decode(&reactionRequest)
 	if err != nil {
-		fmt.Println("error decoding json reactionRequest", err.Error())
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("error decoding json reactionRequest:", err)
 		return
 	}
 
 	err = utils.ValidateReaction(&reactionRequest)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("validating reaction:", err)
 		return
 	}
 
 	// reactionRequest.UserId = r.Context().Value("userId").(int)
 	err = repo.AddReaction(&reactionRequest)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("adding reaction to db:", err)
+		return
 	}
 
 	var reactionResponse models.ReactionResponse
 	reactionResponse.LikesCount, reactionResponse.DislikesCount = repo.GetReactionCounts(reactionRequest.CardId)
 	reactionResponse.UserReaction = reactionRequest.ReactionType
+
 	err = json.NewEncoder(w).Encode(reactionResponse)
 	if err != nil {
-		fmt.Println("error decoding json reactionResponse", err.Error())
+		utils.JsoneResponse(w, err.Error(), http.StatusInternalServerError)
+		log.Println("error encoding json reactionResponse:", err)
 		return
 	}
 }

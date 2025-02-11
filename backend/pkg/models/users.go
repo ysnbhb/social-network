@@ -12,13 +12,13 @@ type User struct {
 	AvatarUrl   string    `json:"avatarurl"`
 	NickName    string    `json:"nickname"`
 	AboutMe     string    `json:"aboutme"`
-	CreatedAt   time.Time `json:"createdat"`
+	CreatedAt   time.Time `json:"createdAt"`
 	Status      string    `json:"status"`
 }
 
 type Login struct {
-	Id          int       `json:"id"`
-	Email       string    `json:"email"`
-	Password    string    `json:"password"`
+	Id             int    `json:"id"`
+	Email          string `json:"email"`
+	Password       string `json:"password"`
 	HachedPassword string
 }
