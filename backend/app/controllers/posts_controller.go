@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -12,27 +12,34 @@ import (
 
 func CreatePost(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		fmt.Println("method not allowed")
+		utils.JsoneResponse(w, "Method not allowed", http.StatusBadRequest)
+		log.Println("method not allowed")
 		return
 	}
 
 	var postRequest models.PostRequest
 	err := json.NewDecoder(r.Body).Decode(&postRequest)
 	if err != nil {
-		fmt.Println("error decoding json reactionRequest", err.Error())
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("error decoding json postRequest:", err)
 		return
 	}
 
 	err = utils.ValidatePost(&postRequest)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("validating post:", err)
 		return
 	}
 
 	// postRequest.UserId = r.Context().Value("userId").(int)
 	err = repo.CreatPost(&postRequest)
 	if err != nil {
-		fmt.Println(err)
+		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("creating post in db:", err)
+		return
 	}
-	
+
+	// Add success response
+	utils.JsoneResponse(w, "Post created successfully", http.StatusCreated)
 }

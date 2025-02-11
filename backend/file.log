@@ -48,3 +48,7 @@ Another message for demonstration purposes.
 2025/02/10 14:33:35 server.go:23: Starting server on :8080
 2025/02/10 14:33:42 user_repo.go:33: <nil>
 2025/02/10 14:33:42 auth_controller.go:71: adding user to db: user email already exists
+2025/02/11 00:35:59 server.go:23: Starting server on :8080
+2025/02/11 00:37:18 server.go:23: Starting server on :8080
+2025/02/11 00:38:38 server.go:23: Starting server on :8080
+2025/02/11 00:39:04 server.go:23: Starting server on :8080
