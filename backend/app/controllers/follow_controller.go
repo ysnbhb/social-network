@@ -23,8 +23,8 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 		log.Println("error decoding json postRequest:", err)
 		return
 	}
-
-	err = repo.SendFollow(&followRequest)
+	// followRequest.FollowerId = r.Context().Value("userId").(int) 
+	err = repo.AddFollow(&followRequest)
 	if err != nil {
 		utils.JsoneResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("Follow User in db:", err)

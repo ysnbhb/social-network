@@ -52,3 +52,19 @@ Another message for demonstration purposes.
 2025/02/11 00:37:18 server.go:23: Starting server on :8080
 2025/02/11 00:38:38 server.go:23: Starting server on :8080
 2025/02/11 00:39:04 server.go:23: Starting server on :8080
+2025/02/11 16:05:12 server.go:23: Starting server on :8080
+2025/02/11 16:12:01 follow_controller.go:15: method not allowed
+2025/02/11 16:12:14 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 16:13:21 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 16:26:59 server.go:23: Starting server on :8080
+2025/02/11 16:27:30 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:12:57 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:13:04 server.go:23: Starting server on :8080
+2025/02/11 17:14:07 server.go:23: Starting server on :8080
+2025/02/11 17:14:24 server.go:23: Starting server on :8080
+2025/02/11 17:14:36 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:14:42 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:14:43 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:14:44 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:14:45 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
+2025/02/11 17:16:23 server.go:23: Starting server on :8080
