@@ -8,5 +8,5 @@ type PostRequest struct {
 	Content   string `json:"content"`
 	Privacy   string `json:"privacy"` // public or private or almost_private 
 	ImageUrl  string `json:"imageUrl"`
-	CreatedAt string `json:"createdat"`
+	CreatedAt string `json:"createdAt"`
 }
