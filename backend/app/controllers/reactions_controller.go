@@ -13,7 +13,7 @@ import (
 
 func HandleReaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		utils.JsoneResponse(w, "Method not allowed", http.StatusBadRequest)
+		utils.JsoneResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
 		log.Println("method not allowed")
 		return
 	}

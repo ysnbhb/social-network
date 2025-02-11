@@ -20,5 +20,7 @@ func SetupRoutes() http.Handler {
 
 	mux.HandleFunc("/api/posts/comments", controllers.CreateComments)
 
+	mux.HandleFunc("/api/follow/", controllers.HandleFollow)
+
 	return mux
 }
