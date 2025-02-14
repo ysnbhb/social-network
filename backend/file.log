@@ -68,3 +68,12 @@ Another message for demonstration purposes.
 2025/02/11 17:14:44 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
 2025/02/11 17:14:45 follow_controller.go:30: Follow User in db: UNIQUE constraint failed: followers.follower_id, followers.following_id
 2025/02/11 17:16:23 server.go:23: Starting server on :8080
+2025/02/14 10:54:34 server.go:23: Starting server on :8080
+2025/02/15 00:02:53 home_controller.go:14: method not allowed
+2025/02/15 00:03:50 server.go:23: Starting server on :8080
+2025/02/15 00:05:05 server.go:23: Starting server on :8080
+2025/02/15 00:05:33 server.go:23: Starting server on :8080
+2025/02/15 00:05:42 home_controller.go:24: sql: expected 9 destination arguments in Scan, not 1
+2025/02/15 00:13:01 server.go:23: Starting server on :8080
+2025/02/15 00:23:50 server.go:23: Starting server on :8080
+2025/02/15 00:27:03 server.go:23: Starting server on :8080

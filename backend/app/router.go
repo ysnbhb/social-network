@@ -22,5 +22,10 @@ func SetupRoutes() http.Handler {
 
 	mux.HandleFunc("/api/follow", controllers.HandleFollow)
 
+	mux.HandleFunc("/api/profile/posts/created", controllers.GetCreatedPosts)
+	// mux.HandleFunc("/api/profile/posts/liked", controllers.GetLikedPosts)
+
+	mux.HandleFunc("/api/home/posts", controllers.GetHomePosts)
+
 	return mux
 }
