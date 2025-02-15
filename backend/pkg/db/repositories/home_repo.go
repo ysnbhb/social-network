@@ -40,7 +40,6 @@ ORDER BY c.created_at DESC;
 	}
 	defer rows.Close()
 
-	// Scan results into the postsResponse slice
 	for rows.Next() {
 		var post models.PostsResponse
 		err := rows.Scan(

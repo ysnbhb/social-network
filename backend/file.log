@@ -77,3 +77,28 @@ Another message for demonstration purposes.
 2025/02/15 00:13:01 server.go:23: Starting server on :8080
 2025/02/15 00:23:50 server.go:23: Starting server on :8080
 2025/02/15 00:27:03 server.go:23: Starting server on :8080
+2025/02/15 15:49:46 server.go:23: Starting server on :8080
+2025/02/15 15:51:52 server.go:3197: http: panic serving 127.0.0.1:56080: interface conversion: interface {} is nil, not string
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	/usr/lib/go-1.18/src/net/http/server.go:1825 +0xbf
+panic({0x834620, 0xc00006c3f0})
+	/usr/lib/go-1.18/src/runtime/panic.go:844 +0x258
+social-network/app/controllers.GetCreatedPosts({0x910fb8, 0xc0000780e0}, 0x0?)
+	/mnt/c/Users/soufi/soufian-01/social-network/backend/app/controllers/user_profile_controller.go:19 +0x1f1
+net/http.HandlerFunc.ServeHTTP(0x7fe546338df0?, {0x910fb8?, 0xc0000780e0?}, 0x415ba5?)
+	/usr/lib/go-1.18/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x910fb8, 0xc0000780e0}, 0xc00019c000)
+	/usr/lib/go-1.18/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00006c2d0?}, {0x910fb8, 0xc0000780e0}, 0xc00019c000)
+	/usr/lib/go-1.18/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00006e0a0, {0x911240, 0xc00006c1e0})
+	/usr/lib/go-1.18/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.18/src/net/http/server.go:3071 +0x4db
+2025/02/15 15:53:01 server.go:23: Starting server on :8080
+2025/02/15 15:53:08 user_profile_controller.go:24: Get Created Posts: sql: expected 8 destination arguments in Scan, not 10
+2025/02/15 16:06:52 server.go:23: Starting server on :8080
+2025/02/15 16:15:10 server.go:23: Starting server on :8080
+2025/02/15 16:17:52 server.go:23: Starting server on :8080
+2025/02/15 16:18:12 server.go:23: Starting server on :8080
