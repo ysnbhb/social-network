@@ -21,7 +21,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	err := json.NewDecoder(r.Body).Decode(&login)
 	if err != nil {
-		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
+		utils.JsoneResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusBadRequest)
 		log.Println("error decoding json lgoin")
 		return
 	}
@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	utils.JsoneResponse(w, "User logged in successfully", http.StatusBadRequest)
+	utils.JsoneResponse(w, "User logged in successfully", http.StatusOK)
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {

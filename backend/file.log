@@ -102,3 +102,66 @@ created by net/http.(*Server).Serve
 2025/02/15 16:15:10 server.go:23: Starting server on :8080
 2025/02/15 16:17:52 server.go:23: Starting server on :8080
 2025/02/15 16:18:12 server.go:23: Starting server on :8080
+2025/02/16 12:59:57 server.go:23: Starting server on :8080
+2025/02/16 13:09:39 auth_controller.go:17: method not allowed in login
+2025/02/16 13:10:00 auth_controller.go:17: method not allowed in login
+2025/02/16 13:10:22 auth_controller.go:17: method not allowed in login
+2025/02/16 13:10:52 auth_controller.go:17: method not allowed in login
+2025/02/16 13:12:23 server.go:23: Starting server on :8080
+2025/02/16 13:13:05 server.go:23: Starting server on :8080
+2025/02/16 13:13:13 auth_controller.go:17: method not allowed in login
+2025/02/16 13:14:20 server.go:36: Starting server on :8080
+2025/02/16 13:17:21 server.go:39: Starting server on :8080
+2025/02/16 13:18:22 server.go:47: Starting server on :8080
+2025/02/16 13:18:23 server.go:58: Shutting down server...
+2025/02/16 13:18:23 server.go:67: Server stopped.
+2025/02/16 13:18:25 server.go:47: Starting server on :8080
+2025/02/16 13:18:50 server.go:58: Shutting down server...
+2025/02/16 13:18:50 server.go:67: Server stopped.
+2025/02/16 13:18:50 server.go:39: Starting server on :8080
+2025/02/16 13:19:14 auth_controller.go:17: method not allowed in login
+2025/02/16 13:19:46 server.go:39: Starting server on :8080
+2025/02/16 13:21:08 auth_controller.go:17: method not allowed in login
+2025/02/16 13:21:21 auth_controller.go:25: error decoding json lgoin
+2025/02/16 13:23:26 server.go:47: Starting server on :8080
+2025/02/16 13:26:22 server.go:58: Shutting down server...
+2025/02/16 13:26:22 server.go:67: Server stopped.
+2025/02/16 13:26:23 server.go:56: Starting server on :8080
+2025/02/16 13:26:30 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:29:08 server.go:67: Shutting down server...
+2025/02/16 13:29:08 server.go:76: Server stopped.
+2025/02/16 13:30:25 server.go:53: Starting server on :8080
+2025/02/16 13:30:33 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:32:27 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:32:35 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:33:11 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:34:13 server.go:64: Shutting down server...
+2025/02/16 13:34:13 server.go:73: Server stopped.
+2025/02/16 13:34:46 server.go:53: Starting server on :8080
+2025/02/16 13:34:52 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:35:43 auth_controller.go:25: error decoding json lgoin
+2025/02/16 13:36:10 auth_controller.go:25: error decoding json lgoin
+2025/02/16 13:36:56 server.go:64: Shutting down server...
+2025/02/16 13:36:56 server.go:73: Server stopped.
+2025/02/16 13:36:57 server.go:53: Starting server on :8080
+2025/02/16 13:37:00 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:37:07 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:37:26 server.go:64: Shutting down server...
+2025/02/16 13:37:26 server.go:73: Server stopped.
+2025/02/16 13:37:27 server.go:53: Starting server on :8080
+2025/02/16 13:37:32 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:37:55 server.go:64: Shutting down server...
+2025/02/16 13:37:55 server.go:73: Server stopped.
+2025/02/16 13:38:13 server.go:53: Starting server on :8080
+2025/02/16 13:39:04 server.go:64: Shutting down server...
+2025/02/16 13:39:04 server.go:73: Server stopped.
+2025/02/16 13:39:05 server.go:53: Starting server on :8080
+2025/02/16 13:39:10 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:40:29 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:41:10 auth_controller.go:31: sorry, this email does not exist
+2025/02/16 13:42:44 server.go:64: Shutting down server...
+2025/02/16 13:42:44 server.go:73: Server stopped.
+2025/02/16 13:42:45 server.go:53: Starting server on :8080
+2025/02/16 13:43:05 auth_controller.go:17: method not allowed in login
+2025/02/16 13:47:13 server.go:64: Shutting down server...
+2025/02/16 13:47:13 server.go:73: Server stopped.
