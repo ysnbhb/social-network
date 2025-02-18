@@ -1,0 +1,28 @@
+package services
+
+import (
+	"log"
+
+	repo "social-network/pkg/db/repositories"
+	"social-network/pkg/models"
+)
+
+func UserProfile(user_id int) models.UserProfile {
+	profile := &models.UserProfile{}
+	err := repo.InfoUserProfile(profile, user_id)
+	if err != nil {
+		log.Println("Error To Get User Profile", err)
+		return models.UserProfile{}
+	}
+	return *profile
+}
+
+func GetPostsUserProfile(user_id int) []models.PostsResponse {
+	var postsResponse []models.PostsResponse
+	err := repo.GetCreatedUserPosts(&postsResponse, user_id)
+	if err != nil {
+		log.Println("Get Created Posts:", err)
+		return nil
+	}
+	return postsResponse
+}

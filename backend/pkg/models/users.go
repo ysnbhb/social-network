@@ -22,3 +22,15 @@ type Login struct {
 	Password       string `json:"password"`
 	HachedPassword string
 }
+type UserProfile struct {
+	FirstName       string    `json:"firstName"`
+	LastName        string    `json:"lastName"`
+	NickName        string    `json:"nickName"`
+	Email           string    `json:"email"`
+	DateOfBirth     time.Time `json:"dateOfBirth"`
+	AvatarUrl       string    `json:"avatarUrl"`
+	AboutMe         string    `json:"aboutMe"`
+	Image_count     int       `json:"image_count"`
+	Follower_count  int       `json:"follower_count"`
+	Following_count int       `json:"following_count"`
+}

@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId string) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) error {
 	query := `
 		SELECT 
     c.id,
@@ -34,7 +34,6 @@ GROUP BY
 	u.nickname
 ORDER BY c.created_at DESC;
 	`
-
 	rows, err := db.DB.Query(query, userId)
 	if err != nil {
 		return err
@@ -62,4 +61,30 @@ ORDER BY c.created_at DESC;
 	}
 
 	return rows.Err()
+}
+
+func InfoUserProfile(profile *models.UserProfile, user_id int) error {
+	query := 
+	`SELECT  
+			u.first_name,
+			u.last_name,
+			u.nickname,
+			u.about_me,
+			u.email,
+			u.date_of_birth,
+			u.avatar_url,
+			COUNT(DISTINCT c.image_url) AS image_count,
+			COUNT(DISTINCT f1.follower_id) AS follower_count,
+			COUNT(DISTINCT f2.following_id) AS following_count
+		FROM users u 
+		LEFT JOIN card c ON c.user_id = u.id
+		LEFT JOIN followers  f1 on f1.follower_id=u.id  
+		LEFT JOIN followers  f2 on f2.following_id=u.id 
+		WHERE u.id = ?
+		GROUP BY u.id`
+	err := db.DB.QueryRow(query, user_id)
+	if err != nil {
+		return err.Err()
+	}
+	return nil
 }
