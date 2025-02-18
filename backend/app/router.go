@@ -7,6 +7,7 @@ import (
 	"social-network/middleware"
 )
 
+
 func SetupRoutes() http.Handler {
 	mux := http.NewServeMux()
 
@@ -23,8 +24,8 @@ func SetupRoutes() http.Handler {
 	mux.HandleFunc("/api/follow", controllers.HandleFollow)
 
 	mux.HandleFunc("/api/profile/posts/created", controllers.GetCreatedPosts)
+	mux.HandleFunc("/api/profile", controllers.GetInfoUserProfile)
 
 	mux.HandleFunc("/api/home/posts", controllers.GetHomePosts)
-
 	return mux
 }
