@@ -1,0 +1,36 @@
+
+
+.usersection {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    background-color: #f8f9fc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    justify-content: center;
+    gap: 20px;
+}
+.usersection img {
+    width: 100% ;
+    height: auto;
+    border-radius: 50%;
+}
+.usersection p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+.usersection button {
+    width: 30%;
+    border-radius: 50%;
+    border: none;
+    background-color: #f8f9fc;
+    justify-content: end;
+    cursor: pointer;
+}
