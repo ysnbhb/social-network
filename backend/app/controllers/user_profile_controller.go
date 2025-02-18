@@ -26,7 +26,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func GetInfoUserProfile( w http.ResponseWriter, r *http.Request){
+func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
 		log.Println("method not allowed")

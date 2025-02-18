@@ -35,3 +35,17 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/18 18:08:10 user_repo.go:33: <nil>
 2025/02/18 18:08:10 auth_controller.go:31: sorry, your password was incorrect
 2025/02/18 18:08:26 user_repo.go:33: <nil>
+2025/02/18 18:15:54 server.go:27: Starting server on :8080
+2025/02/18 18:16:16 user_repo.go:33: <nil>
+2025/02/18 18:16:59 server.go:27: Starting server on :8080
+2025/02/18 18:17:03 user_profile_controller.go:21: []
+2025/02/18 18:17:54 server.go:27: Starting server on :8080
+2025/02/18 18:17:59 user_profile_repo.go:63: &[]
+2025/02/18 18:17:59 user_profile_controller.go:21: []
+2025/02/18 18:19:45 user_repo.go:33: <nil>
+2025/02/18 18:19:45 auth_controller.go:31: sorry, your password was incorrect
+2025/02/18 18:20:07 user_repo.go:33: <nil>
+2025/02/18 18:20:21 user_repo.go:33: <nil>
+2025/02/18 18:20:26 user_profile_repo.go:63: &[{7 1 0 mohamed bakhouch simo This is a sample post content.  2025-02-14T23:19:45Z 0 0 0}]
+2025/02/18 18:20:26 user_profile_controller.go:21: [{7 1 0 mohamed bakhouch simo This is a sample post content.  2025-02-14T23:19:45Z 0 0 0}]
+2025/02/18 18:21:21 server.go:27: Starting server on :8080
