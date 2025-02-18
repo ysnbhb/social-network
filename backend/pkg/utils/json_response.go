@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func JsoneResponse(w http.ResponseWriter, message any, code int) {
+func JsonResponse(w http.ResponseWriter, message any, code int) {
 	w.WriteHeader(code)
 	w.Header().Set("Content-Type", "application/json")
 	decoding := json.NewEncoder(w)
