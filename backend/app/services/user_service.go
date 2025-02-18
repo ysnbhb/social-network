@@ -12,12 +12,12 @@ import (
 func RegisterUser(user *models.User) error {
 	err := repo.CheckEmail(user.Email)
 	if err != nil {
-		return err
+		return errors.New("email already exist")
 	}
 
 	err = repo.CheckNickName(user.NickName)
 	if err != nil {
-		return err
+		return errors.New("nickname already exist")
 	}
 
 	err = repo.CreateUser(user)

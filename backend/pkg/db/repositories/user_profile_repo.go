@@ -64,15 +64,14 @@ ORDER BY c.created_at DESC;
 }
 
 func InfoUserProfile(profile *models.UserProfile, user_id int) error {
-	query := 
-	`SELECT  
+	query := `SELECT  
 			u.first_name,
 			u.last_name,
 			u.nickname,
-			u.about_me,
+			COALESCE(u.about_me, '') AS about_me,
 			u.email,
 			u.date_of_birth,
-			u.avatar_url,
+			COALESCE(u.avatar_url, '') AS avatar_url,
 			COUNT(DISTINCT c.image_url) AS image_count,
 			COUNT(DISTINCT f1.follower_id) AS follower_count,
 			COUNT(DISTINCT f2.following_id) AS following_count
@@ -82,9 +81,10 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 		LEFT JOIN followers  f2 on f2.following_id=u.id 
 		WHERE u.id = ?
 		GROUP BY u.id`
-	err := db.DB.QueryRow(query, user_id)
+	err := db.DB.QueryRow(query, user_id).Scan(&profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
-		return err.Err()
+		return err
 	}
+
 	return nil
 }
