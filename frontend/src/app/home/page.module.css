@@ -14,9 +14,6 @@
     height: 10vh;
     padding: 10px 20px;
 }
-.page header img{
-
-}   
 
 .page button {
     float: right;
@@ -74,12 +71,12 @@
     color: black;
 }
 
-.postcontent{
+.post{
     width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
     background-color: #ffffff;
     color: black;
     padding: 10px;
@@ -87,6 +84,9 @@
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .postDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 .imgprofilepost{
@@ -110,9 +110,19 @@
     padding: 10px;
 }
 .postIcons{
+    
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:end;
     width: 50%;
     padding: 10px;
+}
+.postcontent{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 12px;
+
 }
