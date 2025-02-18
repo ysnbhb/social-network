@@ -165,3 +165,61 @@ created by net/http.(*Server).Serve
 2025/02/16 13:43:05 auth_controller.go:17: method not allowed in login
 2025/02/16 13:47:13 server.go:64: Shutting down server...
 2025/02/16 13:47:13 server.go:73: Server stopped.
+2025/02/18 16:25:46 server.go:27: Starting server on :8080
+2025/02/18 16:26:56 auth_controller.go:61: invalid first name
+2025/02/18 16:27:06 auth_controller.go:61: invalid first name
+2025/02/18 16:27:07 auth_controller.go:61: invalid first name
+2025/02/18 16:27:08 auth_controller.go:61: invalid first name
+2025/02/18 16:35:57 auth_controller.go:61: invalid first name
+2025/02/18 16:37:29 auth_controller.go:61: invalid first name
+2025/02/18 16:37:37 auth_controller.go:61: invalid first name
+2025/02/18 16:37:41 auth_controller.go:61: invalid first name
+2025/02/18 16:39:43 auth_controller.go:61: invalid first name
+2025/02/18 16:46:03 auth_controller.go:61: invalid first name
+2025/02/18 16:46:07 auth_controller.go:61: invalid first name
+2025/02/18 16:46:16 auth_controller.go:61: invalid first name
+2025/02/18 16:47:02 server.go:27: Starting server on :8080
+2025/02/18 16:47:12 auth_controller.go:61: invalid first name
+2025/02/18 16:47:36 server.go:27: Starting server on :8080
+2025/02/18 16:47:43 auth_controller.go:61: invalid first name
+2025/02/18 16:48:42 auth_controller.go:61: invalid first name
+2025/02/18 16:48:50 auth_controller.go:61: invalid last name
+2025/02/18 16:49:10 server.go:27: Starting server on :8080
+2025/02/18 16:53:43 auth_controller.go:61: invalid first name
+2025/02/18 16:53:48 auth_controller.go:61: invalid first name
+2025/02/18 16:54:21 auth_controller.go:31: sorry, this email does not exist
+2025/02/18 16:54:45 auth_controller.go:31: sorry, this email does not exist
+2025/02/18 16:55:25 auth_controller.go:31: sorry, this email does not exist
+2025/02/18 16:56:24 user_repo.go:33: <nil>
+2025/02/18 16:56:24 auth_controller.go:31: sorry, your password was incorrect
+2025/02/18 16:56:28 user_repo.go:33: <nil>
+2025/02/18 16:56:28 auth_controller.go:31: sorry, your password was incorrect
+2025/02/18 16:56:36 user_repo.go:33: <nil>
+2025/02/18 16:57:02 user_repo.go:33: <nil>
+2025/02/18 16:59:59 user_repo.go:33: <nil>
+2025/02/18 17:00:00 user_repo.go:33: <nil>
+2025/02/18 17:00:00 user_repo.go:33: <nil>
+2025/02/18 17:00:00 user_repo.go:33: <nil>
+2025/02/18 17:00:01 user_repo.go:33: <nil>
+2025/02/18 17:00:01 user_repo.go:33: <nil>
+2025/02/18 17:00:50 server.go:27: Starting server on :8080
+2025/02/18 17:00:53 auth_controller.go:31: sorry, this email does not exist
+2025/02/18 17:01:19 auth_controller.go:61: invalid first name
+2025/02/18 17:01:22 auth_controller.go:61: invalid last name
+2025/02/18 17:01:26 auth_controller.go:61: invalid nickname
+2025/02/18 17:01:30 auth_controller.go:61: invalid email
+2025/02/18 17:01:34 auth_controller.go:61: invalid password
+2025/02/18 17:01:39 user_repo.go:54: user nickname already exist
+2025/02/18 17:01:39 auth_controller.go:75: adding user to db: user nickname already exist
+2025/02/18 17:01:49 user_repo.go:15: UNIQUE constraint failed: users.email
+2025/02/18 17:01:49 user_service.go:25: UNIQUE constraint failed: users.email
+2025/02/18 17:01:49 auth_controller.go:75: adding user to db: UNIQUE constraint failed: users.email
+2025/02/18 17:04:25 server.go:27: Starting server on :8080
+2025/02/18 17:04:28 user_repo.go:33: <nil>
+2025/02/18 17:04:28 auth_controller.go:75: adding user to db: email already exist
+2025/02/18 17:04:35 user_repo.go:33: <nil>
+2025/02/18 17:04:35 auth_controller.go:75: adding user to db: email already exist
+2025/02/18 17:04:38 user_repo.go:33: <nil>
+2025/02/18 17:04:38 auth_controller.go:75: adding user to db: email already exist
+2025/02/18 17:04:42 user_repo.go:54: user nickname already exist
+2025/02/18 17:04:42 auth_controller.go:75: adding user to db: nickname already exist
