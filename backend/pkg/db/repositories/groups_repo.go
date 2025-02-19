@@ -110,6 +110,7 @@ func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	`
 	rows, err := db.DB.Query(query, groupId, offste)
 	if err != nil {
+		
 		return nil, err
 	}
 	for rows.Next() {
