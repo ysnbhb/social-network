@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	repo "social-network/pkg/db/repositories"
+
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -23,12 +24,11 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 		log.Println("error decoding json postRequest:", err)
 		return
 	}
-	// followRequest.FollowerId = r.Context().Value("userId").(int) 
-	err = repo.AddFollow(&followRequest)
+	// followRequest.FollowerId = r.Context().Value("userId").(int)
+	err = services.AddFollow(&followRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("Follow User in db:", err)
 		return
 	}
-
 }

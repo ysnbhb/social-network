@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	utils.JsonResponse(w, "User logged in successfully", http.StatusBadRequest)
+	utils.JsonResponse(w, "User logged in successfully", http.StatusOK)
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -83,7 +83,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		log.Println("adding session:", err)
 		return
 	}
-	utils.JsonResponse(w, "User signUp successfully", http.StatusBadRequest)
+	utils.JsonResponse(w, "User signUp successfully", http.StatusOK)
 }
 
 func Logout(w http.ResponseWriter, r *http.Request) {

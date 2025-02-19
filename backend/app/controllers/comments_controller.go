@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	repo "social-network/pkg/db/repositories"
+
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -23,18 +24,10 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		log.Println("error decoding json commentRequest:", err)
 		return
 	}
-
-	err = utils.ValidateComment(&commentRequest)
+	err = services.AddComments(&commentRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("validating comment:", err)
-		return
-	}
-
-	err = repo.AddComment(&commentRequest)
-	if err != nil {
-		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("adding comment to db:", err)
+		log.Println(err)
 		return
 	}
 
