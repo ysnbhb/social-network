@@ -15,7 +15,7 @@ func HashPassword(user *models.User) error {
 	return nil
 }
 
-func ComparePasword(login *models.Login) error {
-	err := bcrypt.CompareHashAndPassword([]byte(login.HachedPassword), []byte(login.Password))
+func ComparePassword(login *models.Login) error {
+	err := bcrypt.CompareHashAndPassword([]byte(login.HashedPassword), []byte(login.Password))
 	return err
 }
