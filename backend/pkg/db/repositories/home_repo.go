@@ -18,13 +18,13 @@ func GetHomePosts(postsResponse *[]models.PostsResponse) error {
     COUNT(DISTINCT cm.id) AS total_comments,
     COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
     COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
-FROM card c
-JOIN posts p ON c.id = p.card_id
-JOIN users u ON c.user_id = u.id
-LEFT JOIN comments cm ON c.id = cm.target_id
-LEFT JOIN likes l ON c.id = l.card_id
-WHERE p.privacy = "public"
-GROUP BY 
+	FROM card c
+	JOIN posts p ON c.id = p.card_id
+	JOIN users u ON c.user_id = u.id
+	LEFT JOIN comments cm ON c.id = cm.target_id
+	LEFT JOIN likes l ON c.id = l.card_id
+	WHERE p.privacy = "public"
+	GROUP BY 
     c.id, 
     c.user_id, 
     c.content, 
