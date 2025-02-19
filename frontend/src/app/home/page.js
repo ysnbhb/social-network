@@ -39,67 +39,87 @@ export default function Home() {
     ]
     return (
 
-        <div className={styles.mainpage}>
-            {/* <div className={styles.usersection}>
-
-                <p>groups</p>
-                <p>profile</p>
-                <button>
-                    <Image src={logout} width="30" />
-                </button>
-            </div> */}
-            <div className={styles.page}>
-                <header>
-                    <h1>My page title</h1>
-                    <Image src={notification} alt="Notification" width="30" />
-                    <button>create post</button>
+        <div className={styles.container}>
+            <div className={styles.contentWrapper}>
+                <header className={styles.headerContainer}>
+                    <input className={styles.inputsearch} placeholder="Search...." />
+                    <div className={styles.headerActions}>
+                        <div className={styles.notificationIcon}>
+                            <Image src={notification} alt="Notification" width="30" />
+                        </div>
+                        <button className={styles.createPostButton}>Create post</button>
+                    </div>
                 </header>
-                <div className={styles.main}>
-                    <div className={styles.posts}>
+
+                <main className={styles.mainContent}>
+                    <div className={styles.feedContainer}>
                         {posts.map((post) => (
-                            <div className={styles.post} key={post.title}>  {/* Add a unique key to each post */}
-                                <div className={styles.postDetails}>
-                                    <div className={styles.postHeader}>
-                                        <div className={styles.imgprofilepost}>
+                            <article className={styles.postCard} key={post.title}>
+                                <div className={styles.postHeader}>
+                                    <div className={styles.authorInfo}>
+                                        <div className={styles.authorAvatar}>
                                             <Image src={image} alt="Profile" />
-                                            <h2>{post.name}</h2>
                                         </div>
-                                        <h2>{post.title}</h2>
-                                        <p className={styles.creationPost}>{post.time}</p>
+                                        <span className={styles.authorName}>{post.name}</span>
                                     </div>
-                                    <div className={styles.postcontent}>
-                                        <p>{post.content}</p>
-                                    </div>
-                                    <div className={styles.postIcons}>
-                                        <p><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px"><path d={like} /></svg></p>
-                                        <p><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px"><path d={dislike} /></svg></p>
-                                        <p><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px"><path d={comment} /></svg></p>
-                                    </div>
+                                    <span className={styles.postTimestamp}>{post.time}</span>
                                 </div>
-                            </div>
+
+                                <h2 className={styles.postTitle}>{post.title}</h2>
+
+                                <div className={styles.postContent}>
+                                    <p>{post.content}</p>
+                                </div>
+
+                                <div className={styles.postActions}>
+                                    <button className={styles.actionButton}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" width="25">
+                                            <path d={like} />
+                                        </svg>
+                                    </button>
+                                    <button className={styles.actionButton}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" width="25">
+                                            <path d={dislike} />
+                                        </svg>
+                                    </button>
+                                    <button className={styles.actionButton}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" width="25">
+                                            <path d={comment} />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
                         ))}
                     </div>
-                    <div className={styles.allusers}>
-                        <p>all users</p>
+                    <div className={styles.userssidebar}>
+                        <div className={styles.sidebarheader}>
+                            all users
+                        </div>
                         {users.map((user, index) => {
                             const statusClass = user.status === "Online" ? styles.Online : styles.Offline; // Set the correct class dynamically
                             return (
-                                <div key={index} className={styles.user}>
-                                    <div className={styles.imgUser}>
-                                        <Image src={image} alt={user.name} />
-                                        <span className={statusClass}></span>
-                                    </div>
-                                    <div className={styles.userStatus}>
-                                        <p>{user.name}</p>
-                                    </div>
-                                </div>
+                                <ul key={index} className={styles.userslist}>
+                                    <li className={styles.useritem}>
+                                        <div className={styles.useravatar}>
+                                            <Image src={image} alt={user.name} />
+                                            <span className={statusClass}></span>
+                                        </div>
+                                        <span className={styles.username}>{user.name}</span>
+                                    </li>
+                                </ul>
                             );
                         })}
                     </div>
-                </div>
+                </main>
 
             </div>
-
         </div>
     )
 }
+
+
+
+
+
+
+
