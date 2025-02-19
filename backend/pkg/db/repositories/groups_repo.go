@@ -35,7 +35,7 @@ func MemberGroup(groupId int) ([]models.User, error) {
 	users := []models.User{}
 	for row.Next() {
 		user := models.User{}
-		err = row.Scan(user.NickName, user.AvatarUrl)
+		err = row.Scan(&user.NickName, &user.AvatarUrl)
 		if err != nil {
 			continue
 		}
@@ -71,7 +71,7 @@ func CheckUserInGroup(groupId, userId int) bool {
 func GeTIdofAdminOfGroup(groupId int) int {
 	var id int
 	query := `SELECT creator_id FROM groups WHERE id =?`
-	db.DB.QueryRow(query, groupId).Scan(id)
+	db.DB.QueryRow(query, groupId).Scan(&id)
 	return id
 }
 
@@ -110,11 +110,36 @@ func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	}
 	for rows.Next() {
 		post := models.PostsResponse{}
-		err = rows.Scan(post.NickName, post.AvatarUrl, post.FirstName, post.LastName, post.CardId, post.Content, post.ImageUrl, post.CreatedAt)
+		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.CardId, &post.Content, &post.ImageUrl, &post.CreatedAt)
 		if err != nil {
 			continue
 		}
 		posts = append(posts, post)
 	}
 	return posts, nil
+}
+
+func ListGroups(userid, offset int) ([]models.Groups, error) {
+	query := `
+    SELECT g.id, g.title, g.description ,
+	(SELECT COALESCE(status, '') FROM group_invitations WHERE group_id = g.id)
+    FROM groups g
+    WHERE NOT EXISTS (
+        SELECT 1 FROM group_members gm 
+        WHERE gm.group_id = g.id 
+        AND gm.user_id = ?
+    )
+    LIMIT 10 OFFSET ?;`
+
+	rows, err := db.DB.Query(query, userid, offset)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status)
+		groups = append(groups, group)
+	}
+	return groups, nil
 }
