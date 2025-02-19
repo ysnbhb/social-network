@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"social-network/app"
+	"social-network/middleware"
 	db "social-network/pkg/db/sqlite"
 	logexplore "social-network/pkg/log"
 
@@ -19,7 +20,12 @@ func main() {
 	defer db.CloseDB()
 	logexplore.LogFile()
 	router := app.SetupRoutes()
-
+	server := &http.Server{
+		Addr:    ":8080",
+		Handler: middleware.WithCORS(router),
+	}
 	log.Println("Starting server on :8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		log.Fatalf("Server error: %v", err)
+	}
 }

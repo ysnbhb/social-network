@@ -8,7 +8,6 @@ import (
 )
 func AddReaction(reactionRequest *models.ReactionRequest) error {
 	existingReaction := getExistingReaction(reactionRequest.UserId, reactionRequest.CardId)
-
 	if existingReaction == reactionRequest.ReactionType {
 		return removeReaction(reactionRequest.UserId, reactionRequest.CardId)
 	} else if existingReaction == 0 {

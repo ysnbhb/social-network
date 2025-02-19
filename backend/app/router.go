@@ -14,17 +14,14 @@ func SetupRoutes() http.Handler {
 	mux.HandleFunc("/api/login", controllers.Login)
 	mux.Handle("/api/logout", middleware.AuthMiddleware(http.HandlerFunc(controllers.Logout)))
 
-	mux.HandleFunc("/api/user/reactions", controllers.HandleReaction)
+	mux.Handle("/api/user/reactions", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleReaction)))
 
-	mux.HandleFunc("/api/create/post", controllers.CreatePost)
-
-	mux.HandleFunc("/api/posts/comments", controllers.CreateComments)
-
-	mux.HandleFunc("/api/follow", controllers.HandleFollow)
-
-	mux.HandleFunc("/api/profile/posts/created", controllers.GetCreatedPosts)
+	mux.Handle("/api/create/post", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreatePost)))
+	mux.Handle("/api/posts/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))
+	mux.Handle("/api/follow", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleFollow)))
+	mux.Handle("/api/profile/posts/created", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetCreatedPosts)))
+	mux.Handle("/api/profile", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetInfoUserProfile)))
 
 	mux.HandleFunc("/api/home/posts", controllers.GetHomePosts)
-
 	return mux
 }
