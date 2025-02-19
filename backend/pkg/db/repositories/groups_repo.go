@@ -96,7 +96,7 @@ func Delete_group_Invi(groupId, userid int) {
 func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	posts := []models.PostsResponse{}
 	query := `
-	SELECT u.nickname , u.avatar_url , u.fistname , u.lastname , c.id , c.content , c.image_url , c.created_at FROM users u
+	SELECT u.nickname , u.avatar_url , u.first_name , u.last_name , c.id , c.content , c.image_url , c.created_at FROM users u
 	INNER JOIN card c ON u.id = c.user_id
 	INNER JOIN posts p 
 	ON p.card_id = c.id
