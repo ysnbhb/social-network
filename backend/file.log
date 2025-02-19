@@ -59,3 +59,12 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/19 10:54:30 user_repo.go:33: <nil>
 2025/02/19 10:55:29 comments_controller.go:24: error decoding json commentRequest: invalid character '"' after object key:value pair
 2025/02/19 11:03:51 server.go:27: Starting server on :8080
+2025/02/19 11:14:31 server.go:27: Starting server on :8080
+2025/02/19 11:20:51 server.go:27: Starting server on :8080
+2025/02/19 11:24:17 posts_controller.go:16: method not allowed
+2025/02/19 11:24:21 posts_controller.go:30: validating post: invalid imageUrl format
+2025/02/19 11:25:35 server.go:27: Starting server on :8080
+2025/02/19 11:25:37 posts_controller.go:29: 5
+2025/02/19 11:25:57 server.go:27: Starting server on :8080
+2025/02/19 11:32:34 server.go:27: Starting server on :8080
+2025/02/19 11:49:14 server.go:27: Starting server on :8080
