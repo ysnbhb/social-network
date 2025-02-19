@@ -68,3 +68,21 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/19 11:25:57 server.go:27: Starting server on :8080
 2025/02/19 11:32:34 server.go:27: Starting server on :8080
 2025/02/19 11:49:14 server.go:27: Starting server on :8080
+2025/02/19 14:25:11 server.go:27: Starting server on :8080
+2025/02/19 14:26:49 server.go:27: Starting server on :8080
+2025/02/19 14:27:16 server.go:27: Starting server on :8080
+2025/02/19 14:27:21 follow_service.go:14: true true
+2025/02/19 14:27:37 server.go:27: Starting server on :8080
+2025/02/19 14:27:39 follow_service.go:14: true true
+2025/02/19 14:27:39 follow_controller.go:32: Follow User in db: This User Is Not Exist
+2025/02/19 14:27:45 follow_service.go:14: true true
+2025/02/19 14:27:45 follow_controller.go:32: Follow User in db: This User Is Not Exist
+2025/02/19 14:28:03 follow_service.go:14: true true
+2025/02/19 14:28:03 follow_controller.go:32: Follow User in db: This User Is Not Exist
+2025/02/19 14:29:01 server.go:27: Starting server on :8080
+2025/02/19 14:29:02 follow_service.go:13: true
+2025/02/19 14:29:02 follow_controller.go:32: Follow User in db: This User Is Not Exist
+2025/02/19 14:29:13 server.go:27: Starting server on :8080
+2025/02/19 14:29:21 follow_service.go:13: true
+2025/02/19 14:29:30 follow_service.go:13: false
+2025/02/19 14:29:30 follow_controller.go:32: Follow User in db: This User Is Not Exist

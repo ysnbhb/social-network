@@ -20,7 +20,7 @@ type Login struct {
 	Id             int    `json:"id"`
 	Email          string `json:"email"`
 	Password       string `json:"password"`
-	HachedPassword string
+	HashedPassword string
 }
 type UserProfile struct {
 	FirstName       string    `json:"firstName"`
