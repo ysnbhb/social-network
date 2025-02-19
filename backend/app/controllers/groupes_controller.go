@@ -22,7 +22,12 @@ func CreateGroup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	groupInfo.Owner = r.Context().Value("userId").(int)
-	services.CreateGroup(w, groupInfo)
+	codeStatus, err := services.CreateGroup(groupInfo)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), codeStatus)
+		return
+	}
+	utils.JsonResponse(w, "group created", http.StatusOK)
 }
 
 func ShowGroupMember(w http.ResponseWriter, r *http.Request) {
@@ -64,7 +69,8 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	userId := r.Context().Value("userId").(int)
-	services.JoinToGroup(w, group, userId)
+	code, err := services.JoinToGroup(group, userId)
+	utils.JsonResponse(w, err.Error(), code)
 }
 
 func SendInvi(w http.ResponseWriter, r *http.Request) {
@@ -79,7 +85,8 @@ func SendInvi(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	userId := r.Context().Value("userId").(int)
-	services.SendInvi(w, gp_invi, userId)
+	code, err := services.SendInvi(gp_invi, userId)
+	utils.JsonResponse(w, err.Error(), code)
 }
 
 func GetGroupPost(w http.ResponseWriter, r *http.Request) {
@@ -98,5 +105,21 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
 		return
 	}
-	services.GetGroupPost(group, offste)
+	posts, err := services.GetGroupPost(group, offste)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get group post", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, posts, http.StatusOK)
+}
+
+func ListGroups(w http.ResponseWriter, r *http.Request) {
+	offste, _ := strconv.Atoi(r.FormValue("offste"))
+	userId := r.Context().Value("userId").(int)
+	groups, err := services.ListGroups(userId, offste)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get groups", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, groups, http.StatusOK)
 }

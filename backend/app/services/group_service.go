@@ -2,6 +2,7 @@ package services
 
 import (
 	"database/sql"
+	"errors"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -9,18 +10,21 @@ import (
 	"social-network/pkg/utils"
 )
 
-func CreateGroup(w http.ResponseWriter, gp models.Groups) {
-	err := utils.ValidateGroup(gp)
+func CreateGroup(gp models.Groups) (statusCode int, err error) {
+	err = utils.ValidateGroup(gp)
 	if err != nil {
-		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		// utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		statusCode = http.StatusBadRequest
 		return
 	}
 	err = repo.CreateGroup(gp)
 	if err != nil {
-		utils.JsonResponse(w, "field to create groupe", http.StatusInternalServerError)
+		err = errors.New("field to create groupe")
+		statusCode = http.StatusInternalServerError
 		return
 	}
-	utils.JsonResponse(w, "group created", http.StatusCreated)
+	err = nil
+	return
 }
 
 func MemberGroup(groupId int) ([]models.User, error) {
@@ -32,72 +36,95 @@ func MemberGroup(groupId int) ([]models.User, error) {
 	return users, err
 }
 
-func JoinToGroup(w http.ResponseWriter, groupId, userId int) {
+func JoinToGroup(groupId, userId int) (statusCode int, err error) {
 	exist := repo.CheckGroup(groupId)
 	if !exist {
-		utils.JsonResponse(w, "group you want join into dons't exist", http.StatusNotFound)
+		err = errors.New("group you want join into dons't exist")
+		statusCode = http.StatusNotFound
 		return
 	}
 	hasInvi, err := repo.HasInvi(groupId, userId)
 	if err != sql.ErrNoRows {
-		utils.JsonResponse(w, "field to join to group", http.StatusInternalServerError)
+		err = errors.New("field to join to group")
+		statusCode = http.StatusInternalServerError
 		return
 	}
 	if hasInvi == "invitation" {
 		exist = repo.CheckUserInGroup(groupId, userId)
 		if exist {
-			utils.JsonResponse(w, "you are really in group", http.StatusBadRequest)
+			err = errors.New("you are really in group")
+			statusCode = http.StatusBadRequest
 			return
 		}
-		err := repo.JoinToGroup(groupId, userId)
+		err = repo.JoinToGroup(groupId, userId)
 		if err != nil {
-			utils.JsonResponse(w, "field to join to group", http.StatusInternalServerError)
-			return
+			err = errors.New("field to join to group")
+			statusCode = http.StatusInternalServerError
 		}
 		repo.Delete_group_Invi(groupId, userId)
-		utils.JsonResponse(w, "joined to group", http.StatusCreated)
+		err = errors.New("you joined to group")
+		statusCode = http.StatusOK
 	} else {
 		if err == sql.ErrNoRows {
 			err = repo.InsertIntoGroup_Invi(groupId, userId, "pending")
 			if err != nil {
-				utils.JsonResponse(w, "field to join to group", http.StatusInternalServerError)
+				err = errors.New("field to join to group")
+				statusCode = http.StatusInternalServerError
 			}
-			utils.JsonResponse(w, "invitation sended  to group", http.StatusCreated)
-
+			err = errors.New("you joined to group")
+			statusCode = http.StatusCreated
 		} else {
-			utils.JsonResponse(w, "you have sended invition to this group", http.StatusBadRequest)
+			err = errors.New("you have sended invition to this group")
+			statusCode = http.StatusBadRequest
 		}
 	}
+	return
 }
 
-func SendInvi(w http.ResponseWriter, gpInvi models.Group_Invi, userId int) {
+func SendInvi(gpInvi models.Group_Invi, userId int) (code int, err error) {
+	if !(repo.IsFollowing(userId, gpInvi.UserId)) {
+		err = errors.New("you can't send invitation to this user")
+		code = http.StatusBadGateway
+		return
+	}
 	exist := repo.CheckGroup(gpInvi.GroupId)
 	if !exist {
-		utils.JsonResponse(w, "group you want join into dons't exist", http.StatusNotFound)
+		err = errors.New("group you want join into dons't exist")
+		code = http.StatusNotFound
 		return
 	}
 	exist = repo.CheckUserExist(gpInvi.UserId)
 	if !exist {
-		utils.JsonResponse(w, "user you want send to dons't exist", http.StatusUnauthorized)
+		err = errors.New("user you want join into dons't exist")
+		code = http.StatusNotFound
 		return
 	}
 	exist = repo.CheckUserInGroup(gpInvi.GroupId, userId)
 	if !exist {
-		utils.JsonResponse(w, "you don't have right to send invitation", http.StatusUnauthorized)
+		err = errors.New("you don't have right to send invitation")
+		code = http.StatusUnauthorized
 		return
 	}
 	exist = repo.CheckUserInGroup(gpInvi.GroupId, gpInvi.UserId)
 	if exist {
-		utils.JsonResponse(w, "user just to invitation ready in group", http.StatusBadRequest)
+		err = errors.New("user just to invitation ready in group")
+		code = http.StatusBadRequest
 		return
 	}
-	err := repo.InsertIntoGroup_Invi(gpInvi.GroupId, gpInvi.UserId, "invitation")
+	err = repo.InsertIntoGroup_Invi(gpInvi.GroupId, gpInvi.UserId, "invitation")
 	if err != nil {
-		utils.JsonResponse(w, "field to join to group", http.StatusInternalServerError)
+		err = errors.New("field to join to group")
+		code = http.StatusInternalServerError
 	}
-	utils.JsonResponse(w, "invitation sended  to user", http.StatusCreated)
+	err = errors.New("invitation sended  to user")
+	code = http.StatusCreated
+	return
 }
 
 func GetGroupPost(groupId int, offste int) ([]models.PostsResponse, error) {
 	return repo.GetGroupPost(groupId, offste)
+}
+
+func ListGroups(userId, offset int) ([]models.Groups, error) {
+	return repo.ListGroups(userId, offset)
 }
