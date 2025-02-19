@@ -110,7 +110,6 @@ func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	`
 	rows, err := db.DB.Query(query, groupId, offste)
 	if err != nil {
-		
 		return nil, err
 	}
 	for rows.Next() {
@@ -144,6 +143,30 @@ func ListGroups(userid, offset int) ([]models.Groups, error) {
 	for rows.Next() {
 		group := models.Groups{}
 		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status)
+		groups = append(groups, group)
+	}
+	return groups, nil
+}
+
+func ListGroupsJoined(userid, offset int) ([]models.Groups, error) {
+	query := `
+    SELECT g.id, g.title, g.description ,
+    FROM groups g
+    WHERE EXISTS (
+        SELECT 1 FROM group_members gm 
+        WHERE gm.group_id = g.id 
+        AND gm.user_id = ?
+    )
+    LIMIT 10 OFFSET ?;`
+
+	rows, err := db.DB.Query(query, userid, offset)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description)
 		groups = append(groups, group)
 	}
 	return groups, nil

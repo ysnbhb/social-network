@@ -123,3 +123,15 @@ func ListGroups(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, groups, http.StatusOK)
 }
+
+
+func ListGroupsJoined(w http.ResponseWriter, r *http.Request) {
+	offste, _ := strconv.Atoi(r.FormValue("offste"))
+	userId := r.Context().Value("userId").(int)
+	groups, err := services.ListGroups(userId, offste)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get groups", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, groups, http.StatusOK)
+}

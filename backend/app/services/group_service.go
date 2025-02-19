@@ -128,3 +128,7 @@ func GetGroupPost(groupId int, offste int) ([]models.PostsResponse, error) {
 func ListGroups(userId, offset int) ([]models.Groups, error) {
 	return repo.ListGroups(userId, offset)
 }
+
+func ListGroupsJoined(userId, offset int) ([]models.Groups, error) {
+	return repo.ListGroupsJoined(userId, offset)
+}
