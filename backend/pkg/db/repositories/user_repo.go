@@ -70,13 +70,13 @@ func CheckNickName(nickname string) error {
 
 func GetPassword(login *models.Login) {
 	query := `SELECT u.password_hash FROM users u WHERE email = ?`
-	var hachedPassword string
+	var hashedPassword string
 
-	db.DB.QueryRow(query, login.Email).Scan(&hachedPassword)
-	login.HachedPassword = hachedPassword
+	db.DB.QueryRow(query, login.Email).Scan(&hashedPassword)
+	login.HashedPassword = hashedPassword
 }
 
-func DeletteSessionUser(userId int) error {
+func DeleteSessionUser(userId int) error {
 	query := `DELETE FROM sessions WHERE user_id = ?`
 
 	_, err := db.DB.Exec(query, userId)

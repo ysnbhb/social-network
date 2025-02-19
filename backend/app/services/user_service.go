@@ -36,7 +36,7 @@ func LoginUser(user *models.Login) error {
 	}
 	repo.GetUserId(user)
 	repo.GetPassword(user)
-	err = utils.ComparePasword(user)
+	err = utils.ComparePassword(user)
 	if err != nil {
 		return errors.New("sorry, your password was incorrect")
 	}
@@ -44,6 +44,6 @@ func LoginUser(user *models.Login) error {
 }
 
 func LogoutUser(userId int) error {
-	err := repo.DeletteSessionUser(userId)
+	err := repo.DeleteSessionUser(userId)
 	return err
 }
