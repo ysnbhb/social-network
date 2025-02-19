@@ -67,3 +67,28 @@ func CheckUserInGroup(groupId, userId int) bool {
 	db.DB.QueryRow(query, groupId, userId).Scan(&exists)
 	return exists
 }
+
+func GeTIdofAdminOfGroup(groupId int) int {
+	var id int
+	query := `SELECT creator_id FROM groups WHERE id =?`
+	db.DB.QueryRow(query, groupId).Scan(id)
+	return id
+}
+
+func HasInvi(groupId, userId int) (string, error) {
+	exists := ""
+	query := `SELECT status FROM group_invitations WHERE group_id = ? AND user_id = ? `
+	err := db.DB.QueryRow(query, groupId, userId).Scan(&exists)
+	return exists, err
+}
+
+func InsertIntoGroup_Invi(groupId, userId int, status string) error {
+	query := `INSERT INTO group_invitations(group_id , user_id , status) VALUES(? ,? , ?)`
+	_, err := db.DB.Exec(query, groupId, userId, status)
+	return err
+}
+
+func Delete_group_Invi(groupId, userid int) {
+	query := `DELETE FROM group_invitations WHERE group_id = ? AND user_id = ?`
+	db.DB.Exec(query, groupId, userid)
+}

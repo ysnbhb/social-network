@@ -6,3 +6,8 @@ type Groups struct {
 	Owner       int    `json:"owner"`
 	Create_date string `json:"createDate"`
 }
+
+type Group_Invi struct {
+	GroupId int `json:"groupId"`
+	UserId  int `json:"userId"`
+}
