@@ -45,6 +45,17 @@ func GetUserId(login *models.Login) {
 	login.Id = userId
 }
 
+func CheckExtsUser(userId int) bool {
+	query := "SELECT EXISTS (select id from users where id=?)"
+	var exists bool
+	err := db.DB.QueryRow(query, userId).Scan(&exists)
+	if err != nil {
+		log.Println(errors.New("Error In Database"))
+		return false
+	}
+	return exists
+}
+
 func CheckNickName(nickname string) error {
 	query := `SELECT u.nickname FROM users u WHERE nickname = ?`
 	var existingNickname string
