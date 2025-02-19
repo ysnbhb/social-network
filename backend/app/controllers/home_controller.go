@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	repo "social-network/pkg/db/repositories"
+
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -17,7 +18,7 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var postsResponse []models.PostsResponse
-	err := repo.GetHomePosts(&postsResponse)
+	err := services.GetHomePosts(&postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, "Error getting posts", http.StatusInternalServerError)
 		log.Println(err)
@@ -29,5 +30,4 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 		log.Println("error encoding json reactionResponse:", err)
 		return
 	}
-
 }

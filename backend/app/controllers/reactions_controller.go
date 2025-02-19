@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	repo "social-network/pkg/db/repositories"
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -33,8 +33,9 @@ func HandleReaction(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// reactionRequest.UserId = r.Context().Value("userId").(int)
-	err = repo.AddReaction(&reactionRequest)
+	user := r.Context().Value("userId").(int)
+	reactionRequest.UserId = user
+	err = services.AddReaction(&reactionRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("adding reaction to db:", err)
@@ -42,7 +43,7 @@ func HandleReaction(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var reactionResponse models.ReactionResponse
-	reactionResponse.LikesCount, reactionResponse.DislikesCount = repo.GetReactionCounts(reactionRequest.CardId)
+	reactionResponse.LikesCount, reactionResponse.DislikesCount = services.GetReactionCounts(&reactionRequest)
 	reactionResponse.UserReaction = reactionRequest.ReactionType
 
 	err = json.NewEncoder(w).Encode(reactionResponse)

@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	repo "social-network/pkg/db/repositories"
+	"social-network/app/services"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -25,18 +25,12 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = utils.ValidatePost(&postRequest)
+	user := r.Context().Value("userId").(int)
+	postRequest.UserId = user
+	err = services.CreatPost(&postRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("validating post:", err)
-		return
-	}
-
-	// postRequest.UserId = r.Context().Value("userId").(int)
-	err = repo.CreatPost(&postRequest)
-	if err != nil {
-		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("creating post in db:", err)
+		log.Println(err)
 		return
 	}
 
