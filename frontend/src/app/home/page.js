@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react';
 import styles from "./page.module.css"
 import notification from "../../component/notification.svg"
 import image from "../../component/user.jpg"
@@ -8,10 +9,15 @@ import Image from 'next/image';
 const dislike = "M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
 const like = "M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
 const comment = "M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
-
-
+const userIcon = "M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
 
 export default function Home() {
+    const [showUsersSidebar, setShowUsersSidebar] = useState(false);
+    
+    const toggleUsersSidebar = () => {
+        setShowUsersSidebar(!showUsersSidebar);
+    };
+    
     const users = [
         { name: "user1", status: "Online" },
         { name: "user2", status: "Offline" },
@@ -38,12 +44,16 @@ export default function Home() {
         { name: "user9", title: "Title9", time: "18:50", content: "Paragraph 9" },
     ]
     return (
-
         <div className={styles.container}>
             <div className={styles.contentWrapper}>
                 <header className={styles.headerContainer}>
                     <input className={styles.inputsearch} placeholder="Search...." />
                     <div className={styles.headerActions}>
+                        <button className={styles.usersToggleBtn} onClick={toggleUsersSidebar}>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+                                <path d={userIcon} />
+                            </svg>
+                        </button>
                         <div className={styles.notificationIcon}>
                             <Image src={notification} alt="Notification" width="30" />
                         </div>
@@ -91,12 +101,12 @@ export default function Home() {
                             </article>
                         ))}
                     </div>
-                    <div className={styles.userssidebar}>
+                    <div className={`${styles.userssidebar} ${showUsersSidebar ? styles.active : ''}`}>
                         <div className={styles.sidebarheader}>
                             all users
                         </div>
                         {users.map((user, index) => {
-                            const statusClass = user.status === "Online" ? styles.Online : styles.Offline; // Set the correct class dynamically
+                            const statusClass = user.status === "Online" ? styles.Online : styles.Offline;
                             return (
                                 <ul key={index} className={styles.userslist}>
                                     <li className={styles.useritem}>
@@ -111,15 +121,7 @@ export default function Home() {
                         })}
                     </div>
                 </main>
-
             </div>
         </div>
     )
 }
-
-
-
-
-
-
-
