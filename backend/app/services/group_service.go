@@ -71,6 +71,10 @@ func JoinToGroup(w http.ResponseWriter, groupId, userId int) {
 }
 
 func SendInvi(w http.ResponseWriter, gpInvi models.Group_Invi, userId int) {
+	if !(repo.IsFollowing(userId, gpInvi.UserId)) {
+		utils.JsonResponse(w, "group you want join into dons't exist", http.StatusNotFound)
+		return
+	}
 	exist := repo.CheckGroup(gpInvi.GroupId)
 	if !exist {
 		utils.JsonResponse(w, "group you want join into dons't exist", http.StatusNotFound)

@@ -2,13 +2,14 @@ package repo
 
 import (
 	"log"
+
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
 
 func AddFollow(followRequest *models.FollowRequest) error {
 	existing := getExistingFollow(followRequest.FollowerId, followRequest.FollowingId)
-	
+
 	if existing {
 		err := deleteFollow(followRequest.FollowerId, followRequest.FollowingId)
 		if err != nil {
@@ -42,6 +43,16 @@ func getExistingFollow(FollowerId, FollowingId int) bool {
 		log.Println("error checking existing follow:", err)
 		return false
 	}
+	return exists
+}
 
+func IsFollowing(FollowerId, FollowingId int) bool {
+	var exists bool
+	query := `SELECT EXISTS(SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? ADN status = ?)`
+	err := db.DB.QueryRow(query, FollowerId, FollowingId, "accepted").Scan(&exists)
+	if err != nil {
+		log.Println("error checking existing follow:", err)
+		return false
+	}
 	return exists
 }
