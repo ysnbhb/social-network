@@ -66,3 +66,17 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("userId").(int)
 	services.JoinToGroup(w, group, userId)
 }
+
+func SendInvi(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_invi := models.Group_Invi{}
+	err := json.NewDecoder(r.Body).Decode(&gp_invi)
+	if err != nil {
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	
+}
