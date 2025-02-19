@@ -96,10 +96,14 @@ func Delete_group_Invi(groupId, userid int) {
 func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	posts := []models.PostsResponse{}
 	query := `
-	SELECT u.nickname , u.avatar_url , u.first_name , u.last_name , c.id , c.content , c.image_url , c.created_at FROM users u
+	SELECT u.nickname , u.avatar_url , u.first_name , u.last_name , c.id , c.content , c.image_url , c.created_at ,
+	COUNT(DISTINCT cm.id) AS total_comments,
+    COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
+    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+	FROM users u
 	INNER JOIN card c ON u.id = c.user_id
-	INNER JOIN posts p 
-	ON p.card_id = c.id
+	INNER JOIN posts p ON p.card_id = c.id
+	LEFT JOIN likes l ON c.id = l.card_id
 	WHERE c.group_id = ?
 	ORDER BY c.created_at DESC
 	LIMIT "10" OFFSET ?
@@ -110,7 +114,7 @@ func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
 	}
 	for rows.Next() {
 		post := models.PostsResponse{}
-		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.CardId, &post.Content, &post.ImageUrl, &post.CreatedAt)
+		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.Id, &post.Content, &post.ImageUrl, &post.CreatedAt, &post.TotalComments, &post.TotalLikes, &post.TotalDislikes)
 		if err != nil {
 			continue
 		}
