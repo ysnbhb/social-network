@@ -92,3 +92,29 @@ func Delete_group_Invi(groupId, userid int) {
 	query := `DELETE FROM group_invitations WHERE group_id = ? AND user_id = ?`
 	db.DB.Exec(query, groupId, userid)
 }
+
+func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
+	posts := []models.PostsResponse{}
+	query := `
+	SELECT u.nickname , u.avatar_url , u.fistname , u.lastname , c.id , c.content , c.image_url , c.created_at FROM users u
+	INNER JOIN card c ON u.id = c.user_id
+	INNER JOIN posts p 
+	ON p.card_id = c.id
+	WHERE c.group_id = ?
+	ORDER BY c.created_at DESC
+	LIMIT "10" OFFSET ?
+	`
+	rows, err := db.DB.Query(query, groupId, offste)
+	if err != nil {
+		return nil, err
+	}
+	for rows.Next() {
+		post := models.PostsResponse{}
+		err = rows.Scan(post.NickName, post.AvatarUrl, post.FirstName, post.LastName, post.CardId, post.Content, post.ImageUrl, post.CreatedAt)
+		if err != nil {
+			continue
+		}
+		posts = append(posts, post)
+	}
+	return posts, nil
+}

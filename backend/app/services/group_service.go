@@ -76,6 +76,11 @@ func SendInvi(w http.ResponseWriter, gpInvi models.Group_Invi, userId int) {
 		utils.JsonResponse(w, "group you want join into dons't exist", http.StatusNotFound)
 		return
 	}
+	exist = repo.CheckUserExist(gpInvi.UserId)
+	if !exist {
+		utils.JsonResponse(w, "user you want send to dons't exist", http.StatusUnauthorized)
+		return
+	}
 	exist = repo.CheckUserInGroup(gpInvi.GroupId, userId)
 	if !exist {
 		utils.JsonResponse(w, "you don't have right to send invitation", http.StatusUnauthorized)
@@ -91,4 +96,8 @@ func SendInvi(w http.ResponseWriter, gpInvi models.Group_Invi, userId int) {
 		utils.JsonResponse(w, "field to join to group", http.StatusInternalServerError)
 	}
 	utils.JsonResponse(w, "invitation sended  to user", http.StatusCreated)
+}
+
+func GetGroupPost(groupId int, offste int) ([]models.PostsResponse, error) {
+	return repo.GetGroupPost(groupId, offste)
 }

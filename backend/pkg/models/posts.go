@@ -15,11 +15,12 @@ type PostsResponse struct {
 	Id            int    `json:"id"`
 	UserId        int    `json:"userId"`
 	CardId        int    `json:"cardId"`
-	FirstName   string    `json:"firstName"`
-	LastName    string    `json:"lastName"`
-	NickName    string    `json:"nickName"`
+	FirstName     string `json:"firstName"`
+	LastName      string `json:"lastName"`
+	NickName      string `json:"nickName"`
 	Content       string `json:"content"`
 	ImageUrl      string `json:"imageUrl"`
+	AvatarUrl     string `json:"avatarUrl"`
 	CreatedAt     string `json:"createdAt"`
 	TotalLikes    int    `json:"totalLikes"`
 	TotalDislikes int    `json:"totalDislikes"`

@@ -78,5 +78,25 @@ func SendInvi(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
 		return
 	}
-	
+	userId := r.Context().Value("userId").(int)
+	services.SendInvi(w, gp_invi, userId)
+}
+
+func GetGroupPost(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	groupId := r.FormValue("groupId")
+	if groupId == "" {
+		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
+		return
+	}
+	offste, _ := strconv.Atoi(r.FormValue("offste"))
+	group, err := strconv.Atoi(groupId)
+	if err != nil {
+		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		return
+	}
+	services.GetGroupPost(group, offste)
 }
