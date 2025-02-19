@@ -89,6 +89,7 @@ export default  function Login() {
               <input type="text" placeholder="First Name" name="firstName" required/>
               <input type="text" placeholder="Last Name" name="lastName" required/>
               <input type="text" placeholder="Nickname" name="nickname" required/>
+              <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required/>
               <input type="email" placeholder="Email" name="email" required/>
               <input type="password" placeholder="Password" name="password" required/>
               <button>Sign Up</button>
