@@ -1,246 +1,257 @@
 /* Default styles remain the same for desktop */
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 220px;
-    background-color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.05);
-    z-index: 100;
-    justify-content: space-between;
-    transition: all 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  /* justify-content: space-between; */
+  transition: all 0.3s ease;
 }
 
 .request-btn {
-    background: #4169E1;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 30px;
-    cursor: pointer;
-    font-weight: 500;
+  background: #4169e1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .navlist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 58px 0 0 0px;
+  width: 100%;
 }
 
 .navitem {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    margin: 5px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #666;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 7px 3px;
+  margin: 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
 }
 
 .navitem:hover {
-    background: #f5f5f5;
-    color: #4169E1;
+  background: #f5f5f5;
+  color: #4169e1;
 }
 
 .navitem.active {
-    background: #EEF2FF;
-    color: #4169E1;
+  background: #eef2ff;
+  color: #4169e1;
 }
 
 .logout {
-    margin-left: calc(50% - 50px);
-    width: 70px;
-    height: auto;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
+  margin-left: calc(50% - 50px);
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
 }
 
 .logout:hover {
-    scale: 1.3;
+  scale: 1.3;
 }
 
 .logo {
-    margin-left: calc(50% - 60px);
-    align-items: center;
-    width: 60%;
-    height: auto;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
+  /* margin-left: calc(50% - 60px);
+    align-items: center; */
+  width: 32%;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
 }
 
-
-
+.btn_logout {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 46px;
+}
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-    .sidebar {
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 65px;
-        padding: 10px 20px;
-        flex-direction: row;
-        align-items: center;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 65px;
+    padding: 10px 20px;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    order: 1;
+  }
+
+  .navlist {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    order: 2;
+  }
+
+  .navlist::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+  }
+
+  .navitem {
+    padding: 8px 12px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .navitem:hover {
+    background: transparent;
+    color: #4169e1;
+    transform: translateY(-2px);
+  }
+
+  .navitem.active {
+    background: transparent;
+    color: #4169e1;
+    position: relative;
+  }
+
+  .navitem.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: #4169e1;
+    border-radius: 50%;
+  }
+
+  .logout {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    order: 3;
+  }
+
+  .logout:hover {
+    scale: 1.1;
+  }
+
+  /* Add animation for menu items */
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
     }
 
-    .logo {
-        width: 40px;
-        height: 40px;
-        margin: 0;
-        order: 1;
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
+  }
 
-    .navlist {
-        display: flex;
-        flex: 1;
-        justify-content: center;
-        gap: 5px;
-        margin: 0 15px;
-        overflow-x: auto;
-        scrollbar-width: none;
-        /* Firefox */
-        order: 2;
-    }
+  .navitem {
+    animation: slideUp 0.3s ease forwards;
+  }
 
-    .navlist::-webkit-scrollbar {
-        display: none;
-        /* Chrome, Safari */
-    }
+  /* Stagger animation for each nav item */
+  .navitem:nth-child(1) {
+    animation-delay: 0.1s;
+  }
 
-    .navitem {
-        padding: 8px 12px;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        margin: 0;
-    }
+  .navitem:nth-child(2) {
+    animation-delay: 0.15s;
+  }
 
-    .navitem:hover {
-        background: transparent;
-        color: #4169E1;
-        transform: translateY(-2px);
-    }
+  .navitem:nth-child(3) {
+    animation-delay: 0.2s;
+  }
 
-    .navitem.active {
-        background: transparent;
-        color: #4169E1;
-        position: relative;
-    }
+  .navitem:nth-child(4) {
+    animation-delay: 0.25s;
+  }
 
-    .navitem.active::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 5px;
-        height: 5px;
-        background: #4169E1;
-        border-radius: 50%;
-    }
+  .navitem:nth-child(5) {
+    animation-delay: 0.3s;
+  }
 
-    .logout {
-        width: 35px;
-        height: 35px;
-        margin: 0;
-        order: 3;
-    }
+  .navitem:nth-child(6) {
+    animation-delay: 0.35s;
+  }
 
-    .logout:hover {
-        scale: 1.1;
-    }
-
-    /* Add animation for menu items */
-    @keyframes slideUp {
-        from {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .navitem {
-        animation: slideUp 0.3s ease forwards;
-    }
-
-    /* Stagger animation for each nav item */
-    .navitem:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .navitem:nth-child(2) {
-        animation-delay: 0.15s;
-    }
-
-    .navitem:nth-child(3) {
-        animation-delay: 0.2s;
-    }
-
-    .navitem:nth-child(4) {
-        animation-delay: 0.25s;
-    }
-
-    .navitem:nth-child(5) {
-        animation-delay: 0.3s;
-    }
-
-    .navitem:nth-child(6) {
-        animation-delay: 0.35s;
-    }
-
-    .navitem:nth-child(7) {
-        animation-delay: 0.4s;
-    }
+  .navitem:nth-child(7) {
+    animation-delay: 0.4s;
+  }
 }
 
 /* Tablet breakpoint for intermediate layout */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .sidebar {
-        width: 180px;
-        padding: 15px;
-    }
+  .sidebar {
+    width: 180px;
+    padding: 15px;
+  }
 
-    .logo {
-        width: 50px;
-        height: 50px;
-        margin-left: calc(50% - 25px);
-    }
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-left: calc(50% - 25px);
+  }
 
-    .navitem {
-        padding: 10px;
-        font-size: 0.95rem;
-    }
+  .navitem {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
 }
 
 /* Additional styles for landscape mobile */
 @media screen and (max-width: 768px) and (orientation: landscape) {
-    .sidebar {
-        height: 55px;
-        padding: 8px 15px;
-    }
+  .sidebar {
+    height: 55px;
+    padding: 8px 15px;
+  }
 
-    .logo {
-        width: 35px;
-        height: 35px;
-    }
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
 
-    .navitem {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
+  .navitem {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
 }
