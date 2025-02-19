@@ -24,6 +24,8 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		log.Println("error decoding json commentRequest:", err)
 		return
 	}
+	user := r.Context().Value("userId").(int)
+	commentRequest.UserId = user
 	err = services.AddComments(&commentRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
