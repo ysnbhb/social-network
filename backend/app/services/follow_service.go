@@ -9,7 +9,7 @@ import (
 )
 
 func AddFollow(followRequest *models.FollowRequest) error {
-	FollowingId := repo.CheckExtsUser(followRequest.FollowingId)
+	FollowingId := repo.CheckUserExist(followRequest.FollowingId)//CheckExtsUser(followRequest.FollowingId)
 	if !FollowingId {
 		return errors.New("This User Is Not Exist")
 	}
