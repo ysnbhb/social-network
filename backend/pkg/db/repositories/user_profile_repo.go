@@ -87,3 +87,10 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 
 	return nil
 }
+
+func GetStatusUesr(userId int) string {
+	query := `SELECT profile_type FROM user WHERE id = ?`
+	profile_type := "Not Found"
+	db.DB.QueryRow(query).Scan(&profile_type)
+	return profile_type
+}

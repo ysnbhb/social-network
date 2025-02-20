@@ -16,9 +16,9 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-
+	userId := r.Context().Value("userId").(int)
 	var postsResponse []models.PostsResponse
-	err := services.GetHomePosts(&postsResponse)
+	err := services.GetHomePosts(&postsResponse, userId)
 	if err != nil {
 		utils.JsonResponse(w, "Error getting posts", http.StatusInternalServerError)
 		log.Println(err)

@@ -2,18 +2,20 @@ package services
 
 import (
 	"errors"
-	"html"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
 )
 
 func AddFollow(followRequest *models.FollowRequest) error {
-	FollowingId := repo.CheckExtsUser(followRequest.FollowingId)
-	if !FollowingId {
-		return errors.New("This User Is Not Exist")
+	profile_type := repo.GetStatusUesr(followRequest.FollowingId)
+	if (profile_type == "Not Found") {
+		return errors.New("user not found")
+	}else if profile_type == "private" {
+		followRequest.Status = "pending"
+	}else {
+		followRequest.Status = "accept"
 	}
-	followRequest.Status = html.EscapeString(followRequest.Status)
 	err := repo.AddFollow(followRequest)
 	if err != nil {
 		return errors.New("Follow User in db: " + err.Error())

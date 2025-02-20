@@ -16,7 +16,6 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-
 	var followRequest models.FollowRequest
 	err := json.NewDecoder(r.Body).Decode(&followRequest)
 	if err != nil {
@@ -32,4 +31,5 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 		log.Println("Follow User in db:", err)
 		return
 	}
+	utils.JsonResponse(w, followRequest, http.StatusOK)
 }
