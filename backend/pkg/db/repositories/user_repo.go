@@ -85,3 +85,12 @@ func DeleteSessionUser(userId int) error {
 	}
 	return nil
 }
+
+func CheckUserExist(userId int) bool {
+	exist := false
+	query := `SELECT EXISTS (
+		SELECT 1 FROM users WHERE id = ?
+	)`
+	db.DB.QueryRow(query, userId).Scan(&exist)
+	return exist
+}

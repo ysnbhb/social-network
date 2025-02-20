@@ -35,7 +35,7 @@ func MemberGroup(groupId int) ([]models.User, error) {
 	users := []models.User{}
 	for row.Next() {
 		user := models.User{}
-		err = row.Scan(user.NickName, user.AvatarUrl)
+		err = row.Scan(&user.NickName, &user.AvatarUrl)
 		if err != nil {
 			continue
 		}
@@ -71,7 +71,7 @@ func CheckUserInGroup(groupId, userId int) bool {
 func GeTIdofAdminOfGroup(groupId int) int {
 	var id int
 	query := `SELECT creator_id FROM groups WHERE id =?`
-	db.DB.QueryRow(query, groupId).Scan(id)
+	db.DB.QueryRow(query, groupId).Scan(&id)
 	return id
 }
 
@@ -91,4 +91,60 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 func Delete_group_Invi(groupId, userid int) {
 	query := `DELETE FROM group_invitations WHERE group_id = ? AND user_id = ?`
 	db.DB.Exec(query, groupId, userid)
+}
+
+func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
+	posts := []models.PostsResponse{}
+	query := `
+	SELECT u.nickname , u.avatar_url , u.first_name , u.last_name , c.id , c.content , c.image_url , c.created_at ,
+	COUNT(DISTINCT cm.id) AS total_comments,
+    COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
+    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+	FROM users u
+	INNER JOIN card c ON u.id = c.user_id
+	INNER JOIN posts p ON p.card_id = c.id
+	LEFT JOIN likes l ON c.id = l.card_id
+	WHERE c.group_id = ?
+	ORDER BY c.created_at DESC
+	LIMIT "10" OFFSET ?
+	`
+	rows, err := db.DB.Query(query, groupId, offste)
+	if err != nil {
+		
+		return nil, err
+	}
+	for rows.Next() {
+		post := models.PostsResponse{}
+		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.Id, &post.Content, &post.ImageUrl, &post.CreatedAt, &post.TotalComments, &post.TotalLikes, &post.TotalDislikes)
+		if err != nil {
+			continue
+		}
+		posts = append(posts, post)
+	}
+	return posts, nil
+}
+
+func ListGroups(userid, offset int) ([]models.Groups, error) {
+	query := `
+    SELECT g.id, g.title, g.description ,
+	(SELECT COALESCE(status, '') FROM group_invitations WHERE group_id = g.id)
+    FROM groups g
+    WHERE NOT EXISTS (
+        SELECT 1 FROM group_members gm 
+        WHERE gm.group_id = g.id 
+        AND gm.user_id = ?
+    )
+    LIMIT 10 OFFSET ?;`
+
+	rows, err := db.DB.Query(query, userid, offset)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status)
+		groups = append(groups, group)
+	}
+	return groups, nil
 }
