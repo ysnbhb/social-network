@@ -2,7 +2,6 @@ package services
 
 import (
 	"errors"
-	"html"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
@@ -14,7 +13,9 @@ func CreatPost(postRequest *models.PostRequest) error {
 	if err != nil {
 		return errors.New("validating post: " + err.Error())
 	}
-	postRequest.Content = html.EscapeString(postRequest.Content)
+	if postRequest.GroupId != 0 && !repo.CheckUserInGroup(postRequest.GroupId, postRequest.UserId) {
+		return errors.New("you can't post in this group")
+	}
 	err = repo.CreatPost(postRequest)
 	if err != nil {
 		return errors.New("creating post in db:" + err.Error())

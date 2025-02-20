@@ -3,8 +3,9 @@ package utils
 import (
 	"errors"
 	"net/url"
-	"social-network/pkg/models"
 	"strings"
+
+	"social-network/pkg/models"
 )
 
 func ValidatePost(postRequest *models.PostRequest) error {
@@ -18,6 +19,10 @@ func ValidatePost(postRequest *models.PostRequest) error {
 
 	if postRequest.Privacy != "public" && postRequest.Privacy != "private" && postRequest.Privacy != "almostPrivate" {
 		return errors.New("privacy must be 'public', 'private', or 'almostPrivate'")
+	}
+
+	if postRequest.GroupId != 0 && postRequest.Privacy == "private" || postRequest.Privacy == "almostPrivate" {
+		return errors.New("privacy must be 'public' in gourp")
 	}
 
 	if _, err := url.ParseRequestURI(postRequest.ImageUrl); err != nil && postRequest.ImageUrl != "" {
