@@ -27,13 +27,20 @@ func CreateGroup(gp models.Groups) (statusCode int, err error) {
 	return
 }
 
-func MemberGroup(groupId int) ([]models.User, error) {
+func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
 	exist := repo.CheckGroup(groupId)
 	if !exist {
-		return nil, nil
+		return nil, errors.New("group not found"), http.StatusNotFound
+	}
+	exist = repo.CheckUserInGroup(groupId, userId)
+	if !exist {
+		return nil, errors.New("you are not member in this group"), http.StatusUnauthorized
 	}
 	users, err := repo.MemberGroup(groupId)
-	return users, err
+	if err != nil {
+		return nil, errors.New("filed to get membre of groups"), http.StatusUnauthorized
+	}
+	return users, err, http.StatusOK
 }
 
 func JoinToGroup(groupId, userId int) (statusCode int, err error) {

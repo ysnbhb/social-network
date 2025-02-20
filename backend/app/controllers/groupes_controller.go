@@ -45,9 +45,10 @@ func ShowGroupMember(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
 		return
 	}
-	users, err := services.MemberGroup(group)
+	userId := r.Context().Value("userId").(int)
+	users, err, code := services.MemberGroup(group, userId)
 	if err != nil {
-		utils.JsonResponse(w, "field to fetch user", http.StatusInternalServerError)
+		utils.JsonResponse(w, err.Error(), code)
 		return
 	}
 	utils.JsonResponse(w, users, http.StatusOK)
@@ -123,7 +124,6 @@ func ListGroups(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, groups, http.StatusOK)
 }
-
 
 func ListGroupsJoined(w http.ResponseWriter, r *http.Request) {
 	offste, _ := strconv.Atoi(r.FormValue("offste"))
