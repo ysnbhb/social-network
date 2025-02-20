@@ -94,3 +94,11 @@ func CheckUserExist(userId int) bool {
 	db.DB.QueryRow(query, userId).Scan(&exist)
 	return exist
 }
+
+
+func GetNickName(userId int) string {
+	query := `SELECT u.nickname FROM users u WHERE id = ?`
+	var nickname string
+	db.DB.QueryRow(query, userId).Scan(&nickname)
+	return nickname
+}

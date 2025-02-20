@@ -23,5 +23,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/profile", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetInfoUserProfile)))
 
 	mux.HandleFunc("/api/home/posts", controllers.GetHomePosts)
+
+	mux.Handle("/ws", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleWebsocket)))
 	return mux
 }
