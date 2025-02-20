@@ -1,0 +1,298 @@
+.container {
+    width: 99%;
+    height: 100vh;
+    /* Set a fixed height for the container */
+    background: #EFF3F6;
+    display: flex;
+    align-items: flex-start;
+    /* Changed from center to allow proper scrolling */
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+
+/* card right  */
+.card-posts {
+    width: 98%;
+    height: auto;
+    /* Changed to auto to accommodate content */
+    min-height: 200px;
+    /* Added minimum height */
+    background-color: #ffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    /* margin-bottom: 20px; */
+    /* Added spacing between posts */
+}
+
+.card-users {
+    margin-top: 43px;
+    width: 22%;
+    height: calc(100vh - 63px);
+    /* Adjusted height to match container */
+    position: sticky;
+    top: 43px;
+    /* Keeps the card in place while scrolling */
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+}
+
+.name {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+}
+
+.role {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+}
+
+.addButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+
+.addButton:hover {
+    background: #f0f0f0;
+    border-color: #aaa;
+}
+
+.showMore {
+    display: block;
+    text-align: center;
+    color: #0073b1;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.showMore:hover {
+    text-decoration: underline;
+}
+
+/* end */
+/* posts user */
+.card-profile {
+    margin-top: 43px;
+    margin-left: 18px;
+    width: 100%;
+    height: calc(100vh - 63px);
+    /* Adjusted height to match container */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Changed to auto for better scroll behavior */
+    gap: 20px;
+    height: 95%;
+    padding: 20px;
+    /* Added spacing between elements */
+}
+
+.card-profile::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and newer Edge */
+}
+
+.card-profile-posts {
+    width: 98%;
+    min-height: 300px;
+    /* Set minimum height */
+    background-color: #ffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    flex-shrink: 0;
+    /* Prevents the card from shrinking */
+}
+
+.card-profile::-webkit-scrollbar {
+    width: 8px;
+    display: block; /* Show scrollbar */
+}
+
+.card-profile::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card-profile::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card-profile::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Firefox */
+.card-profile {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+/* end */
+
+/* posts */
+.card-posts {
+    width: 98%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.more-options {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.more-options:hover {
+    background-color: #f0f0f0;
+}
+
+.post-content {
+    margin-bottom: 16px;
+}
+
+.post-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 12px;
+}
+
+.action-button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.action-button:hover {
+    background-color: #f0f0f0;
+}
+
+.post-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #666;
+}
+/* end */
