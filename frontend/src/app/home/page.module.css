@@ -1,8 +1,15 @@
+/* .mainpage {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .page {
-    margin-left: 220px; /* Same as usersection width */
+    margin-left: 220px;
     background: #f6f5f7;
     font-family: 'Montserrat', sans-serif;
-    width: calc(100% - 220px); /* Adjust width to account for sidebar */
+    width: calc(100% - 220px);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -43,6 +50,7 @@
     justify-content: space-between;
     gap: 20px;
 }
+
 .posts {
     width: 60%;
     height: 100%;
@@ -51,18 +59,6 @@
     flex-direction: column;
     align-items: center;
     margin-left: 10%;
-    color: black;
-}
-
-.allusers {
-    width: 20%;
-    padding-top: 20px;
-    gap: 10px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
     color: black;
 }
 
@@ -118,8 +114,6 @@
     color: black;
     padding: 10px 0;
     border-bottom: 1px solid #f0f0f0;
-    /* Added subtle separator */
-
 }
 
 .postIcons {
@@ -143,57 +137,464 @@
     background-color: aliceblue;
     border-radius: 12px;
     word-wrap: break-word;
+} */
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
 }
 
-.user {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    width: 60%;
-    padding: 10px;
+.contentWrapper {
+  width: 100%;
+  margin-left: 220px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.headerContainer {
+  background: white;
+  color: #1e293b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+.usersToggleBtn {
+  display: none; /* Hidden by default on desktop */
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.usersToggleBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.inputsearch {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notificationIcon {
+  position: relative;
+  cursor: pointer;
+}
+
+.createPostButton {
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.createPostButton:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Content Area */
+.mainContent {
+  padding-top: 10px;
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Posts Feed */
+
+/* design add post */
+.add-posts {
+    width: 100%;
+    max-width: 700px;
+
+    background: white;
+    padding: 15px;
     border-radius: 10px;
-    background-color: #8a8a8a;
-    word-wrap: break-word;
-}
-
-.user:hover {
-    cursor: pointer;
-    scale: 1.03;
-    transition: 0.2s;
-}
-
-.imgUser {
-    position: relative;
-    display: inline-block;
-}
-
-.imgUser img {
-    height: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .profile-pic {
     width: 40px;
+    height: 40px;
     border-radius: 50%;
+  }
+  
+  .post-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  .emoji {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .post-actions button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .post-actions button img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .privacy {
+    font-weight: bold;
+  }
+  
+/* end */
+/* .add_Posts{
+    width: 80%;
+    height: 20vh;
+    background:#2563eb;
+    background: #ffff;
+    box-shadow: 0 0 43px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    margin-bottom: 73px;
+
+} */
+.contents {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.feedContainer {
+    width: 100%;
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.imgUser span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 5px;
+.postCard {
+    margin-bottom: 22px;
+    width: 100%;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.authorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.authorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.postTimestamp {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.postTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.postContent {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.postActions {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: #f1f5f9;
+  color: #3b82f6;
+}
+
+.actionButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+/***************** users chat*/
+.userssidebar {
+  width: 200px;
+  background: white;
+  padding: 20px;
+  height: 100%;
+  box-shadow: 1px 8px 10px rgba(0, 0, 0, 0.05);
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+  position: sticky;
+}
+
+.sidebarheader {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.userslist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.useritem {
+  display: flex;
+  align-items: center;
+  background: #808080;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.useritem:hover {
+  background: #757575;
+  transform: translateX(-3px);
+}
+
+.useravatar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.useravatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Status indicator base styles */
+.useravatar span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
 
 .Online {
-    background-color: green;
+  background-color: green;
 }
 
 .Offline {
-    background-color: red;
+  background-color: red;
 }
 
-.mainpage {
+.username {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Custom scrollbar for the sidebar */
+.userssidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.userssidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.userssidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.userssidebar::-webkit-scrollbar-thumb:hover {
+  background: #757575;
+}
+
+/**************************************/
+
+@media screen and (max-width: 768px) {
+  .contentWrapper {
+    margin-left: 0;
+    padding-bottom: 65px; /* Space for mobile nav */
+  }
+
+  .mainContent {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .userssidebar {
+    position: fixed;
+    top: 70px; /* Below header */
+    right: -200px; /* Hide off-screen */
+    height: calc(100vh - 70px - 65px); /* Full height minus header and navbar */
+    z-index: 20;
+    overflow-y: auto;
+    transform: translateX(0);
+    transition: right 0.3s ease;
+  }
+
+  .userssidebar.active {
+    right: 0;
+  }
+
+  .usersToggleBtn {
     display: flex;
+    align-items: center;
+  }
+
+  .feedContainer {
     width: 100%;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+  }
+}
+/* Tablet breakpoint adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .contentWrapper {
+    margin-left: 180px; /* Match the navbar width in tablet view */
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contentWrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .headerContainer {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .inputsearch {
+    width: 50%;
+  }
+
+  .feedContainer {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .postCard {
+    padding: 1rem;
+    width: 100%;
+  }
 }
