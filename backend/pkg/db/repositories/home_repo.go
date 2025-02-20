@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetHomePosts(postsResponse *[]models.PostsResponse) error {
+func GetHomePosts(postsResponse *[]models.PostsResponse, userId int) error {
 	query := `
 	SELECT 
     c.id,
@@ -17,7 +17,8 @@ func GetHomePosts(postsResponse *[]models.PostsResponse) error {
 	u.nickname,
     COUNT(DISTINCT cm.id) AS total_comments,
     COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes,
+	(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = ?)) AS isliked
 	FROM card c
 	JOIN posts p ON c.id = p.card_id
 	JOIN users u ON c.user_id = u.id
@@ -34,7 +35,7 @@ func GetHomePosts(postsResponse *[]models.PostsResponse) error {
 	u.nickname
 ORDER BY c.created_at DESC;
 	`
-	rows, err := db.DB.Query(query)
+	rows, err := db.DB.Query(query, userId)
 	if err != nil {
 		return err
 	}
@@ -53,6 +54,7 @@ ORDER BY c.created_at DESC;
 			&post.TotalComments,
 			&post.TotalLikes,
 			&post.TotalDislikes,
+			&post.IsLiked,
 		)
 		if err != nil {
 			return err

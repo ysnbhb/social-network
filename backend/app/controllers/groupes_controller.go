@@ -106,7 +106,8 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
 		return
 	}
-	posts, err := services.GetGroupPost(group, offste)
+	userId := r.Context().Value("userId").(int)
+	posts, err := services.GetGroupPost(group, userId, offste)
 	if err != nil {
 		utils.JsonResponse(w, "fieled to get group post", http.StatusInternalServerError)
 		return

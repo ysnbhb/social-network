@@ -25,4 +25,5 @@ type PostsResponse struct {
 	TotalLikes    int    `json:"totalLikes"`
 	TotalDislikes int    `json:"totalDislikes"`
 	TotalComments int    `json:"totalComments"`
+	IsLiked       bool   `json:"isLiked"`
 }

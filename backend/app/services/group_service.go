@@ -128,8 +128,8 @@ func SendInvi(gpInvi models.Group_Invi, userId int) (code int, err error) {
 	return
 }
 
-func GetGroupPost(groupId int, offste int) ([]models.PostsResponse, error) {
-	return repo.GetGroupPost(groupId, offste)
+func GetGroupPost(groupId, userid, offste int) ([]models.PostsResponse, error) {
+	return repo.GetGroupPost(groupId, offste, userid)
 }
 
 func ListGroups(userId, offset int) ([]models.Groups, error) {

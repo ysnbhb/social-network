@@ -7,8 +7,8 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetHomePosts(postsResponse *[]models.PostsResponse) error {
-	err := repo.GetHomePosts(postsResponse)
+func GetHomePosts(postsResponse *[]models.PostsResponse, userId int) error {
+	err := repo.GetHomePosts(postsResponse , userId)
 	if err != nil {
 		return errors.New("Error getting posts")
 	}

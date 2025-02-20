@@ -93,28 +93,39 @@ func Delete_group_Invi(groupId, userid int) {
 	db.DB.Exec(query, groupId, userid)
 }
 
-func GetGroupPost(groupId, offste int) ([]models.PostsResponse, error) {
+func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 	posts := []models.PostsResponse{}
 	query := `
-	SELECT u.nickname , u.avatar_url , u.first_name , u.last_name , c.id , c.content , c.image_url , c.created_at ,
-	COUNT(DISTINCT cm.id) AS total_comments,
-    COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
-	FROM users u
-	INNER JOIN card c ON u.id = c.user_id
-	INNER JOIN posts p ON p.card_id = c.id
-	LEFT JOIN likes l ON c.id = l.card_id
-	WHERE c.group_id = ?
-	ORDER BY c.created_at DESC
-	LIMIT "10" OFFSET ?
+    SELECT 
+        u.nickname, 
+        u.avatar_url, 
+        u.first_name, 
+        u.last_name, 
+        c.id, 
+        c.content, 
+        c.image_url, 
+        c.created_at,
+        COUNT(DISTINCT cm.id) AS total_comments,
+        COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
+        COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes,
+        (SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = ?)) AS isliked
+    FROM users u
+    INNER JOIN card c ON u.id = c.user_id
+    INNER JOIN posts p ON p.card_id = c.id
+    LEFT JOIN comments cm ON cm.card_id = c.id  
+    LEFT JOIN likes l ON c.id = l.card_id
+    WHERE c.group_id = ?
+    GROUP BY c.id, u.nickname, u.avatar_url, u.first_name, u.last_name, c.content, c.image_url, c.created_at
+    ORDER BY c.created_at DESC
+    LIMIT 10 OFFSET ?;  
 	`
-	rows, err := db.DB.Query(query, groupId, offste)
+	rows, err := db.DB.Query(query, groupId, userid, offste)
 	if err != nil {
 		return nil, err
 	}
 	for rows.Next() {
 		post := models.PostsResponse{}
-		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.Id, &post.Content, &post.ImageUrl, &post.CreatedAt, &post.TotalComments, &post.TotalLikes, &post.TotalDislikes)
+		err = rows.Scan(&post.NickName, &post.AvatarUrl, &post.FirstName, &post.LastName, &post.Id, &post.Content, &post.ImageUrl, &post.CreatedAt, &post.TotalComments, &post.TotalLikes, &post.TotalDislikes, &post.IsLiked)
 		if err != nil {
 			continue
 		}
