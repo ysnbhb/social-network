@@ -1,105 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-.users-sidebar {
-    width: 280px;
-    background: #f8f9fa;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    top: 0;
-}
-
-.sidebar-header {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.users-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.user-item {
-    display: flex;
-    align-items: center;
-    background: #808080;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.user-item:hover {
-    background: #757575;
-    transform: translateX(-3px);
-}
-
-.user-avatar {
-    width: 32px;
-    height: 32px;
-    background: #fff;
-    border-radius: 50%;
-    margin-right: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.user-avatar svg {
-    width: 20px;
-    height: 20px;
-    color: #4169E1;
-}
-
-.user-name {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* Custom scrollbar for the sidebar */
-.users-sidebar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.users-sidebar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.users-sidebar::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 3px;
-}
-
-.users-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #757575;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="users-sidebar">
-        <div class="sidebar-header">
-            all users
-        </div>
-        <ul class="users-list">
-            <li class="user-item">
-                <div class="user-avatar">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                        <circle cx="12" cy="7" r="4"/>
+    <nav class="navbar">
+        <a href="#" class="logo">CozMeet</a>
+        <!-- <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div> -->
+        <div class="nav-icons">
+
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="home">
+                    <path fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.65721519,18.7714023 L6.65721519,15.70467 C6.65719744,14.9246392 7.29311743,14.2908272 8.08101266,14.2855921 L10.9670886,14.2855921 C11.7587434,14.2855921 12.4005063,14.9209349 12.4005063,15.70467 L12.4005063,15.70467 L12.4005063,18.7809263 C12.4003226,19.4432001 12.9342557,19.984478 13.603038,20 L15.5270886,20 C17.4451246,20 19,18.4606794 19,16.5618312 L19,16.5618312 L19,7.8378351 C18.9897577,7.09082692 18.6354747,6.38934919 18.0379747,5.93303245 L11.4577215,0.685301154 C10.3049347,-0.228433718 8.66620456,-0.228433718 7.51341772,0.685301154 L0.962025316,5.94255646 C0.362258604,6.39702249 0.00738668938,7.09966612 0,7.84735911 L0,16.5618312 C0,18.4606794 1.55487539,20 3.47291139,20 L5.39696203,20 C6.08235439,20 6.63797468,19.4499381 6.63797468,18.7714023 L6.63797468,18.7714023" transform="translate(2.5 2)"></path>
+                  </svg>    
+                    Home
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+                    <path d="M 23.951172 4 A 1.50015 1.50015 0 0 0 23.072266 4.3222656 L 8.859375 15.519531 C 7.0554772 16.941163 6 19.113506 6 21.410156 L 6 40.5 C 6 41.863594 7.1364058 43 8.5 43 L 18.5 43 C 19.863594 43 21 41.863594 21 40.5 L 21 30.5 C 21 30.204955 21.204955 30 21.5 30 L 26.5 30 C 26.795045 30 27 30.204955 27 30.5 L 27 40.5 C 27 41.863594 28.136406 43 29.5 43 L 39.5 43 C 40.863594 43 42 41.863594 42 40.5 L 42 21.410156 C 42 19.113506 40.944523 16.941163 39.140625 15.519531 L 24.927734 4.3222656 A 1.50015 1.50015 0 0 0 23.951172 4 z M 24 7.4101562 L 37.285156 17.876953 C 38.369258 18.731322 39 20.030807 39 21.410156 L 39 40 L 30 40 L 30 30.5 C 30 28.585045 28.414955 27 26.5 27 L 21.5 27 C 19.585045 27 18 28.585045 18 30.5 L 18 40 L 9 40 L 9 21.410156 C 9 20.030807 9.6307412 18.731322 10.714844 17.876953 L 24 7.4101562 z"></path>
                     </svg>
+                    Profile
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 128 128" id="groups">
+                    <circle cx="63.5" cy="39.5" r="17.5" stroke="#1F1F1F" stroke-width="7" transform="rotate(-90 63.5 39.5)"></circle>
+                    <path stroke="#1F1F1F" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" d="M92.5038 30.0074C94.4084 29.8751 96.3205 30.1193 98.1308 30.7259 99.9411 31.3326 101.614 32.2899 103.054 33.5431 104.495 34.7963 105.674 36.321 106.525 38.0301 107.376 39.7391 107.883 41.599 108.015 43.5037 108.147 45.4083 107.903 47.3204 107.296 49.1307 106.69 50.941 105.732 52.6141 104.479 54.0544 103.226 55.4947 101.701 56.6741 99.9922 57.5252 98.2832 58.3763 96.4232 58.8825 94.5186 59.0148M35.5185 30.0074C33.6138 29.8751 31.7017 30.1193 29.8915 30.7259 28.0812 31.3326 26.4081 32.2899 24.9677 33.5431 23.5274 34.7963 22.348 36.321 21.4969 38.0301 20.6458 39.7391 20.1397 41.599 20.0074 43.5037 19.8751 45.4083 20.1192 47.3204 20.7259 49.1307 21.3325 50.941 22.2898 52.6141 23.5431 54.0544 24.7963 55.4947 26.321 56.6741 28.03 57.5252 29.739 58.3763 31.599 58.8825 33.5036 59.0148"></path>
+                    <path stroke="#1F1F1F" stroke-linejoin="round" stroke-width="7" d="M32 88.2378C32 98.0476 39.9524 106 49.7622 106H76.1575C86.0116 106 94 98.0116 94 88.1575V88.1575C94 76.1531 82.3842 67.5738 70.9106 71.1038L68.2949 71.9086C64.5812 73.0512 60.6077 73.0363 56.9026 71.866L55.1122 71.3005C43.6638 67.6843 32 76.2319 32 88.2378V88.2378Z"></path>
+                    <path stroke="#1F1F1F" stroke-linejoin="round" stroke-width="7" d="M85 104H97.7314C105.612 104 112 97.6117 112 89.7314V85.7127C112 78.3108 104.952 72.9419 97.8158 74.9079V74.9079L90.7237 76.8618M42 104H29.2686C21.3883 104 15 97.6117 15 89.7314V85.7127C15 78.3108 22.0482 72.9419 29.1842 74.9079V74.9079L36.2763 76.8618"></path>
+                  </svg>
+                  
+                    Groups
+            </a>
+              
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+                    <path d="M 23.951172 4 A 1.50015 1.50015 0 0 0 23.072266 4.3222656 L 8.859375 15.519531 C 7.0554772 16.941163 6 19.113506 6 21.410156 L 6 40.5 C 6 41.863594 7.1364058 43 8.5 43 L 18.5 43 C 19.863594 43 21 41.863594 21 40.5 L 21 30.5 C 21 30.204955 21.204955 30 21.5 30 L 26.5 30 C 26.795045 30 27 30.204955 27 30.5 L 27 40.5 C 27 41.863594 28.136406 43 29.5 43 L 39.5 43 C 40.863594 43 42 41.863594 42 40.5 L 42 21.410156 C 42 19.113506 40.944523 16.941163 39.140625 15.519531 L 24.927734 4.3222656 A 1.50015 1.50015 0 0 0 23.951172 4 z M 24 7.4101562 L 37.285156 17.876953 C 38.369258 18.731322 39 20.030807 39 21.410156 L 39 40 L 30 40 L 30 30.5 C 30 28.585045 28.414955 27 26.5 27 L 21.5 27 C 19.585045 27 18 28.585045 18 30.5 L 18 40 L 9 40 L 9 21.410156 C 9 20.030807 9.6307412 18.731322 10.714844 17.876953 L 24 7.4101562 z"></path>
+                    </svg>
+
+                    Settings
+            </a>
+        </div>
+        <div class="avatar" >
+            
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <aside class="profile-sidebar">
+            <div class="profile-header">
+                <img src="/api/placeholder/80/80" alt="Profile" class="avatar avatar-large">
+                <h2>Reinhard Van Zry</h2>
+                <p class="text-muted">@Reinhard</p>
+            </div>
+            <div class="profile-stats">
+                <div>
+                    <h3>250</h3>
+                    <p class="text-muted">Post</p>
                 </div>
-                <span class="user-name">user1</span>
-            </li>
-        </ul>
-    </div>
+                <div>
+                    <h3>2022</h3>
+                    <p class="text-muted">Followers</p>
+                </div>
+                <div>
+                    <h3>590</h3>
+                    <p class="text-muted">Following</p>
+                </div>
+            </div>
+            <button class="profile-button">My Profile</button>
+            
+            <div class="shortcuts">
+                <h3>Your shortcuts</h3>
+                <div class="shortcut-item">
+                    <img src="/api/placeholder/32/32" alt="Art">
+                    <span>Art and drawing</span>
+                </div>
+                <div class="shortcut-item">
+                    <img src="/api/placeholder/32/32" alt="Dribbble">
+                    <span>Dribbble Pro</span>
+                </div>
+                <div class="shortcut-item">
+                    <img src="/api/placeholder/32/32" alt="Behance">
+                    <span>Behance Creative</span>
+                </div>
+            </div>
+        </aside>
+
+        <section class="feed">
+            <div class="post-creator">
+                <img src="/api/placeholder/40/40" alt="Profile" class="avatar">
+                <input type="text" placeholder="Share something..." style="width: 100%; padding: 0.5rem; border-radius: 20px; border: 1px solid #e9ecef;">
+            </div>
+            <div class="post-options">
+                <button>Image</button>
+                <button>Video</button>
+                <button>Poll</button>
+                <button>Public</button>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-author">
+                        <img src="/api/placeholder/40/40" alt="Author" class="avatar">
+                        <div>
+                            <h4>Briansky</h4>
+                            <p class="text-muted">12 minutes ago</p>
+                        </div>
+                    </div>
+                    <button>•••</button>
+                </div>
+                <p>Beautiful art!! <span class="hashtag">#art #aesthetics #wallstreet #wallpaper #photography</span></p>
+                <img src="/api/placeholder/600/400" alt="Post image" class="post-image">
+                <div class="post-actions">
+                    <span>320k likes</span>
+                    <span>120 comments</span>
+                    <span>148 saves</span>
+                </div>
+            </div>
+        </section>
+
+        <aside class="activity-sidebar">
+            <div class="activity-header">
+                <h3>Activity</h3>
+                <a href="#" class="text-muted">See all</a>
+            </div>
+            <div class="activity-item">
+                <img src="/api/placeholder/40/40" alt="User" class="avatar">
+                <div>
+                    <p><strong>Deraa</strong> started following you</p>
+                    <p class="text-muted">30m</p>
+                </div>
+                <button>Follow</button>
+            </div>
+            <div class="activity-item">
+                <img src="/api/placeholder/40/40" alt="User" class="avatar">
+                <div>
+                    <p><strong>Edlwp</strong> liked your photo</p>
+                    <p class="text-muted">1d</p>
+                </div>
+            </div>
+        </aside>
+    </main>
 </body>
 </html>
