@@ -1,4 +1,7 @@
+import Image from "next/image";
 import style from "./profile.module.css";
+import image from "../../component/images/IMG-20240514-WA0002.jpg";
+import bag from "../../component/images/pxfuel.jpg";
 export default function Profile() {
   const people = [
     {
@@ -26,13 +29,55 @@ export default function Profile() {
     <div className={style.container}>
       <div className={style["card-profile"]}>
         <div className={style["card-profile-posts"]}>
-              <div className={style["avatar-user"]}>
-                
+          
+          <div className={style["avatar-user"]}>
+            <Image
+              src={bag}
+              alt=""
+              srcset=""
+              className={style.avatarContainer}
+              objectFit="cover"
+            />
+          </div>
+          <div className={style.buttonContainer}>
+              <button className={style.followButton}>Follow</button>
+              <button className={style.moreButton}>Send Message</button>
+            </div>
+          <span className={style["Circle-image"]}>
+            <Image
+              src={image}
+              className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
+              srcset=""
+              alt="User Avatar"
+              layout="fill"
+              objectFit="cover"
+            />
+          </span>
+          <div className={style["user"]}>
+            <div className={style.content}>
+              <div className={style.about}>
+                <h1 className={style.name}>Rharbi Omar</h1>
+                <p className={style.jobTitle}>
+                  Passionate programmer & problem solver 🔹 Student at Zone 01
+                  Oujda – Peer-to-peer learning & innovation 🔹 Always exploring
+                  new technologies
+                </p>
               </div>
-              <span className={style["Circle-image"]}></span>
-              <div className={style["user"]}></div>
+              <div className={style.stats}>
+                <span className={style.statText}>
+                  <span className={style.statNumber}>6,476</span> followers
+                </span>
+                <span className={style.statText}>
+                  <span className={style.statNumber}>500+</span> following
+                </span>
+              </div>
+          </div>
+           
+          </div>
+         
         </div>
-        {/* <div className={style["card-posts"]}>
+
+        <div className={style["card-posts"]}>
           <div className={style["post-header"]}>
             <div className={style["user-info"]}>
               <img
@@ -53,10 +98,12 @@ export default function Profile() {
               Just finished an amazing project with my team! 🚀 Really proud of
               what we've accomplished together. #TeamWork #Innovation #TechLife
             </p>
-            <img
-              src="/api/placeholder/500/300"
-              alt="Post image"
-              className={style["post-image"]}
+            <Image
+              src={bag}
+              alt=""
+              srcset=""
+              className={style.avatarContainer}
+              objectFit="cover"
             />
           </div>
 
@@ -71,7 +118,8 @@ export default function Profile() {
             <span>•</span>
             <span>45 comments</span>
           </div>
-        </div> */}
+        </div>
+        
       </div>
       <div className={style["card-users"]}>
         <div className={style.card}>
