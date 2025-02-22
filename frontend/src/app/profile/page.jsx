@@ -80,8 +80,45 @@ export default function Profile() {
         <div className={style["card-posts"]}>
           <div className={style["post-header"]}>
             <div className={style["user-info"]}>
-              <img
-                src="/api/placeholder/40/40"
+            <Image
+                src={image}
+                alt="User avatar"
+                className={style["post-avatar"]}
+              />
+              <div className={style["user-details"]}>
+                <h4 className={style["user-name"]}>John Doe</h4>
+                <p className={style["post-time"]}>2 hours ago</p>
+              </div>
+            </div>
+            <button className={style["more-options"]}>•••</button>
+          </div>
+
+          <div className={style["post-content"]}>
+            <p className={style["post-text"]}>
+              Just finished an amazing project with my team! 🚀 Really proud of
+              what we've accomplished together. #TeamWork #Innovation #TechLife
+            </p>
+            <Image
+              src={bag}
+              alt=""
+              srcset=""
+              className={style.avatarContainer}
+              objectFit="cover"
+            />
+          </div>
+
+          <div className={style["post-actions"]}>
+            <button className={style["action-button"]}>👍 Like <span>123 likes</span></button>
+            <button className={style["action-button"]}>💬 Comment  <span>45 comments</span></button>
+            <button className={style["action-button"]}>↗️ Share</button>
+          </div>
+ 
+        </div>
+        <div className={style["card-posts"]}>
+          <div className={style["post-header"]}>
+            <div className={style["user-info"]}>
+              <Image
+                src={image}
                 alt="User avatar"
                 className={style["post-avatar"]}
               />
@@ -113,11 +150,7 @@ export default function Profile() {
             <button className={style["action-button"]}>↗️ Share</button>
           </div>
 
-          <div className={style["post-stats"]}>
-            
-            <span>•</span>
            
-          </div>
         </div>
       </div>
       <div className={style["card-users"]}>
@@ -126,16 +159,16 @@ export default function Profile() {
           <ul className={style.list}>
             {people.map((person, index) => (
               <li key={index} className={style.item}>
-                <img
-                  src={person.avatar}
-                  alt={person.name}
-                  className={style.avatar}
-                />
+                 <Image
+                src={image}
+                alt="User avatar"
+                className={style["post-avatar"]}
+              />
                 <div className={style.info}>
                   <h4 className={style.name}>{person.name}</h4>
                   <p className={style.role}>{person.role}</p>
                 </div>
-                <button className={style.addButton}>+</button>
+                <button className={style.followButton}>Follow</button>
               </li>
             ))}
           </ul>
