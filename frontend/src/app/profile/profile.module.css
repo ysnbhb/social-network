@@ -166,6 +166,7 @@ span.Circle-image {
   border-radius: 50%;
   position: relative !important;
   height: 140px !important;
+  border: 2px solid #1da1f2;
   width: 140px !important;
 }
 .user {
