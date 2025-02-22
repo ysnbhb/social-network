@@ -128,8 +128,15 @@ func SendInvi(gpInvi models.Group_Invi, userId int) (code int, err error) {
 	return
 }
 
-func GetGroupPost(groupId, userid, offste int) ([]models.PostsResponse, error) {
-	return repo.GetGroupPost(groupId, offste, userid)
+func GetGroupPost(groupId, userid, offste int) ([]models.PostsResponse, error, int) {
+	if !repo.CheckUserInGroup(groupId, userid) {
+		return nil, errors.New("you have to jion to this group fisrt"), http.StatusUnauthorized
+	}
+	posts, err := repo.GetGroupPost(groupId, offste, userid)
+	if err != nil {
+		return nil, err, http.StatusInternalServerError
+	}
+	return posts, nil, http.StatusOK
 }
 
 func ListGroups(userId, offset int) ([]models.Groups, error) {
@@ -138,4 +145,15 @@ func ListGroups(userId, offset int) ([]models.Groups, error) {
 
 func ListGroupsJoined(userId, offset int) ([]models.Groups, error) {
 	return repo.ListGroupsJoined(userId, offset)
+}
+
+func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
+	if repo.GeTIdofAdminOfGroup(groupId.GroupId) != userid {
+		return errors.New("you have no right to this "), http.StatusUnauthorized
+	}
+	err := repo.JoinToGroup(groupId.GroupId, groupId.UserId)
+	if err != nil {
+		return errors.New("field to join to group"), http.StatusInternalServerError
+	}
+	return nil, http.StatusOK
 }
