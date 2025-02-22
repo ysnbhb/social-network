@@ -39,7 +39,6 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		log.Println("adding session:", err)
 		return
 	}
-
 	utils.JsonResponse(w, "User logged in successfully", http.StatusOK)
 }
 

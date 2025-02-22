@@ -31,7 +31,7 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 	AddClient(conn, userID, username)
 
 	Notification(models.Clients[username])
-	go HandleMessages(models.Clients[username])
+	HandleMessages(models.Clients[username])
 }
 
 func HandleMessages(client *models.Client) {
@@ -135,7 +135,6 @@ func BroadcastOnlineUsers() {
 			"type":        "onlineStatus",
 			"onlineUsers": otherUsers,
 		}
-
 		err := client.Conn.WriteJSON(data)
 		if err != nil {
 			client.Conn.Close()

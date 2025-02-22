@@ -18,6 +18,10 @@ func SendMessageuser(msg models.Message, client *models.Client) {
 			"content": "message is too long",
 		})
 	}
+	err := repo.Addmessages(msg, client, Time)
+	if err != nil {
+		fmt.Println("error adding messageuser to db:")
+	}
 	receiverConn := models.Clients[msg.Receivers[0]]
 	if receiverConn != nil {
 		receiverConn.Conn.WriteJSON(map[string]interface{}{
@@ -33,10 +37,7 @@ func SendMessageuser(msg models.Message, client *models.Client) {
 		"content": msg.Content,
 		"time":    Time,
 	})
-	err := repo.Addmessages(msg, client, Time)
-	if err != nil {
-		fmt.Println("error adding messageuser to db:")
-	}
+	
 	err = repo.AddNotification(msg, client, "messageuser", Time)
 	if err != nil {
 		fmt.Println("error adding notification messageuser to db:")
@@ -52,6 +53,10 @@ func SendMessageGroup(msg models.Message, client *models.Client) {
 			"content": "message is too long",
 		})
 	}
+	err := repo.AddmessagesGroup(msg, client, Time)
+	if err != nil {
+		fmt.Println("error adding messagegroup to db:")
+	}
 	for _, receiver := range msg.Receivers {
 		receiverConn := models.Clients[receiver]
 		if receiverConn != nil {
@@ -60,6 +65,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) {
 				"sender":  client.Username,
 				"content": msg.Content,
 				"time":    Time,
+				"groupid":	msg.Groupid,  
 			})
 		}
 	}
@@ -68,11 +74,9 @@ func SendMessageGroup(msg models.Message, client *models.Client) {
 		"sender":  client.Username,
 		"content": msg.Content,
 		"time":    Time,
+		"groupid":	msg.Groupid,
 	})
-	err := repo.AddmessagesGroup(msg, client, Time)
-	if err != nil {
-		fmt.Println("error adding messagegroup to db:")
-	}
+	
 	err = repo.AddNotification(msg, client, "messageGroup", Time)
 	if err != nil {
 		fmt.Println("error adding notification messageGroup to db:")

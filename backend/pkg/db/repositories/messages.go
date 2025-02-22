@@ -9,7 +9,7 @@ import (
 
 func Addmessages(msg models.Message, client *models.Client, sent_at string) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
-	query := "INSERT INTO messages (sender_id, recipient_id, message, sent_at) VALUES (?, ?, ?, ?)"
+	query := "INSERT INTO chats (sender_id, recipient_id, message, sent_at) VALUES (?, ?, ?, ?)"
 	_, err := db.DB.Exec(query, client.Userid, recieverid, msg.Content, sent_at)
 	if err != nil {
 		return err
