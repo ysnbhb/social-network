@@ -108,18 +108,17 @@ export default function Profile() {
           </div>
 
           <div className={style["post-actions"]}>
-            <button className={style["action-button"]}>👍 Like</button>
-            <button className={style["action-button"]}>💬 Comment</button>
+            <button className={style["action-button"]}>👍 Like <span>123 likes</span></button>
+            <button className={style["action-button"]}>💬 Comment  <span>45 comments</span></button>
             <button className={style["action-button"]}>↗️ Share</button>
           </div>
 
           <div className={style["post-stats"]}>
-            <span>123 likes</span>
+            
             <span>•</span>
-            <span>45 comments</span>
+           
           </div>
         </div>
-        
       </div>
       <div className={style["card-users"]}>
         <div className={style.card}>
