@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 
 	"social-network/app/services"
 	"social-network/pkg/models"
@@ -16,9 +17,10 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
+	offset, _ := strconv.Atoi(r.FormValue("offset"))
 	userId := r.Context().Value("userId").(int)
 	var postsResponse []models.PostsResponse
-	err := services.GetHomePosts(&postsResponse, userId)
+	err := services.GetHomePosts(&postsResponse, userId, offset)
 	if err != nil {
 		utils.JsonResponse(w, "Error getting posts", http.StatusInternalServerError)
 		log.Println(err)

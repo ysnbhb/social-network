@@ -6,14 +6,13 @@ import (
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
+
 func AddReaction(reactionRequest *models.ReactionRequest) error {
 	existingReaction := getExistingReaction(reactionRequest.UserId, reactionRequest.CardId)
 	if existingReaction == reactionRequest.ReactionType {
 		return removeReaction(reactionRequest.UserId, reactionRequest.CardId)
-	} else if existingReaction == 0 {
-		return insertReaction(reactionRequest.UserId, reactionRequest.CardId, reactionRequest.ReactionType)
 	} else {
-		return updateReaction(reactionRequest.UserId, reactionRequest.CardId, reactionRequest.ReactionType)
+		return insertReaction(reactionRequest.UserId, reactionRequest.CardId, reactionRequest.ReactionType)
 	}
 }
 
@@ -23,16 +22,6 @@ func insertReaction(userId, cardId, reactionType int) error {
         VALUES (?, ?, ?)
     `
 	_, err := db.DB.Exec(query, userId, cardId, reactionType)
-	return err
-}
-
-func updateReaction(userId, cardId, reactionType int) error {
-	query := `
-        UPDATE likes 
-        SET reaction_type = ? 
-        WHERE user_id = ? AND card_id = ?
-    `
-	_, err := db.DB.Exec(query, reactionType, userId, cardId)
 	return err
 }
 

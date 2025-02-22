@@ -107,9 +107,9 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	userId := r.Context().Value("userId").(int)
-	posts, err := services.GetGroupPost(group, userId, offste)
+	posts, err, code := services.GetGroupPost(group, userId, offste)
 	if err != nil {
-		utils.JsonResponse(w, "fieled to get group post", http.StatusInternalServerError)
+		utils.JsonResponse(w, "fieled to get group post", code)
 		return
 	}
 	utils.JsonResponse(w, posts, http.StatusOK)
@@ -135,4 +135,24 @@ func ListGroupsJoined(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	utils.JsonResponse(w, groups, http.StatusOK)
+}
+
+func AcceptJoin(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_invi := models.Group_Invi{}
+	err := json.NewDecoder(r.Body).Decode(&gp_invi)
+	if err != nil {
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	err, code := services.AcceptJoin(gp_invi, userId)
+	if err != nil {
+		utils.JsonResponse(w, err, code)
+		return
+	}
+	utils.JsonResponse(w, "you accepted user to group", code)
 }

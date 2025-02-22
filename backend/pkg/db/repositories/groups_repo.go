@@ -121,7 +121,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 	`
 	rows, err := db.DB.Query(query, groupId, userid, offste)
 	if err != nil {
-		return nil, err
+		return nil, errors.New("field to get post")
 	}
 	for rows.Next() {
 		post := models.PostsResponse{}
