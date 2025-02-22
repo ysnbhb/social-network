@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -37,16 +36,11 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 
 func HandleMessages(client *models.Client) {
 	for {
-		_, message, err := client.Conn.ReadMessage()
+		var msg models.Message
+		err := client.Conn.ReadJSON(&msg)
 		if err != nil {
 			log.Println("Failed to read message:", err)
 			break
-		}
-		var msg models.Message
-		err = json.Unmarshal(message, &msg)
-		if err != nil {
-			log.Println("Failed to unmarshal message:", err)
-			continue
 		}
 		err = Handlemessagetype(msg, client)
 		if err != nil {
@@ -74,6 +68,12 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 		service.SendEventCreated(msg, client)
 	case "typing":
 		service.SendTyping(msg, client)
+	case "getmessagesusers":
+		repo.Getmessagesusers(msg, client)
+	case "getmessagesgroup":
+		repo.Getmessagesgroups(msg, client)
+	case "changeunreadnotification":
+		repo.ChangeUnreadNotification(msg, client)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}

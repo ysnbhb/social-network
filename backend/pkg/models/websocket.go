@@ -7,10 +7,12 @@ import (
 )
 
 type Message struct {
-	Type     string `json:"type"`
-	Sender   string `json:"sender"`
-	Receiver string `json:"receiver"`
-	Content  string `json:"content"`
+	Type           string   `json:"type"`
+	Sender         string   `json:"sender"`
+	Receivers      []string `json:"receiver"`
+	Content        string   `json:"content"`
+	Groupid        int      `json:"groupid"`
+	Notificationid int      `json:"notificationid"`
 }
 type Client struct {
 	Conn     *websocket.Conn

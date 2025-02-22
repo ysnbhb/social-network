@@ -91,3 +91,9 @@ func GetNickName(userId int) string {
 	db.DB.QueryRow(query, userId).Scan(&nickname)
 	return nickname
 }
+func GetUserIdByNickName(nickname string) int {
+	query := `SELECT u.id FROM users u WHERE nickname = ?`
+	var userId int
+	db.DB.QueryRow(query, nickname).Scan(&userId)
+	return userId
+}
