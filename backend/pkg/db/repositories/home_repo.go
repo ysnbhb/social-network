@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetHomePosts(postsResponse *[]models.PostsResponse, userId int) error {
+func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int) error {
 	query := `
 	SELECT 
     c.id,
@@ -24,7 +24,8 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int) error {
 	JOIN users u ON c.user_id = u.id
 	LEFT JOIN comments cm ON c.id = cm.target_id
 	LEFT JOIN likes l ON c.id = l.card_id
-	WHERE p.privacy = "public"
+	WHERE p.privacy = "public" AND (u.profile_type = 'public' ) OR 
+	(SELECT EXISTS (SELECT 1 FROM followers WHERE follower_id  = u.id AND following_id = ? AND status = 'accept'))
 	GROUP BY 
     c.id, 
     c.user_id, 
@@ -33,9 +34,10 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int) error {
     u.first_name, 
     u.last_name,
 	u.nickname
-ORDER BY c.created_at DESC;
+	ORDER BY c.created_at DESC
+	LIMIT 10 OFFSET ?
 	`
-	rows, err := db.DB.Query(query, userId)
+	rows, err := db.DB.Query(query, userId, userId, offset)
 	if err != nil {
 		return err
 	}
