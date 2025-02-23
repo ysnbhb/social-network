@@ -198,3 +198,4 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/22 16:51:29 HandleWebsocket.go:44: Failed to read message: read tcp 127.0.0.1:8080->127.0.0.1:40318: use of closed network connection
 2025/02/22 16:54:38 server.go:27: Starting server on :8080
 2025/02/22 16:54:56 server.go:27: Starting server on :8080
+2025/02/22 17:47:25 server.go:27: Starting server on :8080

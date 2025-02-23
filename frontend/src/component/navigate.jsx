@@ -4,6 +4,7 @@ import logout from "./logout.svg";
 import logo from "./image.png";
 
 export default function Navigate() {
+  
   return (
     <nav className={style.sidebar}>
       <div className={style.image}>

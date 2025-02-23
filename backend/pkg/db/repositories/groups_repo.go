@@ -182,3 +182,12 @@ func ListGroupsJoined(userid, offset int) ([]models.Groups, error) {
 	}
 	return groups, nil
 }
+
+func GetGroupIdFromPost(postId int) int {
+	groupId := 0
+	query := `SELECT group_id FROM card WHERE id = ?`
+	db.DB.QueryRow(query).Scan(&groupId)
+	return groupId
+}
+
+

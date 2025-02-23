@@ -18,3 +18,16 @@ func CreateCard(userId, groupId int, content, imageUrl string) (int, error) {
 
 	return int(id), nil
 }
+
+func CheckExistCard(cardId int) bool {
+	exist := false
+	query := `SELECT EXISTS(SELECT 1 FROM card WHERE id = ?)`
+	db.DB.QueryRow(query, cardId).Scan(&exist)
+	return exist
+}
+
+// func CkeckPostType(cardId int) string {
+// 	typePost := ""
+// 	query := `SELECT pri`
+// 	return typePost
+// }

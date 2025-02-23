@@ -13,6 +13,17 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 	if err != nil {
 		return errors.New("validating reaction: " + err.Error())
 	}
+	groupId := repo.GetGroupIdFromPost(reactionRequest.CardId)
+	if groupId != 0 {
+		exist := repo.CheckUserInGroup(groupId, reactionRequest.UserId)
+		if !exist {
+			return errors.New("you have to join to group first")
+		}
+	}
+	exist := repo.CheckExistCard(reactionRequest.CardId)
+	if !exist {
+		return errors.New("post not found")
+	}
 	err = repo.AddReaction(reactionRequest)
 	if err != nil {
 		return errors.New("adding reaction to db: " + err.Error())
