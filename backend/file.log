@@ -218,3 +218,68 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/24 13:26:59 server.go:27: Starting server on :8080
 2025/02/24 13:33:37 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/02/24 13:38:19 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 16:28:43 server.go:27: Starting server on :8080
+2025/02/24 16:30:07 user_repo.go:33: <nil>
+2025/02/24 16:32:17 server.go:27: Starting server on :8080
+2025/02/24 16:32:44 server.go:27: Starting server on :8080
+2025/02/24 16:33:21 server.go:27: Starting server on :8080
+2025/02/24 16:39:24 server.go:27: Starting server on :8080
+2025/02/24 16:39:41 user_repo.go:33: <nil>
+2025/02/24 16:40:52 server.go:27: Starting server on :8080
+2025/02/24 16:48:55 server.go:27: Starting server on :8080
+2025/02/24 16:49:08 server.go:27: Starting server on :8080
+2025/02/24 16:49:46 server.go:27: Starting server on :8080
+2025/02/24 16:52:38 server.go:27: Starting server on :8080
+2025/02/24 16:54:13 server.go:27: Starting server on :8080
+2025/02/24 16:55:23 server.go:27: Starting server on :8080
+2025/02/24 16:55:56 server.go:27: Starting server on :8080
+2025/02/24 16:57:31 server.go:27: Starting server on :8080
+2025/02/24 16:58:03 server.go:27: Starting server on :8080
+2025/02/24 16:58:33 server.go:27: Starting server on :8080
+2025/02/24 17:03:16 server.go:27: Starting server on :8080
+2025/02/24 17:18:09 user_repo.go:33: <nil>
+2025/02/24 17:24:17 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:24:17 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:59 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:59 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:59 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:38:59 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:39:00 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:39:00 HandleWebsocket.go:43: Failed to read message: read tcp 127.0.0.1:8080->127.0.0.1:35920: read: connection reset by peer
+2025/02/24 17:39:18 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:44:57 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:12 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:12 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:12 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:33 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:33 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:45:33 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:49:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:49:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:49:56 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:49:56 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:50:03 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:50:36 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:50:46 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:50:51 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:51:05 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:51:11 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:51:40 server.go:27: Starting server on :8080
+2025/02/24 17:52:39 server.go:27: Starting server on :8080
+2025/02/24 17:52:42 server.go:27: Starting server on :8080
+2025/02/24 17:53:15 server.go:27: Starting server on :8080
+2025/02/24 17:53:33 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:53:39 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:53:41 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:53:44 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:53:47 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:54:19 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:54:19 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:54:28 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:54:34 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 17:54:34 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)

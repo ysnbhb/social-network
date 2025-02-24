@@ -19,6 +19,7 @@ var upgrader = websocket.Upgrader{
 }
 
 func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Websocket endpoint initiated")
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("Failed to upgrade connection:", err)
@@ -135,6 +136,7 @@ func BroadcastOnlineUsers() {
 			"type":        "onlineStatus",
 			"onlineUsers": otherUsers,
 		}
+		fmt.Println("clients", client)
 		err := client.Conn.WriteJSON(data)
 		if err != nil {
 			client.Conn.Close()
