@@ -7,16 +7,38 @@ import HomeFeed from "../../components/homeFeed";
 // import Navbar from "../../components/navbar";
 export default function Profile() {
   const menuData = [
-    { title: "Followers", fullname: "Omar Rharbi", time: "30m", button: "Follow", image: "/omar.jpg" },
-    { title: "Followers", fullname: "John Doe", time: "1h", button: "Follow", image: "/john.jpg" },
-    { title: "Followers", fullname: "Jane Smith", time: "2h", button: "Follow", image: "/jane.jpg" },
+    { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
+    { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
+    { fullname: "Jane Smith", time: "2h", button: "Follow", image: " " },
+  ];
+
+  const FollowingData = [
+    { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
+    {
+      fullname: "John Doe",
+      time: "1h",
+      button: "Follow",
+      image: " ",
+    },
+    {
+      fullname: "Jane Smith",
+      time: "2h",
+      button: "Follow",
+      image: " ",
+    },
+    {
+      fullname: "Jane Smith",
+      time: "2h",
+      button: "Follow",
+      image: " ",
+    },
   ];
   return (
     <div>
       <div className={style.container}>
         <div className={style["card-profile"]}>
           <div className={style["card-profile-posts"]}>
-            <div className= {`${style["avatar-user"]}`}> 
+            <div className={`${style["avatar-user"]}`}>
               <Image
                 src={bag}
                 alt=""
@@ -67,12 +89,16 @@ export default function Profile() {
         </div>
 
         <div className={style["card-users"]}>
-          <ActivitySidebar className={`${style.ActivitySidebar}`}
-          classes={menuData}
+          <ActivitySidebar
+            className={`${style.ActivitySidebar}`}
+            classes={menuData}
+            title="followers"
           />
-          
-          <ActivitySidebar className={`${style.ActivitySidebar}`}
-          classes={{ title: "following",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
+
+          <ActivitySidebar
+            className={`${style.ActivitySidebar}`}
+            classes={FollowingData}
+            title="following"
           />
         </div>
       </div>

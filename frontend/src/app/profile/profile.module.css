@@ -207,19 +207,6 @@ span.Circle-image {
   display: block; /* Show scrollbar */
 }
 
-.card-profile::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.card-profile::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.card-profile::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 /* For Firefox */
 .card-profile::-webkit-scrollbar {
