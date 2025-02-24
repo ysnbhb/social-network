@@ -16,7 +16,6 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
     u.first_name,
     u.last_name,
 	u.nickname,
-    p.privacy,
     COUNT(DISTINCT cm.id) AS total_comments,
     COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
     COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes,
