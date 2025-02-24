@@ -69,6 +69,7 @@ export default function Navbar() {
             </g>
           </svg>
           Notification
+          <span className="notification-count" style={{ display: 'none' }}>+1</span>
         </Link>
       </div>
       <div className="avatar">

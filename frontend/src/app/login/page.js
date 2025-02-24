@@ -1,14 +1,15 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, } from "react";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
 
 
-export default  function Login() {
+export default function Login() {
   const containerRef = useRef(null);
-
+  const Router = useRouter();
   const handleSignUp = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -16,21 +17,23 @@ export default  function Login() {
     formData.forEach((value, key) => {
       dataObject[key] = value;
     });
-    
+
     const response = await fetch(signUpEndpoints, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify(dataObject)
     });
     const content = await response.json();
     if (!response.ok) {
       alert(content)
     } else {
-      redirect('/home')
+      Router.push('/home')
+      // redirect('/home')
     }
-  
+
   };
 
   const handleLogin = async (event) => {
@@ -40,21 +43,23 @@ export default  function Login() {
     formData.forEach((value, key) => {
       dataObject[key] = value;
     });
-    
+
     const response = await fetch(loginEndpoints, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify(dataObject)
     });
     const content = await response.json();
     if (!response.ok) {
       alert(content)
     } else {
-      redirect('/home')
+      Router.push('/home')
+      // redirect('/home')
     }
-  
+
   };
 
   useEffect(() => {
@@ -86,21 +91,21 @@ export default  function Login() {
             <form onSubmit={handleSignUp}>
               <h1>Create Account</h1>
               <span>or use your email for registration</span>
-              <input type="text" placeholder="First Name" name="firstName" required/>
-              <input type="text" placeholder="Last Name" name="lastName" required/>
-              <input type="text" placeholder="Nickname" name="nickname" required/>
-              <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required/>
-              <input type="email" placeholder="Email" name="email" required/>
-              <input type="password" placeholder="Password" name="password" required/>
+              <input type="text" placeholder="First Name" name="firstName" required />
+              <input type="text" placeholder="Last Name" name="lastName" required />
+              <input type="text" placeholder="Nickname" name="nickname" required />
+              <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
+              <input type="email" placeholder="Email" name="email" required />
+              <input type="password" placeholder="Password" name="password" required />
               <button>Sign Up</button>
             </form>
           </div>
           <div className={styles.formContainer + " " + styles.signInContainer}>
-          <form onSubmit={handleLogin}>
+            <form onSubmit={handleLogin}>
               <h1>Sign in</h1>
               <span>or use your account</span>
-              <input type="email" placeholder="Email" name="email" required/>
-              <input type="password" placeholder="Password" name="password" required/>
+              <input type="email" placeholder="Email" name="email" required />
+              <input type="password" placeholder="Password" name="password" required />
               <a href="#">Forgot your password?</a>
               <button>Sign In</button>
             </form>
