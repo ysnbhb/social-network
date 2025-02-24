@@ -6,7 +6,21 @@
     top: 80px;
     height: fit-content;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow-y: scroll;
+    max-height: 268px;
 }
+.activity-sidebar::-webkit-scrollbar {
+    width: 8px;
+    display: block; /* Show scrollbar */
+  }
+  
+  /* For Firefox */
+  .activity-sidebar::-webkit-scrollbar {
+    width: 0px; /* Hide scrollbar in Chrome, Safari */
+    height: 0px;
+    display: none;
+  }
+   
 
 .activity-header {
     display: flex;
