@@ -1,12 +1,35 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --navbar-bg: white;
+  --navbar-border: #e9ecef;
+  --shadow-light: rgba(0, 0, 0, 0.02);
+  --border-light: #eef0f2;
+  --border-focus: #e1e4e8;
+  --focus-shadow: rgba(29, 161, 242, 0.1);
+  --icon-color: #666;
+  --icon-hover: #1da1f2;
+  --profile-bg: white;
+  --profile-border: #f0f2f5;
+  --profile-button: #1da1f2;
+  --profile-button-hover: #1a91da;
+  --shortcut-hover: #f8f9fa;
+  --feed-bg: white;
+  --feed-shadow: rgba(0, 0, 0, 0.04);
+  --post-border: #f0f2f5;
+  --post-text-muted: #8e8e8e;
+  --avatar-border: white;
+  --avatar-shadow: rgba(0, 0, 0, 0.2);
+  --hashtag-color: #1da1f2;
+  --divider-color: #f0f2f5;
+  --see-all-color: #1da1f2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    overflow: hidden;
   }
 }
 
@@ -16,6 +39,7 @@ body {
   padding: 0;
   height: 100%;
   box-sizing: border-box;
+  background: #EFF3F6;
 }
 
 * {

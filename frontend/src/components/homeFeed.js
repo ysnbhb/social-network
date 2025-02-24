@@ -1,8 +1,8 @@
 import '../styles/homeFeed.css';
 
-export default function HomeFeed() {
+export default function HomeFeed( { className ,divclasses}  ) {
     return (
-        <section className="section-home">
+        <section className={`${className} section-home`}>
         <div className="feed">
             <div className="post-creator">
                 <div className="avatar"></div>
@@ -19,7 +19,6 @@ export default function HomeFeed() {
                     </div>
                     <span>Post</span>
                   </button>
-                  
             </div>
             <div className="post-options">
                 <div className="image">
