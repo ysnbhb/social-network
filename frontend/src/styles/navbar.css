@@ -12,12 +12,14 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
+/* Logo */
 .logo {
     font-size: 1.4rem;
     font-weight: 700;
     color: #333;
     text-decoration: none;
     margin-right: 2rem;
+    transition: color 0.3s ease-in-out;
 }
 
 /* Enhanced Nav Icons */
@@ -29,7 +31,7 @@
 
 .nav-icons a {
     color: #666;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,10 +49,13 @@
 .nav-icons .active svg {
     stroke: #1da1f2;
     fill: #1da1f2;
+    transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
+
 .nav-icons .active svg g circle {
     fill: #ffffff;
     r: 2.5px;
+    transition: fill 0.3s ease-in-out, r 0.3s ease-in-out;
 }
 
 .nav-icons a:hover {
@@ -60,7 +65,7 @@
 .nav-icons svg {
     stroke: #666;
     fill: none;
-    transition: stroke 0.2s ease;
+    transition: stroke 0.3s ease-in-out;
 }
 
 .nav-icons a:hover svg {
