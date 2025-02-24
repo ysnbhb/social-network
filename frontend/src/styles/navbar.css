@@ -10,14 +10,17 @@
     justify-content: space-between;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    height: 65px;
 }
 
+/* Logo */
 .logo {
     font-size: 1.4rem;
     font-weight: 700;
     color: #333;
     text-decoration: none;
     margin-right: 2rem;
+    transition: color 0.3s ease-in-out;
 }
 
 /* Enhanced Nav Icons */
@@ -29,12 +32,31 @@
 
 .nav-icons a {
     color: #666;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     text-decoration: none;
+}
+
+.nav-icons .active {
+    background-color: #e3f0ff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #1da1f2;
+}
+
+.nav-icons .active svg {
+    stroke: #1da1f2;
+    fill: #1da1f2;
+    transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+.nav-icons .active svg g circle {
+    fill: #ffffff;
+    r: 2.5px;
+    transition: fill 0.3s ease-in-out, r 0.3s ease-in-out;
 }
 
 .nav-icons a:hover {
@@ -43,9 +65,26 @@
 
 .nav-icons svg {
     stroke: #666;
-    transition: stroke 0.2s ease;
+    fill: none;
+    transition: stroke 0.3s ease-in-out;
 }
 
 .nav-icons a:hover svg {
     stroke: #1da1f2;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    background: url("../components/test.jpg") no-repeat center/cover;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
 }
