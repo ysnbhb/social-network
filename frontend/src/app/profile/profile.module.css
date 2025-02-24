@@ -111,7 +111,7 @@
   flex-direction: column;
   overflow-y: auto;
   gap: 20px;
-  height: 95%;
+  height: 100vh;
   padding-top: 10px;
 }
 
@@ -146,7 +146,7 @@ span.Circle-image {
 }
 .avatar-user {
   width: 100%;
-  height: 250px;
+  height: 277px;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -158,9 +158,10 @@ span.Circle-image {
   width: 60%;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  max-height: 500px;
+   height: 100%;
   align-self: center;
 }
+
 .avatarContainer-profile {
   border-radius: 50%;
   position: relative !important;
@@ -207,21 +208,19 @@ span.Circle-image {
 /* end */
 
 /* posts */
-.Homefeed {
-  width: 98% !important;
- }
- .feed{
-  top: 0 !important;
-  background: #1a91da;
- }
+
 .post-image {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 12px;
 }
  
- 
-
+ .Homefeed{
+  width: 98% !important;
+ }
+.custom-feed-class{
+  top: unset !important;
+ }
  
 /* end */
 

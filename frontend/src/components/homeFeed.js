@@ -1,9 +1,9 @@
 import '../styles/homeFeed.css';
 
-export default function HomeFeed( { className ,divclasses}  ) {
-    return (
+export default function HomeFeed( { className ,classes = {}}  ) {
+     return (
         <section className={`${className} section-home`}>
-        <div className="feed">
+       <div className={`feed ${classes.div_feed  }`}>
             <div className="post-creator">
                 <div className="avatar"></div>
                 <textarea name="" id="" placeholder="Share something..."></textarea>
