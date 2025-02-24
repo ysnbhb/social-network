@@ -156,3 +156,36 @@ function sendChangeUnreadNotification(Notificationid) {
     }
     socket.send(JSON.stringify(data))
 }
+
+
+// socket = new WebSocket('ws://localhost:8080/ws');
+// socket.onopen = function () {
+//     console.log('WebSocket connection established.');
+// };
+// // receive message from websocket
+// socket.onmessage = function (event) {
+//     const data = JSON.parse(event.data);
+//     const type = data.type;
+//     console.log(data);
+
+//     switch (type) {
+//         case "messageuser":
+//             receiveMessageuser(data)
+//             break;
+//     }
+// }
+// function receiveMessageuser() {
+//     const notification = document.getElementById("notification-count");
+//     notification.style.display = "block";
+//     console.log(notification);
+// }
+
+
+// const data = {
+//     type: "messageuser",
+//     sender: "yakh",
+//     receiver: ["yahya"],
+//     content: "test message"
+// }
+// socket.send(JSON.stringify(data));
+
