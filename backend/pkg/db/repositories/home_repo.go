@@ -29,7 +29,8 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 	WHERE (p.privacy = 'public' AND p.privacy = 'public' AND  (c.group_id is NULL  or c.group_id = 0)) OR
     ((p.privacy = 'almost_private') AND 
      EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept')
-    )
+    ) OR 
+    p.privacy = 'private' AND EXISTS(SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1 )
 	GROUP BY 
     c.id, 
     c.user_id, 
