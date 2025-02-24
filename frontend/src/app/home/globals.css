@@ -53,21 +53,7 @@ body {
 }
 
 /* Enhanced Avatar Styles */
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-    background: url("../../components/test.jpg") no-repeat center/cover;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-    cursor: pointer;
-}
 
-.avatar-large {
-    width: 80px;
-    height: 80px;
-}
 
 /* Additional Utility Classes */
 .privacy {
