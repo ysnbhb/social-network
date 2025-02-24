@@ -10,6 +10,7 @@
     justify-content: space-between;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    height: 65px;
 }
 
 /* Logo */
@@ -70,4 +71,20 @@
 
 .nav-icons a:hover svg {
     stroke: #1da1f2;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    background: url("../components/test.jpg") no-repeat center/cover;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
 }

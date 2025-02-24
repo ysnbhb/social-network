@@ -1,37 +1,28 @@
+import Image from 'next/image';
 import '../styles/activitySidebar.css';
-
-export default function ActivitySidebar() {
+import image from "../components/images/IMG-20240514-WA0002.jpg";
+ export default function ActivitySidebar({ className ,classes = [],title  } ) {
+  let array=[]
+  if(Array.isArray(classes)) {
+    classes.map((item) => array.push(item))
+    
+ } 
   return (
-    <aside className="activity-sidebar">
+    <aside className={`${className} activity-sidebar`}>
       <div className="activity-header">
-        <h3>Activity</h3>
-        <a href="#" className="text-muted">See all</a>
+        <h3>{`${title}`}</h3>
       </div>
-
-      <div className="activity-item">
-        <div className="avatar"></div>
-        <div>
-          <p><strong>Deraa</strong> started following you</p>
-          <p className="text-muted">30m</p>
+      {array.map((item, index) => (
+        <div key={index} className="activity-item">
+          <Image src={image} className="avatar" alt="Avatar" />
+          <div>
+            <p><strong>{item.fullname }</strong></p>
+            <p className="text-muted">{item.time || "N/A"}</p>
+          </div>
+          <button>{item.button  }</button>
         </div>
-        <button>Follow</button>
-      </div>
-
-      <div className="activity-item">
-        <div className="avatar"></div>                
-        <div>
-          <p><strong>Edlwp</strong> liked your photo</p>
-          <p className="text-muted">1d</p>
-        </div>
-      </div>
-
-      <div className="activity-item">
-        <div className="avatar"></div>          
-        <div>
-          <p><strong>Edlwp</strong> liked your photo</p>
-          <p className="text-muted">1d</p>
-        </div>
-      </div>
+      ))}
+    
     </aside>
   );
 };

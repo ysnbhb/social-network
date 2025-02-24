@@ -4,15 +4,15 @@ import { useState } from 'react';
 import '../styles/homeFeed.css';
 import { CreatePost } from '../lib/createPost';
 
-export default function HomeFeed() {
+export default function HomeFeed( { className ,classes = {}}  )  {
     const [content , setContent] = useState("")
     const [postType , setPostType] = useState("public")
     const [img , setImg ] = useState(null)
 
 
     return (
-        <section className="section-home">
-        <div className="feed">
+        <section className={`${className} section-home`}>
+       <div className={`feed ${classes.div_feed  }`}>
             <div className="post-creator">
                 <div className="avatar"></div>
                 <textarea name="" id="" placeholder="Share something..." value={content} onChange={(e)=> {
@@ -33,7 +33,6 @@ export default function HomeFeed() {
                     </div>
                     <span>Post</span>
                   </button>
-                  
             </div>
             <div className="post-options">
                 <label className="image" htmlFor='img'>
