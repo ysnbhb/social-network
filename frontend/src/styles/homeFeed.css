@@ -1,0 +1,218 @@
+/* Core layout */
+.section-home {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Feed container */
+  .feed {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    position: sticky;
+    top: 80px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Post creator section */
+  .post-creator {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f2f5;
+    align-items: center;
+  }
+  
+  .post-creator textarea {
+    flex: 1;
+    resize: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid #dce1e5;
+    background-color: #f8f9fa;
+    font-size: 0.95rem;
+    transition: all 0.4s ease;
+    outline: none;
+    height: 50px;
+    scrollbar-width: none;
+  }
+  
+  .post-creator textarea:hover {
+    border-color: #1a91da;
+  }
+  
+  .post-creator textarea:focus {
+    border-color: #1a91da;
+    height: 200px;
+    box-shadow: 0 0 5px rgba(26, 145, 218, 0.5);
+  }
+  
+  /* Post creator button */
+  .post-creator button {
+    font-size: 15px;
+    background: #1da1f2;
+    color: white;
+    padding: 0.5em 0.7em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .post-creator button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .post-creator button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .post-creator button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .post-creator button:hover svg {
+    transform: translateX(1.1em) rotate(90deg) scale(1.1);
+  }
+  
+  .post-creator button:hover span {
+    transform: translateX(5em);
+  }
+  
+  .post-creator button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Post options */
+  .post-options {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .image {
+    display: flex;
+    border-radius: 7px;
+    padding-left: 0.5rem;
+    align-items: center;
+  }
+  
+  .image button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .privacy {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .privacy select {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  /* Individual post styling */
+  .post {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .post:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .post-author h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  
+  /* Post content */
+  .post p {
+    margin: 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .hashtag {
+    color: #1da1f2;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .hashtag:hover {
+    text-decoration: underline;
+  }
+  
+  /* Post actions */
+  .post-actions {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .post-actions div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    stroke: #666;
+  }
+  
+  .post-actions div:hover {
+    stroke: #1da1f2;
+    color: #1da1f2;
+  }
+  
+  /* Utility classes */
+  .text-muted {
+    color: #8e8e8e;
+  }
+  
+  /* Animation */
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
