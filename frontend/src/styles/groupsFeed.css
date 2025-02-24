@@ -1,0 +1,125 @@
+.group_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    background: url("../components/icons/avatarGroups.svg") no-repeat center/cover;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
+}
+
+.text-muted {
+    color: #8e8e8e;
+}
+
+.group-sidebar {
+    max-width: 18rem;
+    min-width: 16rem;
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;  /* Add space between sidebar and content */
+}
+
+.groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Space between groups */
+    margin: 1.5rem;
+    justify-content: center;  /* Center groups */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .group-sidebar {
+        max-width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .groups {
+        margin: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .groups {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-header h2 {
+    margin: 1rem 0 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Group Stats */
+.group-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    margin: 1.5rem 0;
+    gap: 0.5rem;
+}
+
+.group-stats h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* Join Button */
+.join-button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.open-button {
+    background-color: #02b21d;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.join-button:hover {
+    background-color: #1a91da;
+}
+
+/* Text Muted */
+.text-muted {
+    color: #6c757d;
+    font-size: 0.9rem;
+}

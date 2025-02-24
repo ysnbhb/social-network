@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Enhanced Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+/* Enhanced Search Bar */
+/* .search-bar {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 2rem;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    border: 1px solid #eef0f2;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #e1e4e8;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.1);
+} */
+
+/* Enhanced Nav Icons */
+.nav-icons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.nav-icons a {
+    color: #666;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-icons a:hover {
+    color: #1da1f2;
+}
+
+.nav-icons svg {
+    stroke: #666;
+}
+
+.nav-icons a:hover svg {
+    stroke: #1da1f2;
+}
+
+/* Enhanced Main Content Layout */
+/* .main-content {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1550px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+} */
+
+
+
+
+
+/* Enhanced Avatar Styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    background: url("avatar.svg") no-repeat center/cover;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
+}
+
+/* Enhanced Text Styles */
+.text-muted {
+    color: #8e8e8e;
+}
+
+
+
+/* -------------------------------------- */
+
+/* Navbar Group */
+.navgoup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.navgoup span {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+/* Search Container */
+.search-container {
+    padding: 12px;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    background-color: #1da1f2;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.search-container:hover {
+    width: 270px;
+}
+
+.icon-wrapper {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: white;
+    margin-right: 8px; /* Adds space between the icon and input */
+}
+
+.search-input {
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+    width: 100%;
+    color: white;
+    font-weight: 400;
+    border: none;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.search-container:hover .search-input {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Group Sidebar */
+.group-sidebar {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.groups {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    .groups {
+        grid-template-columns: 1fr 1fr; /* Two columns */
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    .groups {
+        grid-template-columns: 1fr; /* Single column */
+        padding: 1rem;
+    }
+}
+
+/* Group Header */
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-header h2 {
+    margin: 1rem 0 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Group Stats */
+.group-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    margin: 1.5rem 0;
+    gap: 0.5rem;
+}
+
+.group-stats h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* Join Button */
+.join-button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.open-button {
+    background-color: #02b21d;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.join-button:hover {
+    background-color: #1a91da;
+}
+
+/* Text Muted */
+.text-muted {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
