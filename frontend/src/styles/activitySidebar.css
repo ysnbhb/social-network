@@ -14,7 +14,6 @@
     display: block; /* Show scrollbar */
   }
   
-  
   /* For Firefox */
   .activity-sidebar::-webkit-scrollbar {
     width: 0px; /* Hide scrollbar in Chrome, Safari */
