@@ -1,46 +1,29 @@
 import Image from "next/image";
 import style from "./profile.module.css";
 import image from "../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../components/images/Leonardo_Phoenix_10_Imagine_a_scene_where_a_user_or_perhaps_a_0.jpg";
+import bag from "../../components/images/image6.jpg";
 import ActivitySidebar from "../../components/activitySide";
 import HomeFeed from "../../components/homeFeed";
 // import Navbar from "../../components/navbar";
 export default function Profile() {
-  const people = [
-    {
-      name: "Tafari Sans",
-      role: "Principal Designer at Spotify",
-      avatar: "/avatars/avatar4.png",
-    },
-    {
-      name: "Velasco Timmber",
-      role: "Sr. Product Designer at Netflix",
-      avatar: "/avatars/avatar5.png",
-    },
-    {
-      name: "Han Soo Hee",
-      role: "Actor, Public Figure",
-      avatar: "/avatars/avatar6.png",
-    },
-    {
-      name: "Salsabilla Aslley",
-      role: "Content Creator",
-      avatar: "/avatars/avatar7.png",
-    },
+  const menuData = [
+    { title: "Followers", fullname: "Omar Rharbi", time: "30m", button: "Follow", image: "/omar.jpg" },
+    { title: "Followers", fullname: "John Doe", time: "1h", button: "Follow", image: "/john.jpg" },
+    { title: "Followers", fullname: "Jane Smith", time: "2h", button: "Follow", image: "/jane.jpg" },
   ];
   return (
     <div>
       <div className={style.container}>
         <div className={style["card-profile"]}>
           <div className={style["card-profile-posts"]}>
-            <div className= {`${style["avatar-user"]} ${style["bground"]}`}> 
-              {/* <Image
+            <div className= {`${style["avatar-user"]}`}> 
+              <Image
                 src={bag}
                 alt=""
                 srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
                 objectFit="cover"
-              /> */}
+              />
             </div>
             <div className={style.buttonContainer}>
               <button className={style.followButton}>Follow</button>
@@ -85,7 +68,7 @@ export default function Profile() {
 
         <div className={style["card-users"]}>
           <ActivitySidebar className={`${style.ActivitySidebar}`}
-          classes={{ title: "followers",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
+          classes={menuData}
           />
           
           <ActivitySidebar className={`${style.ActivitySidebar}`}
