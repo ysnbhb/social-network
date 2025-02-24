@@ -1,58 +1,75 @@
+"use client";
 
-let socket
-function connectwebsocket() {
-    socket = new WebSocket('ws://localhost:8080/ws');
-    socket.onopen = function () {
-        console.log('WebSocket connection established.');
-    };
-    // receive message from websocket
-    socket.onmessage = function (event) {
-        const data = JSON.parse(event.data);
-        const type = data.type;
-        switch (type) {
-            case "onlineStatus":
-                receiveOnlineStatus(data)
-                break;
-            case "messageuser":
-                receiveMessageuser(data)
-                break;
-            case "messageGroup":
-                receiveMessageGroup(data)
-                break;
-            case "follow":
-                receiveFollow(data)
-                break;
-            case "requestinvitationgroup":
-                receiveRequestInvitationgroup(data)
-                break;
-            case "acceptedinvitationgroup":
-                receiveAcceptedInvitationGroup(data)
-                break;
-            case "acceptedinvitationuser":
-                receiveAcceptedInvitationUser(data)
-                break;
-            case "eventcreated":
-                receiveEventCreated(data)
-                break;
-            case "typing":
-                receiveTyping(data)
-                break;
-            case "getmessagesusers":
-                Getmessagesusers(data)
-                break;
-            case "getmessagesgroup":
-                Getmessagesgroups(data)
-                break;
+import { useEffect } from 'react';
+
+function getCookie(name) {
+    let cookieArray = document.cookie.split(';');  // Split cookies by semicolon
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i].trim(); // Remove any extra spaces
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1); // Get value after '='
         }
-    };
+    }
+    return null;
+}
 
-    socket.onerror = function (error) {
-        console.error('WebSocket error:', error);
-    };
+export function Connectwebsocket() {
+    useEffect(() => {
+        console.log("inside websocket");
+        const sessionId = getCookie("session_id");
+        const socket = new WebSocket(`ws://localhost:8080/ws?session_id=${sessionId}`);
 
-    socket.onclose = function () {
-        console.log('WebSocket connection closed.');
-    };
+        socket.onopen = function () {
+            console.log('WebSocket connection established.');
+        };
+        socket.onerror = function (error) {
+            console.error('WebSocket error:', error);
+        };
+
+        socket.onclose = function () {
+            console.log('WebSocket connection closed.');
+        };
+        // receive message from websocket
+        socket.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+            const type = data.type;
+            switch (type) {
+                case "onlineStatus":
+                    receiveOnlineStatus(data)
+                    break;
+                case "messageuser":
+                    receiveMessageuser(data)
+                    break;
+                case "messageGroup":
+                    receiveMessageGroup(data)
+                    break;
+                case "follow":
+                    receiveFollow(data)
+                    break;
+                case "requestinvitationgroup":
+                    receiveRequestInvitationgroup(data)
+                    break;
+                case "acceptedinvitationgroup":
+                    receiveAcceptedInvitationGroup(data)
+                    break;
+                case "acceptedinvitationuser":
+                    receiveAcceptedInvitationUser(data)
+                    break;
+                case "eventcreated":
+                    receiveEventCreated(data)
+                    break;
+                case "typing":
+                    receiveTyping(data)
+                    break;
+                case "getmessagesusers":
+                    Getmessagesusers(data)
+                    break;
+                case "getmessagesgroup":
+                    Getmessagesgroups(data)
+                    break;
+            }
+        };
+    })
 }
 
 
@@ -156,7 +173,36 @@ function sendChangeUnreadNotification(Notificationid) {
     }
     socket.send(JSON.stringify(data))
 }
-
+function receiveOnlineStatus(data) {
+    console.log(data);
+}
+function receiveMessageuser(data) {
+    console.log(data);
+}
+function receiveMessageGroup(data) {
+    console.log(data);
+}
+function receiveFollow(data) {
+    console.log(data);
+}
+function receiveRequestInvitationgroup(data) {
+    console.log(data);
+}
+function receiveAcceptedInvitationGroup(data) {
+    console.log(data);
+}
+function receiveEventCreated(data) {
+    console.log(data);
+}
+function receiveTyping(data) {
+    console.log(data);
+}
+function Getmessagesusers(data) {
+    console.log(data);
+}
+function Getmessagesgroups(data) {
+    console.log(data);
+}
 
 // socket = new WebSocket('ws://localhost:8080/ws');
 // socket.onopen = function () {
