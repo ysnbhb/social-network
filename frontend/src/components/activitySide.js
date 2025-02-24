@@ -1,36 +1,37 @@
 import '../styles/activitySidebar.css';
 
-export default function ActivitySidebar() {
+export default function ActivitySidebar({ className ,classes = {} } ) {
   return (
-    <aside className="activity-sidebar">
+    <aside className={`${className} activity-sidebar`}>
       <div className="activity-header">
-        <h3>Activity</h3>
+        <h3>{`${classes.title}`}</h3>
         <a href="#" className="text-muted">See all</a>
       </div>
 
       <div className="activity-item">
-        <div className="avatar"></div>
+        <div className={`${classes.image} avatar`}></div>
         <div>
-          <p><strong>Deraa</strong> started following you</p>
-          <p className="text-muted">30m</p>
+          <p><strong>{`${classes.fullname}`}</strong> </p>
+          <p className="text-muted"> {`${classes.time}`}</p>
         </div>
-        <button>Follow</button>
+        <button>{`${classes.button}`}</button>
       </div>
 
       <div className="activity-item">
-        <div className="avatar"></div>                
+        <div className={`${classes.image} avatar`}></div>
         <div>
-          <p><strong>Edlwp</strong> liked your photo</p>
-          <p className="text-muted">1d</p>
+          <p><strong>{`${classes.fullname}`}</strong></p>
+          <p className="text-muted"> {`${classes.time}`}</p>
         </div>
+        <button>{`${classes.button}`}</button>
       </div>
-
       <div className="activity-item">
-        <div className="avatar"></div>          
+        <div className={`${classes.image} avatar`}></div>
         <div>
-          <p><strong>Edlwp</strong> liked your photo</p>
-          <p className="text-muted">1d</p>
+          <p><strong>{`${classes.fullname}`}</strong> </p>
+          <p className="text-muted"> {`${classes.time}`}</p>
         </div>
+        <button>{`${classes.button}`}</button>
       </div>
     </aside>
   );

@@ -15,7 +15,9 @@ export default function Home() {
       <main className="main-content">
       <ProfileSide />
       <HomeFeed />
-      <ActivitySide />
+      <ActivitySide 
+          classes={{ title: "followers",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
+          />
       </main>
 
     </div>

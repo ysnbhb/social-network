@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "./profile.module.css";
 import image from "../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../components/images/Leonardo_Phoenix_10_generet_image_baground_haswidth_100height_0.jpg";
+import bag from "../../components/images/Leonardo_Phoenix_10_Imagine_a_scene_where_a_user_or_perhaps_a_0.jpg";
 import ActivitySidebar from "../../components/activitySide";
 import HomeFeed from "../../components/homeFeed";
 // import Navbar from "../../components/navbar";
@@ -30,7 +30,6 @@ export default function Profile() {
   ];
   return (
     <div>
-      
       <div className={style.container}>
         <div className={style["card-profile"]}>
           <div className={style["card-profile-posts"]}>
@@ -38,7 +37,7 @@ export default function Profile() {
               <Image
                 src={bag}
                 alt=""
-                srcset=""
+                srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
                 objectFit="cover"
               />
@@ -51,7 +50,7 @@ export default function Profile() {
               <Image
                 src={image}
                 className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
-                srcset=""
+                srcSet=""
                 alt="User Avatar"
                 layout="fill"
                 objectFit="cover"
@@ -85,7 +84,13 @@ export default function Profile() {
         </div>
 
         <div className={style["card-users"]}>
-          <ActivitySidebar />
+          <ActivitySidebar className={`${style.ActivitySidebar}`}
+          classes={{ title: "followers",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
+          />
+          
+          <ActivitySidebar className={`${style.ActivitySidebar}`}
+          classes={{ title: "following",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
+          />
         </div>
       </div>
     </div>
