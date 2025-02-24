@@ -1,7 +1,6 @@
 
 let socket
 function connectwebsocket() {
-
     socket = new WebSocket('ws://localhost:8080/ws');
     socket.onopen = function () {
         console.log('WebSocket connection established.');
