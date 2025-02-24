@@ -1,11 +1,37 @@
 package repo
 
 import (
+	"errors"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
+
+func CheckCanUSendMessage(msg models.Message, client *models.Client) error {
+	recieverid := GetUserIdByNickName(msg.Receivers[0])
+	if recieverid < 0 {
+		return errors.New("User not found")
+	}
+	query1 := "SELECT profile_type FROM users WHERE id = ?"
+	var profileType string
+	err := db.DB.QueryRow(query1, recieverid).Scan(&profileType)
+	if err != nil {
+		return err
+	}
+	if profileType == "private" {
+		query2 := "SELECT COUNT(*) FROM followers WHERE follower_id = ? AND following_id = ? OR following_id = ? AND follower_id = ?"
+		var count int
+		err := db.DB.QueryRow(query2, client.Userid, recieverid, client.Userid, recieverid).Scan(&count)
+		if err != nil {
+			return err
+		}
+		if count == 0 {
+			return errors.New("You are not following this user")
+		}
+	}
+	return nil
+}
 
 func Addmessages(msg models.Message, client *models.Client, sent_at string) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
@@ -17,6 +43,19 @@ func Addmessages(msg models.Message, client *models.Client, sent_at string) erro
 	return nil
 }
 
+func CheckCanUSendMessageGroup(msg models.Message, client *models.Client) error {
+	query := "SELECT COUNT(*) FROM group_members WHERE group_id = ? AND user_id = ?"
+	var count int
+	err := db.DB.QueryRow(query, msg.Groupid, client.Userid).Scan(&count)
+	if err != nil {
+		return err
+	}
+	if count == 0 {
+		return errors.New("You are not a member of this group")
+	}
+	return nil
+	
+}
 func AddmessagesGroup(msg models.Message, client *models.Client, sent_at string) error {
 	query := "INSERT INTO group_chats (group_id, user_id, message, sent_at) VALUES (?, ?, ?, ?)"
 	_, err := db.DB.Exec(query, msg.Groupid, client.Userid, msg.Content, sent_at)

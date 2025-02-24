@@ -198,3 +198,23 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/22 16:51:29 HandleWebsocket.go:44: Failed to read message: read tcp 127.0.0.1:8080->127.0.0.1:40318: use of closed network connection
 2025/02/22 16:54:38 server.go:27: Starting server on :8080
 2025/02/22 16:54:56 server.go:27: Starting server on :8080
+2025/02/24 12:46:06 server.go:27: Starting server on :8080
+2025/02/24 12:56:17 server.go:27: Starting server on :8080
+2025/02/24 13:00:02 user_repo.go:33: <nil>
+2025/02/24 13:02:45 user_repo.go:33: <nil>
+2025/02/24 13:03:12 user_repo.go:33: <nil>
+2025/02/24 13:14:33 user_repo.go:33: <nil>
+2025/02/24 13:14:50 user_repo.go:33: <nil>
+2025/02/24 13:15:08 user_repo.go:33: <nil>
+2025/02/24 13:15:09 user_repo.go:33: <nil>
+2025/02/24 13:15:11 user_repo.go:33: <nil>
+2025/02/24 13:15:11 user_repo.go:33: <nil>
+2025/02/24 13:16:31 user_repo.go:33: <nil>
+2025/02/24 13:16:47 user_repo.go:33: <nil>
+2025/02/24 13:16:58 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 13:17:43 user_repo.go:33: <nil>
+2025/02/24 13:20:51 HandleWebsocket.go:42: Failed to read message: json: cannot unmarshal string into Go struct field Message.receiver of type []string
+2025/02/24 13:25:42 server.go:27: Starting server on :8080
+2025/02/24 13:26:59 server.go:27: Starting server on :8080
+2025/02/24 13:33:37 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 13:38:19 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
