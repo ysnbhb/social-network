@@ -33,14 +33,14 @@ export default function Profile() {
       <div className={style.container}>
         <div className={style["card-profile"]}>
           <div className={style["card-profile-posts"]}>
-            <div className={style["avatar-user"]}>
-              <Image
+            <div className= {`${style["avatar-user"]} ${style["bground"]}`}> 
+              {/* <Image
                 src={bag}
                 alt=""
                 srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
                 objectFit="cover"
-              />
+              /> */}
             </div>
             <div className={style.buttonContainer}>
               <button className={style.followButton}>Follow</button>

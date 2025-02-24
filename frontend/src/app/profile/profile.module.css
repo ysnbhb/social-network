@@ -129,6 +129,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
   /* Prevents the card from shrinking */
 }
 /* show user profile */
@@ -141,22 +142,47 @@ span.Circle-image {
   position: sticky;
   border-radius: 50%;
   background: #fff;
-  margin-top: -132px;
+  margin-top: -148px;
 }
 .avatar-user {
+  background: linear-gradient(
+    45deg,
+    #f9d976 0%,
+    #f39f86 20%,
+    #f28db2 40%,
+    #a77fcc 60%,
+    #6389df 80%,
+    #56b6c4 100%
+  );
+  /* For a smoother gradient with more colors */
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
   width: 100%;
   height: 277px;
   border-radius: 10px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); */
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .bground{
   width: 100% !important;
   border-radius: 10px;
+  padding: 15px;
+  border-radius: 12px !important;
 }
 .avatarContainer {
   width: 60%;
   border-radius: 10px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); */
    height: 100%;
   align-self: center;
 }
