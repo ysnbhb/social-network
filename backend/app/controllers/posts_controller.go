@@ -42,13 +42,11 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 	postRequest.GroupId, _ = strconv.Atoi("groupId")
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
-	err = services.CreatPost(&postRequest)
+	post, err := services.CreatPost(&postRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println(err)
 		return
 	}
-
-	// Add success response
-	utils.JsonResponse(w, "Post created successfully", http.StatusCreated)
+	utils.JsonResponse(w, post, http.StatusCreated)
 }

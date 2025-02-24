@@ -8,27 +8,27 @@ import (
 	"social-network/pkg/utils"
 )
 
-func CreatPost(postRequest *models.PostRequest) error {
+func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 	err := utils.ValidatePost(postRequest)
 	if err != nil {
-		return errors.New("validating post: " + err.Error())
+		return nil, errors.New("validating post: " + err.Error())
 	}
 	if postRequest.File != nil {
 		err = utils.ValidImg(postRequest.FileHeader.Header.Get("Content-Type"), postRequest.FileHeader.Size)
 		if err != nil {
-			return errors.New("validating image: " + err.Error())
+			return nil, errors.New("validating image: " + err.Error())
 		}
 		postRequest.ImageUrl, err = utils.SaveImg(postRequest.File)
 		if err != nil {
-			return errors.New("field to save image")
+			return nil, errors.New("field to save image")
 		}
 	}
 	if postRequest.GroupId != 0 && !repo.CheckUserInGroup(postRequest.GroupId, postRequest.UserId) {
-		return errors.New("you can't post in this group")
+		return nil, errors.New("you can't post in this group")
 	}
-	err = repo.CreatPost(postRequest)
+	post, err := repo.CreatPost(postRequest)
 	if err != nil {
-		return errors.New("creating post in db:" + err.Error())
+		return nil, errors.New("creating post in db:" + err.Error())
 	}
-	return nil
+	return post, nil
 }
