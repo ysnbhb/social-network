@@ -10,6 +10,14 @@ import (
 )
 
 func SendMessageuser(msg models.Message, client *models.Client) {
+	err := repo.CheckCanUSendMessage(msg, client)
+	if err != nil {
+		client.Conn.WriteJSON(map[string]interface{}{
+			"type":    "error",
+			"content": "you can't send message to this user: " + err.Error(),
+		})
+		return
+	}
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
@@ -18,7 +26,7 @@ func SendMessageuser(msg models.Message, client *models.Client) {
 			"content": "message is too long",
 		})
 	}
-	err := repo.Addmessages(msg, client, Time)
+	err = repo.Addmessages(msg, client, Time)
 	if err != nil {
 		fmt.Println("error adding messageuser to db:")
 	}
@@ -31,20 +39,32 @@ func SendMessageuser(msg models.Message, client *models.Client) {
 			"time":    Time,
 		})
 	}
-	client.Conn.WriteJSON(map[string]interface{}{
+
+	err = client.Conn.WriteJSON(map[string]interface{}{
 		"type":    "messageuser",
 		"sender":  client.Username,
 		"content": msg.Content,
 		"time":    Time,
 	})
+	if err != nil {
+		fmt.Println("error sending messageuser to client:")
+	}
 	
-	err = repo.AddNotification(msg, client, "messageuser", Time)
+	err = repo.AddNotification(msg, client, "messageuser", Time) // add notification to db. ??
 	if err != nil {
 		fmt.Println("error adding notification messageuser to db:")
 	}
 }
 
 func SendMessageGroup(msg models.Message, client *models.Client) {
+	err := repo.CheckCanUSendMessageGroup(msg, client)
+	if err != nil {
+		client.Conn.WriteJSON(map[string]interface{}{
+			"type":    "error",
+			"content": "you can't send message to this group: " + err.Error(),
+		})
+		return
+	}
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
@@ -53,7 +73,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) {
 			"content": "message is too long",
 		})
 	}
-	err := repo.AddmessagesGroup(msg, client, Time)
+	err = repo.AddmessagesGroup(msg, client, Time)
 	if err != nil {
 		fmt.Println("error adding messagegroup to db:")
 	}

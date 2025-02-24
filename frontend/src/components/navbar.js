@@ -7,7 +7,7 @@ export default function Navbar() {
       <a href="#" className="logo">ZoneMeet</a>
       <div className="nav-icons">
         {/* Home Icon */}
-        <Link href="#">
+        <Link href="/home">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="home">
             <path
               fill="none"
@@ -23,7 +23,7 @@ export default function Navbar() {
         </Link>
 
         {/* Groups Icon */}
-        <Link href="#">
+        <Link href="/groups">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 128 128" id="groups">
             <circle cx="63.5" cy="39.5" r="17.5" strokeWidth="7" transform="rotate(-90 63.5 39.5)"></circle>
             <path
@@ -66,6 +66,7 @@ export default function Navbar() {
             </g>
           </svg>
           Notification
+          <span className="notification-count" style={{ display: 'none' }}>+1</span>
         </Link>
       </div>
       <div className="avatar">
