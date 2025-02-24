@@ -37,12 +37,29 @@
     text-decoration: none;
 }
 
+.nav-icons .active {
+    background-color: #e3f0ff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #1da1f2;
+}
+
+.nav-icons .active svg {
+    stroke: #1da1f2;
+    fill: #1da1f2;
+}
+.nav-icons .active svg g circle {
+    fill: #ffffff;
+    r: 2.5px;
+}
+
 .nav-icons a:hover {
     color: #1da1f2;
 }
 
 .nav-icons svg {
     stroke: #666;
+    fill: none;
     transition: stroke 0.2s ease;
 }
 

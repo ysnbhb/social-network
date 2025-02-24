@@ -1,31 +1,88 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  box-sizing: border-box;
-}
-
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
- 
+body {
+  background-color: #f8f9fa;
+  color: #333;
+}
 
-.icons {
-	padding: 10px;
-  }
+/* Enhanced Main Content Layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1550px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+.text-muted {
+  color: #8e8e8e;
+}
+
+.hashtag {
+  color: #1da1f2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background-color: #f0f2f5;
+  margin: 1rem 0;
+}
+
+.see-all {
+  color: #1da1f2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+/* Enhanced Avatar Styles */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  background: url("../components/test.jpg") no-repeat center/cover;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.avatar-large {
+  width: 80px;
+  height: 80px;
+}
+
+/* Additional Utility Classes */
+.privacy {
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+
+.privacy select{
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-family: Arial, sans-serif; 
+  cursor: pointer;
+  border-radius: 7px;
+}
