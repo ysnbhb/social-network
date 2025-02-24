@@ -2,11 +2,19 @@ package utils
 
 import (
 	"errors"
+	"fmt"
+	"io"
+	"mime/multipart"
 	"net/url"
+	"os"
 	"strings"
 
 	"social-network/pkg/models"
+
+	"github.com/gofrs/uuid"
 )
+
+const maxSize = 10 * 1024 * 1024
 
 func ValidatePost(postRequest *models.PostRequest) error {
 	if strings.TrimSpace(postRequest.Content) == "" {
@@ -30,4 +38,32 @@ func ValidatePost(postRequest *models.PostRequest) error {
 	}
 
 	return nil
+}
+
+func ValidImg(contentType string, size int64) error {
+	if !(len(contentType) > 6 && contentType[:6] == "image/") {
+		return fmt.Errorf("Invalid image content type")
+	}
+	if size > maxSize {
+		return fmt.Errorf("data exceeds max allowed size of %d bytes", maxSize)
+	}
+	return nil
+}
+
+func SaveImg(image multipart.File) (string, error) {
+	imguuid, err := uuid.NewV4()
+	if err != nil {
+		return "", err
+	}
+	imgSavingPath := "./uploads/" + imguuid.String() + ".jpg"
+	fileImg, err := os.Create(imgSavingPath)
+	if err != nil {
+		return "", err
+	}
+	_, err = io.Copy(fileImg, image)
+	if err != nil {
+		return "", err
+	}
+
+	return imgSavingPath, nil
 }

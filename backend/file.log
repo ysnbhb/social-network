@@ -200,3 +200,22 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/22 16:54:56 server.go:27: Starting server on :8080
 2025/02/22 17:47:25 server.go:27: Starting server on :8080
 2025/02/24 10:40:37 server.go:27: Starting server on :8080
+2025/02/24 12:35:10 server.go:27: Starting server on :8080
+2025/02/24 12:39:55 posts_controller.go:24: error decoding json postRequest: invalid character '-' in numeric literal
+2025/02/24 12:39:56 posts_controller.go:24: error decoding json postRequest: invalid character '-' in numeric literal
+2025/02/24 14:51:26 server.go:27: Starting server on :8080
+2025/02/24 14:52:50 server.go:27: Starting server on :8080
+2025/02/24 14:52:57 posts_controller.go:36: validating post: post content cannot be empty
+2025/02/24 14:54:57 server.go:27: Starting server on :8080
+2025/02/24 14:55:07 posts_controller.go:22: request Content-Type isn't multipart/form-data
+2025/02/24 14:56:58 posts_controller.go:22: no multipart boundary param in Content-Type
+2025/02/24 14:57:48 posts_controller.go:41: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/02/24 14:58:24 server.go:27: Starting server on :8080
+2025/02/24 14:58:32 posts_controller.go:43: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/02/24 15:01:14 server.go:27: Starting server on :8080
+2025/02/24 15:19:55 server.go:27: Starting server on :8080
+2025/02/24 15:24:48 server.go:27: Starting server on :8080
+2025/02/24 15:25:15 server.go:27: Starting server on :8080
+2025/02/24 15:25:30 server.go:27: Starting server on :8080
+2025/02/24 15:25:50 posts_controller.go:39: <nil>
+2025/02/24 15:29:20 posts_controller.go:39: <nil>

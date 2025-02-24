@@ -1,9 +1,11 @@
 package controllers
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
+	"path/filepath"
+	"slices"
+	"strconv"
 
 	"social-network/app/services"
 	"social-network/pkg/models"
@@ -16,15 +18,28 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-
-	var postRequest models.PostRequest
-	err := json.NewDecoder(r.Body).Decode(&postRequest)
+	err := r.ParseMultipartForm(10 << 20)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("error decoding json postRequest:", err)
+		log.Println(err)
 		return
 	}
-
+	var contant, privacy string
+	contant = r.FormValue("content")
+	privacy = r.FormValue("postType")
+	file, headerFiel, _ := r.FormFile("img")
+	var postRequest models.PostRequest
+	postRequest.Content = contant
+	postRequest.Privacy = privacy
+	postRequest.File = file
+	postRequest.FileHeader = headerFiel
+	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
+	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
+		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
+		log.Println(err)
+		return
+	}
+	postRequest.GroupId, _ = strconv.Atoi("groupId")
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
 	err = services.CreatPost(&postRequest)
