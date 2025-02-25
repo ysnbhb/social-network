@@ -2,7 +2,6 @@ package controllers // auth_controller.go
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -55,7 +54,6 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		log.Println("error decoding json signup")
 		return
 	}
-	fmt.Println(user)
 	err = utils.ValidateUser(&user)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
@@ -84,7 +82,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		log.Println("adding session:", err)
 		return
 	}
-	utils.JsonResponse(w, "User signUp successfully", http.StatusBadRequest)
+	utils.JsonResponse(w, "User signUp successfully", http.StatusCreated)
 }
 
 func Logout(w http.ResponseWriter, r *http.Request) {
