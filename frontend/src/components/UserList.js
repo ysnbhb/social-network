@@ -32,7 +32,7 @@ function UserList({ setSelectedUser }) {
             <ul>
                 {users === null ? (<li>No users available</li>) :
                     (users.map((user) => (
-                        <li key={user.id} onClick={() => handleSelectUser(user.nickname)} className="user-item">
+                        <li key={user.id} onClick={() => handleSelectUser(user)} className="user-item">
                             {user.nickname}
                         </li>
                     ))

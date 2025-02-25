@@ -77,3 +77,49 @@
 2025/02/25 17:34:14 friends_service.go:14: Get Friends: not enough args to execute query: want 2 got 1
 2025/02/25 17:34:37 server.go:27: Starting server on :8080
 2025/02/25 17:37:15 server.go:27: Starting server on :8080
+2025/02/25 18:10:31 server.go:27: Starting server on :8080
+2025/02/25 18:10:49 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:10:51 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:11:32 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:11:58 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:12:11 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:12:39 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:13:04 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:14:09 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:15:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:27 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:27 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:28 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:28 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:31 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:16:35 Websocket_controller.go:43: Failed to read message: json: cannot unmarshal number into Go struct field Message.sender of type string
+2025/02/25 18:18:22 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:18:24 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:18:24 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:18:27 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:18:33 Websocket_controller.go:43: Failed to read message: json: cannot unmarshal number into Go struct field Message.sender of type string
+2025/02/25 18:20:30 Websocket_controller.go:43: Failed to read message: json: cannot unmarshal string into Go struct field Message.receiver of type []string
+2025/02/25 18:21:15 Websocket_controller.go:43: Failed to read message: json: cannot unmarshal string into Go struct field Message.receiver of type []string
+2025/02/25 18:22:30 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:22:30 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:22:35 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:53:51 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 18:53:51 Websocket_controller.go:43: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/02/25 19:08:03 server.go:27: Starting server on :8080

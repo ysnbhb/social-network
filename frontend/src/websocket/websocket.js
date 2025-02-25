@@ -12,12 +12,12 @@ function getCookie(name) {
     }
     return null;
 }
-
+let socket;
 export function Connectwebsocket() {
     useEffect(() => {
         console.log("inside websocket");
         const sessionId = getCookie("session_id");
-        const socket = new WebSocket(`ws://localhost:8080/ws?session_id=${sessionId}`);
+        socket = new WebSocket(`ws://localhost:8080/ws?session_id=${sessionId}`);
 
         socket.onopen = function () {
             console.log('WebSocket connection established.');
@@ -36,7 +36,6 @@ export function Connectwebsocket() {
         // receive message from websocket
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
-            console.log('Received data:', data);
             const type = data.type;
             switch (type) {
                 case "onlineStatus":
@@ -78,7 +77,8 @@ export function Connectwebsocket() {
 }
 
 
-function sendMessageuser(sender, receiver, message) {
+export function sendMessageuser(sender, receiver, message) {
+    console.log("you send message", sender, receiver, message);
     const data = {
         type: "messageuser",
         sender: sender,
