@@ -198,6 +198,7 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/22 16:51:29 HandleWebsocket.go:44: Failed to read message: read tcp 127.0.0.1:8080->127.0.0.1:40318: use of closed network connection
 2025/02/22 16:54:38 server.go:27: Starting server on :8080
 2025/02/22 16:54:56 server.go:27: Starting server on :8080
+<<<<<<< HEAD
 2025/02/25 15:08:31 server.go:27: Starting server on :8080
 2025/02/25 15:12:46 server.go:27: Starting server on :8080
 2025/02/25 15:14:30 auth_controller.go:32: sorry, this email does not exist
@@ -205,3 +206,225 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/25 15:16:26 server.go:27: Starting server on :8080
 2025/02/25 15:16:28 auth_controller.go:18: method not allowed in login
 2025/02/25 15:16:32 user_repo.go:33: <nil>
+=======
+<<<<<<< HEAD
+2025/02/22 17:47:25 server.go:27: Starting server on :8080
+2025/02/24 10:40:37 server.go:27: Starting server on :8080
+2025/02/24 12:35:10 server.go:27: Starting server on :8080
+2025/02/24 12:39:55 posts_controller.go:24: error decoding json postRequest: invalid character '-' in numeric literal
+2025/02/24 12:39:56 posts_controller.go:24: error decoding json postRequest: invalid character '-' in numeric literal
+2025/02/24 14:51:26 server.go:27: Starting server on :8080
+2025/02/24 14:52:50 server.go:27: Starting server on :8080
+2025/02/24 14:52:57 posts_controller.go:36: validating post: post content cannot be empty
+2025/02/24 14:54:57 server.go:27: Starting server on :8080
+2025/02/24 14:55:07 posts_controller.go:22: request Content-Type isn't multipart/form-data
+2025/02/24 14:56:58 posts_controller.go:22: no multipart boundary param in Content-Type
+2025/02/24 14:57:48 posts_controller.go:41: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/02/24 14:58:24 server.go:27: Starting server on :8080
+2025/02/24 14:58:32 posts_controller.go:43: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/02/24 15:01:14 server.go:27: Starting server on :8080
+2025/02/24 15:19:55 server.go:27: Starting server on :8080
+2025/02/24 15:24:48 server.go:27: Starting server on :8080
+2025/02/24 15:25:15 server.go:27: Starting server on :8080
+2025/02/24 15:25:30 server.go:27: Starting server on :8080
+2025/02/24 15:25:50 posts_controller.go:39: <nil>
+2025/02/24 15:29:20 posts_controller.go:39: <nil>
+=======
+2025/02/24 12:46:06 server.go:27: Starting server on :8080
+2025/02/24 12:56:17 server.go:27: Starting server on :8080
+2025/02/24 13:00:02 user_repo.go:33: <nil>
+2025/02/24 13:02:45 user_repo.go:33: <nil>
+2025/02/24 13:03:12 user_repo.go:33: <nil>
+2025/02/24 13:14:33 user_repo.go:33: <nil>
+2025/02/24 13:14:50 user_repo.go:33: <nil>
+2025/02/24 13:15:08 user_repo.go:33: <nil>
+2025/02/24 13:15:09 user_repo.go:33: <nil>
+2025/02/24 13:15:11 user_repo.go:33: <nil>
+2025/02/24 13:15:11 user_repo.go:33: <nil>
+2025/02/24 13:16:31 user_repo.go:33: <nil>
+2025/02/24 13:16:47 user_repo.go:33: <nil>
+2025/02/24 13:16:58 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 13:17:43 user_repo.go:33: <nil>
+2025/02/24 13:20:51 HandleWebsocket.go:42: Failed to read message: json: cannot unmarshal string into Go struct field Message.receiver of type []string
+2025/02/24 13:25:42 server.go:27: Starting server on :8080
+2025/02/24 13:26:59 server.go:27: Starting server on :8080
+2025/02/24 13:33:37 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/02/24 13:38:19 HandleWebsocket.go:42: Failed to read message: websocket: close 1001 (going away)
+>>>>>>> main
+>>>>>>> origin/ysnbhb
+2025/02/25 15:38:44 server.go:27: Starting server on :8080
+2025/02/25 15:38:48 auth_controller.go:54: error decoding json signup
+2025/02/25 15:39:04 server.go:27: Starting server on :8080
+2025/02/25 15:39:05 auth_controller.go:54: error decoding json signup invalid character '-' in numeric literal
+2025/02/25 15:39:48 auth_controller.go:54: error decoding json signup invalid character '-' in numeric literal
+2025/02/25 15:41:56 auth_controller.go:54: error decoding json signup invalid character '-' in numeric literal
+2025/02/25 16:19:37 server.go:27: Starting server on :8080
+2025/02/25 16:19:40 auth_controller.go:56: request Content-Type isn't multipart/form-data
+2025/02/25 16:22:21 server.go:3634: http: panic serving [::1]:56192: runtime error: invalid memory address or nil pointer dereference
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8541c0?, 0xba0510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9486b8, 0xc000222000}, 0xc000120000)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:74 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9486b8?, 0xc000222000?}, 0x8c5e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000204090?, {0x9486b8, 0xc000222000}, 0xc000120000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9486b8, 0xc000222000}, 0xc000120000)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9486b8?, 0xc000222000?}, 0xc000222001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x947110?}, {0x9486b8?, 0xc000222000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc630, {0x948bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 16:23:21 server.go:3634: http: panic serving [::1]:58754: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8541c0?, 0xba0510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9486b8, 0xc0002220e0}, 0xc0000c83c0)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:74 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9486b8?, 0xc0002220e0?}, 0x8c5e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000204a80?, {0x9486b8, 0xc0002220e0}, 0xc0000c83c0)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9486b8, 0xc0002220e0}, 0xc0000c83c0)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9486b8?, 0xc0002220e0?}, 0xc000222001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x947110?}, {0x9486b8?, 0xc0002220e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000202240, {0x948bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 16:23:33 server.go:27: Starting server on :8080
+2025/02/25 16:23:35 server.go:3634: http: panic serving [::1]:56946: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8541c0?, 0xba0510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9486b8, 0xc00022c000}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:74 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9486b8?, 0xc00022c000?}, 0x8c5e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002040c0?, {0x9486b8, 0xc00022c000}, 0xc0000c8280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9486b8, 0xc00022c000}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9486b8?, 0xc00022c000?}, 0xc00022c001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x947110?}, {0x9486b8?, 0xc00022c000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc510, {0x948bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 16:24:37 server.go:27: Starting server on :8080
+2025/02/25 16:24:43 user_repo.go:33: <nil>
+2025/02/25 16:24:43 auth_controller.go:95: adding user to db: email already exist
+2025/02/25 16:24:55 user_repo.go:54: user nickname already exist
+2025/02/25 16:24:55 auth_controller.go:95: adding user to db: nickname already exist
+2025/02/25 16:27:51 server.go:27: Starting server on :8080
+2025/02/25 16:28:23 server.go:27: Starting server on :8080
+2025/02/25 16:28:39 server.go:27: Starting server on :8080
+2025/02/25 16:28:43 server.go:3634: http: panic serving [::1]:51322: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8551c0?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9496f8, 0xc0001b0000}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:75 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496f8?, 0xc0001b0000?}, 0x8c6e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00018a0c0?, {0x9496f8, 0xc0001b0000}, 0xc0000c8280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496f8, 0xc0001b0000}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496f8?, 0xc0001b0000?}, 0xc0001b0001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948150?}, {0x9496f8?, 0xc0001b0000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc510, {0x949c08, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 16:31:27 server.go:27: Starting server on :8080
+2025/02/25 16:31:29 user_repo.go:33: <nil>
+2025/02/25 16:31:29 auth_controller.go:97: adding user to db: email already exist
+2025/02/25 16:32:09 user_repo.go:33: <nil>
+2025/02/25 16:32:09 auth_controller.go:97: adding user to db: email already exist
+2025/02/25 16:56:49 auth_controller.go:56: request Content-Type isn't multipart/form-data
+2025/02/25 17:10:13 server.go:27: Starting server on :8080
+2025/02/25 17:12:51 auth_controller.go:56: request Content-Type isn't multipart/form-data
+2025/02/25 17:13:40 server.go:27: Starting server on :8080
+2025/02/25 17:19:53 auth_controller.go:56: request Content-Type isn't multipart/form-data
+2025/02/25 17:22:29 auth_controller.go:56: request Content-Type isn't multipart/form-data
+2025/02/25 17:24:09 server.go:3634: http: panic serving [::1]:41540: runtime error: invalid memory address or nil pointer dereference
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8551c0?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9496f8, 0xc00011c0e0}, 0xc000106140)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:75 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496f8?, 0xc00011c0e0?}, 0x8c6e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001040f0?, {0x9496f8, 0xc00011c0e0}, 0xc000106140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496f8, 0xc00011c0e0}, 0xc000106140)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496f8?, 0xc00011c0e0?}, 0xc00011c001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948150?}, {0x9496f8?, 0xc00011c0e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc5a0, {0x949c08, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 17:24:09 server.go:3634: http: panic serving [::1]:42682: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8551c0?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x9496f8, 0xc00011c1c0}, 0xc000106280)
+	/home/omrharbi/social-network/backend/app/controllers/auth_controller.go:75 +0x367
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496f8?, 0xc00011c1c0?}, 0x8c6e91?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000104b10?, {0x9496f8, 0xc00011c1c0}, 0xc000106280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496f8, 0xc00011c1c0}, 0xc000106280)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496f8?, 0xc00011c1c0?}, 0xc00011c101?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948150?}, {0x9496f8?, 0xc00011c1c0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00010a1b0, {0x949c08, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/25 17:25:36 server.go:27: Starting server on :8080
+2025/02/25 17:25:54 auth_controller.go:83: invalid nickname
+2025/02/25 17:28:23 auth_controller.go:83: invalid nickname
+2025/02/25 17:28:49 auth_controller.go:83: invalid nickname
+2025/02/25 17:29:45 auth_controller.go:83: invalid nickname
+2025/02/25 17:30:05 auth_controller.go:83: invalid last name
+2025/02/25 17:30:19 auth_controller.go:83: invalid nickname
+2025/02/25 17:30:26 server.go:27: Starting server on :8080
+2025/02/25 17:33:47 user_repo.go:15: UNIQUE constraint failed: users.nickname
+2025/02/25 17:33:47 user_service.go:34: UNIQUE constraint failed: users.nickname
+2025/02/25 17:33:47 auth_controller.go:97: adding user to db: UNIQUE constraint failed: users.nickname
+2025/02/25 17:34:59 server.go:27: Starting server on :8080
+2025/02/25 17:35:34 server.go:27: Starting server on :8080
+2025/02/25 17:36:06 user_repo.go:33: <nil>
+2025/02/25 17:36:06 auth_controller.go:97: adding user to db: email already exist
+2025/02/25 17:36:39 server.go:27: Starting server on :8080

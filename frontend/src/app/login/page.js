@@ -1,36 +1,49 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, } from "react";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
 
 
-export default  function Login() {
+export default function Login() {
   const containerRef = useRef(null);
+  const Router = useRouter();
+  const [img, setImg] = useState(null)
 
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setImg(e.target.files[0]); // Update the image state
+    }
+  }
   const handleSignUp = async (event) => {
     event.preventDefault();
+
+    // const dataObject = {};
     const formData = new FormData(event.target);
-    const dataObject = {};
-    formData.forEach((value, key) => {
-      dataObject[key] = value;
-    });
-    
+    if (img) {
+      formData.append("file", img)
+      console.log(img);
+
+    }
+    // formData.forEach((value, key) => {
+    //   dataObject[key] = value;
+    // });
+
     const response = await fetch(signUpEndpoints, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dataObject)
+      credentials: 'include',
+      body: formData
     });
     const content = await response.json();
     if (!response.ok) {
       alert(content)
     } else {
-      redirect('/home')
+      Router.push('/home')
+      // redirect('/home')
     }
-  
+
   };
 
   const handleLogin = async (event) => {
@@ -40,21 +53,23 @@ export default  function Login() {
     formData.forEach((value, key) => {
       dataObject[key] = value;
     });
-    
+
     const response = await fetch(loginEndpoints, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify(dataObject)
     });
     const content = await response.json();
     if (!response.ok) {
       alert(content)
     } else {
-      redirect('/home')
+      Router.push('/home')
+      // redirect('/home')
     }
-  
+
   };
 
   useEffect(() => {
@@ -83,24 +98,36 @@ export default  function Login() {
       <main className={styles.main}>
         <div className={styles.container} id="container" ref={containerRef}>
           <div className={styles.formContainer + " " + styles.signUpContainer}>
-            <form onSubmit={handleSignUp}>
+            <form onSubmit={handleSignUp} encType="multipart/form-data">
               <h1>Create Account</h1>
               <span>or use your email for registration</span>
-              <input type="text" placeholder="First Name" name="firstName" required/>
-              <input type="text" placeholder="Last Name" name="lastName" required/>
-              <input type="text" placeholder="Nickname" name="nickname" required/>
-              <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required/>
-              <input type="email" placeholder="Email" name="email" required/>
-              <input type="password" placeholder="Password" name="password" required/>
-              <button>Sign Up</button>
+              <input type="text" placeholder="First Name" name="firstName" required />
+              <input type="text" placeholder="Last Name" name="lastName" required />
+              <input type="text" placeholder="Nickname" name="nickName" required />
+              <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
+              <input type="email" placeholder="Email" name="email" required />
+              <input type="password" placeholder="Password" name="password" required />
+              <select className={styles.select}> 
+                <option className={styles.option}>Public</option>
+                <option className={styles.option}>Private</option>
+              </select>
+              <input
+                type="file"
+                id="img"
+                name="img"
+                className={styles["images-profile"]}
+                onChange={handleFileChange}
+                accept="image/*"
+              />
+              <button > Sign Up</button>
             </form>
           </div>
           <div className={styles.formContainer + " " + styles.signInContainer}>
-          <form onSubmit={handleLogin}>
+            <form onSubmit={handleLogin}>
               <h1>Sign in</h1>
               <span>or use your account</span>
-              <input type="email" placeholder="Email" name="email" required/>
-              <input type="password" placeholder="Password" name="password" required/>
+              <input type="email" placeholder="Email" name="email" required />
+              <input type="password" placeholder="Password" name="password" required />
               <a href="#">Forgot your password?</a>
               <button>Sign In</button>
             </form>

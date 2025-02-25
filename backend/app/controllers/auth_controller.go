@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"path/filepath"
+	"slices"
+	"time"
 
 	"social-network/app/services"
 	"social-network/pkg/models"
@@ -47,11 +50,31 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed in signup")
 		return
 	}
-	var user models.User
-	err := json.NewDecoder(r.Body).Decode(&user)
+	err := r.ParseMultipartForm(10 << 20)
 	if err != nil {
-		utils.JsonResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
-		log.Println("error decoding json signup")
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println(err)
+		return
+	}
+
+	var user models.User
+	user.Email = r.FormValue("email")
+	user.Password = r.FormValue("password")
+	user.FirstName = r.FormValue("firstName")
+	user.LastName = r.FormValue("lastName")
+	user.DateOfBirth = r.FormValue("dateOfBirth")
+	user.NickName = r.FormValue("nickName")
+	user.AboutMe = r.FormValue("aboutMe")
+	user.Profile_Type = r.FormValue("profile_type")
+	user.CreatedAt = time.Now()
+	file, headerFiel, _ := r.FormFile("img")
+	user.File = file
+	user.FileHeader = headerFiel
+
+	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
+	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
+		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
+		log.Println(err)
 		return
 	}
 	err = utils.ValidateUser(&user)

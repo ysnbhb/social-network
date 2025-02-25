@@ -1,9 +1,9 @@
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../components/images/image6.jpg";
-import ActivitySidebar from "../../components/activitySide";
-import HomeFeed from "../../components/homeFeed";
+ import image from "../../../components/images/IMG-20240514-WA0002.jpg";
+import bag from "../../../components/images/image6.jpg";
+import ActivitySidebar from "../../../components/activitySide";
+import HomeFeed from "../../../components/homeFeed";
 // import Navbar from "../../components/navbar";
 export default function Profile() {
   const menuData = [
