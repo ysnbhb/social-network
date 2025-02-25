@@ -11,10 +11,15 @@ export default function Login() {
   const containerRef = useRef(null);
   const Router = useRouter();
   const [img, setImg] = useState(null)
+  const [profile, setProfile] = useState("Public")
 
   const handleFileChange = (e) => {
+    setImg(e.target.files[0]); // Update the image state
+
+  }
+  const handleVisibilityChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setImg(e.target.files[0]); // Update the image state
+      setProfile(e.target.files[0]); // Update the image state
     }
   }
   const handleSignUp = async (event) => {
@@ -27,10 +32,10 @@ export default function Login() {
       console.log(img);
 
     }
-    // formData.forEach((value, key) => {
-    //   dataObject[key] = value;
-    // });
-
+    if (profile){
+      formData.append("profile_type", profile)
+    }
+ 
     const response = await fetch(signUpEndpoints, {
       method: 'POST',
       credentials: 'include',
@@ -107,7 +112,7 @@ export default function Login() {
               <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
               <input type="email" placeholder="Email" name="email" required />
               <input type="password" placeholder="Password" name="password" required />
-              <select className={styles.select}> 
+              <select className={styles.select} onChange={setProfile} value={profile}>
                 <option className={styles.option}>Public</option>
                 <option className={styles.option}>Private</option>
               </select>
