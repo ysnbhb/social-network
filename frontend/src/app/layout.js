@@ -9,8 +9,8 @@ export default function RootLayout({ children }) {
       <body>
         <Connectwebsocket />
         <div>
-          <Navbar />
-          {children}
+        {/* <Navbar /> */}
+        {children}
         </div>
       </body>
     </html>

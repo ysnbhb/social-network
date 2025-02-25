@@ -19,7 +19,7 @@ func ValidateUser(user *models.User) error {
 		return errors.New("invalid last name")
 	}
 
-	var nickName = regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
+	nickName := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
 	if !nickName.MatchString(user.NickName) {
 		return errors.New("invalid nickname")
 	}
@@ -29,7 +29,7 @@ func ValidateUser(user *models.User) error {
 		return errors.New("invalid email")
 	}
 
-	var password = regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
+	password := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
 	if !password.MatchString(user.Password) {
 		return errors.New("invalid password")
 	}

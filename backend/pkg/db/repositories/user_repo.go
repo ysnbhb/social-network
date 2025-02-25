@@ -9,8 +9,8 @@ import (
 )
 
 func CreateUser(user *models.User) error {
-	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname) VALUES (?, ?, ?, ?, ?, ?)`
-	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName)
+	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname,avatar_url, about_me) VALUES (?, ?, ?, ?, ?, ?,?,?)`
+	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName, user.AvatarUrl, user.AboutMe)
 	if err != nil {
 		log.Println(err)
 		return err
@@ -84,13 +84,13 @@ func CheckUserExist(userId int) bool {
 	return exist
 }
 
-
 func GetNickName(userId int) string {
 	query := `SELECT u.nickname FROM users u WHERE id = ?`
 	var nickname string
 	db.DB.QueryRow(query, userId).Scan(&nickname)
 	return nickname
 }
+
 func GetUserIdByNickName(nickname string) int {
 	query := `SELECT u.id FROM users u WHERE nickname = ?`
 	var userId int

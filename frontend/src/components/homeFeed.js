@@ -40,7 +40,7 @@ export default function HomeFeed( { className ,classes = {}}  )  {
                         <path d="M24 1H8a7 7 0 0 0-7 7v16a7 7 0 0 0 7 7h16a7 7 0 0 0 7-7V8a7 7 0 0 0-7-7ZM8 3h16a5 5 0 0 1 5 5v9.26L25.36 13A3 3 0 0 0 23 12a3 3 0 0 0-2.29 1.17l-3.61 4.67a1 1 0 0 1-.68.38 1 1 0 0 1-.75-.22l-3.58-3a3 3 0 0 0-4 .13L3 20V8a5 5 0 0 1 5-5Zm16 26H8a5 5 0 0 1-5-5v-1.22l6.49-6.16a1 1 0 0 1 1.32 0l3.58 3a3 3 0 0 0 4.29-.48l3.62-4.67a1 1 0 0 1 .76-.39 1 1 0 0 1 .78.35l5.16 6V24a5 5 0 0 1-5 5Z"></path>
                         <path d="M8.5 12A3.5 3.5 0 1 0 5 8.5 3.5 3.5 0 0 0 8.5 12Zm0-5A1.5 1.5 0 1 1 7 8.5 1.5 1.5 0 0 1 8.5 7Z"></path>
                     </svg>
-                    <spna>Image</spna>
+                    <span>Image</span>
                 </label>
                 <input type='file' id='img' style={{display :"none"}} onChange={(e)=> {
                     setImg(e.target.files[0])
