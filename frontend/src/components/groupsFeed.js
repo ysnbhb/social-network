@@ -2,84 +2,84 @@ import '../styles/groupsFeed.css';
 
 export default function GroupsFeed() {
     return (
-        <main class="groups">
-        <aside class="group-sidebar">
-            <div class="group-header">
+        <main className="groups">
+        <aside className="group-sidebar">
+            <div className="group-header">
                 <h2>Playing Minecraft</h2>
-                <div class="group_avatar"></div>
+                <div className="group_avatar"></div>
             </div>
-            <p class="text-muted">This is about all players in Minecraft.</p>
-            <div class="group-stats">
-                <button class="join-button">JOIN</button>
+            <p className="text-muted">This is about all players in Minecraft.</p>
+            <div className="group-stats">
+                <button className="join-button">JOIN</button>
                 <div>
                     <h3>10</h3>
-                    <p class="text-muted">Members</p>
+                    <p className="text-muted">Members</p>
                 </div>
             </div>
         </aside>
     
-        <aside class="group-sidebar">
-            <div class="group-header">
+        <aside className="group-sidebar">
+            <div className="group-header">
                 <h2>Playing Minecraft</h2>
-                <div class="group_avatar"></div>
+                <div className="group_avatar"></div>
             </div>
-            <div class="description-group">
-                <p class="text-muted">This is about all players in Minecraft.</p>
+            <div className="description-group">
+                <p className="text-muted">This is about all players in Minecraft.</p>
             </div>
-            <div class="group-stats">
-                <button class="open-button">OPEN</button>
+            <div className="group-stats">
+                <button className="open-button">OPEN</button>
                 <div>
                     <h3>10</h3>
-                    <p class="text-muted">Members</p>
+                    <p className="text-muted">Members</p>
                 </div>
             </div>
         </aside>
         
-        <aside class="group-sidebar">
-            <div class="group-header">
+        <aside className="group-sidebar">
+            <div className="group-header">
                 <h2>Playing Minecraft</h2>
-                <div class="group_avatar"></div>
+                <div className="group_avatar"></div>
             </div>
-            <div class="description-group">
-                <p class="text-muted">This is about all players in Minecraft.</p>
+            <div className="description-group">
+                <p className="text-muted">This is about all players in Minecraft.</p>
             </div>
-            <div class="group-stats">
-                <button class="join-button">JOIN</button>
+            <div className="group-stats">
+                <button className="join-button">JOIN</button>
                 <div>
                     <h3>10</h3>
-                    <p class="text-muted">Members</p>
+                    <p className="text-muted">Members</p>
                 </div>
             </div>
         </aside>
-        <aside class="group-sidebar">
-            <div class="group-header">
+        <aside className="group-sidebar">
+            <div className="group-header">
                 <h2>Playing Minecraft</h2>
-                <div class="group_avatar"></div>
+                <div className="group_avatar"></div>
             </div>
-            <div class="description-group">
-                <p class="text-muted">This is about all players in Minecraft.</p>
+            <div className="description-group">
+                <p className="text-muted">This is about all players in Minecraft.</p>
             </div>
-            <div class="group-stats">
-                <button class="join-button">JOIN</button>
+            <div className="group-stats">
+                <button className="join-button">JOIN</button>
                 <div>
                     <h3>10</h3>
-                    <p class="text-muted">Members</p>
+                    <p className="text-muted">Members</p>
                 </div>
             </div>
         </aside>
-        <aside class="group-sidebar">
-            <div class="group-header">
+        <aside className="group-sidebar">
+            <div className="group-header">
                 <h2>Playing Minecraft</h2>
-                <div class="group_avatar"></div>
+                <div className="group_avatar"></div>
             </div>
-            <div class="description-group">
-                <p class="text-muted">This is about all players in Minecraft.</p>
+            <div className="description-group">
+                <p className="text-muted">This is about all players in Minecraft.</p>
             </div>
-            <div class="group-stats">
-                <button class="join-button">JOIN</button>
+            <div className="group-stats">
+                <button className="join-button">JOIN</button>
                 <div>
                     <h3>10</h3>
-                    <p class="text-muted">Members</p>
+                    <p className="text-muted">Members</p>
                 </div>
             </div>
         </aside>

@@ -1,0 +1,79 @@
+2025/02/25 11:53:16 server.go:27: Starting server on :8080
+2025/02/25 12:23:20 auth_controller.go:48: method not allowed in signup
+2025/02/25 12:24:17 server.go:27: Starting server on :8080
+2025/02/25 12:26:37 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:29:41 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:30:35 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:30:35 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:30:36 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:32:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:32:27 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 12:32:46 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:02:16 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 13:26:59 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 14:32:46 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:10:32 HandleWebsocket.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:16:03 auth_controller.go:62: invalid first name
+2025/02/25 15:16:14 auth_controller.go:62: invalid last name
+2025/02/25 15:24:16 server.go:27: Starting server on :8080
+2025/02/25 15:27:15 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:28:04 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:30:13 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:30:17 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:30:31 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:32:19 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:32:33 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:34:52 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 15:36:40 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:28:05 server.go:27: Starting server on :8080
+2025/02/25 16:29:46 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:35:28 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:35:29 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:37:30 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:37:34 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:38:28 friends_service.go:14: Get Friends: sql: Scan error on column index 4, name "avatar_url": converting NULL to string is unsupported
+2025/02/25 16:39:42 server.go:27: Starting server on :8080
+2025/02/25 16:40:26 server.go:27: Starting server on :8080
+2025/02/25 16:44:03 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:46:03 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:46:03 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:46:49 server.go:27: Starting server on :8080
+2025/02/25 16:50:28 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:50:53 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:51:20 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:52:07 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:55:14 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:12 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:18 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:23 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:26 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:36 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:56:54 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:57:16 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:57:18 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:57:19 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:57:22 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:57:42 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:58:29 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:58:31 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:58:32 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:58:44 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 16:58:48 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:01:07 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:01:09 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:08:49 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:12:07 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:14:27 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:15:32 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:23:30 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:23:35 Websocket_controller.go:43: Failed to read message: websocket: close 1001 (going away)
+2025/02/25 17:34:08 server.go:27: Starting server on :8080
+2025/02/25 17:34:14 friends_service.go:14: Get Friends: not enough args to execute query: want 2 got 1
+2025/02/25 17:34:37 server.go:27: Starting server on :8080
+2025/02/25 17:37:15 server.go:27: Starting server on :8080

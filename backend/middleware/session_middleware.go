@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -13,10 +12,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var cookie string
 		if r.Header.Get("Connection") == "Upgrade" {
-			//get from query
 			cookie = r.URL.Query().Get("session_id")
-			// cookie = r.Header.Get("session_id")
-			fmt.Println("content type", cookie)
 		} else {
 			cookies, err := r.Cookie("session_id")
 			if err != nil {

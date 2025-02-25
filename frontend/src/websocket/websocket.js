@@ -22,16 +22,21 @@ export function Connectwebsocket() {
         socket.onopen = function () {
             console.log('WebSocket connection established.');
         };
+
         socket.onerror = function (error) {
             console.error('WebSocket error:', error);
+            console.log('Ready State:', socket.readyState);  // Log current WebSocket state
+            console.log('Error event:', error);
         };
 
-        socket.onclose = function () {
-            console.log('WebSocket connection closed.');
+        socket.onclose = function (event) {
+            console.log('WebSocket connection closed with code:', event.code);
         };
+
         // receive message from websocket
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
+            console.log('Received data:', data);
             const type = data.type;
             switch (type) {
                 case "onlineStatus":
