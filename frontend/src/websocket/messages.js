@@ -1,6 +1,6 @@
 "use client"
 import { safeSend } from "./websocket.js";
-import { AddNotificationsymbole } from "./notification.js";
+import { AddMessagesymbole } from "./notification.js";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
@@ -19,7 +19,7 @@ export function Getmessagesusers(data) {
 export function receiveMessageuser(data) {
     const url = (window.location.href).split("/").reverse()[0];
     if (!data.mymsg && url !== "chat") {
-        AddNotificationsymbole(true)
+        AddMessagesymbole(true)
     }
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
         sendMessageIsRead(data.sender)
@@ -36,6 +36,7 @@ export function receiveMessageuser(data) {
             `
     }
 }
+
 export function sendMessageuser(receiver, message) {
     const data = {
         type: "messageuser",

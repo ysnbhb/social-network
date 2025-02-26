@@ -1,6 +1,45 @@
 "use client";
 
+import { safeSend } from "./websocket.js";
+import { receiveMessageuser } from "./messages.js";
+
 export function handleNotification(data) {
+    if (data.Data) {
+        const DATA = data.Data
+        DATA.forEach(element => {
+            const notificationtype = element.Type
+            console.log(notificationtype);
+            if (element.Readstatus === "unread") {
+                if (element.Type === "messageuser") {
+                    receiveMessageuser(element);
+                } else {
+                    console.log(element);
+                    
+                    ShowNotification(element);
+                }
+            }
+
+            // if (notificationtype === "follow") {
+
+            // }else if (notificationtype === "eventcreated") {
+
+            // }else if (notificationtype === "acceptedinvitationuser") {
+
+            // }else if (notificationtype === "requestinvitationgroup") {
+
+            // }else if (notificationtype === "messageuser") {
+
+            // }
+            console.log(notificationtype);
+        });
+    }
+
+    console.log("Received notification:", data);
+
+    // console.log("Received notification type:", data.typeOFnotification);
+}
+function ShowNotification(){
+    AddNotificationsymbole(true);
 
 }
 export function sendChangeUnreadNotification(Notificationid) {
@@ -41,6 +80,14 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 }
 
 /// notification user ///
+export function AddMessagesymbole(type) {
+    const notification = document.getElementById("notification-badge-message");
+    if (type) {
+        notification.style.display = "block";
+    } else {
+        notification.style.display = "none";
+    }
+}
 export function AddNotificationsymbole(type) {
     const notification = document.getElementById("notification-badge");
     if (type) {

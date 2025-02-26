@@ -44,6 +44,8 @@ export function initializeWebSocket() {
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
             const type = data.type;
+            console.log("Received data:", type);
+            
             switch (type) {
                 case "onlineStatus":
                     ReceiveOnlineStatus(data);
@@ -84,7 +86,7 @@ export function initializeWebSocket() {
             }
         };
     });
-
+ 
     return connectionPromise;
 }
 
