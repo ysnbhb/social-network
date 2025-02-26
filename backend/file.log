@@ -1,0 +1,2 @@
+2025/02/26 04:56:12 server.go:27: Starting server on :8080
+2025/02/26 04:56:12 server.go:29: Server error: listen tcp :8080: bind: address already in use

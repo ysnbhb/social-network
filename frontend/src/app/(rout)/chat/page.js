@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import UserList from "../../components/UserList";
-import ChatBox from "../../components/ChatBox";
-import '../../styles/chat.css';
+import UserList from "../../../components/UserList";
+import ChatBox from "../../../components/ChatBox";
+import '../../../styles/chat.css';
 
 function Chat() {
   const [selectedUser, setSelectedUser] = useState(null);
