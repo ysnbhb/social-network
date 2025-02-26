@@ -123,12 +123,13 @@ export function ReceiveOnlineStatus(data) {
     requestAnimationFrame(() => {
         const allusers = document.querySelectorAll(".user-item");
         allusers.forEach(user => {
-            const spanonline = document.getElementById(`${user.id}`);
-
+            const spanonline = document.querySelectorAll(`#${user.id} .statue`)[0];
+            console.log("spanonline" , spanonline);
+            
             if (spanonline && onlineUsers.includes(user.id)) {
-                spanonline.style.backgroundColor = "green";
+                spanonline.style.backgroundColor = "#4caf50";
             } else if (spanonline) {
-                spanonline.style.backgroundColor = "red";
+                spanonline.style.backgroundColor = "#d3d3d3";
             }
         });
     });

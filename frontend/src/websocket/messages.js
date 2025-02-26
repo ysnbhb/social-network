@@ -5,12 +5,19 @@ import { AddMessagesymbole } from "./notification.js";
 export function Getmessagesusers(data) {
     const messages = data.messages;
     const messageplace = document.getElementById("messages");
+    const usernickname = document.querySelectorAll(".user-info span")[0].textContent;
+
     messageplace.innerHTML = "";
     if (messageplace && messages) {
         messages.forEach(info => {
             messageplace.innerHTML += `
-             <div className="message">
-              <strong>${info.sender}:</strong> ${info.message} <br>at ${info.timestamp}
+             <div class="message ${info.sender === usernickname ? "sender" : "receiver"}">
+             <div class="sender-info">
+             <div class="${info.sender === usernickname ? "avatar" : ""}"></div>
+             <span>${info.sender === usernickname ? info.sender : ""}</span>
+             <span class="time">${info.sender === usernickname ? info.timestamp : ""}</span>
+             </div>
+             <div>${info.message}</div> 
             </div>
             `
         })
@@ -30,8 +37,8 @@ export function receiveMessageuser(data) {
     const messageplace = document.getElementById("messages");
     if (messageplace) {
         messageplace.innerHTML += `
-             <div className="message">
-              <strong>${data.sender}:</strong> ${data.content} <br>at ${data.time}
+             <div class="message receiver">
+              <div>${data.content}</div>
             </div>
             `
     }
