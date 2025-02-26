@@ -2,16 +2,35 @@
 import Link from 'next/link';
 import '../styles/navbar.css';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { AddNotificationsymbole } from '../websocket/notification.js';
+import { initializeWebSocket, SendOnlineStatus } from '../websocket/websocket.js';
 
 export default function Navbar() {
   const pathname = usePathname();
+  
+  useEffect(() => {
+    if (pathname === '/chat') {
+      AddNotificationsymbole(false);
+      
+      // Use our new promise-based approach
+      initializeWebSocket()
+        .then(() => {
+          // Only call SendOnlineStatus after websocket is connected
+          SendOnlineStatus();
+        })
+        .catch(error => {
+          console.error("Failed to initialize websocket:", error);
+        });
+    }
+  }, [pathname]);
   console.log("here", pathname);
   return (
     <nav className="navbar">
       <a href="/home" className="logo">ZoneMeet</a>
       <div className="nav-icons">
         {/* Home Icon */}
-        <Link href="/home" className={pathname === "/home" ? "active": ""} >
+        <Link href="/home" className={pathname === "/home" ? "active" : ""} >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="home">
             <path
               fillRule="evenodd"
@@ -26,7 +45,7 @@ export default function Navbar() {
         </Link>
 
         {/* Groups Icon */}
-        <Link href="/groups" className={pathname === "/groups" ? "active": ""} >
+        <Link href="/groups" className={pathname === "/groups" ? "active" : ""} >
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 128 128" id="groups">
             <circle cx="63.5" cy="39.5" r="17.5" strokeWidth="7" transform="rotate(-90 63.5 39.5)"></circle>
             <path
@@ -45,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Chat Icon */}
-        <Link href="/chat" className={pathname === "/chat" ? "active": ""} >
+        <Link href="/chat" className={pathname === "/chat" ? "active" : ""}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="chat">
             <g fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" transform="translate(2 2)">
               <path
@@ -55,12 +74,13 @@ export default function Navbar() {
               <circle cx="10.057" cy="10" r="1" fill="#200E32"></circle>
               <circle cx="14.826" cy="10" r="1" fill="#200E32"></circle>
             </g>
+            <circle id="notification-badge" cx="18" cy="6" r="5" fill="#FF3B30" stroke="white" strokeWidth="1" style={{ display: 'none' }}></circle>
           </svg>
           Chat
         </Link>
 
         {/* Notification Icon */}
-        <Link href="/notification" className={pathname === "/notification" ? "active": ""} >
+        <Link href="/notification" className={pathname === "/notification" ? "active" : ""} >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="notification">
             <g fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" transform="translate(3.5 2)">
               <path
@@ -75,6 +95,6 @@ export default function Navbar() {
       <div className="avatar">
         {/* Add Avatar or User Image here */}
       </div>
-    </nav>
+    </nav >
   );
 }

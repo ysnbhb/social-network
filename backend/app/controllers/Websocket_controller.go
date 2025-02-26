@@ -54,31 +54,34 @@ func HandleMessages(client *models.Client) {
 func Handlemessagetype(msg models.Message, client *models.Client) error {
 	switch msg.Type {
 	case "messageuser":
-		service.SendMessageuser(msg, client)
+		return service.SendMessageuser(msg, client)
 	case "messageGroup":
-		service.SendMessageGroup(msg, client)
+		return service.SendMessageGroup(msg, client)
 	case "follow":
-		service.SendFollow(msg, client)
+		return service.SendFollow(msg, client)
 	case "requestinvitationgroup":
-		service.SendRequestInvitationgroup(msg, client)
+		return service.SendRequestInvitationgroup(msg, client)
 	case "acceptedinvitationgroup":
-		service.SendAcceptedInvitationGroup(msg, client)
+		return service.SendAcceptedInvitationGroup(msg, client)
 	case "acceptedinvitationuser":
-		service.SendAcceptedInvitationUser(msg, client)
+		return service.SendAcceptedInvitationUser(msg, client)
 	case "eventcreated":
-		service.SendEventCreated(msg, client)
+		return service.SendEventCreated(msg, client)
 	case "typing":
-		service.SendTyping(msg, client)
+		return service.SendTyping(msg, client)
 	case "getmessagesusers":
-		repo.Getmessagesusers(msg, client)
+		return repo.Getmessagesusers(msg, client)
 	case "getmessagesgroup":
-		repo.Getmessagesgroups(msg, client)
+		return repo.Getmessagesgroups(msg, client)
 	case "changeunreadnotification":
-		repo.ChangeUnreadNotification(msg, client)
+		return repo.ChangeUnreadNotification(msg, client)
+	case "changeunreadmessage":
+		return repo.ChangeUnreadMessage(msg, client)
+	case "GETonlineStatus":
+		return OnlineStatus(msg, client)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}
-	return nil
 }
 
 func Notification(client *models.Client) {
@@ -143,4 +146,22 @@ func BroadcastOnlineUsers() {
 			delete(models.Clients, client.Username)
 		}
 	}
+}
+
+func OnlineStatus(msg models.Message, client *models.Client) error {
+	onlineUsers := []string{}
+	for username := range models.Clients {
+		if username != client.Username {
+			onlineUsers = append(onlineUsers, username)
+		}
+	}
+	err := client.Conn.WriteJSON(map[string]interface{}{
+		"type":        "onlineStatus",
+		"onlineUsers": onlineUsers,
+	})
+	if err != nil {
+		return err
+	}
+	return nil
+	
 }

@@ -1,32 +1,20 @@
 import React, { useState } from "react";
-import { sendMessageuser } from "../websocket/websocket.js";
+import { sendMessageuser } from "../websocket/messages.js";
 import '../styles/chat.css';
 function ChatBox({ user }) {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
 
-  // const input = document.getElementById("message-input")
+  const [newMessage, setNewMessage] = useState("");
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
-      setMessages([...messages, { sender: "You", text: newMessage }]);
       setNewMessage("");
-      sendMessageuser("yhamdoun", [`${user.nickname}`], newMessage);
+      sendMessageuser([`${user.nickname}`], newMessage);
     }
   };
 
   return (
-    <div className="chat-box">
+    <div className="chat-box" id={`chat-box-${user.nickname}`}>
       <h3>Chat with {user.nickname}</h3>
-      <div className="messages">
-        {messages.length === 0 ? (
-          <p>No messages yet. Start the conversation!</p>
-        ) : (
-          messages.map((message, index) => (
-            <div key={index} className="message">
-              <strong>{message.sender}:</strong> {message.text}
-            </div>
-          ))
-        )}
+      <div className="messages" id="messages">
       </div>
       <div className="input-container">
         <input

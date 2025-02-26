@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { sendGetmessagesusers, sendMessageIsRead} from '../websocket/messages.js';
 import '../styles/chat.css';
 
 function UserList({ setSelectedUser }) {
@@ -6,6 +7,14 @@ function UserList({ setSelectedUser }) {
 
     useEffect(() => {
         Getfriends();
+
+        // initializeWebSocket()
+        // .then(() => {
+        //     SendOnlineStatus();
+        // })
+        // .catch(error => {
+        //     console.error("Failed to initialize websocket in UserList:", error);
+        // });
     }, []);
 
     const Getfriends = () => {
@@ -20,23 +29,32 @@ function UserList({ setSelectedUser }) {
             .catch((error) => {
                 console.error('Error fetching users:', error);
             });
+
+
     };
 
     const handleSelectUser = (user) => {
         setSelectedUser(user);
     };
-
     return (
         <div className="user-list">
             <h3>Select a user:</h3>
             <ul>
-                {users === null ? (<li>No users available</li>) :
-                    (users.map((user) => (
-                        <li key={user.id} onClick={() => handleSelectUser(user)} className="user-item">
+                {users === null ? (
+                    <li>No users available</li>
+                ) : (
+                    users.map((user) => (
+
+                        <li key={user.id} className="user-item" id={`${user.nickname}`} onClick={() => {
+                            handleSelectUser(user)
+                            sendGetmessagesusers([user.nickname])
+                            sendMessageIsRead(user.nickname)
+                        }}>
                             {user.nickname}
+                            <span className="notification-badge" id={`notification-badge-${user.nickname}`} style={{ display: user.sendmessage ? 'block' : 'none', }}>*</span>
                         </li>
                     ))
-                    )}
+                )}
             </ul>
         </div>
     );

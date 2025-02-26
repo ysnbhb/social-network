@@ -30,27 +30,28 @@ func GetUnreadNotification(userid int) ([]Data, error) {
 }
 
 func AddNotification(msg models.Message, client *models.Client, Type string, sent_at string) error {
-	query := `INSERT INTO notifications (user_id, type, details, created_at) VALUES (?, ?, ?, ?)`
+	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
 	for _, receiver := range msg.Receivers {
 		recieverid := GetUserIdByNickName(receiver)
-		_, err := db.DB.Exec(query, recieverid, Type, msg.Content, sent_at)
+		_, err := db.DB.Exec(query, recieverid, client.Userid, Type, msg.Content)
 		if err != nil {
 			return err
 		}
-		query = `SELECT id FROM notifications WHERE user_id = ? AND type = ? AND details = ?`
+		query = `SELECT id FROM notifications WHERE user_id = ? AND sender_id = ? AND type = ? AND details = ?`
 		var id int
-		err = db.DB.QueryRow(query, recieverid, Type, msg.Content).Scan(&id)
+		err = db.DB.QueryRow(query, recieverid, client.Userid, Type, msg.Content).Scan(&id)
 		if err != nil {
 			return err
 		}
 		receiverConn := models.Clients[receiver]
 		if receiverConn != nil {
 			receiverConn.Conn.WriteJSON(map[string]interface{}{
-				"type":           Type,
-				"sender":         client.Username,
-				"content":        msg.Content,
-				"time":           sent_at,
-				"notificationid": id,
+				"type":               "Notification",
+				"typeOFnotification": Type,
+				"sender":             client.Username,
+				"content":            msg.Content,
+				"time":               sent_at,
+				"notificationid":     id,
 			})
 		}
 	}
@@ -64,4 +65,24 @@ func ChangeUnreadNotification(msg models.Message, client *models.Client) error {
 		return err
 	}
 	return nil
+}
+
+func GetNotificationBytype(userid int, Type string) ([]string, error) {
+	query := `SELECT sender_id FROM notifications WHERE user_id = ? AND type = ? AND read_status = 'unread'`
+	rows, err := db.DB.Query(query, userid, Type)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var senders []string
+	for rows.Next() {
+		var sender_id int
+		err := rows.Scan(&sender_id)
+		if err != nil {
+			return nil, err
+		}
+		sender := GetNickName(sender_id)
+		senders = append(senders, sender)
+	}
+	return senders, nil
 }
