@@ -1,7 +1,6 @@
 export default function displayPopup(imageUrl)   {
- 
-  
-  document.body.innerHTML += `
+    const test=document.querySelector(".post")
+    test.innerHTML  += `
       <div id="popup" class="popup">
           <button id="close-btn" class="close-btn">&times;</button>
           <img src="${imageUrl}" alt="Full Size Image" class="popup-image" />
@@ -14,6 +13,7 @@ export default function displayPopup(imageUrl)   {
       const popup = document.getElementById("popup");
       if (popup) {
         popup.remove();
+        
       }
     });
   }
@@ -25,4 +25,6 @@ export default function displayPopup(imageUrl)   {
       }
     });
   }
+console.log("click");
+
 };
