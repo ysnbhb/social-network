@@ -1,6 +1,6 @@
 "use client";
 
-import { receiveFollow, handleNotification, receiveRequestInvitationgroup, receiveAcceptedInvitationGroup, receiveEventCreated } from './notification.js'
+import { receiveFollow, handleNotification, receiveRequestInvitationgroup, receiveAcceptedInvitationGroup, receiveEventCreated, receiveAcceptedInvitationUser } from './notification.js'
 import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
 
 export let socket;
@@ -41,7 +41,6 @@ export function initializeWebSocket() {
             connectionPromise = null;
         };
 
-        // receive message from websocket
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
             const type = data.type;

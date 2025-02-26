@@ -1,6 +1,6 @@
 "use client";
 
-export function handleNotification(data){
+export function handleNotification(data) {
 
 }
 export function sendChangeUnreadNotification(Notificationid) {
@@ -71,6 +71,9 @@ export function sendAcceptedInvitationUser(sender, receiver) {
         content: `${sender} accepted following request`
     }
     safeSend(data);
+}
+export function receiveAcceptedInvitationUser(data) {
+    console.log(data)
 }
 
 /// notification event ///
