@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import '../styles/activitySidebar.css';
 import image from "../components/images/IMG-20240514-WA0002.jpg";

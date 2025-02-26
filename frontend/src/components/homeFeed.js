@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import "../styles/homeFeed.css";
 import { CreatePost } from "../lib/createPost";
@@ -10,7 +9,7 @@ export default function HomeFeed({ className, classes = {} }) {
 
   useEffect(() => {
     const GetPost = async () => {
-      const response = await fetch("http://localhost:8080/api/home/posts", {
+      const response = await fetch("/api/home/posts", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -1,20 +1,18 @@
 const nextConfig = {
-    reactStrictMode: false,
-    async rewrites() {
-      return [
-        {
-          source: "/api/",  // Any request to /api/... will be forwarded
-          destination: "http://localhost:8080/",  
-        },
-      ];
-    },
-    experimental: {
-      serverActions: true,
-    },
-    experimental: {
-      serverActions: {
-        bodySizeLimit: '3mb',
+  reactStrictMode: false,
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "http://localhost:8080/api/:path*",
       },
+    ];
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "3mb",
     },
-  };
-export default nextConfig;
+  },
+};
+
+export default nextConfig; // ✅ Correct ES Modules export
