@@ -1,6 +1,7 @@
-export default function displayPopup   (imageUrl)   {
-  const image = document.querySelector("section");
-  image.innerHTML += `
+export default function displayPopup(imageUrl)   {
+ 
+  
+  document.body.innerHTML += `
       <div id="popup" class="popup">
           <button id="close-btn" class="close-btn">&times;</button>
           <img src="${imageUrl}" alt="Full Size Image" class="popup-image" />

@@ -11,7 +11,7 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
     if(Array.isArray(data)) {
         data.map((item) => array.push(item))
    } 
- 
+   
    console.log(array);
    
     const [content , setContent] = useState("")
