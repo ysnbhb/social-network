@@ -8,12 +8,12 @@ export function handleNotification(data) {
         const DATA = data.Data
         DATA.forEach(element => {
             const notificationtype = element.Type
-            console.log(notificationtype);
+            // console.log(notificationtype);
             if (element.Readstatus === "unread") {
                 if (element.Type === "messageuser") {
                     receiveMessageuser(element);
                 } else {
-                    console.log(element);
+                    // console.log(element);
                     
                     ShowNotification(element);
                 }
@@ -30,11 +30,11 @@ export function handleNotification(data) {
             // }else if (notificationtype === "messageuser") {
 
             // }
-            console.log(notificationtype);
+            // console.log(notificationtype);
         });
     }
 
-    console.log("Received notification:", data);
+    // console.log("Received notification:", data);
 
     // console.log("Received notification type:", data.typeOFnotification);
 }

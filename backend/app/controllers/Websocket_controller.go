@@ -19,7 +19,6 @@ var upgrader = websocket.Upgrader{
 }
 
 func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Websocket endpoint initiated")
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("Failed to upgrade connection:", err)
@@ -89,10 +88,9 @@ func Notification(client *models.Client) {
 	if err != nil {
 		return
 	}
-	fmt.Println("Notification", dataNotification)
 	err = client.Conn.WriteJSON(map[string]interface{}{
-		"type":               "Notification",
-		"Data":               dataNotification,
+		"type": "Notification",
+		"Data": dataNotification,
 	})
 	if err != nil {
 		RemoveClient(client.Conn)
@@ -139,7 +137,7 @@ func BroadcastOnlineUsers() {
 			"type":        "onlineStatus",
 			"onlineUsers": otherUsers,
 		}
-		fmt.Println("clients", client)
+		// fmt.Println("clients", client)
 		err := client.Conn.WriteJSON(data)
 		if err != nil {
 			client.Conn.Close()

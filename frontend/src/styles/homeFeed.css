@@ -114,7 +114,16 @@
     align-items: center;
     gap: 0.5rem;
   }
-  
+
+  .like {
+    fill: none;
+  }
+
+  .like.active {
+    fill: #1da1f2;
+    stroke: #1da1f2;
+  }
+
   .privacy {
     display: flex;
     align-items: center;
