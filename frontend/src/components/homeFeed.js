@@ -11,6 +11,11 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
         data.map((item) => array.push(item))
       
    } 
+   let image=document.querySelector(".image-profile")
+   image.addEventListener("click",()=>{
+    console.log("click");
+    
+   })
    console.log(array);
    
     const [content , setContent] = useState("")
@@ -95,8 +100,7 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
                             className='image-profile'
                         />
                     ) : (
-                        <div className="fallback-message">
-                             
+                        <div className="fallback-message">       
                         </div>
                     )}
                    

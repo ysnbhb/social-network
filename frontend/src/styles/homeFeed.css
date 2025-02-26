@@ -208,11 +208,15 @@
   color: #8e8e8e;
 }
 .image-profile {
-  width: 60%;
   border-radius: 10px;
-  height: 172px;
+  height: 31%;
+  min-width: 55%;
   align-self: center;
+  max-width: 60%;
 }
+/* .image-profile:hover{
+  transform: scale(2);
+} */
 .content {
   display: flex
   ;
