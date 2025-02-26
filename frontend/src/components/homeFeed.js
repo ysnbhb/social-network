@@ -11,11 +11,33 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
         data.map((item) => array.push(item))
       
    } 
-   let image=document.querySelector(".image-profile")
-   image.addEventListener("click",()=>{
-    console.log("click");
-    
-   })
+   const displayPopup=(imageUrl) =>{
+    const image=document.querySelector(".section-home")
+    image.innerHTML+= `
+        <div id="popup" class="popup">
+            <button id="close-btn" class="close-btn">&times;</button>
+            <img src="${imageUrl}" alt="Full Size Image" class="popup-image" />
+        </div>
+    `; 
+     
+    const closeButton = document.getElementById("close-btn");
+    if (closeButton) {
+        closeButton.addEventListener("click", () => {
+             const popup = document.getElementById("popup");
+            if (popup) {
+                popup.remove();
+            }
+        });
+    } 
+    const popupContainer = document.getElementById("popup");
+    if (popupContainer) {
+        popupContainer.addEventListener("click", (event) => {
+            if (event.target === popupContainer) {
+                popupContainer.remove();
+            }
+        });
+    }
+}
    console.log(array);
    
     const [content , setContent] = useState("")
@@ -98,6 +120,7 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
                             width={500}
                             height={300}
                             className='image-profile'
+                            onClick={() => displayPopup(`http://localhost:8080/${item.imageUrl.split("./")[1]}`)}
                         />
                     ) : (
                         <div className="fallback-message">       
