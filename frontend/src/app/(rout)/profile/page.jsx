@@ -7,7 +7,9 @@ import ActivitySidebar from "../../../components/activitySide";
 import HomeFeed from "../../../components/homeFeed";
 import { Profile_info } from "../../../lib/profileInfo.js";
 import { useEffect, useState } from "react";
-export default   function Profile() { 
+
+
+export default function Profile() {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
   useEffect(() => {
@@ -20,8 +22,7 @@ export default   function Profile() {
       }
     };
     fetchData();
-  }, []); 
-  
+  }, []);
 
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
@@ -102,7 +103,7 @@ export default   function Profile() {
           <HomeFeed
             className={`${style.Homefeed}`}
             classes={{ div_feed: style["custom-feed-class"] }}
-            data ={data}
+            data={data}
           />
         </div>
 

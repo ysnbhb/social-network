@@ -4,40 +4,14 @@ import { useState } from 'react';
 import '../styles/homeFeed.css';
 import { CreatePost } from '../lib/createPost';
 import Image from 'next/image';
-
+import displayPopup from '../lib/popup.js';
+ 
 export default function HomeFeed( { className ,classes = {},data = []}  )  {
     let array=[]
     if(Array.isArray(data)) {
         data.map((item) => array.push(item))
-      
    } 
-   const displayPopup=(imageUrl) =>{
-    const image=document.querySelector(".section-home")
-    image.innerHTML+= `
-        <div id="popup" class="popup">
-            <button id="close-btn" class="close-btn">&times;</button>
-            <img src="${imageUrl}" alt="Full Size Image" class="popup-image" />
-        </div>
-    `; 
-     
-    const closeButton = document.getElementById("close-btn");
-    if (closeButton) {
-        closeButton.addEventListener("click", () => {
-             const popup = document.getElementById("popup");
-            if (popup) {
-                popup.remove();
-            }
-        });
-    } 
-    const popupContainer = document.getElementById("popup");
-    if (popupContainer) {
-        popupContainer.addEventListener("click", (event) => {
-            if (event.target === popupContainer) {
-                popupContainer.remove();
-            }
-        });
-    }
-}
+ 
    console.log(array);
    
     const [content , setContent] = useState("")
