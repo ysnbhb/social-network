@@ -2,6 +2,7 @@ package controllers // auth_controller.go
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -70,7 +71,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	file, headerFiel, _ := r.FormFile("img")
 	user.File = file
 	user.FileHeader = headerFiel
-
+	fmt.Println(user.Profile_Type)
 	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
 	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
 		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)

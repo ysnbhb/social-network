@@ -15,7 +15,6 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-
 	userId := r.Context().Value("userId").(int)
 	postsResponse := services.GetPostsUserProfile(userId) // just test with user id 1
 	err := json.NewEncoder(w).Encode(postsResponse)

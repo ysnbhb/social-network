@@ -9,8 +9,8 @@ import (
 )
 
 func CreateUser(user *models.User) error {
-	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname,avatar_url, about_me) VALUES (?, ?, ?, ?, ?, ?,?,?)`
-	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName, user.AvatarUrl, user.AboutMe)
+	query := `INSERT INTO users (email, password_hash, first_name, last_name, date_of_birth, nickname,avatar_url, about_me,profile_type) VALUES (?, ?, ?, ?, ?, ?,?,?,?)`
+	result, err := db.DB.Exec(query, user.Email, user.Password, user.FirstName, user.LastName, user.DateOfBirth, user.NickName, user.AvatarUrl, user.AboutMe, user.Profile_Type)
 	if err != nil {
 		log.Println(err)
 		return err

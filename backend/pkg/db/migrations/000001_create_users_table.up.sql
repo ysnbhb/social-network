@@ -8,7 +8,7 @@ CREATE TABLE users (
     avatar_url TEXT,
     nickname TEXT UNIQUE,
     about_me TEXT,
-    profile_type TEXT NOT NULL DEFAULT 'private',
+    profile_type TEXT NOT NULL DEFAULT 'public',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     status TEXT DEFAULT 'offline'
 );

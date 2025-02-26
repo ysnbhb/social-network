@@ -429,3 +429,16 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/25 17:36:06 auth_controller.go:97: adding user to db: email already exist
 2025/02/25 17:36:39 server.go:27: Starting server on :8080
 2025/02/25 18:13:34 server.go:27: Starting server on :8080
+2025/02/26 11:02:53 server.go:27: Starting server on :8080
+2025/02/26 11:20:11 server.go:27: Starting server on :8080
+2025/02/26 11:20:22 server.go:27: Starting server on :8080
+2025/02/26 11:22:42 server.go:27: Starting server on :8080
+2025/02/26 11:24:16 server.go:27: Starting server on :8080
+2025/02/26 11:36:15 auth_controller.go:35: sorry, this email does not exist
+2025/02/26 11:36:50 user_repo.go:33: <nil>
+2025/02/26 11:36:50 auth_controller.go:98: adding user to db: email already exist
+2025/02/26 11:37:25 user_repo.go:33: <nil>
+2025/02/26 11:37:25 auth_controller.go:35: sorry, your password was incorrect
+2025/02/26 11:37:35 user_repo.go:33: <nil>
+2025/02/26 11:37:35 auth_controller.go:35: sorry, your password was incorrect
+2025/02/26 11:37:44 user_repo.go:33: <nil>

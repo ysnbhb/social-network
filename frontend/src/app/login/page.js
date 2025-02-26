@@ -17,11 +17,9 @@ export default function Login() {
     setImg(e.target.files[0]); // Update the image state
 
   }
-  const handleVisibilityChange = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setProfile(e.target.files[0]); // Update the image state
-    }
-  }
+  const handleTypeProfile= (e) => {
+       setProfile(e.target);  
+   }
   const handleSignUp = async (event) => {
     event.preventDefault();
 
@@ -112,9 +110,9 @@ export default function Login() {
               <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
               <input type="email" placeholder="Email" name="email" required />
               <input type="password" placeholder="Password" name="password" required />
-              <select className={styles.select} onChange={setProfile} value={profile}>
-                <option className={styles.option}>Public</option>
-                <option className={styles.option}>Private</option>
+              <select className={styles.select} onChange={handleTypeProfile}   name="profile_type">
+                <option  value={"Public"}>Public</option>
+                <option value={"Private"}>Private</option>
               </select>
               <input
                 type="file"

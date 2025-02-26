@@ -8,8 +8,6 @@ export default function HomeFeed( { className ,classes = {}}  )  {
     const [content , setContent] = useState("")
     const [postType , setPostType] = useState("public")
     const [img , setImg ] = useState(null)
-
-
     return (
         <section className={`${className} section-home`}>
        <div className={`feed ${classes.div_feed  }`}>
@@ -20,7 +18,6 @@ export default function HomeFeed( { className ,classes = {}}  )  {
                 }}></textarea>
                 <button onClick={()=> {
                         CreatePost(content , postType , img)
-                        
                     }}>
                     <div className="svg-wrapper-1">
                       <div className="svg-wrapper">
