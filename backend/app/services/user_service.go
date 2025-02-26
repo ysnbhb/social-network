@@ -19,7 +19,16 @@ func RegisterUser(user *models.User) error {
 	if err != nil {
 		return errors.New("nickname already exist")
 	}
-
+	if user.File != nil {
+		err = utils.ValidImg(user.FileHeader.Header.Get("Content-Type"), user.FileHeader.Size)
+		if err != nil {
+			return errors.New("validating image: " + err.Error())
+		}
+		user.AvatarUrl, err = utils.SaveImg(user.File)
+		if err != nil {
+			return errors.New("field to save image")
+		}
+	}
 	err = repo.CreateUser(user)
 	if err != nil {
 		log.Println(err)
