@@ -5,8 +5,9 @@ import bag from "../../../components/images/image6.jpg";
 import ActivitySidebar from "../../../components/activitySide";
 import HomeFeed from "../../../components/homeFeed";
 import Profile_info from "../../../lib/profileInfo";
-  export default function Profile() {
-  Profile_info()
+  export default async function Profile() {
+
+ await Profile_info()
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },

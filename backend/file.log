@@ -442,3 +442,325 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/26 11:37:35 user_repo.go:33: <nil>
 2025/02/26 11:37:35 auth_controller.go:35: sorry, your password was incorrect
 2025/02/26 11:37:44 user_repo.go:33: <nil>
+2025/02/26 11:41:46 server.go:27: Starting server on :8080
+2025/02/26 11:43:51 server.go:27: Starting server on :8080
+2025/02/26 11:47:50 user_repo.go:33: <nil>
+2025/02/26 11:47:58 server.go:3634: http: panic serving [::1]:49238: runtime error: invalid memory address or nil pointer dereference
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8551c0?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0x1)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:43 +0x8a
+social-network/pkg/db/repositories.CreatPost(0xc00023b870)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:19 +0xf1
+social-network/app/services.CreatPost(0xc00023b870)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949798, 0xc0000001c0}, 0xc0000b2140)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:47 +0x4db
+net/http.HandlerFunc.ServeHTTP(0xc0000b2000?, {0x949798?, 0xc0000001c0?}, 0x9445e0?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949798, 0xc0000001c0}, 0xc0000b2000)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0001460c0?, {0x949798?, 0xc0000001c0?}, 0x8c6e9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000092210?, {0x949798, 0xc0000001c0}, 0xc0000b2000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949798, 0xc0000001c0}, 0xc0000b2000)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949798?, 0xc0000001c0?}, 0xc000000101?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x9481f0?}, {0x949798?, 0xc0000001c0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00008e090, {0x949ca8, 0xc000127b30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 11:47:58 server.go:3634: http: panic serving [::1]:57954: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8551c0?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0x2)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:43 +0x8a
+social-network/pkg/db/repositories.CreatPost(0xc00023b870)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:19 +0xf1
+social-network/app/services.CreatPost(0xc00023b870)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949798, 0xc0000002a0}, 0xc0000b23c0)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:47 +0x4db
+net/http.HandlerFunc.ServeHTTP(0xc0000b2280?, {0x949798?, 0xc0000002a0?}, 0x9445e0?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949798, 0xc0000002a0}, 0xc0000b2280)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0001460c0?, {0x949798?, 0xc0000002a0?}, 0x8c6e9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000092bd0?, {0x949798, 0xc0000002a0}, 0xc0000b2280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949798, 0xc0000002a0}, 0xc0000b2280)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949798?, 0xc0000002a0?}, 0xc000000201?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x9481f0?}, {0x949798?, 0xc0000002a0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00017a630, {0x949ca8, 0xc000127b30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 11:49:50 server.go:27: Starting server on :8080
+2025/02/26 11:49:55 server.go:3634: http: panic serving [::1]:49558: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.CreatePost({0x9496b8, 0xc0002b6000}, 0xc000292140)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:37 +0x292
+net/http.HandlerFunc.ServeHTTP(0xc000292000?, {0x9496b8?, 0xc0002b6000?}, 0x944510?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x9496b8, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496b8?, 0xc0002b6000?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000282120?, {0x9496b8, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496b8, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496b8?, 0xc0002b6000?}, 0xc0002b6001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948110?}, {0x9496b8?, 0xc0002b6000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x949bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 11:50:00 server.go:3634: http: panic serving [::1]:49568: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0xc000280230?)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:42 +0x5d
+social-network/pkg/db/repositories.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:19 +0xf1
+social-network/app/services.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x9496b8, 0xc0002b60e0}, 0xc0002923c0)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc000292280?, {0x9496b8?, 0xc0002b60e0?}, 0x944510?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x9496b8, 0xc0002b60e0}, 0xc000292280)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496b8?, 0xc0002b60e0?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000282840?, {0x9496b8, 0xc0002b60e0}, 0xc000292280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496b8, 0xc0002b60e0}, 0xc000292280)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496b8?, 0xc0002b60e0?}, 0xc0002b6001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948110?}, {0x9496b8?, 0xc0002b60e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000296120, {0x949bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 11:51:48 server.go:27: Starting server on :8080
+2025/02/26 11:51:57 server.go:3634: http: panic serving [::1]:52226: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0xc00012a0f0?)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:42 +0x5d
+social-network/pkg/db/repositories.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:19 +0xf1
+social-network/app/services.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x9496b8, 0xc00013e000}, 0xc00014e000)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc0000c8140?, {0x9496b8?, 0xc00013e000?}, 0x944510?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x9496b8, 0xc00013e000}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9496b8?, 0xc00013e000?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000118090?, {0x9496b8, 0xc00013e000}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9496b8, 0xc00013e000}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9496b8?, 0xc00013e000?}, 0xc00013e001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948110?}, {0x9496b8?, 0xc00013e000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x949bc8, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 11:54:05 server.go:27: Starting server on :8080
+2025/02/26 11:54:12 server.go:3634: http: panic serving [::1]:33382: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0xc000280110?)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:44 +0x60
+social-network/pkg/db/repositories.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:21 +0xf1
+social-network/app/services.CreatPost(0xc0000e1880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949718, 0xc0002b6000}, 0xc000292140)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc000292000?, {0x949718?, 0xc0002b6000?}, 0x944570?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949718, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x949718?, 0xc0002b6000?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000282120?, {0x949718, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949718, 0xc0002b6000}, 0xc000292000)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949718?, 0xc0002b6000?}, 0xc0002b6001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948170?}, {0x949718?, 0xc0002b6000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x949c28, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 13:32:34 server.go:27: Starting server on :8080
+2025/02/26 13:32:50 server.go:3634: http: panic serving [::1]:36856: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0xc000012650?)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:44 +0x60
+social-network/pkg/db/repositories.CreatPost(0xc0000e7880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:21 +0xf1
+social-network/app/services.CreatPost(0xc0000e7880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949718, 0xc0000000e0}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc0000c8140?, {0x949718?, 0xc0000000e0?}, 0x944570?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x949718?, 0xc0000000e0?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009dd10?, {0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949718?, 0xc0000000e0?}, 0xc000000001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948170?}, {0x949718?, 0xc0000000e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x949c28, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 13:33:29 server.go:27: Starting server on :8080
+2025/02/26 13:33:35 server.go:3634: http: panic serving [::1]:33038: runtime error: invalid memory address or nil pointer dereference
+goroutine 24 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0xc00011a5a0?)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:45 +0x60
+social-network/pkg/db/repositories.CreatPost(0xc000187880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:21 +0xf1
+social-network/app/services.CreatPost(0xc000187880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949718, 0xc0001c4000}, 0xc000164280)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc000164140?, {0x949718?, 0xc0001c4000?}, 0x944570?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949718, 0xc0001c4000}, 0xc000164140)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0001460c0?, {0x949718?, 0xc0001c4000?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000127d10?, {0x949718, 0xc0001c4000}, 0xc000164140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949718, 0xc0001c4000}, 0xc000164140)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949718?, 0xc0001c4000?}, 0xc0001c4001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948170?}, {0x949718?, 0xc0001c4000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00017a3f0, {0x949c28, 0xc000127b30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 13:37:35 server.go:27: Starting server on :8080
+2025/02/26 13:39:25 server.go:27: Starting server on :8080
+2025/02/26 13:39:50 server.go:27: Starting server on :8080
+2025/02/26 13:39:55 post_repo.go:24: 8
+2025/02/26 13:39:55 server.go:3634: http: panic serving [::1]:40102: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x855160?, 0xba1510?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.GetOneCard(0x8)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:44 +0xe1
+social-network/pkg/db/repositories.CreatPost(0xc0000e7880)
+	/home/omrharbi/social-network/backend/pkg/db/repositories/post_repo.go:20 +0xf1
+social-network/app/services.CreatPost(0xc0000e7880)
+	/home/omrharbi/social-network/backend/app/services/posts_service.go:29 +0x157
+social-network/app/controllers.CreatePost({0x949718, 0xc0000000e0}, 0xc0000c8280)
+	/home/omrharbi/social-network/backend/app/controllers/posts_controller.go:45 +0x49b
+net/http.HandlerFunc.ServeHTTP(0xc0000c8140?, {0x949718?, 0xc0000000e0?}, 0x944580?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func3({0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/session_middleware.go:28 +0x1ee
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x949718?, 0xc0000000e0?}, 0x8c6e31?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009dd10?, {0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x949718, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x949718?, 0xc0000000e0?}, 0xc000000001?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x948170?}, {0x949718?, 0xc0000000e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x949c28, 0xc00009db30})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/02/26 13:40:30 server.go:27: Starting server on :8080
+2025/02/26 13:40:42 post_repo.go:25: 9
+2025/02/26 13:40:42 post_repo.go:56: <nil>
+2025/02/26 13:40:42 post_repo.go:25: 10
+2025/02/26 13:40:42 post_repo.go:56: <nil>
+2025/02/26 13:40:43 post_repo.go:25: 11
+2025/02/26 13:40:43 post_repo.go:56: <nil>
+2025/02/26 13:40:43 post_repo.go:25: 12
+2025/02/26 13:40:43 post_repo.go:56: <nil>
+2025/02/26 13:40:57 server.go:27: Starting server on :8080
+2025/02/26 13:41:02 post_repo.go:25: 13
+2025/02/26 13:41:02 post_repo.go:56: <nil>
+2025/02/26 13:41:02 post_repo.go:25: 14
+2025/02/26 13:41:02 post_repo.go:56: <nil>
+2025/02/26 13:42:13 post_repo.go:25: 15
+2025/02/26 13:42:13 post_repo.go:56: <nil>
+2025/02/26 13:42:56 server.go:27: Starting server on :8080
+2025/02/26 13:43:03 post_repo.go:25: 16
+2025/02/26 13:45:48 server.go:27: Starting server on :8080
+2025/02/26 13:48:37 user_repo.go:33: <nil>
+2025/02/26 13:51:10 server.go:27: Starting server on :8080
+2025/02/26 13:51:15 user_repo.go:33: <nil>
+2025/02/26 13:54:39 server.go:27: Starting server on :8080
+2025/02/26 13:55:48 server.go:27: Starting server on :8080
+2025/02/26 13:57:05 user_repo.go:33: <nil>
+2025/02/26 13:59:46 server.go:27: Starting server on :8080
+2025/02/26 14:00:27 user_repo.go:33: <nil>
+2025/02/26 14:01:54 server.go:27: Starting server on :8080

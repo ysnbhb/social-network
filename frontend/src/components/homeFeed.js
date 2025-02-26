@@ -39,7 +39,7 @@ export default function HomeFeed( { className ,classes = {}}  )  {
                     </svg>
                     <span>Image</span>
                 </label>
-                <input type='file' id='img' style={{display :"none"}} onChange={(e)=> {
+                <input type='file' id='img' style={{display :"none"}} name='img' onChange={(e)=> {
                     setImg(e.target.files[0])
                 }} accept="image/*"/>
                 

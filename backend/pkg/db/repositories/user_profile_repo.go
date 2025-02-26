@@ -8,13 +8,15 @@ import (
 func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) error {
 	query := `
 		SELECT 
-			c.id,
+			 c.id,
 			c.user_id,
 			c.content,
 			c.created_at,
+			u.avatar_url,
 			u.first_name,
 			u.last_name,
 			u.nickname,
+			c.image_url,
 			COUNT(DISTINCT cm.id) AS total_comments,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
@@ -43,13 +45,15 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 	for rows.Next() {
 		var post models.PostsResponse
 		err := rows.Scan(
-			&post.Id,
+			&post.CardId,
 			&post.UserId,
 			&post.Content,
 			&post.CreatedAt,
+			&post.AvatarUrl,
 			&post.FirstName,
 			&post.LastName,
 			&post.NickName,
+			&post.ImageUrl,
 			&post.TotalComments,
 			&post.TotalLikes,
 			&post.TotalDislikes,
