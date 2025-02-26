@@ -764,3 +764,11 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/26 13:59:46 server.go:27: Starting server on :8080
 2025/02/26 14:00:27 user_repo.go:33: <nil>
 2025/02/26 14:01:54 server.go:27: Starting server on :8080
+2025/02/26 14:12:24 server.go:27: Starting server on :8080
+2025/02/26 14:13:16 user_repo.go:33: <nil>
+2025/02/26 14:15:42 server.go:27: Starting server on :8080
+2025/02/26 14:17:25 auth_controller.go:35: sorry, this email does not exist
+2025/02/26 14:17:38 user_repo.go:33: <nil>
+2025/02/26 14:38:29 server.go:27: Starting server on :8080
+2025/02/26 16:17:52 server.go:27: Starting server on :8080
+2025/02/26 16:27:15 server.go:27: Starting server on :8080

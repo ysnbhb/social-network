@@ -4,10 +4,10 @@ import ActivitySide from '../../../components/activitySide.js';
 // import profileSide from '../../components/profileSide.js'; // Correct the import statement to match your file structure
 
 import '../home/globals.css';
+ 
 
-
-export default function Home() {
-  return (
+export default async function Home() {
+    return (
     <div>
       {/* Use Navbar as a JSX element */}
       {/* Other content for the home page */}

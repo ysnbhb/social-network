@@ -1,13 +1,28 @@
+"use client";
 import Image from "next/image";
 import style from "./profile.module.css";
- import image from "../../../components/images/IMG-20240514-WA0002.jpg";
+import image from "../../../components/images/IMG-20240514-WA0002.jpg";
 import bag from "../../../components/images/image6.jpg";
 import ActivitySidebar from "../../../components/activitySide";
 import HomeFeed from "../../../components/homeFeed";
-import Profile_info from "../../../lib/profileInfo";
-  export default async function Profile() {
+import { Profile_info } from "../../../lib/profileInfo.js";
+import { useEffect, useState } from "react";
+export default   function Profile() { 
+  const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await Profile_info();
+        setData(result);
+      } catch (error) {
+        setErr(error);
+      }
+    };
+    fetchData();
+  }, []); 
+  
 
- await Profile_info()
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -87,6 +102,7 @@ import Profile_info from "../../../lib/profileInfo";
           <HomeFeed
             className={`${style.Homefeed}`}
             classes={{ div_feed: style["custom-feed-class"] }}
+            data ={data}
           />
         </div>
 
