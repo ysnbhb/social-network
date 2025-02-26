@@ -85,18 +85,18 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 }
 
 func Notification(client *models.Client) {
-	dataNotification, err := repo.GetUnreadNotification(client.Userid)
-
-	if err == nil {
-		err = client.Conn.WriteJSON(map[string]interface{}{
-			"type": "Notification",
-			"Data": dataNotification,
-		})
-		if err != nil {
-			RemoveClient(client.Conn)
-		}
+	dataNotification, err := repo.GetNotification(client.Userid)
+	if err != nil {
+		return
 	}
-	// ???????????
+	fmt.Println("Notification", dataNotification)
+	err = client.Conn.WriteJSON(map[string]interface{}{
+		"type":               "Notification",
+		"Data":               dataNotification,
+	})
+	if err != nil {
+		RemoveClient(client.Conn)
+	}
 }
 
 func AddClient(conn *websocket.Conn, userID int, username string) {
@@ -163,5 +163,4 @@ func OnlineStatus(msg models.Message, client *models.Client) error {
 		return err
 	}
 	return nil
-	
 }

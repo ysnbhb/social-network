@@ -5,26 +5,27 @@ import (
 	"social-network/pkg/models"
 )
 
-type Data struct {
-	Type    string
-	Details string
-}
-
-func GetUnreadNotification(userid int) ([]Data, error) {
-	query := `SELECT type, details FROM notifications WHERE user_id = ? AND is_read = unread`
+func GetNotification(userid int) ([]models.UnreadNotification, error) {
+	query := `SELECT id, user_id, sender_id, type, details, read_status FROM notifications WHERE user_id = ?`
 	rows, err := db.DB.Query(query, userid)
 	if err != nil {
-		return []Data{}, err
+		return []models.UnreadNotification{}, err
 	}
 	defer rows.Close()
-	var data []Data
+	var data []models.UnreadNotification
 	for rows.Next() {
-		var dataNotification Data
-		err := rows.Scan(&dataNotification.Type, &dataNotification.Details)
-		data = append(data, dataNotification)
+		var Senderid int
+		var Userid int
+		var dataNotification models.UnreadNotification
+		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus)
 		if err != nil {
-			return []Data{}, err
+			return []models.UnreadNotification{}, err
 		}
+		sender := GetNickName(Senderid)
+		Username := GetNickName(Userid)
+		dataNotification.Sender = sender
+		dataNotification.Username = Username
+		data = append(data, dataNotification)
 	}
 	return data, nil
 }
@@ -43,16 +44,17 @@ func AddNotification(msg models.Message, client *models.Client, Type string, sen
 		if err != nil {
 			return err
 		}
-		receiverConn := models.Clients[receiver]
-		if receiverConn != nil {
-			receiverConn.Conn.WriteJSON(map[string]interface{}{
-				"type":               "Notification",
-				"typeOFnotification": Type,
-				"sender":             client.Username,
-				"content":            msg.Content,
-				"time":               sent_at,
-				"notificationid":     id,
-			})
+		if Type != "messageuser" {
+			receiverConn := models.Clients[receiver]
+			if receiverConn != nil {
+				receiverConn.Conn.WriteJSON(map[string]interface{}{
+					"type":           Type,
+					"sender":         client.Username,
+					"content":        msg.Content,
+					"time":           sent_at,
+					"notificationid": id,
+				})
+			}
 		}
 	}
 	return nil
