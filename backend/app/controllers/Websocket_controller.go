@@ -57,18 +57,6 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 		return service.SendMessageuser(msg, client)
 	case "messageGroup":
 		return service.SendMessageGroup(msg, client)
-	case "follow":
-		return service.SendFollow(msg, client)
-	case "requestinvitationgroup":
-		return service.SendRequestInvitationgroup(msg, client)
-	case "acceptedinvitationgroup":
-		return service.SendAcceptedInvitationGroup(msg, client)
-	case "acceptedinvitationuser":
-		return service.SendAcceptedInvitationUser(msg, client)
-	case "eventcreated":
-		return service.SendEventCreated(msg, client)
-	case "typing":
-		return service.SendTyping(msg, client)
 	case "getmessagesusers":
 		return repo.Getmessagesusers(msg, client)
 	case "getmessagesgroup":
@@ -79,24 +67,36 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 		return repo.ChangeUnreadMessage(msg, client)
 	case "GETonlineStatus":
 		return OnlineStatus(msg, client)
+	case "GetNotification":
+		return Notification(client)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}
 }
 
-func Notification(client *models.Client) {
+func Notification(client *models.Client) error {
 	dataNotification, err := repo.GetNotification(client.Userid)
 	if err != nil {
-		return
+		return err
 	}
-	fmt.Println("Notification", dataNotification)
+	GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
+	if err != nil {
+		return err
+	}
+	GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
+	if err != nil {
+		return err
+	}
 	err = client.Conn.WriteJSON(map[string]interface{}{
-		"type":               "Notification",
-		"Data":               dataNotification,
+		"type":                "Notification",
+		"Data":                dataNotification,
+		"countNotification":   GetNotificationCount,
+		"countunreadmessages": GetunreadmessagesCount,
 	})
 	if err != nil {
 		RemoveClient(client.Conn)
 	}
+	return nil
 }
 
 func AddClient(conn *websocket.Conn, userID int, username string) {
@@ -139,7 +139,6 @@ func BroadcastOnlineUsers() {
 			"type":        "onlineStatus",
 			"onlineUsers": otherUsers,
 		}
-		fmt.Println("clients", client)
 		err := client.Conn.WriteJSON(data)
 		if err != nil {
 			client.Conn.Close()
