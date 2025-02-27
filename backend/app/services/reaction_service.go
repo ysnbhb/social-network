@@ -13,16 +13,33 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 	if err != nil {
 		return errors.New("validating reaction: " + err.Error())
 	}
-	groupId := repo.GetGroupIdFromPost(reactionRequest.CardId)
-	if groupId != 0 {
-		exist := repo.CheckUserInGroup(groupId, reactionRequest.UserId)
-		if !exist {
-			return errors.New("you have to join to group first")
-		}
-	}
 	exist := repo.CheckExistCard(reactionRequest.CardId)
 	if !exist {
 		return errors.New("post not found")
+	}
+	postinfo, err := repo.GetPostInfo(reactionRequest.CardId)
+	if postinfo.UserId != reactionRequest.UserId {
+		groupId := postinfo.GroupId
+		if groupId != 0 {
+			exist := repo.CheckUserInGroup(groupId, reactionRequest.UserId)
+			if !exist {
+				return errors.New("you have to join to group first")
+			}
+		} else if postinfo.PrivacyType != "public" && postinfo.Privacy == "public" {
+			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
+				return errors.New("you have to follow the user first")
+			}
+		} else if postinfo.PrivacyType != "public" && postinfo.Privacy == "private" {
+			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
+				return errors.New("you have to follow the user first")
+			} else if !repo.AllToSee(reactionRequest.UserId, postinfo.UserId) {
+				return errors.New("you can not see this post")
+			}
+		} else if (postinfo.PrivacyType == "public" || postinfo.PrivacyType != "public") && postinfo.Privacy == "almostPrivate" {
+			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
+				return errors.New("you have to follow the user first")
+			}
+		}
 	}
 	err = repo.AddReaction(reactionRequest)
 	if err != nil {
@@ -31,6 +48,6 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 	return nil
 }
 
-func GetReactionCounts(reactionRequest *models.ReactionRequest) (likes, dislikes int) {
-	return repo.GetReactionCounts(reactionRequest.CardId)
+func GetReactionCounts(reactionRequest *models.ReactionRequest) (likes, dislikes int, isliked bool) {
+	return repo.GetReactionCounts(reactionRequest.CardId, reactionRequest.UserId)
 }

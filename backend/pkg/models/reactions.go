@@ -7,7 +7,8 @@ type ReactionRequest struct {
 }
 
 type ReactionResponse struct {
-	LikesCount    int `json:"likesCount"`
-	DislikesCount int `json:"dislikesCount"`
-	UserReaction  int `json:"userReaction"`
+	LikesCount    int  `json:"likesCount"`
+	DislikesCount int  `json:"dislikesCount"`
+	UserReaction  int  `json:"userReaction"`
+	Isliked       bool `json:"isliked"`
 }
