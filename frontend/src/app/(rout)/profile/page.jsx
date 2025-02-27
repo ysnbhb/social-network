@@ -5,25 +5,30 @@ import image from "../../../components/images/IMG-20240514-WA0002.jpg";
 import bag from "../../../components/images/image6.jpg";
 import ActivitySidebar from "../../../components/activitySide";
 import HomeFeed from "../../../components/homeFeed";
-import { Profile_info } from "../../../lib/profileInfo.js";
+import { Profile_Posts } from "../../../lib/profilePost.js";
 import { useEffect, useState } from "react";
+import Profile_Info from "../../../lib/ProfileInfo";
 
 
 export default function Profile() {
   const [data, setData] = useState(null);
+  const [data_info, setData_info] = useState(null);
   const [err, setErr] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await Profile_info();
+        const result = await Profile_Posts();
+        const result_info = await Profile_Info();
         setData(result);
+        setData_info(result_info);
       } catch (error) {
         setErr(error);
       }
     };
     fetchData();
   }, []);
-
+  console.log(data);
+  
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -51,6 +56,7 @@ export default function Profile() {
       image: " ",
     },
   ];
+  
   return (
     <div>
       <div className={style.container}>
@@ -65,6 +71,7 @@ export default function Profile() {
                 objectFit="cover"
               />
             </div>
+
             <div className={style.buttonContainer}>
               <button className={style.followButton}>Follow</button>
               <button className={style.moreButton}>Send Message</button>
@@ -79,6 +86,7 @@ export default function Profile() {
                 objectFit="cover"
               />
             </span>
+            
             <div className={style["user"]}>
               <div className={style.content}>
                 <div className={style.about}>
@@ -99,6 +107,8 @@ export default function Profile() {
                 </div>
               </div>
             </div>
+
+
           </div>
           <HomeFeed
             className={`${style.Homefeed}`}

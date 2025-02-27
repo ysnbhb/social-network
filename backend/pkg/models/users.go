@@ -39,4 +39,5 @@ type UserProfile struct {
 	Image_count     int       `json:"image_count"`
 	Follower_count  int       `json:"follower_count"`
 	Following_count int       `json:"following_count"`
+	Count_Posts     int       `json:"posts_count"`
 }

@@ -1,5 +1,6 @@
-
-export  async function  Profile_info(){
+import React, { createContext, useContext, useState } from 'react';
+const ProfileContext = createContext();
+export  async function  Profile_Posts(){
     try {
         const response= await fetch("http://localhost:8080/api/profile/posts/created",{
             method:"GET",
@@ -18,4 +19,7 @@ export  async function  Profile_info(){
         console.log(error);
         return error;
     }
+}
+export function useProfile() {
+    return useContext(ProfileContext);
 }

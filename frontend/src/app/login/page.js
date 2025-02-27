@@ -2,6 +2,7 @@
 import { useRef, useEffect, useState, } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import { useProfile } from "../../lib/profilePost";
 
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
@@ -12,7 +13,8 @@ export default function Login() {
   const Router = useRouter();
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState("Public")
-
+  // const [data_profile, setDataProfile] = useState(null)
+  const { setDataProfile } = useProfile();
   const handleFileChange = (e) => {
     setImg(e.target.files[0]); // Update the image state
 
@@ -66,6 +68,8 @@ export default function Login() {
       body: JSON.stringify(dataObject)
     });
     const content = await response.json();
+    setDataProfile(content)
+    
     if (!response.ok) {
       alert(content)
     } else {
@@ -74,6 +78,8 @@ export default function Login() {
     }
 
   };
+  // console.log(data_profile);  
+  
 
   useEffect(() => {
     const container = containerRef.current;
