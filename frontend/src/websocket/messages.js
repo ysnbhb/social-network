@@ -11,28 +11,32 @@ export function Getmessagesusers(data) {
     if (messageplace && messages) {
         messages.forEach(info => {
             messageplace.innerHTML += `
-             <div class="message ${info.sender === usernickname ? "sender" : "receiver"}">
-             <div class="sender-info">
-             <div class="${info.sender === usernickname ? "avatar" : ""}"></div>
-             <span>${info.sender === usernickname ? info.sender : ""}</span>
-             <span class="time">${info.sender === usernickname ? info.timestamp : ""}</span>
-             </div>
-             <div>${info.message}</div> 
-            </div>
-            `
+                <div class="message ${info.sender === usernickname ? "sender" : "receiver"}">
+                    <div class="sender-info">
+                    <div class="avatar"></div>
+                    <span>${info.sender}</span>
+                    <span class="time">${info.timestamp}</span>
+                    </div>
+                    <div>${info.message}</div> 
+                </div>
+                `;
         })
     }
+
 }
-export function receiveMessageuser(data) {
+export function receiveMessageuser(data, count) {
     const url = (window.location.href).split("/").reverse()[0];
     if (!data.mymsg && url !== "chat") {
-        AddMessagesymbole(true)
+        AddMessagesymbole(true,count)
     }
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
         sendMessageIsRead(data.sender)
     }
     if (!document.getElementById(`chat-box-${data.sender}`) && !data.mymsg && url === "chat") {
-        document.getElementById(`notification-badge-${data.sender}`).style.display = "block"
+        const newmsg = document.getElementById(`notification-badge-${data.sender}`)
+        if (newmsg){
+            newmsg.style.display = "block"
+        }
     }
     const messageplace = document.getElementById("messages");
     if (messageplace) {
@@ -94,19 +98,4 @@ export function sendGetmessagesgroups(sender, groupid) {
 }
 export function Getmessagesgroups(data) {
     console.log(data);
-}
-/// typing ////
-export function receiveTyping(data) {
-    console.log(data);
-}
-
-
-export function sendTyping(sender, receiver) {
-    const data = {
-        type: "typing",
-        sender: sender,
-        receiver: receiver,
-        content: `${sender} is typing`
-    }
-    safeSend(data);
 }

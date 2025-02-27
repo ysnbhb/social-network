@@ -1,6 +1,6 @@
 "use client";
 
-import { receiveFollow, handleNotification, receiveRequestInvitationgroup, receiveAcceptedInvitationGroup, receiveEventCreated, receiveAcceptedInvitationUser } from './notification.js'
+import { handleNotification } from './notification.js'
 import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
 
 export let socket;
@@ -44,7 +44,6 @@ export function initializeWebSocket() {
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
             const type = data.type;
-            console.log("Received data:", type);
             
             switch (type) {
                 case "onlineStatus":
@@ -55,24 +54,6 @@ export function initializeWebSocket() {
                     break;
                 case "messageGroup":
                     receiveMessageGroup(data);
-                    break;
-                case "follow":
-                    receiveFollow(data);
-                    break;
-                case "requestinvitationgroup":
-                    receiveRequestInvitationgroup(data);
-                    break;
-                case "acceptedinvitationgroup":
-                    receiveAcceptedInvitationGroup(data);
-                    break;
-                case "acceptedinvitationuser":
-                    receiveAcceptedInvitationUser(data);
-                    break;
-                case "eventcreated":
-                    receiveEventCreated(data);
-                    break;
-                case "typing":
-                    receiveTyping(data);
                     break;
                 case "getmessagesusers":
                     Getmessagesusers(data);
@@ -120,19 +101,17 @@ export function SendOnlineStatus() {
 export function ReceiveOnlineStatus(data) {
     const onlineUsers = data.onlineUsers;
 
-    requestAnimationFrame(() => {
+    // requestAnimationFrame(() => {
         const allusers = document.querySelectorAll(".user-item");
         allusers.forEach(user => {
-            const spanonline = document.querySelectorAll(`#${user.id} .statue`)[0];
-            console.log("spanonline" , spanonline);
-            
+            const spanonline = document.querySelectorAll(`#${user.id} .statue`)[0];            
             if (spanonline && onlineUsers.includes(user.id)) {
                 spanonline.style.backgroundColor = "#4caf50";
             } else if (spanonline) {
                 spanonline.style.backgroundColor = "#d3d3d3";
             }
         });
-    });
+    // });
 
 }
 

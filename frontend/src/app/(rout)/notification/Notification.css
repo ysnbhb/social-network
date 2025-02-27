@@ -22,6 +22,10 @@ body {
     transition: transform 0.3s ease;
 }
 
+.notification.unread {
+    background-color: rgb(144, 218, 247);
+}
+
 .notification:hover {
     transform: translateY(-5px);
 }
@@ -56,10 +60,6 @@ body {
 .field-label {
     font-weight: bold;
     color: #555;
-}
-
-.field-value {
-    color: #333;
 }
 
 /* Content area styles */

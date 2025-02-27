@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { sendGetmessagesusers, sendMessageIsRead} from '../websocket/messages.js';
+import { SendOnlineStatus } from '../websocket/websocket.js';
 import '../styles/chat.css';
 
 function UserList({ setSelectedUser }) {
@@ -7,14 +8,6 @@ function UserList({ setSelectedUser }) {
 
     useEffect(() => {
         Getfriends();
-
-        // initializeWebSocket()
-        // .then(() => {
-        //     SendOnlineStatus();
-        // })
-        // .catch(error => {
-        //     console.error("Failed to initialize websocket in UserList:", error);
-        // });
     }, []);
 
     const Getfriends = () => {
@@ -25,6 +18,7 @@ function UserList({ setSelectedUser }) {
             .then((response) => response.json())
             .then((data) => {
                 setUsers(data);
+                SendOnlineStatus();
             })
             .catch((error) => {
                 console.error('Error fetching users:', error);
@@ -63,10 +57,9 @@ function UserList({ setSelectedUser }) {
                                 id={`notification-badge-${user.nickname}`}
                                 style={{
                                     display: user.sendmessage ? 'inline-block' : 'none',
-                                    backgroundColor: user.sendmessage ? '#ff3d00' : 'transparent', // Red for notification
                                 }}
                             >
-                                *
+                                📩
                             </span>
                         </div>
                     </div>

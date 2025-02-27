@@ -1,51 +1,63 @@
 "use client"
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Notification.css';
 
-const fakeNotification = [
-  {
-    id: 1,
-    sender: "John Smith",
-    receiver: "Alex Johnson",
-    content: "Hello Alex, your project proposal has been approved. Please schedule a kickoff meeting with the team at your earliest convenience.",
-    time: "2025-02-26T14:32:45Z"
-  },
-  {
-    id: 2,
-    sender: "Jane Doe",
-    receiver: "Bob Johnson",
-    content: "Hi Bob, I'm sorry to hear about your project delay. Please let me know if there's anything I can do to help.",
-    time: "2025-02-26T14:32:45Z"
-  }
-];
-
 export default function Notification() {
-  const [notification] = useState(fakeNotification);
+  const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  <h1>Notification</h1>
+  useEffect(() => {
+    Notifications();
+  }, []);
+
+  const Notifications = () => {
+    fetch('http://localhost:8080/api/notifications', {
+      method: 'GET',
+      credentials: 'include'
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setNotifications(data);
+        console.log(data);
+
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching notifications:', error);
+        setLoading(false);
+      })
+  }
+  if (loading) {
+    return <h1>Loading Notifications...</h1>;
+  }
+
+  if (notifications.length === 0) {
+    return <h1>No Notifications</h1>;
+  }
+
   return (
-    notification.map((notification) => (
-      <div key={notification.id} className="notification">
-        <div className="notification-header">
-        </div>
-        <div className="notification-details">
-          <div className="notification-field">
-            <span className="field-label">From:</span>
-            <span className="field-value">{notification.sender}</span>
-          </div>
-          <div className="notification-field">
-            <span className="field-label">To:</span>
-            <span className="field-value">{notification.receiver}</span>
-          </div>
-          <div className="notification-content">
-            <p>{notification.content}</p>
-          </div>
-          <div className="notification-time">
-            <span className="time-label">Time:</span>
-            <span className="time-value">{notification.time}</span>
-          </div>
-        </div>
-      </div>
-    ))
+    <div>
+      <h1>Notifications</h1>
+      {notifications.map((notification) => {
+        if (notification.Type !== "messageuser") {
+          return (
+            <div key={notification.Id} className={`notification ${notification.Readstatus}`}>
+              <div className="notification-header">
+              </div>
+              <div className="notification-details">
+                <div className="notification-field">
+                  <span className="field-label">From {notification.Sender}</span>
+                  <span className="field-label">{notification.Sent_at}</span>
+                </div>
+                <div className="notification-content">
+                  <p>{notification.Details}</p>
+                </div>
+              </div>
+            </div>
+          );
+        }
+        return null
+      })}
+    </div >
   );
 }
