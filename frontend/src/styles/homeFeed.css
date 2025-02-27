@@ -209,7 +209,7 @@
 }
 .image-profile {
   border-radius: 10px;
-  height: 31%;
+  /* height: 31%; */
   min-width: 55%;
   align-self: center;
   max-width: 60%;
@@ -267,7 +267,7 @@
 /* Full-size image */
 .popup-image {
   max-width: 90%; /* Limit the width to fit the screen */
-  max-height: 90vh; /* Limit the height to fit the screen */
+  max-height: 50vh; /* Limit the height to fit the screen */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
