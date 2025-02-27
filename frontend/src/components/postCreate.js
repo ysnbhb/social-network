@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/homeFeed.css";
+import { CreatePost } from "../lib/createPost";
 
 export default function PostCreater({setPosts , classes}) {
     const [content, setContent] = useState("");

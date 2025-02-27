@@ -6,7 +6,6 @@ import PostCreater from "./postCreate";
 
 export default function HomeFeed({ className, classes = {} }) {
   const [posts, setPosts] = useState([]);
-  const containerRef = useRef(null);
   let offset = 0;
 
   const GetPost = async () => {
