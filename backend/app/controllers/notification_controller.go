@@ -19,7 +19,7 @@ func GetNotification(w http.ResponseWriter, r *http.Request) {
 	err = json.NewEncoder(w).Encode(dataNotification)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
-		log.Println("error Get Friends:", err)
+		log.Println("error Get Notification:", err)
 		return
 	}
 }
