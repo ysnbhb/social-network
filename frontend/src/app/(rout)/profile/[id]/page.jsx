@@ -16,17 +16,17 @@ export default function Profile({ params }) {
 
   const [data, setData] = useState([]);
   const [err, setErr] = useState(null);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await Profile_Posts();
-  //       setData(result);
-  //     } catch (error) {
-  //       setErr(error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await Profile_Posts();
+        setData(result);
+      } catch (error) {
+        setErr(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
