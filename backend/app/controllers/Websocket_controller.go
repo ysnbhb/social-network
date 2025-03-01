@@ -53,11 +53,7 @@ func HandleMessages(client *models.Client) {
 func Handlemessagetype(msg models.Message, client *models.Client) error {
 	switch msg.Type {
 	case "messageuser":
-		err := service.SendMessageuser(msg, client)
-		if err != nil {
-			return err
-		}
-		return nil
+		return service.SendMessageuser(msg, client)
 	case "messageGroup":
 		return service.SendMessageGroup(msg, client)
 	case "getmessagesusers":

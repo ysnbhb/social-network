@@ -9,29 +9,29 @@ import (
 	"social-network/pkg/models"
 )
 
-func CheckCanUSendMessage(msg models.Message, client *models.Client) error {
-	recieverid := GetUserIdByNickName(msg.Receivers[0])
-	if recieverid < 0 {
-		return errors.New("User not found")
-	}
-	query1 := "SELECT profile_type FROM users WHERE id = ?"
-	var profileType string
-	err := db.DB.QueryRow(query1, recieverid).Scan(&profileType)
-	if err != nil {
-		return err
-	}
-	if profileType == "private" {
-		query2 := "SELECT COUNT(*) FROM followers WHERE follower_id = ? AND following_id = ? OR following_id = ? AND follower_id = ?"
-		var count int
-		err := db.DB.QueryRow(query2, client.Userid, recieverid, client.Userid, recieverid).Scan(&count)
-		if err != nil {
-			return err
-		}
-		if count == 0 {
-			return errors.New("You are not following this user")
-		}
-	}
-	return nil
+func CheckCanUSendMessage(Receivers string, Userid int) error {
+    recieverid := GetUserIdByNickName(Receivers)
+    if recieverid < 0 {
+        return errors.New("User not found")
+    }
+    query1 := "SELECT profile_type FROM users WHERE id = ?"
+    var profileType string
+    err := db.DB.QueryRow(query1, recieverid).Scan(&profileType)
+    if err != nil {
+        return err
+    }
+    if profileType == "private" {
+        query2 := "SELECT COUNT(*) FROM followers WHERE follower_id = ? AND following_id = ? OR following_id = ? AND follower_id = ?"
+        var count int
+        err := db.DB.QueryRow(query2, Userid, recieverid, Userid, recieverid).Scan(&count)
+        if err != nil {
+            return err
+        }
+        if count == 0 {
+            return errors.New("You are not following this user")
+        }
+    }
+    return nil
 }
 
 func Addmessages(msg models.Message, client *models.Client) error {
@@ -98,6 +98,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 	client.Conn.WriteJSON(map[string]interface{}{
 		"type":     "getmessagesusers",
 		"messages": messages,
+		"you":   GetNickName(client.Userid),
 	})
 	return nil
 }
