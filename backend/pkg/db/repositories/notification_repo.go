@@ -1,12 +1,14 @@
 package repo
 
 import (
+	"time"
+
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
 
 func GetNotification(userid int) ([]models.UnreadNotification, error) {
-	query := `SELECT id, user_id, sender_id, type, details, read_status FROM notifications WHERE user_id = ?`
+	query := `SELECT id, user_id, sender_id, type, details, read_status, created_at FROM notifications WHERE user_id = ?`
 	rows, err := db.DB.Query(query, userid)
 	if err != nil {
 		return []models.UnreadNotification{}, err
@@ -16,8 +18,9 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 	for rows.Next() {
 		var Senderid int
 		var Userid int
+		var Sent_at time.Time
 		var dataNotification models.UnreadNotification
-		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus)
+		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus, &Sent_at)
 		if err != nil {
 			return []models.UnreadNotification{}, err
 		}
@@ -25,6 +28,7 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 		Username := GetNickName(Userid)
 		dataNotification.Sender = sender
 		dataNotification.Username = Username
+		dataNotification.Sent_at = Sent_at.Format("2006-01-02 15:04:05")
 		data = append(data, dataNotification)
 	}
 	return data, nil
@@ -87,4 +91,24 @@ func GetNotificationBytype(userid int, Type string) ([]string, error) {
 		senders = append(senders, sender)
 	}
 	return senders, nil
+}
+
+func GetunreadmessagesCount(userid int) (int, error) {
+	countQuery := `SELECT COUNT(*) FROM notifications WHERE user_id = ? AND read_status = 'unread' AND type = 'messageuser'`
+	var messagesCount int
+	err := db.DB.QueryRow(countQuery, userid).Scan(&messagesCount)
+	if err != nil {
+		return 0, err
+	}
+	return messagesCount, nil
+}
+
+func GetNotificationCount(userid int) (int, error) {
+	countQuery := `SELECT COUNT(*) FROM notifications WHERE user_id = ? AND read_status = 'unread' AND type != 'messageuser'`
+	var notificationCount int
+	err := db.DB.QueryRow(countQuery, userid).Scan(&notificationCount)
+	if err != nil {
+		return 0, err
+	}
+	return notificationCount, nil
 }

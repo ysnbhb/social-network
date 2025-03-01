@@ -6,40 +6,21 @@ import { receiveMessageuser } from "./messages.js";
 export function handleNotification(data) {
     if (data.Data) {
         const DATA = data.Data
-        DATA.forEach(element => {
-            const notificationtype = element.Type
-            // console.log(notificationtype);
+        
+        DATA.forEach(element => {    
             if (element.Readstatus === "unread") {
                 if (element.Type === "messageuser") {
-                    receiveMessageuser(element);
+                    receiveMessageuser(element, data.countunreadmessages);
                 } else {
-                    // console.log(element);
-                    
-                    ShowNotification(element);
+                    ShowNotification(data.countNotification);
                 }
             }
-
-            // if (notificationtype === "follow") {
-
-            // }else if (notificationtype === "eventcreated") {
-
-            // }else if (notificationtype === "acceptedinvitationuser") {
-
-            // }else if (notificationtype === "requestinvitationgroup") {
-
-            // }else if (notificationtype === "messageuser") {
-
-            // }
-            // console.log(notificationtype);
         });
     }
 
-    // console.log("Received notification:", data);
-
-    // console.log("Received notification type:", data.typeOFnotification);
 }
-function ShowNotification(){
-    AddNotificationsymbole(true);
+function ShowNotification(count) {
+    AddNotificationsymbole(true,count);
 
 }
 export function sendChangeUnreadNotification(Notificationid) {
@@ -49,7 +30,12 @@ export function sendChangeUnreadNotification(Notificationid) {
     }
     safeSend(data);
 }
-
+export function sendNotification() {
+    const data = {
+        type: "GetNotification",
+    }
+    safeSend(data);
+}
 /// notification group ///
 export function receiveRequestInvitationgroup(data) {
     console.log(data);
@@ -80,16 +66,21 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 }
 
 /// notification user ///
-export function AddMessagesymbole(type) {
+export function AddMessagesymbole(type, count) {
     const notification = document.getElementById("notification-badge-message");
+    const notification2 = document.getElementById("notification-count-message");
+    notification2.innerHTML = count;
     if (type) {
         notification.style.display = "block";
     } else {
         notification.style.display = "none";
     }
 }
-export function AddNotificationsymbole(type) {
+export function AddNotificationsymbole(type, count) {
+    
     const notification = document.getElementById("notification-badge");
+    const notification2 = document.getElementById("notification-count");
+    notification2.innerHTML = count;
     if (type) {
         notification.style.display = "block";
     } else {
@@ -121,22 +112,6 @@ export function sendAcceptedInvitationUser(sender, receiver) {
 }
 export function receiveAcceptedInvitationUser(data) {
     console.log(data)
-}
-
-/// notification event ///
-export function receiveEventCreated(data) {
-    console.log(data);
-}
-
-export function sendEventCreated(sender, receiver, eventName, groupid, groupName) {
-    const data = {
-        type: "eventcreated",
-        sender: sender,
-        receiver: receiver,
-        content: `${sender} created event ${eventName} in group ${groupName}`,
-        groupid: groupid
-    }
-    safeSend(data);
 }
 
 

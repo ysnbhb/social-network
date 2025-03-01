@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { sendMessageuser } from "../websocket/messages.js";
 import '../styles/chat.css';
+
 function ChatBox({ user }) {
 
   const [newMessage, setNewMessage] = useState("");
@@ -12,11 +13,22 @@ function ChatBox({ user }) {
   };
 
   return (
-    <div className="chat-box" id={`chat-box-${user.nickname}`}>
-      <h3>Chat with {user.nickname}</h3>
-      <div className="messages" id="messages">
-      </div>
-      <div className="input-container">
+    <div className="chat-container" id={`chat-box-${user.nickname}`}>
+
+<div className="chat-header">
+            <div className="user-info">
+                <div className="avatar">
+                </div>
+                <span>{user.nickname}</span>
+            </div>
+        </div>
+        
+        <div className="chat-messages" id="messages" >
+
+        </div>
+        <div className="chat-input">
+ 
+      <div className="input-field">
         <input
           type="text"
           value={newMessage}
@@ -26,6 +38,7 @@ function ChatBox({ user }) {
         />
         <button onClick={handleSendMessage}>Send</button>
       </div>
+    </div>
     </div>
   );
 };

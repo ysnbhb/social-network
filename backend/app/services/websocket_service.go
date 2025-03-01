@@ -105,36 +105,4 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 	return nil
 }
 
-func SendFollow(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "follow")
-}
 
-func SendRequestInvitationgroup(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "requestinvitationgroup")
-}
-
-func SendAcceptedInvitationGroup(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "acceptedinvitationgroup")
-}
-
-func SendAcceptedInvitationUser(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "acceptedinvitationuser")
-}
-
-func SendEventCreated(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "eventcreated")
-}
-
-func SendTyping(msg models.Message, client *models.Client) error {
-	return SendNotification(msg, client, "typing")
-}
-
-func SendNotification(msg models.Message, client *models.Client, Type string) error {
-	Time := time.Now().Format("02/01/2006 15:04:05")
-	msg.Content = html.EscapeString(msg.Content)
-	err := repo.AddNotification(msg, client, Type, Time)
-	if err != nil {
-		return err
-	}
-	return nil
-}
