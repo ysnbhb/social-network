@@ -3,26 +3,19 @@ import Link from 'next/link';
 import '../styles/navbar.css';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
-import { AddMessagesymbole } from '../websocket/notification.js';
 import { initializeWebSocket, SendOnlineStatus } from '../websocket/websocket.js';
 
 export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === '/chat') {
-      AddMessagesymbole(false);
-
-      // Use our new promise-based approach
-      initializeWebSocket()
-        .then(() => {
-          // Only call SendOnlineStatus after websocket is connected
-          SendOnlineStatus();
-        })
-        .catch(error => {
-          console.error("Failed to initialize websocket:", error);
-        });
-    }
+    initializeWebSocket()
+      .then(() => {
+        SendOnlineStatus();
+      })
+      .catch(error => {
+        console.error("Failed to initialize websocket:", error);
+      });
   }, [pathname]);
   return (
     <nav className="navbar">
@@ -64,7 +57,7 @@ export default function Navbar() {
 
         {/* Chat Icon */}
         <Link href="/chat" className={pathname === "/chat" ? "active" : ""}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="chat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" id="chat">
             <g fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" transform="translate(2 2)">
               <path
                 d="M10.0568181,-3.37507799e-14 C6.54686532,-0.0141015786 3.28556632,1.80703838 1.46050022,4.80034679 C-0.364565872,7.7936552 -0.487081058,11.5223413 1.13756771,14.6286303 L1.33789312,15.0191059 C1.50209106,15.3263704 1.53643729,15.6864194 1.43328617,16.0191043 C1.14742034,16.7783674 0.908488743,17.5544276 0.71783828,18.3429101 C0.71783828,18.7429095 0.832309942,18.9714806 1.26157868,18.9619568 C2.02189879,18.7940564 2.77067506,18.5777416 3.5033154,18.3143388 C3.81886183,18.2274425 4.15437035,18.2475403 4.45724592,18.3714815 C4.73388577,18.5048146 5.29670478,18.8476712 5.31578339,18.8476712 C8.99153503,20.7804333 13.4807954,20.2472199 16.5997521,17.5074142 C19.7187087,14.7676084 20.8198838,10.3899785 19.3676078,6.50403406 C17.9153318,2.6180896 14.211089,0.0305307279 10.0568181,-3.37507799e-14 L10.0568181,-3.37507799e-14 Z"
@@ -79,30 +72,29 @@ export default function Navbar() {
               cx="18"
               cy="5"
               r="8"
-              fill="#0aec0a"
+              fill="#FF3B30"
               stroke="white"
               strokeWidth="1"
               style={{ display: 'none' }}
             />
             <text id="notification-count-message" x="18" y="6" textAnchor="middle" fill="white" fontSize="12px" dy=".35em" style={{ display: 'block' }}></text>
+            
           </svg>
           Chat
         </Link>
 
         {/* Notification Icon */}
         <Link href="/notification" className={pathname === "/notification" ? "active" : ""} >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="notification">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" id="notification">
             <g fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" transform="translate(3.5 2)">
               <path
                 d="M.00082545485 11.7871203L.00082545485 11.568135C.0329512746 10.9202451.240598836 10.2924906.602355621 9.74960514 1.20450201 9.09746185 1.61670318 8.29830554 1.79571385 7.43597814 1.79571385 6.76950123 1.79571385 6.09350321 1.85392645 5.4270263 2.15469153 2.21841601 5.32727806 3.37507799e-14 8.46105618 3.37507799e-14L8.53867298 3.37507799e-14C11.6724511 3.37507799e-14 14.8450376 2.21841601 15.1555048 5.4270263 15.2137174 6.09350321 15.1555048 6.76950123 15.2040153 7.43597814 15.3854338 8.30030508 15.7972211 9.10194449 16.3973735 9.75912624 16.7618363 10.2972046 16.9698126 10.9226612 16.9989037 11.568135L16.9989037 11.7775992C17.0205591 12.6480449 16.720769 13.4968208 16.1548211 14.167395 15.4069586 14.9514753 14.392113 15.4392693 13.3024038 15.5384332 10.1069938 15.8812057 6.8830333 15.8812057 3.68762325 15.5384332 2.59914366 15.4349924 1.58575794 14.9479001.835206008 14.167395.278 13.496309-.0177593319 12.6525831.00082545485 11.7871203zM6.05493552 18.8517756C6.55421005 19.478449 7.28739599 19.8840184 8.09222803 19.978725 8.89706007 20.0734316 9.70716835 19.8494655 10.3432635 19.3563938 10.5389031 19.2105605 10.7149406 19.0410062 10.8671768 18.8517756"
               />
             </g>
-            <circle id="notification-badge" cx="18" cy="6" r="8" fill="#FF3B30" stroke="white" strokeWidth="1" style={{ display: 'none' }}></circle>
-            <text id="notification-count" x="18" y="6" textAnchor="middle" fill="white" fontSize="12px" dy=".35em" style={{ display: 'block' }}></text>
-
+            <circle id="notification-badge" cx="18" cy="6" r="8" fill="#FF3B30" stroke="white" strokeWidth="1" style={{ display: 'block' }}></circle>
+            <text id="notification-count" x="18" y="6" textAnchor="middle" fill="white" fontSize="10px"  dy=".35em" style={{ display: 'block' }}>3</text>
           </svg>
           Notification
-          <span className="notification-count" style={{ display: 'none' }}>+1</span>
         </Link>
       </div>
       <div className="avatar">

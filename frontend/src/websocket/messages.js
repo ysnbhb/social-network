@@ -1,6 +1,6 @@
 "use client"
 import { safeSend } from "./websocket.js";
-import { AddMessagesymbole } from "./notification.js";
+import { sendNotification } from "./notification.js";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
@@ -24,26 +24,30 @@ export function Getmessagesusers(data) {
     }
 
 }
-export function receiveMessageuser(data, count) {
-    const url = (window.location.href).split("/").reverse()[0];
-    if (!data.mymsg && url !== "chat") {
-        AddMessagesymbole(true,count)
-    }
+export function receiveMessageuser(data) {
+    sendNotification()
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
         sendMessageIsRead(data.sender)
     }
-    if (!document.getElementById(`chat-box-${data.sender}`) && !data.mymsg && url === "chat") {
+    if (!document.getElementById(`chat-box-${data.sender}`) && !data.mymsg ) {
         const newmsg = document.getElementById(`notification-badge-${data.sender}`)
         if (newmsg){
             newmsg.style.display = "block"
         }
     }
     const messageplace = document.getElementById("messages");
+ 
     if (messageplace) {
+        const usernickname = document.querySelectorAll(".user-info span")[0].textContent;
         messageplace.innerHTML += `
-             <div class="message receiver">
-              <div>${data.content}</div>
-            </div>
+             <div class="message ${data.sender === usernickname ? "sender" : "receiver"}">
+                    <div class="sender-info">
+                    <div class="avatar"></div>
+                    <span>${data.sender}</span>
+                    <span class="time">${data.time}</span>
+                    </div>
+                    <div>${data.content}</div> 
+                </div>
             `
     }
 }
@@ -72,6 +76,7 @@ export function sendMessageIsRead(nickname) {
 
     document.getElementById(`notification-badge-${nickname}`).style.display = "none"
     safeSend(data);
+    sendNotification()
 }
 //// group messages ////
 
