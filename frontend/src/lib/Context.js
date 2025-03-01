@@ -6,7 +6,7 @@ export const Context = createContext({
   dataProfile: null,
   setDataProfile: () => {}
 });
- 
+
 export   function ContextProvider({children}) {
   const [dataProfile, setDataProfile] = useState(null);
   useEffect(() => {

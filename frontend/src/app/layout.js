@@ -6,12 +6,6 @@ import { ContextProvider } from '../lib/Context.js';
 import "./globals.css";
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    // Initialize websocket connection when the app loads
-    initializeWebSocket().catch(error => {
-      console.error("Failed to initialize websocket in layout:", error);
-    });
-  }, []);
 
   return (
     <html lang="en">

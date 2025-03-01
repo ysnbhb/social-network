@@ -7,8 +7,7 @@ import bag from "../../../../components/images/image6.jpg";
 import ActivitySidebar from "../../../../components/activitySide";
 import HomeFeed from "../../../../components/homeFeed";
 import { Profile_Posts } from "../../../../lib/profilePost.js";
-// import Profile_Info from "../../../lib/ProfileInfo";
-import { Context } from "../../../../lib/Context";
+ import { Context } from "../../../../lib/Context";
 import { PostCompte } from "../../../../components/postComp.js";
 
 export default function Profile({ params }) {
