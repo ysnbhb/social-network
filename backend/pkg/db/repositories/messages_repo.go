@@ -125,7 +125,6 @@ func Getmessagesgroups(msg models.Message, client *models.Client) error {
 		})
 	}
 	if err != nil {
-		fmt.Println("------------------------------------")
 		return err
 	}
 	client.Conn.WriteJSON(map[string]interface{}{

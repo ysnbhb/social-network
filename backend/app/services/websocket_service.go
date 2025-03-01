@@ -29,6 +29,10 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 	if err != nil {
 		return err
 	}
+	err = repo.AddNotification(msg, client, "messageuser", Time) // add notification to db. ??
+	if err != nil {
+		return err
+	}
 	receiverConn := models.Clients[msg.Receivers[0]]
 	if receiverConn != nil {
 		receiverConn.Conn.WriteJSON(map[string]interface{}{
@@ -46,11 +50,6 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 		"time":    Time,
 		"mymsg":   true,
 	})
-	if err != nil {
-		return err
-	}
-
-	err = repo.AddNotification(msg, client, "messageuser", Time) // add notification to db. ??
 	if err != nil {
 		return err
 	}
