@@ -8,30 +8,27 @@ import ActivitySidebar from "../../../../components/activitySide";
 import HomeFeed from "../../../../components/homeFeed";
 import { Profile_Posts } from "../../../../lib/profilePost.js";
 // import Profile_Info from "../../../lib/ProfileInfo";
-import { Context } from '../../../../lib/Context';
+import { Context } from "../../../../lib/Context";
+import { PostCompte } from "../../../../components/postComp.js";
 
-export default function Profile({params}) {
+export default function Profile({ params }) {
   const contextValues = useContext(Context);
   console.log(contextValues.dataProfile);
-  
-  const [data, setData] = useState(null);
-  const [data_info, setData_info] = useState(null);
+
+  const [data, setData] = useState([]);
   const [err, setErr] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await Profile_Posts();
-        // const result_info = await Profile_Info();
         setData(result);
-        // setData_info(result_info);
       } catch (error) {
         setErr(error);
       }
     };
     fetchData();
   }, []);
-  console.log(data);
-  
+
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -59,7 +56,7 @@ export default function Profile({params}) {
       image: " ",
     },
   ];
-  
+
   return (
     <div>
       <div className={style.container}>
@@ -89,7 +86,7 @@ export default function Profile({params}) {
                 objectFit="cover"
               />
             </span>
-            
+
             <div className={style["user"]}>
               <div className={style.content}>
                 <div className={style.about}>
@@ -110,14 +107,19 @@ export default function Profile({params}) {
                 </div>
               </div>
             </div>
-
-
           </div>
-          <HomeFeed
+          {/* <HomeFeed
             className={`${style.Homefeed}`}
             classes={{ div_feed: style["custom-feed-class"] }}
             data={data}
-          />
+          /> */}
+          {data.map((post) => (
+            <PostCompte
+              className={`${style.Homefeed}`}
+              key={post.id}
+              post={post}
+            />
+          ))}
         </div>
 
         <div className={style["card-users"]}>

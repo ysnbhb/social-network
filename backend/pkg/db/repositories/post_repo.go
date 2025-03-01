@@ -53,8 +53,6 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 		&post.ImageUrl,
 		&post.TotalComments,
 		&post.TotalLikes,
-		&post.TotalDislikes,
 	)
-
 	return &post, err
 }

@@ -53,46 +53,49 @@ func HandleMessages(client *models.Client) {
 func Handlemessagetype(msg models.Message, client *models.Client) error {
 	switch msg.Type {
 	case "messageuser":
-		service.SendMessageuser(msg, client)
+		return service.SendMessageuser(msg, client)
 	case "messageGroup":
-		service.SendMessageGroup(msg, client)
-	case "follow":
-		service.SendFollow(msg, client)
-	case "requestinvitationgroup":
-		service.SendRequestInvitationgroup(msg, client)
-	case "acceptedinvitationgroup":
-		service.SendAcceptedInvitationGroup(msg, client)
-	case "acceptedinvitationuser":
-		service.SendAcceptedInvitationUser(msg, client)
-	case "eventcreated":
-		service.SendEventCreated(msg, client)
-	case "typing":
-		service.SendTyping(msg, client)
+		return service.SendMessageGroup(msg, client)
 	case "getmessagesusers":
-		repo.Getmessagesusers(msg, client)
+		return repo.Getmessagesusers(msg, client)
 	case "getmessagesgroup":
-		repo.Getmessagesgroups(msg, client)
+		return repo.Getmessagesgroups(msg, client)
 	case "changeunreadnotification":
-		repo.ChangeUnreadNotification(msg, client)
+		return repo.ChangeUnreadNotification(msg, client)
+	case "changeunreadmessage":
+		return repo.ChangeUnreadMessage(msg, client)
+	case "GETonlineStatus":
+		return OnlineStatus(msg, client)
+	case "GetNotification":
+		return Notification(client)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}
-	return nil
 }
 
-func Notification(client *models.Client) {
-	dataNotification, err := repo.GetUnreadNotification(client.Userid)
-
-	if err == nil {
-		err = client.Conn.WriteJSON(map[string]interface{}{
-			"type": "Notification",
-			"Data": dataNotification,
-		})
-		if err != nil {
-			RemoveClient(client.Conn)
-		}
+func Notification(client *models.Client) error {
+	dataNotification, err := repo.GetNotification(client.Userid)
+	if err != nil {
+		return err
 	}
-	// ???????????
+	GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
+	if err != nil {
+		return err
+	}
+	GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
+	if err != nil {
+		return err
+	}
+	err = client.Conn.WriteJSON(map[string]interface{}{
+		"type":                "Notification",
+		"Data":                dataNotification,
+		"countNotification":   GetNotificationCount,
+		"countunreadmessages": GetunreadmessagesCount,
+	})
+	if err != nil {
+		RemoveClient(client.Conn)
+	}
+	return nil
 }
 
 func AddClient(conn *websocket.Conn, userID int, username string) {
@@ -141,4 +144,21 @@ func BroadcastOnlineUsers() {
 			delete(models.Clients, client.Username)
 		}
 	}
+}
+
+func OnlineStatus(msg models.Message, client *models.Client) error {
+	onlineUsers := []string{}
+	for username := range models.Clients {
+		if username != client.Username {
+			onlineUsers = append(onlineUsers, username)
+		}
+	}
+	err := client.Conn.WriteJSON(map[string]interface{}{
+		"type":        "onlineStatus",
+		"onlineUsers": onlineUsers,
+	})
+	if err != nil {
+		return err
+	}
+	return nil
 }

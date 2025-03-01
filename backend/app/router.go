@@ -9,15 +9,11 @@ import (
 
 func SetupRoutes() http.Handler {
 	mux := http.NewServeMux()
-	uploadsDir := "./uploads"
-	fs := http.FileServer(http.Dir(uploadsDir))
-	mux.Handle("/uploads/", http.StripPrefix("/uploads/", fs))
-
-	
 	mux.HandleFunc("/api/signup", controllers.Signup)
 	mux.HandleFunc("/api/login", controllers.Login)
 	mux.Handle("/api/logout", middleware.AuthMiddleware(http.HandlerFunc(controllers.Logout)))
 	mux.Handle("/api/user/reactions", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleReaction)))
+	mux.Handle("/api/group/list", middleware.AuthMiddleware(http.HandlerFunc(controllers.ListGroups)))
 
 	mux.Handle("/api/create/post", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreatePost)))
 	mux.Handle("/api/posts/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))
@@ -25,8 +21,10 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/profile/posts/created", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetCreatedPosts)))
 	mux.Handle("/api/profile", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetInfoUserProfile)))
 
-	mux.HandleFunc("/api/home/posts", controllers.GetHomePosts)
+	mux.Handle("/api/home/posts", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetHomePosts)))
 
 	mux.Handle("/ws", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleWebsocket)))
+	mux.Handle("/api/friends", middleware.AuthMiddleware(http.HandlerFunc(controllers.Friends)))
+	mux.Handle("/uploads/", middleware.AuthMiddleware(http.HandlerFunc(controllers.ServeContent)))
 	return mux
 }

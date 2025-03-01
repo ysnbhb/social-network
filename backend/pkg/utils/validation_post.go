@@ -55,8 +55,8 @@ func SaveImg(image multipart.File) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	imgSavingPath := "./uploads/" + imguuid.String() + ".jpg"
-	fileImg, err := os.Create(imgSavingPath)
+	imgSavingPath := "/uploads/" + imguuid.String() + ".jpg"
+	fileImg, err := os.Create("." + imgSavingPath)
 	if err != nil {
 		return "", err
 	}

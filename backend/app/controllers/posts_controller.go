@@ -3,8 +3,6 @@ package controllers
 import (
 	"log"
 	"net/http"
-	"path/filepath"
-	"slices"
 	"strconv"
 
 	"social-network/app/services"
@@ -33,12 +31,12 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 	postRequest.Privacy = privacy
 	postRequest.File = file
 	postRequest.FileHeader = headerFiel
-	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
-	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
-		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
-		log.Println(err)
-		return
-	}
+	// ext := []string{".png", ".gif", ".jpg", ".jpeg"}
+	// if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
+	// 	utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
+	// 	log.Println(err)
+	// 	return
+	// }
 	postRequest.GroupId, _ = strconv.Atoi("groupId")
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user

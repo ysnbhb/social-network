@@ -1,6 +1,8 @@
 package repo
 
 import (
+	"fmt"
+
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
@@ -12,13 +14,13 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
     c.user_id,
     c.content,
     c.created_at,
-    c.group_id, 
     u.first_name,
     u.last_name,
 	u.nickname,
+	c.image_url,
+	COALESCE(u.avatar_url , '') AS avatar_url,
     COUNT(DISTINCT cm.id) AS total_comments,
     COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-    COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes,
 	(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
 	FROM card c
 	JOIN posts p ON c.id = p.card_id
@@ -26,7 +28,7 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 	LEFT JOIN comments cm ON c.id = cm.target_id
 	LEFT JOIN likes l ON c.id = l.card_id
 	WHERE (u.profile_type = 'public' AND p.privacy = 'public' AND  (c.group_id is NULL  or c.group_id = 0)) OR
-    ((p.privacy = 'almost_private') AND 
+    ((p.privacy = 'almostPrivate') AND 
      EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept')
     ) OR 
     p.privacy = 'private' AND EXISTS(SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1 )
@@ -59,16 +61,51 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 			&post.FirstName,
 			&post.LastName,
 			&post.NickName,
+			&post.ImageUrl,
+			&post.AvatarUrl,
 			&post.TotalComments,
 			&post.TotalLikes,
-			&post.TotalDislikes,
 			&post.IsLiked,
 		)
 		if err != nil {
-			return err
+			fmt.Println(err)
+			continue
 		}
 		*postsResponse = append(*postsResponse, post)
 	}
 
 	return rows.Err()
+}
+
+func GetPostInfo(postId int) (*models.PostInfo, error) {
+	var post models.PostInfo
+	query := `
+	SELECT
+    c.user_id,
+    p.privacy,
+    u.profile_type,
+    c.group_id
+	FROM card c
+	JOIN posts p ON c.id = p.card_id
+	JOIN users u ON c.user_id = u.id
+	WHERE c.id = ?`
+	err := db.DB.QueryRow(query, postId).Scan(
+		&post.UserId,
+		&post.Privacy,
+		&post.PrivacyType,
+		&post.GroupId,
+	)
+	return &post, err
+}
+
+func AllToSee(postId int, userId int) bool {
+	var allowed bool
+	query := `
+	SELECT EXISTS (
+    SELECT 1 FROM private_members WHERE user_id = ? AND post_id = ?
+	) AS allowed`
+	db.DB.QueryRow(query, postId).Scan(
+		&allowed,
+	)
+	return allowed
 }

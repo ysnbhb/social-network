@@ -4,11 +4,9 @@ import { ContextProvider } from "../../lib/Context.js";
  import "../globals.css";
  export default function RootLayout({ children }) { 
   return (
-        <div>
-          {/* <ContextProvider > */}
-            <Navbar />
-            {children}
-        {/* </ContextProvider> */}
-        </div> 
+    <div>
+      <Navbar />
+      {children}
+    </div>
   );
 }

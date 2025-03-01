@@ -2,6 +2,7 @@ package repo
 
 import (
 	"errors"
+	"fmt"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
@@ -33,10 +34,10 @@ func CheckCanUSendMessage(msg models.Message, client *models.Client) error {
 	return nil
 }
 
-func Addmessages(msg models.Message, client *models.Client, sent_at string) error {
+func Addmessages(msg models.Message, client *models.Client) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
-	query := "INSERT INTO chats (sender_id, recipient_id, message, sent_at) VALUES (?, ?, ?, ?)"
-	_, err := db.DB.Exec(query, client.Userid, recieverid, msg.Content, sent_at)
+	query := "INSERT INTO chats (sender_id, recipient_id, message) VALUES (?, ?, ?)"
+	_, err := db.DB.Exec(query, client.Userid, recieverid, msg.Content)
 	if err != nil {
 		return err
 	}
@@ -54,11 +55,11 @@ func CheckCanUSendMessageGroup(msg models.Message, client *models.Client) error 
 		return errors.New("You are not a member of this group")
 	}
 	return nil
-	
 }
-func AddmessagesGroup(msg models.Message, client *models.Client, sent_at string) error {
-	query := "INSERT INTO group_chats (group_id, user_id, message, sent_at) VALUES (?, ?, ?, ?)"
-	_, err := db.DB.Exec(query, msg.Groupid, client.Userid, msg.Content, sent_at)
+
+func AddmessagesGroup(msg models.Message, client *models.Client) error {
+	query := "INSERT INTO group_chats (group_id, user_id, message, sent_at) VALUES (?, ?, ?)"
+	_, err := db.DB.Exec(query, msg.Groupid, client.Userid, msg.Content)
 	if err != nil {
 		return err
 	}
@@ -67,10 +68,15 @@ func AddmessagesGroup(msg models.Message, client *models.Client, sent_at string)
 
 func Getmessagesusers(msg models.Message, client *models.Client) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
-	query := `SELECT sender_id, recipient_id, message, sent_at FROM messages
-			WHERE (sender = ? AND receiver = ?) OR (sender = ? AND receiver = ?)
-			ORDER BY timestamp DESC`
+	query := `SELECT sender_id, recipient_id, message, sent_at FROM chats
+			WHERE (sender_id = ? AND recipient_id = ?) OR (sender_id = ? AND recipient_id = ?)
+			ORDER BY sent_at ASC`
 	rows, err := db.DB.Query(query, client.Userid, recieverid, recieverid, client.Userid)
+	if err != nil {
+		return err
+	}
+	defer rows.Close()
+
 	var messages []map[string]string
 	for rows.Next() {
 		var sender, receiver int
@@ -80,6 +86,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 		if err != nil {
 			return err
 		}
+
 		messages = append(messages, map[string]string{
 			"sender":    GetNickName(sender),
 			"receiver":  GetNickName(receiver),
@@ -87,9 +94,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 			"timestamp": timestamp.Format("2006-01-02 15:04:05"),
 		})
 	}
-	if err != nil {
-		return err
-	}
+
 	client.Conn.WriteJSON(map[string]interface{}{
 		"type":     "getmessagesusers",
 		"messages": messages,
@@ -100,7 +105,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 func Getmessagesgroups(msg models.Message, client *models.Client) error {
 	query := `SELECT user_id, message, sent_at FROM group_chats
 			WHERE group_id = ?
-			ORDER BY timestamp DESC`
+			ORDER BY timestamp ASC`
 	rows, err := db.DB.Query(query, msg.Groupid)
 	var messages []map[string]string
 	for rows.Next() {
@@ -109,6 +114,7 @@ func Getmessagesgroups(msg models.Message, client *models.Client) error {
 		var timestamp time.Time
 		err := rows.Scan(&userid, &message, &timestamp)
 		if err != nil {
+			fmt.Println("//////////////////////////////////////")
 			return err
 		}
 		sender := GetNickName(userid)
@@ -119,11 +125,22 @@ func Getmessagesgroups(msg models.Message, client *models.Client) error {
 		})
 	}
 	if err != nil {
+		fmt.Println("------------------------------------")
 		return err
 	}
 	client.Conn.WriteJSON(map[string]interface{}{
 		"type":     "getmessagesgroups",
 		"messages": messages,
 	})
+	return nil
+}
+
+func ChangeUnreadMessage(msg models.Message, client *models.Client) error {
+	query := `UPDATE notifications SET read_status = 'read' WHERE user_id = ? AND sender_id = ? AND type = ?`
+	senderid := GetUserIdByNickName(msg.Sender)
+	_, err := db.DB.Exec(query, client.Userid, senderid, "messageuser")
+	if err != nil {
+		return err
+	}
 	return nil
 }

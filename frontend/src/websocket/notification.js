@@ -1,0 +1,118 @@
+"use client";
+
+import { safeSend } from "./websocket.js";
+import { receiveMessageuser } from "./messages.js";
+
+export function handleNotification(data) {
+    if (data.Data) {
+        const DATA = data.Data
+        
+        DATA.forEach(element => {    
+            if (element.Readstatus === "unread") {
+                if (element.Type === "messageuser") {
+                    receiveMessageuser(element, data.countunreadmessages);
+                } else {
+                    ShowNotification(data.countNotification);
+                }
+            }
+        });
+    }
+
+}
+function ShowNotification(count) {
+    AddNotificationsymbole(true,count);
+
+}
+export function sendChangeUnreadNotification(Notificationid) {
+    const data = {
+        type: "changeunreadnotification",
+        Notificationid: Notificationid,
+    }
+    safeSend(data);
+}
+export function sendNotification() {
+    const data = {
+        type: "GetNotification",
+    }
+    safeSend(data);
+}
+/// notification group ///
+export function receiveRequestInvitationgroup(data) {
+    console.log(data);
+}
+
+export function receiveAcceptedInvitationGroup(data) {
+    console.log(data);
+}
+export function sendRequestInvitationGroup(sender, groupid, receiver, groupName) {
+    const data = {
+        type: "requestinvitationgroup",
+        sender: sender,
+        groupid: groupid,
+        receiver: receiver,
+        content: `${sender} sent invitation to join group ${groupName}`
+    }
+    safeSend(data);
+}
+export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName) {
+    const data = {
+        type: "acceptedinvitationgroup",
+        sender: sender,
+        groupid: groupid,
+        receiver: receiver,
+        content: `${sender} accepted invitation to join group ${groupName}`
+    }
+    safeSend(data);
+}
+
+/// notification user ///
+export function AddMessagesymbole(type, count) {
+    const notification = document.getElementById("notification-badge-message");
+    const notification2 = document.getElementById("notification-count-message");
+    notification2.innerHTML = count;
+    if (type) {
+        notification.style.display = "block";
+    } else {
+        notification.style.display = "none";
+    }
+}
+export function AddNotificationsymbole(type, count) {
+    
+    const notification = document.getElementById("notification-badge");
+    const notification2 = document.getElementById("notification-count");
+    notification2.innerHTML = count;
+    if (type) {
+        notification.style.display = "block";
+    } else {
+        notification.style.display = "none";
+    }
+}
+
+/// notification follow ///
+export function receiveFollow(data) {
+    console.log(data);
+}
+export function sendFollow(sender, receiver) {
+    const data = {
+        type: "follow",
+        sender: sender,
+        receiver: receiver,
+        content: `${sender} sent following request to you`
+    }
+    safeSend(data);
+}
+export function sendAcceptedInvitationUser(sender, receiver) {
+    const data = {
+        type: "acceptedinvitationuser",
+        sender: sender,
+        receiver: receiver,
+        content: `${sender} accepted following request`
+    }
+    safeSend(data);
+}
+export function receiveAcceptedInvitationUser(data) {
+    console.log(data)
+}
+
+
+

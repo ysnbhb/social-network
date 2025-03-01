@@ -2,6 +2,7 @@ package repo
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 
 	db "social-network/pkg/db/sqlite"
@@ -134,50 +135,39 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 	return posts, nil
 }
 
-func ListGroups(userid, offset int) ([]models.Groups, error) {
+func ListGroups(userid int) ([]models.Groups, error) {
 	query := `
-    SELECT g.id, g.title, g.description ,
-	(SELECT COALESCE(status, '') FROM group_invitations WHERE group_id = g.id)
-    FROM groups g
-    WHERE NOT EXISTS (
-        SELECT 1 FROM group_members gm 
-        WHERE gm.group_id = g.id 
-        AND gm.user_id = ?
-    )
-    LIMIT 10 OFFSET ?;`
-
-	rows, err := db.DB.Query(query, userid, offset)
+   	SELECT 
+    g.id, 
+    g.title, 
+    g.description,
+    COALESCE((SELECT status
+     FROM group_invitations 
+     WHERE group_id = g.id 
+     LIMIT 1) , '') AS invi,  
+    (SELECT EXISTS (
+        SELECT 1 FROM group_members 
+        WHERE group_id = g.id 
+        AND user_id = ?
+    )) AS is_member,
+    COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members  
+	FROM groups g
+	LEFT JOIN group_members gm ON g.id = gm.group_id 
+	GROUP BY g.id
+	ORDER BY g.id;
+	`
+	rows, err := db.DB.Query(query, userid)
 	if err != nil {
 		return nil, err
 	}
 	groups := []models.Groups{}
 	for rows.Next() {
 		group := models.Groups{}
-		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status)
-		groups = append(groups, group)
-	}
-	return groups, nil
-}
-
-func ListGroupsJoined(userid, offset int) ([]models.Groups, error) {
-	query := `
-    SELECT g.id, g.title, g.description ,
-    FROM groups g
-    WHERE EXISTS (
-        SELECT 1 FROM group_members gm 
-        WHERE gm.group_id = g.id 
-        AND gm.user_id = ?
-    )
-    LIMIT 10 OFFSET ?;`
-
-	rows, err := db.DB.Query(query, userid, offset)
-	if err != nil {
-		return nil, err
-	}
-	groups := []models.Groups{}
-	for rows.Next() {
-		group := models.Groups{}
-		err = rows.Scan(&group.Id, &group.Title, &group.Description)
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status, &group.IsMember, &group.TotalMembers)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
 		groups = append(groups, group)
 	}
 	return groups, nil
@@ -189,5 +179,3 @@ func GetGroupIdFromPost(postId int) int {
 	db.DB.QueryRow(query).Scan(&groupId)
 	return groupId
 }
-
-

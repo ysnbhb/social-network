@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset int) error {
 	query := `
 		SELECT 
 			 c.id,
@@ -34,9 +34,10 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 			u.first_name, 
 			u.last_name,
 			u.nickname
-		ORDER BY c.created_at DESC;
+		ORDER BY c.created_at DESC
+		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId)
+	rows, err := db.DB.Query(query, userId,offset)
 	if err != nil {
 		return err
 	}
@@ -45,7 +46,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 	for rows.Next() {
 		var post models.PostsResponse
 		err := rows.Scan(
-			&post.CardId,
+			&post.Id,
 			&post.UserId,
 			&post.Content,
 			&post.CreatedAt,

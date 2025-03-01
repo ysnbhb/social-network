@@ -34,7 +34,7 @@ func HandleReaction(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var reactionResponse models.ReactionResponse
-	reactionResponse.LikesCount, reactionResponse.DislikesCount = services.GetReactionCounts(&reactionRequest)
+	reactionResponse.LikesCount, reactionResponse.DislikesCount, reactionResponse.Isliked = services.GetReactionCounts(&reactionRequest)
 	reactionResponse.UserReaction = reactionRequest.ReactionType
 
 	err = json.NewEncoder(w).Encode(reactionResponse)

@@ -1,6 +1,4 @@
-// "use Client"
-// import { useContext } from 'react';
-// import { Context } from '../lib/Context.js';
+
 import Link from 'next/link';
 import '../styles/profileSidebar.css';
 import Loading from './loading';

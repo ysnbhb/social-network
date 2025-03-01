@@ -48,17 +48,18 @@ func getExistingReaction(userId, cardId int) int {
 	return existingReaction
 }
 
-func GetReactionCounts(cardId int) (likes, dislikes int) {
+func GetReactionCounts(cardId int, userId int) (likes, dislikes int, isLiked bool) {
 	query := `
         SELECT 
         SUM(reaction_type = 1) as likes_count,
-        SUM(reaction_type = -1) as dislikes_count
+        SUM(reaction_type = -1) as dislikes_count,
+		(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = $1 AND user_id = $2)) AS isliked
         FROM likes
-        WHERE card_id = ?
+        WHERE card_id = $1
     `
-	err := db.DB.QueryRow(query, cardId).Scan(&likes, &dislikes)
+	err := db.DB.QueryRow(query, cardId, userId).Scan(&likes, &dislikes, &isLiked)
 	if err != nil {
-		return 0, 0
+		return 0, 0, false
 	}
-	return likes, dislikes
+	return likes, dislikes, isLiked
 }

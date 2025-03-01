@@ -14,7 +14,7 @@ export default  function Home() {
       {/* Other content for the home page */}
       <main className="main-content">
       <ProfileSide classes={{dataProfile}} />
-      <HomeFeed />
+      <HomeFeed  />
       <ActivitySide 
           classes={{ title: "followers",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
           />

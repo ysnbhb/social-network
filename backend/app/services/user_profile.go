@@ -7,9 +7,9 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetPostsUserProfile(user_id int) []models.PostsResponse {
+func GetPostsUserProfile(user_id, offset int) []models.PostsResponse {
 	var postsResponse []models.PostsResponse
-	err := repo.GetCreatedUserPosts(&postsResponse, user_id)
+	err := repo.GetCreatedUserPosts(&postsResponse, user_id,offset)
 	if err != nil {
 		log.Println("Get Created Posts:", err)
 		return nil
