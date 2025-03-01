@@ -1,16 +1,19 @@
 "use client";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "../../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../../components/images/image6.jpg";
-import ActivitySidebar from "../../../components/activitySide";
-import HomeFeed from "../../../components/homeFeed";
-import { Profile_Posts } from "../../../lib/profilePost.js";
-import { useEffect, useState } from "react";
-import Profile_Info from "../../../lib/ProfileInfo";
+import image from "../../../../components/images/IMG-20240514-WA0002.jpg";
+import bag from "../../../../components/images/image6.jpg";
+import ActivitySidebar from "../../../../components/activitySide";
+import HomeFeed from "../../../../components/homeFeed";
+import { Profile_Posts } from "../../../../lib/profilePost.js";
+// import Profile_Info from "../../../lib/ProfileInfo";
+import { Context } from '../../../../lib/Context';
 
-
-export default function Profile() {
+export default function Profile({params}) {
+  const contextValues = useContext(Context);
+  console.log(contextValues.dataProfile);
+  
   const [data, setData] = useState(null);
   const [data_info, setData_info] = useState(null);
   const [err, setErr] = useState(null);
@@ -18,9 +21,9 @@ export default function Profile() {
     const fetchData = async () => {
       try {
         const result = await Profile_Posts();
-        const result_info = await Profile_Info();
+        // const result_info = await Profile_Info();
         setData(result);
-        setData_info(result_info);
+        // setData_info(result_info);
       } catch (error) {
         setErr(error);
       }

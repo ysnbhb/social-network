@@ -1,6 +1,8 @@
 export default async function Profile_Info(){
     try {
-        const info_user=await fetch("http://localhost:8080/api/profile")
+        const info_user=await fetch("http://localhost:8080/api/profile",{
+            credentials:"include"
+        })
         if(info_user.ok){
             const data=await info_user.json()
             return data

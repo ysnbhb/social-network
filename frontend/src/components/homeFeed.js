@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import {  useState } from 'react';
 import '../styles/homeFeed.css';
 import { CreatePost } from '../lib/createPost';
 import Image from 'next/image';
@@ -11,9 +11,7 @@ export default function HomeFeed( { className ,classes = {},data = []}  )  {
     if(Array.isArray(data)) {
         data.map((item) => array.push(item))
    } 
-   
-   console.log(array);
-   
+     
     const [content , setContent] = useState("")
     const [postType , setPostType] = useState("public")
     const [img , setImg ] = useState(null)

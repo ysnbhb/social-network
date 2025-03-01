@@ -815,3 +815,27 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/02/27 17:52:06 user_repo.go:33: <nil>
 2025/02/27 17:56:01 user_repo.go:33: <nil>
 2025/02/27 17:57:45 user_repo.go:33: <nil>
+2025/03/01 11:56:14 server.go:27: Starting server on :8080
+2025/03/01 11:56:21 user_repo.go:33: <nil>
+2025/03/01 11:56:37 server.go:27: Starting server on :8080
+2025/03/01 11:56:48 user_repo.go:33: <nil>
+2025/03/01 11:59:20 user_repo.go:33: <nil>
+2025/03/01 12:00:08 user_repo.go:33: <nil>
+2025/03/01 12:00:08 user_repo.go:33: <nil>
+2025/03/01 12:05:54 user_repo.go:33: <nil>
+2025/03/01 12:13:15 user_repo.go:33: <nil>
+2025/03/01 12:31:52 user_repo.go:33: <nil>
+2025/03/01 13:26:58 user_repo.go:33: <nil>
+2025/03/01 13:46:38 user_repo.go:33: <nil>
+2025/03/01 13:48:04 user_repo.go:33: <nil>
+2025/03/01 13:55:36 user_repo.go:33: <nil>
+2025/03/01 13:56:05 user_repo.go:33: <nil>
+2025/03/01 14:01:31 user_repo.go:33: <nil>
+2025/03/01 14:01:45 server.go:27: Starting server on :8080
+2025/03/01 14:03:58 user_repo.go:33: <nil>
+2025/03/01 14:04:08 user_profile_controller.go:31: method not allowed
+2025/03/01 14:04:55 user_repo.go:33: <nil>
+2025/03/01 14:09:02 server.go:27: Starting server on :8080
+2025/03/01 14:10:02 user_repo.go:33: <nil>
+2025/03/01 14:12:22 user_repo.go:33: <nil>
+2025/03/01 14:41:54 server.go:27: Starting server on :8080

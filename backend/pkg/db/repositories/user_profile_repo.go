@@ -68,6 +68,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 
 func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 	query := `SELECT  
+			u.id,
 			u.first_name,
 			u.last_name,
 			u.nickname,
@@ -86,7 +87,7 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
         LEFT JOIN posts p on p.card_id=c.id
 		WHERE u.id = ?  
 		GROUP BY u.id`
-	err := db.DB.QueryRow(query, user_id).Scan(&profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count,&profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, user_id).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}

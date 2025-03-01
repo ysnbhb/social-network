@@ -1,22 +1,21 @@
 "use client";
-import { useRef, useEffect, useState, } from "react";
-import styles from "./page.module.css";
+import { useRef, useEffect, useState, useContext, } from "react";
+import { Context } from '../../lib/Context.js';
 import { useRouter } from "next/navigation";
-import { useProfile } from "../../lib/profilePost";
-
+import styles from "./page.module.css";
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
-
-
+ 
 export default function Login() {
+  const contextValues = useContext(Context); 
+   
   const containerRef = useRef(null);
   const Router = useRouter();
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState("Public")
-  // const [data_profile, setDataProfile] = useState(null)
-  const { setDataProfile } = useProfile();
+ 
   const handleFileChange = (e) => {
-    setImg(e.target.files[0]); // Update the image state
+    setImg(e.target.files[0]); 
 
   }
   const handleTypeProfile= (e) => {
@@ -67,13 +66,18 @@ export default function Login() {
       credentials: 'include',
       body: JSON.stringify(dataObject)
     });
-    const content = await response.json();
-    setDataProfile(content)
+   
     
-    if (!response.ok) {
-      alert(content)
-    } else {
+    if (response.ok) { 
+      const content = await response.json();
+      if (contextValues && typeof contextValues.setDataProfile === 'function') {
+        // contextValues.setDataProfile(content);
+      }else {
+        console.error("setDataProfile is not available in context");
+       }
       Router.push('/home')
+    } else {
+      alert("Login failed")
       // redirect('/home')
     }
 
