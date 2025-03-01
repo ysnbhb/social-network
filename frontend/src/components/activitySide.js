@@ -1,29 +1,43 @@
+"use client";
+import Image from "next/image";
+import "../styles/activitySidebar.css";
+// import style from "../profile/profile.module.css";
 
-import Image from 'next/image';
-import '../styles/activitySidebar.css';
 import image from "../components/images/IMG-20240514-WA0002.jpg";
- export default function ActivitySidebar({ className ,classes = [],title  } ) {
-  let array=[]
-  if(Array.isArray(classes)) {
-    classes.map((item) => array.push(item))
-    
- } 
+import { useEffect, useState } from "react";
+export default function ActivitySidebar({ className, title }) {
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    async function GetUser() {
+      const res = await fetch(`/api/unfollow`);
+      const data = await res.json();
+      console.log(data);
+      
+      setUser(data);
+    }
+    GetUser()
+  } , []);
+  console.log(user);
+  
   return (
-    <aside className={`${className} activity-sidebar`}>
+    <aside className={`activity-sidebar`} style={ {
+      marginBottom : `20px;`
+    }}>
       <div className="activity-header">
-        <h3>{`${title}`}</h3>
+        <h3>unfollow user</h3>
       </div>
-      {array.map((item, index) => (
-        <div key={index} className="activity-item">
+      {user.map((item) => (
+        <div key={item.id} className="activity-item">
           <Image src={image} className="avatar" alt="Avatar" />
           <div>
-            <p><strong>{item.fullname }</strong></p>
-            <p className="text-muted">{item.time || "N/A"}</p>
+            <p>
+              <strong>{item.lastName} {item.firstName}</strong>
+            </p>
+            <p className="text-muted">@{item.nickname || "N/A"}</p>
           </div>
-          <button>{item.button  }</button>
+          <button>follow</button>
         </div>
       ))}
-    
     </aside>
   );
-};
+}

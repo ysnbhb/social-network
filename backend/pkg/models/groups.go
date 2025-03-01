@@ -16,6 +16,11 @@ type Group_Invi struct {
 	UserId  int `json:"userId"`
 }
 
+type Group_Jion struct {
+	GroupId int `json:"groupId"`
+	AcceptJoin  int `json:"acceptJoin"`
+}
+
 type Group struct {
 	Id        int    `json:"id"`
 	GroupId   int    `json:"groupId"`

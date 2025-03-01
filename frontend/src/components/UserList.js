@@ -11,7 +11,7 @@ function UserList({ setSelectedUser }) {
     }, []);
 
     const Getfriends = () => {
-        fetch('http://localhost:8080/api/friends', {
+        fetch('/api/friends', {
             method: 'GET',
             credentials: 'include'
         })

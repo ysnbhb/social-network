@@ -40,11 +40,11 @@ function Chat() {
         <div className="select-user">Select a user to start chatting</div>
       )}
 
-<ActivitySidebar
+    {/* <ActivitySidebar
             className={`${style.ActivitySidebar}`}
             classes={FollowingData}
             title="following"
-          />
+          /> */}
       </main>
     </div>
   );

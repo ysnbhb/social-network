@@ -3,6 +3,7 @@ package services
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -43,46 +44,57 @@ func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
 	return users, err, http.StatusOK
 }
 
-func JoinToGroup(groupId, userId int) (statusCode int, err error) {
-	exist := repo.CheckGroup(groupId)
+func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err error) {
+	exist := repo.CheckGroup(groupId.GroupId)
 	if !exist {
 		err = errors.New("group you want join into dons't exist")
 		statusCode = http.StatusNotFound
 		return
 	}
-	hasInvi, err := repo.HasInvi(groupId, userId)
-	if err != sql.ErrNoRows {
+	hasInvi, err := repo.HasInvi(groupId.GroupId, userId)
+	fmt.Println(hasInvi, err)
+	if err != sql.ErrNoRows && err != nil {
+		fmt.Println(err)
 		err = errors.New("field to join to group")
 		statusCode = http.StatusInternalServerError
 		return
 	}
 	if hasInvi == "invitation" {
-		exist = repo.CheckUserInGroup(groupId, userId)
+		exist = repo.CheckUserInGroup(groupId.GroupId, userId)
 		if exist {
 			err = errors.New("you are really in group")
 			statusCode = http.StatusBadRequest
 			return
 		}
-		err = repo.JoinToGroup(groupId, userId)
-		if err != nil {
-			err = errors.New("field to join to group")
-			statusCode = http.StatusInternalServerError
-		}
-		repo.Delete_group_Invi(groupId, userId)
-		err = errors.New("you joined to group")
-		statusCode = http.StatusOK
-	} else {
-		if err == sql.ErrNoRows {
-			err = repo.InsertIntoGroup_Invi(groupId, userId, "pending")
+		if groupId.AcceptJoin == 1 {
+			err = repo.JoinToGroup(groupId.GroupId, userId)
 			if err != nil {
 				err = errors.New("field to join to group")
 				statusCode = http.StatusInternalServerError
 			}
-			err = errors.New("you joined to group")
-			statusCode = http.StatusCreated
-		} else {
-			err = errors.New("you have sended invition to this group")
+		} else if groupId.AcceptJoin != -1 {
+			err = errors.New("unkown accept")
 			statusCode = http.StatusBadRequest
+			return
+		}
+		repo.Delete_group_Invi(groupId.GroupId, userId)
+		// err = errors.New("you joined to group")
+		statusCode = http.StatusOK
+	} else {
+		if err == sql.ErrNoRows {
+			err = repo.InsertIntoGroup_Invi(groupId.GroupId, userId, "pending")
+			if err != nil {
+				fmt.Println(err)
+				err = errors.New("field to join to group")
+				statusCode = http.StatusInternalServerError
+			}
+			// err = errors.New("you joined to group")
+			statusCode = http.StatusCreated
+		} else if err != nil {
+			err = errors.New("field to join to group")
+			statusCode = http.StatusInternalServerError
+		} else if hasInvi == "pending" {
+			repo.Delete_group_Invi(groupId.GroupId, userId)
 		}
 	}
 	return
@@ -152,4 +164,8 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 		return errors.New("field to join to group"), http.StatusInternalServerError
 	}
 	return nil, http.StatusOK
+}
+
+func GetGroup(groupId int, userId int) (models.Groups, error) {
+	return repo.GetGroupInfo(groupId, userId)
 }
