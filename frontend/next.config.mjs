@@ -18,4 +18,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig; // ✅ Correct ES Modules export
+export default nextConfig; 

@@ -2,6 +2,7 @@ package controllers // auth_controller.go
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -41,7 +42,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		log.Println("adding session:", err)
 		return
 	}
-	utils.JsonResponse(w, "User logged in successfully", http.StatusOK)
+	postsResponse := services.UserProfile(login.Id) // just test with user id 1
+	err = json.NewEncoder(w).Encode(postsResponse)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
+		log.Println("error encoding json reactionResponse:", err)
+		return
+	}
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -70,7 +77,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	file, headerFiel, _ := r.FormFile("img")
 	user.File = file
 	user.FileHeader = headerFiel
-
+	fmt.Println(user.Profile_Type)
 	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
 	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
 		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)

@@ -6,6 +6,7 @@
   justify-content: center;
   /* padding: 20px 0;*/
   margin-top: 10px; 
+  position: fixed;
 }
 
 /* card right  */
@@ -110,7 +111,8 @@
   flex-direction: column;
   overflow-y: auto;
   gap: 20px;
-  height: 100vh;
+  height: 92vh;
+  padding-bottom: 21px;
   padding-top: 10px;
 }
 
@@ -316,5 +318,6 @@ span.Circle-image {
 
 /* ActivitySidebar */
 .ActivitySidebar{
+ 
   margin-bottom: 20px !important;
 }

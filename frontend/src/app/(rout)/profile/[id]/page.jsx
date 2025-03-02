@@ -1,11 +1,33 @@
+"use client";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
- import image from "../../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../../components/images/image6.jpg";
-import ActivitySidebar from "../../../components/activitySide";
-import HomeFeed from "../../../components/homeFeed";
-// import Navbar from "../../components/navbar";
-export default function Profile() {
+import image from "../../../../components/images/IMG-20240514-WA0002.jpg";
+import bag from "../../../../components/images/image6.jpg";
+import ActivitySidebar from "../../../../components/activitySide";
+import HomeFeed from "../../../../components/homeFeed";
+import { Profile_Posts } from "../../../../lib/profilePost.js";
+ import { Context } from "../../../../lib/Context";
+import { PostCompte } from "../../../../components/postComp.js";
+
+export default function Profile({ params }) {
+  const contextValues = useContext(Context);
+  console.log(contextValues.dataProfile);
+
+  const [data, setData] = useState([]);
+  const [err, setErr] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await Profile_Posts();
+        setData(result);
+      } catch (error) {
+        setErr(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -33,6 +55,7 @@ export default function Profile() {
       image: " ",
     },
   ];
+
   return (
     <div>
       <div className={style.container}>
@@ -47,6 +70,7 @@ export default function Profile() {
                 objectFit="cover"
               />
             </div>
+
             <div className={style.buttonContainer}>
               <button className={style.followButton}>Follow</button>
               <button className={style.moreButton}>Send Message</button>
@@ -61,6 +85,7 @@ export default function Profile() {
                 objectFit="cover"
               />
             </span>
+
             <div className={style["user"]}>
               <div className={style.content}>
                 <div className={style.about}>
@@ -82,10 +107,18 @@ export default function Profile() {
               </div>
             </div>
           </div>
-          <HomeFeed
+          {/* <HomeFeed
             className={`${style.Homefeed}`}
             classes={{ div_feed: style["custom-feed-class"] }}
-          />
+            data={data}
+          /> */}
+          {data.map((post) => (
+            <PostCompte
+              className={`${style.Homefeed}`}
+              key={post.id}
+              post={post}
+            />
+          ))}
         </div>
 
         <div className={style["card-users"]}>

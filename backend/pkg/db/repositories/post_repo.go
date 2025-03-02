@@ -20,18 +20,21 @@ func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 }
 
 func GetOneCard(cardId int) (*models.PostsResponse, error) {
-	var post models.PostsResponse
-	query := `SELECT 
-    c.id,
-    c.user_id,
-    c.content,
-    c.created_at,
-    u.first_name,
-    u.last_name,
-	u.nickname,
-	c.image_url,
-    COUNT(DISTINCT cm.id) AS total_comments,
-    COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes
+	post := models.PostsResponse{}
+	query := 
+	`SELECT 
+		c.id,
+		c.user_id,
+		c.content,
+		c.created_at,
+		u.avatar_url,
+		u.first_name,
+		u.last_name,
+		u.nickname,
+		c.image_url,
+		COUNT(DISTINCT cm.id) AS total_comments,
+		COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
+		COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
 	FROM card c
 	JOIN posts p ON c.id = p.card_id
 	JOIN users u ON c.user_id = u.id
@@ -39,10 +42,11 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 	LEFT JOIN likes l ON c.id = l.card_id
 	WHERE c.id = ?`
 	err := db.DB.QueryRow(query, cardId).Scan(
-		&post.Id,
+		&post.CardId,
 		&post.UserId,
 		&post.Content,
 		&post.CreatedAt,
+		&post.AvatarUrl,
 		&post.FirstName,
 		&post.LastName,
 		&post.NickName,
