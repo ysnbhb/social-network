@@ -2448,3 +2448,238 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:37:09 server.go:27: Starting server on :8080
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:38:25 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 12:38:38 posts_controller.go:55: field to save image
+2025/03/02 12:39:01 server.go:27: Starting server on :8080
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:39:15 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 12:39:24 posts_controller.go:55: field to save image
+2025/03/02 12:40:00 server.go:27: Starting server on :8080
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:40:03 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:40:08 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:40:21 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 12:40:30 posts_controller.go:55: creating post in db:sql: Scan error on column index 4, name "avatar_url": converting NULL to string is unsupported
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:41:40 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:42:35 server.go:27: Starting server on :8080
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 12:42:37 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 12:42:49 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:03:10 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 13:03:31 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:03:31 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:03:31 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:03:31 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:03:31 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:04:09 posts_controller.go:55: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/03/02 13:04:14 posts_controller.go:55: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/03/02 13:05:06 server.go:27: Starting server on :8080
+2025/03/02 13:05:09 posts_controller.go:55: validating post: privacy must be 'public', 'private', or 'almostPrivate'
+2025/03/02 13:05:11 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:05:11 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:05:11 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:05:11 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:05:11 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:05:24 posts_controller.go:55: validating post: privacy must be 'public' in gourp
+2025/03/02 13:06:04 server.go:27: Starting server on :8080
+2025/03/02 13:06:06 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:06:06 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:06:06 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:06:06 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:06:06 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:06:11 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:06:11 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:06:11 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:06:11 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:06:11 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:06:22 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:06:22 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:06:22 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:06:22 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:06:22 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:06:30 posts_controller.go:57: validating post: privacy must be 'public' in gourp
+2025/03/02 13:07:28 server.go:27: Starting server on :8080
+2025/03/02 13:07:47 server.go:27: Starting server on :8080
+2025/03/02 13:07:51 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:07:51 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:07:51 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:07:51 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 13:07:51 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 13:08:24 server.go:27: Starting server on :8080
+2025/03/02 13:08:27 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:08:27 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:08:27 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:08:37 posts_controller.go:57: validating post: privacy must be 'public' in gourp
+2025/03/02 13:09:18 server.go:27: Starting server on :8080
+2025/03/02 13:09:22 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:09:22 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:09:22 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:17:58 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:17:58 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:17:58 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:18:01 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:18:01 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:18:01 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:20:30 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:20:30 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:20:30 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:20:39 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:20:39 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:20:39 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:20:45 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:20:45 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:20:45 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:30:51 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:30:51 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:30:51 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:32:16 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:32:16 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:32:16 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:32:21 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:32:21 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:32:21 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:33:16 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:33:16 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:33:16 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:33:18 user_profile.go:14: Get Created Posts: sql: Scan error on column index 4, name "avatar_url": converting NULL to string is unsupported
+2025/03/02 13:33:23 user_profile.go:14: Get Created Posts: sql: Scan error on column index 4, name "avatar_url": converting NULL to string is unsupported
+2025/03/02 13:33:38 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:33:38 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:33:38 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:36:23 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:36:23 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:36:23 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:36:24 follow_controller.go:31: Follow User in db: user not found
+2025/03/02 13:36:56 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:36:56 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:36:56 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:36:58 follow_controller.go:31: Follow User in db: user not found
+2025/03/02 13:37:25 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:37:25 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:37:25 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:37:27 follow_controller.go:31: Follow User in db: user not found
+2025/03/02 13:38:37 server.go:27: Starting server on :8080
+2025/03/02 13:38:52 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:38:52 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:38:52 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:38:53 follow_controller.go:31: Follow User in db: user not found
+2025/03/02 13:39:41 server.go:27: Starting server on :8080
+2025/03/02 13:39:45 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:39:45 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:39:45 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:39:46 follow_controller.go:31: Follow User in db: user not found
+2025/03/02 13:40:08 server.go:27: Starting server on :8080
+2025/03/02 13:40:10 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:40:10 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:40:10 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:41:00 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:41:00 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:41:00 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:41:08 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:41:08 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:41:08 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:41:38 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:41:38 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:41:38 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:41:54 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:41:54 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:41:54 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:43:06 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:43:06 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:43:06 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:51:21 server.go:27: Starting server on :8080
+2025/03/02 13:51:25 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:51:25 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:51:25 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:51:36 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:51:36 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:51:36 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:52:05 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:52:05 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:52:05 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:52:16 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:52:16 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:52:16 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 13:52:20 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 13:52:20 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 13:52:20 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 14:29:06 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 14:29:06 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 14:29:06 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 14:29:06 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory
+2025/03/02 14:29:06 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 15:40:28 server.go:27: Starting server on :8080
+2025/03/02 15:42:29 server.go:27: Starting server on :8080
+2025/03/02 15:43:10 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:10 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:10 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:43:23 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:23 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:23 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:43:32 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:32 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:32 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:43:37 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:37 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:43:37 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:39 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:39 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:39 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:43:40 serveContent.go:26: open ./uploads/a9310ba6-6e4d-49e6-b247-0183a65b4af9.jpg: no such file or directory
+2025/03/02 15:43:40 serveContent.go:26: open ./uploads/c409955f-af0a-4f65-b9f5-656cbec78ddd.jpg: no such file or directory
+2025/03/02 15:43:40 serveContent.go:26: open ./uploads/4e846cdc-5210-4ea1-8e8a-a2521468ec2f.jpg: no such file or directory
+2025/03/02 15:46:46 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
+2025/03/02 15:46:46 serveContent.go:26: open ./uploads/3774eb5e-91f3-4753-b7a9-003ad5790d51.jpg: no such file or directory
+2025/03/02 15:46:46 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
+2025/03/02 15:46:46 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 15:46:46 serveContent.go:26: open ./uploads/d465fce1-579c-4653-a84b-3b189ae58681.jpg: no such file or directory

@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset int) error {
 	query := `
 		SELECT 
 			 c.id,
@@ -37,7 +37,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset 
 		ORDER BY c.created_at DESC
 		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId,offset)
+	rows, err := db.DB.Query(query, userId, offset)
 	if err != nil {
 		return err
 	}
@@ -97,8 +97,8 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 }
 
 func GetStatusUesr(userId int) string {
-	query := `SELECT profile_type FROM user WHERE id = ?`
+	query := `SELECT profile_type FROM users WHERE id = ?`
 	profile_type := "Not Found"
-	db.DB.QueryRow(query).Scan(&profile_type)
+	db.DB.QueryRow(query, userId).Scan(&profile_type)
 	return profile_type
 }

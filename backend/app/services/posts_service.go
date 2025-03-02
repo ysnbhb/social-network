@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"fmt"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
@@ -19,6 +20,7 @@ func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 			return nil, errors.New("field to save image")
 		}
 	}
+	fmt.Println(postRequest.GroupId)
 	if postRequest.GroupId != 0 && !repo.CheckUserInGroup(postRequest.GroupId, postRequest.UserId) {
 		return nil, errors.New("you can't post in this group")
 	}

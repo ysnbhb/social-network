@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -47,6 +48,7 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	postRequest.GroupId, _ = strconv.Atoi("groupId")
+	fmt.Println(postRequest)
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
 	post, err := services.CreatPost(&postRequest)

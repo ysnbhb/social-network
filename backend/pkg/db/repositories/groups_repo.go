@@ -145,11 +145,12 @@ func ListGroups(userid int) ([]models.Groups, error) {
     COALESCE((SELECT status
      FROM group_invitations 
      WHERE group_id = g.id 
+     AND user_id = $1
      LIMIT 1) , '') AS invi,  
     (SELECT EXISTS (
         SELECT 1 FROM group_members 
         WHERE group_id = g.id 
-        AND user_id = ?
+        AND user_id = $1
     )) AS is_member,
     COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members  
 	FROM groups g
@@ -187,16 +188,17 @@ func GetGroupInfo(groupId int, userId int) (models.Groups, error) {
     COALESCE((SELECT status
      FROM group_invitations 
      WHERE group_id = g.id 
+	 AND user_id = $1
      LIMIT 1) , '') AS invi,  
     (SELECT EXISTS (
         SELECT 1 FROM group_members 
         WHERE group_id = g.id 
-        AND user_id = ?
+        AND user_id = $1
     )) AS is_member,
     COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members  
 	FROM groups g
 	LEFT JOIN group_members gm ON g.id = gm.group_id 
-	WHERE g.id = ?
+	WHERE g.id = $2
 	`
 	err := db.DB.QueryRow(query, userId, groupId).Scan(&group.Status, &group.IsMember, &group.TotalMembers)
 	if err != nil {

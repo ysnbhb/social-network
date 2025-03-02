@@ -4,7 +4,7 @@ import '../styles/groupsFeed.css';
 import Link from 'next/link';
 
 
-export default function GroupList({group}) {
+export default function GroupList({group}) {    
     const {id , title  , description  ,isMember ,  status , totalMembers} = group
     const [ismember , setIsmember] = useState(isMember)
     const [statusingroup , setStatus] = useState(status)
