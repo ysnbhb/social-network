@@ -439,3 +439,146 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/02 14:11:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/02 14:11:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/02 14:11:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 14:18:51 server.go:27: Starting server on :8080
+2025/03/02 14:19:34 auth_controller.go:35: sorry, this email does not exist
+2025/03/02 14:22:04 auth_controller.go:90: invalid password
+2025/03/02 14:22:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 14:22:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 14:23:46 server.go:3634: http: panic serving 127.0.0.1:37966: runtime error: invalid memory address or nil pointer dereference
+goroutine 210 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae000}, 0xc0000e8000)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae000?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003d0210?, {0x958538, 0xc0002ae000}, 0xc0000e8000)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae000}, 0xc0000e8000)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae000?}, 0xc0002ae001?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae000?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000392000, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:23:53 server.go:3634: http: panic serving 127.0.0.1:48792: runtime error: invalid memory address or nil pointer dereference
+goroutine 201 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae0e0}, 0xc0000e8140)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae0e0?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003d0f60?, {0x958538, 0xc0002ae0e0}, 0xc0000e8140)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae0e0}, 0xc0000e8140)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae0e0?}, 0xc0002ae001?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae0e0?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000c6240, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:23:55 server.go:3634: http: panic serving 127.0.0.1:48800: runtime error: invalid memory address or nil pointer dereference
+goroutine 203 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae1c0}, 0xc0000e8280)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae1c0?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003d1d10?, {0x958538, 0xc0002ae1c0}, 0xc0000e8280)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae1c0}, 0xc0000e8280)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae1c0?}, 0xc0002ae101?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae1c0?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000c63f0, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:24:14 server.go:3634: http: panic serving 127.0.0.1:37132: runtime error: invalid memory address or nil pointer dereference
+goroutine 205 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae2a0}, 0xc0000e83c0)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae2a0?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002c8990?, {0x958538, 0xc0002ae2a0}, 0xc0000e83c0)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae2a0}, 0xc0000e83c0)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae2a0?}, 0xc0002ae201?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae2a0?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000c65a0, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:24:40 server.go:3634: http: panic serving 127.0.0.1:49594: runtime error: invalid memory address or nil pointer dereference
+goroutine 207 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae460}, 0xc0000e8640)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae460?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002c9680?, {0x958538, 0xc0002ae460}, 0xc0000e8640)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae460}, 0xc0000e8640)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae460?}, 0xc0002ae401?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae460?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000c6750, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:24:40 server.go:3634: http: panic serving 127.0.0.1:48960: runtime error: invalid memory address or nil pointer dereference
+goroutine 226 [running]:
+net/http.(*conn).serve.func1()
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x8609a0?, 0xbb6590?})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Signup({0x958538, 0xc0002ae620}, 0xc0000e8780)
+	/home/yakhaldy/Desktop/social-network/backend/app/controllers/auth_controller.go:82 +0x3cf
+net/http.HandlerFunc.ServeHTTP(0xc0005b6000?, {0x958538?, 0xc0002ae620?}, 0x8d356f?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00023a210?, {0x958538, 0xc0002ae620}, 0xc0000e8780)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x958538, 0xc0002ae620}, 0xc0000e8780)
+	/home/yakhaldy/Desktop/social-network/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x958538?, 0xc0002ae620?}, 0xc0002ae601?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x956f70?}, {0x958538?, 0xc0002ae620?}, 0x6?)
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000c6990, {0x958a48, 0xc0003d01b0})
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yakhaldy/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/02 14:24:50 auth_controller.go:90: invalid first name
+2025/03/02 14:25:06 auth_controller.go:90: invalid last name
+2025/03/02 14:25:21 auth_controller.go:90: invalid nickname
+2025/03/02 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 14:25:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 14:34:36 server.go:27: Starting server on :8080
