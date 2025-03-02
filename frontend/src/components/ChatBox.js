@@ -3,7 +3,7 @@ import { sendMessageuser } from "../websocket/messages.js";
 import '../styles/chat.css';
 
 function ChatBox({ user }) {
-
+  
   const [newMessage, setNewMessage] = useState("");
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {

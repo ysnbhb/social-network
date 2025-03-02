@@ -1,26 +1,25 @@
 "use client";
 
 import { safeSend } from "./websocket.js";
-import { receiveMessageuser } from "./messages.js";
 
 export function handleNotification(data) {
-    if (data.Data) {
-        const DATA = data.Data
-        
-        DATA.forEach(element => {    
-            if (element.Readstatus === "unread") {
-                if (element.Type === "messageuser") {
-                    receiveMessageuser(element, data.countunreadmessages);
-                } else {
-                    ShowNotification(data.countNotification);
-                }
-            }
-        });
-    }
+
+    AddMessagesymbole(data.countunreadmessages)
+
+    ShowNotification(data.countNotification);
 
 }
 function ShowNotification(count) {
-    AddNotificationsymbole(true,count);
+
+    const notification = document.getElementById("notification-badge");
+    const notification2 = document.getElementById("notification-count");
+    notification2.innerHTML = count;
+    if (count > 0) {
+        notification.style.display = "block";
+    } else {
+        notification2.innerHTML = "";
+        notification.style.display = "none";
+    }
 
 }
 export function sendChangeUnreadNotification(Notificationid) {
@@ -66,27 +65,18 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 }
 
 /// notification user ///
-export function AddMessagesymbole(type, count) {
+export function AddMessagesymbole(count) {
     const notification = document.getElementById("notification-badge-message");
     const notification2 = document.getElementById("notification-count-message");
-    notification2.innerHTML = count;
-    if (type) {
+    if (count > 0) {
+        notification2.innerHTML = count;
         notification.style.display = "block";
     } else {
+        notification2.innerHTML = "";
         notification.style.display = "none";
     }
 }
-export function AddNotificationsymbole(type, count) {
-    
-    const notification = document.getElementById("notification-badge");
-    const notification2 = document.getElementById("notification-count");
-    notification2.innerHTML = count;
-    if (type) {
-        notification.style.display = "block";
-    } else {
-        notification.style.display = "none";
-    }
-}
+
 
 /// notification follow ///
 export function receiveFollow(data) {

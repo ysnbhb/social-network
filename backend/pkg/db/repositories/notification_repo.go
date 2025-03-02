@@ -8,7 +8,7 @@ import (
 )
 
 func GetNotification(userid int) ([]models.UnreadNotification, error) {
-	query := `SELECT id, user_id, sender_id, type, details, read_status, created_at FROM notifications WHERE user_id = ?`
+	query := `SELECT id, user_id, sender_id, type, details, read_status, created_at FROM notifications WHERE user_id = ? AND type != 'messageuser'`
 	rows, err := db.DB.Query(query, userid)
 	if err != nil {
 		return []models.UnreadNotification{}, err

@@ -10,19 +10,14 @@ export default function ActivitySidebar({ className, title }) {
   useEffect(() => {
     async function GetUser() {
       const res = await fetch(`/api/unfollow`);
-      const data = await res.json();
-      console.log(data);
-      
+      const data = await res.json();      
       setUser(data);
     }
     GetUser()
   } , []);
-  console.log(user);
   
   return (
-    <aside className={`activity-sidebar`} style={ {
-      marginBottom : `20px;`
-    }}>
+    <aside className={`activity-sidebar`} style={{marginBottom: '20px' }}>
       <div className="activity-header">
         <h3>unfollow user</h3>
       </div>

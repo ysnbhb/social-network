@@ -9,7 +9,7 @@ import (
 )
 
 func SendMessageuser(msg models.Message, client *models.Client) error {
-	err := repo.CheckCanUSendMessage(msg, client)
+	err := repo.CheckCanUSendMessage(msg.Receivers[0], client.Userid)
 	if err != nil {
 		client.Conn.WriteJSON(map[string]interface{}{
 			"type":    "error",
@@ -29,6 +29,10 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 	if err != nil {
 		return err
 	}
+	err = repo.AddNotification(msg, client, "messageuser", Time) // add notification to db. ??
+	if err != nil {
+		return err
+	}
 	receiverConn := models.Clients[msg.Receivers[0]]
 	if receiverConn != nil {
 		receiverConn.Conn.WriteJSON(map[string]interface{}{
@@ -36,6 +40,7 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 			"sender":  client.Username,
 			"content": msg.Content,
 			"time":    Time,
+			"you":   repo.GetNickName(client.Userid),
 		})
 	}
 
@@ -45,12 +50,8 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 		"content": msg.Content,
 		"time":    Time,
 		"mymsg":   true,
+		"you":   repo.GetNickName(client.Userid),
 	})
-	if err != nil {
-		return err
-	}
-
-	err = repo.AddNotification(msg, client, "messageuser", Time) // add notification to db. ??
 	if err != nil {
 		return err
 	}

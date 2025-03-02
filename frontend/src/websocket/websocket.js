@@ -37,6 +37,7 @@ export function initializeWebSocket() {
         };
 
         socket.onclose = function (event) {
+            
             console.log('WebSocket connection closed with code:', event.code);
             connectionPromise = null;
         };
