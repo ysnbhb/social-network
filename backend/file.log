@@ -2448,3 +2448,38 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/1de64a46-fff7-4424-b43c-6147389d041b.jpg: no such file or directory
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/ccd41dc0-5df4-404a-a800-773cf150da86.jpg: no such file or directory
 2025/03/02 11:22:53 serveContent.go:26: open ./uploads/63bc3072-cb76-4791-8528-2269069781bd.jpg: no such file or directory
+2025/03/02 11:35:04 server.go:27: Starting server on :8080
+2025/03/02 11:35:27 auth_controller.go:35: sorry, this email does not exist
+2025/03/02 11:35:34 auth_controller.go:35: sorry, this email does not exist
+2025/03/02 11:49:47 user_repo.go:33: <nil>
+2025/03/02 12:08:26 server.go:27: Starting server on :8080
+2025/03/02 12:10:57 user_repo.go:33: <nil>
+2025/03/02 12:12:08 user_repo.go:33: <nil>
+2025/03/02 12:12:18 posts_controller.go:46: creating post in db:sql: expected 12 destination arguments in Scan, not 11
+2025/03/02 12:12:41 posts_controller.go:46: creating post in db:sql: expected 12 destination arguments in Scan, not 11
+2025/03/02 12:13:07 posts_controller.go:46: creating post in db:sql: expected 12 destination arguments in Scan, not 11
+2025/03/02 12:14:39 posts_controller.go:46: creating post in db:sql: expected 12 destination arguments in Scan, not 11
+2025/03/02 12:15:20 posts_controller.go:46: creating post in db:sql: expected 12 destination arguments in Scan, not 11
+2025/03/02 12:16:38 server.go:27: Starting server on :8080
+2025/03/02 12:17:01 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:02 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:03 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:03 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:04 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:04 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:05 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:06 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:09 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:24 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:24 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:33 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:33 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:34 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:34 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:35 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:35 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:35 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:35 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:17:35 reactions_controller.go:32: adding reaction to db: post not found
+2025/03/02 12:18:57 server.go:27: Starting server on :8080
+2025/03/02 12:20:17 user_repo.go:33: <nil>

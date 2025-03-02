@@ -26,6 +26,8 @@ async function CreatePost( content, postType, img, groupId = 0 ) {
       const responsData = await respons.json();
       return responsData;
     } else {
+      console.log(respons.ok);
+      
       return false
     }
   } catch (err) {

@@ -2,31 +2,20 @@
 import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "../../../../components/images/IMG-20240514-WA0002.jpg";
-import bag from "../../../../components/images/image6.jpg";
-import ActivitySidebar from "../../../../components/activitySide";
-import HomeFeed from "../../../../components/homeFeed";
-import { Profile_Posts } from "../../../../lib/profilePost.js";
- import { Context } from "../../../../lib/Context";
-import { PostCompte } from "../../../../components/postComp.js";
+import image from "@/components/images/IMG-20240514-WA0002.jpg";
+import bag from "@/components/images/image6.jpg";
+import ActivitySidebar from "@/components/activitySide.js";
+import { Context } from "@/lib/Context.js";
+import { PostCompte } from "@/components/postComp.js";
+import { Profile_Posts } from "@/lib/profilePost";
+import useGetProfile from "@/app/hooks/useGetProfile";
 
 export default function Profile({ params }) {
   const contextValues = useContext(Context);
   console.log(contextValues.dataProfile);
 
-  const [data, setData] = useState([]);
+  const [profile, error] = useGetProfile();
   const [err, setErr] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await Profile_Posts();
-        setData(result);
-      } catch (error) {
-        setErr(error);
-      }
-    };
-    fetchData();
-  }, []);
 
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
@@ -112,13 +101,14 @@ export default function Profile({ params }) {
             classes={{ div_feed: style["custom-feed-class"] }}
             data={data}
           /> */}
-          {data.map((post) => (
-            <PostCompte
-              className={`${style.Homefeed}`}
-              key={post.id}
-              post={post}
-            />
-          ))}
+          {!error &&
+            profile.map((post) => (
+              <PostCompte
+                className={`${style.Homefeed}`}
+                key={post.id}
+                post={post}
+              />
+            ))}
         </div>
 
         <div className={style["card-users"]}>

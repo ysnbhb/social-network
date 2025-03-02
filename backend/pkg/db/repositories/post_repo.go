@@ -33,8 +33,7 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 		u.nickname,
 		c.image_url,
 		COUNT(DISTINCT cm.id) AS total_comments,
-		COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-		COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+		COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes
 	FROM card c
 	JOIN posts p ON c.id = p.card_id
 	JOIN users u ON c.user_id = u.id
@@ -42,7 +41,7 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 	LEFT JOIN likes l ON c.id = l.card_id
 	WHERE c.id = ?`
 	err := db.DB.QueryRow(query, cardId).Scan(
-		&post.CardId,
+		&post.Id,
 		&post.UserId,
 		&post.Content,
 		&post.CreatedAt,

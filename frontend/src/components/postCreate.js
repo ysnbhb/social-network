@@ -9,13 +9,15 @@ export default function PostCreater({setPosts , classes}) {
   const handalPost = async (e) => {
     e.preventDefault();
     const res = await CreatePost(content, postType, img);
+    console.log(res);
+    
     if (res) {
       setContent("");
       setImg(null);
       setPostType("public");
       setPosts(prev=> [res ,...prev]);
     } else {
-      alert("errror");
+      // alert("errror");
     }
   };
     return (
