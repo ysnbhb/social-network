@@ -57,8 +57,6 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 
 /// notification user ///
 export function AddMessagesymbole(count) {
-    console.log(count);
-
     const notification = document.getElementById("notification-badge-message");
     const notification2 = document.getElementById("notification-count-message");
     if (count > 0) {
