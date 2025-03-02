@@ -42,7 +42,7 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 	LEFT JOIN likes l ON c.id = l.card_id
 	WHERE c.id = ?`
 	err := db.DB.QueryRow(query, cardId).Scan(
-		&post.CardId,
+		&post.Id,
 		&post.UserId,
 		&post.Content,
 		&post.CreatedAt,
