@@ -10,7 +10,16 @@ export function handleNotification(data) {
 
 }
 function ShowNotification(count) {
-    AddNotificationsymbole(true, count);
+
+    const notification = document.getElementById("notification-badge");
+    const notification2 = document.getElementById("notification-count");
+    notification2.innerHTML = count;
+    if (count > 0) {
+        notification.style.display = "block";
+    } else {
+        notification2.innerHTML = "";
+        notification.style.display = "none";
+    }
 
 }
 export function sendChangeUnreadNotification(Notificationid) {
@@ -67,17 +76,7 @@ export function AddMessagesymbole(count) {
         notification.style.display = "none";
     }
 }
-export function AddNotificationsymbole(type, count) {
 
-    const notification = document.getElementById("notification-badge");
-    const notification2 = document.getElementById("notification-count");
-    notification2.innerHTML = count;
-    if (type) {
-        notification.style.display = "block";
-    } else {
-        notification.style.display = "none";
-    }
-}
 
 /// notification follow ///
 export function receiveFollow(data) {

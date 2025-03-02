@@ -26,7 +26,6 @@ export default function ChatPage({ params }) {
                 });
         }
     }, [name]);
-    console.log(selectedUser);
 
 
     return (

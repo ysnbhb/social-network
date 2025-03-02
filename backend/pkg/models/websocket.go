@@ -13,6 +13,7 @@ type Message struct {
 	Content        string   `json:"content"`
 	Groupid        int      `json:"groupid"`
 	Notificationid int      `json:"notificationid"`
+	Offset         int      `json:"offset"`
 }
 type Client struct {
 	Conn     *websocket.Conn

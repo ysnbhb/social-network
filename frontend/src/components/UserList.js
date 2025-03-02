@@ -3,8 +3,9 @@ import { sendGetmessagesusers, sendMessageIsRead } from '../websocket/messages.j
 import { SendOnlineStatus } from '../websocket/websocket.js';
 import '../styles/chat.css';
 import { useRouter } from "next/navigation";
-
+import { usePathname } from 'next/navigation';
 function UserList() {
+    const pathname = usePathname();
     const [users, setUsers] = useState([]); // State to hold the list of users
     const Router = useRouter();
 
@@ -30,12 +31,13 @@ function UserList() {
     };
     // Handle selecting a user from the list
     const handleSelectUser = (user) => {
-        //redirect to chat page of user
-        sendGetmessagesusers([user.nickname], 0);
-        sendMessageIsRead(user.nickname);
-        Router.push(`/chat/${user.nickname}`);
-
-        // setSelectedUser(user);
+        if(pathname !== `/chat/${user.nickname}`) {
+            sendGetmessagesusers([user.nickname], 0);
+            sendMessageIsRead(user.nickname);
+            Router.push(`/chat/${user.nickname}`);
+        }else {
+            Router.push(`/chat`);
+        }
 
     };
 

@@ -70,8 +70,9 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
 	query := `SELECT sender_id, recipient_id, message, sent_at FROM chats
 			WHERE (sender_id = ? AND recipient_id = ?) OR (sender_id = ? AND recipient_id = ?)
-			ORDER BY sent_at ASC`
-	rows, err := db.DB.Query(query, client.Userid, recieverid, recieverid, client.Userid)
+			ORDER BY sent_at DESC
+			LIMIT ? OFFSET ?`
+	rows, err := db.DB.Query(query, client.Userid, recieverid, recieverid, client.Userid, 10, msg.Offset)
 	if err != nil {
 		return err
 	}
@@ -99,6 +100,8 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 		"type":     "getmessagesusers",
 		"messages": messages,
 		"you":   GetNickName(client.Userid),
+		"offset":   msg.Offset,
+		"he" :     msg.Receivers[0],
 	})
 	return nil
 }

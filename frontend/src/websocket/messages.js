@@ -5,38 +5,62 @@ import { sendNotification } from "./notification.js";
 export function Getmessagesusers(data) {
     const messages = data.messages;
     const messageplace = document.getElementById("messages");
-    if (messageplace && messages) {
-        messageplace.innerHTML = "";
+
+    if (messageplace && messages && messages.length) {
+        const oldScrollHeight = messageplace.scrollHeight;
+
+        if (data.offset === 0) {
+            messageplace.innerHTML = '';
+        }
+
+        const fragment = document.createDocumentFragment();
+
         messages.forEach(info => {
-            messageplace.innerHTML += `
-                <div class="message ${info.sender !== data.you ? "sender" : "receiver"}">
+            const dev = document.createElement("div");
+            dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
+            dev.innerHTML = `
                     <div class="sender-info">
-                    <div class="avatar"></div>
-                    <span>${info.sender}</span>
-                    <span class="time">${info.timestamp}</span>
+                        <div class="avatar"></div>
+                        <span>${info.sender}</span>
+                        <span class="time">${info.timestamp}</span>
                     </div>
                     <div>${info.message}</div> 
-                </div>
                 `;
-        })
-    }
-    if (messageplace) {
-        messageplace.scrollTo({
-            top: messageplace.scrollHeight,
-            behavior: 'smooth'
+            fragment.prepend(dev);
         });
+
+        messageplace.prepend(fragment);
+        if (data.offset === 0) {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight,
+                behavior: 'auto'
+            });
+        } else {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight - oldScrollHeight,
+                behavior: 'auto'
+            });
+        }
+
+        messageplace.dataset.currentOffset = data.offset + messages.length;
+        messageplace.dataset.loading = "false";
     }
-    //GetMoreMessages(data.offset);
+
+    setupScrollHandler(data);
 }
-function GetMoreMessages(offset) {
+
+
+function setupScrollHandler(data) {
     const messageplace = document.getElementById("messages");
+    if (!messageplace) return;
     messageplace.addEventListener("scroll", () => {
-        if (messageplace.scrollTop === 0) {
-            sendGetmessagesusers([user.nickname], offset);
+        if (messageplace.scrollTop === 0 && messageplace.dataset.loading !== "true") {
+            const currentOffset = parseInt(messageplace.dataset.currentOffset || 0);
+            messageplace.dataset.loading = "true";
+            sendGetmessagesusers([data.he], currentOffset);
         }
     });
 }
-
 
 export function receiveMessageuser(data) {
 
@@ -51,7 +75,7 @@ export function receiveMessageuser(data) {
         }
     }
     console.log(data);
-    
+
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/chat/${data.sender}` || data.mymsg) {
         if (messageplace) {
@@ -83,7 +107,7 @@ export function sendMessageuser(receiver, message) {
     safeSend(data);
 }
 
-export function sendGetmessagesusers(receiver, offset) {
+export function sendGetmessagesusers(receiver, offset = 0) {
     const data = {
         type: "getmessagesusers",
         receiver: receiver,

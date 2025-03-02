@@ -4,11 +4,11 @@ import '../styles/profileSidebar.css';
 import Loading from './loading';
 
 export default function ProfileSide({  classes   }) {
-  if (classes && classes.dataProfile !== undefined) {
-    console.log(classes.dataProfile, "inside profile");
-} else {
-    console.log("No profile data available");
-}
+//   if (classes && classes.dataProfile !== undefined) {
+//     console.log(classes.dataProfile, "inside profile");
+// } else {
+//     console.log("No profile data available");
+// }
   
     return (
       <div className="profile-page">
