@@ -31,7 +31,7 @@ export default function Notification() {
     return <h1>Loading Notifications...</h1>;
   }
 
-  if (notifications.length === 0) {
+  if (notifications === null) {
     return <h1>No Notifications</h1>;
   }
 

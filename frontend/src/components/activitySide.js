@@ -21,22 +21,23 @@ export default function ActivitySidebar({ className, title }) {
   console.log(user);
 
   return (
-    <aside
-      className={`activity-sidebar`}
-      style={{
-        marginBottom: `20px;`,
-      }}
-    >
+    <aside className={`activity-sidebar`} style={{ marginBottom: "20px" }}>
       <div className="activity-header">
         <h3>unfollow user</h3>
-        <Link href="/unfollow" style={ {
-          marginLeft: "auto",
-          marginRight: "10px",
-          color: "blue",
-          border: "none",
-          fontSize: "14px",
-          textDecoration : "none",
-        }}> See All</Link>
+        <Link
+          href="/unfollow"
+          style={{
+            marginLeft: "auto",
+            marginRight: "10px",
+            color: "blue",
+            border: "none",
+            fontSize: "14px",
+            textDecoration: "none",
+          }}
+        >
+          {" "}
+          See All
+        </Link>
       </div>
       {user.map((item) => (
         <ShowUnfllowUser key={item.id} user={item} />
@@ -46,9 +47,8 @@ export default function ActivitySidebar({ className, title }) {
 }
 
 export function ShowUnfllowUser({ user }) {
-
   const [status, setStatus] = useState("");
-  const handuleClick = async () => {    
+  const handuleClick = async () => {
     const res = await fetch(`/api/follow`, {
       method: "POST",
       headers: {
@@ -57,12 +57,12 @@ export function ShowUnfllowUser({ user }) {
       credentials: "include",
       body: JSON.stringify({
         followingId: user.id,
-      })
+      }),
     });
     const data = await res.json();
     if (res.ok) {
       setStatus(data.status);
-    }    
+    }
   };
   console.log(user);
   return (
@@ -82,9 +82,7 @@ export function ShowUnfllowUser({ user }) {
         <button>pending</button>
       ) : (
         <button onClick={() => handuleClick()}>follow</button>
-      )
-      
-      }
+      )}
     </div>
   );
 }

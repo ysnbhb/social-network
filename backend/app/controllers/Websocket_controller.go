@@ -63,7 +63,11 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 	case "changeunreadnotification":
 		return repo.ChangeUnreadNotification(msg, client)
 	case "changeunreadmessage":
-		return repo.ChangeUnreadMessage(msg, client)
+		err := repo.ChangeUnreadMessage(msg, client)
+		if err != nil {
+			return err
+		}
+		return nil
 	case "GETonlineStatus":
 		return OnlineStatus(msg, client)
 	case "GetNotification":
@@ -74,28 +78,23 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 }
 
 func Notification(client *models.Client) error {
-	dataNotification, err := repo.GetNotification(client.Userid)
-	if err != nil {
-		return err
-	}
-	GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
-	if err != nil {
-		return err
-	}
-	GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
-	if err != nil {
-		return err
-	}
-	err = client.Conn.WriteJSON(map[string]interface{}{
-		"type":                "Notification",
-		"Data":                dataNotification,
-		"countNotification":   GetNotificationCount,
-		"countunreadmessages": GetunreadmessagesCount,
-	})
-	if err != nil {
-		RemoveClient(client.Conn)
-	}
-	return nil
+    GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
+    if err != nil {
+        return err
+    }
+    GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
+    if err != nil {
+        return err
+    }
+    err = client.Conn.WriteJSON(map[string]interface{}{
+        "type":                "Notification",
+        "countNotification":   GetNotificationCount,
+        "countunreadmessages": GetunreadmessagesCount,
+    })
+    if err != nil {
+        RemoveClient(client.Conn)
+    }
+    return nil
 }
 
 func AddClient(conn *websocket.Conn, userID int, username string) {

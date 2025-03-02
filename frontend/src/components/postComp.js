@@ -1,9 +1,7 @@
 "use client"
 import { useState } from "react";
 
-export function PostCompte({ post }) {
-  console.log(post);
-  
+export function PostCompte({ post }) {  
   const {
     id,
     content,

@@ -38,7 +38,16 @@
     position: relative;
     word-wrap: break-word;
 }
-
+#msg{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    max-height: 75vh;
+    scrollbar-color: #1da1f2 #f0f4f8;
+}
 .sender {
     align-self: flex-start;
     background-color: #acacac;

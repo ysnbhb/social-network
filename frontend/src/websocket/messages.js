@@ -1,50 +1,100 @@
 "use client"
 import { safeSend } from "./websocket.js";
-import { AddMessagesymbole } from "./notification.js";
+import { sendNotification } from "./notification.js";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
     const messageplace = document.getElementById("messages");
-    const usernickname = document.querySelectorAll(".user-info span")[0].textContent;
 
-    messageplace.innerHTML = "";
-    if (messageplace && messages) {
+    if (messageplace && messages && messages.length) {
+        const oldScrollHeight = messageplace.scrollHeight;
+
+        if (data.offset === 0) {
+            messageplace.innerHTML = '';
+        }
+
+        const fragment = document.createDocumentFragment();
+
         messages.forEach(info => {
-            messageplace.innerHTML += `
-                <div class="message ${info.sender === usernickname ? "sender" : "receiver"}">
+            const dev = document.createElement("div");
+            dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
+            dev.innerHTML = `
                     <div class="sender-info">
-                    <div class="avatar"></div>
-                    <span>${info.sender}</span>
-                    <span class="time">${info.timestamp}</span>
+                        <div class="avatar"></div>
+                        <span>${info.sender}</span>
+                        <span class="time">${info.timestamp}</span>
                     </div>
                     <div>${info.message}</div> 
-                </div>
                 `;
-        })
+            fragment.prepend(dev);
+        });
+
+        messageplace.prepend(fragment);
+        if (data.offset === 0) {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight,
+                behavior: 'auto'
+            });
+        } else {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight - oldScrollHeight,
+                behavior: 'auto'
+            });
+        }
+
+        messageplace.dataset.currentOffset = data.offset + messages.length;
+        messageplace.dataset.loading = "false";
     }
 
+    setupScrollHandler(data);
 }
-export function receiveMessageuser(data, count) {
-    const url = (window.location.href).split("/").reverse()[0];
-    if (!data.mymsg && url !== "chat") {
-        AddMessagesymbole(true,count)
-    }
+
+
+function setupScrollHandler(data) {
+    const messageplace = document.getElementById("messages");
+    if (!messageplace) return;
+    messageplace.addEventListener("scroll", () => {
+        if (messageplace.scrollTop === 0 && messageplace.dataset.loading !== "true") {
+            const currentOffset = parseInt(messageplace.dataset.currentOffset || 0);
+            messageplace.dataset.loading = "true";
+            sendGetmessagesusers([data.he], currentOffset);
+        }
+    });
+}
+
+export function receiveMessageuser(data) {
+
+    sendNotification()
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
         sendMessageIsRead(data.sender)
     }
-    if (!document.getElementById(`chat-box-${data.sender}`) && !data.mymsg && url === "chat") {
+    if (!document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
         const newmsg = document.getElementById(`notification-badge-${data.sender}`)
-        if (newmsg){
+        if (newmsg) {
             newmsg.style.display = "block"
         }
     }
+    console.log(data);
+
     const messageplace = document.getElementById("messages");
-    if (messageplace) {
-        messageplace.innerHTML += `
-             <div class="message receiver">
-              <div>${data.content}</div>
-            </div>
+    if (window.location.pathname === `/chat/${data.sender}` || data.mymsg) {
+        if (messageplace) {
+            messageplace.innerHTML += `
+             <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
+                    <div class="sender-info">
+                    <div class="avatar"></div>
+                    <span>${data.sender}</span>
+                    <span class="time">${data.time}</span>
+                    </div>
+                    <div>${data.content}</div> 
+                </div>
             `
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight,
+                behavior: 'smooth'
+            });
+
+        }
     }
 }
 
@@ -57,10 +107,11 @@ export function sendMessageuser(receiver, message) {
     safeSend(data);
 }
 
-export function sendGetmessagesusers(receiver) {
+export function sendGetmessagesusers(receiver, offset = 0) {
     const data = {
         type: "getmessagesusers",
         receiver: receiver,
+        offset: offset
     }
     safeSend(data);
 }
@@ -69,9 +120,12 @@ export function sendMessageIsRead(nickname) {
         type: "changeunreadmessage",
         sender: nickname
     }
-
+    if (!document.getElementById(`notification-badge-${nickname}`)) {
+        return
+    }
     document.getElementById(`notification-badge-${nickname}`).style.display = "none"
     safeSend(data);
+    sendNotification()
 }
 //// group messages ////
 

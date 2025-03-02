@@ -8,31 +8,28 @@ import (
 
 func GetFriends(Friends *[]models.Friends, userId int) error {
 	query := `
-    SELECT
+    SELECT DISTINCT
         u.id,
         u.first_name,
         u.last_name,
         u.nickname,
         u.avatar_url
     FROM users u
-    WHERE (u.id IN (
-            SELECT f.following_id
-            FROM followers f
-            WHERE f.follower_id = ? AND f.status = 'accepted'
-        )
-        OR u.id IN (
-            SELECT f.follower_id
-            FROM followers f
-            WHERE f.following_id = ? AND f.status = 'accepted'
-        )
-        OR u.profile_type = 'public')
+    LEFT JOIN followers f1 ON u.id = f1.following_id AND f1.follower_id = ? AND f1.status = 'accepted'
+    LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accepted'
+    LEFT JOIN chats c ON (u.id = c.sender_id AND c.recipient_id = ?)
+                        OR (u.id = c.recipient_id AND c.sender_id = ?)
+    WHERE u.profile_type = 'public'
+       OR f1.following_id IS NOT NULL
+       OR f2.follower_id IS NOT NULL
+       OR c.id IS NOT NULL
     ORDER BY u.nickname ASC;
-`
+    `
 
-	rows, err := db.DB.Query(query, userId, userId)
-	if err != nil {
-		return err
-	}
+    rows, err := db.DB.Query(query, userId, userId, userId, userId)
+    if err != nil {
+        return err
+    }
 	defer rows.Close()
 	for rows.Next() {
 		var friend models.Friends
