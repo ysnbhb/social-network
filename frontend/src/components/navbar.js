@@ -1,12 +1,13 @@
 'use client';
 import Link from 'next/link';
 import '../styles/navbar.css';
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { initializeWebSocket, SendOnlineStatus } from '../websocket/websocket.js';
-
+import { useRouter } from 'next/navigation';
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     initializeWebSocket()
@@ -14,7 +15,8 @@ export default function Navbar() {
         SendOnlineStatus();
       })
       .catch(error => {
-        console.error("Failed to initialize websocket:", error);
+        router.push('/login');
+        //console.error("Failed to initialize websocket:", error);
       });
   }, [pathname]);
   return (

@@ -1,4 +1,8 @@
 "use client";
+import { useEffect } from 'react';
+import { initializeWebSocket } from "../websocket/websocket.js";
+import Navbar from '../components/navbar.js';
+import { ContextProvider } from '../lib/Context.js';
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -7,8 +11,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div>
-        {/* <Navbar /> */}
+        <ContextProvider >
         {children}
+        </ContextProvider>
         </div>
       </body>
     </html>

@@ -5,16 +5,18 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset int) error {
 	query := `
 		SELECT 
-			c.id,
+			 c.id,
 			c.user_id,
 			c.content,
 			c.created_at,
+			u.avatar_url,
 			u.first_name,
 			u.last_name,
 			u.nickname,
+			c.image_url,
 			COUNT(DISTINCT cm.id) AS total_comments,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
@@ -32,9 +34,10 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 			u.first_name, 
 			u.last_name,
 			u.nickname
-		ORDER BY c.created_at DESC;
+		ORDER BY c.created_at DESC
+		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId)
+	rows, err := db.DB.Query(query, userId,offset)
 	if err != nil {
 		return err
 	}
@@ -47,9 +50,11 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 			&post.UserId,
 			&post.Content,
 			&post.CreatedAt,
+			&post.AvatarUrl,
 			&post.FirstName,
 			&post.LastName,
 			&post.NickName,
+			&post.ImageUrl,
 			&post.TotalComments,
 			&post.TotalLikes,
 			&post.TotalDislikes,
@@ -64,6 +69,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int) erro
 
 func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 	query := `SELECT  
+			u.id,
 			u.first_name,
 			u.last_name,
 			u.nickname,
@@ -71,16 +77,18 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 			u.email,
 			u.date_of_birth,
 			COALESCE(u.avatar_url, '') AS avatar_url,
-			COUNT(DISTINCT c.image_url) AS image_count,
+    		COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
+			COUNT(DISTINCT p.id) AS posts,
 			COUNT(DISTINCT f1.follower_id) AS follower_count,
 			COUNT(DISTINCT f2.following_id) AS following_count
 		FROM users u 
 		LEFT JOIN card c ON c.user_id = u.id
 		LEFT JOIN followers  f1 on f1.follower_id=u.id  
 		LEFT JOIN followers  f2 on f2.following_id=u.id 
-		WHERE u.id = ?
+        LEFT JOIN posts p on p.card_id=c.id
+		WHERE u.id = ?  
 		GROUP BY u.id`
-	err := db.DB.QueryRow(query, user_id).Scan(&profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, user_id).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}

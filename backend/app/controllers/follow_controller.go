@@ -33,3 +33,12 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, followRequest, http.StatusOK)
 }
+
+func ShowUnfollowUser(w http.ResponseWriter, r *http.Request) {
+	user, err := services.GetFollowers(r.Context().Value("userId").(int))
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	utils.JsonResponse(w, user, http.StatusOK)
+}

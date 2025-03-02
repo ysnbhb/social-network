@@ -50,3 +50,43 @@ func GetFriends(Friends *[]models.Friends, userId int) error {
 	}
 	return rows.Err()
 }
+
+func GetFollowers(userId int) ([]models.UnfollowUser, error) {
+	unfu := []models.UnfollowUser{}
+	query := `
+    SELECT
+        u.id,
+        u.first_name,
+        u.last_name,
+        u.nickname,
+        u.avatar_url
+    FROM users u
+    WHERE u.id NOT IN (
+        SELECT f.follower_id
+        FROM followers f
+        WHERE f.following_id = $1 AND f.follower_id = u.id
+    ) AND u.id != $1
+    ORDER BY random()
+	LIMIT 5;
+`
+	rows, err := db.DB.Query(query, userId)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var follower models.UnfollowUser
+		err := rows.Scan(
+			&follower.Id,
+			&follower.FirstName,
+			&follower.LastName,
+			&follower.Nickname,
+			&follower.Avatar,
+		)
+		if err != nil {
+			continue
+		}
+		unfu = append(unfu, follower)
+	}
+	return unfu, err
+}

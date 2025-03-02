@@ -59,19 +59,25 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 		return
 	}
-	groupId := r.FormValue("groupId")
-	if groupId == "" {
-		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
-		return
-	}
-	group, err := strconv.Atoi(groupId)
+	
+	gpJion := models.Group_Jion{}
+	err := json.NewDecoder(r.Body).Decode(&gpJion)
 	if err != nil {
-		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	userId := r.Context().Value("userId").(int)
-	code, err := services.JoinToGroup(group, userId)
-	utils.JsonResponse(w, err.Error(), code)
+	code, err := services.JoinToGroup(gpJion, userId)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	groupInfo, err := services.GetGroup(gpJion.GroupId, userId)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get group info", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
 func SendInvi(w http.ResponseWriter, r *http.Request) {
