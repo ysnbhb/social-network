@@ -1,25 +1,23 @@
 package models
 
 import (
-	"mime/multipart"
 	"time"
 )
 
 type User struct {
-	Id           int                   `json:"id"`
-	Email        string                `json:"email"`
-	Password     string                `json:"password"`
-	FirstName    string                `json:"firstName"`
-	LastName     string                `json:"lastName"`
-	DateOfBirth  string                `json:"dateOfBirth"`
-	AvatarUrl    string                `json:"avatarUrl"`
-	NickName     string                `json:"nickName"`
-	AboutMe      string                `json:"aboutMe"`
-	CreatedAt    time.Time             `json:"createdAt"`
-	Status       string                `json:"status"`
-	Profile_Type string                `json:"profile_type"`
-	File         multipart.File        `json:"-"`
-	FileHeader   *multipart.FileHeader `json:"-"`
+	Id           int       `json:"id"`
+	Email        string    `json:"email"`
+	Password     string    `json:"password"`
+	FirstName    string    `json:"firstName"`
+	LastName     string    `json:"lastName"`
+	DateOfBirth  string    `json:"dateOfBirth"`
+	AvatarUrl    string    `json:"avatarUrl"`
+	NickName     string    `json:"nickName"`
+	AboutMe      string    `json:"aboutMe"`
+	CreatedAt    time.Time `json:"createdAt"`
+	Status       string    `json:"status"`
+	Profile_Type string    `json:"profile_type"`
+	ImgContant   []byte    `json:"-"`
 }
 
 type Login struct {

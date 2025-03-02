@@ -1,10 +1,9 @@
 package utils
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
-	"io"
-	"mime/multipart"
 	"net/url"
 	"os"
 	"strings"
@@ -50,20 +49,32 @@ func ValidImg(contentType string, size int64) error {
 	return nil
 }
 
-func SaveImg(image multipart.File) (string, error) {
+func SaveImg(imageB []byte) (string, error) {
 	imguuid, err := uuid.NewV4()
 	if err != nil {
 		return "", err
 	}
-	imgSavingPath := "/uploads/" + imguuid.String() + ".jpg"
-	fileImg, err := os.Create("." + imgSavingPath)
-	if err != nil {
-		return "", err
-	}
-	_, err = io.Copy(fileImg, image)
+	imgSavingPath := "./static/uploads/" + imguuid.String() + ".jpg"
+
+	err = os.WriteFile(imgSavingPath, imageB, 0o644)
 	if err != nil {
 		return "", err
 	}
 
-	return imgSavingPath, nil
+	imgServingPath := imguuid.String() + ".jpg"
+
+	return imgServingPath, nil
+}
+
+// Check if an image is svg type.
+func IsSVG(imageB []byte) bool {
+	// Remove unnecessary leading characters
+	trimmed := bytes.TrimLeft(imageB, " \t\n\r\xef\xbb\xbf")
+	if len(trimmed) < 4 {
+		return false // Can't be an SVG
+	}
+	// Case-insensitive comparison
+	lower := bytes.ToLower(trimmed)
+	return bytes.HasPrefix(lower, []byte("<?xml")) ||
+		bytes.Contains(lower, []byte("<svg"))
 }
