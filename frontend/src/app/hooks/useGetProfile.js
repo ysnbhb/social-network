@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 export default function useGetProfile() {
     const [profile, setProfile] = useState([])
     const [error, setError] = useState(null)
-
     const fetchData = async () => {
         try {
             const response= await fetch("http://localhost:8080/api/profile/posts/created",{

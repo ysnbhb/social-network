@@ -2,13 +2,13 @@
 import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "@/components/images/pxfuel.jpg";
-import bag from "@/components/images/pxfuel.jpg";
-import ActivitySidebar from "@/components/activitySide.js";
-import { Context } from "@/lib/Context.js";
-import { PostCompte } from "@/components/postComp.js";
-// import { Profile_Posts } from "@/lib/profilePost";
+import image from "../../../components/images/image6.jpg";
+import bag from "../../../components/images/pxfuel.jpg";
+import ActivitySidebar from "../../../components/activitySide"; 
+import { Context } from "../../../lib/Context";
+import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
+import HomeFeed from "@/components/homeFeed";
 
 export default function Profile({ params }) {
   const contextValues = useContext(Context);
@@ -100,27 +100,20 @@ export default function Profile({ params }) {
             className={`${style.Homefeed}`}
             classes={{ div_feed: style["custom-feed-class"] }}
             data={data}
-          /> */}
+          />    */}
           {!error &&
             profile.map((post) => (
               <PostCompte
-                className={`${style.Homefeed}`}
+              classes={{ div_feed: style["custom-feed-class"] }}
                 key={post.id}
                 post={post}
               />
             ))}
-
-{/* {data.map((post) => (
-            <PostCompte
-              className={`${style.Homefeed}`}
-              key={post.id}
-              post={post}
-            />
-          ))} */}
+ 
         </div>
 
-        <div className={style["card-users"]}>
-          <ActivitySidebar
+        {/* <div className={style["card-users"]}> */}
+          {/* <ActivitySidebar
             className={`${style.ActivitySidebar}`}
             classes={menuData}
             title="followers"
@@ -130,8 +123,8 @@ export default function Profile({ params }) {
             className={`${style.ActivitySidebar}`}
             classes={FollowingData}
             title="following"
-          />
-        </div>
+          /> */}
+        {/* </div> */}
       </div>
     </div>
   );

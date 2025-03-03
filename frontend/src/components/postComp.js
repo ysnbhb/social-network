@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
-
-export function PostCompte({ post }) {  
+import "../styles/homeFeed.css";
+export function PostCompte({ post  , className, classes = {} }) {  
   const {
     id,
     content,
@@ -38,7 +38,7 @@ export function PostCompte({ post }) {
   };
   return (
     <>
-      <div className="post">
+      <div className="post" classes={`${classes.div_feed}`} >
         <div className="post-header">
           <div className="post-author">
             <div className="avatar"></div>

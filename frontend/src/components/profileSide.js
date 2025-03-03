@@ -2,49 +2,60 @@
 import Link from 'next/link';
 import '../styles/profileSidebar.css';
 import Loading from './loading';
+ import userProfile from '@/app/hooks/userProfile';
+import Image from 'next/image';
 
 export default function ProfileSide({  classes   }) {
-//   if (classes && classes.dataProfile !== undefined) {
-//     console.log(classes.dataProfile, "inside profile");
-// } else {
-//     console.log("No profile data available");
-// }
-  
+  const [profile, error] = userProfile();
+   const {
+  avatarUrl,
+  firstName,
+  follower_count,
+  following_count,
+  lastName,
+  nickName,
+  posts_count, 
+  } = profile;
+     
     return (
       <div className="profile-page">
-      {classes?.dataProfile ? (
+      {   profile? (
         <aside className="profile-sidebar">
           <div className="profile-header">
-            <div className="avatar">
-              {/* Add Avatar Image here */}
+            <div  >
+            {avatarUrl && (
+          <img
+            src={`${avatarUrl}`}
+            alt="Post"
+            style={{ width: "65px", height: "65px", borderRadius:"50%" }}
+          />
+        )}
             </div>
-            <h2>{classes.dataProfile.firstName} {classes.dataProfile.lastName}</h2>
-            <p className="text-muted">@{classes.dataProfile.nickName
+            <h2>{firstName} {lastName}</h2>
+            <p className="text-muted">@{nickName
             }</p>
           </div>
           <div className="profile-stats">
             <div>
-              <h3>{classes.dataProfile.posts_count}</h3>
+              <h3>{posts_count}</h3>
               <p className="text-muted">Post</p>
             </div>
             <div>
-              <h3>{classes.dataProfile.follower_count}</h3>
+              <h3>{follower_count}</h3>
               <p className="text-muted">Followers</p>
             </div>
             <div>
-              <h3>{classes.dataProfile.following_count}</h3>
+              <h3>{following_count}</h3>
               <p className="text-muted">Following</p>
             </div>
           </div>
-          <Link href={`profile/${classes.dataProfile.id}`}  className="profile-button">My Profile</Link>
+          <Link href={`profile`}  className="profile-button">My Profile</Link>
         </aside>
-        ): (
-
-          <div>
-          <Loading></Loading>
-
-          </div>
-)}
+        ) : (
+          <div className="error-message">
+          <p>{error.message || "An unexpected error occurred."}</p>
+        </div>
+    )}
       </div>
       
     );
