@@ -109,6 +109,14 @@ export default function Profile({ params }) {
                 post={post}
               />
             ))}
+
+{/* {data.map((post) => (
+            <PostCompte
+              className={`${style.Homefeed}`}
+              key={post.id}
+              post={post}
+            />
+          ))} */}
         </div>
 
         <div className={style["card-users"]}>

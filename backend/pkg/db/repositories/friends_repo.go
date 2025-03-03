@@ -52,20 +52,20 @@ func GetFollowers(userId int) ([]models.UnfollowUser, error) {
 	unfu := []models.UnfollowUser{}
 	query := `
     SELECT
-        u.id,
-        u.first_name,
-        u.last_name,
-        u.nickname,
-        u.avatar_url
-    FROM users u
-    WHERE u.id NOT IN (
-        SELECT f.follower_id
-        FROM followers f
-        WHERE f.following_id = $1 AND f.follower_id = u.id
-    ) AND u.id != $1
-    ORDER BY random()
+    	u.id,
+    	u.first_name,
+    	u.last_name,
+    	u.nickname,
+    	u.avatar_url
+	FROM users u
+	WHERE NOT EXISTS (
+    SELECT 1 FROM followers 
+    	WHERE follower_id = $1 AND following_id = u.id  
+	)
+	AND u.id != $1  
+	ORDER BY RANDOM()
 	LIMIT 5;
-`
+	`
 	rows, err := db.DB.Query(query, userId)
 	if err != nil {
 		return nil, err

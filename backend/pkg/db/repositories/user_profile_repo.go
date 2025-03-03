@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset int) error {
 	query := `
 		SELECT 
 			 c.id,
@@ -19,13 +19,13 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset 
 			c.image_url,
 			COUNT(DISTINCT cm.id) AS total_comments,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-			COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+			(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
 		FROM card c
 		JOIN posts p ON c.id = p.card_id
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = ?
+		WHERE u.id = $1
 		GROUP BY 
 			c.id, 
 			c.user_id, 
@@ -37,7 +37,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset 
 		ORDER BY c.created_at DESC
 		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId,offset)
+	rows, err := db.DB.Query(query, userId, offset)
 	if err != nil {
 		return err
 	}
@@ -57,7 +57,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId , offset 
 			&post.ImageUrl,
 			&post.TotalComments,
 			&post.TotalLikes,
-			&post.TotalDislikes,
+			&post.IsLiked,
 		)
 		if err != nil {
 			return err
@@ -97,8 +97,8 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
 }
 
 func GetStatusUesr(userId int) string {
-	query := `SELECT profile_type FROM user WHERE id = ?`
+	query := `SELECT profile_type FROM users WHERE id = ?`
 	profile_type := "Not Found"
-	db.DB.QueryRow(query).Scan(&profile_type)
+	db.DB.QueryRow(query, userId).Scan(&profile_type)
 	return profile_type
 }

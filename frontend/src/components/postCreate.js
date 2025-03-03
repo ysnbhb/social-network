@@ -113,7 +113,7 @@ export default function PostCreater({setPosts , classes}) {
             >
               <option value="public">Public</option>
               <option value="private">Private</option>
-              <option value="almost_private">Almost Private</option>
+              <option value="almostPrivate">Almost Private</option>
             </select>
           </div>
         </div>

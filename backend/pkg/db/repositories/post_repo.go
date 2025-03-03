@@ -27,7 +27,7 @@ func GetOneCard(cardId int) (*models.PostsResponse, error) {
 		c.user_id,
 		c.content,
 		c.created_at,
-		u.avatar_url,
+		COALESCE(u.avatar_url , '') AS avatar_url,
 		u.first_name,
 		u.last_name,
 		u.nickname,

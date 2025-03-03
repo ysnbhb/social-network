@@ -2,11 +2,9 @@ package controllers // auth_controller.go
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 	"log"
 	"net/http"
-	"path/filepath"
-	"slices"
 	"time"
 
 	"social-network/app/services"
@@ -75,14 +73,21 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	user.Profile_Type = r.FormValue("profile_type")
 	user.CreatedAt = time.Now()
 	file, headerFiel, _ := r.FormFile("img")
-	user.File = file
-	user.FileHeader = headerFiel
-	fmt.Println(user.Profile_Type)
-	ext := []string{".png", ".gif", ".jpg", ".jpeg"}
-	if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
-		utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
-		log.Println(err)
-		return
+	if file != nil {
+		user.ImgContant, err = utils.LimitRead(file, 1*1024*1024)
+		if err != nil {
+			utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		err = utils.ValidImg(headerFiel.Header.Get("Content-Type"), headerFiel.Size)
+		if err != nil {
+			utils.JsonResponse(w, errors.New("validating image: "+err.Error()), http.StatusBadRequest)
+			return
+		}
+		if utils.IsSVG(user.ImgContant) {
+			utils.JsonResponse(w, "img is svg", http.StatusBadRequest)
+			return
+		}
 	}
 	err = utils.ValidateUser(&user)
 	if err != nil {

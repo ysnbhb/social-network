@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"fmt"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
@@ -13,16 +14,13 @@ func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 	if err != nil {
 		return nil, errors.New("validating post: " + err.Error())
 	}
-	if postRequest.File != nil {
-		err = utils.ValidImg(postRequest.FileHeader.Header.Get("Content-Type"), postRequest.FileHeader.Size)
-		if err != nil {
-			return nil, errors.New("validating image: " + err.Error())
-		}
-		postRequest.ImageUrl, err = utils.SaveImg(postRequest.File)
+	if len(postRequest.ImgContant) != 0 {
+		postRequest.ImageUrl, err = utils.SaveImg(postRequest.ImgContant)
 		if err != nil {
 			return nil, errors.New("field to save image")
 		}
 	}
+	fmt.Println(postRequest.GroupId)
 	if postRequest.GroupId != 0 && !repo.CheckUserInGroup(postRequest.GroupId, postRequest.UserId) {
 		return nil, errors.New("you can't post in this group")
 	}

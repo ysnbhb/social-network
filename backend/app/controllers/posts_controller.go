@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -29,15 +31,24 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 	var postRequest models.PostRequest
 	postRequest.Content = contant
 	postRequest.Privacy = privacy
-	postRequest.File = file
-	postRequest.FileHeader = headerFiel
-	// ext := []string{".png", ".gif", ".jpg", ".jpeg"}
-	// if !slices.Contains(ext, filepath.Ext(headerFiel.Filename)) {
-	// 	utils.JsonResponse(w, "Err Invalid extension", http.StatusBadRequest)
-	// 	log.Println(err)
-	// 	return
-	// }
+	if file != nil {
+		postRequest.ImgContant, err = utils.LimitRead(file, 3*1024*1024)
+		if err != nil {
+			utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		err = utils.ValidImg(headerFiel.Header.Get("Content-Type"), headerFiel.Size)
+		if err != nil {
+			utils.JsonResponse(w, errors.New("validating image: "+err.Error()), http.StatusBadRequest)
+			return
+		}
+		if utils.IsSVG(postRequest.ImgContant) {
+			utils.JsonResponse(w, "img is svg", http.StatusBadRequest)
+			return
+		}
+	}
 	postRequest.GroupId, _ = strconv.Atoi("groupId")
+	fmt.Println(postRequest)
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
 	post, err := services.CreatPost(&postRequest)
