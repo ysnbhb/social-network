@@ -1456,3 +1456,6 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/03 11:06:19 server.go:27: Starting server on :8080
 2025/03/03 11:06:21 user_profile.go:14: Get Created Posts: not enough args to execute query: want 3 got 2
 2025/03/03 11:06:57 server.go:27: Starting server on :8080
+2025/03/03 11:17:41 server.go:27: Starting server on :8080
+2025/03/03 11:19:47 auth_controller.go:33: sorry, this email does not exist
+2025/03/03 11:20:11 user_repo.go:33: <nil>
