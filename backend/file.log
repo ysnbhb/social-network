@@ -1726,3 +1726,163 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/03 12:26:05 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
 2025/03/03 12:26:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/03 12:27:00 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:16:50 server.go:27: Starting server on :8080
+2025/03/03 14:18:27 user_repo.go:33: <nil>
+2025/03/03 14:18:27 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:18:29 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:19:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:19:15 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:19:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:19:20 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:19:29 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:19:33 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:21:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:21:44 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:23:57 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:24:01 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:24:12 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:24:15 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:24:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:24:27 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:26:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:26:10 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:27:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:27:25 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:28:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:28:38 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:28:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:29:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:29:00 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:30:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:30:40 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:30:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:30:50 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:30:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:31:00 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:31:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:31:04 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:32:06 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:32:31 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:32:42 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:32:48 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:34:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:34:14 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:34:29 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:34:30 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:35:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:35:41 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:36:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:36:15 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:38:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:38:29 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:39:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:39:55 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:40:04 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:42:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:42:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:42:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:42:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:42:05 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:42:05 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:42:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:42:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:43:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:56:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:56:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:56:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:56:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:57:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:58:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:58:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:58:28 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:58:28 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:58:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:58:49 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:58:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:58:56 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:59:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:59:01 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:59:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:59:04 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:59:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:59:28 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 14:59:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 14:59:30 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:00:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:00:18 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:00:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:00:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:00:21 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:01:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:02:00 server.go:27: Starting server on :8080
+2025/03/03 15:02:08 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:02:14 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:02:19 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:02:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:02:49 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:03:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:03:54 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:03:56 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:06:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:06:43 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:06:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:06:53 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:07:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:07:34 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:08:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:08:23 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:10:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:10:43 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/03 15:11:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:11:17 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/03 15:11:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:11:53 serveContent.go:26: open ./uploads/bbc37c45-7224-45bd-866e-273f3ecb441c.jpg: no such file or directory
+2025/03/03 15:12:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:12:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:13:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:15:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:17:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:18:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:19:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:19:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:19:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:19:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:20:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:24:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:24:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:24:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:25:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:25:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:26:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:26:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:27:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:28:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:29:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 15:30:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)

@@ -13,7 +13,10 @@ export function PostCompte({ post  , className, classes = {} }) {
     nickName,
     totalComments,
     totalLikes,
+    avatarUrl,
   } = post;
+  console.log(post);
+  
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
   // console.log(imageUrl);
@@ -38,10 +41,23 @@ export function PostCompte({ post  , className, classes = {} }) {
   };
   return (
     <>
-      <div className="post" classes={`${classes.div_feed}`} >
+      <div className="post" >
         <div className="post-header">
           <div className="post-author">
-            <div className="avatar"></div>
+         
+            {avatarUrl ?(
+                  <img
+                    src={`${avatarUrl}`}
+                    alt="Post"
+                    // className={ className}
+                    className="avatar" 
+                    // style={{ width: "100%", height: "auto" }}
+                  />
+        ): (
+          <div className="avatar" ></div>
+        )
+        
+        } 
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
               <p className="text-muted">@{nickName}</p>
@@ -54,6 +70,7 @@ export function PostCompte({ post  , className, classes = {} }) {
           <img
             src={`${imageUrl}`}
             alt="Post"
+            className={ className}
             style={{ width: "100%", height: "auto" }}
           />
         )}

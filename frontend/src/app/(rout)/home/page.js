@@ -7,8 +7,7 @@ import ActivitySide from '../../../components/activitySide.js';
 import '../home/globals.css';
 
 export default  function Home() { 
-    const { dataProfile } = useContext(Context);
-     
+      
      return (
     <div>
       {/* Use Navbar as a JSX element */}

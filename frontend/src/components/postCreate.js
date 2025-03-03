@@ -1,16 +1,21 @@
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { CreatePost } from "../lib/createPost";
+import userProfile from "@/app/hooks/userProfile";
 
 export default function PostCreater({setPosts , classes}) {
     const [content, setContent] = useState("");
   const [postType, setPostType] = useState("public");
   const [img, setImg] = useState(null);
+   const [profiledata, errorPro] = userProfile();
+     const {
+    avatarUrl,  
+    } = profiledata;
+
   const handalPost = async (e) => {
     e.preventDefault();
     const res = await CreatePost(content, postType, img);
-    console.log(res);
-    
+     
     if (res) {
       setContent("");
       setImg(null);
@@ -23,7 +28,17 @@ export default function PostCreater({setPosts , classes}) {
     return (
         <div className={`feed ${classes.div_feed}`}>
         <div className="post-creator">
-          <div className="avatar"></div>
+        {avatarUrl ?(
+                  <img
+                    src={`${avatarUrl}`}
+                    alt="Post"
+                     className="avatar" 
+                   />
+        ): (
+          <div className="avatar" ></div>
+        )
+        
+        }
           <textarea
             name=""
             id=""

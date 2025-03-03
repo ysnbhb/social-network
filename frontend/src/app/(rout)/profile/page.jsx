@@ -1,18 +1,25 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "../../../components/images/image6.jpg";
 import bag from "../../../components/images/pxfuel.jpg";
-import ActivitySidebar from "../../../components/activitySide"; 
-import { Context } from "../../../lib/Context";
 import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
-import HomeFeed from "@/components/homeFeed";
+import userProfile from "@/app/hooks/userProfile";
 
-export default function Profile({ params }) {
-  const contextValues = useContext(Context);
-  console.log(contextValues.dataProfile);
+export default function Profile() {
+  const [profiledata, errorPro] = userProfile();
+  const {
+    avatarUrl,
+    firstName,
+    follower_count,
+    following_count,
+    lastName,
+    aboutMe,
+    nickName,
+    posts_count,
+  } = profiledata;
+  console.log(profiledata);
 
   const [profile, error] = useGetProfile();
   const [err, setErr] = useState(null);
@@ -59,14 +66,13 @@ export default function Profile({ params }) {
                 objectFit="cover"
               />
             </div>
-
             <div className={style.buttonContainer}>
               <button className={style.followButton}>Follow</button>
               <button className={style.moreButton}>Send Message</button>
             </div>
             <span className={style["Circle-image"]}>
-              <Image
-                src={image}
+              <img
+                src={avatarUrl}
                 className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
                 srcSet=""
                 alt="User Avatar"
@@ -78,53 +84,31 @@ export default function Profile({ params }) {
             <div className={style["user"]}>
               <div className={style.content}>
                 <div className={style.about}>
-                  <h1 className={style.name}>Rharbi Omar</h1>
-                  <p className={style.jobTitle}>
-                    Passionate programmer & problem solver 🔹 Student at Zone 01
-                    Oujda – Peer-to-peer learning & innovation 🔹 Always
-                    exploring new technologies
-                  </p>
+                  <h1 className={style.name}>{`${firstName} ${lastName}`} </h1>
+                  <p className={style.jobTitle}>{aboutMe}</p>
                 </div>
                 <div className={style.stats}>
                   <span className={style.statText}>
-                    <span className={style.statNumber}>6,476</span> followers
+                    <span className={style.statNumber}>{follower_count}</span>{" "}
+                    followers
                   </span>
                   <span className={style.statText}>
-                    <span className={style.statNumber}>500+</span> following
+                    <span className={style.statNumber}>{following_count}</span>{" "}
+                    following
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          {/* <HomeFeed
-            className={`${style.Homefeed}`}
-            classes={{ div_feed: style["custom-feed-class"] }}
-            data={data}
-          />    */}
           {!error &&
             profile.map((post) => (
               <PostCompte
-              classes={{ div_feed: style["custom-feed-class"] }}
+                className={style["image"]}
                 key={post.id}
                 post={post}
               />
             ))}
- 
         </div>
-
-        {/* <div className={style["card-users"]}> */}
-          {/* <ActivitySidebar
-            className={`${style.ActivitySidebar}`}
-            classes={menuData}
-            title="followers"
-          />
-
-          <ActivitySidebar
-            className={`${style.ActivitySidebar}`}
-            classes={FollowingData}
-            title="following"
-          /> */}
-        {/* </div> */}
       </div>
     </div>
   );
