@@ -19,13 +19,13 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 			c.image_url,
 			COUNT(DISTINCT cm.id) AS total_comments,
 			COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-			COUNT(DISTINCT CASE WHEN l.reaction_type = -1 THEN l.id END) AS total_dislikes
+			(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
 		FROM card c
 		JOIN posts p ON c.id = p.card_id
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = ?
+		WHERE u.id = $1
 		GROUP BY 
 			c.id, 
 			c.user_id, 
@@ -57,7 +57,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 			&post.ImageUrl,
 			&post.TotalComments,
 			&post.TotalLikes,
-			&post.TotalDislikes,
+			&post.IsLiked,
 		)
 		if err != nil {
 			return err

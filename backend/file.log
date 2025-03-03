@@ -1445,3 +1445,14 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/02 15:56:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/02 15:56:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/02 15:56:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 16:01:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 16:01:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 16:03:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 16:04:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 11:05:01 server.go:27: Starting server on :8080
+2025/03/03 11:05:33 user_profile.go:14: Get Created Posts: not enough args to execute query: want 3 got 2
+2025/03/03 11:05:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/03 11:05:41 user_profile.go:14: Get Created Posts: not enough args to execute query: want 3 got 2
+2025/03/03 11:06:19 server.go:27: Starting server on :8080
+2025/03/03 11:06:21 user_profile.go:14: Get Created Posts: not enough args to execute query: want 3 got 2
+2025/03/03 11:06:57 server.go:27: Starting server on :8080
