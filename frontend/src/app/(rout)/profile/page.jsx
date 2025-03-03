@@ -2,12 +2,12 @@
 import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import image from "@/components/images/IMG-20240514-WA0002.jpg";
-import bag from "@/components/images/image6.jpg";
+import image from "@/components/images/pxfuel.jpg";
+import bag from "@/components/images/pxfuel.jpg";
 import ActivitySidebar from "@/components/activitySide.js";
 import { Context } from "@/lib/Context.js";
 import { PostCompte } from "@/components/postComp.js";
-import { Profile_Posts } from "@/lib/profilePost";
+// import { Profile_Posts } from "@/lib/profilePost";
 import useGetProfile from "@/app/hooks/useGetProfile";
 
 export default function Profile({ params }) {

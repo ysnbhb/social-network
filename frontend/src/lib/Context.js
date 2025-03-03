@@ -1,6 +1,6 @@
 "use client"
 import { createContext, useEffect, useState } from 'react';
-import Profile_Info from './ProfileInfo';
+// import Profile_Info from './ProfileInfo';
  
 export const Context = createContext({
   dataProfile: null,
@@ -12,8 +12,8 @@ export   function ContextProvider({children}) {
   useEffect(() => {
       const fetchData = async () => {
           try {
-            const profileData = await Profile_Info();
-            setDataProfile(profileData);
+            // const profileData = await Profile_Info();
+            // setDataProfile(profileData);
             
         } catch (error) {
             console.error("Failed to load stored profile data:", error);

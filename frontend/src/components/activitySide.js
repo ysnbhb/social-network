@@ -3,7 +3,7 @@ import Image from "next/image";
 import "../styles/activitySidebar.css";
 // import style from "../profile/profile.module.css";
 
-import image from "../components/images/IMG-20240514-WA0002.jpg";
+import image from "../components/images/pxfuel.jpg";
 import { useEffect, useState } from "react";
 export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);

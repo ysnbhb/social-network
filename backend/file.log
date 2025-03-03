@@ -583,3 +583,22 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/02 14:25:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/02 14:34:36 server.go:27: Starting server on :8080
 2025/03/02 15:00:21 server.go:27: Starting server on :8080
+2025/03/02 15:28:06 server.go:27: Starting server on :8080
+2025/03/02 15:28:49 user_repo.go:33: <nil>
+2025/03/02 15:29:03 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/02 15:29:03 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/02 15:29:03 serveContent.go:26: open ./uploads/5922d5c5-af9b-4231-aaf3-3466dbb48c16.jpg: no such file or directory
+2025/03/02 15:29:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 15:29:11 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/02 15:29:11 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/02 15:29:11 serveContent.go:26: open ./uploads/5922d5c5-af9b-4231-aaf3-3466dbb48c16.jpg: no such file or directory
+2025/03/02 15:30:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/02 15:31:27 serveContent.go:26: open ./uploads/5922d5c5-af9b-4231-aaf3-3466dbb48c16.jpg: no such file or directory
+2025/03/02 15:31:27 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/02 15:31:27 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/02 15:31:33 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/02 15:31:33 serveContent.go:26: open ./uploads/5922d5c5-af9b-4231-aaf3-3466dbb48c16.jpg: no such file or directory
+2025/03/02 15:31:33 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/02 15:31:39 serveContent.go:26: open ./uploads/162e79ed-afdd-4f0d-b0e2-a74d3f2df21a.jpg: no such file or directory
+2025/03/02 15:31:39 serveContent.go:26: open ./uploads/06e61e3c-65b4-42b3-b446-e6d3af65a5c9.jpg: no such file or directory
+2025/03/02 15:31:39 serveContent.go:26: open ./uploads/5922d5c5-af9b-4231-aaf3-3466dbb48c16.jpg: no such file or directory
