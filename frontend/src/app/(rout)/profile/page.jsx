@@ -73,12 +73,12 @@ export default function Profile() {
             <span className={style["Circle-image"]}>
               <img
                 src={avatarUrl}
-              //   className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
-              //   srcSet=""
-              //   alt="User Avatar"
-              //   layout="fill"
-              //   objectFit="cover"
-              // />
+                className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
+                srcSet=""
+                alt="User Avatar"
+                layout="fill"
+                objectFit="cover"
+              />
             </span>
 
             <div className={style["user"]}>
