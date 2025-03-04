@@ -63,7 +63,7 @@ export default function Profile() {
                 alt=""
                 srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
-                objectFit="cover"
+                objectfit="cover"
               />
             </div>
             <div className={style.buttonContainer}>
@@ -77,7 +77,7 @@ export default function Profile() {
                 srcSet=""
                 alt="User Avatar"
                 layout="fill"
-                objectFit="cover"
+                objectfit="cover"
               />
             </span>
 

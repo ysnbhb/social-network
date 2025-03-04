@@ -1,22 +1,25 @@
-import { NextResponse } from "next/server"; 
- 
-  export function middleware(request){
-      const url = new URL(request.url);
-      const isLoggedIn =request.cookies.get('session_id') !== undefined;
-        
-        // if (isLoggedIn && url.pathname==="/login"){
-        //   if (isLoggedIn) {
-        //     return NextResponse.redirect(new URL('/home', request.url));
-        //   }
-        // }
-        
+import { NextResponse } from 'next/server';
 
-      if (isLoggedIn && ['/login'].includes(url.pathname) ) {
-        return NextResponse.next();
-      }
-      return NextResponse.redirect(new URL('/login', request.url));
-      
+export function middleware(request) {
+  const url = new URL(request.url);
+
+  // Check if the user is logged in  
+  const isLoggedIn = request.cookies.get('session_id') !== undefined;
+
+  // If the user is logged in and tries to access /login, redirect them to /home
+  if (isLoggedIn && url.pathname === '/login') {
+    return NextResponse.redirect(new URL('/home', request.url));
   }
-  export const config = {
-      matcher: ['/home', '/profile'],  
-    };
+
+  // If the user is not logged in and tries to access protected routes, redirect them to /login
+  if (!isLoggedIn  ) {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+ 
+  return NextResponse.next();
+}
+
+// Define paths where middleware should apply
+export const config = {
+  matcher: ['/login', '/home', '/profile'], // Apply middleware to these routes
+};
