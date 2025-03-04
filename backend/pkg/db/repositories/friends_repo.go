@@ -19,17 +19,17 @@ func GetFriends(Friends *[]models.Friends, userId int) error {
     LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accepted'
     LEFT JOIN chats c ON (u.id = c.sender_id AND c.recipient_id = ?)
                         OR (u.id = c.recipient_id AND c.sender_id = ?)
-    WHERE u.profile_type = 'public'
-       OR f1.following_id IS NOT NULL
+    WHERE
+       f1.following_id IS NOT NULL
        OR f2.follower_id IS NOT NULL
        OR c.id IS NOT NULL
     ORDER BY u.nickname ASC;
     `
 
-    rows, err := db.DB.Query(query, userId, userId, userId, userId)
-    if err != nil {
-        return err
-    }
+	rows, err := db.DB.Query(query, userId, userId, userId, userId)
+	if err != nil {
+		return err
+	}
 	defer rows.Close()
 	for rows.Next() {
 		var friend models.Friends

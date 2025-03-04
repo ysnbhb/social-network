@@ -38,7 +38,8 @@
     position: relative;
     word-wrap: break-word;
 }
-#msg{
+
+#msg {
     flex: 1;
     padding: 20px;
     display: flex;
@@ -48,6 +49,7 @@
     max-height: 75vh;
     scrollbar-color: #1da1f2 #f0f4f8;
 }
+
 .sender {
     align-self: flex-start;
     background-color: #acacac;
@@ -217,13 +219,14 @@ button:hover {
     margin-bottom: 10px;
     padding: 0 10px 0 10px;
     border-radius: 5px;
-    transition: all 1s 
-
+    transition: all 1s
 }
+
 .user-item:hover {
     background-color: #f1f1f1;
     scale: 1.05;
 }
+
 .statue {
     height: 10px;
     background-color: #d3d3d3;
@@ -242,4 +245,40 @@ button:hover {
     line-height: 16px;
     top: -5px;
     right: -5px;
+}
+
+/******************/
+/* Emoji Picker */
+.emoji-picker {
+    position: absolute;
+    bottom: 45px;
+    right: 12px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.emoji-picker button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.emoji-picker button:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+.emoji-picker button:active {
+    background-color: #e0e0e0;
 }
