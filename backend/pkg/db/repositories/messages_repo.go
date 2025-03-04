@@ -10,28 +10,28 @@ import (
 )
 
 func CheckCanUSendMessage(Receivers string, Userid int) error {
-    recieverid := GetUserIdByNickName(Receivers)
-    if recieverid < 0 {
-        return errors.New("User not found")
-    }
-    query1 := "SELECT profile_type FROM users WHERE id = ?"
-    var profileType string
-    err := db.DB.QueryRow(query1, recieverid).Scan(&profileType)
-    if err != nil {
-        return err
-    }
-    if profileType == "private" {
-        query2 := "SELECT COUNT(*) FROM followers WHERE follower_id = ? AND following_id = ? OR following_id = ? AND follower_id = ?"
-        var count int
-        err := db.DB.QueryRow(query2, Userid, recieverid, Userid, recieverid).Scan(&count)
-        if err != nil {
-            return err
-        }
-        if count == 0 {
-            return errors.New("You are not following this user")
-        }
-    }
-    return nil
+	recieverid := GetUserIdByNickName(Receivers)
+	if recieverid < 0 {
+		return errors.New("User not found")
+	}
+	query1 := "SELECT profile_type FROM users WHERE id = ?"
+	var profileType string
+	err := db.DB.QueryRow(query1, recieverid).Scan(&profileType)
+	if err != nil {
+		return errors.New("User not found")
+	}
+	if profileType == "private" {
+		query2 := "SELECT COUNT(*) FROM followers WHERE follower_id = ? AND following_id = ? OR following_id = ? AND follower_id = ?"
+		var count int
+		err := db.DB.QueryRow(query2, Userid, recieverid, Userid, recieverid).Scan(&count)
+		if err != nil {
+			return err
+		}
+		if count == 0 {
+			return errors.New("You are not following this user")
+		}
+	}
+	return nil
 }
 
 func Addmessages(msg models.Message, client *models.Client) error {
@@ -99,9 +99,9 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 	client.Conn.WriteJSON(map[string]interface{}{
 		"type":     "getmessagesusers",
 		"messages": messages,
-		"you":   GetNickName(client.Userid),
+		"you":      GetNickName(client.Userid),
 		"offset":   msg.Offset,
-		"he" :     msg.Receivers[0],
+		"he":       msg.Receivers[0],
 	})
 	return nil
 }

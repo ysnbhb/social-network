@@ -48,7 +48,7 @@ func getExistingFollow(FollowerId, FollowingId int) bool {
 
 func IsFollowing(FollowerId, FollowingId int) bool {
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? ADN status = ?)`
+	query := `SELECT EXISTS(SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? AND status = ?)`
 	err := db.DB.QueryRow(query, FollowerId, FollowingId, "accepted").Scan(&exists)
 	if err != nil {
 		log.Println("error checking existing follow:", err)

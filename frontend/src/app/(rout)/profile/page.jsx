@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import bag from "../../../components/images/pxfuel.jpg";
+ import bag from "../../../components/images/pxfuel.jpg";
 import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
@@ -59,7 +59,7 @@ export default function Profile() {
           <div className={style["card-profile-posts"]}>
             <div className={`${style["avatar-user"]}`}>
               <Image
-                src={bag}
+                 src={bag}
                 alt=""
                 srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
@@ -104,6 +104,7 @@ export default function Profile() {
             profile.map((post) => (
               <PostCompte
                 className={style["image"]}
+                classes={{post:style["posts-profile"]}}
                 key={post.id}
                 post={post}
               />
