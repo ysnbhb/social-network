@@ -1,0 +1,59 @@
+.group-sidebar {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Group Header */
+.group-header {
+    padding: 0 0 15px 10px ;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.group-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.group-members {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Menu Options */
+.menu-options {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.menu-option {
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-option:hover {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.menu-option.active {
+    background: #1da1f2;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.menu-options a {
+    text-decoration: none;
+}
