@@ -151,8 +151,16 @@ func GetGroupPost(groupId, userid, offste int) ([]models.PostsResponse, error, i
 	return posts, nil, http.StatusOK
 }
 
-func ListGroups(userId int) ([]models.Groups, error) {
-	return repo.ListGroups(userId)
+func ListJionGroups(userId int) ([]models.Groups, error) {
+	return repo.ListJionGroups(userId)
+}
+
+func ListUnJoinGroups(userId int) ([]models.Groups, error) {
+	return repo.ListUnJoinGroups(userId)
+}
+
+func ListInviGroups(userId int) ([]models.Groups, error) {
+	return repo.ListInviGroups(userId)
 }
 
 func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {

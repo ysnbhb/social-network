@@ -59,7 +59,7 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 		return
 	}
-	
+
 	gpJion := models.Group_Jion{}
 	err := json.NewDecoder(r.Body).Decode(&gpJion)
 	if err != nil {
@@ -123,7 +123,27 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 
 func ListGroups(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("userId").(int)
-	groups, err := services.ListGroups(userId)
+	groups, err := services.ListJionGroups(userId)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get groups", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, groups, http.StatusOK)
+}
+
+func ListUnJoinGroups(w http.ResponseWriter, r *http.Request) {
+	userId := r.Context().Value("userId").(int)
+	groups, err := services.ListUnJoinGroups(userId)
+	if err != nil {
+		utils.JsonResponse(w, "fieled to get groups", http.StatusInternalServerError)
+		return
+	}
+	utils.JsonResponse(w, groups, http.StatusOK)
+}
+
+func ListInviGroups(w http.ResponseWriter, r *http.Request) {
+	userId := r.Context().Value("userId").(int)
+	groups, err := services.ListInviGroups(userId)
 	if err != nil {
 		utils.JsonResponse(w, "fieled to get groups", http.StatusInternalServerError)
 		return

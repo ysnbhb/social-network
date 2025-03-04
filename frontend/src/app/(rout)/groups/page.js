@@ -1,14 +1,19 @@
+"use client";
+import { useState } from "react";
 import GroupsFeed from "../../../components/groupsFeed.js";
 import GroupsInv from "../../../components/groupsInv.js";
 import GroupsSide from "../../../components/groupsSide.js";
 import '../../../styles/groups.css';
 
 export default function Groups() {
+  const [joinedGroup, setJoinedGroup] = useState([]);
+  const [invition, setInvition] = useState([]);
+  const [unjoined, setUnjoined] = useState([]);
   return (
     <div>
        <main className="main-content">
-       <GroupsSide />
-       <GroupsFeed />
+       <GroupsSide  setJoinedGroup={setJoinedGroup} groups={joinedGroup} />
+       <GroupsFeed unjoined={unjoined} setUnjoined={setUnjoined} />
        <GroupsInv />
        </main>
     </div>

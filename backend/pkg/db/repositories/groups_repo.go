@@ -175,6 +175,129 @@ func ListGroups(userid int) ([]models.Groups, error) {
 	return groups, nil
 }
 
+func ListJionGroups(userid int) ([]models.Groups, error) {
+	query := `
+   	SELECT 
+    g.id, 
+    g.title, 
+    g.description,
+    COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members  
+	FROM groups g
+	LEFT JOIN group_members gm ON g.id = gm.group_id 
+    WHERE EXISTS (
+        SELECT 1 FROM group_members 
+        WHERE group_id = g.id 
+        AND user_id = $1
+    )
+	GROUP BY g.id
+	ORDER BY g.id;
+	`
+	rows, err := db.DB.Query(query, userid)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.TotalMembers)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		groups = append(groups, group)
+	}
+	return groups, nil
+}
+
+func ListUnJoinGroups(userid int) ([]models.Groups, error) {
+	query := `
+   SELECT 
+    g.id, 
+    g.title, 
+    g.description,
+	g.creator_id,
+    COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members,
+	COALESCE((SELECT status
+     FROM group_invitations 
+     WHERE group_id = g.id 
+     AND user_id = $1
+     LIMIT 1) , '') AS invi 
+	FROM groups g
+	LEFT JOIN group_members gm ON g.id = gm.group_id 
+    WHERE NOT EXISTS (
+        SELECT 1 FROM group_members 
+        WHERE group_id = g.id 
+        AND user_id = $1
+    ) AND NOT EXISTS (
+        SELECT 1 FROM group_invitations
+        WHERE group_id = g.id
+        AND user_id = $1
+		AND status = 'invitation'
+    )
+	GROUP BY g.id
+	ORDER BY g.id;
+	`
+	rows, err := db.DB.Query(query, userid)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Owner, &group.TotalMembers, &group.Status)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		groups = append(groups, group)
+	}
+	return groups, nil
+}
+
+func ListInviGroups(userid int) ([]models.Groups, error) {
+	query := `
+   SELECT 
+    g.id, 
+    g.title, 
+    g.description,
+    COALESCE(COUNT(DISTINCT gm.user_id), 0) AS total_members,
+	COALESCE((SELECT status
+     FROM group_invitations 
+     WHERE group_id = g.id 
+     AND user_id = $1
+     LIMIT 1) , '') AS invi 
+	FROM groups g
+	LEFT JOIN group_members gm ON g.id = gm.group_id 
+    WHERE NOT EXISTS (
+        SELECT 1 FROM group_members 
+        WHERE group_id = g.id 
+        AND user_id = $1
+    ) AND EXISTS (
+        SELECT 1 FROM group_invitations
+        WHERE group_id = g.id
+        AND user_id = $1
+		AND status = 'invitation'
+    )
+	GROUP BY g.id
+	ORDER BY g.id;
+	`
+	rows, err := db.DB.Query(query, userid)
+	if err != nil {
+		return nil, err
+	}
+	groups := []models.Groups{}
+	for rows.Next() {
+		group := models.Groups{}
+		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.TotalMembers, &group.Status)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		groups = append(groups, group)
+	}
+	return groups, nil
+}
+
 func GetGroupIdFromPost(postId int) int {
 	groupId := 0
 	query := `SELECT group_id FROM card WHERE id = ?`
