@@ -17,7 +17,8 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 		return err
 	}
 	session.UserUUID = UUID
-	session.ExpiresAt = time.Now().Add(24 * time.Hour)
+	session.ExpiresAt= time.Now().Add(24 * time.Hour)
+	 
 	err = repo.CreateSession(&session)
 	if err != nil {
 		return err
