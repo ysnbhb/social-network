@@ -110,8 +110,7 @@
   overflow-y: auto;
   gap: 20px;
   height: 92vh;
-  padding-bottom: 21px;
-  padding-top: 10px;
+padding: 12px;
 }
 
 .card-profile::-webkit-scrollbar {
@@ -309,4 +308,9 @@ span.Circle-image {
 /* ActivitySidebar */
 .ActivitySidebar {
   margin-bottom: 20px !important;
+}
+
+
+.posts-profile{
+  width: 98%;
 }

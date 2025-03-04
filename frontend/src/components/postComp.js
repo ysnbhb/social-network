@@ -41,7 +41,7 @@ export function PostCompte({ post  , className, classes = {} }) {
   };
   return (
     <>
-      <div className="post" >
+      <div className={`post ${classes.post}`} >
         <div className="post-header">
           <div className="post-author">
          

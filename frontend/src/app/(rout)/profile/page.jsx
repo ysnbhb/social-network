@@ -104,6 +104,7 @@ export default function Profile() {
             profile.map((post) => (
               <PostCompte
                 className={style["image"]}
+                classes={{post:style["posts-profile"]}}
                 key={post.id}
                 post={post}
               />
