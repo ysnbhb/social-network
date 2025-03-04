@@ -1,7 +1,15 @@
+.main-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+}
+
 .chat-container {
     flex: 1;
     display: flex;
-    border-radius: 16px;
     overflow: hidden;
     flex-direction: column;
     margin: 0 auto;
@@ -80,6 +88,13 @@
     background-color: #ccc;
 }
 
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This ensures the image covers the container without distorting */
+}
+
 .message .sender-info .time,
 .message .receiver-info .time {
     font-size: 12px;
@@ -152,7 +167,7 @@
 
 .user-list {
     background-color: white;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     padding: 1.5rem 1.5rem 1rem 1.5rem;
     position: sticky;
     top: 80px;

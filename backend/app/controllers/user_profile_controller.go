@@ -61,6 +61,7 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, err.Error() +"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
+	//select the user info from  the database
 	var userInfo map[string]string
 	userInfo = map[string]string{
 		"nickname": username,
