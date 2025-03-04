@@ -21,7 +21,8 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
 	fmt.Println(offset)
 	userId := r.Context().Value("userId").(int)
-	postsResponse := services.GetPostsUserProfile(userId, offset) // just test with user id 1
+	postsResponse := services.GetPostsUserProfile(userId, offset)
+	fmt.Println(postsResponse) // just test with user id 1
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)

@@ -79,7 +79,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
-    background: url("../components/test.jpg") no-repeat center/cover;
+    /* background: url("../components/test.jpg") no-repeat center/cover; */
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
     cursor: pointer;
 }

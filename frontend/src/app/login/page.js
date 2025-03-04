@@ -71,7 +71,7 @@ export default function Login() {
     if (response.ok) { 
       const content = await response.json();
       if (contextValues && typeof contextValues.setDataProfile === 'function') {
-        // contextValues.setDataProfile(content);
+        contextValues.setDataProfile(content);
       }else {
         console.error("setDataProfile is not available in context");
        }

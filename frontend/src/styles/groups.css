@@ -1,0 +1,225 @@
+.myGroupsSide, .groupInvitations {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h2 {
+    color: #333;
+    padding-left: 0.5rem;
+}
+
+.groupsList {
+    padding: 10px;
+}
+
+.group-item , .invitation-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.group-item:hover, .invitation-item:hover {
+    background-color: #f8f9fa;
+}
+
+.group-info, .invitation-info {
+    flex-grow: 1;
+}
+
+.group-title, .invitation-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.group-members, .invitation-members {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.open-group-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.3);
+}
+
+.open-group-btn:hover {
+  background-color: #1a91da;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(29, 161, 242, 0.4);
+}
+
+  .group-creator {
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    position: sticky;
+    top: 80px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .creator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .creator-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .create-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.3);
+  }
+
+  .create-btn:hover {
+    background-color: #1a91da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(29, 161, 242, 0.4);
+  }
+
+  .groups-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+  }
+
+  .feed-group-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .feed-group-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .feed-group-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  .feed-group-date {
+    color: #888;
+    font-size: 0.9rem;
+  }
+  .feed-group-description {
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .feed-group-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .feed-group-meta {
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .join-group-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.3);
+    transition: all 0.2s;
+  }
+
+  .join-group-btn:hover {
+    background-color: #1a91da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(29, 161, 242, 0.4);
+  }
+
+  .accept-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.3);
+  }
+  
+  .accept-btn:hover {
+    background-color: #1a91da;
+    transform: translateY(-2px);  /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(29, 161, 242, 0.4);
+  }
+  
+  .accept-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.5);  /* Focus outline for accessibility */
+  }
+  
+  .cancel-btn {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cancel-btn:hover {
+    background-color: #f4f4f4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cancel-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);  /* Focus outline for accessibility */
+  }
+  
+  .invitation-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
