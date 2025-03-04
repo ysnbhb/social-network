@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025/03/02 11:28:53 server.go:27: Starting server on :8080
 2025/03/02 11:30:06 user_repo.go:33: <nil>
 2025/03/02 11:30:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
@@ -2103,3 +2104,91 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/04 14:01:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 14:01:20 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
 2025/03/04 14:01:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+=======
+2025/03/04 12:58:18 server.go:27: Starting server on :8080
+2025/03/04 12:58:34 auth_controller.go:33: sorry, this email does not exist
+2025/03/04 13:00:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:02:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:02:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:02:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:02:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:02:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:03:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:03:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:04:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:05:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:08:07 server.go:27: Starting server on :8080
+2025/03/04 13:09:52 user_repo.go:33: <nil>
+2025/03/04 13:09:52 auth_controller.go:109: adding user to db: email already exist
+2025/03/04 13:10:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:10:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:11:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:11:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:16:25 server.go:27: Starting server on :8080
+2025/03/04 13:16:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:16:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:16:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:16:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:17:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:20:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:21:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:23:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:24:22 server.go:27: Starting server on :8080
+2025/03/04 13:24:44 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:44 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:46 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:46 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:46 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:46 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:47 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:47 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:48 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:48 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:48 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:48 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:49 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:49 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:49 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:49 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:49 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:49 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:50 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:50 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 13:24:54 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:54 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:24:56 followers_repo.go:54: error checking existing follow: near "ADN": syntax error
+2025/03/04 13:24:56 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:25:33 server.go:27: Starting server on :8080
+2025/03/04 13:25:37 reactions_controller.go:32: adding reaction to db: you have to follow the user first
+2025/03/04 13:26:24 server.go:27: Starting server on :8080
+>>>>>>> main
+2025/03/04 14:04:20 server.go:27: Starting server on :8080
+2025/03/04 14:08:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:09:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:09:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:10:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:10:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:11:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:11:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:12:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:13:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)

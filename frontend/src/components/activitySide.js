@@ -1,9 +1,6 @@
 "use client";
 import Image from "next/image";
 import "../styles/activitySidebar.css";
-// import style from "../profile/profile.module.css";
-
-// import image from "../components/images/pxfuel.jpg";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 export default function ActivitySidebar({ className, title }) {
@@ -67,7 +64,6 @@ export function ShowUnfllowUser({ user }) {
   console.log(user);
   return (
     <div className="activity-item">
-      {/* <Image src={image} className="avatar" alt="Avatar" /> */}
       <div>
         <p>
           <strong>

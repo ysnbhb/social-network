@@ -58,16 +58,9 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 	err := repo.CheckCanUSendMessage(username, myuserid)
 	if err != nil {
 		log.Println("error checking if user can send message:", err)
-		utils.JsonResponse(w, "you are not allowed to send message to "+username, http.StatusInternalServerError)
+		utils.JsonResponse(w, err.Error() +"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
-	// if err != nil {
-	// 	client.Conn.WriteJSON(map[string]interface{}{
-	// 		"type":    "error",
-	// 		"content": "you can't send message to this user: " + err.Error(),
-	// 	})
-	// 	return err
-	// }
 	var userInfo map[string]string
 	userInfo = map[string]string{
 		"nickname": username,

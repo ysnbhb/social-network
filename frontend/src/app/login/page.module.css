@@ -258,7 +258,7 @@
 }
 
 .container.rightPanelActive {
-	min-height: 670px;
+	min-height: 770px;
 	transition: all 0.6s ease-in-out;
 }
 
