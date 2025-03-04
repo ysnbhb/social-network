@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import "../styles/homeFeed.css";
+import Link from "next/link";
 export function PostCompte({ post  , className, classes = {} }) {  
   const {
     id,
@@ -44,20 +45,20 @@ export function PostCompte({ post  , className, classes = {} }) {
       <div className={`post ${classes.post}`} >
         <div className="post-header">
           <div className="post-author">
+         <Link href={"/profile?id="+id}>
          
             {avatarUrl ?(
                   <img
                     src={`${avatarUrl}`}
                     alt="Post"
-                    // className={ className}
-                    className="avatar" 
-                    // style={{ width: "100%", height: "auto" }}
-                  />
+                     className="avatar" 
+                   />
         ): (
           <div className="avatar" ></div>
         )
         
         } 
+         </Link>
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
               <p className="text-muted">@{nickName}</p>

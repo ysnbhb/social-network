@@ -3,7 +3,6 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -52,10 +51,8 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 		return
 	}
 	hasInvi, err := repo.HasInvi(groupId.GroupId, userId)
-	fmt.Println(hasInvi, err)
-	if err != sql.ErrNoRows && err != nil {
-		fmt.Println(err)
-		err = errors.New("field to join to group")
+ 	if err != sql.ErrNoRows && err != nil {
+ 		err = errors.New("field to join to group")
 		statusCode = http.StatusInternalServerError
 		return
 	}
@@ -84,8 +81,7 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 		if err == sql.ErrNoRows {
 			err = repo.InsertIntoGroup_Invi(groupId.GroupId, userId, "pending")
 			if err != nil {
-				fmt.Println(err)
-				err = errors.New("field to join to group")
+ 				err = errors.New("field to join to group")
 				statusCode = http.StatusInternalServerError
 			}
 			// err = errors.New("you joined to group")

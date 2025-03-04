@@ -162,3 +162,5 @@
 2025/03/04 15:43:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 15:44:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 15:45:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:52:41 server.go:27: Starting server on :8080
+2025/03/04 15:52:43 user_profile_controller.go:23: 

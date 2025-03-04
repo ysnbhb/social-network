@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -19,11 +18,11 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
-	fmt.Println(offset)
-	userId := r.Context().Value("userId").(int)
+ 	userId := r.Context().Value("userId").(int)
+	user_id:=r.URL.Query().Get("id")
+	log.Println(user_id,"tetst")
 	postsResponse := services.GetPostsUserProfile(userId, offset)
-	fmt.Println(postsResponse) // just test with user id 1
-	err := json.NewEncoder(w).Encode(postsResponse)
+ 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
 		log.Println("error encoding json reactionResponse:", err)
