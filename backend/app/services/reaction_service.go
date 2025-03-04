@@ -25,17 +25,15 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 			if !exist {
 				return errors.New("you have to join to group first")
 			}
-		} else if postinfo.PrivacyType != "public" && postinfo.Privacy == "public" {
+		} else if postinfo.PrivacyType != "Public" && postinfo.Privacy == "public" {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
 			}
-		} else if postinfo.PrivacyType != "public" && postinfo.Privacy == "private" {
-			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
-				return errors.New("you have to follow the user first")
-			} else if !repo.AllToSee(reactionRequest.UserId, postinfo.UserId) {
+		} else if postinfo.Privacy == "private" {
+			if !repo.AllToSee(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you can not see this post")
 			}
-		} else if (postinfo.PrivacyType == "public" || postinfo.PrivacyType != "public") && postinfo.Privacy == "almostPrivate" {
+		} else if postinfo.Privacy == "almostPrivate" {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
 			}

@@ -14,8 +14,14 @@ func RegisterUser(user *models.User) error {
 	if err != nil {
 		return errors.New("email already exist")
 	}
-
-	err = repo.CheckNickName(user.NickName)
+	if (user.NickName) == "" {
+		user.NickName = utils.GenerateUsername(user.FirstName, user.LastName)
+		for err = repo.CheckNickName(user.NickName); err != nil; {
+			user.NickName = utils.GenerateUsername(user.FirstName, user.LastName)
+		}
+	} else {
+		err = repo.CheckNickName(user.NickName)
+	}
 	if err != nil {
 		return errors.New("nickname already exist")
 	}

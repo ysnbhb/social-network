@@ -96,7 +96,7 @@
 	text-align: center;
 }
 
-.page input, .select  {
+.page input, .select , .page textarea {
 	background-color: #f5f5f5;
 	border-radius: 7px;
 	/* border: 1px solid #ddd; */
@@ -122,7 +122,7 @@
 }
  
 
-.page input:focus {
+.page input:focus textarea:focus {
 	background: white;
 	border-color: #0d78c8;
 	outline: none;

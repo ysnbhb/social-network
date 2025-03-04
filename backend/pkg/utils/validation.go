@@ -2,8 +2,12 @@ package utils
 
 import (
 	"errors"
+	"fmt"
+	"math/rand"
 	"net/mail"
 	"regexp"
+	"strings"
+	"time"
 
 	"social-network/pkg/models"
 )
@@ -19,10 +23,10 @@ func ValidateUser(user *models.User) error {
 		return errors.New("invalid last name")
 	}
 
-	nickName := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
-	if !nickName.MatchString(user.NickName) {
-		return errors.New("invalid nickname")
-	}
+	// nickName := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
+	// if !nickName.MatchString(user.NickName) {
+	// 	return errors.New("invalid nickname")
+	// }
 
 	_, err := mail.ParseAddress(user.Email)
 	if err != nil {
@@ -35,4 +39,19 @@ func ValidateUser(user *models.User) error {
 	}
 
 	return nil
+}
+
+func GenerateUsername(firstName, lastName string) string {
+	rand.NewSource(time.Now().UnixNano())
+
+	formats := []string{
+		firstName + lastName,
+		firstName + "." + lastName,
+		firstName + "_" + lastName,
+		firstName + fmt.Sprintf("%d", rand.Intn(900)+100),
+		lastName + fmt.Sprintf("%d", rand.Intn(900)+100),
+	}
+
+	username := formats[rand.Intn(len(formats))]
+	return strings.ToLower(username)
 }

@@ -27,12 +27,12 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 	JOIN users u ON c.user_id = u.id
 	LEFT JOIN comments cm ON c.id = cm.target_id
 	LEFT JOIN likes l ON c.id = l.card_id
-	WHERE (u.profile_type = 'public' AND p.privacy = 'public' AND  (c.group_id is NULL  or c.group_id = 0)) OR
+	WHERE (u.profile_type = 'Public' AND p.privacy = 'public' AND  (c.group_id is NULL  or c.group_id = 0)) OR
     ((p.privacy = 'almostPrivate') AND 
      EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept')
     ) OR 
     p.privacy = 'private' AND EXISTS(SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1 )
-    OR (u.profile_type = 'private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept'))
+    OR (u.profile_type = 'Private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept'))
     OR (c.user_id = $1)
 	GROUP BY 
     c.id, 

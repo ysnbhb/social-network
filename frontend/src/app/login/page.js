@@ -116,7 +116,7 @@ export default function Login() {
               <span>or use your email for registration</span>
               <input type="text" placeholder="First Name" name="firstName" required />
               <input type="text" placeholder="Last Name" name="lastName" required />
-              <input type="text" placeholder="Nickname" name="nickName" required />
+              <input type="text" placeholder="Nickname" name="nickName"  />
               <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
               <input type="email" placeholder="Email" name="email" required />
               <input type="password" placeholder="Password" name="password" required />
@@ -124,6 +124,7 @@ export default function Login() {
                 <option  value={"Public"}>Public</option>
                 <option value={"Private"}>Private</option>
               </select>
+              <textarea placeholder="About Me" name="aboutMe" />
               <input
                 type="file"
                 id="img"
