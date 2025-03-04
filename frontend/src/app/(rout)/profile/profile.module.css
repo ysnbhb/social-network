@@ -134,7 +134,7 @@
 }
 /* show user profile */
 span.Circle-image {
-  width: 140px;
+  width: 130px;
   display: block;
   /* height: 140px; */
   z-index: 333;
@@ -175,9 +175,9 @@ span.Circle-image {
 .avatarContainer-profile {
   border-radius: 50%;
   position: relative !important;
-  height: 140px !important;
+  height: 130px !important;
   border: 2px solid #ffffff;
-  width: 140px !important;
+  width: 130px !important;
 }
 .user {
   width: 90%;
