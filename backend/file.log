@@ -1934,3 +1934,17 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/04 11:38:30 server.go:27: Starting server on :8080
 2025/03/04 11:38:30 server.go:29: Server error: listen tcp :8080: bind: address already in use
 >>>>>>> origin/ysnbhb
+2025/03/04 12:03:47 server.go:27: Starting server on :8080
+2025/03/04 12:03:47 server.go:29: Server error: listen tcp :8080: bind: address already in use
+2025/03/04 12:05:38 server.go:27: Starting server on :8080
+2025/03/04 12:05:42 auth_controller.go:33: sorry, this email does not exist
+2025/03/04 12:06:16 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/04 12:06:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 12:06:37 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/04 12:06:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 12:06:40 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/04 12:06:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 12:06:47 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/04 12:06:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 12:08:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 12:08:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
