@@ -100,3 +100,14 @@ func GetUserIdByNickName(nickname string) int {
 	}
 	return userId
 }
+
+func UpdateProfile(user *models.User) error {
+	query := `UPDATE users 
+	SET 
+    	about_me = CASE WHEN ? <> '' THEN ? ELSE about_me END, 
+    	profile_type = ?
+	WHERE id = ?;
+`
+	_, err := db.DB.Exec(query, user.AboutMe, user.Profile_Type, user.Id)
+	return err
+}
