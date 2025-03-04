@@ -2181,6 +2181,7 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/04 13:25:33 server.go:27: Starting server on :8080
 2025/03/04 13:25:37 reactions_controller.go:32: adding reaction to db: you have to follow the user first
 2025/03/04 13:26:24 server.go:27: Starting server on :8080
+<<<<<<< HEAD
 >>>>>>> main
 2025/03/04 14:04:20 server.go:27: Starting server on :8080
 2025/03/04 14:08:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
@@ -2192,3 +2193,93 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/04 14:11:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 14:12:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 14:13:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+=======
+2025/03/04 14:04:21 server.go:27: Starting server on :8080
+2025/03/04 14:16:24 user_repo.go:33: <nil>
+2025/03/04 14:16:26 user_repo.go:33: <nil>
+2025/03/04 14:16:33 user_repo.go:33: <nil>
+2025/03/04 14:16:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:19:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:19:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:19:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:20:06 user_repo.go:33: <nil>
+2025/03/04 14:24:54 server.go:27: Starting server on :8080
+2025/03/04 14:25:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:06 user_repo.go:33: <nil>
+2025/03/04 14:25:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:25:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:26:15 server.go:27: Starting server on :8080
+2025/03/04 14:26:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:27:05 user_repo.go:33: <nil>
+2025/03/04 14:27:45 server.go:27: Starting server on :8080
+2025/03/04 14:27:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:27:58 user_repo.go:33: <nil>
+2025/03/04 14:28:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:23 user_repo.go:33: <nil>
+2025/03/04 14:28:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 14:28:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:05:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:20:22 server.go:27: Starting server on :8080
+2025/03/04 15:20:30 user_repo.go:33: <nil>
+2025/03/04 15:22:03 server.go:27: Starting server on :8080
+2025/03/04 15:22:11 user_repo.go:33: <nil>
+2025/03/04 15:22:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:24:57 user_repo.go:33: <nil>
+2025/03/04 15:25:24 user_repo.go:33: <nil>
+2025/03/04 15:25:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:26:27 server.go:27: Starting server on :8080
+2025/03/04 15:26:41 user_repo.go:33: <nil>
+2025/03/04 15:26:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:30:57 user_repo.go:33: <nil>
+2025/03/04 15:31:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:31:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:32:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:32:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:32:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:33:06 user_repo.go:33: <nil>
+2025/03/04 15:35:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:36:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:42:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:42:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:42:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:43:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:44:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 15:45:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+>>>>>>> omrharbi
