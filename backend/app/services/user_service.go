@@ -25,7 +25,7 @@ func RegisterUser(user *models.User) error {
 			return errors.New("field to save image")
 		}
 	} else {
-		user.AvatarUrl = "/uploads/default.wepb"
+		user.AvatarUrl = "/uploads/default.webp"
 	}
 	err = repo.CreateUser(user)
 	if err != nil {
