@@ -54,3 +54,8 @@ func LogoutUser(userId int) error {
 	err := repo.DeleteSessionUser(userId)
 	return err
 }
+
+func UpdateProfile(user *models.User) error {
+	err := repo.UpdateProfile(user)
+	return err
+}

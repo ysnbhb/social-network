@@ -1499,3 +1499,5 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/03 11:56:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/03 12:01:03 server.go:27: Starting server on :8080
 2025/03/03 12:01:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/04 11:38:30 server.go:27: Starting server on :8080
+2025/03/04 11:38:30 server.go:29: Server error: listen tcp :8080: bind: address already in use

@@ -137,3 +137,27 @@ func Logout(w http.ResponseWriter, r *http.Request) {
 	services.ClearSession(w)
 	utils.JsonResponse(w, "user loged out successful", http.StatusBadRequest)
 }
+
+func UpdateProfile(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPut {
+		utils.JsonResponse(w, "Status Method Not Allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed in update profile")
+		return
+	}
+
+	userId := r.Context().Value("userId").(int)
+	var user models.User
+	user.Id = userId
+	user.AboutMe = r.FormValue("aboutMe")
+	user.Profile_Type = r.FormValue("profile_type")
+	if user.Profile_Type != "private" && user.Profile_Type != "public" {
+		user.Profile_Type = "public"
+	}
+	err := services.UpdateProfile(&user)
+	if err != nil {
+		utils.JsonResponse(w, "field to update profile", http.StatusBadRequest)
+		log.Println("error in update profile")
+		return
+	}
+	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
+}
