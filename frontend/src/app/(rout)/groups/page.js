@@ -1,11 +1,16 @@
-// import GroupsFeed from '../../components/groupsFeed.js';
-
 import GroupsFeed from "../../../components/groupsFeed.js";
+import GroupsInv from "../../../components/groupsInv.js";
+import GroupsSide from "../../../components/groupsSide.js";
+import '../../../styles/groups.css';
 
-export default function Home() {
+export default function Groups() {
   return (
     <div>
-      <GroupsFeed />
+       <main className="main-content">
+       <GroupsSide />
+       <GroupsFeed />
+       <GroupsInv />
+       </main>
     </div>
   );
 }
