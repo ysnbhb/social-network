@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
 import bag from "../../../components/images/pxfuel.jpg";
@@ -8,9 +8,10 @@ import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
  import { useRouter } from "next/navigation";
 
-export default  function Profile({  searchParams }) {
+export default  function Profile( ) {
   const router = useRouter();
   const [parsedUser, setParsedUser] = useState(null);
+  const [userLogin, setUserLogin] = useState(null);
   useEffect(() => {
     const userProfile = sessionStorage.getItem('selectedUserProfile');
     if (userProfile) {
@@ -18,7 +19,10 @@ export default  function Profile({  searchParams }) {
       setParsedUser(parsedUser);
      }
   }, []);
-
+  useEffect(() => {
+    const storedUserLogin = localStorage.getItem("userID");
+    setUserLogin(storedUserLogin);
+  }, []);
   const [profile, error] = useGetProfile(parsedUser);
   const [profiledata, errorPro] = userProfile(parsedUser);
   const {
@@ -40,8 +44,7 @@ export default  function Profile({  searchParams }) {
     }
   }, [errorPro, router]);
 
-  let userLogin=localStorage.getItem("userID")
-   
+    
   const isOwnProfile =  parsedUser === Number(userLogin); 
     console.log(parsedUser,userLogin);
     

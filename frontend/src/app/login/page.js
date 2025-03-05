@@ -71,7 +71,7 @@ export default function Login() {
     if (response.ok) { 
       const content = await response.json();
       localStorage.setItem("userID",content.id)
-      Router.push('/home') 
+      Router.push('/home')
       
     } else {
       alert("Login failed")
