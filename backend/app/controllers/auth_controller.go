@@ -3,6 +3,7 @@ package controllers // auth_controller.go
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -165,4 +166,9 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
+}
+
+
+func CheckLogin(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("CheckLogin")
 }

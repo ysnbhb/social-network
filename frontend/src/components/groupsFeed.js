@@ -40,7 +40,7 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
       </div>
             {/* Popup Overlay */}
             {showPopup && (
-        <div className="popup-overlay" onClick={togglePopup} >
+        <div className="popup-overlay" >
           <div className="popup-content">
             <div className="popup-header">
               <h2 className="popup-title">Create New Event</h2>

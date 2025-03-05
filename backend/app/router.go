@@ -34,6 +34,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/uploads/", middleware.AuthMiddleware(http.HandlerFunc(controllers.ServeContent)))
 	mux.Handle("/api/notifications", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetNotification)))
 	mux.Handle("/api/user/info", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetuserinfoByname)))
+	mux.Handle("/api/user/checklogin", middleware.AuthMiddleware(http.HandlerFunc(controllers.CheckLogin)))
 
 	return mux
 }

@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -10,7 +11,7 @@ import (
 // AuthMiddleware ensures the user is authenticated via session ID.
 func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// fmt.Println("AuthMiddleware")
+		fmt.Println("AuthMiddleware")
 		var cookie string
 		if r.Header.Get("Connection") == "Upgrade" {
 			cookie = r.URL.Query().Get("session_id")
