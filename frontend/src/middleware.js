@@ -12,7 +12,7 @@ export function middleware(request) {
   }
 
   // If the user is not logged in and tries to access protected routes, redirect them to /login
-  if (!isLoggedIn  ) {
+  if (!isLoggedIn  && (url.pathname !== '/login')) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
  
