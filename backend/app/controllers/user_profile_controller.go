@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -19,10 +18,24 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
-	fmt.Println(offset)
+	var profileUserId int
+
 	userId := r.Context().Value("userId").(int)
-	postsResponse := services.GetPostsUserProfile(userId, offset)
-	fmt.Println(postsResponse) // just test with user id 1
+	other_user := r.URL.Query().Get("id")
+	if other_user != "" {
+		userId_other, err := strconv.Atoi(other_user)
+		if err != nil {
+			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
+			log.Println("This Id Is Incorrect")
+			return
+		}
+		profileUserId = userId_other
+	} else {
+		profileUserId = userId
+	}
+	log.Println(profileUserId, other_user, "hello")
+
+	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
@@ -37,9 +50,29 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
+	var profileUserId int
+
 	userId := r.Context().Value("userId").(int)
-	postsResponse := services.UserProfile(userId) // just test with user id 1
-	err := json.NewEncoder(w).Encode(postsResponse)
+
+	other_user := r.URL.Query().Get("id")
+	if other_user != "" {
+		userId_other, err := strconv.Atoi(other_user)
+		if err != nil {
+			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
+			log.Println("This Id Is Incorrect")
+			return
+		}
+		profileUserId = userId_other
+	} else {
+		profileUserId = userId
+	}
+	postsResponse, err := services.UserProfile(profileUserId)
+	if err != nil {
+		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
+		log.Println("This Id user Is not found:", err)
+		return
+	}
+	err = json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
 		log.Println("error encoding json reactionResponse:", err)
@@ -58,7 +91,7 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 	err := repo.CheckCanUSendMessage(username, myuserid)
 	if err != nil {
 		log.Println("error checking if user can send message:", err)
-		utils.JsonResponse(w, err.Error() +"\nyou are not allowed to send message to "+username, 404)
+		utils.JsonResponse(w, err.Error()+"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
 	var userInfo map[string]string
