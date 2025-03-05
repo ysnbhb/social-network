@@ -1,6 +1,4 @@
-"use client";
-import { useContext } from 'react';
-import { Context } from '../../../lib/Context.js';
+"use client"; 
 import ProfileSide from '../../../components/profileSide.js';
 import HomeFeed from '../../../components/homeFeed.js';
 import ActivitySide from '../../../components/activitySide.js'; 
@@ -16,8 +14,7 @@ export default  function Home() {
       <ProfileSide  />
       <HomeFeed  />
       <ActivitySide 
-          // classes={{ title: "followers",fullname:"Omar Rharbi",time:"30m",button:"Follow" }}
-          />
+           />
       </main>
 
     </div>

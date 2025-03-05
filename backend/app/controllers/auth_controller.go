@@ -40,7 +40,12 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		log.Println("adding session:", err)
 		return
 	}
-	postsResponse := services.UserProfile(login.Id) // just test with user id 1
+	postsResponse, err := services.UserProfile(login.Id) // just test with user id 1
+	if err != nil {
+		utils.JsonResponse(w, "Status Not Found", http.StatusNotFound)
+		log.Println("Status Not Found this User ID", err)
+		return
+	}
 	err = json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)

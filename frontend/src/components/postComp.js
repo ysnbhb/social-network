@@ -1,7 +1,10 @@
 "use client"
 import { useState } from "react";
 import "../styles/homeFeed.css";
-export function PostCompte({ post  , className, classes = {} }) {  
+import { useRouter } from "next/navigation";
+ export function PostCompte({ post  , className, classes = {} }) {  
+  const route=useRouter()
+  
   const {
     id,
     content,
@@ -14,12 +17,10 @@ export function PostCompte({ post  , className, classes = {} }) {
     totalComments,
     totalLikes,
     avatarUrl,
-  } = post;
-  console.log(post);
+  } = post; 
   
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
-  // console.log(imageUrl);
   const handleLike = async () => {
     const res = await fetch("/api/user/reactions", {
       method: "POST",
@@ -39,6 +40,13 @@ export function PostCompte({ post  , className, classes = {} }) {
       setLikes(likesCount);
     }
   };
+
+ 
+  const  handleIduser=()=>{
+    sessionStorage.setItem('selectedUserProfile', JSON.stringify(post.id));
+    route.push('/profile');
+
+  }
   return (
     <>
       <div className={`post ${classes.post}`} >
@@ -47,17 +55,16 @@ export function PostCompte({ post  , className, classes = {} }) {
          
             {avatarUrl ?(
                   <img
+                  onClick={handleIduser} 
                     src={`${avatarUrl}`}
                     alt="Post"
-                    // className={ className}
-                    className="avatar" 
-                    // style={{ width: "100%", height: "auto" }}
-                  />
+                     className="avatar" 
+                   />
         ): (
           <div className="avatar" ></div>
         )
         
-        } 
+        }  
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
               <p className="text-muted">@{nickName}</p>
@@ -74,8 +81,7 @@ export function PostCompte({ post  , className, classes = {} }) {
             style={{ width: "100%", height: "auto" }}
           />
         )}
-        {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> */}
-        <div className="post-actions">
+         <div className="post-actions">
           <div
             className={"like" + (like ? " active" : "")}
             onClick={() => {
