@@ -9,7 +9,7 @@ export function middleware(request) {
     return NextResponse.redirect(new URL('/home', request.url));
   }
 
-   if (!isLoggedIn && url.pathname!="/login" ) {
+   if (!isLoggedIn  ) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
  
