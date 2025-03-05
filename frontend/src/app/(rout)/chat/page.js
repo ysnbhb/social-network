@@ -4,11 +4,9 @@ import UserList from "../../../components/UserList";
 
 function Chat() {
   return (
-    <div>
-      <main className="main-content">
+      <main className="main-content-chat">
         <UserList />
       </main>
-    </div>
   );
 }
 

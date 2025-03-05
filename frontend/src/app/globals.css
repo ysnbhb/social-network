@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -11,16 +12,6 @@ body {
   color: #333;
 }
 
-/* Enhanced Main Content Layout */
-.main-content {
-  display: grid;
-  grid-template-columns: 280px 1fr 320px;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1550px;
-  margin: 0 auto;
-  min-height: calc(100vh - 60px);
-}
 
 .text-muted {
   color: #8e8e8e;

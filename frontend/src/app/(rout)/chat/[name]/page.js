@@ -9,6 +9,7 @@ export default function ChatPage({ params }) {
     const [selectedUser, setSelectedUser] = useState(null);
     const { name } = use(params)
     const router = useRouter();
+    
     useEffect(() => {
         if (name) {
             fetch(`/api/user/info?username=${name}`, {
@@ -32,18 +33,14 @@ export default function ChatPage({ params }) {
                 });
         }
     }, [name]);
-
-
     return (
-        <div>
-            <main className="main-content">
-                <UserList />
-                {selectedUser ? (
-                    <ChatBox user={selectedUser} />
-                ) : (
-                    <div className="select-user">Loading conversation with {name}...</div>
-                )}
-            </main>
-        </div>
+        <main className="main-content-chat">
+            <UserList />
+            {selectedUser ? (
+                <ChatBox user={selectedUser} />
+            ) : (
+                <div className="select-user">Loading conversation with {name}...</div>
+            )}
+        </main>
     );
 }

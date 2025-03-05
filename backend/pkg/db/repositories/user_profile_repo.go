@@ -102,3 +102,13 @@ func GetStatusUesr(userId int) string {
 	db.DB.QueryRow(query, userId).Scan(&profile_type)
 	return profile_type
 }
+
+func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
+	query := `SELECT id, nickname, avatar_url FROM users WHERE nickname = ?`
+	user := models.Userdataforchat{}
+	err := db.DB.QueryRow(query, username).Scan(&user.Id, &user.Nickname, &user.Avatar)
+	if err != nil {
+		return user, err
+	}
+	return user, nil
+}

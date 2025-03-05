@@ -40,7 +40,7 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 			"sender":  client.Username,
 			"content": msg.Content,
 			"time":    Time,
-			"you":   repo.GetNickName(client.Userid),
+			"you":   receiverConn,
 		})
 	}
 

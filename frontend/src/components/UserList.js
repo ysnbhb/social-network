@@ -29,13 +29,14 @@ function UserList() {
 
 
     };
+
     // Handle selecting a user from the list
     const handleSelectUser = (user) => {
-        if(pathname !== `/chat/${user.nickname}`) {
+        if (pathname !== `/chat/${user.nickname}`) {
             sendGetmessagesusers([user.nickname], 0);
             sendMessageIsRead(user.nickname);
             Router.push(`/chat/${user.nickname}`);
-        }else {
+        } else {
             Router.push(`/chat`);
         }
 
@@ -49,6 +50,7 @@ function UserList() {
                     <div className="no-users-message">No users available</div>
                 ) : (
                     users.map((user) => (
+
                         <div
                             key={user.id}
                             className="user-item"
@@ -56,8 +58,10 @@ function UserList() {
                             onClick={(
                             ) => handleSelectUser(user)}  // Handle user selection
                         >
-                            <div className="avatar"></div>
-                            <div className={`statue ${user.online ? 'online' : ''}`}></div>
+                            <div className="avatar">
+                                <img src={`${user.avatar}`} alt="Post" />
+                            </div>
+                            <div className={`statue`}></div>
                             <div className="user-info">
                                 <span className="user-nickname">{user.nickname}</span>
                                 <span
