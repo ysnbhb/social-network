@@ -1,14 +1,26 @@
 "use client";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
- import bag from "../../../components/images/pxfuel.jpg";
+import bag from "../../../components/images/pxfuel.jpg";
 import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
+ import { useRouter } from "next/navigation";
 
-export default function Profile() {
-  const [profiledata, errorPro] = userProfile();
+export default  function Profile({  searchParams }) {
+  const router = useRouter();
+  const [parsedUser, setParsedUser] = useState(null);
+  useEffect(() => {
+    const userProfile = sessionStorage.getItem('selectedUserProfile');
+    if (userProfile) {
+      const parsedUser = JSON.parse(userProfile);
+      setParsedUser(parsedUser);
+     }
+  }, []);
+
+  const [profile, error] = useGetProfile(parsedUser);
+  const [profiledata, errorPro] = userProfile(parsedUser);
   const {
     avatarUrl,
     firstName,
@@ -19,11 +31,20 @@ export default function Profile() {
     nickName,
     posts_count,
   } = profiledata;
-  console.log(profiledata);
+  
+  useEffect(() => {
+    if (errorPro && errorPro.length > 0) {
+      const errorMessage = errorPro  ;
+      const url = `/error?message=${encodeURIComponent(errorMessage)}`;
+      router.push(url);
+    }
+  }, [errorPro, router]);
 
-  const [profile, error] = useGetProfile();
-  const [err, setErr] = useState(null);
-
+  let userLogin=localStorage.getItem("userID")
+   
+  const isOwnProfile =  parsedUser === Number(userLogin); 
+    console.log(parsedUser,userLogin);
+    
   const menuData = [
     { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
     { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -51,15 +72,16 @@ export default function Profile() {
       image: " ",
     },
   ];
+ 
 
   return (
-    <div>
+    <div> 
       <div className={style.container}>
         <div className={style["card-profile"]}>
           <div className={style["card-profile-posts"]}>
             <div className={`${style["avatar-user"]}`}>
               <Image
-                 src={bag}
+                src={bag}
                 alt=""
                 srcSet=""
                 className={`${style["bground"]} ${style.avatarContainer}`}
@@ -67,8 +89,17 @@ export default function Profile() {
               />
             </div>
             <div className={style.buttonContainer}>
-              <button className={style.followButton}>Follow</button>
-              <button className={style.moreButton}>Send Message</button>
+            {isOwnProfile  ?  (
+                <div>
+               <button className={style.moreButton}>Setting</button> 
+                </div>
+              ) : (
+                <div>
+                  <button className={style.followButton}>Follow</button>
+                  <button className={style.moreButton}>Send Message</button> 
+                </div>
+              )}
+              
             </div>
             <span className={style["Circle-image"]}>
               <img
@@ -100,15 +131,16 @@ export default function Profile() {
               </div>
             </div>
           </div>
-          {!error &&
+          { 
             profile.map((post) => (
               <PostCompte
                 className={style["image"]}
-                classes={{post:style["posts-profile"]}}
+                classes={{ post: style["posts-profile"] }}
                 key={post.id}
                 post={post}
               />
             ))}
+            {error}
         </div>
       </div>
     </div>

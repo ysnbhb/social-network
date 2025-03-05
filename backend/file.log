@@ -164,3 +164,849 @@
 2025/03/04 15:45:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/04 15:52:41 server.go:27: Starting server on :8080
 2025/03/04 15:52:43 user_profile_controller.go:23: 
+2025/03/05 11:01:44 server.go:27: Starting server on :8080
+2025/03/05 11:02:16 user_profile_controller.go:23:  tetst
+2025/03/05 11:02:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:02:32 user_profile_controller.go:23:  tetst
+2025/03/05 11:06:52 server.go:27: Starting server on :8080
+2025/03/05 11:06:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:06:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:07:02 user_profile_controller.go:41:  tetst
+2025/03/05 11:07:04 user_profile_controller.go:41:  tetst
+2025/03/05 11:07:04 user_profile_controller.go:41:  tetst
+2025/03/05 11:07:06 user_profile_controller.go:41:  tetst
+2025/03/05 11:07:59 user_profile_controller.go:41:  tetst
+2025/03/05 11:08:01 user_profile_controller.go:41:  tetst
+2025/03/05 11:08:02 user_profile_controller.go:41:  tetst
+2025/03/05 11:08:39 user_profile_controller.go:41:  tetst
+2025/03/05 11:11:23 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:17 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:17 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:25 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:35 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:37 user_profile_controller.go:41:  tetst
+2025/03/05 11:12:42 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:45 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:45 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:12:46 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:47 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:48 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:12:54 user_profile_controller.go:41:  tetst
+2025/03/05 11:13:02 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:13:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:13:53 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:13:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:13:54 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:13:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:13:58 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:13:59 server.go:27: Starting server on :8080
+2025/03/05 11:14:07 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:14:13 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:13 user_profile_controller.go:41: 1 tetst
+2025/03/05 11:14:16 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:16 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:16 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:14:16 user_profile_controller.go:41: 1 tetst
+2025/03/05 11:14:20 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:20 user_profile_controller.go:41: 1 tetst
+2025/03/05 11:14:48 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:48 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:48 user_profile_controller.go:41: 2 tetst
+2025/03/05 11:14:48 user_profile_controller.go:41: 1 tetst
+2025/03/05 11:14:52 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:14:52 user_profile_controller.go:41: 1 tetst
+2025/03/05 11:15:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:15:05 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:17:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:17:07 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:17:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:17:33 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:02 server.go:27: Starting server on :8080
+2025/03/05 11:19:10 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:11 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:11 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:19:43 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:43 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:55 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:19:56 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:21:20 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:20 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:22 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:21:46 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:47 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:47 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:52 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:21:52 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:24:15 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:24:15 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:25:02 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:25:48 user_profile_controller.go:41: undefined tetst
+2025/03/05 11:26:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:26:37 server.go:27: Starting server on :8080
+2025/03/05 11:27:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:27:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:28:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:30:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:33:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:38:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:38:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:43:25 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:25 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:32 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:32 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:34 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:34 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:43:52 user_profile_controller.go:41:  tetst
+2025/03/05 11:43:52 user_profile_controller.go:41:  tetst
+2025/03/05 11:44:25 user_profile_controller.go:41:  tetst
+2025/03/05 11:44:25 user_profile_controller.go:41:  tetst
+2025/03/05 11:44:31 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:18 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:18 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:45:20 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:20 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:45:21 user_profile_controller.go:41:  tetst
+2025/03/05 11:45:21 user_profile_controller.go:41:  tetst
+2025/03/05 11:47:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:47:11 user_profile_controller.go:41:  tetst
+2025/03/05 11:47:11 user_profile_controller.go:41:  tetst
+2025/03/05 11:47:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:47:43 user_profile_controller.go:41:  tetst
+2025/03/05 11:47:43 user_profile_controller.go:41:  tetst
+2025/03/05 11:49:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:49:03 user_profile_controller.go:41:  tetst
+2025/03/05 11:49:03 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:50:01 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:01 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:50:05 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:05 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:50:10 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:10 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:50:28 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:28 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:50:31 user_profile_controller.go:41:  tetst
+2025/03/05 11:50:31 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:52:20 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:20 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:52:32 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:32 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:52:57 user_profile_controller.go:41:  tetst
+2025/03/05 11:52:57 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:53:00 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:00 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:53:03 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:03 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:53:10 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:10 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:54 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:53:59 user_profile_controller.go:41:  tetst
+2025/03/05 11:54:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:55:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:56:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:56:11 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:14 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:56:20 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:30 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:34 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:34 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:42 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:42 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:56:58 user_profile_controller.go:41:  tetst
+2025/03/05 11:57:02 user_profile_controller.go:41:  tetst
+2025/03/05 11:57:13 user_profile_controller.go:41:  tetst
+2025/03/05 11:57:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:57:17 user_profile_controller.go:41:  tetst
+2025/03/05 11:57:54 user_profile_controller.go:41:  tetst
+2025/03/05 11:58:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 11:58:03 user_profile_controller.go:41:  tetst
+2025/03/05 12:00:58 user_profile_controller.go:41:  tetst
+2025/03/05 12:01:12 user_profile_controller.go:41:  tetst
+2025/03/05 12:02:10 user_profile_controller.go:41:  tetst
+2025/03/05 12:02:23 user_profile_controller.go:41:  tetst
+2025/03/05 12:02:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:02:59 user_profile_controller.go:41:  tetst
+2025/03/05 12:02:59 user_profile_controller.go:41:  tetst
+2025/03/05 12:03:03 user_profile_controller.go:41:  tetst
+2025/03/05 12:03:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:03:08 user_profile_controller.go:41:  tetst
+2025/03/05 12:03:24 user_profile_controller.go:41:  tetst
+2025/03/05 12:03:45 user_profile_controller.go:41:  tetst
+2025/03/05 12:03:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:03:56 user_profile_controller.go:41:  tetst
+2025/03/05 12:04:09 user_profile_controller.go:41:  tetst
+2025/03/05 12:04:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:04:51 user_profile_controller.go:41:  tetst
+2025/03/05 12:04:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:04:55 user_profile_controller.go:41:  tetst
+2025/03/05 12:04:59 user_profile_controller.go:41:  tetst
+2025/03/05 12:04:59 user_profile_controller.go:41:  tetst
+2025/03/05 12:05:02 user_profile_controller.go:41:  tetst
+2025/03/05 12:05:57 user_profile_controller.go:41:  tetst
+2025/03/05 12:05:58 user_profile_controller.go:41:  tetst
+2025/03/05 12:06:04 user_profile_controller.go:41:  tetst
+2025/03/05 12:06:10 user_profile_controller.go:41:  tetst
+2025/03/05 12:07:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:07:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:07:58 user_profile_controller.go:41: 2 tetst
+2025/03/05 12:08:09 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:08:12 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:08:19 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:08:20 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:08:20 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:08:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:08:24 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:24 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:26 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:44 user_profile_controller.go:41: 2 tetst
+2025/03/05 12:08:56 user_profile_controller.go:41: 2 tetst
+2025/03/05 12:08:56 user_profile_controller.go:41: 2 tetst
+2025/03/05 12:08:57 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:57 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:58 user_profile_controller.go:41:  tetst
+2025/03/05 12:08:58 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:09:08 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:09:10 user_profile_controller.go:41: 1 tetst
+2025/03/05 12:17:29 server.go:27: Starting server on :8080
+2025/03/05 12:22:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:22:13 server.go:27: Starting server on :8080
+2025/03/05 12:23:05 server.go:27: Starting server on :8080
+2025/03/05 12:23:08 user_profile_controller.go:37: 1
+2025/03/05 12:23:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:23:34 user_profile_controller.go:37: 1
+2025/03/05 12:23:46 user_profile_controller.go:37: 1
+2025/03/05 12:23:56 server.go:27: Starting server on :8080
+2025/03/05 12:23:59 user_profile_controller.go:36: 1  hello
+2025/03/05 12:24:23 server.go:27: Starting server on :8080
+2025/03/05 12:24:25 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:24:56 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:25:05 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:25:16 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:25:19 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:25:24 user_profile_controller.go:69: 2 2 hello
+2025/03/05 12:25:25 server.go:27: Starting server on :8080
+2025/03/05 12:25:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:25:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:26:09 server.go:27: Starting server on :8080
+2025/03/05 12:26:11 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:26:16 user_profile_controller.go:36: 1  hello
+2025/03/05 12:26:47 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:27:12 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:27:16 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:27:20 user_profile_controller.go:36: 1  hello
+2025/03/05 12:28:04 user_profile_controller.go:36: 1  hello
+2025/03/05 12:28:08 user_profile_controller.go:36: 1  hello
+2025/03/05 12:28:12 user_profile_controller.go:36: 1  hello
+2025/03/05 12:28:16 user_profile_controller.go:36: 1  hello
+2025/03/05 12:29:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:29:12 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:29:17 user_profile_controller.go:36: 1  hello
+2025/03/05 12:29:32 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:29:44 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:29:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:29:46 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:29:51 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:29:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:29:59 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:31:23 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:31:31 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:31:33 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:31:36 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:31:43 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:32:10 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:32:33 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:32:39 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:32:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:32:48 user_profile_controller.go:36: 1 1 hello
+2025/03/05 12:34:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:34:14 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:34:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:38:51 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:39:28 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:39:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:39:33 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:39:44 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:39:52 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:39:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:39:55 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:40:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:40:11 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 12:40:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:40:16 user_profile_controller.go:36: 1 1 hello
+2025/03/05 12:40:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:40:21 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:40:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:40:23 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:40:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:40:45 user_profile_controller.go:36: 2 2 hello
+2025/03/05 12:41:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:42:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 12:42:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:03:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:04:02 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 13:04:10 user_profile_controller.go:29: This Id Is Incorrect
+2025/03/05 13:04:19 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:04:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:04:22 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:04:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:04:34 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:04:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:04:54 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:05 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:06 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:11 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:05:20 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:05:42 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:48 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:51 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:54 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:05:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:05:57 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:06:06 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:06:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:06:08 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:06:41 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:06:49 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:06:54 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:07:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:07:59 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:08:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:08:26 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:08:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:08:29 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:08:57 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:09:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:09:06 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:09:08 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:09:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:09:25 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:10:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:11:08 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:11:19 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:11:21 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:11:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:12:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:13:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:13:26 server.go:27: Starting server on :8080
+2025/03/05 13:14:04 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:14:09 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:12 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:14 user_profile_controller.go:36: 1 1 hello
+2025/03/05 13:14:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:14:19 user_profile_controller.go:36: 1 1 hello
+2025/03/05 13:14:23 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:30 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:36 user_profile_controller.go:36: 1 1 hello
+2025/03/05 13:14:38 user_profile_controller.go:36: 1  hello
+2025/03/05 13:14:43 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:14:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:14:45 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:14:45 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:21:20 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:21:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:21:27 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:21:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:21:31 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:21:31 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:22:54 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:22:54 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:23:20 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:23:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:23:21 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:23:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:23:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:23:24 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:23:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:24:44 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:24:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:24:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:24:55 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:24:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:25:12 server.go:27: Starting server on :8080
+2025/03/05 13:25:14 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:25:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:25:14 user_profile_controller.go:72: error encoding json reactionResponse: sql: no rows in result set
+2025/03/05 13:26:09 server.go:27: Starting server on :8080
+2025/03/05 13:26:27 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:26:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:26:27 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:26:36 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:26:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:26:36 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:26:40 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:26:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:26:40 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:26:50 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:26:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:26:50 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:27:25 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:27:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:27:25 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:27:40 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:27:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:27:40 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:28:38 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:28:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:28:38 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:28:41 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:28:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:28:41 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:29:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:29:05 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:29:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:29:05 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:29:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:30:39 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:30:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:30:39 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:30:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:30:46 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:30:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:30:46 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:31:07 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:31:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:31:07 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:31:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:31:13 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:31:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:31:13 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:31:18 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:31:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:31:18 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:32:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:32:19 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:32:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:32:19 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:36:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:36:37 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:36:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:36:37 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:38:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:39:21 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:39:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:39:21 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:39:56 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:39:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:39:56 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:40:51 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:40:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:40:51 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:41:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:41:53 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:42:00 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:42:03 user_profile_controller.go:36: 1 1 hello
+2025/03/05 13:42:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:06 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:06 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:29 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:29 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:33 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:33 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:36 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:36 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:39 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:39 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:42 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:42 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:42 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:51 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:51 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:42:54 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:54 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:54 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:42:58 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:42:58 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:42:58 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:43:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:43:34 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:43:34 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:43:34 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:43:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:43:41 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:43:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:43:41 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:43:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:43:44 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:43:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:43:44 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:43:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:43:53 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:43:53 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:43:53 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:01 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:01 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:06 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:06 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:44:21 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:21 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:44:30 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:30 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:44:43 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:43 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:43 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:47 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:47 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:50 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:50 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:44:56 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:44:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:44:56 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:45:22 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:45:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:45:22 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:45:25 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:45:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:45:25 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:45:41 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:45:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:45:41 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:45:43 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:45:43 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:45:43 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:46:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:46:09 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:46:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:46:09 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:46:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:46:18 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:46:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:46:18 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:47:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:47:56 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:47:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:47:56 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:48:06 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:48:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:48:06 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:48:17 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:48:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:48:20 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:48:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:48:20 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:51:27 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:51:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:51:27 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:51:30 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:51:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:51:30 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:51:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:52:05 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:52:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:52:05 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:52:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:52:35 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:52:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:52:38 user_profile_controller.go:36: 21 21 hello
+2025/03/05 13:52:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:52:38 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 13:52:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:59:45 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:59:48 user_profile_controller.go:36: 2 2 hello
+2025/03/05 13:59:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 13:59:50 user_profile_controller.go:36: 3 3 hello
+2025/03/05 13:59:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 13:59:50 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:00:09 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:00:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:00:09 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:00:10 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:00:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:00:10 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:00:12 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:00:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:00:12 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:00:40 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:00:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:00:40 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:00:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:00:45 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:00:45 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:00:45 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:01:04 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:01:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:01:04 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:01:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:01:09 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:01:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:01:09 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:02:36 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:02:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:02:36 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:02:41 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:02:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:02:41 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:02:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:02:55 user_profile_controller.go:36: 1  hello
+2025/03/05 14:02:58 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:03:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:03:01 user_profile_controller.go:36: 23 23 hello
+2025/03/05 14:03:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:03:01 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:03:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:03:22 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:03:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:03:22 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:03:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:03:52 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:04:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:04:00 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:04:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:04:02 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:04:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:04:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:10:43 user_profile_controller.go:36: 1  hello
+2025/03/05 14:10:48 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:10:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:10:50 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:11:03 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:05 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:08 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:12 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:11:28 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:40 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:11:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:11:58 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:12:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:12:08 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:12:14 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:12:43 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:16:03 user_profile_controller.go:36: 1  hello
+2025/03/05 14:24:09 user_profile_controller.go:36: 1  hello
+2025/03/05 14:27:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:27:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:27:19 server.go:27: Starting server on :8080
+2025/03/05 14:30:38 server.go:27: Starting server on :8080
+2025/03/05 14:35:14 user_repo.go:33: <nil>
+2025/03/05 14:36:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:36:15 user_repo.go:33: <nil>
+2025/03/05 14:36:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:36:43 user_repo.go:33: <nil>
+2025/03/05 14:37:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:37:28 user_repo.go:33: <nil>
+2025/03/05 14:38:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:38:21 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:30 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:40 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:42 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:38:45 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:50 user_profile_controller.go:36: 1  hello
+2025/03/05 14:38:57 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:04 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:08 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:39:21 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:23 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:39:43 user_profile_controller.go:36: 1  hello
+2025/03/05 14:39:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:39:57 user_profile_controller.go:36: 1  hello
+2025/03/05 14:40:04 user_profile_controller.go:36: 1  hello
+2025/03/05 14:40:09 user_profile_controller.go:36: 1  hello
+2025/03/05 14:40:16 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:40:21 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:40:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:40:52 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:41:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:41:01 user_profile_controller.go:36: 3 3 hello
+2025/03/05 14:41:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 14:41:01 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 14:41:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:41:05 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:41:59 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:49:06 user_profile_controller.go:36: 1  hello
+2025/03/05 14:49:31 user_profile_controller.go:36: 1  hello
+2025/03/05 14:49:41 user_profile_controller.go:36: 1  hello
+2025/03/05 14:49:49 user_profile_controller.go:36: 1  hello
+2025/03/05 14:49:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:49:53 user_profile_controller.go:36: 1  hello
+2025/03/05 14:51:18 user_profile_controller.go:36: 1  hello
+2025/03/05 14:51:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:51:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:51:47 user_profile_controller.go:36: 1  hello
+2025/03/05 14:51:51 user_profile_controller.go:36: 1  hello
+2025/03/05 14:51:52 user_profile_controller.go:36: 1  hello
+2025/03/05 14:51:56 user_profile_controller.go:36: 1  hello
+2025/03/05 14:52:00 user_profile_controller.go:36: 1  hello
+2025/03/05 14:52:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:52:04 user_profile_controller.go:36: 1  hello
+2025/03/05 14:52:18 user_profile_controller.go:36: 1  hello
+2025/03/05 14:52:59 user_profile_controller.go:36: 1  hello
+2025/03/05 14:53:33 user_profile_controller.go:36: 1  hello
+2025/03/05 14:53:39 user_profile_controller.go:36: 1  hello
+2025/03/05 14:54:01 user_profile_controller.go:36: 1  hello
+2025/03/05 14:54:03 user_profile_controller.go:36: 1  hello
+2025/03/05 14:54:05 user_profile_controller.go:36: 1  hello
+2025/03/05 14:54:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:55:00 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:02 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:07 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:09 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:28 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:32 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:47 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:51 user_profile_controller.go:36: 1  hello
+2025/03/05 14:55:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:56:16 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:56:24 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:31 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:31 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:56:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:56:37 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:37 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:56:43 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:43 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:56:45 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:45 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:56:47 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:50 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:50 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:56:52 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:52 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:56:57 user_profile_controller.go:36: 1  hello
+2025/03/05 14:56:57 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:57:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:57:21 user_profile_controller.go:36: 1  hello
+2025/03/05 14:57:30 user_profile_controller.go:36: 1  hello
+2025/03/05 14:57:30 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:57:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:57:36 user_profile_controller.go:36: 1  hello
+2025/03/05 14:58:22 user_profile_controller.go:36: 1  hello
+2025/03/05 14:58:22 user_profile_controller.go:36: 1 1 hello
+2025/03/05 14:58:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 14:58:31 user_profile_controller.go:36: 1  hello
+2025/03/05 14:58:35 user_profile_controller.go:36: 1  hello
+2025/03/05 14:58:38 user_profile_controller.go:36: 1  hello
+2025/03/05 14:59:04 user_profile_controller.go:36: 1  hello
+2025/03/05 14:59:12 user_profile_controller.go:36: 1  hello
+2025/03/05 14:59:12 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:59:39 user_profile_controller.go:36: 1  hello
+2025/03/05 14:59:39 user_profile_controller.go:36: 2 2 hello
+2025/03/05 14:59:59 user_profile_controller.go:36: 1  hello
+2025/03/05 14:59:59 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:00:06 user_profile_controller.go:36: 1  hello
+2025/03/05 15:00:06 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:00:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:00:26 user_profile_controller.go:36: 1  hello
+2025/03/05 15:00:53 user_profile_controller.go:36: 1  hello
+2025/03/05 15:00:58 user_profile_controller.go:36: 1  hello
+2025/03/05 15:00:58 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:00:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:00 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:00 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:01:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:05 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:05 user_profile_controller.go:36: 3 3 hello
+2025/03/05 15:01:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 15:01:05 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 15:01:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:08 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:08 user_profile_controller.go:36: 3 3 hello
+2025/03/05 15:01:08 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 15:01:08 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 15:01:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:11 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:11 user_profile_controller.go:36: 3 3 hello
+2025/03/05 15:01:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/05 15:01:11 user_profile_controller.go:72: This Id user Is not found: sql: no rows in result set
+2025/03/05 15:01:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:19 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:19 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:01:22 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:22 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:01:38 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:01:43 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:01:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:01:46 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:52 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:52 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:01:54 user_profile_controller.go:36: 1  hello
+2025/03/05 15:01:54 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:02:09 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:02:13 user_profile_controller.go:36: 1  hello
+2025/03/05 15:02:13 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:02:16 user_profile_controller.go:36: 1  hello
+2025/03/05 15:02:16 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:02:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:02:57 user_profile_controller.go:36: 1  hello
+2025/03/05 15:02:57 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:03:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:03:59 user_profile_controller.go:36: 1  hello
+2025/03/05 15:03:59 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:04:02 user_profile_controller.go:36: 1  hello
+2025/03/05 15:04:02 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:04:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:04:15 user_profile_controller.go:36: 1  hello
+2025/03/05 15:04:15 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:04:33 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:04:35 user_profile_controller.go:36: 1  hello
+2025/03/05 15:04:35 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:04:38 user_profile_controller.go:36: 1  hello
+2025/03/05 15:04:38 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:06:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:07:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:07:45 user_profile_controller.go:36: 1  hello
+2025/03/05 15:07:45 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:08:37 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:08:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:08:40 user_profile_controller.go:36: 1  hello
+2025/03/05 15:08:40 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:08:43 user_profile_controller.go:36: 1  hello
+2025/03/05 15:08:43 user_profile_controller.go:36: 2 2 hello
+2025/03/05 15:08:45 user_profile_controller.go:36: 1  hello
+2025/03/05 15:08:45 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:08:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:08:49 user_profile_controller.go:36: 1  hello
+2025/03/05 15:08:49 user_profile_controller.go:36: 1 1 hello
+2025/03/05 15:08:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 15:08:52 user_profile_controller.go:36: 1  hello
+2025/03/05 15:08:52 user_profile_controller.go:36: 1 1 hello

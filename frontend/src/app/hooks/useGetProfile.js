@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
+ 
 
-
-export default function useGetProfile() {
-    const [profile, setProfile] = useState([])
+export default function useGetProfile(searchParam) {  
+     const [profile, setProfile] = useState([])
     const [error, setError] = useState(null)
+  
     const fetchData = async () => {
         try {
-            const response= await fetch("http://localhost:8080/api/profile/posts/created",{
+            const endpoint = searchParam
+            ? `api/profile/posts/created?id=${searchParam}` 
+              : "api/profile/posts/created" ;
+            const response= await fetch(endpoint,{
                 method:"GET",
                 credentials: "include"
             })
@@ -14,9 +18,10 @@ export default function useGetProfile() {
             let data = await response.json()
             if(response.ok){
                 setProfile(data || [])
-                
             } else {
                 console.log(response.status);
+                console.log(data,"here");
+                
                setError(data)
               }
         } catch (error) {
@@ -26,7 +31,7 @@ export default function useGetProfile() {
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [searchParam])
 
     return [profile, error]
 }
