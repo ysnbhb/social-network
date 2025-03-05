@@ -47,7 +47,7 @@ export default function GroupEvents() {
 
       {/* Popup Overlay */}
       {showPopup && (
-        <div className="popup-overlay">
+        <div className="popup-overlay" onClick={togglePopup}>
           <div className="popup-content">
             <div className="popup-header">
               <h2 className="popup-title">Create New Event</h2>
@@ -67,7 +67,7 @@ export default function GroupEvents() {
               <label htmlFor="event-description">Description</label>
               <textarea
                 id="event-description"
-                placeholder="Event Description (Optional)"
+                placeholder="Event Description"
               ></textarea>
 
               <label htmlFor="event-datetime">Day/Time *</label>

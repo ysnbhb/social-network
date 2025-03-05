@@ -5,6 +5,10 @@ import "../styles/groupsFeed.css";
 // import GroupList from "./groupList";
 
 export default function GroupsFeed({ unjoined, setUnjoined }) {
+    
+  const [showPopup, setShowPopup] = useState(false);
+  const togglePopup = () => setShowPopup(!showPopup);
+
   // const [groups, setGroups] = useState([]);
   useEffect(() => {
     const fetchGroups = async () => {
@@ -25,7 +29,7 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
       <div className="group-creator">
         <div className="creator-header">
           <div className="creator-title">Create a New Group</div>
-          <button className="create-btn">+ Create Group</button>
+          <button className="create-btn" onClick={togglePopup} >+ Create Group</button>
         </div>
       </div>
 
@@ -34,6 +38,47 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
           <Unjoined key={group.id} group={group} />
         ))}
       </div>
+            {/* Popup Overlay */}
+            {showPopup && (
+        <div className="popup-overlay" onClick={togglePopup} >
+          <div className="popup-content">
+            <div className="popup-header">
+              <h2 className="popup-title">Create New Event</h2>
+              <button className="popup-close" onClick={togglePopup}>
+                &times;
+              </button>
+            </div>
+            <div className="popup-form">
+              <label htmlFor="event-title">Title *</label>
+              <input
+                type="text"
+                id="event-title"
+                placeholder="Event Title"
+                required
+              />
+
+              <label htmlFor="event-description">Description</label>
+              <textarea
+                id="event-description"
+                placeholder="Event Description"
+              ></textarea>
+
+              <div className="popup-actions">
+                <button
+                  type="button"
+                  className="btn-cancel"
+                  onClick={togglePopup}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn-create">
+                  Create Event
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
