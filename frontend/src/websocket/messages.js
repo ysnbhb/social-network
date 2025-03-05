@@ -18,8 +18,6 @@ export function Getmessagesusers(data) {
         messages.forEach(info => {
             const dev = document.createElement("div");
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
-            console.log("info", info);
-
             dev.innerHTML = `
                     <div class="sender-info">
                         <div class="avatar"></div>
@@ -65,6 +63,8 @@ function setupScrollHandler(data) {
 }
 
 export function receiveMessageuser(data) {
+    console.log("Received message:", data);
+
 
     sendNotification()
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
@@ -76,7 +76,6 @@ export function receiveMessageuser(data) {
             newmsg.style.display = "block"
         }
     }
-    console.log(data);
 
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/chat/${data.sender}` || data.mymsg) {

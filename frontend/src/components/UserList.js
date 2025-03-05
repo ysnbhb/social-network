@@ -29,6 +29,7 @@ function UserList() {
 
 
     };
+
     // Handle selecting a user from the list
     const handleSelectUser = (user) => {
         if (pathname !== `/chat/${user.nickname}`) {
@@ -49,6 +50,7 @@ function UserList() {
                     <div className="no-users-message">No users available</div>
                 ) : (
                     users.map((user) => (
+
                         <div
                             key={user.id}
                             className="user-item"
@@ -57,9 +59,9 @@ function UserList() {
                             ) => handleSelectUser(user)}  // Handle user selection
                         >
                             <div className="avatar">
-                                <img src={`${user.avatar}`}alt="Post"/>
+                                <img src={`${user.avatar}`} alt="Post" />
                             </div>
-                            <div className={`statue ${user.online ? 'online' : ''}`}></div>
+                            <div className={`statue`}></div>
                             <div className="user-info">
                                 <span className="user-nickname">{user.nickname}</span>
                                 <span
