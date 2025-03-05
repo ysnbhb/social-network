@@ -18,6 +18,8 @@ export function Getmessagesusers(data) {
         messages.forEach(info => {
             const dev = document.createElement("div");
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
+            console.log("info", info);
+
             dev.innerHTML = `
                     <div class="sender-info">
                         <div class="avatar"></div>

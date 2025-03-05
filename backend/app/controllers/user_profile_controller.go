@@ -58,14 +58,20 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 	err := repo.CheckCanUSendMessage(username, myuserid)
 	if err != nil {
 		log.Println("error checking if user can send message:", err)
-		utils.JsonResponse(w, err.Error() +"\nyou are not allowed to send message to "+username, 404)
+		utils.JsonResponse(w, err.Error()+"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
 	//select the user info from  the database
-	var userInfo map[string]string
-	userInfo = map[string]string{
-		"nickname": username,
+	userInfo, err := repo.GetUserInfoByUsername(username)
+	if err != nil {
+		log.Println("error getting user info:", err)
+		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	// var userInfo map[string]string
+	// userInfo = map[string]string{
+	// 	"nickname": username,
+	// }
 	err = json.NewEncoder(w).Encode(userInfo)
 	if err != nil {
 		log.Println("error encoding json userInfo:", err)
