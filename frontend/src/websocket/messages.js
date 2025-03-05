@@ -63,8 +63,8 @@ function setupScrollHandler(data) {
 }
 
 export function receiveMessageuser(data) {
-    console.log("Received message:", data);
-
+    const updateUserListEvent = new CustomEvent('updateUserList');
+    window.dispatchEvent(updateUserListEvent);
 
     sendNotification()
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {

@@ -2663,3 +2663,67 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/05 16:36:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/05 16:37:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 >>>>>>> origin/yhamdoun
+2025/03/05 21:02:02 server.go:27: Starting server on :8080
+2025/03/05 21:04:43 auth_controller.go:100: invalid first name
+2025/03/05 21:04:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:07:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:07:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:07:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:07:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:20:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:22:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:22:21 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:22:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:22:54 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:23:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:23:30 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:25:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:25:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:25:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:25:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:25:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:25:10 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:27 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:28:31 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:28:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:40 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:28:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:28:54 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:28:58 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:30:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:30:29 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:30:29 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:30:32 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:45:35 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:45:35 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:45:38 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:45:38 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:45:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:45:45 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:45:45 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:46:07 server.go:27: Starting server on :8080
+2025/03/05 21:46:11 friends_service.go:14: Get Friends: near "(": syntax error
+2025/03/05 21:46:11 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:46:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:46:14 friends_service.go:14: Get Friends: near "(": syntax error
+2025/03/05 21:46:14 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:48:11 server.go:27: Starting server on :8080
+2025/03/05 21:48:16 friends_service.go:14: Get Friends: sql: expected 6 destination arguments in Scan, not 5
+2025/03/05 21:48:16 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:48:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/05 21:48:19 friends_service.go:14: Get Friends: sql: expected 6 destination arguments in Scan, not 5
+2025/03/05 21:48:19 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:52:45 server.go:27: Starting server on :8080
+2025/03/05 21:52:50 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:52:50 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:52:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:52:52 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:52:57 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:52:57 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/05 21:53:01 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/05 21:53:01 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory

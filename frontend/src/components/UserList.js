@@ -4,13 +4,28 @@ import { SendOnlineStatus } from '../websocket/websocket.js';
 import '../styles/chat.css';
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
+
 function UserList() {
+    console.log("UserList component rendered");
+    
     const pathname = usePathname();
     const [users, setUsers] = useState([]); // State to hold the list of users
     const Router = useRouter();
 
     useEffect(() => {
         Getfriends();
+        
+        const handleUpdateUserList = () => {
+            Getfriends();
+        };
+
+        window.addEventListener('updateUserList', handleUpdateUserList);
+
+        
+        // return () => {
+        //     window.removeEventListener('updateUserList', handleUpdateUserList);
+        // };
+
     }, []);
 
     const Getfriends = () => {
