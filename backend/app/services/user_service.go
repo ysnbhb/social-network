@@ -42,16 +42,16 @@ func RegisterUser(user *models.User) error {
 	return nil
 }
 
-func LoginUser(user *models.Login) error {
+func LoginUser(user *models.Login) (models.UserName ,error) {
 	err := repo.CheckEmail(user.Email)
 	if err == nil {
-		return errors.New("sorry, this email does not exist")
+		return models.UserName{}, errors.New("sorry, this email does not exist")
 	}
 	repo.GetUserId(user)
 	repo.GetPassword(user)
 	err = utils.ComparePassword(user)
 	if err != nil {
-		return errors.New("sorry, your password was incorrect")
+		return models.UserName{} ,errors.New("sorry, your password was incorrect")
 	}
 	return nil
 }

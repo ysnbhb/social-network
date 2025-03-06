@@ -26,6 +26,9 @@ type Login struct {
 	Password       string `json:"password"`
 	HashedPassword string
 }
+type UserName struct {
+	NickName     string    `json:"nickName"`
+}
 type UserProfile struct {
 	Id              int       `json:"id"`
 	FirstName       string    `json:"firstName"`
