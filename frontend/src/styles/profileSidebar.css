@@ -1,6 +1,9 @@
 .profile-page {
   height: 100%;
 }
+.follow{
+  cursor: pointer;
+}
 
 .profile-sidebar {
   background-color: white;

@@ -30,3 +30,110 @@
 2025/03/06 13:42:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 13:42:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 13:42:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:43:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:49:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:01:35 server.go:27: Starting server on :8080
+2025/03/06 14:12:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:13:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:13:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:23:55 user_repo.go:33: <nil>
+2025/03/06 14:24:35 server.go:27: Starting server on :8080
+2025/03/06 14:25:31 server.go:27: Starting server on :8080
+2025/03/06 14:26:27 server.go:27: Starting server on :8080
+2025/03/06 14:26:34 user_repo.go:33: <nil>
+2025/03/06 14:26:40 user_profile_repo.go:137: [{0    <nil>} {0    <nil>} {0    <nil>}]
+2025/03/06 14:27:24 server.go:27: Starting server on :8080
+2025/03/06 14:27:27 user_profile_repo.go:140: [{0 yassine bahbib yassine.bahbib /uploads/default.webp} {0 yassine bahbib yassine334 /uploads/default.webp} {0 saljaoui soufian soufian /uploads/03388225-b666-4878-960d-c16753ebe707.jpg}]
+2025/03/06 14:27:53 server.go:27: Starting server on :8080
+2025/03/06 14:41:44 user_repo.go:33: <nil>
+2025/03/06 14:41:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:50:43 server.go:27: Starting server on :8080
+2025/03/06 14:50:55 server.go:27: Starting server on :8080
+2025/03/06 14:51:16 user_profile_controller.go:119: undefined
+2025/03/06 14:51:16 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:51:22 user_profile_controller.go:119: Following
+2025/03/06 14:51:31 user_profile_controller.go:119: Followers
+2025/03/06 14:52:02 user_profile_controller.go:119: Followers
+2025/03/06 14:52:05 user_profile_controller.go:119: Followers
+2025/03/06 14:52:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:52:09 user_profile_controller.go:119: undefined
+2025/03/06 14:52:09 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:52:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:52:10 user_profile_controller.go:119: undefined
+2025/03/06 14:52:10 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:52:51 user_profile_controller.go:119: Followers
+2025/03/06 14:53:10 user_profile_controller.go:119: Following
+2025/03/06 14:53:48 server.go:27: Starting server on :8080
+2025/03/06 14:53:50 user_profile_controller.go:119: undefined
+2025/03/06 14:53:50 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:53:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:53:52 user_profile_controller.go:119: undefined
+2025/03/06 14:53:52 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:53:54 user_profile_controller.go:119: Followers
+2025/03/06 14:53:54 user_profile_controller.go:123: sql: expected 5 destination arguments in Scan, not 4
+2025/03/06 14:54:01 user_profile_controller.go:119: Following
+2025/03/06 14:54:05 user_profile_controller.go:119: Followers
+2025/03/06 14:54:05 user_profile_controller.go:123: sql: expected 5 destination arguments in Scan, not 4
+2025/03/06 14:54:15 server.go:27: Starting server on :8080
+2025/03/06 14:54:17 user_profile_controller.go:119: undefined
+2025/03/06 14:54:17 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:54:18 user_profile_controller.go:119: Followers
+2025/03/06 14:54:27 user_profile_controller.go:119: Following
+2025/03/06 14:54:34 user_profile_controller.go:119: Followers
+2025/03/06 14:55:50 server.go:27: Starting server on :8080
+2025/03/06 14:55:52 user_profile_controller.go:119: undefined
+2025/03/06 14:55:52 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:55:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:55:53 user_profile_controller.go:119: undefined
+2025/03/06 14:55:53 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:55:55 user_profile_controller.go:119: Followers
+2025/03/06 14:56:03 user_profile_controller.go:119: Following
+2025/03/06 14:56:03 user_profile_controller.go:123: sql: expected 5 destination arguments in Scan, not 4
+2025/03/06 14:56:27 server.go:27: Starting server on :8080
+2025/03/06 14:56:32 user_repo.go:33: <nil>
+2025/03/06 14:56:32 user_profile_controller.go:119: undefined
+2025/03/06 14:56:32 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:56:35 user_profile_controller.go:119: Followers
+2025/03/06 14:56:44 user_profile_controller.go:119: Following
+2025/03/06 14:56:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:56:51 user_profile_controller.go:119: undefined
+2025/03/06 14:56:51 user_profile_controller.go:123: sql: expected 0 destination arguments in Scan, not 4
+2025/03/06 14:57:05 user_profile_controller.go:119: Following
+2025/03/06 14:57:15 user_profile_controller.go:119: Followers
+2025/03/06 14:59:44 user_profile_controller.go:119: Followers
+2025/03/06 14:59:50 user_profile_controller.go:119: Following
+2025/03/06 15:10:38 server.go:27: Starting server on :8080
+2025/03/06 15:10:44 user_profile_controller.go:123: undefined
+2025/03/06 15:10:46 user_profile_controller.go:123: Followers
+2025/03/06 15:11:36 server.go:27: Starting server on :8080
+2025/03/06 15:12:03 user_profile_controller.go:123: undefined
+2025/03/06 15:12:03 user_profile_controller.go:129: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:12:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:12:04 user_profile_controller.go:123: undefined
+2025/03/06 15:12:04 user_profile_controller.go:129: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:12:09 user_profile_controller.go:123: Following
+2025/03/06 15:12:09 user_profile_controller.go:129: []
+2025/03/06 15:12:11 user_profile_controller.go:123: Followers
+2025/03/06 15:12:11 user_profile_controller.go:129: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:12:55 server.go:27: Starting server on :8080
+2025/03/06 15:12:58 user_profile_controller.go:123: undefined
+2025/03/06 15:12:58 user_profile_controller.go:129: []
+2025/03/06 15:12:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:12:59 user_profile_controller.go:123: undefined
+2025/03/06 15:12:59 user_profile_controller.go:129: []
+2025/03/06 15:13:05 user_profile_controller.go:123: Followers
+2025/03/06 15:13:05 user_profile_controller.go:129: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:13:13 user_profile_controller.go:123: Following
+2025/03/06 15:13:13 user_profile_controller.go:129: []
+2025/03/06 15:13:40 user_profile_controller.go:123: undefined
+2025/03/06 15:13:40 user_profile_controller.go:129: []
+2025/03/06 15:13:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:14:04 server.go:27: Starting server on :8080
+2025/03/06 15:14:21 user_repo.go:33: <nil>
+2025/03/06 15:14:27 user_profile_controller.go:123: 
+2025/03/06 15:14:27 user_profile_controller.go:129: []
+2025/03/06 15:14:48 server.go:27: Starting server on :8080
+2025/03/06 15:14:50 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:15:13 user_repo.go:33: <nil>
+2025/03/06 15:15:13 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]

@@ -8,6 +8,7 @@ import (
 
 	"social-network/app/services"
 	repo "social-network/pkg/db/repositories"
+	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
 
@@ -33,7 +34,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	} else {
 		profileUserId = userId
 	}
- 
+
 	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
@@ -93,18 +94,44 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, err.Error()+"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
-	//select the user info from  the database
+	// select the user info from  the database
 	userInfo, err := repo.GetUserInfoByUsername(username)
 	if err != nil {
 		log.Println("error getting user info:", err)
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	// var userInfo map[string]string
-	// userInfo = map[string]string{
-	// 	"nickname": username,
-	// }
 	err = json.NewEncoder(w).Encode(userInfo)
+	if err != nil {
+		log.Println("error encoding json userInfo:", err)
+		utils.JsonResponse(w, "error encoding json userInfo", http.StatusInternalServerError)
+		return
+	}
+}
+
+func Userfollowing(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed")
+		return
+	}
+	following := models.UserRelation{}
+	var err error
+
+	user := r.Context().Value("userId").(int)
+	// searchParam := r.URL.Query().Get("follow")
+
+	following.Following, err = services.GetUserFollowing(user)
+
+	following.Follower, err = services.GetUserFollower(user)
+
+	log.Println(following.Follower)
+	if err != nil {
+		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
+		log.Println(err.Error())
+		return
+	}
+	err = json.NewEncoder(w).Encode(following)
 	if err != nil {
 		log.Println("error encoding json userInfo:", err)
 		utils.JsonResponse(w, "error encoding json userInfo", http.StatusInternalServerError)

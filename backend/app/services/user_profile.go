@@ -26,3 +26,11 @@ func UserProfile(user_id int) (models.UserProfile, error) {
 	}
 	return *profile, nil
 }
+
+func GetUserFollowing(user int) ([]models.UnfollowUser, error) {
+	return repo.GetUserFollowing(user)
+}
+
+func GetUserFollower(user int) ([]models.UnfollowUser, error) {
+	return repo.GetUserFollower(user)
+}

@@ -3,10 +3,21 @@ import Link from 'next/link';
 import '../styles/profileSidebar.css';
   import userProfile from '@/app/hooks/userProfile';
 import { useRouter } from 'next/navigation';
-  
+import useFollowing from '@/app/hooks/useFollowing';
+import { useState } from 'react'; 
 export default function ProfileSide({  classes   }) {
   const route=useRouter()
   const [profile, error] = userProfile();
+  const [data, setData] = useState();
+  const [follow, errorfollow] = useFollowing();
+    
+  const handleFollowers =(params)=>{
+    console.log(params);
+     setData(params)
+  }
+
+  console.log(follow);
+  
   const {
 
   avatarUrl,
@@ -22,6 +33,8 @@ export default function ProfileSide({  classes   }) {
     route.push('/profile');
 
   }
+
+ 
     return (
       <div className="profile-page">
       {   profile? (
@@ -47,11 +60,11 @@ export default function ProfileSide({  classes   }) {
             </div>
             <div>
               <h3>{follower_count}</h3>
-              <p className="text-muted">Followers</p>
+              <p className="text-muted follow" onClick={()=>handleFollowers('Followers')}>Followers</p>
             </div>
             <div>
               <h3>{following_count}</h3>
-              <p className="text-muted">Following</p>
+              <p className="text-muted follow" onClick={()=>handleFollowers('Following')}>Following</p>
             </div>
           </div>
           <button href={`profile`}  onClick={handleIduser}   className="profile-button">My Profile</button>

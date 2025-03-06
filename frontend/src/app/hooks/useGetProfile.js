@@ -1,9 +1,8 @@
-import { NextResponse } from "next/server";
-import { useEffect, useState } from "react";
+ import { useEffect, useState } from "react";
  
 
 export default function useGetProfile(searchParam) {  
-     const [profile, setProfile] = useState([])
+    const [profile, setProfile] = useState([])
     const [error, setError] = useState(null)
   
     const fetchData = async () => {
@@ -21,10 +20,7 @@ export default function useGetProfile(searchParam) {
                 setProfile(data || [])
             }else if (response.status===401){
                 window.location.href = '/login';
-            } else {
-                console.log(response.status);
-                console.log(data,"here");
-                
+            } else { 
                setError(data)
               }
         } catch (error) {
