@@ -26,6 +26,8 @@ export default function groupNav({id}) {
     useEffect(() => {
         GetGroupInfo();
     }, []);    
+    console.log(groupInf);
+    
     if (notfound) {
         return <div>Group Not Found</div>
     }

@@ -1,0 +1,23 @@
+2025/03/06 15:24:17 server.go:27: Starting server on :8080
+2025/03/06 15:25:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:26:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:26:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:26:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:27:08 server.go:27: Starting server on :8080
+2025/03/06 15:27:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:27:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:25 user_repo.go:33: <nil>
+2025/03/06 15:28:25 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:25 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:28 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:28 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:28:35 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:35 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 15:28:41 user_repo.go:33: <nil>
+2025/03/06 15:28:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
