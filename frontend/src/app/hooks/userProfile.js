@@ -15,6 +15,8 @@ export default function userProfile(id){
             let data =await response.json()
             if(response.ok){
                 setProfile(data || [])
+            }else if (response.status===401){
+                window.location.href = '/login';
             }else{
                 console.log(data,"here");
                 setError(data)

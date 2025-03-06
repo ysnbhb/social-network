@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { useEffect, useState } from "react";
  
 
@@ -18,6 +19,8 @@ export default function useGetProfile(searchParam) {
             let data = await response.json()
             if(response.ok){
                 setProfile(data || [])
+            }else if (response.status===401){
+                window.location.href = '/login';
             } else {
                 console.log(response.status);
                 console.log(data,"here");

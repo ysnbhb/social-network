@@ -166,3 +166,8 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
 }
+
+func Session_id(w http.ResponseWriter, r *http.Request) {
+	userID := r.Context().Value("userId").(int)
+	log.Println(userID)
+}
