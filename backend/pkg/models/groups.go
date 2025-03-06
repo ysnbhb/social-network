@@ -28,3 +28,14 @@ type Group struct {
 	Status    string `json:"status"`
 	CreatedAt string `json:"createdAt"`
 }
+
+
+type Event struct {
+	Id        int    `json:"id"`
+	GroupId   int    `json:"groupId"`
+	UserId    int    `json:"userId"`
+	Title     string `json:"title"`
+	Description string `json:"description"`
+	StartDate string `json:"startDate"`
+	CreatedAt string `json:"createdAt"`
+}

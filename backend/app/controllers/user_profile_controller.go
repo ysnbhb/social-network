@@ -33,8 +33,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	} else {
 		profileUserId = userId
 	}
-	log.Println(profileUserId, other_user, "hello")
-
+ 
 	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {

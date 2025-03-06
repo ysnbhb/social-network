@@ -77,8 +77,8 @@ import { useRouter } from "next/navigation";
           <img
             src={`${imageUrl}`}
             alt="Post"
-            className={ className}
-            style={{ width: "100%", height: "auto" }}
+            // className={className}
+            style={{ width: "100%", height: "auto",borderRadius:"10px" }}
           />
         )}
          <div className="post-actions">

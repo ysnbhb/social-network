@@ -4,12 +4,36 @@ import { useEffect, useState } from "react";
 import "../styles/groupsFeed.css";
 // import GroupList from "./groupList";
 
-export default function GroupsFeed({ unjoined, setUnjoined }) {
-
+export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
-
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   // const [groups, setGroups] = useState([]);
+  const handleJoinGroup = async () => {
+    const res = await fetch("/api/group/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        title,
+        description,
+      })
+    })
+    const data = await res.json();
+    if (res.ok) {
+      setJoinedGroup(prev => [...prev, data]);
+      setTitle("");
+      setDescription("");
+      setShowPopup(false);
+    } else {
+      console.log("error");
+      alert(data);
+    }
+  };
+
   useEffect(() => {
     const fetchGroups = async () => {
       const response = await fetch("/api/group/unjoinedgroups", {
@@ -30,7 +54,9 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
       <div className="group-creator">
         <div className="creator-header">
           <div className="creator-title">Create a New Group</div>
-          <button className="create-btn" onClick={togglePopup} >+ Create Group</button>
+          <button className="create-btn" onClick={togglePopup}>
+            + Create Group
+          </button>
         </div>
       </div>
 
@@ -41,7 +67,7 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
       </div>
       {/* Popup Overlay */}
       {showPopup && (
-        <div className="popup-overlay" onClick={togglePopup} >
+        <div className="popup-overlay">
           <div className="popup-content">
             <div className="popup-header">
               <h2 className="popup-title">Create New Event</h2>
@@ -56,12 +82,14 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
                 id="event-title"
                 placeholder="Event Title"
                 required
+                onChange={(e) => setTitle(e.target.value)}
               />
 
               <label htmlFor="event-description">Description</label>
               <textarea
                 id="event-description"
                 placeholder="Event Description"
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
 
               <div className="popup-actions">
@@ -72,8 +100,11 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn-create">
-                  Create Event
+                <button type="submit" className="btn-create" onClick={(e) => {
+                  e.preventDefault();
+                  handleJoinGroup()
+                }}>
+                  Create Group
                 </button>
               </div>
             </div>
@@ -85,7 +116,7 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
 }
 
 function Unjoined({ group }) {
-  const { id, title, description, status, totalMembers, owner } = group;
+  const { id, title, description, status, totalMembers } = group;
   const [statusingroup, setStatus] = useState(status);
   console.log();
   async function JoinToGroup(acceptJoin = 1) {
@@ -100,13 +131,9 @@ function Unjoined({ group }) {
       }),
       credentials: "include",
     });
-    // if (res.ok) {
-    //   sendNotification();
-    // }
     const data = await res.json();
     setStatus(data.status);
 
-    // console.log(data.isMember, data.status, data.totalMembers);
   }
   return (
     <div className="feed-group-item">
@@ -118,13 +145,17 @@ function Unjoined({ group }) {
       <div className="feed-group-footer">
         <div className="feed-group-meta">{totalMembers} members</div>
         {statusingroup === "pending" ? (
-          <button className="join-group-btn" style={{
-            backgroundColor: "#ffc107",
-          }}
+          <button
+            className="join-group-btn"
+            style={{
+              backgroundColor: "#ffc107",
+            }}
             onClick={() => {
               JoinToGroup(0);
             }}
-          >wait admin</button>
+          >
+            wait admin
+          </button>
         ) : (
           <button
             className="join-group-btn"
