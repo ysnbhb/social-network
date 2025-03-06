@@ -1,15 +1,76 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  scrollbar-width: none;
 }
 
 body {
   background-color: #f8f9fa;
   color: #333;
+}
+
+/* Enhanced Main Content Layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1550px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+.text-muted {
+  color: #8e8e8e;
+}
+
+.hashtag {
+  color: #1da1f2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background-color: #f0f2f5;
+  margin: 1rem 0;
+}
+
+.see-all {
+  color: #1da1f2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+/* Enhanced Avatar Styles */
+
+
+/* Additional Utility Classes */
+.privacy {
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+
+.privacy select{
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-family: Arial, sans-serif; 
+  cursor: pointer;
+  border-radius: 7px;
 }
 
 

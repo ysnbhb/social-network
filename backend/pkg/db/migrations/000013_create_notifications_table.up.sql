@@ -7,4 +7,5 @@ CREATE TABLE notifications (
     read_status TEXT NOT NULL DEFAULT 'unread',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(sender_id) REFERENCES users(id)
 );

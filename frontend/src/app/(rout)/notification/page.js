@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import './Notification.css';
+import '../../../styles/notification.css';
 
 export default function Notification() {
   const [notifications, setNotifications] = useState([]);
@@ -36,28 +36,42 @@ export default function Notification() {
   }
 
   return (
+    <main className="main-content">
+    <div></div>
     <div>
-      <h1>Notifications</h1>
+    <div className="container">
+    
+            <div className="header-notification">
+                <div className="header-title">New</div>
+                <div className="badge">2</div>
+            </div>
+            <div className="notification-list">
       {notifications.map((notification) => {
+        console.log(notification);
+        
         if (notification.Type !== "messageuser") {
           return (
             <div key={notification.Id} className={`notification ${notification.Readstatus}`}>
-              <div className="notification-header">
+              <div className="avatar">
               </div>
-              <div className="notification-details">
-                <div className="notification-field">
-                  <span className="field-label">From {notification.Sender}</span>
-                  <span className="field-label">{notification.Sent_at}</span>
+              <div className="content">
+                    <div>
+                        <span className="name">{notification.Sender}</span>
+                        <span className="action">posted in</span>
+                        <span className="group">Sketch</span>
+                    </div>
+                    {/* <div className="description">Please bring coloured icons to demo...</div> */}
+                    <div className="time">{notification.Sent_at}</div>
+                    <div className="unread-indicator"></div>
                 </div>
-                <div className="notification-content">
-                  <p>{notification.Details}</p>
-                </div>
-              </div>
-            </div>
+        </div>
           );
         }
         return null
       })}
-    </div >
+      </div>
+      </div>
+      </div>
+    </main>
   );
 }
