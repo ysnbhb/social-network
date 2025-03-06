@@ -9,7 +9,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func CreateGroup(gp models.Groups) error {
+func CreateGroup(gp *models.Groups) error {
 	query := `INSERT INTO groups(title  , description  , creator_id) VALUES (? , ? , ?)`
 	res, err := db.DB.Exec(query, strings.TrimSpace(gp.Title), strings.TrimSpace(gp.Description), gp.Owner)
 	if err != nil {
@@ -19,9 +19,30 @@ func CreateGroup(gp models.Groups) error {
 	if err != nil {
 		return err
 	}
-	query = `INSERT INTO group_members(group_id , user_id )`
+	query = `INSERT INTO group_members(group_id , user_id ) VALUES (? , ?)`
 	_, err = db.DB.Exec(query, lastId, gp.Owner)
+	gp.Id = int(lastId)
 	return err
+}
+
+func TotalMembers(groupId int) (int, error) {
+	query := `SELECT COUNT(*) FROM group_members WHERE group_id = ?`
+	row := db.DB.QueryRow(query, groupId)
+	var count int
+	err := row.Scan(&count)
+	return count, err
+}
+
+func GroupInfo(gp int) (models.Groups, error) {
+	group := models.Groups{}
+	query := `SELECT g.title ,
+    count(DISTINCT gm.user_id)
+    FROM
+    groups  g
+    INNER JOIN group_members gm
+ 	WHERE g.id = ?`
+	err := db.DB.QueryRow(query, gp).Scan(&group.Title, &group.TotalMembers)
+	return group, err
 }
 
 func MemberGroup(groupId int) ([]models.User, error) {
@@ -121,7 +142,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
     ORDER BY c.created_at DESC
     LIMIT 10 OFFSET ?;  
 	`
-	rows, err := db.DB.Query(query, groupId, userid, offste)
+	rows, err := db.DB.Query(query, userid, groupId, offste)
 	if err != nil {
 		return nil, errors.New("field to get post")
 	}
@@ -131,6 +152,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 		if err != nil {
 			continue
 		}
+		fmt.Println(post)
 		posts = append(posts, post)
 	}
 	return posts, nil

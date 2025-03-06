@@ -10,8 +10,8 @@ import (
 	"social-network/pkg/utils"
 )
 
-func CreateGroup(gp models.Groups) (statusCode int, err error) {
-	err = utils.ValidateGroup(gp)
+func CreateGroup(gp *models.Groups) (statusCode int, err error) {
+	err = utils.ValidateGroup(*gp)
 	if err != nil {
 		// utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		statusCode = http.StatusBadRequest
@@ -25,6 +25,18 @@ func CreateGroup(gp models.Groups) (statusCode int, err error) {
 	}
 	err = nil
 	return
+}
+
+func GroupInfo(groupId int, userId int) (models.Groups, int, error) {
+	exist := repo.CheckUserInGroup(groupId, userId)
+	if !exist {
+		return models.Groups{}, http.StatusForbidden, errors.New("you are not member in this group")
+	}
+	count, err := repo.GroupInfo(groupId)
+	if err != nil {
+		return models.Groups{}, http.StatusInternalServerError, errors.New("field to get group info")
+	}
+	return count, http.StatusOK, nil
 }
 
 func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
@@ -51,8 +63,8 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 		return
 	}
 	hasInvi, err := repo.HasInvi(groupId.GroupId, userId)
- 	if err != sql.ErrNoRows && err != nil {
- 		err = errors.New("field to join to group")
+	if err != sql.ErrNoRows && err != nil {
+		err = errors.New("field to join to group")
 		statusCode = http.StatusInternalServerError
 		return
 	}
@@ -81,7 +93,7 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 		if err == sql.ErrNoRows {
 			err = repo.InsertIntoGroup_Invi(groupId.GroupId, userId, "pending")
 			if err != nil {
- 				err = errors.New("field to join to group")
+				err = errors.New("field to join to group")
 				statusCode = http.StatusInternalServerError
 			}
 			// err = errors.New("you joined to group")

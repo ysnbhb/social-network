@@ -46,8 +46,9 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	postRequest.GroupId, _ = strconv.Atoi("groupId")
- 	user := r.Context().Value("userId").(int)
+	postRequest.GroupId, _ = strconv.Atoi(r.FormValue("groupId"))
+	log.Println(postRequest.GroupId)
+	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
 	post, err := services.CreatPost(&postRequest)
 	if err != nil {

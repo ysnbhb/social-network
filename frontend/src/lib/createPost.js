@@ -3,13 +3,15 @@
 import { cookies } from "next/headers";
 
 async function CreatePost( content, postType, img, groupId = 0 ) {  
+  console.log(groupId , "groupid");
+  
   const data = new FormData();
   data.append("content", content);
   data.append("postType", postType);
   if (img) data.append("img", img);
    data.append("groupId", groupId);
   console.log(img);
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const userSession = cookieStore.get("session_id")?.value || ""; 
   
   data.append("groupId", groupId);
