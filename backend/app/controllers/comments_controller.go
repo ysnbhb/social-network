@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 
 	"social-network/app/services"
 	"social-network/pkg/models"
@@ -35,4 +36,31 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 
 	// You might want to add a success response here
 	utils.JsonResponse(w, "Comment created successfully", http.StatusCreated)
+}
+
+func GetComments(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	cardId, err := strconv.Atoi(r.FormValue("target_id"))
+	if err != nil {
+		utils.JsonResponse(w, "Status Bad Request", http.StatusBadRequest)
+		return
+	}
+
+	userId := r.Context().Value("userId").(int)
+	var commentsResponse []models.CommentResponse
+	err = services.GetComments(&commentsResponse, userId, cardId)
+	if err != nil {
+		utils.JsonResponse(w, "Error getting comments", http.StatusInternalServerError)
+		log.Println(err)
+	}
+
+	err = json.NewEncoder(w).Encode(commentsResponse)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
+		log.Println("error encoding json reactionResponse:", err)
+		return
+	}
 }

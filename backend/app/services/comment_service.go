@@ -21,3 +21,11 @@ func AddComments(commentRequest *models.CommentRequest) error {
 	}
 	return nil
 }
+
+func GetComments(CommentResponse *[]models.CommentResponse, userId int, cardId int) error {
+	err := repo.GetComments(CommentResponse, userId, cardId)
+	if err != nil {
+		return errors.New("Error getting comments")
+	}
+	return nil
+}
