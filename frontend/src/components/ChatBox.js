@@ -75,16 +75,17 @@ function ChatBox({ user }) {
     <div className="chat-container" id={`chat-box-${user.nickname}`}>
       <div className="chat-header">
         <div className="user-info">
-          {isMobile && (
-            <button className="back-button" onClick={handleGoBack}>
-              &#8592;
-            </button>
-          )}
           <div className="avatar">
             <img src={`${user.avatar}`} alt="Post" />
           </div>
           <span>{user.nickname}</span>
         </div>
+        {isMobile && (
+            <button className="back-button" onClick={handleGoBack}>
+              {/* &#8592; */}
+              ↩
+            </button>
+          )}
       </div>
 
       <div className="chat-messages" id="messages"></div>

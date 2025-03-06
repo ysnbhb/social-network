@@ -305,8 +305,40 @@ button:hover {
     gap: 10px;
 }
 
+.user-info span {
+    font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
+    .main-content-chat{
+        width: 100%;
+        flex-direction: column;
+    }
+   
     .user-list{
         width: 100%;
     }
+    .chat-container {
+        width: 100%;
+        height: auto;
+        justify-content: space-between;
+    }
+    .chat-messages {
+        max-height: calc(100vh - 120px);
+    }
+    .back-button{
+        background: none;
+        border: none;
+        color: white;
+        font-size: 40px;
+        padding: 5px 10px;
+        margin-right: 5px;
+    }
+    .emoji-picker {
+        right: 70px;
+        bottom: 60px;
+        grid-template-columns: repeat(5, 1fr);
+        max-height: 180px;
+        width: 250px;
+    }  
 }

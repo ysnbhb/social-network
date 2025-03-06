@@ -21,11 +21,6 @@ function UserList() {
 
         window.addEventListener('updateUserList', handleUpdateUserList);
 
-        
-        // return () => {
-        //     window.removeEventListener('updateUserList', handleUpdateUserList);
-        // };
-
     }, []);
 
     const Getfriends = () => {
