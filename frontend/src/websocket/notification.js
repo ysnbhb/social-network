@@ -3,11 +3,8 @@
 import { safeSend } from "./websocket.js";
 
 export function handleNotification(data) {
-
     AddMessagesymbole(data.countunreadmessages)
-
     ShowNotification(data.countNotification);
-
 }
 function ShowNotification(count) {
 
@@ -22,7 +19,9 @@ function ShowNotification(count) {
     }
 
 }
-export function sendChangeUnreadNotification(Notificationid) {
+export default function sendChangeUnreadNotification(Notificationid) {
+    console.log("sendUNreadNotification");
+
     const data = {
         type: "changeunreadnotification",
         Notificationid: Notificationid,

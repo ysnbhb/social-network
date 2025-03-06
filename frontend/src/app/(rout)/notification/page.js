@@ -1,10 +1,13 @@
 "use client"
 import { useState, useEffect } from 'react';
 import './Notification.css';
+import { useRouter } from 'next/navigation'
+import sendChangeUnreadNotification from '../../../websocket/notification.js'
 
 export default function Notification() {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     Notifications();
@@ -27,6 +30,17 @@ export default function Notification() {
         setLoading(false);
       })
   }
+  const handleNotificationClick = (notification) => {
+    sendChangeUnreadNotification(notification.Id);
+    switch (notification.Type) {
+      case "group_request_join":
+        router.push('/groups')
+        break;
+      case "follow":
+
+    }
+
+  }
   if (loading) {
     return <h1>Loading Notifications...</h1>;
   }
@@ -39,9 +53,15 @@ export default function Notification() {
     <div>
       <h1>Notifications</h1>
       {notifications.map((notification) => {
+        console.log("notification", notification);
+
         if (notification.Type !== "messageuser") {
           return (
-            <div key={notification.Id} className={`notification ${notification.Readstatus}`}>
+            <div
+              key={notification.Id}
+              className={`notification ${notification.Readstatus}`}
+              onClick={() => handleNotificationClick(notification)} // Add the click handler here
+            >
               <div className="notification-header">
               </div>
               <div className="notification-details">

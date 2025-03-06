@@ -1,0 +1,1197 @@
+2025/03/06 11:30:52 server.go:27: Starting server on :8080
+2025/03/06 11:32:56 user_repo.go:33: <nil>
+2025/03/06 11:35:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 11:35:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 11:38:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:34:46 user_repo.go:33: <nil>
+2025/03/06 12:34:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:35:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 12:37:29 server.go:27: Starting server on :8080
+2025/03/06 13:00:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:00:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:22:13 server.go:27: Starting server on :8080
+2025/03/06 13:24:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:24:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:24:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:24:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:27:15 server.go:3634: http: panic serving 127.0.0.1:60384: concurrent write to websocket connection
+goroutine 93 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc00058e1e0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0004fc2c0, 0xc00049a300, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0004fc2c0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc00049a2d0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc00022cdc0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc000228380?}, 0xc00020f2c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc00020f180?, {0x95c158?, 0xc000228380?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc000228380}, 0xc00020f180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc000228380?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002038c0?, {0x95c158, 0xc000228380}, 0xc00020f180)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc000228380}, 0xc00020f180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc000228380?}, 0xc000069b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000203830?}, {0x95c158?, 0xc000228380?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0004a8630, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:56 server.go:3634: http: panic serving [::1]:42962: concurrent write to websocket connection
+goroutine 123 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc000457e90, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc000156160, 0xc0003ab740, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc000156160, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0003ab6b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc000270840)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc000228a80?}, 0xc00026b180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc00026b040?, {0x95c158?, 0xc000228a80?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc000228a80}, 0xc00026b040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc000228a80?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000267e60?, {0x95c158, 0xc000228a80}, 0xc00026b040)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc000228a80}, 0xc00026b040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc000228a80?}, 0xc00006ab70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000267dd0?}, {0x95c158?, 0xc000228a80?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000212ea0, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:32:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:32:57 server.go:3634: http: panic serving 127.0.0.1:37684: concurrent write to websocket connection
+goroutine 148 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0003fcc60, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc000156160, 0xc0003d09f0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc000156160, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0003d0930})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.Notification(0xc0004ae080)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc000646080, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc0004ae080)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc000152000?}, 0xc00037b540)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc00037b400?, {0x95c158?, 0xc000152000?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc000152000}, 0xc00037b400)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc000152000?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003d6000?, {0x95c158, 0xc000152000}, 0xc00037b400)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc000152000}, 0xc00037b400)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc000152000?}, 0xc00006db70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000175e30?}, {0x95c158?, 0xc000152000?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0004a8000, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:32:57 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:33:04 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:35:21 server.go:3634: http: panic serving [::1]:57918: concurrent write to websocket connection
+goroutine 261 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0006a5980, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc000156580, 0xc00017f020, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc000156580, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc00017eff0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.Notification(0xc00028a1c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc00058a160, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc00028a1c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc0001520e0?}, 0xc000269180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc000269040?, {0x95c158?, 0xc0001520e0?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc0001520e0}, 0xc000269040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc0001520e0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003fc6c0?, {0x95c158, 0xc0001520e0}, 0xc000269040)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc0001520e0}, 0xc000269040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc0001520e0?}, 0xc000135b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003fc3f0?}, {0x95c158?, 0xc0001520e0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da1b0, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:35:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:35:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:35:51 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:36:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:37:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:37:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:46:30 server.go:27: Starting server on :8080
+2025/03/06 13:53:29 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:53:30 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:53:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:53:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:53:50 user_profile_controller.go:93: error checking if user can send message: User not found
+2025/03/06 13:53:50 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:53:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:53:57 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:54:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:54:02 serveContent.go:26: open ./uploads/03388225-b666-4878-960d-c16753ebe707.jpg: no such file or directory
+2025/03/06 13:54:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:54:37 server.go:3634: http: panic serving 127.0.0.1:38434: concurrent write to websocket connection
+goroutine 48 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0002cb9e0, 0x1, {0x0?, 0xc000204140?, 0xc0000e3628?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0xc0000e3698?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0002cb9b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:29 +0xd6
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc00020c2c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc0000000e0?}, 0xc000180140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc000180000?, {0x95c158?, 0xc0000000e0?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc0000000e0}, 0xc000180000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc0000000e0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000368120?, {0x95c158, 0xc0000000e0}, 0xc000180000)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc0000000e0}, 0xc000180000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc0000000e0?}, 0xc00006bb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000368030?}, {0x95c158?, 0xc0000000e0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0002281b0, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:54:37 server.go:3634: http: panic serving [::1]:35134: concurrent write to websocket connection
+goroutine 61 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc000413410, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d8420, 0xc000340450, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d8420, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0003403f0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.Notification(0xc000298160)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc00062c0b0, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc000298160)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc000000000?}, 0xc0000f08c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc0000f0140?, {0x95c158?, 0xc000000000?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc000000000}, 0xc0000f0140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc000000000?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0005b0b70?, {0x95c158, 0xc000000000}, 0xc0000f0140)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc000000000}, 0xc0000f0140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc000000000?}, 0xc000069b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0005b0240?}, {0x95c158?, 0xc000000000?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da1b0, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 13:54:37 user_profile_controller.go:93: error checking if user can send message: User not found
+2025/03/06 13:54:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:01:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:01:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:02:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:02:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:02:43 server.go:3634: http: panic serving 127.0.0.1:40986: concurrent write to websocket connection
+goroutine 172 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0004be270, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d86e0, 0xc0004c3da0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d86e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0004c3d70})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc0000d82c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc00031a000?}, 0xc000167400)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc0001672c0?, {0x95c158?, 0xc00031a000?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc00031a000}, 0xc0001672c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc00031a000?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00036ba40?, {0x95c158, 0xc00031a000}, 0xc0001672c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc00031a000}, 0xc0001672c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc00031a000?}, 0xc000068b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00036b980?}, {0x95c158?, 0xc00031a000?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da2d0, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:02:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:04:32 Websocket_controller.go:47: Failed to handle message: no such column: read
+2025/03/06 14:05:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:05:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:05:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:06:05 Websocket_controller.go:47: Failed to handle message: no such column: read
+2025/03/06 14:06:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:06:18 Websocket_controller.go:47: Failed to handle message: no such column: read
+2025/03/06 14:06:23 Websocket_controller.go:47: Failed to handle message: no such column: read
+2025/03/06 14:06:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:06:58 server.go:3634: http: panic serving [::1]:46170: concurrent write to websocket connection
+goroutine 316 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958600?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0002d61e0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0003286e0, 0xc0004f84e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0003286e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0004f84b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.AddClient(0xc0000d9760, 0x1, {0xc0004ac148, 0x6})
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:110 +0x13f
+social-network/app/controllers.HandleWebsocket({0x95c158?, 0xc00031a620?}, 0xc000264140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:31 +0x1d7
+net/http.HandlerFunc.ServeHTTP(0xc00032e3c0?, {0x95c158?, 0xc00031a620?}, 0x956e00?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c158, 0xc00031a620}, 0xc00032e3c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c158?, 0xc00031a620?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0004f82a0?, {0x95c158, 0xc00031a620}, 0xc00032e3c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c158, 0xc00031a620}, 0xc00032e3c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c158?, 0xc00031a620?}, 0xc00006db70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00054ec00?}, {0x95c158?, 0xc00031a620?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00027e240, {0x95c668, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:07:06 Websocket_controller.go:47: Failed to handle message: no such column: read
+2025/03/06 14:09:29 server.go:27: Starting server on :8080
+2025/03/06 14:11:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:13:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:13:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:48 server.go:3634: http: panic serving 127.0.0.1:45876: concurrent write to websocket connection
+goroutine 221 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc00041c1e0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x407fa5?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d86e0, 0xc000344f60, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d86e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc000344ed0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.AddClient(0xc0000d8840, 0x2, {0xc0007081e0, 0xe})
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:110 +0x13f
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc00014e1c0?}, 0xc0002e9180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:31 +0x1d7
+net/http.HandlerFunc.ServeHTTP(0xc0001c0780?, {0x95c198?, 0xc00014e1c0?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc00014e1c0}, 0xc0001c0780)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc00014e1c0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000344c00?, {0x95c198, 0xc00014e1c0}, 0xc0001c0780)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc00014e1c0}, 0xc0001c0780)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc00014e1c0?}, 0xc00006ab70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00056e720?}, {0x95c198?, 0xc00014e1c0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da1b0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:16:48 server.go:3634: http: panic serving 127.0.0.1:45896: concurrent write to websocket connection
+goroutine 171 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0003e41b0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d89a0, 0xc0002f2780, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d89a0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0002f2750})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.AddClient(0xc0000d8b00, 0x2, {0xc000578300, 0xe})
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:110 +0x13f
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc00014e2a0?}, 0xc000152f00)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:31 +0x1d7
+net/http.HandlerFunc.ServeHTTP(0xc0002f8000?, {0x95c198?, 0xc00014e2a0?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc00014e2a0}, 0xc0002f8000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc00014e2a0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002f2540?, {0x95c198, 0xc00014e2a0}, 0xc0002f8000)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc00014e2a0}, 0xc0002f8000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc00014e2a0?}, 0xc00006ab70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003afe90?}, {0x95c198?, 0xc00014e2a0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001483f0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:16:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:16:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:18:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:13 server.go:3634: http: panic serving 127.0.0.1:35682: concurrent write to websocket connection
+goroutine 374 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc00042f9e0, 0x1, {0x0?, 0xc0000e9800?, 0xc00036b628?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0xc00036b698?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc00042f9b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:29 +0xd6
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc0000d9080)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc000126000?}, 0xc0003dc280)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc0005cc500?, {0x95c198?, 0xc000126000?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc000126000}, 0xc0005cc500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc000126000?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000344540?, {0x95c198, 0xc000126000}, 0xc0005cc500)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc000126000}, 0xc0005cc500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc000126000?}, 0xc000363b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004baa50?}, {0x95c198?, 0xc000126000?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001163f0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:22:13 Websocket_controller.go:42: Failed to read message: websocket: close 1002 (protocol error): Invalid UTF-8 in text frame
+2025/03/06 14:22:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:28 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:31 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:38 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:39 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:41 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:44 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:52 server.go:3634: http: panic serving [::1]:41734: concurrent write to websocket connection
+goroutine 662 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0005a55f0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc000338f20, 0xc000373260, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc000338f20, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc000373200})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.Notification(0xc00014c020)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc000012f00, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc00014c020)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0001a28c0?}, 0xc00055c000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc000248500?, {0x95c198?, 0xc0001a28c0?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0001a28c0}, 0xc000248500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0001a28c0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00060c060?, {0x95c198, 0xc0001a28c0}, 0xc000248500)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0001a28c0}, 0xc000248500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0001a28c0?}, 0xc00006eb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000344ab0?}, {0x95c198?, 0xc0001a28c0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000148360, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:22:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:56 server.go:3634: http: panic serving [::1]:55596: concurrent write to websocket connection
+goroutine 682 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0003f4540, 0x1, {0x0?, 0xc00030e680?, 0xc000121688?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0xc0001216f8?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0003f44e0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:29 +0xd6
+social-network/app/controllers.Notification(0xc000214520)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc0004fca80, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc000214520)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0001a27e0?}, 0xc00019f7c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc000389040?, {0x95c198?, 0xc0001a27e0?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0001a27e0}, 0xc000389040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0001a27e0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000476180?, {0x95c198, 0xc0001a27e0}, 0xc000389040)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0001a27e0}, 0xc000389040)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0001a27e0?}, 0xc0004abb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004db890?}, {0x95c198?, 0xc0001a27e0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da3f0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:22:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:57 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:22:59 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:23:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:23:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:23:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:23:01 server.go:3634: http: panic serving 127.0.0.1:53536: concurrent write to websocket connection
+goroutine 673 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0004a0cc0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d91e0, 0xc0004c5470, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d91e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0004c5410})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc000338840)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0004a0cc0, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d91e0, 0xc0004c53e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d91e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0004c53b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.AddClient(0xc000338840, 0x2, {0xc0004c6080, 0xe})
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:110 +0x13f
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0001a28c0?}, 0xc0003bcdc0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:31 +0x1d7
+net/http.HandlerFunc.ServeHTTP(0xc0003bcc80?, {0x95c198?, 0xc0001a28c0?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0001a28c0}, 0xc0003bcc80)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0001a28c0?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003b6330?, {0x95c198, 0xc0001a28c0}, 0xc0003bcc80)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0001a28c0}, 0xc0003bcc80)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0001a28c0?}, 0xc000632b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003b6120?}, {0x95c198?, 0xc0001a28c0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000148360, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:48 server.go:3634: http: panic serving 127.0.0.1:52334: concurrent write to websocket connection
+goroutine 748 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc00044e150, 0x1, {0x0?, 0xc0004c8000?, 0xc0002ed688?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0xc0002ed6f8?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc00044e090})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:29 +0xd6
+social-network/app/controllers.Notification(0xc0003946a0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:89 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc000310cf0, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:74 +0x19c
+social-network/app/controllers.HandleMessages(0xc0003946a0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:45 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0001a2a80?}, 0xc000334280)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:34 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc000334140?, {0x95c198?, 0xc0001a2a80?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0001a2a80}, 0xc000334140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0001a2a80?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000316180?, {0x95c198, 0xc0001a2a80}, 0xc000334140)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0001a2a80}, 0xc000334140)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0001a2a80?}, 0xc000363b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000316000?}, {0x95c198?, 0xc0001a2a80?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001485a0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:25:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:25:51 server.go:3634: http: panic serving 127.0.0.1:53540: concurrent write to websocket connection
+goroutine 794 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc000549a10, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0003a2580, 0xc000464b70, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0003a2580, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc000464b40})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:140 +0x1b5
+social-network/app/controllers.RemoveClient(0xc000338b00)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:125 +0x12a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc000218000?}, 0xc000451680)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:35 +0x237
+net/http.HandlerFunc.ServeHTTP(0xc000451540?, {0x95c198?, 0xc000218000?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc000218000}, 0xc000451540)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc000218000?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003b6420?, {0x95c198, 0xc000218000}, 0xc000451540)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc000218000}, 0xc000451540)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc000218000?}, 0xc0001acb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003b6240?}, {0x95c198?, 0xc000218000?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000148360, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:26:15 server.go:27: Starting server on :8080
+2025/03/06 14:30:41 server.go:27: Starting server on :8080
+2025/03/06 14:31:34 server.go:27: Starting server on :8080
+2025/03/06 14:32:43 server.go:27: Starting server on :8080
+2025/03/06 14:33:19 server.go:27: Starting server on :8080
+2025/03/06 14:34:27 server.go:27: Starting server on :8080
+2025/03/06 14:35:03 server.go:27: Starting server on :8080
+2025/03/06 14:37:37 server.go:27: Starting server on :8080
+2025/03/06 14:39:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:36 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:36 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:39:57 server.go:3634: http: panic serving 127.0.0.1:45538: concurrent write to websocket connection
+goroutine 146 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc00045e150, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0000d8420, 0xc00048e960, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0000d8420, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc00048e930})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.BroadcastOnlineUsers()
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:139 +0x1b5
+social-network/app/controllers.AddClient(0xc0000d8580, 0x2, {0xc0005329a0, 0xe})
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:109 +0x13f
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc000140460?}, 0xc00046d7c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:31 +0x1d7
+net/http.HandlerFunc.ServeHTTP(0xc00046d680?, {0x95c198?, 0xc000140460?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc000140460}, 0xc00046d680)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc000140460?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00048e750?, {0x95c198, 0xc000140460}, 0xc00046d680)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc000140460}, 0xc00046d680)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc000140460?}, 0xc00006bb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00048e660?}, {0x95c198?, 0xc000140460?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da510, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:41:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:59 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:59 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:59 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:59 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:42:59 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:43:05 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:47:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:06 server.go:3634: http: panic serving [::1]:41140: concurrent write to websocket connection
+goroutine 331 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc000115950, 0x1, {0x0?, 0x4712f9?, 0x30?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0x87abe0?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).beginMessage(0xc0001e86e0, 0xc0004981e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:480 +0x37
+github.com/gorilla/websocket.(*Conn).NextWriter(0xc0001e86e0, 0x1)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:520 +0x3f
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0004981b0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:24 +0x34
+social-network/app/controllers.Notification(0xc00018e0a0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:88 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc0005b8010, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:73 +0x19c
+social-network/app/controllers.HandleMessages(0xc00018e0a0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:44 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0003e2540?}, 0xc0003b6000)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:33 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc0001452c0?, {0x95c198?, 0xc0003e2540?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0003e2540}, 0xc0001452c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0003e2540?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00056a090?, {0x95c198, 0xc0003e2540}, 0xc0001452c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0003e2540}, 0xc0001452c0)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0003e2540?}, 0xc0002c5b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003cd590?}, {0x95c198?, 0xc0003e2540?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da3f0, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:50 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:48:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:49:51 server.go:3634: http: panic serving [::1]:51478: concurrent write to websocket connection
+goroutine 471 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x84bf40?, 0x958640?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+github.com/gorilla/websocket.(*messageWriter).flushFrame(0xc0003282d0, 0x1, {0x0?, 0xc00011a400?, 0xc0002b1688?})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:617 +0x4af
+github.com/gorilla/websocket.(*messageWriter).Close(0xc0002b16f8?)
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/conn.go:731 +0x35
+github.com/gorilla/websocket.(*Conn).WriteJSON(0x86ef20?, {0x86ef20, 0xc0003282a0})
+	/home/yhamdoun/go/pkg/mod/github.com/gorilla/websocket@v1.5.3/json.go:29 +0xd6
+social-network/app/controllers.Notification(0xc0003ae180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:88 +0x17b
+social-network/app/controllers.Handlemessagetype({{0xc000338010, 0xf}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0x0, 0x0}, 0x0, ...}, ...)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:73 +0x19c
+social-network/app/controllers.HandleMessages(0xc0003ae180)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:44 +0x8a
+social-network/app/controllers.HandleWebsocket({0x95c198?, 0xc0005ee380?}, 0xc000212780)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/app/controllers/Websocket_controller.go:33 +0x225
+net/http.HandlerFunc.ServeHTTP(0xc000144500?, {0x95c198?, 0xc0005ee380?}, 0x956e30?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func16({0x95c198, 0xc0005ee380}, 0xc000144500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:32 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x95c198?, 0xc0005ee380?}, 0x8d67cd?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001d0e10?, {0x95c198, 0xc0005ee380}, 0xc000144500)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x95c198, 0xc0005ee380}, 0xc000144500)
+	/home/yhamdoun/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x95c198?, 0xc0005ee380?}, 0xc0002c6b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0005a8180?}, {0x95c198?, 0xc0005ee380?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000da990, {0x95c6a8, 0xc00009fe00})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:57:22 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 14:59:41 server.go:27: Starting server on :8080
+2025/03/06 15:01:46 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:01:46 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:02:09 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:15 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:16 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:17 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:19 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:03:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)

@@ -5,7 +5,7 @@ import "../styles/groupsFeed.css";
 // import GroupList from "./groupList";
 
 export default function GroupsFeed({ unjoined, setUnjoined }) {
-    
+
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
 
@@ -20,10 +20,11 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
         credentials: "include",
       });
       const data = await response.json();
+      console.log("fetchGroups", data);
       setUnjoined(data);
     };
     fetchGroups();
-  }, []);  
+  }, []);
   return (
     <div className="content-area">
       <div className="group-creator">
@@ -38,8 +39,8 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
           <Unjoined key={group.id} group={group} />
         ))}
       </div>
-            {/* Popup Overlay */}
-            {showPopup && (
+      {/* Popup Overlay */}
+      {showPopup && (
         <div className="popup-overlay" onClick={togglePopup} >
           <div className="popup-content">
             <div className="popup-header">
@@ -84,7 +85,7 @@ export default function GroupsFeed({ unjoined, setUnjoined }) {
 }
 
 function Unjoined({ group }) {
-  const { id, title, description, status, totalMembers } = group;
+  const { id, title, description, status, totalMembers, owner } = group;
   const [statusingroup, setStatus] = useState(status);
   console.log();
   async function JoinToGroup(acceptJoin = 1) {
@@ -99,9 +100,13 @@ function Unjoined({ group }) {
       }),
       credentials: "include",
     });
+    // if (res.ok) {
+    //   sendNotification();
+    // }
     const data = await res.json();
     setStatus(data.status);
-    console.log(data.isMember, data.status, data.totalMembers);
+
+    // console.log(data.isMember, data.status, data.totalMembers);
   }
   return (
     <div className="feed-group-item">
@@ -116,9 +121,9 @@ function Unjoined({ group }) {
           <button className="join-group-btn" style={{
             backgroundColor: "#ffc107",
           }}
-          onClick={() => {
-            JoinToGroup(0);
-          }}
+            onClick={() => {
+              JoinToGroup(0);
+            }}
           >wait admin</button>
         ) : (
           <button

@@ -87,6 +87,17 @@ func HasInvi(groupId, userId int) (string, error) {
 func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	query := `INSERT INTO group_invitations(group_id , user_id , status) VALUES(? ,? , ?)`
 	_, err := db.DB.Exec(query, groupId, userId, status)
+	if err != nil {
+		return err
+	}
+	query = `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
+	adminid := GeTIdofAdminOfGroup(groupId)
+	adminname := GetNickName(adminid)
+	_, err = db.DB.Exec(query, adminid, userId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
+	adminconnection := models.Clients[adminname]
+	err = adminconnection.Conn.WriteJSON(map[string]interface{}{
+		"type": "realNotification",
+	})
 	return err
 }
 
@@ -328,4 +339,11 @@ func GetGroupInfo(groupId int, userId int) (models.Groups, error) {
 		return group, err
 	}
 	return group, nil
+}
+
+func GetgroupnameById(groupId int) string {
+	var groupname string
+	query := `SELECT title FROM groups WHERE id = ?`
+	db.DB.QueryRow(query, groupId).Scan(&groupname)
+	return groupname
 }

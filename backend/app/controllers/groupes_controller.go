@@ -77,6 +77,7 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "fieled to get group info", http.StatusInternalServerError)
 		return
 	}
+	
 	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
