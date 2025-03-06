@@ -40,3 +40,9 @@ type UserProfile struct {
 	Following_count int       `json:"following_count"`
 	Count_Posts     int       `json:"posts_count"`
 }
+
+type Userdataforchat struct {
+	Id       int    `json:"id"`
+	Nickname string `json:"nickname"`
+	Avatar   string `json:"avatar"`
+}

@@ -63,6 +63,8 @@ function setupScrollHandler(data) {
 }
 
 export function receiveMessageuser(data) {
+    const updateUserListEvent = new CustomEvent('updateUserList');
+    window.dispatchEvent(updateUserListEvent);
 
     sendNotification()
     if (document.getElementById(`chat-box-${data.sender}`) && !data.mymsg) {
@@ -74,7 +76,6 @@ export function receiveMessageuser(data) {
             newmsg.style.display = "block"
         }
     }
-    console.log(data);
 
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/chat/${data.sender}` || data.mymsg) {
