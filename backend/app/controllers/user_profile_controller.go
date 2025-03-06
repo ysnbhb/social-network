@@ -19,23 +19,8 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
-	var profileUserId int
-
-	userId := r.Context().Value("userId").(int)
-	other_user := r.URL.Query().Get("id")
-	if other_user != "" {
-		userId_other, err := strconv.Atoi(other_user)
-		if err != nil {
-			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
-			log.Println("This Id Is Incorrect")
-			return
-		}
-		profileUserId = userId_other
-	} else {
-		profileUserId = userId
-	}
-
-	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
+	other_user := r.URL.Query().Get("username") 
+	postsResponse := services.GetPostsUserProfile(other_user, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
@@ -50,23 +35,13 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-	var profileUserId int
+	// var profileUserId int
 
-	userId := r.Context().Value("userId").(int)
+	// userId := r.Context().Value("userId").(int)
 
-	other_user := r.URL.Query().Get("id")
-	if other_user != "" {
-		userId_other, err := strconv.Atoi(other_user)
-		if err != nil {
-			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
-			log.Println("This Id Is Incorrect")
-			return
-		}
-		profileUserId = userId_other
-	} else {
-		profileUserId = userId
-	}
-	postsResponse, err := services.UserProfile(profileUserId)
+	other_user := r.URL.Query().Get("username") 
+
+	postsResponse, err := services.UserProfile(other_user)
 	if err != nil {
 		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
 		log.Println("This Id user Is not found:", err)
@@ -125,8 +100,7 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 
 	following.Follower, err = services.GetUserFollower(user)
 
-	log.Println(following.Follower)
-	if err != nil {
+ 	if err != nil {
 		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
 		log.Println(err.Error())
 		return

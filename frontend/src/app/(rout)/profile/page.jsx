@@ -22,6 +22,8 @@ export default function Profile() {
       setParsedUser(parsedUser);
     }
   }, []);
+
+  
   useEffect(() => {
     const storedUserLogin = localStorage.getItem("userID");
     setUserLogin(storedUserLogin);

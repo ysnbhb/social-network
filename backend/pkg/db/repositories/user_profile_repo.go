@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string , offset int) error {
 	query := `
 		SELECT 
 			 c.id,
@@ -25,7 +25,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = $1
+		WHERE u.nickname = $1
 		GROUP BY 
 			c.id, 
 			c.user_id, 
@@ -37,7 +37,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 		ORDER BY c.created_at DESC
 		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId, offset)
+	rows, err := db.DB.Query(query, username, offset)
 	if err != nil {
 		return err
 	}
@@ -67,7 +67,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 	return rows.Err()
 }
 
-func InfoUserProfile(profile *models.UserProfile, user_id int) error {
+func InfoUserProfile(profile *models.UserProfile, username  string) error {
 	query := `SELECT  
                 u.id,
                 u.first_name,
@@ -86,9 +86,9 @@ func InfoUserProfile(profile *models.UserProfile, user_id int) error {
             LEFT JOIN followers f1 ON f1.following_id = u.id  
             LEFT JOIN followers f2 ON f2.follower_id = u.id   
             LEFT JOIN posts p on p.card_id=c.id
-            WHERE u.id = ?
+            WHERE u.nickname = ?
             GROUP BY u.id;`
-	err := db.DB.QueryRow(query, user_id).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, username).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}

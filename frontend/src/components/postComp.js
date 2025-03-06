@@ -43,7 +43,7 @@ import { useRouter } from "next/navigation";
 
  
   const  handleIduser=()=>{
-    sessionStorage.setItem('selectedUserProfile', JSON.stringify(post.id));
+    sessionStorage.setItem('selectedUserProfile', JSON.stringify(post.nickName));
     route.push('/profile');
 
   }

@@ -6,7 +6,7 @@ export default function userProfile(id){
     
     const fetchProfile=async ()=>{
          const endpoint = id
-        ? `/api/profile?id=${id}` 
+        ? `/api/profile?username=${id}` 
         : '/api/profile';
         try {
             const response = await fetch(endpoint,{

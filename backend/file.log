@@ -154,3 +154,35 @@
 2025/03/06 15:21:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 15:21:04 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
 2025/03/06 15:21:19 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:22:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:22:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:22:09 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:24:49 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:25:37 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:25:47 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:25:51 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:29:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:29:24 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:29:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:29:34 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:29:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:29:37 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:29:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:29:58 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:30:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:30:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:30:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:31:20 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:31:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:31:36 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:31:56 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:32:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:32:08 user_profile_controller.go:30: This Id Is Incorrect
+2025/03/06 15:32:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:32:16 user_profile_controller.go:30: This Id Is Incorrect
+2025/03/06 15:32:18 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:32:21 user_profile_controller.go:30: This Id Is Incorrect
+2025/03/06 15:32:27 user_profile_controller.go:128: [{0 bhb bhb bhb475 /uploads/default.webp}]
+2025/03/06 15:32:29 user_profile_controller.go:30: This Id Is Incorrect
+2025/03/06 15:32:42 user_profile_controller.go:30: This Id Is Incorrect
+2025/03/06 15:39:26 server.go:27: Starting server on :8080
