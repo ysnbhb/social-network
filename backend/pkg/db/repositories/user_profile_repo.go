@@ -25,7 +25,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = $1
+		WHERE u.id = $1 AND c.group_id IS NULL AND c.group_id =0
 		GROUP BY 
 			c.id, 
 			c.user_id, 

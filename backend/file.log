@@ -21,3 +21,39 @@
 2025/03/06 15:28:35 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
 2025/03/06 15:28:41 user_repo.go:33: <nil>
 2025/03/06 15:28:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:33:47 server.go:27: Starting server on :8080
+2025/03/06 15:35:08 posts_controller.go:50: 0
+2025/03/06 15:35:08 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:10 posts_controller.go:50: 0
+2025/03/06 15:35:10 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:11 posts_controller.go:50: 0
+2025/03/06 15:35:11 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:11 posts_controller.go:50: 0
+2025/03/06 15:35:11 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:11 posts_controller.go:50: 0
+2025/03/06 15:35:11 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:12 posts_controller.go:50: 0
+2025/03/06 15:35:12 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:35:18 posts_controller.go:50: 0
+2025/03/06 15:35:18 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/06 15:36:14 posts_controller.go:50: 0
+2025/03/06 15:50:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:50:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:51:10 user_repo.go:33: <nil>
+2025/03/06 15:51:10 auth_controller.go:34: sorry, your password was incorrect
+2025/03/06 15:51:21 user_repo.go:33: <nil>
+2025/03/06 15:52:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:53:03 server.go:27: Starting server on :8080
+2025/03/06 15:53:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:53:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:54:10 posts_controller.go:50: 11
+2025/03/06 15:54:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:54:47 posts_controller.go:50: 11
+2025/03/06 15:54:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 15:59:50 server.go:27: Starting server on :8080
+2025/03/06 16:00:00 user_repo.go:33: <nil>
+2025/03/06 16:06:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:06:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:06:51 user_repo.go:33: <nil>
+2025/03/06 16:06:51 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/06 16:07:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)

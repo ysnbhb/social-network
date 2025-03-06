@@ -25,22 +25,16 @@ func CreateGroup(gp *models.Groups) error {
 	return err
 }
 
-func TotalMembers(groupId int) (int, error) {
-	query := `SELECT COUNT(*) FROM group_members WHERE group_id = ?`
-	row := db.DB.QueryRow(query, groupId)
-	var count int
-	err := row.Scan(&count)
-	return count, err
-}
 
 func GroupInfo(gp int) (models.Groups, error) {
 	group := models.Groups{}
-	query := `SELECT g.title ,
-    count(DISTINCT gm.user_id)
-    FROM
-    groups  g
-    INNER JOIN group_members gm
- 	WHERE g.id = ?`
+	query := `SELECT 
+    g.title,
+    COUNT(DISTINCT gm.user_id) AS total_members
+	FROM groups g
+	INNER JOIN group_members gm ON g.id = gm.group_id
+	WHERE g.id = ?
+	GROUP BY g.id;`
 	err := db.DB.QueryRow(query, gp).Scan(&group.Title, &group.TotalMembers)
 	return group, err
 }
