@@ -2968,3 +2968,10 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/06 15:57:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 15:58:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 16:05:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:14:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:15:36 user_profile_controller.go:36: 1 1 hello
+2025/03/06 16:15:36 user_profile_controller.go:36: 1  hello
+2025/03/06 16:16:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:17:12 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:19:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 16:19:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)

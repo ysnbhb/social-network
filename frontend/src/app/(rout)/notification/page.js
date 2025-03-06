@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import ProfileSide from '../../../components/profileSide.js';
 import '../../../styles/notification.css';
 
 export default function Notification() {
@@ -37,7 +38,7 @@ export default function Notification() {
 
   return (
     <main className="main-content">
-    <div></div>
+   <ProfileSide  />
     <div>
     <div className="container">
     
