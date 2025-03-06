@@ -83,3 +83,8 @@
 2025/03/06 12:28:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 12:28:08 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 12:28:23 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:02:15 server.go:27: Starting server on :8080
+2025/03/06 13:03:55 auth_controller.go:33: sorry, this email does not exist
+2025/03/06 13:04:22 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:04:22 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:04:22 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
