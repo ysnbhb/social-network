@@ -37,7 +37,7 @@ export function initializeWebSocket() {
         };
 
         socket.onclose = function (event) {
-            
+
             console.log('WebSocket connection closed with code:', event.code);
             connectionPromise = null;
         };
@@ -45,7 +45,7 @@ export function initializeWebSocket() {
         socket.onmessage = function (event) {
             const data = JSON.parse(event.data);
             const type = data.type;
-            
+
             switch (type) {
                 case "onlineStatus":
                     ReceiveOnlineStatus(data);
@@ -68,7 +68,7 @@ export function initializeWebSocket() {
             }
         };
     });
- 
+
     return connectionPromise;
 }
 
@@ -101,19 +101,15 @@ export function SendOnlineStatus() {
 
 export function ReceiveOnlineStatus(data) {
     const onlineUsers = data.onlineUsers;
-
-    // requestAnimationFrame(() => {
-        const allusers = document.querySelectorAll(".user-item");
-        allusers.forEach(user => {
-            const spanonline = document.querySelectorAll(`#${user.id} .statue`)[0];            
-            if (spanonline && onlineUsers.includes(user.id)) {
-                spanonline.style.backgroundColor = "#4caf50";
-            } else if (spanonline) {
-                spanonline.style.backgroundColor = "#d3d3d3";
-            }
-        });
-    // });
-
+    const allusers = document.querySelectorAll(".user-item");
+    allusers.forEach(user => {
+        const spanonline = user.querySelector(".statue");
+        if (spanonline && onlineUsers.includes(user.id)) {
+            spanonline.style.backgroundColor = "green";
+        } else if (spanonline) {
+            spanonline.style.backgroundColor = "#d3d3d3";
+        }
+    });
 }
 
 

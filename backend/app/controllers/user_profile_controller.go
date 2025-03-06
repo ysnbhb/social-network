@@ -33,8 +33,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	} else {
 		profileUserId = userId
 	}
-	log.Println(profileUserId, other_user, "hello")
-
+ 
 	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
@@ -94,10 +93,17 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, err.Error()+"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
-	var userInfo map[string]string
-	userInfo = map[string]string{
-		"nickname": username,
+	//select the user info from  the database
+	userInfo, err := repo.GetUserInfoByUsername(username)
+	if err != nil {
+		log.Println("error getting user info:", err)
+		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	// var userInfo map[string]string
+	// userInfo = map[string]string{
+	// 	"nickname": username,
+	// }
 	err = json.NewEncoder(w).Encode(userInfo)
 	if err != nil {
 		log.Println("error encoding json userInfo:", err)
