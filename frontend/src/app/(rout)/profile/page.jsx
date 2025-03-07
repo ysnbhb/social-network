@@ -12,7 +12,7 @@ import useHandleFollowers from "@/lib/handleFollowors";
 
 export default function Profile() {
   const router = useRouter();
-  const [username, setUsername] = useState(null);
+  // const [username, setUsername] = useState(null);
   const [userLogin, setUserLogin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const searchParams = new URLSearchParams(window.location.search);
@@ -24,8 +24,6 @@ export default function Profile() {
     const storedUserLogin = localStorage.getItem("username");
     setUserLogin(storedUserLogin);
   }, []);
-
-
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
   const {
@@ -136,9 +134,9 @@ export default function Profile() {
                   <div>
 
                 {status === "accept" ? (
-                        <button>unfollow</button>
+                        <button className={style.followButton}>unfollow</button>
                       ) : status === "pending" ? (
-                        <button>pending</button>
+                        <button className={style.followButton}>pending</button>
                       ) : (
                         <button className={style.followButton} onClick={() => handuleClick(id)}>follow</button>
                       )}

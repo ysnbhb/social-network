@@ -4,6 +4,7 @@ import '../styles/profileSidebar.css';
   import userProfile from '@/app/hooks/userProfile';
 import { useRouter } from 'next/navigation';
  import { useState } from 'react'; 
+import Link from 'next/link';
 export default function ProfileSide({  classes   }) {
   const route=useRouter()
   const [profile, error] = userProfile();
@@ -61,7 +62,9 @@ export default function ProfileSide({  classes   }) {
               <p className="text-muted follow" onClick={()=>handleFollowers('Following')}>Following</p>
             </div>
           </div>
-          <button    onClick={handleIduser}   className="profile-button">My Profile</button>
+          <Link href={{ pathname: '/profile', query: { username: nickName } }}>
+          <button     className="profile-button">My Profile</button>
+          </Link>
         </aside>
         ) : (
           <div className="error-message">
