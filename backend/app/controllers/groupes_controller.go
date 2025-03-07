@@ -197,3 +197,49 @@ func GroupInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, groupinfo, http.StatusOK)
 }
+
+func CreateEvent(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_env := models.Event{}
+	err := json.NewDecoder(r.Body).Decode(&gp_env)
+	if err != nil {
+		// log.Println(err)
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	gp_env.CreatorId = userId
+	err, code := services.CreateEvent(&gp_env)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, gp_env, code)
+}
+
+func GetEvents(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	groupId := r.FormValue("groupId")
+	if groupId == "" {
+		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	group, err := strconv.Atoi(groupId)
+	if err != nil {
+		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		return
+	}
+	events, err, code := services.GetEvent(group, userId)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, events, http.StatusOK)
+}

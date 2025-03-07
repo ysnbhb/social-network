@@ -25,7 +25,6 @@ func CreateGroup(gp *models.Groups) error {
 	return err
 }
 
-
 func GroupInfo(gp int) (models.Groups, error) {
 	group := models.Groups{}
 	query := `SELECT 
@@ -344,4 +343,35 @@ func GetGroupInfo(groupId int, userId int) (models.Groups, error) {
 		return group, err
 	}
 	return group, nil
+}
+
+func CreateEvent(event *models.Event) error {
+	query := `INSERT INTO events (title, description, day_time, group_id , creator_id) VALUES (?, ?, ?, ?, ?)`
+	res, err := db.DB.Exec(query, event.Title, event.Description, event.StartDate, event.GroupId, event.CreatorId)
+	last, _ := res.LastInsertId()
+	event.Id = int(last)
+	return err
+}
+
+func GetEvents(userId, groupId int) ([]models.Event, error) {
+	query := `SELECT e.id , e.title , u.nickname ,e.description , e.day_time , e.group_id , e.creator_id ,
+	COALESCE((SELECT response FROM event_responses WHERE user_id = ? AND event_id = e.id ) , "") AS status
+	FROM events e 
+	INNER JOIN users u 
+	ON u.id = e.creator_id
+	WHERE e.group_id = ?`
+	row, err := db.DB.Query(query, userId, groupId)
+	if err != nil {
+		return nil, err
+	}
+	events := []models.Event{}
+	for row.Next() {
+		event := models.Event{}
+		err = row.Scan(&event.Id, &event.Title, &event.Creator_User, &event.Description, &event.StartDate, &event.GroupId, &event.CreatorId, &event.Status)
+		if err != nil {
+			continue
+		}
+		events = append(events, event)
+	}
+	return events, err
 }

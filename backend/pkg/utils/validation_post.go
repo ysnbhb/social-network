@@ -7,6 +7,7 @@ import (
 	"net/url"
 	"os"
 	"strings"
+	"time"
 
 	"social-network/pkg/models"
 
@@ -74,4 +75,14 @@ func IsSVG(imageB []byte) bool {
 	lower := bytes.ToLower(trimmed)
 	return bytes.HasPrefix(lower, []byte("<?xml")) ||
 		bytes.Contains(lower, []byte("<svg"))
+}
+
+func IsValidTime(timeStr string) bool {
+	layout := "2006-01-02T15:04"
+	start, err := time.Parse(layout, timeStr)
+	if err != nil {
+		return false
+	}
+	fmt.Println(start.Before(time.Now()))
+	return !start.Before(time.Now())
 }

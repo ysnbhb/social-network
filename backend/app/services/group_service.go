@@ -3,6 +3,7 @@ package services
 import (
 	"database/sql"
 	"errors"
+	"log"
 	"net/http"
 
 	repo "social-network/pkg/db/repositories"
@@ -184,4 +185,31 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 
 func GetGroup(groupId int, userId int) (models.Groups, error) {
 	return repo.GetGroupInfo(groupId, userId)
+}
+
+func CreateEvent(gp_env *models.Event) (error, int) {
+	if !repo.CheckUserInGroup(gp_env.GroupId, gp_env.CreatorId) {
+		return errors.New("you have no right to this "), http.StatusUnauthorized
+	}
+	log.Println(gp_env.StartDate)
+	if !utils.IsValidTime((gp_env.StartDate)) {
+		return errors.New("start time must be after now"), http.StatusBadRequest
+	}
+	err := repo.CreateEvent(gp_env)
+	if err != nil {
+		log.Println(err)
+		return errors.New("field to create event"), http.StatusInternalServerError
+	}
+	return nil, http.StatusOK
+}
+
+func GetEvent(groupId, userId int) ([]models.Event, error, int) {
+	if !repo.CheckUserInGroup(groupId, userId) {
+		return nil, errors.New("you have no right to this "), http.StatusUnauthorized
+	}
+	events, err := repo.GetEvents(userId, groupId)
+	if err != nil {
+		return nil, errors.New("field to get events"), http.StatusInternalServerError
+	}
+	return events, nil, http.StatusOK
 }
