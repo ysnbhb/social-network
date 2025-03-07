@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -22,12 +23,13 @@ func CreateGroup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	groupInfo.Owner = r.Context().Value("userId").(int)
-	codeStatus, err := services.CreateGroup(groupInfo)
+	codeStatus, err := services.CreateGroup(&groupInfo)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), codeStatus)
 		return
 	}
-	utils.JsonResponse(w, "group created", http.StatusOK)
+	groupInfo.TotalMembers = 1
+	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
 func ShowGroupMember(w http.ResponseWriter, r *http.Request) {
@@ -77,6 +79,7 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "fieled to get group info", http.StatusInternalServerError)
 		return
 	}
+	
 	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
@@ -115,7 +118,7 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("userId").(int)
 	posts, err, code := services.GetGroupPost(group, userId, offste)
 	if err != nil {
-		utils.JsonResponse(w, "fieled to get group post", code)
+		utils.JsonResponse(w, err.Error(), code)
 		return
 	}
 	utils.JsonResponse(w, posts, http.StatusOK)
@@ -169,4 +172,96 @@ func AcceptJoin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	utils.JsonResponse(w, "you accepted user to group", code)
+}
+
+func GroupInfo(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	groupId := r.FormValue("groupId")
+	if groupId == "" {
+		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	group, err := strconv.Atoi(groupId)
+	if err != nil {
+		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		return
+	}
+	groupinfo, code, err := services.GroupInfo(group, userId)
+	if err != nil {
+		fmt.Println(err)
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, groupinfo, http.StatusOK)
+}
+
+func CreateEvent(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_env := models.Event{}
+	err := json.NewDecoder(r.Body).Decode(&gp_env)
+	if err != nil {
+		// log.Println(err)
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	gp_env.CreatorId = userId
+	err, code := services.CreateEvent(&gp_env)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, gp_env, code)
+}
+
+func GetEvents(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	groupId := r.FormValue("groupId")
+	if groupId == "" {
+		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	group, err := strconv.Atoi(groupId)
+	if err != nil {
+		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		return
+	}
+	events, err, code := services.GetEvent(group, userId)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, events, http.StatusOK)
+}
+
+func RespoEvent(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_env := models.RespoEvent{}
+	err := json.NewDecoder(r.Body).Decode(&gp_env)
+	if err != nil {
+		// log.Println(err)
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	err, code := services.RespoEvent(gp_env.Id, userId, gp_env.Status)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, gp_env, code)
 }

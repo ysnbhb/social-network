@@ -1,10 +1,9 @@
 
-import Link from 'next/link';
+import useFollowing from '@/app/hooks/useFollowing';
 import '../styles/profileSidebar.css';
   import userProfile from '@/app/hooks/userProfile';
 import { useRouter } from 'next/navigation';
-import useFollowing from '@/app/hooks/useFollowing';
-import { useState } from 'react'; 
+ import { useState } from 'react'; 
 export default function ProfileSide({  classes   }) {
   const route=useRouter()
   const [profile, error] = userProfile();
@@ -12,14 +11,9 @@ export default function ProfileSide({  classes   }) {
   const [follow, errorfollow] = useFollowing();
     
   const handleFollowers =(params)=>{
-    console.log(params);
-     setData(params)
-  }
-
-  console.log(follow);
-  
+      setData(params)
+  } 
   const {
-
   avatarUrl,
   firstName,
   follower_count,
@@ -67,7 +61,7 @@ export default function ProfileSide({  classes   }) {
               <p className="text-muted follow" onClick={()=>handleFollowers('Following')}>Following</p>
             </div>
           </div>
-          <button href={`profile`}  onClick={handleIduser}   className="profile-button">My Profile</button>
+          <button    onClick={handleIduser}   className="profile-button">My Profile</button>
         </aside>
         ) : (
           <div className="error-message">

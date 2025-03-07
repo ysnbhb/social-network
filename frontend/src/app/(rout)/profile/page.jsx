@@ -11,25 +11,22 @@ import IsLoading from "@/components/isloading";
 
 export default function Profile() {
   const router = useRouter();
-  const [parsedUser, setParsedUser] = useState(null);
+  const [username, setUsername] = useState(null);
   const [userLogin, setUserLogin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const userProfile = sessionStorage.getItem("selectedUserProfile");
-    if (userProfile) {
-      const parsedUser = JSON.parse(userProfile);
-      setParsedUser(parsedUser);
-    }
-  }, []);
-
+  const searchParams = new URLSearchParams(window.location.search);
+  const usernames = searchParams.get('username');
+   
+    console.log(usernames);
   
   useEffect(() => {
     const storedUserLogin = localStorage.getItem("userID");
     setUserLogin(storedUserLogin);
   }, []);
-  const [profile, error] = useGetProfile(parsedUser);
-  const [profiledata, errorPro] = userProfile(parsedUser);
+
+
+  const [profile, error] = useGetProfile(usernames);
+  const [profiledata, errorPro] = userProfile(usernames);
   const {
     avatarUrl,
     firstName,
@@ -41,13 +38,13 @@ export default function Profile() {
     posts_count,
   } = profiledata;
 
-  useEffect(() => {
-    if (errorPro && errorPro.length > 0) {
-      const errorMessage = errorPro;
-      const url = `/error?message=${encodeURIComponent(errorMessage)}`;
-      router.push(url);
-    }
-  }, [errorPro, router]);
+  // useEffect(() => {
+  //   if (errorPro && errorPro.length > 0) {
+  //     const errorMessage = errorPro;
+  //     const url = `/error?message=${encodeURIComponent(errorMessage)}`;
+  //     router.push(url);
+  //   }
+  // }, [errorPro, router]);
   useEffect(() => {
     if (firstName && lastName) {
       // Add a small delay to ensure smooth transition
@@ -85,7 +82,7 @@ export default function Profile() {
   //     image: " ",
   //   },
   // ];
-  const isOwnProfile = parsedUser === Number(userLogin);
+  const isOwnProfile = 1// === Number(userLogin);
   return (
     <div>
       {isLoading ? (
@@ -121,16 +118,16 @@ export default function Profile() {
 
               {/* Action buttons */}
               <div className={style.buttonContainer}>
-                {isOwnProfile ? (
+                {/* {isOwnProfile ? (
                   <div>
                     <button className={style.moreButton}>Edit Profile</button>
                   </div>
-                ) : (
+                ) : ( */}
                   <div>
                     <button className={style.followButton}>Follow</button>
                     <button className={style.moreButton}>Send Message</button>
                   </div>
-                )}
+                {/* )} */}
               </div>
 
               {/* User info */}

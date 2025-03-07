@@ -1,0 +1,844 @@
+2025/03/07 16:49:58 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: The system cannot find the file specified.
+2025/03/07 18:01:16 server.go:27: Starting server on :8080
+2025/03/07 18:03:11 auth_controller.go:20: method not allowed in login
+2025/03/07 18:03:18 user_repo.go:37: not enough args to execute query: want 2 got 1
+2025/03/07 18:03:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:03:18 auth_controller.go:47: Status Not Found this User ID sql: no rows in result set
+2025/03/07 18:04:54 server.go:27: Starting server on :8080
+2025/03/07 18:05:01 user_repo.go:37: not enough args to execute query: want 2 got 1
+2025/03/07 18:05:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:05:01 auth_controller.go:47: Status Not Found this User ID sql: no rows in result set
+2025/03/07 18:06:34 server.go:27: Starting server on :8080
+2025/03/07 18:06:45 user_repo.go:37: not enough args to execute query: want 2 got 1
+2025/03/07 18:06:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:06:46 auth_controller.go:47: Status Not Found this User ID sql: no rows in result set
+2025/03/07 18:07:45 server.go:27: Starting server on :8080
+2025/03/07 18:07:57 server.go:27: Starting server on :8080
+2025/03/07 18:08:04 user_repo.go:37: <nil>
+2025/03/07 18:08:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:08:04 auth_controller.go:47: Status Not Found this User ID sql: no rows in result set
+2025/03/07 18:09:26 server.go:27: Starting server on :8080
+2025/03/07 18:09:31 user_repo.go:37: <nil>
+2025/03/07 18:09:31 auth_controller.go:37: 
+2025/03/07 18:10:30 server.go:27: Starting server on :8080
+2025/03/07 18:10:38 user_repo.go:37: <nil>
+2025/03/07 18:10:38 auth_controller.go:37: 
+2025/03/07 18:17:21 server.go:27: Starting server on :8080
+2025/03/07 18:17:26 user_repo.go:33: <nil>
+2025/03/07 18:17:27 auth_controller.go:37: rharbuomar@gmail.com
+2025/03/07 18:18:37 server.go:27: Starting server on :8080
+2025/03/07 18:18:40 user_repo.go:33: <nil>
+2025/03/07 18:18:40 auth_controller.go:37: oma.rharbi
+2025/03/07 18:20:46 server.go:27: Starting server on :8080
+2025/03/07 18:20:59 server.go:27: Starting server on :8080
+2025/03/07 18:21:03 user_repo.go:33: <nil>
+2025/03/07 18:21:03 auth_controller.go:37: oma.rharbi
+2025/03/07 18:22:07 server.go:27: Starting server on :8080
+2025/03/07 18:22:11 user_repo.go:33: <nil>
+2025/03/07 18:22:11 auth_controller.go:37: oma.rharbi
+2025/03/07 18:22:25 user_repo.go:33: <nil>
+2025/03/07 18:22:25 auth_controller.go:37: oma.rharbi
+2025/03/07 18:22:29 user_repo.go:33: <nil>
+2025/03/07 18:22:29 auth_controller.go:37: oma.rharbi
+2025/03/07 18:34:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:11 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:11 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:12 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: The system cannot find the file specified.
+2025/03/07 18:34:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:12 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:12 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:13 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:15 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:15 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:18 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:19 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:23 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:33 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:55 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:34:59 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:34:59 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:03 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:15 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:17 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:17 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:38 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:40 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:47 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:49 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:55 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:35:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:35:57 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:36:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:36:10 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:36:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:36:22 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:36:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:36:23 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:36:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:36:27 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:36:31 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:36:31 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:06 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:15 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:17 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:18 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:20 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:23 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:27 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:37:53 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:37:53 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:38:35 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:38:37 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:38:42 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:38:46 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:38:52 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:05 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:29 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:35 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:39:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:39:39 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:39:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:39:39 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:39:39 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: The system cannot find the file specified.
+2025/03/07 18:40:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:40:03 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:40:05 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:43:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:43:05 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:43:07 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:43:25 user_repo.go:33: <nil>
+2025/03/07 18:43:25 auth_controller.go:37: oma.rharbi
+2025/03/07 18:43:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:43:25 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:43:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:43:25 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:43:25 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: The system cannot find the file specified.
+2025/03/07 18:43:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:43:57 user_profile_controller.go:47: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:43:57 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:46:29 server.go:27: Starting server on :8080
+2025/03/07 18:46:45 user_profile_controller.go:40: undefined
+2025/03/07 18:46:45 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:46:45 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:46:45 user_profile_controller.go:40: undefined
+2025/03/07 18:46:45 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:46:45 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:48:49 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:48:52 user_profile_controller.go:40: undefined
+2025/03/07 18:48:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:48:52 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:48:52 user_profile_controller.go:40: undefined
+2025/03/07 18:48:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:48:52 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:48:54 user_profile_controller.go:40: null
+2025/03/07 18:48:54 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:48:54 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:48:54 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 18:48:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:51:07 user_profile_controller.go:40: null
+2025/03/07 18:51:07 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 18:51:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:51:07 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:51:07 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:52:02 user_profile_controller.go:40: undefined
+2025/03/07 18:52:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:52:02 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:52:02 user_profile_controller.go:40: undefined
+2025/03/07 18:52:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:52:02 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:53:36 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:53:38 user_profile_controller.go:40: undefined
+2025/03/07 18:53:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:53:38 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:53:38 user_profile_controller.go:40: undefined
+2025/03/07 18:53:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:53:38 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:53:45 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:53:46 user_profile_controller.go:40: undefined
+2025/03/07 18:53:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:53:46 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:53:46 user_profile_controller.go:40: undefined
+2025/03/07 18:53:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:53:47 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:02 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:54:03 user_profile_controller.go:40: undefined
+2025/03/07 18:54:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:03 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:03 user_profile_controller.go:40: undefined
+2025/03/07 18:54:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:03 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:05 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:54:07 user_profile_controller.go:40: undefined
+2025/03/07 18:54:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:07 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:07 user_profile_controller.go:40: undefined
+2025/03/07 18:54:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:07 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:12 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:54:14 user_profile_controller.go:40: undefined
+2025/03/07 18:54:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:14 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:14 user_profile_controller.go:40: undefined
+2025/03/07 18:54:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:14 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:17 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:54:18 user_profile_controller.go:40: undefined
+2025/03/07 18:54:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:18 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:18 user_profile_controller.go:40: undefined
+2025/03/07 18:54:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:18 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:22 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:54:23 user_profile_controller.go:40: undefined
+2025/03/07 18:54:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:23 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:54:23 user_profile_controller.go:40: undefined
+2025/03/07 18:54:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:54:23 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:09 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:55:11 user_profile_controller.go:40: undefined
+2025/03/07 18:55:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:11 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:11 user_profile_controller.go:40: undefined
+2025/03/07 18:55:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:11 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:55:15 user_profile_controller.go:40: undefined
+2025/03/07 18:55:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:15 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:15 user_profile_controller.go:40: undefined
+2025/03/07 18:55:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:15 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:55:19 user_profile_controller.go:40: undefined
+2025/03/07 18:55:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:19 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:19 user_profile_controller.go:40: undefined
+2025/03/07 18:55:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:19 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:25 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 18:55:32 user_profile_controller.go:40: undefined
+2025/03/07 18:55:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:32 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:32 user_profile_controller.go:40: undefined
+2025/03/07 18:55:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 18:55:33 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 18:55:41 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:00:11 user_profile_controller.go:40: undefined
+2025/03/07 19:00:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:00:11 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:00:11 user_profile_controller.go:40: undefined
+2025/03/07 19:00:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:00:11 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:00:43 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:00:44 user_profile_controller.go:40: undefined
+2025/03/07 19:00:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:00:44 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:00:44 user_profile_controller.go:40: undefined
+2025/03/07 19:00:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:00:44 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:03:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:03:50 user_profile_controller.go:40: undefined
+2025/03/07 19:03:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:03:50 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:03:50 user_profile_controller.go:40: undefined
+2025/03/07 19:03:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:03:50 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:03:52 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:03:52 user_profile_controller.go:40: null
+2025/03/07 19:03:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:03:52 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:03:52 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:03:56 user_profile_controller.go:40: null
+2025/03/07 19:03:56 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:03:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:03:56 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:03:56 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:08:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:08:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:08:58 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:09:02 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:09:10 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:09:11 user_profile_controller.go:40: undefined
+2025/03/07 19:09:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:09:12 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:09:12 user_profile_controller.go:40: undefined
+2025/03/07 19:09:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:09:12 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:09:25 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:10:37 user_profile_controller.go:40: null
+2025/03/07 19:10:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:10:37 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:10:38 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:10:44 user_profile_controller.go:40: null
+2025/03/07 19:10:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:10:44 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:10:44 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:12:32 user_profile_controller.go:40: undefined
+2025/03/07 19:12:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:12:32 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:12:33 user_profile_controller.go:40: undefined
+2025/03/07 19:12:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:12:33 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:12:35 user_profile_controller.go:40: 1
+2025/03/07 19:12:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:12:35 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:12:35 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:13:04 user_profile_controller.go:40: null
+2025/03/07 19:13:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:13:04 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:13:04 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:13:36 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:13:48 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:13:51 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:13:52 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:13:59 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:14:08 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:15:02 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:15:04 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:15:17 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 19:15:19 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:15:33 user_profile_controller.go:40: undefined
+2025/03/07 19:15:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:15:33 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:15:34 user_profile_controller.go:40: undefined
+2025/03/07 19:15:34 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 19:15:34 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 19:15:36 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 19:15:47 Websocket_controller.go:41: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/03/07 21:58:18 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:00:01 user_profile_controller.go:40: undefined
+2025/03/07 22:00:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:00:01 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:00:01 user_profile_controller.go:40: undefined
+2025/03/07 22:00:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:00:01 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:00:12 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:01:17 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:01:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:01:53 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:02:55 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:02:55 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:02:56 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:02:56 user_profile_controller.go:40: undefined
+2025/03/07 22:02:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:02:56 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:02:56 user_profile_controller.go:40: undefined
+2025/03/07 22:02:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:02:56 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:03:01 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:03:19 user_profile_controller.go:40: undefined
+2025/03/07 22:03:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:03:19 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:03:19 user_profile_controller.go:40: undefined
+2025/03/07 22:03:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:03:19 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:03:22 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:05:19 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:05:21 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:05:24 user_profile_controller.go:40: undefined
+2025/03/07 22:05:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:05:24 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:05:24 user_profile_controller.go:40: undefined
+2025/03/07 22:05:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:05:24 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:05:29 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:06:03 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:06:15 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:06:47 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:08:22 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:08:31 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:11:10 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:11:20 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:11:27 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:11:36 user_profile_controller.go:40: undefined
+2025/03/07 22:11:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:11:36 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:11:36 user_profile_controller.go:40: undefined
+2025/03/07 22:11:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:11:36 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:11:39 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:13:13 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:13:15 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:13:18 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:13:27 user_profile_controller.go:40: undefined
+2025/03/07 22:13:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:13:27 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:13:27 user_profile_controller.go:40: undefined
+2025/03/07 22:13:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:13:27 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:13:50 posts_controller.go:50: 0
+2025/03/07 22:13:54 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:14:05 user_profile_controller.go:40: undefined
+2025/03/07 22:14:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:14:05 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:14:05 user_profile_controller.go:40: undefined
+2025/03/07 22:14:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:14:05 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:14:07 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:17:04 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:17:08 user_profile_controller.go:40: 
+2025/03/07 22:17:08 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:17:08 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:17:11 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:17:17 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:17:17 user_profile_controller.go:40: null
+2025/03/07 22:17:17 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:17:17 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:17:17 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:17:56 user_profile_controller.go:40: undefined
+2025/03/07 22:17:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:17:56 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:17:57 user_profile_controller.go:40: undefined
+2025/03/07 22:17:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:17:57 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:18:02 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:18:02 user_profile_controller.go:40: null
+2025/03/07 22:18:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:18:02 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:18:03 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:19:26 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:20:21 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:20:36 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:20:44 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:21:09 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:21:11 user_profile_controller.go:40: undefined
+2025/03/07 22:21:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:12 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:12 user_profile_controller.go:40: undefined
+2025/03/07 22:21:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:12 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:14 user_profile_controller.go:40: yassine.bahbib
+2025/03/07 22:21:14 user_profile_controller.go:40: null
+2025/03/07 22:21:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:14 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:21 user_profile_controller.go:40: undefined
+2025/03/07 22:21:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:21 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:21 user_profile_controller.go:40: undefined
+2025/03/07 22:21:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:21 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:23 user_profile_controller.go:40: null
+2025/03/07 22:21:23 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:21:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:23 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:26 user_profile_controller.go:40: undefined
+2025/03/07 22:21:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:26 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:26 user_profile_controller.go:40: undefined
+2025/03/07 22:21:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:26 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:21:29 user_profile_controller.go:40: null
+2025/03/07 22:21:29 user_profile_controller.go:40: oma.rharbi
+2025/03/07 22:21:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:21:29 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:22:38 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:22:41 user_profile_controller.go:40: oma.rharbip
+2025/03/07 22:22:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:22:41 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:22:46 user_profile_controller.go:40: undefined
+2025/03/07 22:22:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:22:46 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:22:46 user_profile_controller.go:40: undefined
+2025/03/07 22:22:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:22:46 user_profile_controller.go:44: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:24:07 server.go:27: Starting server on :8080
+2025/03/07 22:24:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:24:18 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:24:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:24:18 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:26:10 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:26:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:26:12 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:26:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:26:12 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:28 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:28 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:28 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:28 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:30 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:28:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:28:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:29:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:29:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:29:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:29:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:31:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:20 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:20 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:31:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:29 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:31:31 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:31 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:31:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:31:32 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:28 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:28 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:36 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:36 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:41 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:47 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:47 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:49 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:55 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:32:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:32:55 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:06 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:31 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:31 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:54 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:54 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:57 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:33:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:33:57 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:06 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:09 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:09 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:13 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:19 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:19 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:27 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:34:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:34:27 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:38:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:41:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:41:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:41:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:41:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:41:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:41:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:41:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:41:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:41:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:42:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:42:07 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:42:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:42:11 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:42:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:42:11 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:42:37 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:42:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:42:39 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:42:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:42:40 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:43:11 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:43:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:43:13 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:43:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:43:13 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:18 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:18 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:19 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:46:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:25 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:46:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:30 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:30 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:45 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:46:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:46:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:46:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:47:54 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:48:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:48:03 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:48:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:48:04 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:48:05 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:48:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:48:07 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:48:08 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:48:08 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:49:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:49:56 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:49:59 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:49:59 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:50:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:50:01 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:50:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:50:06 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:50:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:50:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:50:15 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:50:15 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:52:01 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:52:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:52:04 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:52:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:52:04 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:52:50 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:53:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:53:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:53:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:53:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:53:52 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:53:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:53:56 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:53:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:53:56 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:57:34 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:57:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:57:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:57:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:57:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:57:43 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:57:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:57:46 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:57:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:57:46 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:57:55 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:58:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:02 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:58:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:02 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:58:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:58:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:09 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:58:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:58:53 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:58:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:55 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:58:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:58:55 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:59:11 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:59:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:59:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 22:59:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 22:59:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:02:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:02:38 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:02:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:02:38 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:02:39 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:02:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:02:40 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:02:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:02:40 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:07:43 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:07:45 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:07:46 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:07:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:07:46 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:09:32 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:09:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:09:39 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:09:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:09:39 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:09:44 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:09:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:09:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:09:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:09:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:10:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:10:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:10:02 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:10:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:10:03 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:11:35 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:11:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:11:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:11:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:11:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:06 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:07 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:16:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:16:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:22 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:22 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:16:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:47 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:16:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:16:47 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:17:02 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:17:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:17:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:17:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:17:05 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:17:16 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:17:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:17:20 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:17:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:17:20 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:18:27 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:18:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:18:30 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:18:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:18:30 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:19:49 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:19:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:19:51 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:19:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:19:51 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:19:55 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:19:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:19:57 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:19:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:19:58 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:20:50 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:20:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:20:52 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:20:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:20:52 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:22:53 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:22:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:22:56 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:22:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:22:56 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:00 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:23:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:03 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:04 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:06 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:23:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:11 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:12 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:23:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:16 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:16 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:23 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:23:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:25 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:25 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:23:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:23:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:23:29 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:30:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:30:37 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:30:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:30:38 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:30:43 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:30:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:30:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:30:48 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:30:48 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:16 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:16 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:33:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:29 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:33:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:32 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:33:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:33:32 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:35:32 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:35:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:35:35 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:35:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:35:35 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:44:18 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:44:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:44:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:44:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:44:21 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:49:12 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:49:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:49:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:49:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:49:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:49:20 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:49:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:49:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:49:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:49:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:50:21 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:50:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:50:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/07 23:50:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/07 23:50:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set

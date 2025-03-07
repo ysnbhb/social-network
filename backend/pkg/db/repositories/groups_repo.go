@@ -9,7 +9,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func CreateGroup(gp models.Groups) error {
+func CreateGroup(gp *models.Groups) error {
 	query := `INSERT INTO groups(title  , description  , creator_id) VALUES (? , ? , ?)`
 	res, err := db.DB.Exec(query, strings.TrimSpace(gp.Title), strings.TrimSpace(gp.Description), gp.Owner)
 	if err != nil {
@@ -19,9 +19,23 @@ func CreateGroup(gp models.Groups) error {
 	if err != nil {
 		return err
 	}
-	query = `INSERT INTO group_members(group_id , user_id )`
+	query = `INSERT INTO group_members(group_id , user_id ) VALUES (? , ?)`
 	_, err = db.DB.Exec(query, lastId, gp.Owner)
+	gp.Id = int(lastId)
 	return err
+}
+
+func GroupInfo(gp int) (models.Groups, error) {
+	group := models.Groups{}
+	query := `SELECT 
+    g.title,
+    COUNT(DISTINCT gm.user_id) AS total_members
+	FROM groups g
+	INNER JOIN group_members gm ON g.id = gm.group_id
+	WHERE g.id = ?
+	GROUP BY g.id;`
+	err := db.DB.QueryRow(query, gp).Scan(&group.Title, &group.TotalMembers)
+	return group, err
 }
 
 func MemberGroup(groupId int) ([]models.User, error) {
@@ -87,6 +101,17 @@ func HasInvi(groupId, userId int) (string, error) {
 func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	query := `INSERT INTO group_invitations(group_id , user_id , status) VALUES(? ,? , ?)`
 	_, err := db.DB.Exec(query, groupId, userId, status)
+	if err != nil {
+		return err
+	}
+	query = `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
+	adminid := GeTIdofAdminOfGroup(groupId)
+	adminname := GetNickName(adminid)
+	_, err = db.DB.Exec(query, adminid, userId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
+	adminconnection := models.Clients[adminname]
+	err = adminconnection.Conn.WriteJSON(map[string]interface{}{
+		"type": "realNotification",
+	})
 	return err
 }
 
@@ -121,7 +146,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
     ORDER BY c.created_at DESC
     LIMIT 10 OFFSET ?;  
 	`
-	rows, err := db.DB.Query(query, groupId, userid, offste)
+	rows, err := db.DB.Query(query, userid, groupId, offste)
 	if err != nil {
 		return nil, errors.New("field to get post")
 	}
@@ -131,6 +156,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 		if err != nil {
 			continue
 		}
+		fmt.Println(post)
 		posts = append(posts, post)
 	}
 	return posts, nil
@@ -328,4 +354,63 @@ func GetGroupInfo(groupId int, userId int) (models.Groups, error) {
 		return group, err
 	}
 	return group, nil
+}
+
+func CreateEvent(event *models.Event) error {
+	query := `INSERT INTO events (title, description, day_time, group_id , creator_id) VALUES (?, ?, ?, ?, ?)`
+	res, err := db.DB.Exec(query, event.Title, event.Description, event.StartDate, event.GroupId, event.CreatorId)
+	last, _ := res.LastInsertId()
+	event.Id = int(last)
+	return err
+}
+
+func GetEvents(userId, groupId int) ([]models.Event, error) {
+	query := `SELECT e.id , e.title , u.nickname ,e.description , e.day_time , e.group_id , e.creator_id ,
+	COALESCE((SELECT response FROM event_responses WHERE user_id = ? AND event_id = e.id ) , "") AS status
+	FROM events e 
+	INNER JOIN users u 
+	ON u.id = e.creator_id
+	WHERE e.group_id = ? AND e.day_time > CURRENT_TIMESTAMP
+	ORDER BY e.day_time`
+	row, err := db.DB.Query(query, userId, groupId)
+	if err != nil {
+		return nil, err
+	}
+	events := []models.Event{}
+	for row.Next() {
+		event := models.Event{}
+		err = row.Scan(&event.Id, &event.Title, &event.Creator_User, &event.Description, &event.StartDate, &event.GroupId, &event.CreatorId, &event.Status)
+		if err != nil {
+			continue
+		}
+		events = append(events, event)
+	}
+	return events, err
+}
+
+func RespoEvent(eventId, userId int, status string) error {
+	query := `INSERT INTO event_responses (event_id , user_id , response) VALUES (?, ?, ?)`
+	_, err := db.DB.Exec(query, eventId, userId, status)
+	return err
+}
+
+func GetGroupIdByEventId(eventId int) int {
+	groupId := 0
+	query := `SELECT group_id FROM events WHERE id = ?`
+	db.DB.QueryRow(query, eventId).Scan(&groupId)
+	return groupId
+}
+
+func CheckUserInEvent(eventId, userId int) bool {
+	query := `SELECT EXISTS (SELECT 1 FROM event_responses WHERE event_id = ? AND user_id = ?)`
+	var status bool
+	db.DB.QueryRow(query, eventId, userId).Scan(&status)
+	return status
+	
+}
+func GetgroupnameById(groupId int) string {
+	var groupname string
+	query := `SELECT title FROM groups WHERE id = ?`
+	db.DB.QueryRow(query, groupId).Scan(&groupname)
+	return groupname
 }

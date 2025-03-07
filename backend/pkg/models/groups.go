@@ -17,8 +17,8 @@ type Group_Invi struct {
 }
 
 type Group_Jion struct {
-	GroupId int `json:"groupId"`
-	AcceptJoin  int `json:"acceptJoin"`
+	GroupId    int `json:"groupId"`
+	AcceptJoin int `json:"acceptJoin"`
 }
 
 type Group struct {
@@ -27,4 +27,20 @@ type Group struct {
 	UserId    int    `json:"userId"`
 	Status    string `json:"status"`
 	CreatedAt string `json:"createdAt"`
+}
+
+type Event struct {
+	Id           int    `json:"id"`
+	GroupId      int    `json:"groupId"`
+	CreatorId    int    `json:"userId"`
+	Title        string `json:"title"`
+	Description  string `json:"description"`
+	StartDate    string `json:"date"`
+	Status       string `json:"status"`
+	Creator_User string `json:"creator_user"`
+}
+
+type RespoEvent struct {
+	Id     int    `json:"eventId"`
+	Status string `json:"status"`
 }

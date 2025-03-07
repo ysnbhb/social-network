@@ -40,7 +40,7 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 			"sender":  client.Username,
 			"content": msg.Content,
 			"time":    Time,
-			"you":   receiverConn,
+			"you":     receiverConn,
 		})
 	}
 
@@ -50,7 +50,7 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 		"content": msg.Content,
 		"time":    Time,
 		"mymsg":   true,
-		"you":   repo.GetNickName(client.Userid),
+		"you":     repo.GetNickName(client.Userid),
 	})
 	if err != nil {
 		return err
@@ -105,5 +105,3 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 	}
 	return nil
 }
-
-

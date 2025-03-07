@@ -1,6 +1,6 @@
 "use client";
 
-import { handleNotification } from './notification.js'
+import { handleNotification, sendNotification } from './notification.js'
 import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
 
 export let socket;
@@ -64,6 +64,9 @@ export function initializeWebSocket() {
                     break;
                 case "Notification":
                     handleNotification(data);
+                    break;
+                case "realNotification":
+                    sendNotification()
                     break;
             }
         };

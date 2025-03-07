@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-export default function ActivitySidebar({ className, title }) {
+import handleFollowers from "@/lib/handleFollowors";
+ export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
     async function GetUser() {
@@ -45,29 +45,37 @@ export default function ActivitySidebar({ className, title }) {
 
 export function ShowUnfllowUser({ user }) {
   const [status, setStatus] = useState("");
-  const handuleClick = async () => {
-    const res = await fetch(`/api/follow`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        followingId: user.id,
-      }),
-    });
-    const data = await res.json();
-    if (res.ok) {
-      setStatus(data.status);
-    }
+  const [iduser, setId] = useState("");
+  const handuleClick = async (id) => {
+    setId(user.id)
+    console.log(user.id);
+    
+    // const res = await fetch(`/api/follow`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   credentials: "include",
+    //   body: JSON.stringify({
+    //     followingId: user.id,
+    //   }),
+    // });
+    // const data = await res.json();
+    // if (res.ok) {
+    //   setStatus(data.status);
+    // }
   };
-  console.log(user);
+  const test=handleFollowers(iduser)
+
+  console.log(user,"hello",test);
   return (
     <div className="activity-item">
       <div>
         <p>
           <strong>
-            {user.lastName} {user.firstName}
+             <Link href={{ pathname: '/profile', query: { username: user.nickname } }}>
+              {user.lastName} {user.firstName}
+            </Link>
           </strong>
         </p>
         <p className="text-muted">@{user.nickname || "N/A"}</p>
@@ -77,7 +85,7 @@ export function ShowUnfllowUser({ user }) {
       ) : status === "pending" ? (
         <button>pending</button>
       ) : (
-        <button onClick={() => handuleClick()}>follow</button>
+        <button onClick={() => handuleClick(user.id)}>follow</button>
       )}
     </div>
   );

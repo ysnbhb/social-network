@@ -10,7 +10,7 @@ export default function GroupList({ group }) {
           <div className="group-title">{title}</div>
           <div className="group-members">{totalMembers} members</div>
         </div>
-        <Link className="open-group-btn" href={`/groups/${id}`} style={{
+        <Link className="open-group-btn" href={`/group/${id}`} style={{
             textDecoration: "none",
         }}>
           Open

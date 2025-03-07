@@ -21,6 +21,11 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/group/create", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateGroup)))
 	mux.Handle("/api/group/join", middleware.AuthMiddleware(http.HandlerFunc(controllers.JoinToGroup)))
 	mux.Handle("/api/group/accepjoin", middleware.AuthMiddleware(http.HandlerFunc(controllers.AcceptJoin)))
+	mux.Handle("/api/group/posts", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetGroupPost)))
+	mux.Handle("/api/group/groupInfo", middleware.AuthMiddleware(http.HandlerFunc(controllers.GroupInfo)))
+	mux.Handle("/api/group/create/event", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateEvent)))
+	mux.Handle("/api/group/events", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetEvents)))
+	mux.Handle("/api/group/event/response", middleware.AuthMiddleware(http.HandlerFunc(controllers.RespoEvent)))
 
 	mux.Handle("/api/create/post", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreatePost)))
 	mux.Handle("/api/posts/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))
@@ -36,6 +41,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/uploads/", middleware.AuthMiddleware(http.HandlerFunc(controllers.ServeContent)))
 	mux.Handle("/api/notifications", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetNotification)))
 	mux.Handle("/api/user/info", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetuserinfoByname)))
+	mux.Handle("/api/user/checklogin", middleware.AuthMiddleware(http.HandlerFunc(controllers.CheckLogin)))
 
 	return mux
 }

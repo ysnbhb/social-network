@@ -19,7 +19,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
-	other_user := r.URL.Query().Get("username") 
+	other_user := r.URL.Query().Get("username")
 	postsResponse := services.GetPostsUserProfile(other_user, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
@@ -35,12 +35,8 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-	// var profileUserId int
 
-	// userId := r.Context().Value("userId").(int)
-
-	other_user := r.URL.Query().Get("username") 
-
+	other_user := r.URL.Query().Get("username")
 	postsResponse, err := services.UserProfile(other_user)
 	if err != nil {
 		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
@@ -94,14 +90,16 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 	var err error
 
 	user := r.Context().Value("userId").(int)
-	// searchParam := r.URL.Query().Get("follow")
-
 	following.Following, err = services.GetUserFollowing(user)
-
+	if err != nil {
+		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
+		log.Println(err.Error())
+		return
+	}
 	following.Follower, err = services.GetUserFollower(user)
 
- 	if err != nil {
-		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
+	if err != nil {
+		utils.JsonResponse(w, "Error To Get Follower", http.StatusMethodNotAllowed)
 		log.Println(err.Error())
 		return
 	}
