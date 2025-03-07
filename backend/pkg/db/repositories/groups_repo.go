@@ -45,7 +45,6 @@ func MemberGroup(groupId int, userId int) ([]models.GroupMember, error) {
 	`
 	row, err := db.DB.Query(query, groupId, userId)
 	if err != nil {
-		fmt.Println(err)
 		return nil, errors.New("field to fetch user")
 	}
 	users := []models.GroupMember{}

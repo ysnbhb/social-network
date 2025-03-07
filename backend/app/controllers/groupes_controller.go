@@ -266,24 +266,6 @@ func RespoEvent(w http.ResponseWriter, r *http.Request) {
 	utils.JsonResponse(w, gp_env, code)
 }
 
-func GroupChat(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
-		return
-	}
-	// groupid := r.URL.Query().Get("groupid")
-	// Chat
-	// userId := r.Context().Value("userId").(int)
-	// gp_env.SenderId = userId
-	// err, code := services.GroupChat(gp_env)
-	// if err != nil {
-	// 	utils.JsonResponse(w, err.Error(), code)
-	// 	return
-	// }
-	// utils.JsonResponse(w, gp_env, code)
-
-}
-
 func Groupmembers(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)

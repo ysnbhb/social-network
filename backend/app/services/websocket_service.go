@@ -67,6 +67,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		})
 		return err
 	}
+	
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
@@ -75,12 +76,19 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 			"content": "message is too long",
 		})
 	}
+
 	err = repo.AddmessagesGroup(msg, client)
 	if err != nil {
 		return err
 	}
-	for _, receiver := range msg.Receivers {
-		receiverConn := models.Clients[receiver]
+
+	users, err, _ := MemberGroup(msg.Groupid, client.Userid)
+	if err != nil {
+		return err
+	}
+
+	for _, receiver := range users {
+		receiverConn := models.Clients[receiver.Nickname]
 		if receiverConn != nil {
 			receiverConn.Conn.WriteJSON(map[string]interface{}{
 				"type":    "messageGroup",
@@ -99,9 +107,9 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		"groupid": msg.Groupid,
 	})
 
-	err = repo.AddNotification(msg, client, "messageGroup", Time)
-	if err != nil {
-		return err
-	}
+	// err = repo.AddNotification(msg, client, "messageGroup", Time)
+	// if err != nil {
+	// 	return err
+	// }
 	return nil
 }

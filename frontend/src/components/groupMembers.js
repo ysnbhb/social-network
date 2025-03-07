@@ -1,8 +1,10 @@
 "use client";
-import Link from 'next/link.js';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function GroupMembers({ id }) {
-    const [members, Getmembers] = useState(null);
+    const [members, setMembers] = useState(null);
+    const Router = useRouter();
     useEffect(() => {
         if (id) {
             fetch(`/api/group/members?groupid=${id}`, {
@@ -11,32 +13,40 @@ export default function GroupMembers({ id }) {
             })
                 .then((response) => {
                     if (!response.ok) {
-                        console.log("error");
-
-                        // router.replace('/pageNotfoud');
+                        console.error("Error fetching members");
+                        return;
                     }
-                    return response.json()
+                    return response.json();
                 })
                 .then((userData) => {
-                    Getmembers(userData);
+                    setMembers(userData);
                 })
                 .catch((error) => {
                     console.error('Error fetching user data:', error);
                 });
         }
     }, [id]);
+
     return (
         <div className="group-sidebar">
             <div className="group-header">
                 <h2 className="group-title">Members</h2>
             </div>
             <div className="group-menu">
-                <ul className="menu-options">
-                    <Link href={`/group/`} >
-
-                    </Link>
-                </ul>
+                {members ? (
+                    <ul className="menu-options">
+                        {members.map((member) => (
+                            <li key={member.id} className="menu-option">
+                                <p onClick={() => { Router.push(`/profile/${member.id}`) }}>
+                                    {member.nickname}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>Loading members...</p>
+                )}
             </div>
         </div>
-    )
+    );
 }

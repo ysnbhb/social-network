@@ -1,10 +1,10 @@
 "use client";
 import "../styles/chat.css";
-import { useEffect, useState } from "react";
-export default function ChatBoxGroup({ user }) {
+import { use, useState } from "react";
+import { sendMessageGroup } from "@/websocket/messages";
+export default function ChatBoxGroup({groupid}) {
     const [newMessage, setNewMessage] = useState("");
     const [emojiPickerVisible, setEmojiPickerVisible] = useState(false);
-
     const emojis = [
         "😀", "😂", "😍", "😎", "😢", "😡", "👍", "👋", "🙏",
         "😃", "😄", "😁", "😆", "😅", "😜", "😝", "😛", "😋",
@@ -22,7 +22,7 @@ export default function ChatBoxGroup({ user }) {
     const handleSendMessage = () => {
         if (newMessage.trim() !== "") {
             setNewMessage("");
-            sendMessageGroup([`${user.nickname}`], groupid, newMessage);
+            sendMessageGroup(groupid, newMessage);
         }
     };
 

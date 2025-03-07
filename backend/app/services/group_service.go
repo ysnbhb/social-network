@@ -3,7 +3,6 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -50,9 +49,8 @@ func MemberGroup(groupId int, userId int) ([]models.GroupMember, error, int) {
 	if !exist {
 		return nil, errors.New("you are not member in this group"), http.StatusUnauthorized
 	}
-	users, err := repo.MemberGroup(groupId,userId)
+	users, err := repo.MemberGroup(groupId, userId)
 	if err != nil {
-		fmt.Println("errr", err)
 		return nil, errors.New("filed to get membre of groups"), http.StatusUnauthorized
 	}
 	return users, err, http.StatusOK
