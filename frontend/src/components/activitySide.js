@@ -3,6 +3,7 @@ import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import handleFollowers from "@/lib/handleFollowors";
+import useHandleFollowers from "@/lib/handleFollowors";
  export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -44,31 +45,14 @@ import handleFollowers from "@/lib/handleFollowors";
 }
 
 export function ShowUnfllowUser({ user }) {
-  const [status, setStatus] = useState("");
-  const [iduser, setId] = useState("");
-  const handuleClick = async (id) => {
-    setId(user.id)
-    console.log(user.id);
-    
-    // const res = await fetch(`/api/follow`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   credentials: "include",
-    //   body: JSON.stringify({
-    //     followingId: user.id,
-    //   }),
-    // });
-    // const data = await res.json();
-    // if (res.ok) {
-    //   setStatus(data.status);
-    // }
-  };
-  const test=handleFollowers(iduser)
+    const { status, handle } = useHandleFollowers(user.id);
 
-  console.log(user,"hello",test);
-  return (
+   const handuleClick = async () => {
+    await handle();  
+  };
+  console.log(status);
+  
+    return (
     <div className="activity-item">
       <div>
         <p>

@@ -8,6 +8,7 @@ import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
 import { useRouter } from "next/navigation";
 import IsLoading from "@/components/isloading";
+import useHandleFollowers from "@/lib/handleFollowors";
 
 export default function Profile() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Profile() {
     console.log(usernames);
   
   useEffect(() => {
-    const storedUserLogin = localStorage.getItem("userID");
+    const storedUserLogin = localStorage.getItem("username");
     setUserLogin(storedUserLogin);
   }, []);
 
@@ -28,6 +29,7 @@ export default function Profile() {
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
   const {
+    id ,
     avatarUrl,
     firstName,
     follower_count,
@@ -37,7 +39,13 @@ export default function Profile() {
     nickName,
     posts_count,
   } = profiledata;
+  const { status, handle } = useHandleFollowers(id);
 
+  const handuleClick = async () => {
+    console.log(id,"test here");
+    
+   await handle();  
+ };
   // useEffect(() => {
   //   if (errorPro && errorPro.length > 0) {
   //     const errorMessage = errorPro;
@@ -55,6 +63,8 @@ export default function Profile() {
       return () => clearTimeout(timer);
     }
   }, [firstName, lastName]);
+
+  
   // const menuData = [
   //   { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
   //   { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -82,7 +92,7 @@ export default function Profile() {
   //     image: " ",
   //   },
   // ];
-  const isOwnProfile = 1// === Number(userLogin);
+  const isOwnProfile = nickName === (userLogin);
   return (
     <div>
       {isLoading ? (
@@ -118,16 +128,24 @@ export default function Profile() {
 
               {/* Action buttons */}
               <div className={style.buttonContainer}>
-                {/* {isOwnProfile ? (
+                {isOwnProfile ? (
                   <div>
                     <button className={style.moreButton}>Edit Profile</button>
                   </div>
-                ) : ( */}
+                ) : (
                   <div>
-                    <button className={style.followButton}>Follow</button>
+
+                {status === "accept" ? (
+                        <button>unfollow</button>
+                      ) : status === "pending" ? (
+                        <button>pending</button>
+                      ) : (
+                        <button className={style.followButton} onClick={() => handuleClick(id)}>follow</button>
+                      )}
+                   
                     <button className={style.moreButton}>Send Message</button>
                   </div>
-                {/* )} */}
+                 )} 
               </div>
 
               {/* User info */}
