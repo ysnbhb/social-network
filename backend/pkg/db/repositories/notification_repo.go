@@ -1,7 +1,6 @@
 package repo
 
 import (
-	"fmt"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
@@ -36,7 +35,6 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 }
 
 func AddNotification(msg models.Message, client *models.Client, Type string, sent_at string) error {
-	// receiver string , senderid  int, Type  string, details string
 	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
 	for _, receiver := range msg.Receivers {
 		recieverid := GetUserIdByNickName(receiver)
@@ -70,7 +68,6 @@ func SendNotification() {
 }
 
 func ChangeUnreadNotification(msg models.Message, client *models.Client) error {
-	fmt.Println("///////////////////////////////")
 	query := `UPDATE notifications SET read_status = 'read' WHERE id = ? `
 	_, err := db.DB.Exec(query, msg.Notificationid)
 	if err != nil {

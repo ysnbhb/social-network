@@ -59,7 +59,7 @@ export function initializeWebSocket() {
                 case "getmessagesusers":
                     Getmessagesusers(data);
                     break;
-                case "getmessagesgroup":
+                case "getmessagesgroups":
                     Getmessagesgroups(data);
                     break;
                 case "Notification":

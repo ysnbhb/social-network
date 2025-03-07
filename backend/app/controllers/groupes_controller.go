@@ -79,7 +79,7 @@ func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "fieled to get group info", http.StatusInternalServerError)
 		return
 	}
-	
+
 	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
@@ -264,4 +264,25 @@ func RespoEvent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	utils.JsonResponse(w, gp_env, code)
+}
+
+func Groupmembers(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	groupId := r.URL.Query().Get("groupid")
+	userId := r.Context().Value("userId").(int)
+	group, err := strconv.Atoi(groupId)
+	if err != nil {
+		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
+		return
+	}
+	users, err, code := services.MemberGroup(group, userId)
+	if err != nil {
+		fmt.Println("err", err)
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, users, code)
 }

@@ -44,3 +44,9 @@ type RespoEvent struct {
 	Id     int    `json:"eventId"`
 	Status string `json:"status"`
 }
+
+type GroupMember struct {
+	Id       int    `json:"id"`
+	Nickname string `json:"nickname"`
+	Avatar   string `json:"avatar"`
+}

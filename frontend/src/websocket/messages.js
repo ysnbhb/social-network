@@ -133,24 +133,23 @@ export function sendMessageIsRead(nickname) {
 export function receiveMessageGroup(data) {
     console.log(data);
 }
-export function sendMessageGroup(sender, groupid, message) {
+export function sendMessageGroup(groupid, message) {
     const data = {
         type: "messageGroup",
-        sender: sender,
-        groupid: groupid,
+        groupid: parseInt(groupid),
         content: message
     }
     safeSend(data);
 }
 
-export function sendGetmessagesgroups(sender, groupid) {
+export function sendGetmessagesgroups(groupid, offset = 0) {
     const data = {
         type: "getmessagesgroup",
-        sender: sender,
-        groupid: groupid,
+        groupid: parseInt(groupid),
+        offset: offset
     }
     safeSend(data);
 }
 export function Getmessagesgroups(data) {
-    console.log(data);
+    console.log("data", data);
 }

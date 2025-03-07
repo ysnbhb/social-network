@@ -40,7 +40,7 @@ func GroupInfo(groupId int, userId int) (models.Groups, int, error) {
 	return count, http.StatusOK, nil
 }
 
-func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
+func MemberGroup(groupId int, userId int) ([]models.GroupMember, error, int) {
 	exist := repo.CheckGroup(groupId)
 	if !exist {
 		return nil, errors.New("group not found"), http.StatusNotFound
@@ -49,7 +49,7 @@ func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
 	if !exist {
 		return nil, errors.New("you are not member in this group"), http.StatusUnauthorized
 	}
-	users, err := repo.MemberGroup(groupId)
+	users, err := repo.MemberGroup(groupId, userId)
 	if err != nil {
 		return nil, errors.New("filed to get membre of groups"), http.StatusUnauthorized
 	}
