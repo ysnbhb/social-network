@@ -1,4 +1,4 @@
-import { Event } from '@/components/enent';
+import { Event } from '@/components/event';
 import '../../../../../styles/groupEvents.css';
 
 export default  async function GroupEvents({ params }) {

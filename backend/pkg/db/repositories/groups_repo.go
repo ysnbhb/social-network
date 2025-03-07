@@ -359,7 +359,8 @@ func GetEvents(userId, groupId int) ([]models.Event, error) {
 	FROM events e 
 	INNER JOIN users u 
 	ON u.id = e.creator_id
-	WHERE e.group_id = ?`
+	WHERE e.group_id = ? AND e.day_time > CURRENT_TIMESTAMP
+	ORDER BY e.day_time`
 	row, err := db.DB.Query(query, userId, groupId)
 	if err != nil {
 		return nil, err
@@ -374,4 +375,25 @@ func GetEvents(userId, groupId int) ([]models.Event, error) {
 		events = append(events, event)
 	}
 	return events, err
+}
+
+func RespoEvent(eventId, userId int, status string) error {
+	query := `INSERT INTO event_responses (event_id , user_id , response) VALUES (?, ?, ?)`
+	_, err := db.DB.Exec(query, eventId, userId, status)
+	return err
+}
+
+func GetGroupIdByEventId(eventId int) int {
+	groupId := 0
+	query := `SELECT group_id FROM events WHERE id = ?`
+	db.DB.QueryRow(query, eventId).Scan(&groupId)
+	return groupId
+}
+
+func CheckUserInEvent(eventId, userId int) bool {
+	query := `SELECT EXISTS (SELECT 1 FROM event_responses WHERE event_id = ? AND user_id = ?)`
+	var status bool
+	db.DB.QueryRow(query, eventId, userId).Scan(&status)
+	return status
+	
 }

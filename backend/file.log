@@ -115,3 +115,33 @@
 2025/03/07 00:56:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/07 00:56:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/07 00:56:54 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:18:32 server.go:27: Starting server on :8080
+2025/03/07 01:19:48 group_service.go:194: 2025-03-14T01:19
+2025/03/07 01:20:07 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:20:57 server.go:27: Starting server on :8080
+2025/03/07 01:21:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:21:49 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:21:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:31:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:31:17 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:31:25 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:31:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:32:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:32:38 server.go:27: Starting server on :8080
+2025/03/07 01:33:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:34:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:34:29 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:34:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:35:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:36:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:38:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:38:41 server.go:27: Starting server on :8080
+2025/03/07 01:40:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:40:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:40:22 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:41:21 server.go:27: Starting server on :8080
+2025/03/07 01:41:58 server.go:27: Starting server on :8080
+2025/03/07 01:42:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:44:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 01:45:07 group_service.go:194: 2025-03-12T01:45
+2025/03/07 01:45:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)

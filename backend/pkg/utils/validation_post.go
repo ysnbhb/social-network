@@ -86,3 +86,16 @@ func IsValidTime(timeStr string) bool {
 	fmt.Println(start.Before(time.Now()))
 	return !start.Before(time.Now())
 }
+
+func ValidEvant(event *models.Event) error {
+	if event.Title == "" || event.Description == "" {
+		return errors.New("event title or description cannot be empty")
+	}
+	if len(event.Title) > 50 {
+		return errors.New("event title length exceeds 50 characters")
+	}
+	if len(event.Description) > 500 {
+		return errors.New("event description length exceeds 500 characters")
+	}
+	return nil
+}

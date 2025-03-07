@@ -195,11 +195,16 @@ func CreateEvent(gp_env *models.Event) (error, int) {
 	if !utils.IsValidTime((gp_env.StartDate)) {
 		return errors.New("start time must be after now"), http.StatusBadRequest
 	}
-	err := repo.CreateEvent(gp_env)
+	err := utils.ValidEvant(gp_env)
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+	err = repo.CreateEvent(gp_env)
 	if err != nil {
 		log.Println(err)
 		return errors.New("field to create event"), http.StatusInternalServerError
 	}
+	gp_env.Creator_User = repo.GetUserIdById(gp_env.CreatorId)
 	return nil, http.StatusOK
 }
 
@@ -212,4 +217,21 @@ func GetEvent(groupId, userId int) ([]models.Event, error, int) {
 		return nil, errors.New("field to get events"), http.StatusInternalServerError
 	}
 	return events, nil, http.StatusOK
+}
+
+func RespoEvent(eventId int, userId int, status string) (error, int) {
+	if !repo.CheckUserInGroup(repo.GetGroupIdByEventId(eventId), userId) {
+		return errors.New("you have no right to this "), http.StatusUnauthorized
+	}
+	if status != "Going" && status != "Not Going" {
+		return errors.New("status must be going or not going"), http.StatusBadRequest
+	}
+	if repo.CheckUserInEvent(eventId, userId) {
+		return errors.New("you already respo to this event"), http.StatusBadRequest
+	}
+	err := repo.RespoEvent(eventId, userId, status)
+	if err != nil {
+		return errors.New("field to get events"), http.StatusInternalServerError
+	}
+	return nil, http.StatusOK
 }

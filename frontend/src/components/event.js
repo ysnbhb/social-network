@@ -24,8 +24,15 @@ export function Event({ id }) {
     });
     const data = await res.json();
     if (res.ok) {
-      alert("Event created successfully");
+      // alert("Event created successfully");
       setShowPopup(false);
+      setEventData({
+        title: "",
+        description: "",
+        date: "",
+        groupId: +id,
+      });
+      setEvents([data, ...events]);
       console.log("Event created successfully");
     } else {
       alert(data);
@@ -139,29 +146,67 @@ export function Event({ id }) {
   );
 }
 
-function EventCart({event}) {
-  const { id ,title, description, date, groupId , creator_user , status } = event;
+function EventCart({ event }) {
+  const { id, title, description, date, groupId, creator_user, status } = event;
+  const [respo, setRespo] = useState(status);
+  const RespoForEvent = async (status = "Going") => {
+    const res = await fetch("/api/group/event/response", {
+      method: "POST",
+      body: JSON.stringify({
+        eventId: id,
+        status,
+      }),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      setRespo(data.status);
+      console.log("Response added successfully");
+    } else {
+      alert(data);
+      console.log("Error adding response:", data);
+    }
+  };
+
   return (
     <div className="event-card">
       <div className="event-header">
         <h3 className="event-title">{title}</h3>
         <p className="event-date">📅 {formatDate(date)}</p>
       </div>
-      <p className="event-description">
-        {description}
-      </p>
+      <p className="event-description">{description}</p>
       <div className="event-footer">
         <p className="event-meta">Hosted by: {creator_user}</p>
         <div className="event-actions">
-          {status=="" ? (
+          {respo == "" ? (
             <>
-            <button className="accept-btn">Going</button>
-            <button className="cancel-btn">Not Going</button>
+              <button
+                className="accept-btn"
+                onClick={() => {
+                  RespoForEvent("Going");
+                }}
+              >
+                Going
+              </button>
+              <button
+                className="cancel-btn"
+                onClick={() => {
+                  RespoForEvent("Not Going");
+                }}
+              >
+                Not Going
+              </button>
             </>
+          ) : respo == "Going" ? (
+            <div className="accept-btn" style={{
+              background: "#4ecb4e",
+              color: "white",
+            }}>Going</div>
           ) : (
-            <button className="cancel-btn">Not Going</button>
+            <div className="cancel-btn" style={{
+              background: "#f30000bd",
+              color: "white",
+            }}>Not Going</div>
           )}
-          
         </div>
       </div>
     </div>

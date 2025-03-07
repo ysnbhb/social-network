@@ -39,3 +39,8 @@ type Event struct {
 	Status       string `json:"status"`
 	Creator_User string `json:"creator_user"`
 }
+
+type RespoEvent struct {
+	Id     int    `json:"eventId"`
+	Status string `json:"status"`
+}

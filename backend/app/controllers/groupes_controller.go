@@ -243,3 +243,24 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, events, http.StatusOK)
 }
+
+func RespoEvent(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+	gp_env := models.RespoEvent{}
+	err := json.NewDecoder(r.Body).Decode(&gp_env)
+	if err != nil {
+		// log.Println(err)
+		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
+		return
+	}
+	userId := r.Context().Value("userId").(int)
+	err, code := services.RespoEvent(gp_env.Id, userId, gp_env.Status)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), code)
+		return
+	}
+	utils.JsonResponse(w, gp_env, code)
+}
