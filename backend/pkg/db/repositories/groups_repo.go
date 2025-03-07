@@ -38,19 +38,20 @@ func GroupInfo(gp int) (models.Groups, error) {
 	return group, err
 }
 
-func MemberGroup(groupId int) ([]models.User, error) {
-	query := ` SELECT   users.nickname , users.avatar_url FROM users INNER JOIN group_members
+func MemberGroup(groupId int, userId int) ([]models.GroupMember, error) {
+	query := ` SELECT users.id, users.nickname , users.avatar_url FROM users INNER JOIN group_members
 	ON users.id = group_members.user_id 
-	WHERE group_members.group_id = ?
+	WHERE group_members.group_id = ? AND group_members.user_id != ?
 	`
-	row, err := db.DB.Query(query, groupId)
+	row, err := db.DB.Query(query, groupId, userId)
 	if err != nil {
+		fmt.Println(err)
 		return nil, errors.New("field to fetch user")
 	}
-	users := []models.User{}
+	users := []models.GroupMember{}
 	for row.Next() {
-		user := models.User{}
-		err = row.Scan(&user.NickName, &user.AvatarUrl)
+		user := models.GroupMember{}
+		err = row.Scan(&user.Id, &user.Nickname, &user.Avatar)
 		if err != nil {
 			continue
 		}
@@ -406,7 +407,7 @@ func CheckUserInEvent(eventId, userId int) bool {
 	var status bool
 	db.DB.QueryRow(query, eventId, userId).Scan(&status)
 	return status
-	
+
 }
 func GetgroupnameById(groupId int) string {
 	var groupname string
