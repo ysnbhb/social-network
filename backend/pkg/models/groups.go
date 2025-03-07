@@ -44,3 +44,25 @@ type RespoEvent struct {
 	Id     int    `json:"eventId"`
 	Status string `json:"status"`
 }
+
+type GroupChat struct {
+	GroupId  int                 `json:"groupId"`
+	Nickname string              `json:"nickname"`
+	Members  []GroupMember       `json:"members"`
+	Messages []GroupConversation `json:"messages"`
+}
+
+type GroupConversation struct {
+	Id        int    `json:"id"`
+	GroupId   int    `json:"groupId"`
+	Sender    int    `json:"sender"`
+	Message   string `json:"message"`
+	Avatar    string `json:"avatar"`
+	CreatedAt string `json:"createdAt"`
+}
+
+type GroupMember struct {
+	Id       int    `json:"id"`
+	Nickname string `json:"nickname"`
+	Avatar   string `json:"avatar"`
+}
