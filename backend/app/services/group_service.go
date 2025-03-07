@@ -97,6 +97,7 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 				err = errors.New("field to join to group")
 				statusCode = http.StatusInternalServerError
 			}
+			// err = repo.AddNotification()
 			// err = errors.New("you joined to group")
 			statusCode = http.StatusCreated
 		} else if err != nil {

@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import "../styles/groupsFeed.css";
 // import GroupList from "./groupList";
 
-export default function GroupsFeed({ unjoined, setUnjoined , setJoinedGroup }) {
+export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   // const [groups, setGroups] = useState([]);
-  const handleJoinGroup = async() => {
-    const res = await fetch("/api/group/create" , {
+  const handleJoinGroup = async () => {
+    const res = await fetch("/api/group/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export default function GroupsFeed({ unjoined, setUnjoined , setJoinedGroup }) {
       setTitle("");
       setDescription("");
       setShowPopup(false);
-    }else {
+    } else {
       console.log("error");
       alert(data);
     }
@@ -44,6 +44,7 @@ export default function GroupsFeed({ unjoined, setUnjoined , setJoinedGroup }) {
         credentials: "include",
       });
       const data = await response.json();
+      console.log("fetchGroups", data);
       setUnjoined(data);
     };
     fetchGroups();
@@ -99,10 +100,10 @@ export default function GroupsFeed({ unjoined, setUnjoined , setJoinedGroup }) {
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn-create" onClick={(e) => { 
+                <button type="submit" className="btn-create" onClick={(e) => {
                   e.preventDefault();
                   handleJoinGroup()
-                  }}>
+                }}>
                   Create Group
                 </button>
               </div>
@@ -132,7 +133,7 @@ function Unjoined({ group }) {
     });
     const data = await res.json();
     setStatus(data.status);
-    console.log(data.isMember, data.status, data.totalMembers);
+
   }
   return (
     <div className="feed-group-item">
