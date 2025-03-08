@@ -1,33 +1,36 @@
-// import { useEffect, useState } from "react";
+import { useState } from 'react';
 
-// export default function usehandleFollowers(param){
-//       const [status, setStatus] = useState( );
-//       const handle = async () => {
-//         const res = await fetch(`/api/follow`, {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//           credentials: "include",
-//           body: JSON.stringify({
-//             followingId: param,
-//           }),
-//         });
-//         const data = await res.json();
-//          if (res.ok) {
-//           setStatus(data.status);
-//         }
-//       };
-//       useEffect(()=>{
-//         handle
-//       },[param])
-//       console.log("hello",param,status);    
-// return [status]
-// }
+export default function useHandleFollowers(param) {
+  const [status, setStatus] = useState(null);
 
-// // const [userid, setUser] =useState()
-  
-// //   const handuleClick = async (id) => {
-// //     setUser(id)
-// //   };
-// //   const status = handleFollowers(userid);
+  const handle = async () => {
+    try {
+      console.log("test");
+
+      const res = await fetch(`/api/follow`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          followingId: param,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus(data.status);
+        console.log("data");
+      } else {
+        console.log("errr");
+      }
+    } catch (error) {
+      console.log(error, "fefr");
+    }
+  };
+console.log(status);
+
+  return { status, handle };
+}

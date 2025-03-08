@@ -2,8 +2,8 @@
 import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import handleFollowers from "@/lib/handleFollowors";
-import useHandleFollowers from "@/lib/handleFollowors";
+import useHandleFollowers from "@/app/hooks/usehandleFollower";
+  
  export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -57,7 +57,7 @@ export function ShowUnfllowUser({ user }) {
       <div>
         <p>
           <strong>
-             <Link className="link" href={{ pathname: '/profile', query: { username: user.nickname } }}>
+             <Link className="link" href={{ pathname:`/profile/${user.nickname}`}}>
               {user.lastName} {user.firstName}
             </Link>
           </strong>

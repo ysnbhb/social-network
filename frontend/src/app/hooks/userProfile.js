@@ -1,12 +1,13 @@
  import { useEffect, useState } from "react";
 
-export default function userProfile(id){ 
+export default function userProfile(params){ 
     const [profile,setProfile] =useState([])
    const [error, setError ] =useState(null)
     
     const fetchProfile=async ()=>{
-         const endpoint = `/api/profile?username=${id}` 
-         
+         const endpoint = params? 
+         `/api/profile?username=${params}` 
+         :"/api/profile"
         try {
             const response = await fetch(endpoint,{
                 credentials:'include'
@@ -26,7 +27,7 @@ export default function userProfile(id){
     }
     useEffect(() => {
          fetchProfile();
-    }, [id])
+    }, [params])
 
     return [profile, error]
 }

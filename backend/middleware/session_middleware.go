@@ -7,6 +7,11 @@ import (
 	"social-network/app/services"
 )
 
+type infoUser struct {
+	userid   int
+	username string
+}
+
 // AuthMiddleware ensures the user is authenticated via session ID.
 func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -22,12 +27,14 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			}
 			cookie = cookies.Value
 		}
-		userId, err := services.GetUserIdBySession(cookie)
+		userId, username, err := services.GetUserIdBySession(cookie)
 		if err != nil || userId == 0 {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
+ 
 		ctx := context.WithValue(r.Context(), "userId", userId)
+		ctx = context.WithValue(ctx, "username", username)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)
 	})

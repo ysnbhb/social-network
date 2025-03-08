@@ -35,9 +35,16 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-
+	var nickName string
 	other_user := r.URL.Query().Get("username")
-	postsResponse, err := services.UserProfile(other_user)
+	username := r.Context().Value("username").(string)
+	if other_user != "" {
+		nickName = other_user
+	} else {
+		nickName = username
+	}
+
+	postsResponse, err := services.UserProfile(nickName)
 	if err != nil {
 		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
 		log.Println("This Id user Is not found:", err)
@@ -97,7 +104,6 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	following.Follower, err = services.GetUserFollower(user)
-
 	if err != nil {
 		utils.JsonResponse(w, "Error To Get Follower", http.StatusMethodNotAllowed)
 		log.Println(err.Error())
