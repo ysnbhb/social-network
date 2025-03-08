@@ -1,13 +1,13 @@
  import { useEffect, useState } from "react";
 
-export default function userProfile(id){ 
+export default function userProfile(params){ 
     const [profile,setProfile] =useState([])
    const [error, setError ] =useState(null)
     
     const fetchProfile=async ()=>{
-         const endpoint = id
-        ? `/api/profile?id=${id}` 
-        : '/api/profile';
+         const endpoint = params? 
+         `/api/profile?username=${params}` 
+         :"/api/profile"
         try {
             const response = await fetch(endpoint,{
                 credentials:'include'
@@ -15,6 +15,8 @@ export default function userProfile(id){
             let data =await response.json()
             if(response.ok){
                 setProfile(data || [])
+            }else if (response.status===401){
+                window.location.href = '/login';
             }else{
                 console.log(data,"here");
                 setError(data)
@@ -25,7 +27,7 @@ export default function userProfile(id){
     }
     useEffect(() => {
          fetchProfile();
-    }, [id])
+    }, [params])
 
     return [profile, error]
 }

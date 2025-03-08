@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2025/03/06 15:24:17 server.go:27: Starting server on :8080
 2025/03/06 15:25:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 15:26:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
@@ -2837,3 +2838,19 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/08 16:03:52 server.go:27: Starting server on :8080
 2025/03/08 16:05:20 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
 2025/03/08 16:05:35 server.go:27: Starting server on :8080
+=======
+>>>>>>> main
+2025/03/08 23:15:34 server.go:27: Starting server on :8080
+2025/03/08 23:16:25 user_repo.go:33: <nil>
+2025/03/08 23:16:25 auth_controller.go:34: sorry, your password was incorrect
+2025/03/08 23:16:43 user_repo.go:33: <nil>
+2025/03/08 23:16:43 auth_controller.go:115: adding user to db: email already exist
+2025/03/08 23:16:52 user_repo.go:33: <nil>
+2025/03/08 23:16:52 auth_controller.go:115: adding user to db: email already exist
+2025/03/08 23:16:59 user_repo.go:33: <nil>
+2025/03/08 23:16:59 auth_controller.go:34: sorry, your password was incorrect
+2025/03/08 23:17:13 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 23:17:26 user_repo.go:33: <nil>
+2025/03/08 23:17:26 auth_controller.go:37: yahyayahya
+2025/03/08 23:18:00 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 23:18:08 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)

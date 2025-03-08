@@ -1,5 +1,5 @@
 'use client';
-import {  usePathname } from 'next/navigation';
+import {  notFound, usePathname } from 'next/navigation';
 import Link from 'next/link.js';
 import { useEffect, useState } from 'react';
 
@@ -29,7 +29,7 @@ export default function groupNav({id}) {
     console.log(groupInf);
     
     if (notfound) {
-        return <div>Group Not Found</div>
+        return notFound()
     }
     return (
         <div className="group-sidebar">

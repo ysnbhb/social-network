@@ -15,6 +15,7 @@ function ShowNotification(count) {
 
     const notification = document.getElementById("notification-badge");
     const notification2 = document.getElementById("notification-count");
+    if (!notification || !notification2) return;
     notification2.innerHTML = count;
     if (count > 0) {
         notification.style.display = "block";
@@ -64,6 +65,7 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 export function AddMessagesymbole(count) {
     const notification = document.getElementById("notification-badge-message");
     const notification2 = document.getElementById("notification-count-message");
+    if (!notification || !notification2) return;
     if (count > 0) {
         notification2.innerHTML = count;
         notification.style.display = "block";

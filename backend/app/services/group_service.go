@@ -237,3 +237,14 @@ func RespoEvent(eventId int, userId int, status string) (error, int) {
 	}
 	return nil, http.StatusOK
 }
+
+func GetGroup_Resuest(groupId int, userId int) ([]models.User, error, int) {
+	if repo.GeTIdofAdminOfGroup(groupId) != userId {
+		return nil, nil, http.StatusOK
+	}
+	invites, err := repo.GetGroup_Resuest(groupId)
+	if err != nil {
+		return nil, errors.New("field to get user"), http.StatusInternalServerError
+	}
+	return invites, nil, http.StatusOK
+}

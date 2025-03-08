@@ -17,3 +17,8 @@ type UnfollowUser struct {
 	Nickname  string `json:"nickname"`
 	Avatar    any    `json:"avatar"`
 }
+
+type UserRelation struct {
+	Following []UnfollowUser // Replace User with your actual user type
+	Follower  []UnfollowUser
+}
