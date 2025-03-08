@@ -1,5 +1,311 @@
 2025/03/05 12:23:31 server.go:27: Starting server on :8080
 2025/03/05 15:23:03 server.go:27: Starting server on :8080
 2025/03/05 15:25:38 server.go:27: Starting server on :8080
-2025/03/06 12:05:48 server.go:27: Starting server on :8080
-2025/03/06 12:08:23 server.go:27: Starting server on :8080
+2025/03/06 13:06:40 server.go:27: Starting server on :8080
+2025/03/06 13:06:44 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:06:44 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:06:44 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:28:04 server.go:27: Starting server on :8080
+2025/03/06 13:28:17 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:28:17 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:28:17 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:30:33 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:30:33 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:30:33 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:30:33 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:30:34 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:30:34 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:30:34 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:13 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:13 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:13 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:22 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:22 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:22 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:40 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:40 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:40 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:47 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:47 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:47 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:53 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:53 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:53 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:40:55 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/06 13:40:55 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/06 13:40:55 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/06 13:40:55 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/06 13:54:24 Websocket_controller.go:42: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/03/07 11:26:59 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 11:26:59 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 11:26:59 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 11:35:10 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 11:35:11 Websocket_controller.go:42: Failed to read message: read tcp [::1]:8080->[::1]:54566: read: connection reset by peer
+2025/03/07 11:35:11 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 11:35:11 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 11:35:11 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 11:38:37 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 11:38:37 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 11:38:37 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 11:38:37 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 11:48:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 11:48:16 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 11:48:16 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 11:48:16 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 11:48:19 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 12:00:23 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 12:00:23 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 12:00:23 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 12:06:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:30:41 user_repo.go:33: <nil>
+2025/03/07 13:30:41 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:30:41 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:30:41 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:30:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:31:42 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:31:42 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:31:42 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:31:49 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:31:49 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:31:49 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:31:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:31:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:31:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:34:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:34:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:34:16 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:34:23 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:34:23 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:34:23 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:36:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:36:24 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:36:26 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:36:26 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:36:26 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:39:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:39:04 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:39:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:39:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:39:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:39:54 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:39:54 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:39:54 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:39:57 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:39:57 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:39:57 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:40:01 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:40:01 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:40:01 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:40:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:40:14 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:40:14 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:40:14 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:43:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:51:12 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:51:12 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:51:12 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:51:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:51:14 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:51:14 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:51:14 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:51:39 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:51:39 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:51:39 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:51:43 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:51:43 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:51:43 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:54:01 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:54:01 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:54:01 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:54:05 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:54:06 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:54:06 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:54:06 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:54:34 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:54:40 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:54:42 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:54:46 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:54:49 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:54:49 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:54:49 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:54:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:54:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:54:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:55:01 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:55:01 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:55:01 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:55:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:55:32 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 13:55:32 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 13:55:32 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 13:56:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 13:59:30 Websocket_controller.go:42: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/03/07 21:26:45 server.go:27: Starting server on :8080
+2025/03/07 21:27:06 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:27:06 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:27:06 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:29:26 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:29:27 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:29:27 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:29:27 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:35:09 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:35:18 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:35:21 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:35:21 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:35:21 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:35:21 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:35:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:35:30 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:35:30 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:35:30 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:35:58 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:35:58 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:35:58 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:36:01 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:36:02 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:36:02 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:36:02 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:36:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:36:13 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:36:14 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:36:15 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:36:19 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:36:19 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:36:19 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:37:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:37:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:37:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:37:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:38:01 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:38:01 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:38:01 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:39:48 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:39:54 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:39:54 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:39:54 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:40:30 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:40:35 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:40:35 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:40:35 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:41:34 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:41:34 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:41:34 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:41:35 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 21:41:35 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:41:35 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:41:35 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:41:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 21:41:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 21:41:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 21:42:07 Websocket_controller.go:42: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/03/07 22:37:23 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:37:23 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:37:23 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:41:19 server.go:27: Starting server on :8080
+2025/03/07 22:41:31 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:41:31 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:41:31 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:41:32 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:41:32 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:41:32 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:41:32 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:43:28 server.go:27: Starting server on :8080
+2025/03/07 22:46:43 server.go:27: Starting server on :8080
+2025/03/07 22:47:02 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:47:02 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:47:02 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:47:03 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:47:03 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:47:03 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:47:03 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:51:42 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:51:42 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:51:42 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:51:43 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:51:44 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:51:44 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:51:44 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:51:51 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:51:52 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:51:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:51:53 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:52:07 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:52:07 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:52:07 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:52:11 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:52:11 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:52:11 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:52:19 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:52:19 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:52:19 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:54:10 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:54:10 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:54:10 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:54:11 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:54:12 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:54:12 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:54:13 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:54:45 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:54:52 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:54:52 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:54:52 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:56:02 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:56:05 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:56:05 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:56:05 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:56:06 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:56:06 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:56:06 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:56:06 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:57:49 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:57:49 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:57:49 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:57:50 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:57:50 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:57:50 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:57:50 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:57:57 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:57:57 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:57:57 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:59:00 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 22:59:00 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:59:00 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:59:00 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:59:32 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:59:32 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:59:32 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:59:47 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:59:47 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 22:59:47 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:59:58 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 22:59:58 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 22:59:58 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:00:47 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
+2025/03/07 23:00:47 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:00:47 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:00:47 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:00:50 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:00:50 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:00:50 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:00:53 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:00:53 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:00:53 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:01:24 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:01:24 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:01:24 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:01:28 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:01:28 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:01:28 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:01:32 serveContent.go:26: open ./uploads/5dcc5c9d-6698-4ccf-9ac9-0fd23ee00fbe.jpg: no such file or directory
+2025/03/07 23:01:32 serveContent.go:26: open ./uploads/3b090c8d-946f-4bc8-8233-4f70c6a0a165.jpg: no such file or directory
+2025/03/07 23:01:32 serveContent.go:26: open ./uploads/6ed5236f-a600-42f6-b081-e1a7690cd4c3.jpg: no such file or directory
+2025/03/07 23:04:01 Websocket_controller.go:42: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -43,11 +44,13 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
+	fmt.Println("method pass success <<<1>>>")
 	cardId, err := strconv.Atoi(r.FormValue("target_id"))
 	if err != nil {
 		utils.JsonResponse(w, "Status Bad Request", http.StatusBadRequest)
 		return
 	}
+	fmt.Println(cardId, " << cardId pass success <<<2>>>")
 
 	userId := r.Context().Value("userId").(int)
 	var commentsResponse []models.CommentResponse
@@ -56,6 +59,7 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "Error getting comments", http.StatusInternalServerError)
 		log.Println(err)
 	}
+	fmt.Println(commentsResponse, " << comment resp pass success <<<1>>>")
 
 	err = json.NewEncoder(w).Encode(commentsResponse)
 	if err != nil {

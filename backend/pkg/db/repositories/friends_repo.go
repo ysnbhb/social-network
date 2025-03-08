@@ -8,22 +8,26 @@ import (
 
 func GetFriends(Friends *[]models.Friends, userId int) error {
 	query := `
-    SELECT DISTINCT
-        u.id,
-        u.first_name,
-        u.last_name,
-        u.nickname,
-        u.avatar_url
-    FROM users u
-    LEFT JOIN followers f1 ON u.id = f1.following_id AND f1.follower_id = ? AND f1.status = 'accepted'
-    LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accepted'
-    LEFT JOIN chats c ON (u.id = c.sender_id AND c.recipient_id = ?)
-                        OR (u.id = c.recipient_id AND c.sender_id = ?)
-    WHERE
-       f1.following_id IS NOT NULL
-       OR f2.follower_id IS NOT NULL
-       OR c.id IS NOT NULL
-    ORDER BY u.nickname ASC;
+SELECT DISTINCT
+    u.id,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    u.avatar_url
+FROM users u
+LEFT JOIN followers f1 ON u.id = f1.following_id AND f1.follower_id = ? AND f1.status = 'accepted'
+LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accepted'
+LEFT JOIN chats c ON (u.id = c.sender_id AND c.recipient_id = ?)
+                    OR (u.id = c.recipient_id AND c.sender_id = ?)
+WHERE
+    f1.following_id IS NOT NULL
+    OR f2.follower_id IS NOT NULL
+    OR c.id IS NOT NULL
+GROUP BY u.id, u.first_name, u.last_name, u.nickname, u.avatar_url
+ORDER BY
+    CASE WHEN MAX(c.sent_at) IS NOT NULL THEN 1 ELSE 2 END,
+    MAX(c.sent_at) DESC,
+    u.nickname ASC;
     `
 
 	rows, err := db.DB.Query(query, userId, userId, userId, userId)

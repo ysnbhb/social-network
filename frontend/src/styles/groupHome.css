@@ -10,7 +10,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Group Header */
 .group-header {
     padding: 0 0 15px 10px ;
     border-bottom: 2px solid #f0f0f0;
@@ -28,10 +27,12 @@
     margin-top: 5px;
 }
 
-/* Menu Options */
 .menu-options {
     list-style: none;
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .menu-option {

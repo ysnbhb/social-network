@@ -1,8 +1,8 @@
 "use client"; 
 import ProfileSide from '../../../components/profileSide.js';
-import HomeFeed from '../../../components/homeFeed.js';
+import Comments from '../../../components/comments.js';
 import ActivitySide from '../../../components/activitySide.js'; 
-import '../home/globals.css';
+// import '../components/globals.css';
 
 export default  function Home() { 
       
@@ -12,7 +12,7 @@ export default  function Home() {
       {/* Other content for the home page */}
       <main className="main-content">
       <ProfileSide  />
-      <HomeFeed  />
+      <Comments  />
       <ActivitySide 
            />
       </main>
