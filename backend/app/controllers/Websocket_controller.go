@@ -28,8 +28,12 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 	defer RemoveClient(conn)
 	userID := r.Context().Value("userId").(int)
 	username := repo.GetNickName(userID)
+	if username == "" {
+		log.Println("User not found")
+		conn.Close()
+		return
+	}
 	AddClient(conn, userID, username)
-
 	Notification(models.Clients[username])
 	HandleMessages(models.Clients[username])
 }
@@ -78,23 +82,23 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 }
 
 func Notification(client *models.Client) error {
-    GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
-    if err != nil {
-        return err
-    }
-    GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
-    if err != nil {
-        return err
-    }
-    err = client.Conn.WriteJSON(map[string]interface{}{
-        "type":                "Notification",
-        "countNotification":   GetNotificationCount,
-        "countunreadmessages": GetunreadmessagesCount,
-    })
-    if err != nil {
-        RemoveClient(client.Conn)
-    }
-    return nil
+	GetNotificationCount, err := repo.GetNotificationCount(client.Userid)
+	if err != nil {
+		return err
+	}
+	GetunreadmessagesCount, err := repo.GetunreadmessagesCount(client.Userid)
+	if err != nil {
+		return err
+	}
+	err = client.Conn.WriteJSON(map[string]interface{}{
+		"type":                "Notification",
+		"countNotification":   GetNotificationCount,
+		"countunreadmessages": GetunreadmessagesCount,
+	})
+	if err != nil {
+		RemoveClient(client.Conn)
+	}
+	return nil
 }
 
 func AddClient(conn *websocket.Conn, userID int, username string) {

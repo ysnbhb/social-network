@@ -4,14 +4,14 @@ import "../styles/homeFeed.css";
 import { PostCompte } from "./postComp";
 import PostCreater from "./postCreate";
 
-export default function HomeFeed({ className, classes = {} }) {
+export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts"}) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   let offset = 0;
 
   const GetPost = async () => {
     setLoading(true);
-    const response = await fetch(`/api/home/posts?offset=${offset}`, {
+    const response = await fetch(`${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function HomeFeed({ className, classes = {} }) {
   return (
     <>
       <section className={`${className} section-home`}>
-        <PostCreater setPosts={setPosts} classes={classes} />
+        <PostCreater setPosts={setPosts} classes={classes}  ishome={ishome} groupid={groupid}/>
         {posts.map((post) => (
           <PostCompte key={post.id} post={post} />
         ))}

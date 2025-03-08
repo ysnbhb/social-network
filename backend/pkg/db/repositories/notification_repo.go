@@ -64,8 +64,11 @@ func AddNotification(msg models.Message, client *models.Client, Type string, sen
 	return nil
 }
 
+func SendNotification() {
+}
+
 func ChangeUnreadNotification(msg models.Message, client *models.Client) error {
-	query := `UPDATE notifications SET read_status = read WHERE id = ? `
+	query := `UPDATE notifications SET read_status = 'read' WHERE id = ? `
 	_, err := db.DB.Exec(query, msg.Notificationid)
 	if err != nil {
 		return err

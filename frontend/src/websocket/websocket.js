@@ -1,6 +1,6 @@
 "use client";
 
-import { handleNotification } from './notification.js'
+import { handleNotification, sendNotification } from './notification.js'
 import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
 
 export let socket;
@@ -37,9 +37,9 @@ export function initializeWebSocket() {
         };
 
         socket.onclose = function (event) {
-
             console.log('WebSocket connection closed with code:', event.code);
             connectionPromise = null;
+            reject(new Error(`WebSocket connection closed unexpectedly with code: ${event.code}`));
         };
 
         socket.onmessage = function (event) {
@@ -59,11 +59,14 @@ export function initializeWebSocket() {
                 case "getmessagesusers":
                     Getmessagesusers(data);
                     break;
-                case "getmessagesgroup":
+                case "getmessagesgroups":
                     Getmessagesgroups(data);
                     break;
                 case "Notification":
                     handleNotification(data);
+                    break;
+                case "realNotification":
+                    sendNotification()
                     break;
             }
         };

@@ -23,20 +23,19 @@ export default function Navbar() {
   useEffect(() => {
     initializeWebSocket()
       .then(() => {
-        SendOnlineStatus();
+        SendOnlineStatus(); // Assuming this function handles sending online status
       })
       .catch((error) => {
+        document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         router.push("/login");
-        //console.error("Failed to initialize websocket:", error);
       });
-  }, [pathname]);
+  }, [pathname, router]);
   return (
     <nav className="navbar">
       <a href="/home" className="logo">
         ZoneMeet
       </a>
       <div className="nav-icons">
-        {/* Home Icon */}
         <Link href="/home" className={pathname === "/home" ? "active" : ""}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +53,7 @@ export default function Navbar() {
               transform="translate(2.5 2)"
             />
           </svg>
-          Home
+          <span>Home</span>
         </Link>
 
         {/* Groups Icon */}
@@ -86,7 +85,7 @@ export default function Navbar() {
               d="M32 88.2378C32 98.0476 39.9524 106 49.7622 106H76.1575C86.0116 106 94 98.0116 94 88.1575V88.1575C94 76.1531 82.3842 67.5738 70.9106 71.1038L68.2949 71.9086C64.5812 73.0512 60.6077 73.0363 56.9026 71.866L55.1122 71.3005C43.6638 67.6843 32 76.2319 32 88.2378V88.2378Z"
             />
           </svg>
-          Groups
+          <span>Groups</span>
         </Link>
 
         {/* Chat Icon */}
@@ -132,7 +131,7 @@ export default function Navbar() {
               style={{ display: "block" }}
             ></text>
           </svg>
-          Chat
+          <span>Chat</span>
         </Link>
 
         {/* Notification Icon */}
@@ -177,7 +176,7 @@ export default function Navbar() {
               style={{ display: "block" }}
             ></text>
           </svg>
-          Notification
+          <span>Notification</span>
         </Link>
       </div>
       <div className="logout-Btn" onClick={logout} >
