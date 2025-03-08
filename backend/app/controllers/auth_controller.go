@@ -139,7 +139,6 @@ func Logout(w http.ResponseWriter, r *http.Request) {
 		log.Println("error in logout user")
 		return
 	}
-
 	services.ClearSession(w)
 	utils.JsonResponse(w, "user loged out successful", http.StatusBadRequest)
 }
@@ -167,7 +166,6 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
 }
-
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("CheckLogin")
