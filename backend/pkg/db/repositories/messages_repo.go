@@ -108,36 +108,45 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 
 func Getmessagesgroups(msg models.Message, client *models.Client) error {
 	fmt.Println(msg.Offset)
-	query := `SELECT user_id, message, sent_at FROM group_chats
-			WHERE group_id = ?
-			ORDER BY sent_at DESC
-			LIMIT ? OFFSET ?`
+	query := `SELECT 
+					group_chats.user_id, 
+					group_chats.message, 
+					group_chats.sent_at, 
+					users.avatar_url 
+				FROM group_chats
+				JOIN users ON group_chats.user_id = users.id
+				WHERE group_chats.group_id = ?
+				ORDER BY group_chats.sent_at DESC
+				LIMIT ? OFFSET ?`
 	rows, err := db.DB.Query(query, msg.Groupid, 10, msg.Offset)
 	if err != nil {
 		return err
 	}
+
 	var messages []map[string]string
 	for rows.Next() {
 		var userid int
-		var message string
+		var message, avatarUrl string
 		var timestamp time.Time
-		err := rows.Scan(&userid, &message, &timestamp)
+		err := rows.Scan(&userid, &message, &timestamp, &avatarUrl)
 		if err != nil {
 			return err
 		}
 		sender := GetNickName(userid)
 		messages = append(messages, map[string]string{
-			"sender":    sender,
-			"message":   message,
-			"timestamp": timestamp.Format("2006-01-02 15:04:05"),
+			"sender":     sender,
+			"message":    message,
+			"timestamp":  timestamp.Format("2006-01-02 15:04:05"),
+			"avatar_url": avatarUrl,
 		})
 	}
 	client.Conn.WriteJSON(map[string]interface{}{
-		"type":     "getmessagesgroups",
-		"messages": messages,
-		"you":      client.Username,
-		"id":       msg.Groupid,
-		"offset":   msg.Offset,
+		"Groupname": GetgroupnameById(msg.Groupid),
+		"type":      "getmessagesgroups",
+		"messages":  messages,
+		"you":       client.Username,
+		"id":        msg.Groupid,
+		"offset":    msg.Offset,
 	})
 	return nil
 }

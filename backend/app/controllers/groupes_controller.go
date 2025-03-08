@@ -32,30 +32,6 @@ func CreateGroup(w http.ResponseWriter, r *http.Request) {
 	utils.JsonResponse(w, groupInfo, http.StatusOK)
 }
 
-func ShowGroupMember(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
-		return
-	}
-	groupId := r.FormValue("groupId")
-	if groupId == "" {
-		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
-		return
-	}
-	group, err := strconv.Atoi(groupId)
-	if err != nil {
-		utils.JsonResponse(w, "group id must be int", http.StatusMethodNotAllowed)
-		return
-	}
-	userId := r.Context().Value("userId").(int)
-	users, err, code := services.MemberGroup(group, userId)
-	if err != nil {
-		utils.JsonResponse(w, err.Error(), code)
-		return
-	}
-	utils.JsonResponse(w, users, http.StatusOK)
-}
-
 func JoinToGroup(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		utils.JsonResponse(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
