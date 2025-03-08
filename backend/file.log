@@ -1896,3 +1896,93 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/07 20:56:43 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
 2025/03/07 20:56:45 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
 2025/03/07 20:56:48 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/08 11:41:58 server.go:27: Starting server on :8080
+2025/03/08 11:43:59 user_repo.go:33: <nil>
+2025/03/08 11:44:15 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 11:48:25 group_service.go:195: 2025-03-13T11:47
+2025/03/08 11:48:42 group_service.go:195: 2025-03-13T11:48
+2025/03/08 11:49:06 user_repo.go:33: <nil>
+2025/03/08 11:49:06 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:49:39 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:49:51 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:13 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 11:50:13 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:21 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:21 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:27 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:27 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:31 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:51 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:50:51 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 11:51:15 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:01:09 user_repo.go:33: <nil>
+2025/03/08 12:13:29 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:13:37 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:16:52 user_repo.go:33: <nil>
+2025/03/08 12:16:52 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 12:16:52 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 12:17:11 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:17:17 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:17:27 server.go:3634: http: panic serving 127.0.0.1:39808: runtime error: invalid memory address or nil pointer dereference
+goroutine 512 [running]:
+net/http.(*conn).serve.func1()
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x866b80?, 0xbc1590?})
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.InsertIntoGroup_Invi(0xc, 0x1, {0x8cd891, 0x7})
+	/home/ybahbib/Desktop/mysocialnetwork/backend/pkg/db/repositories/groups_repo.go:112 +0x2f8
+social-network/app/services.JoinToGroup({0xc00018eff0?, 0x84f0a0?}, 0x1)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/app/services/group_service.go:95 +0x2d0
+social-network/app/controllers.JoinToGroup({0x9601f8, 0xc0000f2e00}, 0xc0001a52c0)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/app/controllers/groupes_controller.go:72 +0x1a5
+net/http.HandlerFunc.ServeHTTP(0xc0001a5180?, {0x9601f8?, 0xc0000f2e00?}, 0x95ae70?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func7({0x9601f8, 0xc0000f2e00}, 0xc0001a5180)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:31 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9601f8?, 0xc0000f2e00?}, 0x8d9bec?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00018ef30?, {0x9601f8, 0xc0000f2e00}, 0xc0001a5180)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9601f8, 0xc0000f2e00}, 0xc0001a5180)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9601f8?, 0xc0000f2e00?}, 0xc0000f2e01?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x95ec30?}, {0x9601f8?, 0xc0000f2e00?}, 0x6?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000db170, {0x960708, 0xc00009ff50})
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 12:17:28 server.go:3634: http: panic serving 127.0.0.1:39834: runtime error: invalid memory address or nil pointer dereference
+goroutine 477 [running]:
+net/http.(*conn).serve.func1()
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x866b80?, 0xbc1590?})
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.InsertIntoGroup_Invi(0xc, 0x1, {0x8cd891, 0x7})
+	/home/ybahbib/Desktop/mysocialnetwork/backend/pkg/db/repositories/groups_repo.go:112 +0x2f8
+social-network/app/services.JoinToGroup({0xc0001173e0?, 0x84f0a0?}, 0x1)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/app/services/group_service.go:95 +0x2d0
+social-network/app/controllers.JoinToGroup({0x9601f8, 0xc0002b82a0}, 0xc000284b40)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/app/controllers/groupes_controller.go:72 +0x1a5
+net/http.HandlerFunc.ServeHTTP(0xc000284a00?, {0x9601f8?, 0xc0002b82a0?}, 0x95ae70?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func7({0x9601f8, 0xc0002b82a0}, 0xc000284a00)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/middleware/session_middleware.go:31 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x9601f8?, 0xc0002b82a0?}, 0x8d9bec?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000117320?, {0x9601f8, 0xc0002b82a0}, 0xc000284a00)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9601f8, 0xc0002b82a0}, 0xc000284a00)
+	/home/ybahbib/Desktop/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9601f8?, 0xc0002b82a0?}, 0xc0002b8201?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x95ec30?}, {0x9601f8?, 0xc0002b82a0?}, 0x6?)
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00029c5a0, {0x960708, 0xc00009ff50})
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/ybahbib/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 12:18:52 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:19:03 server.go:27: Starting server on :8080
+2025/03/08 12:19:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)

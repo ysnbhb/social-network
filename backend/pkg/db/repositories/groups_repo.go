@@ -108,10 +108,12 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	adminid := GeTIdofAdminOfGroup(groupId)
 	adminname := GetNickName(adminid)
 	_, err = db.DB.Exec(query, adminid, userId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
-	adminconnection := models.Clients[adminname]
-	err = adminconnection.Conn.WriteJSON(map[string]interface{}{
-		"type": "realNotification",
-	})
+	adminconnection, ok := models.Clients[adminname]
+	if ok {
+		err = adminconnection.Conn.WriteJSON(map[string]interface{}{
+			"type": "realNotification",
+		})
+	}
 	return err
 }
 
@@ -406,8 +408,8 @@ func CheckUserInEvent(eventId, userId int) bool {
 	var status bool
 	db.DB.QueryRow(query, eventId, userId).Scan(&status)
 	return status
-	
 }
+
 func GetgroupnameById(groupId int) string {
 	var groupname string
 	query := `SELECT title FROM groups WHERE id = ?`
