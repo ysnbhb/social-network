@@ -5,9 +5,8 @@ export default function userProfile(id){
    const [error, setError ] =useState(null)
     
     const fetchProfile=async ()=>{
-         const endpoint = id
-        ? `/api/profile?id=${id}` 
-        : '/api/profile';
+         const endpoint = `/api/profile?username=${id}` 
+         
         try {
             const response = await fetch(endpoint,{
                 credentials:'include'
@@ -15,6 +14,8 @@ export default function userProfile(id){
             let data =await response.json()
             if(response.ok){
                 setProfile(data || [])
+            }else if (response.status===401){
+                window.location.href = '/login';
             }else{
                 console.log(data,"here");
                 setError(data)

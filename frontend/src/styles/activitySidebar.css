@@ -8,6 +8,13 @@
     overflow-y: scroll;
     max-height: 268px;
 }
+.link{
+    text-decoration-line: none;
+    color: #1a91da;
+}
+.link:active{
+    color: #1a91da;
+  }
 .activity-sidebar::-webkit-scrollbar {
     width: 8px;
     display: block; /* Show scrollbar */

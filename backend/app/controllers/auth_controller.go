@@ -21,27 +21,27 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var login models.Login
-
+	var username string
 	err := json.NewDecoder(r.Body).Decode(&login)
 	if err != nil {
 		utils.JsonResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusBadRequest)
 		log.Println("error decoding json lgoin")
 		return
 	}
-	err = services.LoginUser(&login)
+	username, err = services.LoginUser(&login)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println(err)
 		return
 	}
-
+	log.Println(username)
 	err = services.RegisterSession(login.Id, w)
 	if err != nil {
 		utils.JsonResponse(w, "UnThe server was unable to complete your request. Please try again later.", http.StatusInternalServerError)
 		log.Println("adding session:", err)
 		return
 	}
-	postsResponse, err := services.UserProfile(login.Id) // just test with user id 1
+	postsResponse, err := services.UserProfile(username)
 	if err != nil {
 		utils.JsonResponse(w, "Status Not Found", http.StatusNotFound)
 		log.Println("Status Not Found this User ID", err)
@@ -168,6 +168,10 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
 }
 
+func Session_id(w http.ResponseWriter, r *http.Request) {
+	userID := r.Context().Value("userId").(int)
+	log.Println(userID)
+}
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("CheckLogin")

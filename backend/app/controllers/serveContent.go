@@ -23,7 +23,7 @@ func ServeContent(w http.ResponseWriter, r *http.Request) {
 	file, err := os.ReadFile("." + r.URL.Path)
 	if err != nil {
 		utils.JsonResponse(w, "page not found", http.StatusNotFound)
-		log.Println(err)
+	 
 		return
 	}
 	http.ServeContent(w, r, "."+r.URL.Path, time.Now(), strings.NewReader(string(file)))
