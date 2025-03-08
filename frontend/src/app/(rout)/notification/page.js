@@ -42,7 +42,7 @@ export default function Notification() {
         router.push('/groups');
         break;
       case "follow":
-        router.push(`/profile?username=${notification.Sender}`);
+        router.push(`/profile/${notification.Sender}`);
         break;
       case "group_event":
         router.push(`/group/${notification.GroupId}/events`);

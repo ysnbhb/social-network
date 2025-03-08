@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import style from "./profile.module.css";
+import style from "./[name]/profile.module.css";
 import bag from "../../../components/images/pxfuel.jpg";
 import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
 import { notFound, useRouter } from "next/navigation";
 import IsLoading from "@/components/isloading";
-import useHandleFollowers from "@/lib/handleFollowors";
+import useHandleFollowers from "../../hooks/usehandleFollower";
 
 export default function Profile() {
   const router = useRouter();
