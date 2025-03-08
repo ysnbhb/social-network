@@ -20,6 +20,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
 	other_user := r.URL.Query().Get("username")
+	log.Println(other_user,offset)
 	postsResponse := services.GetPostsUserProfile(other_user, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {

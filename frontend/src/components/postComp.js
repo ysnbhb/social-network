@@ -4,8 +4,7 @@ import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
  export function PostCompte({ post  , className, classes = {} }) {  
-  const route=useRouter()
-  
+   
   const {
     id,
     content,
@@ -51,7 +50,7 @@ import Link from "next/link";
             {avatarUrl ?(
                   <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
-                  // onClick={()=>handleIduser(nickName)} 
+                  
                     src={`${avatarUrl}`}
                     alt="Post"
                      className="avatar" 

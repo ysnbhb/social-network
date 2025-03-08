@@ -2,17 +2,21 @@ import useFollowing from "@/app/hooks/useFollowing";
 import "../styles/profileSidebar.css";
 import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
- import { useState } from "react";
+import { useState } from "react";
 import PopupFollower from "./popupFollower";
 export default function ProfileSide({ classes }) {
   const [showPopup, setShowPopup] = useState(false);
-   const [profile, error] = userProfile();
+  const [checkFollow, setcheckFollow] = useState(false);
+  const [data, setdata] = useState(false);
+  const [profile, error] = userProfile();
   const [follow, errorfollow] = useFollowing();
-  const  togglePopup =()=>{
-      console.log(follow.Following);
-          setShowPopup(!showPopup)
-        }
-      
+  const togglePopup = (text,dataF) => {
+        setdata(dataF)
+        setcheckFollow(text)
+        setShowPopup(!showPopup);
+  };
+ 
+
   const {
     avatarUrl,
     firstName,
@@ -24,7 +28,27 @@ export default function ProfileSide({ classes }) {
   } = profile;
   return (
     <div className="profile-page">
-      {showPopup && <PopupFollower />}
+      {showPopup && 
+        <div  className="content-area">
+        {showPopup && (
+          <div className="popup-overlay">
+            <div className="popup-content">
+              <div className="popup-header">
+                <h2 className="popup-title">{checkFollow}</h2>
+                <button className="popup-close" onClick={togglePopup} >
+                  &times;
+                </button>
+              </div>
+              <div className="popup-form">
+                {profile.map((fl) => (
+                      <div key={fl.id}> {fl} </div>
+                    ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+       }
       {profile ? (
         <aside className="profile-sidebar">
           <div className="profile-header">
@@ -49,10 +73,9 @@ export default function ProfileSide({ classes }) {
             </div>
             <div>
               <h3>{follower_count}</h3>
-              <p
-                className="text-muted follow"
-                 onClick={() => togglePopup()}
-              >
+              <p className="text-muted follow" onClick={() => togglePopup("Followers",follow.Follower
+                ||[]
+              )}>
                 Followers
               </p>
             </div>
@@ -60,7 +83,7 @@ export default function ProfileSide({ classes }) {
               <h3>{following_count}</h3>
               <p
                 className="text-muted follow"
-                // onClick={() => handleFollowers("Following")}
+                onClick={() => togglePopup("Following", follow.Following ||[])}
               >
                 Following
               </p>

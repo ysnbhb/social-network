@@ -17,6 +17,8 @@ export default function Profile({ params }) {
   
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
+  console.log(profile,"test");
+  
   const {
     id,
     avatarUrl,
@@ -51,33 +53,7 @@ export default function Profile({ params }) {
     }
   }, [firstName, lastName]);
 
-  // const menuData = [
-  //   { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
-  //   { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
-  //   { fullname: "Jane Smith", time: "2h", button: "Follow", image: " " },
-  // ];
-
-  // const FollowingData = [
-  //   { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
-  //   {
-  //     fullname: "John Doe",
-  //     time: "1h",
-  //     button: "Follow",
-  //     image: " ",
-  //   },
-  //   {
-  //     fullname: "Jane Smith",
-  //     time: "2h",
-  //     button: "Follow",
-  //     image: " ",
-  //   },
-  //   {
-  //     fullname: "Jane Smith",
-  //     time: "2h",
-  //     button: "Follow",
-  //     image: " ",
-  //   },
-  // ];
+   
   const isOwnProfile = nickName === userLogin;
   return (
     <div>

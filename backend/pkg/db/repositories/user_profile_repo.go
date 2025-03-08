@@ -6,6 +6,10 @@ import (
 )
 
 func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string, offset int) error {
+	data, err := GetUserInfoByUsername(username)
+	if err != nil {
+		return err
+	}
 	query := `
 		SELECT 
 			 c.id,
@@ -25,7 +29,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string,
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = $1 AND c.group_id IS NULL AND c.group_id =0
+		WHERE u.id = $1   AND c.group_id =0
 		GROUP BY 
 			c.id, 
 			c.user_id, 
@@ -37,7 +41,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string,
 		ORDER BY c.created_at DESC
 		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, username, offset)
+	rows, err := db.DB.Query(query, data.Id, offset)
 	if err != nil {
 		return err
 	}
