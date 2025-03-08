@@ -5,7 +5,6 @@ import (
 	"social-network/pkg/models"
 )
 
-
 func CreateSession(session *models.Session) error {
 	query1 := `DELETE FROM sessions WHERE user_id = ?`
 	_, err := db.DB.Exec(query1, session.UserId)
@@ -20,12 +19,13 @@ func CreateSession(session *models.Session) error {
 	return nil
 }
 
-func GetUserIdBySession(sessionID string) (int, error) {
-    var userId int
-    query := `SELECT s.user_id FROM sessions s WHERE s.user_uuid = ?`
-    err := db.DB.QueryRow(query, sessionID).Scan(&userId)
-    if err != nil {
-        return 0, err
-    }
-    return userId, nil
+func GetUserIdBySession(sessionID string) (int, string, error) {
+	var userId int
+	var username string
+	query := `SELECT s.user_id , u.nickname FROM sessions s JOIN users u on u.id=s.user_id WHERE s.user_uuid = ?`
+	err := db.DB.QueryRow(query, sessionID).Scan(&userId, &username)
+	if err != nil {
+		return 0, "", err
+	}
+	return userId, username, nil
 }

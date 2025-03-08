@@ -1,0 +1,858 @@
+2025/03/08 13:02:48 server.go:27: Starting server on :8080
+2025/03/08 13:03:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:03:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:03:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:03:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:13:32 server.go:27: Starting server on :8080
+2025/03/08 13:13:44 server.go:27: Starting server on :8080
+2025/03/08 13:13:47 server.go:3634: http: panic serving [::1]:53012: interface conversion: interface {} is nil, not int
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc000186270?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x963ab8?, 0xc0001b2000?}, 0xc000194280)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc000194140?, {0x963ab8?, 0xc0001b2000?}, 0x95e740?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x963ab8, 0xc0001b2000}, 0xc000194000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963ab8?, 0xc0001b2000?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000186120?, {0x963ab8, 0xc0001b2000}, 0xc000194000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963ab8, 0xc0001b2000}, 0xc000194000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963ab8?, 0xc0001b2000?}, 0xc0000e3b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000186030?}, {0x963ab8?, 0xc0001b2000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x963fc8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:13:47 user_profile_controller.go:46: omar.rharbi
+2025/03/08 13:13:47 server.go:3634: http: panic serving 127.0.0.1:58358: interface conversion: interface {} is nil, not int
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc0001867b0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x963ab8, 0xc0001b20e0}, 0xc0001948c0)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc000194780?, {0x963ab8?, 0xc0001b20e0?}, 0x95e740?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x963ab8, 0xc0001b20e0}, 0xc0001943c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963ab8?, 0xc0001b20e0?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000186600?, {0x963ab8, 0xc0001b20e0}, 0xc0001943c0)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963ab8, 0xc0001b20e0}, 0xc0001943c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963ab8?, 0xc0001b20e0?}, 0xc000066b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001863f0?}, {0x963ab8?, 0xc0001b20e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001981b0, {0x963fc8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:13:47 server.go:3634: http: panic serving 127.0.0.1:58374: interface conversion: interface {} is nil, not int
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc000296180?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x963ab8, 0xc0002b0000}, 0x95e740?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc0002c0000?, {0x963ab8?, 0xc0002b0000?}, 0x95e740?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x963ab8, 0xc0002b0000}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963ab8?, 0xc0002b0000?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000296060?, {0x963ab8, 0xc0002b0000}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963ab8, 0xc0002b0000}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963ab8?, 0xc0002b0000?}, 0xc00006bb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000224120?}, {0x963ab8?, 0xc0002b0000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000198240, {0x963fc8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:13:47 server.go:3634: http: panic serving 127.0.0.1:58350: interface conversion: interface {} is nil, not int
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc0001181b0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x963ab8, 0xc000132000}, 0x95e740?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc000154000?, {0x963ab8?, 0xc000132000?}, 0x95e740?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x963ab8, 0xc000132000}, 0xc000194640)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963ab8?, 0xc000132000?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000118060?, {0x963ab8, 0xc000132000}, 0xc000194640)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963ab8, 0xc000132000}, 0xc000194640)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963ab8?, 0xc000132000?}, 0xc000068b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001864e0?}, {0x963ab8?, 0xc000132000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000198120, {0x963fc8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:13:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:13:47 user_profile_controller.go:51: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:13:47 user_profile_controller.go:46: omar.rharbi
+2025/03/08 13:13:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:13:47 user_profile_controller.go:51: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:15:41 server.go:3634: http: panic serving 127.0.0.1:41028: interface conversion: interface {} is nil, not int
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc00038a1e0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x963ab8, 0xc0003ac000}, 0x95e740?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc000390140?, {0x963ab8?, 0xc0003ac000?}, 0x95e740?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x963ab8, 0xc0003ac000}, 0xc000390000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963ab8?, 0xc0003ac000?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00038a0c0?, {0x963ab8, 0xc0003ac000}, 0xc000390000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963ab8, 0xc0003ac000}, 0xc000390000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963ab8?, 0xc0003ac000?}, 0xc000384b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00038a030?}, {0x963ab8?, 0xc0003ac000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000114120, {0x963fc8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:16:20 server.go:27: Starting server on :8080
+2025/03/08 13:16:28 server.go:3634: http: panic serving [::1]:47202: interface conversion: interface {} is nil, not int
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc0001a4360?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x963af8?, 0xc0000000e0?}, 0xc0000c83c0)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc0000c8280?, {0x963af8?, 0xc0000000e0?}, 0x95e770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x963af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963af8?, 0xc0000000e0?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001a4210?, {0x963af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963af8?, 0xc0000000e0?}, 0xc0000e9b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001a4120?}, {0x963af8?, 0xc0000000e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x964008, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:16:28 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:16:28 server.go:3634: http: panic serving 127.0.0.1:38262: interface conversion: interface {} is nil, not int
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc0001a4750?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x963af8, 0xc0000001c0}, 0xc0000c8780)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc0000c8640?, {0x963af8?, 0xc0000001c0?}, 0x95e770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x963af8, 0xc0000001c0}, 0xc0000c8500)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963af8?, 0xc0000001c0?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001a4570?, {0x963af8, 0xc0000001c0}, 0xc0000c8500)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963af8, 0xc0000001c0}, 0xc0000c8500)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963af8?, 0xc0000001c0?}, 0xc00006bb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001a44e0?}, {0x963af8?, 0xc0000001c0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc6c0, {0x964008, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:16:28 server.go:3634: http: panic serving 127.0.0.1:38256: interface conversion: interface {} is nil, not int
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc00020a330?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x963af8, 0xc000236000}, 0x95e770?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc000216280?, {0x963af8?, 0xc000236000?}, 0x95e770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x963af8, 0xc000236000}, 0xc000216000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963af8?, 0xc000236000?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00020a1e0?, {0x963af8, 0xc000236000}, 0xc000216000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963af8, 0xc000236000}, 0xc000216000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963af8?, 0xc000236000?}, 0xc000204b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00020a030?}, {0x963af8?, 0xc000236000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc630, {0x964008, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:16:28 server.go:3634: http: panic serving 127.0.0.1:38276: interface conversion: interface {} is nil, not int
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86dac0?, 0xc000116780?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x963af8, 0xc0001380e0}, 0x95e770?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc000120500?, {0x963af8?, 0xc0001380e0?}, 0x95e770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x963af8, 0xc0001380e0}, 0xc000216140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x21a
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x963af8?, 0xc0001380e0?}, 0x8dceda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000116660?, {0x963af8, 0xc0001380e0}, 0xc000216140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x963af8, 0xc0001380e0}, 0xc000216140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x963af8?, 0xc0001380e0?}, 0xc000205b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00020a120?}, {0x963af8?, 0xc0001380e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00021e000, {0x964008, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:16:28 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:21:29 server.go:27: Starting server on :8080
+2025/03/08 13:22:19 server.go:3634: http: panic serving [::1]:57256: interface conversion: interface {} is nil, not int
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000202270?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x962bb8?, 0xc000232000?}, 0xc000212140)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc000212000?, {0x962bb8?, 0xc000232000?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x962bb8, 0xc000232000}, 0xc000212000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc000232000?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000202120?, {0x962bb8, 0xc000232000}, 0xc000212000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc000232000}, 0xc000212000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc000232000?}, 0xc0000e3b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000202030?}, {0x962bb8?, 0xc000232000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:22:19 server.go:3634: http: panic serving 127.0.0.1:33700: interface conversion: interface {} is nil, not string
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc0001a43c0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetInfoUserProfile({0x962bb8, 0xc0000000e0}, 0xc0000c83c0)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:40 +0x609
+net/http.HandlerFunc.ServeHTTP(0xc0000c8140?, {0x962bb8?, 0xc0000000e0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func21({0x962bb8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0000000e0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001a4270?, {0x962bb8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0000000e0?}, 0xc00006bb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001a4120?}, {0x962bb8?, 0xc0000000e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000216090, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:22:19 server.go:3634: http: panic serving 127.0.0.1:33702: interface conversion: interface {} is nil, not int
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc0002025d0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x962bb8, 0xc0002320e0}, 0x95d830?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc000128000?, {0x962bb8?, 0xc0002320e0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x962bb8, 0xc0002320e0}, 0xc000128000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0002320e0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000202480?, {0x962bb8, 0xc0002320e0}, 0xc000128000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0002320e0}, 0xc000128000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0002320e0?}, 0xc000118b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00011e030?}, {0x962bb8?, 0xc0002320e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000216120, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:22:19 server.go:3634: http: panic serving 127.0.0.1:33708: interface conversion: interface {} is nil, not int
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc0003821b0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x962bb8, 0xc000144000}, 0xc000398000)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc000212280?, {0x962bb8?, 0xc000144000?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x962bb8, 0xc000144000}, 0xc000212280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc000144000?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00011e150?, {0x962bb8, 0xc000144000}, 0xc000212280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc000144000}, 0xc000212280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc000144000?}, 0xc000066b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0002023f0?}, {0x962bb8?, 0xc000144000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0002161b0, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:22:19 server.go:3634: http: panic serving 127.0.0.1:33724: interface conversion: interface {} is nil, not int
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc00031a180?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x962bb8, 0xc000326000}, 0x95d830?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc0000c8280?, {0x962bb8?, 0xc000326000?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x962bb8, 0xc000326000}, 0xc0000c8280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc000326000?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00031a060?, {0x962bb8, 0xc000326000}, 0xc0000c8280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc000326000}, 0xc0000c8280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc000326000?}, 0xc00006cb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001a41b0?}, {0x962bb8?, 0xc000326000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000130000, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:22:19 server.go:3634: http: panic serving 127.0.0.1:33736: interface conversion: interface {} is nil, not string
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000382480?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetInfoUserProfile({0x962bb8, 0xc0003c6000}, 0xc000398280)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:40 +0x609
+net/http.HandlerFunc.ServeHTTP(0xc000398140?, {0x962bb8?, 0xc0003c6000?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func21({0x962bb8, 0xc0003c6000}, 0xc000398140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003c6000?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000382330?, {0x962bb8, 0xc0003c6000}, 0xc000398140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003c6000}, 0xc000398140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003c6000?}, 0xc000114b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000382270?}, {0x962bb8?, 0xc0003c6000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba000, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving [::1]:53840: interface conversion: interface {} is nil, not int
+goroutine 68 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000382720?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x962bb8?, 0xc0003c60e0?}, 0xc000398500)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc0003983c0?, {0x962bb8?, 0xc0003c60e0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x962bb8, 0xc0003c60e0}, 0xc0003983c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003c60e0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003825d0?, {0x962bb8, 0xc0003c60e0}, 0xc0003983c0)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003c60e0}, 0xc0003983c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003c60e0?}, 0xc000114b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000382540?}, {0x962bb8?, 0xc0003c60e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba120, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving 127.0.0.1:38664: interface conversion: interface {} is nil, not string
+goroutine 70 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc00031a450?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetInfoUserProfile({0x962bb8, 0xc0003260e0}, 0xc00033c3c0)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:40 +0x609
+net/http.HandlerFunc.ServeHTTP(0xc00033c140?, {0x962bb8?, 0xc0003260e0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func21({0x962bb8, 0xc0003260e0}, 0xc00033c140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003260e0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00031a300?, {0x962bb8, 0xc0003260e0}, 0xc00033c140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003260e0}, 0xc00033c140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003260e0?}, 0xc00006cb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00031a1e0?}, {0x962bb8?, 0xc0003260e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba240, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving 127.0.0.1:38668: interface conversion: interface {} is nil, not int
+goroutine 71 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc0001a45a0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x962bb8, 0xc0000001c0}, 0x95d830?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc00033c280?, {0x962bb8?, 0xc0000001c0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x962bb8, 0xc0000001c0}, 0xc00033c280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0000001c0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001a4480?, {0x962bb8, 0xc0000001c0}, 0xc00033c280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0000001c0}, 0xc00033c280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0000001c0?}, 0xc00035ab70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00031a240?}, {0x962bb8?, 0xc0000001c0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba2d0, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving 127.0.0.1:38674: interface conversion: interface {} is nil, not int
+goroutine 72 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000382b10?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x962bb8, 0xc0003c61c0}, 0xc000398780)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc000398640?, {0x962bb8?, 0xc0003c61c0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x962bb8, 0xc0003c61c0}, 0xc000398640)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003c61c0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000382930?, {0x962bb8, 0xc0003c61c0}, 0xc000398640)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003c61c0}, 0xc000398640)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003c61c0?}, 0xc000114b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003828a0?}, {0x962bb8?, 0xc0003c61c0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba360, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving 127.0.0.1:38680: interface conversion: interface {} is nil, not int
+goroutine 74 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000382d80?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x962bb8, 0xc0003c62a0}, 0x95d830?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc0003988c0?, {0x962bb8?, 0xc0003c62a0?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x962bb8, 0xc0003c62a0}, 0xc0003988c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003c62a0?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000382c60?, {0x962bb8, 0xc0003c62a0}, 0xc0003988c0)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003c62a0}, 0xc0003988c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003c62a0?}, 0xc000114b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000382bd0?}, {0x962bb8?, 0xc0003c62a0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba480, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:00 server.go:3634: http: panic serving 127.0.0.1:38684: interface conversion: interface {} is nil, not string
+goroutine 76 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cb80?, 0xc000383020?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetInfoUserProfile({0x962bb8, 0xc0003c6380}, 0xc000398c80)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:40 +0x609
+net/http.HandlerFunc.ServeHTTP(0xc000398b40?, {0x962bb8?, 0xc0003c6380?}, 0x95d830?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func21({0x962bb8, 0xc0003c6380}, 0xc000398b40)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:42 +0x1d2
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962bb8?, 0xc0003c6380?}, 0x8dbf9a?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000382ed0?, {0x962bb8, 0xc0003c6380}, 0xc000398b40)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962bb8, 0xc0003c6380}, 0xc000398b40)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962bb8?, 0xc0003c6380?}, 0xc000114b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000382e40?}, {0x962bb8?, 0xc0003c6380?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0003ba5a0, {0x9630c8, 0xc0001a4030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:03 server.go:27: Starting server on :8080
+2025/03/08 13:23:04 server.go:3634: http: panic serving [::1]:44828: interface conversion: interface {} is nil, not int
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000224360?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x962af8?, 0xc0000000e0?}, 0xc0000c8280)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc0000c8140?, {0x962af8?, 0xc0000000e0?}, 0x95d770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x962af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962af8?, 0xc0000000e0?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000224210?, {0x962af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962af8, 0xc0000000e0}, 0xc0000c8140)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962af8?, 0xc0000000e0?}, 0xc0000e9b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000224120?}, {0x962af8?, 0xc0000000e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x963008, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:04 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:23:04 server.go:3634: http: panic serving 127.0.0.1:48742: interface conversion: interface {} is nil, not int
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc00018e210?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x962af8, 0xc0001b0000}, 0x95d770?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:100 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc00011e000?, {0x962af8?, 0xc0001b0000?}, 0x95d770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x962af8, 0xc0001b0000}, 0xc00011e000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962af8?, 0xc0001b0000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00018e0f0?, {0x962af8, 0xc0001b0000}, 0xc00011e000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962af8, 0xc0001b0000}, 0xc00011e000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962af8?, 0xc0001b0000?}, 0xc000066b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000114030?}, {0x962af8?, 0xc0001b0000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc6c0, {0x963008, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:04 server.go:3634: http: panic serving 127.0.0.1:48746: interface conversion: interface {} is nil, not int
+goroutine 16 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000296240?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x962af8, 0xc0002b0000}, 0xc0002cc000)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc000198000?, {0x962af8?, 0xc0002b0000?}, 0x95d770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x962af8, 0xc0002b0000}, 0xc000198000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962af8?, 0xc0002b0000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000296060?, {0x962af8, 0xc0002b0000}, 0xc000198000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962af8, 0xc0002b0000}, 0xc000198000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962af8?, 0xc0002b0000?}, 0xc000188b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00018e030?}, {0x962af8?, 0xc0002b0000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc750, {0x963008, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:04 server.go:3634: http: panic serving 127.0.0.1:48752: interface conversion: interface {} is nil, not int
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000114240?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x962af8, 0xc000138000}, 0x95d770?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc0000c8780?, {0x962af8?, 0xc000138000?}, 0x95d770?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x962af8, 0xc000138000}, 0xc0000c8780)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:37 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962af8?, 0xc000138000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001140f0?, {0x962af8, 0xc000138000}, 0xc0000c8780)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962af8, 0xc000138000}, 0xc0000c8780)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962af8?, 0xc000138000?}, 0xc00006bb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000224ae0?}, {0x962af8?, 0xc000138000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc7e0, {0x963008, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:23:04 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:24:48 server.go:27: Starting server on :8080
+2025/03/08 13:24:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:24:49 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:24:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:24:49 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:29:37 server.go:27: Starting server on :8080
+2025/03/08 13:29:42 server.go:3634: http: panic serving [::1]:38550: interface conversion: interface {} is nil, not int
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000116270?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.HandleWebsocket({0x962a98?, 0xc000142000?}, 0xc000124140)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/Websocket_controller.go:29 +0x32e
+net/http.HandlerFunc.ServeHTTP(0xc000124000?, {0x962a98?, 0xc000142000?}, 0x95d710?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func23({0x962a98, 0xc000142000}, 0xc000124000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:43 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962a98?, 0xc000142000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000116120?, {0x962a98, 0xc000142000}, 0xc000124000)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962a98, 0xc000142000}, 0xc000124000)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962a98?, 0xc000142000?}, 0xc0000e3b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000116030?}, {0x962a98?, 0xc000142000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000dc3f0, {0x962fa8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:29:42 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:29:42 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:29:42 server.go:3634: http: panic serving 127.0.0.1:60764: interface conversion: interface {} is nil, not int
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000116600?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.GetHomePosts({0x962a98, 0xc0001420e0}, 0xc0001243c0)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/home_controller.go:21 +0x449
+net/http.HandlerFunc.ServeHTTP(0xc0000c8280?, {0x962a98?, 0xc0001420e0?}, 0x95d710?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func22({0x962a98, 0xc0001420e0}, 0xc0000c8280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:43 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962a98?, 0xc0001420e0?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000116420?, {0x962a98, 0xc0001420e0}, 0xc0000c8280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962a98, 0xc0001420e0}, 0xc0000c8280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962a98?, 0xc0001420e0?}, 0xc00006cb70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0002241b0?}, {0x962a98?, 0xc0001420e0?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00018a000, {0x962fa8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:29:42 server.go:3634: http: panic serving 127.0.0.1:60774: interface conversion: interface {} is nil, not int
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc0002861b0?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.ShowUnfollowUser({0x962a98, 0xc0002a0000}, 0x95d710?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/follow_controller.go:38 +0xe5
+net/http.HandlerFunc.ServeHTTP(0xc0000c83c0?, {0x962a98?, 0xc0002a0000?}, 0x95d710?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func19({0x962a98, 0xc0002a0000}, 0xc0000c83c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:43 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962a98?, 0xc0002a0000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000286060?, {0x962a98, 0xc0002a0000}, 0xc0000c83c0)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962a98, 0xc0002a0000}, 0xc0000c83c0)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962a98?, 0xc0002a0000?}, 0xc00006db70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000224240?}, {0x962a98?, 0xc0002a0000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00018a090, {0x962fa8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:29:42 server.go:3634: http: panic serving 127.0.0.1:60762: interface conversion: interface {} is nil, not int
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x86cac0?, 0xc000186270?})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/app/controllers.Userfollowing({0x962a98, 0xc0001be000}, 0x95d710?)
+	/home/omrharbi/mysocialnetwork/backend/app/controllers/user_profile_controller.go:101 +0x50c
+net/http.HandlerFunc.ServeHTTP(0xc000124280?, {0x962a98?, 0xc0001be000?}, 0x95d710?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func1({0x962a98, 0xc0001be000}, 0xc000124280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/session_middleware.go:43 +0x1ce
+net/http.HandlerFunc.ServeHTTP(0xc0000b40c0?, {0x962a98?, 0xc0001be000?}, 0x8dbeda?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000186120?, {0x962a98, 0xc0001be000}, 0xc000124280)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x962a98, 0xc0001be000}, 0xc000124280)
+	/home/omrharbi/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x4706f9?, {0x962a98?, 0xc0001be000?}, 0xc000066b70?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000116390?}, {0x962a98?, 0xc0001be000?}, 0x6?)
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000128120, {0x962fa8, 0xc000224030})
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 13:29:42 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:29:42 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:30:53 server.go:27: Starting server on :8080
+2025/03/08 13:30:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:30:57 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:30:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:30:57 user_profile_controller.go:52: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:31:22 server.go:27: Starting server on :8080
+2025/03/08 13:31:23 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:23 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:32 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:32 user_profile_controller.go:46: omar.rharbi omar.rharbi
+2025/03/08 13:31:38 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:38 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:41 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:31:42 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:42 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:46 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:46 user_profile_controller.go:46: omar.rharbi yassine.bahbib
+2025/03/08 13:31:48 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:31:48 user_profile_controller.go:46: omar.rharbi 
+2025/03/08 13:32:00 server.go:27: Starting server on :8080
+2025/03/08 13:35:53 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:38:49 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:38:53 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:40:26 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:40:33 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:42:42 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:43:12 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:44:07 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:44:37 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:44:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 13:44:40 user_profile_controller.go:50: This Id user Is not found: sql: no rows in result set
+2025/03/08 13:44:45 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:47:07 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:47:11 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:48:07 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:49:11 server.go:27: Starting server on :8080
+2025/03/08 13:50:19 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:50:22 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:54:29 user_repo.go:33: <nil>
+2025/03/08 13:54:29 auth_controller.go:37: omar.rharbi
+2025/03/08 13:54:32 user_profile_controller.go:23: yassine.bahbib
+2025/03/08 13:55:20 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:55:28 user_repo.go:33: <nil>
+2025/03/08 13:55:28 auth_controller.go:37: omar.rharbi
+2025/03/08 13:55:30 user_profile_controller.go:23: yaka
+2025/03/08 13:55:39 user_profile_controller.go:23: yaka
+2025/03/08 13:55:47 user_profile_controller.go:23: omar.rharbi
+2025/03/08 13:55:54 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 13:56:10 user_profile_controller.go:23: omar.rharbi
+2025/03/08 14:01:01 posts_controller.go:50: 0
+2025/03/08 14:01:01 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/08 14:03:20 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:03:39 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:06:59 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:07:02 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:13:50 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:18:01 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:18:55 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:29:18 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:29:47 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:32:00 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:33:21 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:33:45 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:34:24 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:36:23 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:36:55 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:37:08 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:37:18 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:37:50 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:38:24 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:38:36 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:38:57 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 14:39:22 user_profile_controller.go:23: omar.rharbi
+2025/03/08 14:39:27 user_profile_controller.go:23: omar.rharbi

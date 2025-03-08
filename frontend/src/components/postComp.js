@@ -49,7 +49,7 @@ import Link from "next/link";
           <div className="post-author">
          
             {avatarUrl ?(
-                  <Link href={{ pathname: '/profile', query: { username: nickName } }}>
+                  <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
                   // onClick={()=>handleIduser(nickName)} 
                     src={`${avatarUrl}`}

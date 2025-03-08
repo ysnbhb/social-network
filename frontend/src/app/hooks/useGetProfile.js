@@ -2,14 +2,15 @@
  
 
 export default function useGetProfile(searchParam) {  
+     
     const [profile, setProfile] = useState([])
     const [error, setError] = useState(null)
   
     const fetchData = async () => {
         try {
             const endpoint = searchParam
-            ? `api/profile/posts/created?id=${searchParam}` 
-              : "api/profile/posts/created" ;
+            ? `/api/profile/posts/created?username=${searchParam}` 
+              : "/api/profile/posts/created" ;
             const response= await fetch(endpoint,{
                 method:"GET",
                 credentials: "include"

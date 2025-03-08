@@ -49,6 +49,6 @@ func ClearSession(w http.ResponseWriter) {
 	http.SetCookie(w, cookie)
 }
 
-func GetUserIdBySession(cookie string) (int, error) {
+func GetUserIdBySession(cookie string) (int, string, error) {
 	return repo.GetUserIdBySession(cookie)
 }
