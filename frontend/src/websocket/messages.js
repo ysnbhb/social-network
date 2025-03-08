@@ -21,7 +21,7 @@ export function Getmessagesusers(data) {
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
             dev.innerHTML = `
                     <div class="sender-info">
-                        <div class="avatar"></div>
+                        <img src="${info.avatar_url}" class="avatar"/>
                         <span>${info.sender}</span>
                         <span class="time">${info.timestamp}</span>
                     </div>
@@ -88,7 +88,7 @@ export function receiveMessageuser(data) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <div class="avatar"></div>
+                    <img src="${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
@@ -136,6 +136,8 @@ export function sendMessageIsRead(nickname) {
 //// group messages ////
 
 export function receiveMessageGroup(data) {
+    console.log(data);
+    
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/group/${data.groupid}/chat` || data.mymsg) {
         sendMessageGroupeIsRead(data.groupid);
@@ -143,7 +145,7 @@ export function receiveMessageGroup(data) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <div class="avatar"></div>
+                    <img src="${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
