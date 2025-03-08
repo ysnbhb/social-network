@@ -7,15 +7,14 @@ import PopupFollower from "./popupFollower";
 export default function ProfileSide({ classes }) {
   const [showPopup, setShowPopup] = useState(false);
   const [checkFollow, setcheckFollow] = useState(false);
-  const [data, setdata] = useState(false);
   const [profile, error] = userProfile();
   const [follow, errorfollow] = useFollowing();
-  const togglePopup = (text,dataF) => {
-        setdata(dataF)
+  const togglePopup = (text) => {
         setcheckFollow(text)
         setShowPopup(!showPopup);
   };
  
+console.log(profile);
 
   const {
     avatarUrl,
@@ -73,8 +72,7 @@ export default function ProfileSide({ classes }) {
             </div>
             <div>
               <h3>{follower_count}</h3>
-              <p className="text-muted follow" onClick={() => togglePopup("Followers",follow.Follower
-                ||[]
+              <p className="text-muted follow" onClick={() => togglePopup("Followers"
               )}>
                 Followers
               </p>
@@ -83,7 +81,7 @@ export default function ProfileSide({ classes }) {
               <h3>{following_count}</h3>
               <p
                 className="text-muted follow"
-                onClick={() => togglePopup("Following", follow.Following ||[])}
+                onClick={() => togglePopup("Following")}
               >
                 Following
               </p>
