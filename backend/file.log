@@ -1202,3 +1202,8 @@
 2025/03/08 12:13:43 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
 2025/03/08 12:13:43 user_profile.go:24: Error To Get User Profile sql: no rows in result set
 2025/03/08 12:13:43 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:22:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:22:25 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:22:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:22:25 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:22:27 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
