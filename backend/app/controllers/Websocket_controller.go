@@ -28,6 +28,11 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 	defer RemoveClient(conn)
 	userID := r.Context().Value("userId").(int)
 	username := repo.GetNickName(userID)
+	if username == "" {
+		log.Println("User not found")
+		conn.Close()
+		return
+	}
 	AddClient(conn, userID, username)
 	Notification(models.Clients[username])
 	HandleMessages(models.Clients[username])
