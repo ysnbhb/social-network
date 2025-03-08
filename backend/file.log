@@ -2435,3 +2435,6 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/08 11:54:44 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
 2025/03/08 11:54:46 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
 2025/03/08 11:54:47 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+2025/03/08 12:24:25 server.go:27: Starting server on :8080
+2025/03/08 12:33:42 auth_controller.go:34: sorry, this email does not exist
+2025/03/08 12:33:48 auth_controller.go:34: sorry, this email does not exist

@@ -50,11 +50,7 @@ export function Getmessagesusers(data) {
 }
 
 
-<<<<<<< HEAD
-function setupScrollHandler(data, type = "user") {
-=======
 function setupScrollHandler(data,  type = "user") {
->>>>>>> yakhaldy
     const messageplace = document.getElementById("messages");
     if (!messageplace) return;
     messageplace.addEventListener("scroll", () => {
