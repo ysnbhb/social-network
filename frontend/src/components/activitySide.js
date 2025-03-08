@@ -57,7 +57,7 @@ export function ShowUnfllowUser({ user }) {
       <div>
         <p>
           <strong>
-             <Link href={{ pathname: '/profile', query: { username: user.nickname } }}>
+             <Link className="link" href={{ pathname: '/profile', query: { username: user.nickname } }}>
               {user.lastName} {user.firstName}
             </Link>
           </strong>

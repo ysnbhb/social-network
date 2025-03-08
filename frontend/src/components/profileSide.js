@@ -62,7 +62,7 @@ export default function ProfileSide({  classes   }) {
               <p className="text-muted follow" onClick={()=>handleFollowers('Following')}>Following</p>
             </div>
           </div>
-          <Link href={{ pathname: '/profile', query: { username: nickName } }}>
+          <Link  className='link' href={{ pathname: '/profile', query: { username: nickName } }}>
           <button     className="profile-button">My Profile</button>
           </Link>
         </aside>
