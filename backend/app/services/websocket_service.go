@@ -96,6 +96,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 				"content": msg.Content,
 				"time":    Time,
 				"groupid": msg.Groupid,
+				"you":     receiverConn,
 			})
 		}
 	}
@@ -105,6 +106,8 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		"content": msg.Content,
 		"time":    Time,
 		"groupid": msg.Groupid,
+		"mymsg":   true,
+		"you":     repo.GetNickName(client.Userid),
 	})
 
 	// err = repo.AddNotification(msg, client, "messageGroup", Time)

@@ -2,6 +2,7 @@ package repo
 
 import (
 	"errors"
+	"fmt"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
@@ -106,6 +107,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 }
 
 func Getmessagesgroups(msg models.Message, client *models.Client) error {
+	fmt.Println(msg.Offset)
 	query := `SELECT user_id, message, sent_at FROM group_chats
 			WHERE group_id = ?
 			ORDER BY sent_at DESC
@@ -134,6 +136,8 @@ func Getmessagesgroups(msg models.Message, client *models.Client) error {
 		"type":     "getmessagesgroups",
 		"messages": messages,
 		"you":      client.Username,
+		"id":       msg.Groupid,
+		"offset":   msg.Offset,
 	})
 	return nil
 }
