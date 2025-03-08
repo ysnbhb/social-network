@@ -2,11 +2,11 @@
     background-color: white;
     border-radius: 16px;
     padding: 1.5rem;
+    padding-bottom: 0;
     top: 80px;
+    position: sticky;
     height: fit-content;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow-y: scroll;
-    max-height: 268px;
 }
 .activity-sidebar::-webkit-scrollbar {
     width: 8px;
@@ -25,13 +25,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f2f5;
 }
 
 .activity-header h3 {
     font-size: 1.1rem;
     font-weight: 600;
 }
+.activity-header button {
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #1a91da;
+    fill: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .activity-header button:hover {
+    background-color: #1884c7;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(26, 145, 218, 0.3);
+  }
+  
+  .activity-header button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(26, 145, 218, 0.3);
+  }
 
 .activity-item {
     display: flex;
@@ -40,6 +68,7 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #f0f2f5;
+    height: max-content;
 }
 
 .activity-item:last-child {
@@ -67,11 +96,41 @@
     transition: background-color 0.2s ease;
 }
 
+.activity-sidebar input {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid #dce1e5;
+    background-color: #f8f9fa;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .activity-sidebar input:hover {
+    border-color: #1a91da;
+  }
+  
+  .activity-sidebar input:focus {
+    border-color: #1a91da;
+    box-shadow: 0 0 5px rgba(26, 145, 218, 0.5);
+  }
+  
+  .activity-sidebar input::placeholder {
+    color: #9ca3af;
+  }
+
 .activity-item button:hover {
     background-color: #1a91da;
 }
 
-/* Required utility classes */
 .text-muted {
     color: #8e8e8e;
+}
+
+.users-list {
+    max-height: 70vh;
+    overflow-y: scroll;
 }
