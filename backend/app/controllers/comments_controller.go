@@ -19,15 +19,32 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var commentRequest models.CommentRequest
-	err := json.NewDecoder(r.Body).Decode(&commentRequest)
+	err := r.ParseMultipartForm(10 << 20) // 10 MB max memory
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
-		log.Println("error decoding json commentRequest:", err)
+		log.Println("error parsing multipart form:", err)
 		return
 	}
+
+	var commentRequest models.CommentRequest
+	
+	content := r.FormValue("content")
+	groupIdStr := r.FormValue("groupId")
+	target := r.FormValue("targetId")
+	groupId, err := strconv.Atoi(groupIdStr)
+	if err != nil {
+		utils.JsonResponse(w, "Invalid groupId format", http.StatusBadRequest)
+		log.Println("error converting groupId to int:", err)
+		return
+	}
+	commentRequest.Content = content
+	commentRequest.GroupId = groupId
+	commentRequest.TargetId, err = strconv.Atoi(target)
+
 	user := r.Context().Value("userId").(int)
 	commentRequest.UserId = user
+	
+	// Add the comment
 	err = services.AddComments(&commentRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
@@ -35,7 +52,7 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// You might want to add a success response here
+	// Success response
 	utils.JsonResponse(w, "Comment created successfully", http.StatusCreated)
 }
 

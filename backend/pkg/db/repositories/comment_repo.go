@@ -7,11 +7,11 @@ import (
 )
 
 func AddComment(commentRequest *models.CommentRequest) error {
-	cardId, err := CreateCard(commentRequest.UserId, 0, commentRequest.Content, "")
+	cardId, err := CreateCard(commentRequest.UserId, commentRequest.GroupId, commentRequest.Content, "")
 	if err != nil {
 		return err
 	}
-
+	fmt.Println("target id>>>>.", commentRequest.TargetId)
 	query := `INSERT INTO comments(card_id, target_id) VALUES(?, ?);`
 	_, err = db.DB.Exec(query, cardId, commentRequest.TargetId)
 	return err

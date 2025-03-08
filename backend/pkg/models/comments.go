@@ -6,6 +6,7 @@ type CommentRequest struct {
 	CardId    int    `json:"cardId"`
 	TargetId  int    `json:"targetId"`
 	Content   string `json:"content"`
+	GroupId   int    `json:"groupId"`
 	CreatedAt string `json:"createdAt"`
 }
 
