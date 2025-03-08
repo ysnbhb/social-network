@@ -3,6 +3,7 @@ import Image from "next/image";
 import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { sendFollow } from "../websocket/notification.js";
 export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -59,6 +60,7 @@ export function ShowUnfllowUser({ user }) {
     const data = await res.json();
     if (res.ok) {
       setStatus(data.status);
+      sendFollow(user.id+"");
     }
   };
   console.log(user);

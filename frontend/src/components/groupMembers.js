@@ -13,7 +13,6 @@ export default function GroupMembers({ id }) {
             })
                 .then((response) => {
                     if (!response.ok) {
-                        console.error("Error fetching members");
                         return;
                     }
                     return response.json();
@@ -37,7 +36,7 @@ export default function GroupMembers({ id }) {
                     <ul className="menu-options">
                         {members.map((member) => (
                             <li key={member.id} className="menu-option">
-                                <p onClick={() => { Router.push(`/profile/${member.id}`) }}>
+                                <p onClick={() => { Router.push(`/profile?username=${member.nickname}`) }}>
                                     {member.nickname}
                                 </p>
                             </li>

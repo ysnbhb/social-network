@@ -5,7 +5,12 @@ import { safeSend } from "./websocket.js";
 export function handleNotification(data) {
     AddMessagesymbole(data.countunreadmessages)
     ShowNotification(data.countNotification);
+    if (window.location.pathname === "/notification") {
+        const notificationEvente = new CustomEvent("notificationEvent")
+        window.dispatchEvent(notificationEvente)
+    }
 }
+
 function ShowNotification(count) {
 
     const notification = document.getElementById("notification-badge");
@@ -20,8 +25,6 @@ function ShowNotification(count) {
 
 }
 export default function sendChangeUnreadNotification(Notificationid) {
-    console.log("sendUNreadNotification");
-
     const data = {
         type: "changeunreadnotification",
         Notificationid: Notificationid,
@@ -35,14 +38,8 @@ export function sendNotification() {
     safeSend(data);
 }
 /// notification group ///
-export function receiveRequestInvitationgroup(data) {
-    console.log(data);
-}
 
-export function receiveAcceptedInvitationGroup(data) {
-    console.log(data);
-}
-export function sendRequestInvitationGroup(sender, groupid, receiver, groupName) {
+export function sendRequestInvitationGroup(sender, gro) {
     const data = {
         type: "requestinvitationgroup",
         sender: sender,
@@ -81,12 +78,10 @@ export function AddMessagesymbole(count) {
 export function receiveFollow(data) {
     console.log(data);
 }
-export function sendFollow(sender, receiver) {
+export function sendFollow(receiver) {
     const data = {
         type: "follow",
-        sender: sender,
-        receiver: receiver,
-        content: `${sender} sent following request to you`
+        receiver: [receiver],
     }
     safeSend(data);
 }

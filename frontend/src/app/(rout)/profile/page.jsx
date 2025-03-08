@@ -126,7 +126,7 @@ export default function Profile() {
                 ) : (
                   <div>
                     <button className={style.followButton}>Follow</button>
-                    <button className={style.moreButton}>Send Message</button>
+                    <button onClick={()=>{router.push(`/chat/${nickName}`)}} className={style.moreButton}>Send Message</button>
                   </div>
                 )}
               </div>

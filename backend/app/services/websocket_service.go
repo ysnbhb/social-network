@@ -1,6 +1,7 @@
 package services
 
 import (
+	"fmt"
 	"html"
 	"time"
 
@@ -67,7 +68,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		})
 		return err
 	}
-	
+
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
@@ -110,9 +111,10 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		"you":     repo.GetNickName(client.Userid),
 	})
 
-	// err = repo.AddNotification(msg, client, "messageGroup", Time)
-	// if err != nil {
-	// 	return err
-	// }
+	err = repo.AddNotificationMsgGroup(msg, client, "messageGroup", Time,users)
+	if err != nil {
+		fmt.Println("Error adding notification:", err)
+		return err
+	}
 	return nil
 }

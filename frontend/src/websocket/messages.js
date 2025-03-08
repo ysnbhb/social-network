@@ -1,6 +1,7 @@
 "use client"
 import { safeSend } from "./websocket.js";
 import { sendNotification } from "./notification.js";
+import { useEffect } from "react";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
@@ -137,6 +138,7 @@ export function sendMessageIsRead(nickname) {
 export function receiveMessageGroup(data) {
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/group/${data.groupid}/chat` || data.mymsg) {
+        sendMessageGroupeIsRead(data.groupid);
         if (messageplace) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
@@ -175,7 +177,9 @@ export function sendGetmessagesgroups(groupid, offset = 0) {
 }
 export function Getmessagesgroups(data) {
     const title = document.getElementById("title-chat-group")
-    title.innerText = data.Groupname
+    if (title) {
+        title.innerText = data.Groupname
+    }
     const messages = data.messages;
     const messageplace = document.getElementById("messages");
 
@@ -220,4 +224,13 @@ export function Getmessagesgroups(data) {
     }
 
     setupScrollHandler(data, "group");
+}
+
+export function sendMessageGroupeIsRead(groupid) {
+    const data = {
+        type: "changeunreadmessagegroupe",
+        groupid: parseInt(groupid)
+    }
+    safeSend(data);
+    sendNotification()
 }

@@ -12,6 +12,9 @@ export default function Notification() {
 
   useEffect(() => {
     Notifications();
+    window.addEventListener('notificationEvent', () => {
+      Notifications();
+    });
   }, []);
 
   const Notifications = () => {
@@ -22,16 +25,16 @@ export default function Notification() {
       .then((response) => response.json())
       .then((data) => {
         setNotifications(data);
-        console.log(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching notifications:', error);
         setLoading(false);
       });
   };
 
   const handleNotificationClick = (notification) => {
+    console.log(notification);
+     
     sendChangeUnreadNotification(notification.Id);
     
     switch (notification.Type) {
@@ -39,8 +42,13 @@ export default function Notification() {
         router.push('/groups');
         break;
       case "follow":
-        // Implement follow action if needed
+        router.push(`/profile?username=${notification.Sender}`);
         break;
+      case "group_event":
+        router.push(`/group/${notification.GroupId}/events`);
+      break;
+      case "messageGroup":
+        router.push(`/group/${notification.GroupId}/chat`);
       default:
         // Default action for other types
         break;
