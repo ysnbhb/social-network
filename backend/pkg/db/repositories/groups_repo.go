@@ -416,3 +416,26 @@ func GetgroupnameById(groupId int) string {
 	db.DB.QueryRow(query, groupId).Scan(&groupname)
 	return groupname
 }
+
+func GetGroup_Resuest(group_id int) ([]models.User, error) {
+	users := []models.User{}
+	query := `SELECT u.nickname , u.avatar_url  FROM users u
+	INNER JOIN group_invitations gi ON u.id = gi.user_id
+	WHERE gi.group_id = ? AND gi.status = 'pending'
+	GROUP BY u.id
+	ORDER BY gi.cerated_at DESC
+	`
+	rows, err := db.DB.Query(query, group_id)
+	if err != nil {
+		return nil, err
+	}
+	for rows.Next() {
+		user := models.User{}
+		err = rows.Scan(&user.NickName, &user.AvatarUrl)
+		if err != nil {
+			continue
+		}
+		users = append(users, user)
+	}
+	return users, err
+}
