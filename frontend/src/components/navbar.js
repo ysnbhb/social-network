@@ -24,13 +24,13 @@ export default function Navbar() {
   useEffect(() => {
     initializeWebSocket()
       .then(() => {
-        SendOnlineStatus();
+        SendOnlineStatus(); // Assuming this function handles sending online status
       })
       .catch((error) => {
+        document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         router.push("/login");
-        //console.error("Failed to initialize websocket:", error);
       });
-  }, [pathname]);
+  }, [pathname, router]);
   return (
     <nav className="navbar">
       <a href="/home" className="logo">

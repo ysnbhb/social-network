@@ -37,9 +37,9 @@ export function initializeWebSocket() {
         };
 
         socket.onclose = function (event) {
-
             console.log('WebSocket connection closed with code:', event.code);
             connectionPromise = null;
+            reject(new Error(`WebSocket connection closed unexpectedly with code: ${event.code}`));
         };
 
         socket.onmessage = function (event) {
@@ -59,7 +59,7 @@ export function initializeWebSocket() {
                 case "getmessagesusers":
                     Getmessagesusers(data);
                     break;
-                case "getmessagesgroup":
+                case "getmessagesgroups":
                     Getmessagesgroups(data);
                     break;
                 case "Notification":

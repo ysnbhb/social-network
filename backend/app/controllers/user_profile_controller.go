@@ -8,6 +8,7 @@ import (
 
 	"social-network/app/services"
 	repo "social-network/pkg/db/repositories"
+	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
 
@@ -18,23 +19,8 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
-	var profileUserId int
-
-	userId := r.Context().Value("userId").(int)
-	other_user := r.URL.Query().Get("id")
-	if other_user != "" {
-		userId_other, err := strconv.Atoi(other_user)
-		if err != nil {
-			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
-			log.Println("This Id Is Incorrect")
-			return
-		}
-		profileUserId = userId_other
-	} else {
-		profileUserId = userId
-	}
- 
-	postsResponse := services.GetPostsUserProfile(profileUserId, offset)
+	other_user := r.URL.Query().Get("username")
+	postsResponse := services.GetPostsUserProfile(other_user, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
@@ -49,23 +35,9 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 		log.Println("method not allowed")
 		return
 	}
-	var profileUserId int
 
-	userId := r.Context().Value("userId").(int)
-
-	other_user := r.URL.Query().Get("id")
-	if other_user != "" {
-		userId_other, err := strconv.Atoi(other_user)
-		if err != nil {
-			utils.JsonResponse(w, "This Id Is Incorrect", http.StatusBadRequest)
-			log.Println("This Id Is Incorrect")
-			return
-		}
-		profileUserId = userId_other
-	} else {
-		profileUserId = userId
-	}
-	postsResponse, err := services.UserProfile(profileUserId)
+	other_user := r.URL.Query().Get("username")
+	postsResponse, err := services.UserProfile(other_user)
 	if err != nil {
 		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
 		log.Println("This Id user Is not found:", err)
@@ -93,18 +65,45 @@ func GetuserinfoByname(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, err.Error()+"\nyou are not allowed to send message to "+username, 404)
 		return
 	}
-	//select the user info from  the database
+	// select the user info from  the database
 	userInfo, err := repo.GetUserInfoByUsername(username)
 	if err != nil {
 		log.Println("error getting user info:", err)
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	// var userInfo map[string]string
-	// userInfo = map[string]string{
-	// 	"nickname": username,
-	// }
 	err = json.NewEncoder(w).Encode(userInfo)
+	if err != nil {
+		log.Println("error encoding json userInfo:", err)
+		utils.JsonResponse(w, "error encoding json userInfo", http.StatusInternalServerError)
+		return
+	}
+}
+
+func Userfollowing(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed")
+		return
+	}
+	following := models.UserRelation{}
+	var err error
+
+	user := r.Context().Value("userId").(int)
+	following.Following, err = services.GetUserFollowing(user)
+	if err != nil {
+		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
+		log.Println(err.Error())
+		return
+	}
+	following.Follower, err = services.GetUserFollower(user)
+
+	if err != nil {
+		utils.JsonResponse(w, "Error To Get Follower", http.StatusMethodNotAllowed)
+		log.Println(err.Error())
+		return
+	}
+	err = json.NewEncoder(w).Encode(following)
 	if err != nil {
 		log.Println("error encoding json userInfo:", err)
 		utils.JsonResponse(w, "error encoding json userInfo", http.StatusInternalServerError)

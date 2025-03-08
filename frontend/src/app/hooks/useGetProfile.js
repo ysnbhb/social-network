@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+ import { useEffect, useState } from "react";
  
 
 export default function useGetProfile(searchParam) {  
-     const [profile, setProfile] = useState([])
+    const [profile, setProfile] = useState([])
     const [error, setError] = useState(null)
   
     const fetchData = async () => {
@@ -18,10 +18,9 @@ export default function useGetProfile(searchParam) {
             let data = await response.json()
             if(response.ok){
                 setProfile(data || [])
-            } else {
-                console.log(response.status);
-                console.log(data,"here");
-                
+            }else if (response.status===401){
+                window.location.href = '/login';
+            } else { 
                setError(data)
               }
         } catch (error) {

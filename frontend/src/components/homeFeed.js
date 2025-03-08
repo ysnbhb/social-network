@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "../styles/homeFeed.css";
 import { PostCompte } from "./postComp";
 import PostCreater from "./postCreate";
+import IsLoading from "./isloading";
 
 export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts"}) {
   const [posts, setPosts] = useState([]);
@@ -55,11 +56,7 @@ export default function HomeFeed({ className, classes = {}  ,  ishome = true , g
           <PostCompte key={post.id} post={post} />
         ))}
         {loading && (
-          <div className="rl-loading-container">
-            <div className="rl-loading-thumb rl-loading-thumb-1"></div>
-            <div className="rl-loading-thumb rl-loading-thumb-2"></div>
-            <div className="rl-loading-thumb rl-loading-thumb-3"></div>
-          </div>
+          <IsLoading></IsLoading>
         )}
       </section>
     </>

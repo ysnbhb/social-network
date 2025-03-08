@@ -70,7 +70,9 @@ export default function Login() {
     
     if (response.ok) { 
       const content = await response.json();
-      localStorage.setItem("userID",content.id)
+      localStorage.setItem("username",content.nickName)
+      console.log(content);
+      
       Router.push('/home')
       
     } else {

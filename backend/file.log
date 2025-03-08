@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2025/03/06 15:24:17 server.go:27: Starting server on :8080
 2025/03/06 15:25:27 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
 2025/03/06 15:26:20 Websocket_controller.go:42: Failed to read message: websocket: close 1001 (going away)
@@ -2050,3 +2051,61 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/08 12:48:26 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
 2025/03/08 12:48:27 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
 2025/03/08 12:48:27 serveContent.go:26: open ./uploads/default.wepb: no such file or directory
+=======
+>>>>>>> main
+2025/03/08 12:51:14 server.go:27: Starting server on :8080
+2025/03/08 12:51:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:51:19 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:51:19 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:51:19 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:51:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:51:24 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:51:44 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:51:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:51:44 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:04 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:04 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:06 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:06 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:10 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:10 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:11 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:11 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:12 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:12 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:12 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:13 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:13 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:13 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:14 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:14 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:51 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:51 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:52:53 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:52:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:52:57 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:53:05 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:53:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:53:07 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:53:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:53:23 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:53:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:53:23 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:53:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:53:26 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:53:38 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:53:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/08 12:53:39 user_profile_controller.go:43: This Id user Is not found: sql: no rows in result set
+2025/03/08 12:54:25 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:55:17 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:55:29 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
+2025/03/08 12:55:32 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)

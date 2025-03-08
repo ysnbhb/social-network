@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
  export function PostCompte({ post  , className, classes = {} }) {  
   const route=useRouter()
   
@@ -40,13 +41,7 @@ import { useRouter } from "next/navigation";
       setLikes(likesCount);
     }
   };
-
  
-  const  handleIduser=()=>{
-    sessionStorage.setItem('selectedUserProfile', JSON.stringify(post.id));
-    route.push('/profile');
-
-  }
   return (
     <>
       <div className={`post ${classes.post}`} >
@@ -54,12 +49,15 @@ import { useRouter } from "next/navigation";
           <div className="post-author">
          
             {avatarUrl ?(
+                  <Link href={{ pathname: '/profile', query: { username: nickName } }}>
                   <img
-                  onClick={handleIduser} 
+                  // onClick={()=>handleIduser(nickName)} 
                     src={`${avatarUrl}`}
                     alt="Post"
                      className="avatar" 
                    />
+                  
+                  </Link>
         ): (
           <div className="avatar" ></div>
         )

@@ -11,6 +11,8 @@ func SetupRoutes() http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/signup", controllers.Signup)
 	mux.HandleFunc("/api/login", controllers.Login)
+	// mux.HandleFunc("/api/session_id", controllers.Session_id)
+	mux.Handle("/api/userfollowing", middleware.AuthMiddleware(http.HandlerFunc(controllers.Userfollowing)))
 	mux.Handle("/api/logout", middleware.AuthMiddleware(http.HandlerFunc(controllers.Logout)))
 	mux.Handle("/api/user/reactions", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleReaction)))
 	mux.Handle("/api/group/joinlist", middleware.AuthMiddleware(http.HandlerFunc(controllers.ListGroups)))
@@ -24,6 +26,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/group/create/event", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateEvent)))
 	mux.Handle("/api/group/events", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetEvents)))
 	mux.Handle("/api/group/event/response", middleware.AuthMiddleware(http.HandlerFunc(controllers.RespoEvent)))
+	mux.Handle("/api/group/members", middleware.AuthMiddleware(http.HandlerFunc(controllers.Groupmembers)))
 
 	mux.Handle("/api/create/post", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreatePost)))
 	mux.Handle("/api/posts/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))

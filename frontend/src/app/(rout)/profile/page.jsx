@@ -6,29 +6,30 @@ import bag from "../../../components/images/pxfuel.jpg";
 import { PostCompte } from "../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import IsLoading from "@/components/isloading";
+import useHandleFollowers from "@/lib/handleFollowors";
 
 export default function Profile() {
   const router = useRouter();
-  const [parsedUser, setParsedUser] = useState(null);
+  // const [username, setUsername] = useState(null);
   const [userLogin, setUserLogin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const searchParams = new URLSearchParams(window.location.search);
+  const usernames = searchParams.get('username');
+  if (usernames === null) {
+    notFound();
+  }
+    console.log(usernames);
+  
   useEffect(() => {
-    const userProfile = sessionStorage.getItem("selectedUserProfile");
-    if (userProfile) {
-      const parsedUser = JSON.parse(userProfile);
-      setParsedUser(parsedUser);
-    }
-  }, []);
-  useEffect(() => {
-    const storedUserLogin = localStorage.getItem("userID");
+    const storedUserLogin = localStorage.getItem("username");
     setUserLogin(storedUserLogin);
   }, []);
-  const [profile, error] = useGetProfile(parsedUser);
-  const [profiledata, errorPro] = userProfile(parsedUser);
+  const [profile, error] = useGetProfile(usernames);
+  const [profiledata, errorPro] = userProfile(usernames);
   const {
+    id ,
     avatarUrl,
     firstName,
     follower_count,
@@ -38,14 +39,20 @@ export default function Profile() {
     nickName,
     posts_count,
   } = profiledata;
+  const { status, handle } = useHandleFollowers(id);
 
-  useEffect(() => {
-    if (errorPro && errorPro.length > 0) {
-      const errorMessage = errorPro;
-      const url = `/error?message=${encodeURIComponent(errorMessage)}`;
-      router.push(url);
-    }
-  }, [errorPro, router]);
+  const handuleClick = async () => {
+    console.log(id,"test here");
+    
+   await handle();  
+ };
+  // useEffect(() => {
+  //   if (errorPro && errorPro.length > 0) {
+  //     const errorMessage = errorPro;
+  //     const url = `/error?message=${encodeURIComponent(errorMessage)}`;
+  //     router.push(url);
+  //   }
+  // }, [errorPro, router]);
   useEffect(() => {
     if (firstName && lastName) {
       // Add a small delay to ensure smooth transition
@@ -56,6 +63,8 @@ export default function Profile() {
       return () => clearTimeout(timer);
     }
   }, [firstName, lastName]);
+
+  
   // const menuData = [
   //   { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
   //   { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -83,7 +92,7 @@ export default function Profile() {
   //     image: " ",
   //   },
   // ];
-  const isOwnProfile = parsedUser === Number(userLogin);
+  const isOwnProfile = nickName === (userLogin);
   return (
     <div>
       {isLoading ? (
@@ -125,10 +134,18 @@ export default function Profile() {
                   </div>
                 ) : (
                   <div>
-                    <button className={style.followButton}>Follow</button>
+
+                {status === "accept" ? (
+                        <button className={style.followButton}>unfollow</button>
+                      ) : status === "pending" ? (
+                        <button className={style.followButton}>pending</button>
+                      ) : (
+                        <button className={style.followButton} onClick={() => handuleClick(id)}>follow</button>
+                      )}
+                   
                     <button className={style.moreButton}>Send Message</button>
                   </div>
-                )}
+                 )} 
               </div>
 
               {/* User info */}

@@ -1,6 +1,16 @@
 .profile-page {
   height: 100%;
 }
+.follow{
+  cursor: pointer;
+}
+.link{
+  color: #1a91da;
+  text-decoration-line: none;
+}
+.link:active{
+  color: #1a91da;
+}
 
 .profile-sidebar {
   background-color: white;

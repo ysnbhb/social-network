@@ -50,14 +50,18 @@ export function Getmessagesusers(data) {
 }
 
 
-function setupScrollHandler(data) {
+function setupScrollHandler(data, type = "user") {
     const messageplace = document.getElementById("messages");
     if (!messageplace) return;
     messageplace.addEventListener("scroll", () => {
         if (messageplace.scrollTop === 0 && messageplace.dataset.loading !== "true") {
             const currentOffset = parseInt(messageplace.dataset.currentOffset || 0);
             messageplace.dataset.loading = "true";
-            sendGetmessagesusers([data.he], currentOffset);
+            if (type === "user") {
+                sendGetmessagesusers([data.he], currentOffset);
+            } else {
+                sendGetmessagesgroups(data.id, currentOffset);
+            }
         }
     });
 }
@@ -88,7 +92,7 @@ export function receiveMessageuser(data) {
                     <span class="time">${data.time}</span>
                     </div>
                     <div>${data.content}</div> 
-                </div>
+            </div>
             `
             messageplace.scrollTo({
                 top: messageplace.scrollHeight,
@@ -131,26 +135,89 @@ export function sendMessageIsRead(nickname) {
 //// group messages ////
 
 export function receiveMessageGroup(data) {
-    console.log(data);
+    const messageplace = document.getElementById("messages");
+    if (window.location.pathname === `/group/${data.groupid}/chat` || data.mymsg) {
+        if (messageplace) {
+            messageplace.innerHTML += `
+             <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
+                    <div class="sender-info">
+                    <div class="avatar"></div>
+                    <span>${data.sender}</span>
+                    <span class="time">${data.time}</span>
+                    </div>
+                    <div>${data.content}</div> 
+            </div>
+            `
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight,
+                behavior: 'smooth'
+            });
+
+        }
+    }
 }
-export function sendMessageGroup(sender, groupid, message) {
+export function sendMessageGroup(groupid, message) {
     const data = {
         type: "messageGroup",
-        sender: sender,
-        groupid: groupid,
+        groupid: parseInt(groupid),
         content: message
     }
     safeSend(data);
 }
 
-export function sendGetmessagesgroups(sender, groupid) {
+export function sendGetmessagesgroups(groupid, offset = 0) {
     const data = {
         type: "getmessagesgroup",
-        sender: sender,
-        groupid: groupid,
+        groupid: parseInt(groupid),
+        offset: offset
     }
     safeSend(data);
 }
 export function Getmessagesgroups(data) {
-    console.log(data);
+    const title = document.getElementById("title-chat-group")
+    title.innerText = data.Groupname
+    const messages = data.messages;
+    const messageplace = document.getElementById("messages");
+
+    if (messageplace && messages && messages.length > 0) {
+        const oldScrollHeight = messageplace.scrollHeight;
+
+        if (data.offset === 0) {
+            messageplace.innerHTML = '';
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        messages.forEach(info => {
+            const dev = document.createElement("div");
+            dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
+            dev.innerHTML = `
+                    <div class="sender-info">
+                        <img src="${info.avatar_url}" class="avatar"/>
+                        <span>${info.sender}</span>
+                        <span class="time">${info.timestamp}</span>
+                    </div>
+                    <div>${info.message}</div> 
+                `;
+            fragment.prepend(dev);
+        });
+
+        messageplace.prepend(fragment);
+        if (data.offset === 0) {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight,
+                behavior: 'auto'
+            });
+        } else {
+            messageplace.scrollTo({
+                top: messageplace.scrollHeight - oldScrollHeight,
+                behavior: 'auto'
+            });
+        }
+
+        messageplace.dataset.currentOffset = data.offset + messages.length;
+        messageplace.dataset.loading = "false";
+    }
+
+    setupScrollHandler(data, "group");
 }
