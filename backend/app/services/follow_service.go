@@ -11,7 +11,7 @@ func AddFollow(followRequest *models.FollowRequest) error {
 	profile_type := repo.GetStatusUesr(followRequest.FollowingId)
 	if profile_type == "Not Found" {
 		return errors.New("user not found")
-	} else if profile_type == "private" {
+	} else if profile_type == "Private" {
 		followRequest.Status = "pending"
 	} else {
 		followRequest.Status = "accept"

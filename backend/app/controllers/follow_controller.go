@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"social-network/app/services"
+	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
 	"social-network/pkg/utils"
 )
@@ -29,6 +30,12 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("Follow User in db:", err)
+		return
+	}
+	err = repo.AddNotificationFollow(user, followRequest.FollowingId)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println("Add Notification in db:", err)
 		return
 	}
 	utils.JsonResponse(w, followRequest, http.StatusOK)
