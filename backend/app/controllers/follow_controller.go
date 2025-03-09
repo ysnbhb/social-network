@@ -26,13 +26,13 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 	}
 	user := r.Context().Value("userId").(int)
 	followRequest.FollowerId = user
-	err = services.AddFollow(&followRequest)
+	exists, err := services.AddFollow(&followRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("Follow User in db:", err)
 		return
 	}
-	err = repo.AddNotificationFollow(user, followRequest.FollowingId)
+	err = repo.AddNotificationFollow(exists, user, followRequest.FollowingId)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("Add Notification in db:", err)
@@ -49,3 +49,4 @@ func ShowUnfollowUser(w http.ResponseWriter, r *http.Request) {
 	}
 	utils.JsonResponse(w, user, http.StatusOK)
 }
+

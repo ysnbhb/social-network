@@ -7,20 +7,20 @@ import (
 	"social-network/pkg/models"
 )
 
-func AddFollow(followRequest *models.FollowRequest) error {
+func AddFollow(followRequest *models.FollowRequest) (bool, error) {
 	profile_type := repo.GetStatusUesr(followRequest.FollowingId)
 	if profile_type == "Not Found" {
-		return errors.New("user not found")
+		return false, errors.New("user not found")
 	} else if profile_type == "Private" {
 		followRequest.Status = "pending"
 	} else {
 		followRequest.Status = "accept"
 	}
-	err := repo.AddFollow(followRequest)
+	exists,err := repo.AddFollow(followRequest)
 	if err != nil {
-		return errors.New("Follow User in db: " + err.Error())
+		return false, errors.New("Follow User in db: " + err.Error())
 	}
-	return nil
+	return exists,nil
 }
 
 func GetFollowers(userId int) ([]models.UnfollowUser, error) {
@@ -30,3 +30,4 @@ func GetFollowers(userId int) ([]models.UnfollowUser, error) {
 	}
 	return users, nil
 }
+

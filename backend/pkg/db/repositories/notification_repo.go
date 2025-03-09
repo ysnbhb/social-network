@@ -113,11 +113,18 @@ func GetNotificationCount(userid int) (int, error) {
 	return notificationCount, nil
 }
 
-func AddNotificationFollow(userid int, receiverId int) error {
+func AddNotificationFollow(exists bool ,userid int, receiverId int) error {
 	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
-	_, err := db.DB.Exec(query, receiverId, userid, "follow", "You have a follow request from "+GetNickName(userid))
-	if err != nil {
-		return err
+	if exists{
+		_, err := db.DB.Exec(query, receiverId, userid, "follow", "You have a follow request from "+GetNickName(userid))
+		if err != nil {
+			return err
+		}
+	} else {
+		_, err := db.DB.Exec(query, receiverId, userid, "unfollow", "You are no longer followed by "+GetNickName(userid))
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }

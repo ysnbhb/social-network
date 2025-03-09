@@ -43,8 +43,8 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 	} else {
 		nickName = username
 	}
-
-	postsResponse, err := services.UserProfile(nickName)
+	uesrId := r.Context().Value("userId").(int)
+	postsResponse, err := services.UserProfile(nickName,uesrId)
 	if err != nil {
 		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
 		log.Println("This Id user Is not found:", err)

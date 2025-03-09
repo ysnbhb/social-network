@@ -17,13 +17,14 @@ func GetPostsUserProfile(username string, offset int) []models.PostsResponse {
 	return postsResponse
 }
 
-func UserProfile(username string) (models.UserProfile, error) {
+func UserProfile(username string, userId int) (models.UserProfile, error) {
 	profile := &models.UserProfile{}
 	err := repo.InfoUserProfile(profile, username)
 	if err != nil {
 		log.Println("Error To Get User Profile", err)
 		return models.UserProfile{}, err
 	}
+	profile.IsFollowing = repo.GetIsFollowing(userId,profile.Id)
 	return *profile, nil
 }
 
