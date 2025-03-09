@@ -1,4 +1,5 @@
- import { useEffect, useState } from "react";
+ import { API_URL } from "@/components/api";
+import { useEffect, useState } from "react";
  
 
 export default function useGetProfile(searchParam) {  
@@ -9,8 +10,8 @@ export default function useGetProfile(searchParam) {
     const fetchData = async () => {
         try {
             const endpoint = searchParam
-            ? `/api/profile/posts/created?username=${searchParam}` 
-              : "/api/profile/posts/created" ;
+            ? `${API_URL}/api/profile/posts/created?username=${searchParam}` 
+              : `${API_URL}/api/profile/posts/created` ;
             const response= await fetch(endpoint,{
                 method:"GET",
                 credentials: "include"

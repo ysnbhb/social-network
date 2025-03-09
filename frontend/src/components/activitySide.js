@@ -3,12 +3,16 @@ import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
+import { API_URL } from "./api";
   
  export default function ActivitySidebar({ className, title }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
     async function GetUser() {
-      const res = await fetch(`/api/unfollow`);
+      const res = await fetch(`${API_URL}/api/unfollow` , {
+        method: "GET",
+        credentials: "include",
+      });
       const data = await res.json();
       setUser(data);
     }
@@ -23,9 +27,9 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
     if (search.length === 0) {
       return;
     }
-    fetch(`/api/search/users?searchContent=${search}`, {
+    fetch(`${API_URL}/api/search/users?searchContent=${search}`, {
       method: "GET",
-      Credentials: "include",
+      credentials: "include",
     })
     .then((response)=>response.json())
     .then((data)=> data ? setUser(data) : console.log("no data"))

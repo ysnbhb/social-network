@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/formatDate";
 import "../styles/groupEvents.css";
 
 import { use, useEffect, useState } from "react";
+import { API_URL } from "./api";
 
 export function Event({ id }) {
   const [showPopup, setShowPopup] = useState(false);
@@ -15,11 +16,12 @@ export function Event({ id }) {
   });
   const [events, setEvents] = useState([]);
   const handleSubmit = async (e) => {
-    const res = await fetch("/api/group/create/event", {
+    const res = await fetch(`${API_URL}/api/group/create/event`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(eventData),
     });
     const data = await res.json();
@@ -43,7 +45,15 @@ export function Event({ id }) {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const res = await fetch(`/api/group/events?groupId=${id}`);
+      const res = await fetch(`${API_URL}/api/group/events?groupId=${id}` ,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         setEvents(data);
@@ -150,12 +160,13 @@ function EventCart({ event }) {
   const { id, title, description, date, groupId, creator_user, status } = event;
   const [respo, setRespo] = useState(status);
   const RespoForEvent = async (status = "Going") => {
-    const res = await fetch("/api/group/event/response", {
+    const res = await fetch(`${API_URL}/api/group/event/response`, {
       method: "POST",
       body: JSON.stringify({
         eventId: id,
         status,
       }),
+      credentials: "include",
     });
     const data = await res.json();
     if (res.ok) {

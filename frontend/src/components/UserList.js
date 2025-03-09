@@ -4,6 +4,7 @@ import { SendOnlineStatus } from '../websocket/websocket.js';
 import '../styles/chat.css';
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
+import { API_URL } from './api.js';
 
 function UserList() {
     console.log("UserList component rendered");
@@ -24,7 +25,7 @@ function UserList() {
     }, []);
 
     const Getfriends = () => {
-        fetch('/api/friends', {
+        fetch(`${API_URL}/api/friends`, {
             method: 'GET',
             credentials: 'include'
         })

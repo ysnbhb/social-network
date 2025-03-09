@@ -5,6 +5,7 @@ import UserList from "../../../../components/UserList";
 import ChatBox from "../../../../components/ChatBox";
 import { sendGetmessagesusers, sendMessageIsRead } from "../../../../websocket/messages.js";
 import { notFound, useRouter } from "next/navigation";
+import { API_URL } from "@/components/api";
 export default function ChatPage({ params }) {
     const [selectedUser, setSelectedUser] = useState(null);
     const [has , setHas] = useState(true);
@@ -13,7 +14,7 @@ export default function ChatPage({ params }) {
     
     useEffect(() => {
         if (name) {
-            fetch(`/api/user/info?username=${name}`, {
+            fetch(`${API_URL}/api/user/info?username=${name}`, {
                 method: 'GET',
                 credentials: 'include'
             })

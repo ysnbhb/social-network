@@ -2,6 +2,7 @@
 import {  notFound, usePathname } from 'next/navigation';
 import Link from 'next/link.js';
 import { useEffect, useState } from 'react';
+import { API_URL } from './api';
 
 
 export default function groupNav({id}) {    
@@ -9,7 +10,7 @@ export default function groupNav({id}) {
     const [groupInf, setGroupinf] = useState(null);
     const [notfound, setNotfound] = useState(false);
     const GetGroupInfo = async ()=> {
-        const res = await fetch(`/api/group/groupInfo?groupId=${id}`, {
+        const res = await fetch(`${API_URL}/api/group/groupInfo?groupId=${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

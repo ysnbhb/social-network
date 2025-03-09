@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { sendFollow } from '@/websocket/notification';
+import { API_URL } from '@/components/api';
 
 export default function useHandleFollowers(param) {
   const [status, setStatus] = useState(null);
@@ -8,7 +9,7 @@ export default function useHandleFollowers(param) {
     try {
       console.log("test");
 
-      const res = await fetch(`/api/follow`, {
+      const res = await fetch(`${API_URL}/api/follow`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

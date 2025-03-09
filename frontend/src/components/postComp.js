@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { API_URL } from "./api";
  export function PostCompte({ post  , className, classes = {} }) {  
   const route=useRouter()
   
@@ -23,7 +24,7 @@ import Link from "next/link";
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
   const handleLike = async () => {
-    const res = await fetch("/api/user/reactions", {
+    const res = await fetch(`${API_URL}/api/user/reactions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +33,7 @@ import Link from "next/link";
         cardId: id,
         ReactionType: 1,
       }),
+      credentials: "include",
     });
 
     if (res.ok) {
@@ -52,7 +54,7 @@ import Link from "next/link";
                   <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
                   // onClick={()=>handleIduser(nickName)} 
-                    src={`${avatarUrl}`}
+                    src={`${API_URL}/${avatarUrl}`}
                     alt="Post"
                      className="avatar" 
                    />
@@ -73,7 +75,7 @@ import Link from "next/link";
         <p>{content}</p>
         {imageUrl && (
           <img
-            src={`${imageUrl}`}
+            src={`${API_URL}/${imageUrl}`}
             alt="Post"
             // className={className}
             style={{ width: "100%", height: "auto",borderRadius:"10px" }}

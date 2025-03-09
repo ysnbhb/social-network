@@ -2,11 +2,12 @@
 
 import { useEffect } from "react";
 import GroupList from "./groupList";
+import { API_URL } from "./api";
 
 export default function GroupsSide({ groups , setJoinedGroup }) {
   useEffect(() => {
     const getJoinedGroups = async () => {
-      const res = await fetch("/api/group/joinlist", {
+      const res = await fetch(`${API_URL}/api/group/joinlist`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

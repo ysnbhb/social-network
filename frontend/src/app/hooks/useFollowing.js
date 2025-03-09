@@ -1,3 +1,4 @@
+import { API_URL } from "@/components/api";
 import { useEffect, useState } from "react";
 
 export default function useFollowing( ) {
@@ -5,7 +6,7 @@ export default function useFollowing( ) {
   const [error, setError] = useState(null);
   const dataFollowing = async () => {
     try {
-      const response = await fetch(`/api/userfollowing`, {
+      const response = await fetch(`${API_URL}/api/userfollowing`, {
         credentials: "include",
       });
       let data = await response.json();
