@@ -5,7 +5,11 @@
         "divclasses",
         "Homefeed",
         "Iduser",
+        "objectfit",
+        "profiledata",
         "Salsabilla",
+        "setcookies",
+        "unfollow",
         "Userfollowing"
     ]
 }

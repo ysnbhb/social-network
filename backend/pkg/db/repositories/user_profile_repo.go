@@ -72,7 +72,8 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string,
 }
 
 func InfoUserProfile(profile *models.UserProfile, username string) error {
-	query := `SELECT  
+	query := `SELECT 
+	 		s.user_uuid,
                 u.id,
                 u.first_name,
                 u.last_name,
@@ -86,13 +87,14 @@ func InfoUserProfile(profile *models.UserProfile, username string) error {
                 COUNT(DISTINCT f1.follower_id) AS follower_count,  
                 COUNT(DISTINCT f2.following_id) AS following_count 
             FROM users u 
+			 JOIN sessions s on s.user_id=u.id
             LEFT JOIN card c ON c.user_id = u.id
             LEFT JOIN followers f1 ON f1.following_id = u.id  
             LEFT JOIN followers f2 ON f2.follower_id = u.id   
             LEFT JOIN posts p on p.card_id=c.id
             WHERE u.nickname = ?
             GROUP BY u.nickname;`
-	err := db.DB.QueryRow(query, username).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}
@@ -165,4 +167,14 @@ func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
 		friend = append(friend, f)
 	}
 	return friend, nil
+}
+
+func GetIsFollowing(userId int, profileId int) bool {
+	query := `SELECT EXISTS (SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? AND status = 'accept');`
+	var exists bool
+	err := db.DB.QueryRow(query, userId, profileId).Scan(&exists)
+	if err != nil {
+		return false
+	}
+	return exists
 }

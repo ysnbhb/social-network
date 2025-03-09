@@ -2,8 +2,10 @@
 // import "../styles/chat.css";
 import "../styles/chatgroup.css";
 import { useEffect, useState } from "react";
+import { sendMessageGroupeIsRead } from "@/websocket/messages";
 import { sendMessageGroup } from "@/websocket/messages";
 export default function ChatBoxGroup({ groupid }) {
+    sendMessageGroupeIsRead(groupid);
     const [newMessage, setNewMessage] = useState("");
     const [emojiPickerVisible, setEmojiPickerVisible] = useState(false);
     const emojis = [

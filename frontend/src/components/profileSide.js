@@ -13,8 +13,7 @@ export default function ProfileSide({ classes }) {
         setcheckFollow(text)
         setShowPopup(!showPopup);
   };
- 
-console.log(profile);
+  
 
   const {
     avatarUrl,

@@ -2,7 +2,6 @@ package repo
 
 import (
 	"errors"
-	"fmt"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
@@ -87,12 +86,12 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 		if err != nil {
 			return err
 		}
-
 		messages = append(messages, map[string]string{
-			"sender":    GetNickName(sender),
-			"receiver":  GetNickName(receiver),
-			"message":   message,
-			"timestamp": timestamp.Format("2006-01-02 15:04:05"),
+			"sender":     GetNickName(sender),
+			"receiver":   GetNickName(receiver),
+			"avatar_url": GetAvatarUrl(sender),
+			"message":    message,
+			"timestamp":  timestamp.Format("2006-01-02 15:04:05"),
 		})
 	}
 
@@ -107,7 +106,6 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 }
 
 func Getmessagesgroups(msg models.Message, client *models.Client) error {
-	fmt.Println(msg.Offset)
 	query := `SELECT 
 					group_chats.user_id, 
 					group_chats.message, 

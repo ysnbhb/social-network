@@ -1,6 +1,7 @@
 "use client"
 import { safeSend } from "./websocket.js";
 import { sendNotification } from "./notification.js";
+import { useEffect } from "react";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
@@ -20,7 +21,7 @@ export function Getmessagesusers(data) {
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
             dev.innerHTML = `
                     <div class="sender-info">
-                        <div class="avatar"></div>
+                        <img src="${info.avatar_url}" class="avatar"/>
                         <span>${info.sender}</span>
                         <span class="time">${info.timestamp}</span>
                     </div>
@@ -87,7 +88,7 @@ export function receiveMessageuser(data) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <div class="avatar"></div>
+                    <img src="${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
@@ -135,13 +136,16 @@ export function sendMessageIsRead(nickname) {
 //// group messages ////
 
 export function receiveMessageGroup(data) {
+    console.log(data);
+    
     const messageplace = document.getElementById("messages");
     if (window.location.pathname === `/group/${data.groupid}/chat` || data.mymsg) {
+        sendMessageGroupeIsRead(data.groupid);
         if (messageplace) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <div class="avatar"></div>
+                    <img src="${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
@@ -175,7 +179,9 @@ export function sendGetmessagesgroups(groupid, offset = 0) {
 }
 export function Getmessagesgroups(data) {
     const title = document.getElementById("title-chat-group")
-    title.innerText = data.Groupname
+    if (title) {
+        title.innerText = data.Groupname
+    }
     const messages = data.messages;
     const messageplace = document.getElementById("messages");
 
@@ -220,4 +226,13 @@ export function Getmessagesgroups(data) {
     }
 
     setupScrollHandler(data, "group");
+}
+
+export function sendMessageGroupeIsRead(groupid) {
+    const data = {
+        type: "changeunreadmessagegroupe",
+        groupid: parseInt(groupid)
+    }
+    safeSend(data);
+    sendNotification()
 }

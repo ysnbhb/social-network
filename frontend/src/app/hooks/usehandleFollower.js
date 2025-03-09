@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sendFollow } from '@/websocket/notification';
 
 export default function useHandleFollowers(param) {
   const [status, setStatus] = useState(null);
@@ -22,7 +23,7 @@ export default function useHandleFollowers(param) {
 
       if (res.ok) {
         setStatus(data.status);
-        console.log("data");
+        sendFollow(data.followingId+"");
       } else {
         console.log("errr");
       }

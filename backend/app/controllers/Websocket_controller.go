@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/websocket"
 
@@ -65,7 +66,11 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 	case "getmessagesgroup":
 		return repo.Getmessagesgroups(msg, client)
 	case "changeunreadnotification":
-		return repo.ChangeUnreadNotification(msg, client)
+		err := repo.ChangeUnreadNotification(msg, client)
+		if err != nil {
+			return err
+		}
+		Notification(client)
 	case "changeunreadmessage":
 		err := repo.ChangeUnreadMessage(msg, client)
 		if err != nil {
@@ -76,9 +81,33 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 		return OnlineStatus(msg, client)
 	case "GetNotification":
 		return Notification(client)
+	case "follow":
+		return sendNotification(msg)
+	case "changeunreadmessagegroupe":
+		return repo.ChangeUnreadMessageGroup(msg, client)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}
+	return nil
+}
+
+func sendNotification(msg models.Message) error {
+	receiverId, err := strconv.Atoi(msg.Receivers[0])
+	if err != nil {
+		return err
+	}
+	GetNotificationCount, err := repo.GetNotificationCount(receiverId)
+	if err != nil {
+		return err
+	}
+	receiverConn := models.Clients[repo.GetNickName(receiverId)]
+	if receiverConn != nil {
+		receiverConn.Conn.WriteJSON(map[string]interface{}{
+			"type":              "Notification",
+			"countNotification": GetNotificationCount,
+		})
+	}
+	return nil
 }
 
 func Notification(client *models.Client) error {

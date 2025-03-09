@@ -20,8 +20,7 @@ func GetCreatedPosts(w http.ResponseWriter, r *http.Request) {
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
 	other_user := r.URL.Query().Get("username")
-	log.Println(other_user,offset)
-	postsResponse := services.GetPostsUserProfile(other_user, offset)
+ 	postsResponse := services.GetPostsUserProfile(other_user, offset)
 	err := json.NewEncoder(w).Encode(postsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)
@@ -44,11 +43,11 @@ func GetInfoUserProfile(w http.ResponseWriter, r *http.Request) {
 	} else {
 		nickName = username
 	}
-
-	postsResponse, err := services.UserProfile(nickName)
+	uesrId := r.Context().Value("userId").(int)
+	postsResponse, err := services.UserProfile(nickName,uesrId)
 	if err != nil {
-		utils.JsonResponse(w, "This Id user Is not found", http.StatusNotFound)
-		log.Println("This Id user Is not found:", err)
+		utils.JsonResponse(w, "User with this UserName is not found", http.StatusNotFound)
+		log.Println("User with this UserName is not found", err)
 		return
 	}
 	err = json.NewEncoder(w).Encode(postsResponse)

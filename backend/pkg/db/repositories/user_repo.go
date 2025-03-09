@@ -131,3 +131,10 @@ func UpdateProfile(user *models.User) error {
 	_, err := db.DB.Exec(query, user.AboutMe, user.Profile_Type, user.Id)
 	return err
 }
+
+func GetAvatarUrl(userId int) string {
+	query := `SELECT u.avatar_url FROM users u WHERE id = ?`
+	var avatar string
+	db.DB.QueryRow(query, userId).Scan(&avatar)
+	return avatar
+}

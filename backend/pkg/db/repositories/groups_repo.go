@@ -417,6 +417,34 @@ func GetgroupnameById(groupId int) string {
 	return groupname
 }
 
+func AddNotificationGroupEvent(userId, groupid int) error {
+	MembersGroup, err := MemberGroup(groupid, userId)
+	if err != nil {
+		return err
+	}
+	for _, Member := range MembersGroup {
+		query := `INSERT INTO notifications (user_id , sender_id ,group_id,type, details) VALUES (?,?, ?, ?, ?)`
+		_, err := db.DB.Exec(query, Member.Id, userId, groupid, "group_event", GetNickName(userId)+" created an event in "+GetgroupnameById(groupid))
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		connreciever, ok := models.Clients[Member.Nickname]
+		if ok {
+			err = connreciever.Conn.WriteJSON(map[string]interface{}{
+				"type": "realNotification",
+			})
+		}
+	}
+	return nil
+}
+
+func ChangeUnreadMessageGroup(msg models.Message, client *models.Client) error {
+	query := `UPDATE notifications SET read_status = 'read' WHERE group_id = ? AND user_id = ? AND type = 'messageGroup'`
+	_, err := db.DB.Exec(query, msg.Groupid, client.Userid)
+	return err
+}
+
 func GetGroup_Resuest(group_id int) ([]models.User, error) {
 	users := []models.User{}
 	query := `SELECT u.nickname , u.avatar_url  FROM users u

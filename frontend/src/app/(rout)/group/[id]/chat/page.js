@@ -1,10 +1,12 @@
 "use client"
 import { sendGetmessagesgroups } from "@/websocket/messages";
 import ChatBoxGroup from "../../../../../components/ChatBoxGroup";
-import { use } from "react";
+import { use,useEffect } from "react";
 export default function Page({ params }) {
     const { id } = use(params)
-    sendGetmessagesgroups(id);
+    useEffect(() => {
+        sendGetmessagesgroups(id);
+    },[])
     return (
         <main className="main-content-chat">
             <ChatBoxGroup groupid={id} />

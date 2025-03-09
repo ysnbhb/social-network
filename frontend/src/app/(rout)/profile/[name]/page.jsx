@@ -6,20 +6,28 @@ import bag from "@/components/images/pxfuel.jpg";
 import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
- import IsLoading from "@/components/isloading";
+import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
- 
+import {  useRouter } from "next/navigation";
+import PopUpError from "@/components/popupError";
+
 export default function Profile({ params }) {
+  const router = useRouter();
   const serverParams = use(params);
-  const usernames = serverParams.name; 
-  const [userLogin, setUserLogin] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); 
-  
+  const usernames = serverParams.name;
+  const [cookie, setcookies] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
-  console.log(profile,"test");
-  
+
+  useEffect(() => {
+    const allCookies = document.cookie;
+    const sessionCookie = allCookies.split("session_id=")[1];
+    setcookies(sessionCookie);
+  }, []);
+
   const {
+    uuid,
     id,
     avatarUrl,
     firstName,
@@ -30,13 +38,21 @@ export default function Profile({ params }) {
     nickName,
     posts_count,
   } = profiledata;
+  const isOwnProfile = uuid === cookie;
   const { status, handle } = useHandleFollowers(id);
-
-  const handuleClick = async () => {
-    console.log(id, "test here");
-
+  const handleClick = async () => {
     await handle();
   };
+
+  useEffect(() => {
+    if (firstName && lastName) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 30);
+      return () => clearTimeout(timer);
+    }
+  }, [firstName, lastName]);
+
   // useEffect(() => {
   //   if (errorPro && errorPro.length > 0) {
   //     const errorMessage = errorPro;
@@ -44,20 +60,14 @@ export default function Profile({ params }) {
   //     router.push(url);
   //   }
   // }, [errorPro, router]);
-  useEffect(() => {
-    if (firstName && lastName) {
-       const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 30);
-      return () => clearTimeout(timer);
-    }
-  }, [firstName, lastName]);
 
-   
-  const isOwnProfile = nickName === userLogin;
+
   return (
     <div>
-      {isLoading ? (
+
+   {errorPro ? (<PopUpError/>) :
+   (<div>
+    {isLoading ? (
         <IsLoading></IsLoading>
       ) : (
         <div className={style.container}>
@@ -96,18 +106,29 @@ export default function Profile({ params }) {
                 ) : (
                   <div>
                     {status === "accept" ? (
-                      <button className={style.followButton}>unfollow</button>
+                      <button
+                        className={style.followButton}
+                        onClick={() => handleClick(id)}
+                      >
+                        unfollow
+                      </button>
                     ) : status === "pending" ? (
                       <button className={style.followButton}>pending</button>
+                    ) : profiledata.isFollowing ? (
+                      <button
+                        className={style.followButton}
+                        onClick={() => handleClick(id)}
+                      >
+                        unfollow
+                      </button>
                     ) : (
                       <button
                         className={style.followButton}
-                        onClick={() => handuleClick(id)}
+                        onClick={() => handleClick(id)}
                       >
                         follow
                       </button>
                     )}
-
                     <button className={style.moreButton}>Send Message</button>
                   </div>
                 )}
@@ -152,6 +173,11 @@ export default function Profile({ params }) {
           </div>
         </div>
       )}
+
+   </div>)}
+      
+
+ 
     </div>
   );
 }

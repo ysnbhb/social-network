@@ -205,6 +205,7 @@ func CreateEvent(gp_env *models.Event) (error, int) {
 		log.Println(err)
 		return errors.New("field to create event"), http.StatusInternalServerError
 	}
+	err = repo.AddNotificationGroupEvent(gp_env.CreatorId ,gp_env.GroupId)
 	gp_env.Creator_User = repo.GetUserIdById(gp_env.CreatorId)
 	return nil, http.StatusOK
 }
