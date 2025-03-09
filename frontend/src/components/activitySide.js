@@ -10,13 +10,10 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
     async function GetUser() {
       const res = await fetch(`/api/unfollow`);
       const data = await res.json();
-      console.log(data);
-
       setUser(data);
     }
     GetUser();
   }, []);
-  console.log(user);
 
   return (
     <aside className={`activity-sidebar`} style={{ marginBottom: "20px" }}>
@@ -49,9 +46,7 @@ export function ShowUnfllowUser({ user }) {
 
    const handuleClick = async () => {
     await handle();  
-  };
-  console.log(status);
-  
+  };  
     return (
     <div className="activity-item">
       <div>

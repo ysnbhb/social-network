@@ -20,7 +20,6 @@ export default function Profile() {
   if (usernames === null) {
     notFound();
   }
-    console.log(usernames);
   
   useEffect(() => {
     const storedUserLogin = localStorage.getItem("username");

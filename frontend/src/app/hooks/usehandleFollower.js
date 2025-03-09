@@ -6,8 +6,6 @@ export default function useHandleFollowers(param) {
 
   const handle = async () => {
     try {
-      console.log("test");
-
       const res = await fetch(`/api/follow`, {
         method: "POST",
         headers: {
@@ -31,7 +29,6 @@ export default function useHandleFollowers(param) {
       console.log(error, "fefr");
     }
   };
-console.log(status);
 
   return { status, handle };
 }

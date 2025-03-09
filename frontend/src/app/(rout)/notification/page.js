@@ -33,7 +33,6 @@ export default function Notification() {
   };
 
   const handleNotificationClick = (notification) => {
-    console.log(notification);
      
     sendChangeUnreadNotification(notification.Id);
     

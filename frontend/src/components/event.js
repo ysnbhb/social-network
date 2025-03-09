@@ -33,12 +33,9 @@ export function Event({ id }) {
         groupId: +id,
       });
       setEvents([data, ...events]);
-      console.log("Event created successfully");
     } else {
       alert(data);
-      console.log("Error creating event:", data);
     }
-    console.log("Event Data:", eventData);
   };
 
   useEffect(() => {
