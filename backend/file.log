@@ -731,3 +731,4 @@
 2025/03/09 15:33:22 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
 2025/03/09 15:33:48 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
 2025/03/09 15:33:53 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 15:40:40 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)

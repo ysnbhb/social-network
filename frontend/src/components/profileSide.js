@@ -2,10 +2,10 @@ import useFollowing from "@/app/hooks/useFollowing";
 import "../styles/profileSidebar.css";
 import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import PopupFollower from "./popupFollower";
 export default function ProfileSide({ classes }) {
-  const [activeTab, setPosts] = useState([]);
+  const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
   const [checkFollow, setcheckFollow] = useState("");
   const [dataFollow, setdataFollow] = useState([]);
@@ -17,7 +17,6 @@ export default function ProfileSide({ classes }) {
           setShowPopup(!showPopup);
   };
  
-  
   const {
     avatarUrl,
     firstName,
@@ -78,7 +77,7 @@ export default function ProfileSide({ classes }) {
             </div>
             <div>
               <h3>{follower_count}</h3>
-              <p className="text-muted follow" onClick={() => togglePopup(follow.Follower, "Follower")}>
+              <p className="text-muted follow" onClick={() => togglePopup(follow.Follower, "Follower" ,setActiveTab("Follower"))}>
                 Followers
               </p>
             </div>
@@ -86,7 +85,7 @@ export default function ProfileSide({ classes }) {
               <h3>{following_count}</h3>
               <p
                 className="text-muted follow"
-                onClick={() => togglePopup(follow.Following, "Following")}
+                onClick={() => togglePopup(follow.Following, "Following",setActiveTab("Following"))}
               >
                 Following
               </p>
