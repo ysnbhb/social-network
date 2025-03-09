@@ -17,8 +17,8 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 		return err
 	}
 	session.UserUUID = UUID
-	session.ExpiresAt= time.Now().Add(24 * time.Hour)
-	 
+	session.ExpiresAt = time.Now().Add(24 * time.Hour)
+
 	err = repo.CreateSession(&session)
 	if err != nil {
 		return err
@@ -37,14 +37,18 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 }
 
 func ClearSession(w http.ResponseWriter) {
-    cookie := &http.Cookie{
-        Name:     "session_id", 
-        Value:    "",           
-        Path:     "/",          
-        HttpOnly: true,         
-        Secure:   true,         
-        SameSite: http.SameSiteStrictMode, 
-        MaxAge:   -1,   
-    }
-    http.SetCookie(w, cookie)
+	cookie := &http.Cookie{
+		Name:     "session_id",
+		Value:    "",
+		Path:     "/",
+		HttpOnly: true,
+		Secure:   true,
+		SameSite: http.SameSiteStrictMode,
+		MaxAge:   -1,
+	}
+	http.SetCookie(w, cookie)
+}
+
+func GetUserIdBySession(cookie string) (int, string, error) {
+	return repo.GetUserIdBySession(cookie)
 }

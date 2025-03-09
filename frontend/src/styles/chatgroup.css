@@ -1,0 +1,340 @@
+.chat-container-group {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 15px;
+}
+
+/* Chat Header */
+.chat-header-group {
+    padding: 15px;
+    background-color: #1da1f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*-----------------------------------*/
+.message {
+    max-width: 75%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+#msg {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    max-height: 75vh;
+    scrollbar-color: #1da1f2 #f0f4f8;
+    word-wrap: break-word;
+}
+
+.sender {
+    align-self: flex-start;
+    background-color: #acacac;
+    color: #000000;
+    border-radius: 18px 18px 18px 0;
+    word-wrap: break-word;
+}
+
+.receiver {
+    align-self: flex-end;
+    background-color: #1da1f2;
+    color: rgb(0, 0, 0);
+    border-radius: 18px 18px 0 18px;
+    word-wrap: break-word;
+}
+
+.message .sender-info,
+.message .receiver-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    word-wrap: break-word;
+
+}
+
+.message .sender-info .group-avatar,
+.message .receiver-info .group-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ccc;
+    word-wrap: break-word;
+}
+
+
+.message .sender-info .time,
+.message .receiver-info .time {
+    font-size: 12px;
+    color: #000000;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.chat-messages-group {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    max-height: 70vh;
+    scrollbar-color: #1da1f2 #f0f4f8;
+    word-wrap: break-word;
+}
+
+.chat-input-group {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.chat-input-group button {
+    padding: 8px 15px;
+    background-color: #1da1f2;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input-group button:hover {
+    background-color: #007bb5;
+}
+
+/*----------------------------------------------------------**/
+
+.input-field-group {
+    flex: 1;
+    background-color: #f0f4f8;
+    border-radius: 20px;
+    padding: 10px 15px;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-field-group input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #333;
+    flex: 1;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/***************************************/
+/* Emoji Picker */
+.emoji-picker {
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.emoji-picker button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.emoji-picker button:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+.emoji-picker button:active {
+    background-color: #e0e0e0;
+}
+
+/****************************/
+.user-list {
+    width: 20%;
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+    height: 100vh;
+}
+
+.user-list h3 {
+    background-color: #1da1f2;
+    height: 70px;
+    color: white;
+    padding: 25px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.user-list-container {
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-item:hover {
+    background-color: #f5f5f5;
+}
+
+.group-avatar {
+    margin-right: 12px;
+}
+
+.group-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.statue {
+    height: 10px;
+    background-color: #d3d3d3;
+    width: 10px;
+    border-radius: 50%;
+    margin-left: -18px;
+    border: 2px solid #fff;
+}
+
+.user-nickname {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.notification-badge {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 16px;
+    top: -5px;
+    right: -5px;
+}
+
+.no-users-message {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}
+
+.group-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.group-info span {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-content-chat {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .user-list {
+        width: 100%;
+    }
+
+    .chat-container-group {
+        width: 100%;
+        height: auto;
+        justify-content: space-between;
+    }
+
+    .chat-messages-group {
+        max-height: calc(100vh - 120px);
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 40px;
+        padding: 5px 10px;
+        margin-right: 5px;
+    }
+
+    .emoji-picker {
+        right: 70px;
+        bottom: 60px;
+        grid-template-columns: repeat(5, 1fr);
+        max-height: 180px;
+        width: 250px;
+    }
+}

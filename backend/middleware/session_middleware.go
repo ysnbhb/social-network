@@ -4,8 +4,13 @@ import (
 	"context"
 	"net/http"
 
-	repo "social-network/pkg/db/repositories"
+	"social-network/app/services"
 )
+
+type infoUser struct {
+	userid   int
+	username string
+}
 
 // AuthMiddleware ensures the user is authenticated via session ID.
 func AuthMiddleware(next http.Handler) http.Handler {
@@ -17,16 +22,19 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			cookies, err := r.Cookie("session_id")
 			if err != nil {
 				http.Error(w, "Unauthorized", http.StatusUnauthorized)
+
 				return
 			}
 			cookie = cookies.Value
 		}
-		userId, err := repo.GetUserIdBySession(cookie)
+		userId, username, err := services.GetUserIdBySession(cookie)
 		if err != nil || userId == 0 {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
+ 
 		ctx := context.WithValue(r.Context(), "userId", userId)
+		ctx = context.WithValue(ctx, "username", username)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)
 	})

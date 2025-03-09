@@ -26,6 +26,11 @@ type Login struct {
 	Password       string `json:"password"`
 	HashedPassword string
 }
+
+type UserName struct {
+	NickName string `json:"nickName"`
+}
+
 type UserProfile struct {
 	Id              int       `json:"id"`
 	FirstName       string    `json:"firstName"`
@@ -39,6 +44,7 @@ type UserProfile struct {
 	Follower_count  int       `json:"follower_count"`
 	Following_count int       `json:"following_count"`
 	Count_Posts     int       `json:"posts_count"`
+	IsFollowing     bool      `json:"isFollowing"`
 }
 
 type Userdataforchat struct {
@@ -53,4 +59,9 @@ type UserBySearch struct {
 	LastName  string `json:"lastName"`
 	Nickname  string `json:"nickname"`
 	Avatar    any    `json:"avatar"`
+}
+
+type AuthInfo struct {
+	UserId   int
+	Username string
 }

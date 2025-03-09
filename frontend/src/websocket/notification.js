@@ -5,11 +5,17 @@ import { safeSend } from "./websocket.js";
 export function handleNotification(data) {
     AddMessagesymbole(data.countunreadmessages)
     ShowNotification(data.countNotification);
+    if (window.location.pathname === "/notification") {
+        const notificationEvente = new CustomEvent("notificationEvent")
+        window.dispatchEvent(notificationEvente)
+    }
 }
+
 function ShowNotification(count) {
 
     const notification = document.getElementById("notification-badge");
     const notification2 = document.getElementById("notification-count");
+    if (!notification || !notification2) return;
     notification2.innerHTML = count;
     if (count > 0) {
         notification.style.display = "block";
@@ -20,8 +26,6 @@ function ShowNotification(count) {
 
 }
 export default function sendChangeUnreadNotification(Notificationid) {
-    console.log("sendUNreadNotification");
-
     const data = {
         type: "changeunreadnotification",
         Notificationid: Notificationid,
@@ -35,14 +39,8 @@ export function sendNotification() {
     safeSend(data);
 }
 /// notification group ///
-export function receiveRequestInvitationgroup(data) {
-    console.log(data);
-}
 
-export function receiveAcceptedInvitationGroup(data) {
-    console.log(data);
-}
-export function sendRequestInvitationGroup(sender, groupid, receiver, groupName) {
+export function sendRequestInvitationGroup(sender, gro) {
     const data = {
         type: "requestinvitationgroup",
         sender: sender,
@@ -67,6 +65,7 @@ export function sendAcceptedInvitationGroup(sender, groupid, receiver, groupName
 export function AddMessagesymbole(count) {
     const notification = document.getElementById("notification-badge-message");
     const notification2 = document.getElementById("notification-count-message");
+    if (!notification || !notification2) return;
     if (count > 0) {
         notification2.innerHTML = count;
         notification.style.display = "block";
@@ -81,12 +80,10 @@ export function AddMessagesymbole(count) {
 export function receiveFollow(data) {
     console.log(data);
 }
-export function sendFollow(sender, receiver) {
+export function sendFollow(receiver) {
     const data = {
         type: "follow",
-        sender: sender,
-        receiver: receiver,
-        content: `${sender} sent following request to you`
+        receiver: [receiver],
     }
     safeSend(data);
 }

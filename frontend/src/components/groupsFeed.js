@@ -49,6 +49,7 @@ export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
     };
     fetchGroups();
   }, []);
+  
   return (
     <div className="content-area">
       <div className="group-creator">

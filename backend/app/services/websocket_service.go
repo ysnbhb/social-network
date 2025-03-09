@@ -1,6 +1,7 @@
 package services
 
 import (
+	"fmt"
 	"html"
 	"time"
 
@@ -33,24 +34,27 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 	if err != nil {
 		return err
 	}
+	avatar_url := repo.GetAvatarUrl(client.Userid)
 	receiverConn := models.Clients[msg.Receivers[0]]
 	if receiverConn != nil {
 		receiverConn.Conn.WriteJSON(map[string]interface{}{
-			"type":    "messageuser",
-			"sender":  client.Username,
-			"content": msg.Content,
-			"time":    Time,
-			"you":     receiverConn,
+			"type":       "messageuser",
+			"sender":     client.Username,
+			"avatar_url": avatar_url,
+			"content":    msg.Content,
+			"time":       Time,
+			"you":        receiverConn,
 		})
 	}
 
 	err = client.Conn.WriteJSON(map[string]interface{}{
-		"type":    "messageuser",
-		"sender":  client.Username,
-		"content": msg.Content,
-		"time":    Time,
-		"mymsg":   true,
-		"you":     repo.GetNickName(client.Userid),
+		"type":       "messageuser",
+		"sender":     client.Username,
+		"avatar_url": avatar_url,
+		"content":    msg.Content,
+		"time":       Time,
+		"mymsg":      true,
+		"you":        repo.GetNickName(client.Userid),
 	})
 	if err != nil {
 		return err
@@ -67,6 +71,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 		})
 		return err
 	}
+
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
@@ -75,32 +80,46 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 			"content": "message is too long",
 		})
 	}
+
 	err = repo.AddmessagesGroup(msg, client)
 	if err != nil {
 		return err
 	}
-	for _, receiver := range msg.Receivers {
-		receiverConn := models.Clients[receiver]
+
+	users, err, _ := MemberGroup(msg.Groupid, client.Userid)
+	if err != nil {
+		return err
+	}
+
+	avatar_url := repo.GetAvatarUrl(client.Userid)
+	for _, receiver := range users {
+		receiverConn := models.Clients[receiver.Nickname]
 		if receiverConn != nil {
 			receiverConn.Conn.WriteJSON(map[string]interface{}{
-				"type":    "messageGroup",
-				"sender":  client.Username,
-				"content": msg.Content,
-				"time":    Time,
-				"groupid": msg.Groupid,
+				"type":       "messageGroup",
+				"sender":     client.Username,
+				"content":    msg.Content,
+				"avatar_url": avatar_url,
+				"time":       Time,
+				"groupid":    msg.Groupid,
+				"you":        receiverConn,
 			})
 		}
 	}
 	client.Conn.WriteJSON(map[string]interface{}{
-		"type":    "messageGroup",
-		"sender":  client.Username,
-		"content": msg.Content,
-		"time":    Time,
-		"groupid": msg.Groupid,
+		"type":       "messageGroup",
+		"sender":     client.Username,
+		"content":    msg.Content,
+		"avatar_url": avatar_url,
+		"time":       Time,
+		"groupid":    msg.Groupid,
+		"mymsg":      true,
+		"you":        repo.GetNickName(client.Userid),
 	})
 
-	err = repo.AddNotification(msg, client, "messageGroup", Time)
+	err = repo.AddNotificationMsgGroup(msg, client, "messageGroup", Time, users)
 	if err != nil {
+		fmt.Println("Error adding notification:", err)
 		return err
 	}
 	return nil

@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import UserList from "../../../../components/UserList";
 import ChatBox from "../../../../components/ChatBox";
 import { sendGetmessagesusers, sendMessageIsRead } from "../../../../websocket/messages.js";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 export default function ChatPage({ params }) {
     const [selectedUser, setSelectedUser] = useState(null);
+    const [has , setHas] = useState(true);
     const { name } = use(params)
     const router = useRouter();
     
@@ -19,7 +20,7 @@ export default function ChatPage({ params }) {
 
                 .then((response) => {
                     if (!response.ok) {
-                        router.replace('/pageNotfoud');
+                        setHas(false);
                     }
                     return response.json()
                 })
@@ -33,6 +34,9 @@ export default function ChatPage({ params }) {
                 });
         }
     }, [name]);
+    if (!has) {
+        notFound();
+    }
     return (
         <main className="main-content-chat">
             <UserList />

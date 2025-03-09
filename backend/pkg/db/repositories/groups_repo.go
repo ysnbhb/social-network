@@ -38,19 +38,19 @@ func GroupInfo(gp int) (models.Groups, error) {
 	return group, err
 }
 
-func MemberGroup(groupId int) ([]models.User, error) {
-	query := ` SELECT   users.nickname , users.avatar_url FROM users INNER JOIN group_members
+func MemberGroup(groupId int, userId int) ([]models.GroupMember, error) {
+	query := ` SELECT users.id, users.nickname , users.avatar_url FROM users INNER JOIN group_members
 	ON users.id = group_members.user_id 
-	WHERE group_members.group_id = ?
+	WHERE group_members.group_id = ? AND group_members.user_id != ?
 	`
-	row, err := db.DB.Query(query, groupId)
+	row, err := db.DB.Query(query, groupId, userId)
 	if err != nil {
 		return nil, errors.New("field to fetch user")
 	}
-	users := []models.User{}
+	users := []models.GroupMember{}
 	for row.Next() {
-		user := models.User{}
-		err = row.Scan(&user.NickName, &user.AvatarUrl)
+		user := models.GroupMember{}
+		err = row.Scan(&user.Id, &user.Nickname, &user.Avatar)
 		if err != nil {
 			continue
 		}
@@ -108,10 +108,12 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	adminid := GeTIdofAdminOfGroup(groupId)
 	adminname := GetNickName(adminid)
 	_, err = db.DB.Exec(query, adminid, userId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
-	adminconnection := models.Clients[adminname]
-	err = adminconnection.Conn.WriteJSON(map[string]interface{}{
-		"type": "realNotification",
-	})
+	adminconnection, ok := models.Clients[adminname]
+	if ok {
+		err = adminconnection.Conn.WriteJSON(map[string]interface{}{
+			"type": "realNotification",
+		})
+	}
 	return err
 }
 
@@ -406,11 +408,62 @@ func CheckUserInEvent(eventId, userId int) bool {
 	var status bool
 	db.DB.QueryRow(query, eventId, userId).Scan(&status)
 	return status
-	
 }
+
 func GetgroupnameById(groupId int) string {
 	var groupname string
 	query := `SELECT title FROM groups WHERE id = ?`
 	db.DB.QueryRow(query, groupId).Scan(&groupname)
 	return groupname
+}
+
+func AddNotificationGroupEvent(userId, groupid int) error {
+	MembersGroup, err := MemberGroup(groupid, userId)
+	if err != nil {
+		return err
+	}
+	for _, Member := range MembersGroup {
+		query := `INSERT INTO notifications (user_id , sender_id ,group_id,type, details) VALUES (?,?, ?, ?, ?)`
+		_, err := db.DB.Exec(query, Member.Id, userId, groupid, "group_event", GetNickName(userId)+" created an event in "+GetgroupnameById(groupid))
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		connreciever, ok := models.Clients[Member.Nickname]
+		if ok {
+			err = connreciever.Conn.WriteJSON(map[string]interface{}{
+				"type": "realNotification",
+			})
+		}
+	}
+	return nil
+}
+
+func ChangeUnreadMessageGroup(msg models.Message, client *models.Client) error {
+	query := `UPDATE notifications SET read_status = 'read' WHERE group_id = ? AND user_id = ? AND type = 'messageGroup'`
+	_, err := db.DB.Exec(query, msg.Groupid, client.Userid)
+	return err
+}
+
+func GetGroup_Resuest(group_id int) ([]models.User, error) {
+	users := []models.User{}
+	query := `SELECT u.nickname , u.avatar_url  FROM users u
+	INNER JOIN group_invitations gi ON u.id = gi.user_id
+	WHERE gi.group_id = ? AND gi.status = 'pending'
+	GROUP BY u.id
+	ORDER BY gi.cerated_at DESC
+	`
+	rows, err := db.DB.Query(query, group_id)
+	if err != nil {
+		return nil, err
+	}
+	for rows.Next() {
+		user := models.User{}
+		err = rows.Scan(&user.NickName, &user.AvatarUrl)
+		if err != nil {
+			continue
+		}
+		users = append(users, user)
+	}
+	return users, err
 }

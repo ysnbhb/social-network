@@ -40,7 +40,7 @@ func GroupInfo(groupId int, userId int) (models.Groups, int, error) {
 	return count, http.StatusOK, nil
 }
 
-func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
+func MemberGroup(groupId int, userId int) ([]models.GroupMember, error, int) {
 	exist := repo.CheckGroup(groupId)
 	if !exist {
 		return nil, errors.New("group not found"), http.StatusNotFound
@@ -49,7 +49,7 @@ func MemberGroup(groupId int, userId int) ([]models.User, error, int) {
 	if !exist {
 		return nil, errors.New("you are not member in this group"), http.StatusUnauthorized
 	}
-	users, err := repo.MemberGroup(groupId)
+	users, err := repo.MemberGroup(groupId, userId)
 	if err != nil {
 		return nil, errors.New("filed to get membre of groups"), http.StatusUnauthorized
 	}
@@ -205,6 +205,7 @@ func CreateEvent(gp_env *models.Event) (error, int) {
 		log.Println(err)
 		return errors.New("field to create event"), http.StatusInternalServerError
 	}
+	err = repo.AddNotificationGroupEvent(gp_env.CreatorId ,gp_env.GroupId)
 	gp_env.Creator_User = repo.GetUserIdById(gp_env.CreatorId)
 	return nil, http.StatusOK
 }
@@ -235,4 +236,15 @@ func RespoEvent(eventId int, userId int, status string) (error, int) {
 		return errors.New("field to get events"), http.StatusInternalServerError
 	}
 	return nil, http.StatusOK
+}
+
+func GetGroup_Resuest(groupId int, userId int) ([]models.User, error, int) {
+	if repo.GeTIdofAdminOfGroup(groupId) != userId {
+		return nil, nil, http.StatusOK
+	}
+	invites, err := repo.GetGroup_Resuest(groupId)
+	if err != nil {
+		return nil, errors.New("field to get user"), http.StatusInternalServerError
+	}
+	return invites, nil, http.StatusOK
 }

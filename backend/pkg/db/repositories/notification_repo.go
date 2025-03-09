@@ -1,7 +1,6 @@
 package repo
 
 import (
-	"fmt"
 	"time"
 
 	db "social-network/pkg/db/sqlite"
@@ -9,7 +8,7 @@ import (
 )
 
 func GetNotification(userid int) ([]models.UnreadNotification, error) {
-	query := `SELECT id, user_id, sender_id, type, details, read_status, created_at FROM notifications WHERE user_id = ? AND type != 'messageuser'`
+	query := `SELECT id, user_id, sender_id, COALESCE(group_id , 0),type, details, read_status, created_at FROM notifications WHERE user_id = ? AND type != 'messageuser' ORDER BY created_at DESC`
 	rows, err := db.DB.Query(query, userid)
 	if err != nil {
 		return []models.UnreadNotification{}, err
@@ -21,7 +20,7 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 		var Userid int
 		var Sent_at time.Time
 		var dataNotification models.UnreadNotification
-		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus, &Sent_at)
+		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.GroupId, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus, &Sent_at)
 		if err != nil {
 			return []models.UnreadNotification{}, err
 		}
@@ -36,7 +35,6 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 }
 
 func AddNotification(msg models.Message, client *models.Client, Type string, sent_at string) error {
-	// receiver string , senderid  int, Type  string, details string
 	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
 	for _, receiver := range msg.Receivers {
 		recieverid := GetUserIdByNickName(receiver)
@@ -66,11 +64,7 @@ func AddNotification(msg models.Message, client *models.Client, Type string, sen
 	return nil
 }
 
-func SendNotification() {
-}
-
 func ChangeUnreadNotification(msg models.Message, client *models.Client) error {
-	fmt.Println("///////////////////////////////")
 	query := `UPDATE notifications SET read_status = 'read' WHERE id = ? `
 	_, err := db.DB.Exec(query, msg.Notificationid)
 	if err != nil {
@@ -117,4 +111,42 @@ func GetNotificationCount(userid int) (int, error) {
 		return 0, err
 	}
 	return notificationCount, nil
+}
+
+func AddNotificationFollow(exists bool ,userid int, receiverId int) error {
+	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
+	if exists{
+		_, err := db.DB.Exec(query, receiverId, userid, "follow", "You have a follow request from "+GetNickName(userid))
+		if err != nil {
+			return err
+		}
+	} else {
+		_, err := db.DB.Exec(query, receiverId, userid, "unfollow", "You are no longer followed by "+GetNickName(userid))
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func AddNotificationMsgGroup(msg models.Message, client *models.Client, Type string, time string, mebber []models.GroupMember) error {
+	query := `INSERT INTO notifications (user_id, sender_id, group_id, type, details) VALUES (?, ?, ?,?, ?)`
+	for _, receiver := range mebber {
+		_, err := db.DB.Exec(query, receiver.Id, client.Userid, msg.Groupid, Type, client.Username+" sent a message to the group"+GetgroupnameById(msg.Groupid))
+		if err != nil {
+			return err
+		}
+		receiverConn, ok := models.Clients[receiver.Nickname]
+		if ok {
+			GetNotificationCount, err := GetNotificationCount(receiver.Id)
+			if err != nil {
+				return err
+			}
+			receiverConn.Conn.WriteJSON(map[string]interface{}{
+				"type":              "Notification",
+				"countNotification": GetNotificationCount,
+			})
+		}
+	}
+	return nil
 }

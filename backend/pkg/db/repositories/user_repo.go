@@ -36,7 +36,17 @@ func CheckEmail(email string) error {
 
 	return nil
 }
+func GetUserNameByEmail(email string) (string, error) {
+	var username string
+	query := "select nickname from users where email=?"
+	err := db.DB.QueryRow(query, email).Scan(&username)
+	if err != nil {
+		log.Println(err)
+		return "", errors.New(" This userName isn't exists")
+	}
 
+	return username, nil
+}
 func GetUserId(login *models.Login) {
 	query := `SELECT u.id FROM users u WHERE email = ?`
 	var userId int
@@ -120,4 +130,11 @@ func UpdateProfile(user *models.User) error {
 `
 	_, err := db.DB.Exec(query, user.AboutMe, user.Profile_Type, user.Id)
 	return err
+}
+
+func GetAvatarUrl(userId int) string {
+	query := `SELECT u.avatar_url FROM users u WHERE id = ?`
+	var avatar string
+	db.DB.QueryRow(query, userId).Scan(&avatar)
+	return avatar
 }

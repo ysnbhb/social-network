@@ -1,35 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
-import style from "./[name]/profile.module.css";
-import bag from "../../../components/images/pxfuel.jpg";
-import { PostCompte } from "../../../components/postComp.js";
+import style from "./profile.module.css";
+import bag from "@/components/images/pxfuel.jpg";
+import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
-import { notFound, useRouter } from "next/navigation";
 import IsLoading from "@/components/isloading";
-import useHandleFollowers from "../../hooks/usehandleFollower";
+import useHandleFollowers from "@/app/hooks/usehandleFollower";
 
-export default function Profile() {
-  const router = useRouter();
-  // const [username, setUsername] = useState(null);
+export default function Profile({ params }) {
+  const serverParams = use(params);
+  const usernames = serverParams.name;
   const [userLogin, setUserLogin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const searchParams = new URLSearchParams(window.location.search);
-  const usernames = searchParams.get('username');
-  if (usernames === null) {
-    notFound();
-  }
-    console.log(usernames);
-  
-  useEffect(() => {
-    const storedUserLogin = localStorage.getItem("username");
-    setUserLogin(storedUserLogin);
-  }, []);
+
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
   const {
-    id ,
+    id,
     avatarUrl,
     firstName,
     follower_count,
@@ -39,13 +28,12 @@ export default function Profile() {
     nickName,
     posts_count,
   } = profiledata;
+
   const { status, handle } = useHandleFollowers(id);
 
   const handuleClick = async () => {
-    console.log(id,"test here");
-    
-   await handle();  
- };
+    await handle();
+  };
   // useEffect(() => {
   //   if (errorPro && errorPro.length > 0) {
   //     const errorMessage = errorPro;
@@ -55,16 +43,13 @@ export default function Profile() {
   // }, [errorPro, router]);
   useEffect(() => {
     if (firstName && lastName) {
-      // Add a small delay to ensure smooth transition
       const timer = setTimeout(() => {
         setIsLoading(false);
       }, 30);
-
       return () => clearTimeout(timer);
     }
   }, [firstName, lastName]);
 
-  
   // const menuData = [
   //   { fullname: "Omar Rharbi", time: "30m", button: "Follow", image: " " },
   //   { fullname: "John Doe", time: "1h", button: "Follow", image: " " },
@@ -92,11 +77,11 @@ export default function Profile() {
   //     image: " ",
   //   },
   // ];
-  const isOwnProfile = nickName === (userLogin);
+  const isOwnProfile = nickName === userLogin;
+  
   return (
     <div>
       {isLoading ? (
-        
         <IsLoading></IsLoading>
       ) : (
         <div className={style.container}>
@@ -134,10 +119,18 @@ export default function Profile() {
                   </div>
                 ) : (
                   <div>
-                    <button className={style.followButton}>Follow</button>
-                    <button onClick={()=>{router.push(`/chat/${nickName}`)}} className={style.moreButton}>Send Message</button>
+                    {status === "accept" ? (
+                      <button className={style.followButton} onClick={() => handuleClick(id)}>unfollow</button>
+                    ) : status === "pending" ? (
+                      <button className={style.followButton}>pending</button>
+                    ) : profiledata.isFollowing ? (
+                      <button className={style.followButton} onClick={() => handuleClick(id)} >unfollow</button>
+                    ) : (
+                      <button className={style.followButton} onClick={() => handuleClick(id)}>follow</button>
+                    )}
+                    <button className={style.moreButton}>Send Message</button>
                   </div>
-                 )} 
+                )}
               </div>
 
               {/* User info */}

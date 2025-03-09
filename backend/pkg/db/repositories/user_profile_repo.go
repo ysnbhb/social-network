@@ -5,7 +5,7 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string, offset int) error {
 	query := `
 		SELECT 
 			 c.id,
@@ -37,7 +37,7 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 		ORDER BY c.created_at DESC
 		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, userId, offset)
+	rows, err := db.DB.Query(query, username, offset)
 	if err != nil {
 		return err
 	}
@@ -67,28 +67,28 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId, offset i
 	return rows.Err()
 }
 
-func InfoUserProfile(profile *models.UserProfile, user_id int) error {
+func InfoUserProfile(profile *models.UserProfile, username string) error {
 	query := `SELECT  
-			u.id,
-			u.first_name,
-			u.last_name,
-			u.nickname,
-			COALESCE(u.about_me, '') AS about_me,
-			u.email,
-			u.date_of_birth,
-			COALESCE(u.avatar_url, '') AS avatar_url,
-    		COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
-			COUNT(DISTINCT p.id) AS posts,
-			COUNT(DISTINCT f1.follower_id) AS follower_count,
-			COUNT(DISTINCT f2.following_id) AS following_count
-		FROM users u 
-		LEFT JOIN card c ON c.user_id = u.id
-		LEFT JOIN followers  f1 on f1.follower_id=u.id  
-		LEFT JOIN followers  f2 on f2.following_id=u.id 
-        LEFT JOIN posts p on p.card_id=c.id
-		WHERE u.id = ?  
-		GROUP BY u.id`
-	err := db.DB.QueryRow(query, user_id).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+                u.id,
+                u.first_name,
+                u.last_name,
+                u.nickname,
+                COALESCE(u.about_me, '') AS about_me,
+                u.email,
+                u.date_of_birth,
+                COALESCE(u.avatar_url, '') AS avatar_url,
+                COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
+                COUNT(DISTINCT p.id) AS posts,
+                COUNT(DISTINCT f1.follower_id) AS follower_count,  
+                COUNT(DISTINCT f2.following_id) AS following_count 
+            FROM users u 
+            LEFT JOIN card c ON c.user_id = u.id
+            LEFT JOIN followers f1 ON f1.following_id = u.id  
+            LEFT JOIN followers f2 ON f2.follower_id = u.id   
+            LEFT JOIN posts p on p.card_id=c.id
+            WHERE u.nickname = ?
+            GROUP BY u.nickname;`
+	err := db.DB.QueryRow(query, username).Scan(&profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}
@@ -111,4 +111,64 @@ func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
 		return user, err
 	}
 	return user, nil
+}
+
+func GetUserFollowing(userid int) (friend []models.UnfollowUser, errs error) {
+	following := `SELECT
+    	 
+    	u.first_name,
+    	u.last_name,
+    	u.nickname,
+    	u.avatar_url
+FROM users u 
+JOIN followers f ON u.id = f.following_id 
+WHERE f.follower_id = ?;`
+
+	row, err := db.DB.Query(following, userid)
+	if err != nil {
+		return friend, err
+	}
+	for row.Next() {
+		f := models.UnfollowUser{}
+		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar)
+		if err != nil {
+			return friend, err
+		}
+		friend = append(friend, f)
+	}
+	return friend, nil
+}
+
+func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
+	follower := ` SELECT
+				u.first_name,
+				u.last_name,
+				u.nickname,
+				u.avatar_url
+		FROM users u 
+		JOIN followers f ON u.id = f.follower_id 
+		WHERE f.following_id=?;`
+	row, err := db.DB.Query(follower, userid)
+	if err != nil {
+		return friend, err
+	}
+	for row.Next() {
+		f := models.UnfollowUser{}
+		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar)
+		if err != nil {
+			return friend, err
+		}
+		friend = append(friend, f)
+	}
+	return friend, nil
+}
+
+func GetIsFollowing(userId int, profileId int) bool {
+	query := `SELECT EXISTS (SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? AND status = 'accept');`
+	var exists bool
+	err := db.DB.QueryRow(query, userId, profileId).Scan(&exists)
+	if err != nil {
+		return false
+	}
+	return exists
 }
