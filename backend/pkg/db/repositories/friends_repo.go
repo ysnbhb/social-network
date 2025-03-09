@@ -91,3 +91,4 @@ func GetFollowers(userId int) ([]models.UnfollowUser, error) {
 	}
 	return unfu, err
 }
+

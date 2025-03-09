@@ -162,3 +162,13 @@ func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
 	}
 	return friend, nil
 }
+
+func GetIsFollowing(userId int, profileId int) bool {
+	query := `SELECT EXISTS (SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? AND status = 'accept');`
+	var exists bool
+	err := db.DB.QueryRow(query, userId, profileId).Scan(&exists)
+	if err != nil {
+		return false
+	}
+	return exists
+}

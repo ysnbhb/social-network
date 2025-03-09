@@ -42,6 +42,7 @@ type UserProfile struct {
 	Follower_count  int       `json:"follower_count"`
 	Following_count int       `json:"following_count"`
 	Count_Posts     int       `json:"posts_count"`
+	IsFollowing     bool      `json:"isFollowing"`
 }
 
 type Userdataforchat struct {
