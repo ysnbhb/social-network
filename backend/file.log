@@ -2971,3 +2971,6 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/09 01:21:42 server.go:27: Starting server on :8080
 2025/03/09 01:24:07 server.go:27: Starting server on :8080
 2025/03/09 01:24:27 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 01:44:59 server.go:27: Starting server on :8080
+2025/03/09 01:45:07 Websocket_controller.go:59: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 01:45:07 Websocket_controller.go:45: Closing connection for user: yahya.yahya (ID: 1)
