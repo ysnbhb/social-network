@@ -33,6 +33,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/profile", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetInfoUserProfile)))
 
 	mux.Handle("/api/home/posts", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetHomePosts)))
+	mux.Handle("/api/search/users", middleware.AuthMiddleware(http.HandlerFunc(controllers.SearchUsers)))
 
 	mux.Handle("/ws", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleWebsocket)))
 	mux.Handle("/api/friends", middleware.AuthMiddleware(http.HandlerFunc(controllers.Friends)))

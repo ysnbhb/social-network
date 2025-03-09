@@ -2065,3 +2065,187 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/08 14:21:29 posts_controller.go:56: validating post: post content cannot be empty
 2025/03/08 14:21:36 posts_controller.go:50: 0
 2025/03/08 14:21:36 posts_controller.go:56: validating post: post content cannot be empty
+2025/03/08 14:40:04 server.go:27: Starting server on :8080
+2025/03/08 14:40:13 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/08 14:40:13 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/08 14:40:32 server.go:3634: http: panic serving 127.0.0.1:59146: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x866b80?, 0xbc1590?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.InsertIntoGroup_Invi(0x1, 0x5, {0x8cd891, 0x7})
+	/home/saljaoui/github/mysocialnetwork/backend/pkg/db/repositories/groups_repo.go:112 +0x2f8
+social-network/app/services.JoinToGroup({0xc0001052f0?, 0x84f0a0?}, 0x5)
+	/home/saljaoui/github/mysocialnetwork/backend/app/services/group_service.go:95 +0x2d0
+social-network/app/controllers.JoinToGroup({0x9601f8, 0xc0001342a0}, 0xc000112dc0)
+	/home/saljaoui/github/mysocialnetwork/backend/app/controllers/groupes_controller.go:72 +0x1a5
+net/http.HandlerFunc.ServeHTTP(0xc000112c80?, {0x9601f8?, 0xc0001342a0?}, 0x95ae70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func7({0x9601f8, 0xc0001342a0}, 0xc000112c80)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/session_middleware.go:31 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b20c0?, {0x9601f8?, 0xc0001342a0?}, 0x8d9bec?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000105230?, {0x9601f8, 0xc0001342a0}, 0xc000112c80)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9601f8, 0xc0001342a0}, 0xc000112c80)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9601f8?, 0xc0001342a0?}, 0xc000134201?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x95ec30?}, {0x9601f8?, 0xc0001342a0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000116630, {0x960708, 0xc00009bf50})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 14:40:34 server.go:3634: http: panic serving 127.0.0.1:52828: runtime error: invalid memory address or nil pointer dereference
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x866b80?, 0xbc1590?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.InsertIntoGroup_Invi(0x2, 0x5, {0x8cd891, 0x7})
+	/home/saljaoui/github/mysocialnetwork/backend/pkg/db/repositories/groups_repo.go:112 +0x2f8
+social-network/app/services.JoinToGroup({0xc00037bc50?, 0x84f0a0?}, 0x5)
+	/home/saljaoui/github/mysocialnetwork/backend/app/services/group_service.go:95 +0x2d0
+social-network/app/controllers.JoinToGroup({0x9601f8, 0xc0002ac620}, 0xc0002c8c80)
+	/home/saljaoui/github/mysocialnetwork/backend/app/controllers/groupes_controller.go:72 +0x1a5
+net/http.HandlerFunc.ServeHTTP(0xc0002c8b40?, {0x9601f8?, 0xc0002ac620?}, 0x95ae70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func7({0x9601f8, 0xc0002ac620}, 0xc0002c8b40)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/session_middleware.go:31 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b20c0?, {0x9601f8?, 0xc0002ac620?}, 0x8d9bec?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00037bb90?, {0x9601f8, 0xc0002ac620}, 0xc0002c8b40)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9601f8, 0xc0002ac620}, 0xc0002c8b40)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9601f8?, 0xc0002ac620?}, 0xc0002ac601?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x95ec30?}, {0x9601f8?, 0xc0002ac620?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000116750, {0x960708, 0xc00009bf50})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 14:40:36 server.go:3634: http: panic serving 127.0.0.1:52842: runtime error: invalid memory address or nil pointer dereference
+goroutine 57 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x866b80?, 0xbc1590?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/runtime/panic.go:787 +0x132
+social-network/pkg/db/repositories.InsertIntoGroup_Invi(0x8, 0x5, {0x8cd891, 0x7})
+	/home/saljaoui/github/mysocialnetwork/backend/pkg/db/repositories/groups_repo.go:112 +0x2f8
+social-network/app/services.JoinToGroup({0xc0003a42a0?, 0x84f0a0?}, 0x5)
+	/home/saljaoui/github/mysocialnetwork/backend/app/services/group_service.go:95 +0x2d0
+social-network/app/controllers.JoinToGroup({0x9601f8, 0xc0002ac700}, 0xc0002c9040)
+	/home/saljaoui/github/mysocialnetwork/backend/app/controllers/groupes_controller.go:72 +0x1a5
+net/http.HandlerFunc.ServeHTTP(0xc0002c8f00?, {0x9601f8?, 0xc0002ac700?}, 0x95ae70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func7({0x9601f8, 0xc0002ac700}, 0xc0002c8f00)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/session_middleware.go:31 +0x16a
+net/http.HandlerFunc.ServeHTTP(0xc0000b20c0?, {0x9601f8?, 0xc0002ac700?}, 0x8d9bec?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003a41e0?, {0x9601f8, 0xc0002ac700}, 0xc0002c8f00)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2822 +0x1c4
+main.main.WithCORS.func1({0x9601f8, 0xc0002ac700}, 0xc0002c8f00)
+	/home/saljaoui/github/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x173
+net/http.HandlerFunc.ServeHTTP(0x418f25?, {0x9601f8?, 0xc0002ac700?}, 0xc0002ac701?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0x95ec30?}, {0x9601f8?, 0xc0002ac700?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000292480, {0x960708, 0xc00009bf50})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/08 14:40:42 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/08 14:40:42 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/08 14:41:08 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/08 14:41:08 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/08 14:41:21 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/08 14:41:21 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/08 15:19:00 Websocket_controller.go:41: Failed to read message: websocket: close 1006 (abnormal closure): unexpected EOF
+2025/03/09 09:40:39 server.go:27: Starting server on :8080
+2025/03/09 09:41:03 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 09:41:03 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 09:41:41 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 09:41:42 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 09:41:42 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 09:47:02 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 09:47:02 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 09:47:02 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 09:47:30 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 09:47:30 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 09:47:37 server.go:27: Starting server on :8080
+2025/03/09 11:01:23 server.go:27: Starting server on :8080
+2025/03/09 11:04:03 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:04:03 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:13:00 server.go:27: Starting server on :8080
+2025/03/09 11:13:14 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:13:14 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:14:02 server.go:27: Starting server on :8080
+2025/03/09 11:14:06 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:14:06 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:15:09 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:15:09 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:15:09 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:15:31 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:15:31 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:15:31 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:15:55 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:15:55 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:15:55 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:16:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:16:15 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:16:15 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:17:30 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:17:30 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:17:30 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:18:42 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:18:42 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:18:42 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:19:45 server.go:27: Starting server on :8080
+2025/03/09 11:19:54 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:19:54 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:20:46 server.go:27: Starting server on :8080
+2025/03/09 11:20:48 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:20:48 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:21:16 server.go:27: Starting server on :8080
+2025/03/09 11:21:25 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:21:25 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:22:41 server.go:27: Starting server on :8080
+2025/03/09 11:22:44 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:22:44 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:23:13 server.go:27: Starting server on :8080
+2025/03/09 11:23:16 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:23:16 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:23:50 server.go:27: Starting server on :8080
+2025/03/09 11:23:52 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:23:52 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:25:13 server.go:27: Starting server on :8080
+2025/03/09 11:25:18 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:25:18 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:28:04 server.go:27: Starting server on :8080
+2025/03/09 11:28:09 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:28:09 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:29:52 server.go:27: Starting server on :8080
+2025/03/09 11:29:54 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:29:54 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:31:26 server.go:27: Starting server on :8080
+2025/03/09 11:31:30 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:31:30 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:31:45 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:31:45 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:31:45 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:34:00 server.go:27: Starting server on :8080
+2025/03/09 11:34:07 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:34:07 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:34:29 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:34:30 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:34:30 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:35:14 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:35:14 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:35:14 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory
+2025/03/09 11:35:32 Websocket_controller.go:41: Failed to read message: websocket: close 1001 (going away)
+2025/03/09 11:35:33 serveContent.go:26: open ./uploads/ce22c974-72ba-4fc8-bea2-94a4fa5150d6.jpg: no such file or directory
+2025/03/09 11:35:33 serveContent.go:26: open ./uploads/f4b6f7a2-7632-4aba-9157-ef65e6047d98.jpg: no such file or directory

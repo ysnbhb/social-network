@@ -46,3 +46,11 @@ type Userdataforchat struct {
 	Nickname string `json:"nickname"`
 	Avatar   string `json:"avatar"`
 }
+
+type UserBySearch struct {
+	Id        int    `json:"id"`
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+	Nickname  string `json:"nickname"`
+	Avatar    any    `json:"avatar"`
+}
