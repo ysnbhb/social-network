@@ -447,6 +447,9 @@
 }
 
 /* Post actions */
+img.image-posts{
+  max-height: 400px;
+}
 .post-actions {
   display: flex;
   gap: 2rem;

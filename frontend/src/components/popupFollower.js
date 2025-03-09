@@ -20,5 +20,4 @@ export default function PopupFollower({showPopup,params , data}) {
               )}
             </div>
           );
-    
 }

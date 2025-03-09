@@ -50,7 +50,7 @@ import Link from "next/link";
             {avatarUrl ?(
                   <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
-                  
+
                     src={`${avatarUrl}`}
                     alt="Post"
                      className="avatar" 
@@ -74,7 +74,7 @@ import Link from "next/link";
           <img
             src={`${imageUrl}`}
             alt="Post"
-            // className={className}
+            className="image-posts"
             style={{ width: "100%", height: "auto",borderRadius:"10px" }}
           />
         )}

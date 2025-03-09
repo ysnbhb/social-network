@@ -8,11 +8,9 @@ import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
-import {  useRouter } from "next/navigation";
 import PopUpError from "@/components/popupError";
 
 export default function Profile({ params }) {
-  const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
   const [cookie, setcookies] = useState(null);
@@ -53,131 +51,128 @@ export default function Profile({ params }) {
     }
   }, [firstName, lastName]);
 
-  // useEffect(() => {
-  //   if (errorPro && errorPro.length > 0) {
-  //     const errorMessage = errorPro;
-  //     const url = `/error?message=${encodeURIComponent(errorMessage)}`;
-  //     router.push(url);
-  //   }
-  // }, [errorPro, router]);
-
-
   return (
     <div>
-
-   {errorPro ? (<PopUpError/>) :
-   (<div>
-    {isLoading ? (
-        <IsLoading></IsLoading>
+      {errorPro ? (
+        <PopUpError />
       ) : (
-        <div className={style.container}>
-          <div className={style["card-profile"]}>
-            <div className={style["card-profile-posts"]}>
-              {/* Cover photo */}
-              <div className={`${style["avatar-user"]}`}>
-                <Image
-                  src={bag}
-                  alt="Cover Photo"
-                  srcSet=""
-                  className={`${style["bground"]} ${style.avatarContainer}`}
-                  objectfit="cover"
-                  priority
-                />
-              </div>
-
-              {/* Profile photo */}
-              <span className={style["Circle-image"]}>
-                <img
-                  src={avatarUrl}
-                  className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
-                  srcSet=""
-                  alt="User Avatar"
-                  layout="fill"
-                  objectfit="cover"
-                />
-              </span>
-
-              {/* Action buttons */}
-              <div className={style.buttonContainer}>
-                {isOwnProfile ? (
-                  <div>
-                    <button className={style.moreButton}>Edit Profile</button>
+        <div>
+          {isLoading ? (
+            <IsLoading></IsLoading>
+          ) : (
+            <div className={style.container}>
+              <div className={style["card-profile"]}>
+                <div className={style["card-profile-posts"]}>
+                  {/* Cover photo */}
+                  <div className={`${style["avatar-user"]}`}>
+                    <Image
+                      src={bag}
+                      alt="Cover Photo"
+                      srcSet=""
+                      className={`${style["bground"]} ${style.avatarContainer}`}
+                      objectfit="cover"
+                      priority
+                    />
                   </div>
-                ) : (
-                  <div>
-                    {status === "accept" ? (
-                      <button
-                        className={style.followButton}
-                        onClick={() => handleClick(id)}
-                      >
-                        unfollow
-                      </button>
-                    ) : status === "pending" ? (
-                      <button className={style.followButton}>pending</button>
-                    ) : profiledata.isFollowing ? (
-                      <button
-                        className={style.followButton}
-                        onClick={() => handleClick(id)}
-                      >
-                        unfollow
-                      </button>
+
+                  {/* Profile photo */}
+                  <span className={style["Circle-image"]}>
+                    <img
+                      src={avatarUrl}
+                      className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
+                      srcSet=""
+                      alt="User Avatar"
+                      layout="fill"
+                      objectfit="cover"
+                    />
+                  </span>
+
+                  {/* Action buttons */}
+                  <div className={style.buttonContainer}>
+                    {isOwnProfile ? (
+                      <div>
+                        <button className={style.moreButton}>
+                          Edit Profile
+                        </button>
+                      </div>
                     ) : (
-                      <button
-                        className={style.followButton}
-                        onClick={() => handleClick(id)}
-                      >
-                        follow
-                      </button>
+                      <div>
+                        {status === "accept" ? (
+                          <button
+                            className={style.followButton}
+                            onClick={() => handleClick(id)}>
+                            unfollow
+                          </button>
+                        ) : status === "pending" ? (
+                          <button className={style.followButton}>
+                            pending
+                          </button>
+                        ) : profiledata.isFollowing ? (
+                          <button
+                            className={style.followButton}
+                            onClick={() => handleClick(id)}>
+                            unfollow
+                          </button>
+                        ) : (
+                          <button
+                            className={style.followButton}
+                            onClick={() => handleClick(id)}>
+                            follow
+                          </button>
+                        )}
+                        <button className={style.moreButton}>
+                          Send Message
+                        </button>
+                      </div>
                     )}
-                    <button className={style.moreButton}>Send Message</button>
-                  </div>
-                )}
-              </div>
-
-              {/* User info */}
-              <div className={style["user"]}>
-                <div className={style.content}>
-                  <div className={style.about}>
-                    <h1 className={style.name}>{`${firstName} ${lastName}`}</h1>
-                    <h1 className={style["about-me"]}>About Me</h1>
-                    <p className={style.jobTitle}>{aboutMe}</p>
                   </div>
 
-                  <div className={style.stats}>
-                    <span className={style.statText}>
-                      <span className={style.statNumber}>{follower_count}</span>{" "}
-                      followers
-                    </span>
-                    <span className={style.statText}>
-                      <span className={style.statNumber}>
-                        {following_count}
-                      </span>{" "}
-                      following
-                    </span>
-                  </div>
+                  {/* User info */}
+                  <div className={style["user"]}>
+                    <div className={style.content}>
+                      <div className={style.about}>
+                        <h1
+                          className={
+                            style.name
+                          }>{`${firstName} ${lastName}`}</h1>
+                        <h1 className={style["about-me"]}>About Me</h1>
+                        <p className={style.jobTitle}>{aboutMe}</p>
+                      </div>
 
-                  {/* Skill tags to match example */}
+                      <div className={style.stats}>
+                        <span className={style.statText}>
+                          <span className={style.statNumber}>
+                            {follower_count}
+                          </span>{" "}
+                          followers
+                        </span>
+                        <span className={style.statText}>
+                          <span className={style.statNumber}>
+                            {following_count}
+                          </span>{" "}
+                          following
+                        </span>
+                      </div>
+
+                      {/* Skill tags to match example */}
+                    </div>
+                  </div>
                 </div>
+
+                {profile.map((post) => (
+                  <PostCompte
+                    className={style["image"]}
+                    classes={{ post: style["posts-profile"] }}
+                    key={post.id}
+                    post={post}
+                  />
+                ))}
+                {error}
               </div>
             </div>
-
-            {profile.map((post) => (
-              <PostCompte
-                className={style["image"]}
-                classes={{ post: style["posts-profile"] }}
-                key={post.id}
-                post={post}
-              />
-            ))}
-            {error}
-          </div>
+          )}
         </div>
       )}
-
-   </div>)}
-      
-
- 
     </div>
   );
 }

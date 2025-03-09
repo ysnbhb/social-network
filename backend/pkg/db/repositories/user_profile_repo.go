@@ -5,14 +5,14 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string, offset int) error {
+func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int, username string, offset int) error {
 	data, err := GetUserInfoByUsername(username)
 	if err != nil {
 		return err
 	}
 	query := `
 		SELECT 
-			 c.id,
+			c.id,
 			c.user_id,
 			c.content,
 			c.created_at,
@@ -29,19 +29,47 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, username string,
 		JOIN users u ON c.user_id = u.id
 		LEFT JOIN comments cm ON c.id = cm.target_id
 		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE u.id = $1   AND c.group_id =0
+		WHERE (
+			-- If it's the logged-in user viewing their own profile, show all posts
+			(c.user_id = $1 AND u.id = $2) 
+			OR 
+			(
+				-- Cases for viewing other users' profiles
+				u.id = $2 AND 
+				(
+					-- Public profile with public posts
+					(u.profile_type = 'Public' AND p.privacy = 'public' AND (c.group_id IS NULL OR c.group_id = 0))
+					OR 
+					-- Almost private posts where the viewer is an accepted follower
+					(p.privacy = 'almostPrivate' AND 
+					EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept')
+					)
+					OR 
+					-- Private posts where the viewer is a private member
+					(p.privacy = 'private' AND 
+					EXISTS (SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1)
+					)
+					OR 
+					-- Private profile with public posts where the viewer is an accepted follower
+					(u.profile_type = 'Private' AND p.privacy = 'public' AND 
+					EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept') AND
+					(c.group_id IS NULL OR c.group_id = 0)
+					)
+				)
+			)
+		)
 		GROUP BY 
 			c.id, 
 			c.user_id, 
 			c.content, 
-			c.created_at, 
+			c.created_at,
+			u.avatar_url,
 			u.first_name, 
 			u.last_name,
 			u.nickname
 		ORDER BY c.created_at DESC
-		LIMIT 10 OFFSET $2
 			`
-	rows, err := db.DB.Query(query, data.Id, offset)
+	rows, err := db.DB.Query(query, userId, data.Id, offset)
 	if err != nil {
 		return err
 	}
@@ -92,7 +120,7 @@ func InfoUserProfile(profile *models.UserProfile, username string) error {
             LEFT JOIN followers f1 ON f1.following_id = u.id  
             LEFT JOIN followers f2 ON f2.follower_id = u.id   
             LEFT JOIN posts p on p.card_id=c.id
-            WHERE u.nickname = ?
+            WHERE u.nickname = ? 
             GROUP BY u.nickname;`
 	err := db.DB.QueryRow(query, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {

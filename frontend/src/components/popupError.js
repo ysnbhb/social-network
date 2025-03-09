@@ -1,22 +1,24 @@
+import { useRouter } from "next/navigation";
 import "../styles/popuperror.css";
-export default function PopUpError() {
+export default function PopUpError({ message, onClose }) {
+  const roote=useRouter()
   const path = window.location.href;
-  const body = document.body;
-  body.style.background = "black";
   console.log(path.includes("profile/"), path.length);
   const url = path.indexOf("profile/");
   const username = path.slice(url - path.length).split("profile/")[1];
-
+  function Gooback (){
+    roote.push("/home")
+  }
   return (
     <div>
       <div className="container-popup">
         <div className="popups">
           <div className="popups-header">
-            <span className="close-btn">&times;</span>
             <div className="popups-title">
               <span className="icon">📌</span>
               The username '{username}' does not exist.
             </div>
+            <span className="close-button" onClick={Gooback}>&times;</span>
           </div>
 
           <div className="popup-content">
@@ -24,7 +26,7 @@ export default function PopUpError() {
           </div>
 
           <div className="popup-button">
-            <button className="button">Goo Back</button>
+            <button className="button" onClick={Gooback}>Go Back</button>
           </div>
         </div>
       </div>
