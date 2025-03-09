@@ -36,7 +36,7 @@ export default function GroupMembers({ id }) {
                     <ul className="menu-options">
                         {members.map((member) => (
                             <li key={member.id} className="menu-option">
-                                <p onClick={() => { Router.push(`/profile?username=${member.nickname}`) }}>
+                                <p onClick={() => { Router.push(`/profile/${member.nickname}`) }}>
                                     {member.nickname}
                                 </p>
                             </li>

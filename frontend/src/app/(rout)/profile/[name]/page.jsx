@@ -6,15 +6,15 @@ import bag from "@/components/images/pxfuel.jpg";
 import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
 import userProfile from "@/app/hooks/userProfile";
- import IsLoading from "@/components/isloading";
+import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
- 
+
 export default function Profile({ params }) {
   const serverParams = use(params);
-  const usernames = serverParams.name; 
+  const usernames = serverParams.name;
   const [userLogin, setUserLogin] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); 
-  
+  const [isLoading, setIsLoading] = useState(true);
+
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
   const {
@@ -28,11 +28,10 @@ export default function Profile({ params }) {
     nickName,
     posts_count,
   } = profiledata;
+
   const { status, handle } = useHandleFollowers(id);
 
   const handuleClick = async () => {
-    console.log(id, "test here");
-
     await handle();
   };
   // useEffect(() => {
@@ -44,7 +43,7 @@ export default function Profile({ params }) {
   // }, [errorPro, router]);
   useEffect(() => {
     if (firstName && lastName) {
-       const timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         setIsLoading(false);
       }, 30);
       return () => clearTimeout(timer);
@@ -79,6 +78,7 @@ export default function Profile({ params }) {
   //   },
   // ];
   const isOwnProfile = nickName === userLogin;
+  
   return (
     <div>
       {isLoading ? (
@@ -120,18 +120,14 @@ export default function Profile({ params }) {
                 ) : (
                   <div>
                     {status === "accept" ? (
-                      <button className={style.followButton}>unfollow</button>
+                      <button className={style.followButton} onClick={() => handuleClick(id)}>unfollow</button>
                     ) : status === "pending" ? (
                       <button className={style.followButton}>pending</button>
+                    ) : profiledata.isFollowing ? (
+                      <button className={style.followButton} onClick={() => handuleClick(id)} >unfollow</button>
                     ) : (
-                      <button
-                        className={style.followButton}
-                        onClick={() => handuleClick(id)}
-                      >
-                        follow
-                      </button>
+                      <button className={style.followButton} onClick={() => handuleClick(id)}>follow</button>
                     )}
-
                     <button className={style.moreButton}>Send Message</button>
                   </div>
                 )}
