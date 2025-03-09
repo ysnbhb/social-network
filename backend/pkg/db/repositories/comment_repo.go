@@ -83,6 +83,6 @@ func GetComments(commentsResponse *[]models.CommentResponse, userId int, targetc
 		}
 		*commentsResponse = append(*commentsResponse, comment)
 	}
-
+	fmt.Println("commentsResponse>>>>.   ", *commentsResponse)
 	return rows.Err()
 }
