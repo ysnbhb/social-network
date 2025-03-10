@@ -52,6 +52,8 @@ ORDER BY
 	return rows.Err()
 }
 
+
+
 func GetFollowers(userId int) ([]models.UnfollowUser, error) {
 	unfu := []models.UnfollowUser{}
 	query := `
