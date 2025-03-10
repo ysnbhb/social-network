@@ -19,7 +19,6 @@ export default function userProfile(params){
             }else if (response.status===401){
                 window.location.href = '/login';
             }else{
-                console.log(data,"here");
                 setError(data)
             }
         } catch (error) {

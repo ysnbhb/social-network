@@ -30,7 +30,6 @@ export default function useHandleFollowers(param) {
       console.log(error, "fefr");
     }
   };
-console.log(status);
 
   return { status, handle };
 }

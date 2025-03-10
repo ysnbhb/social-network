@@ -28,7 +28,6 @@ func ValidatePost(postRequest *models.PostRequest) error {
 	if postRequest.Privacy != "public" && postRequest.Privacy != "private" && postRequest.Privacy != "almostPrivate" {
 		return errors.New("privacy must be 'public', 'private', or 'almostPrivate'")
 	}
-	fmt.Println(postRequest.GroupId)
 	if postRequest.GroupId != 0 && (postRequest.Privacy == "private" || postRequest.Privacy == "almostPrivate") {
 		return errors.New("privacy must be 'public' in gourp")
 	}
@@ -83,7 +82,6 @@ func IsValidTime(timeStr string) bool {
 	if err != nil {
 		return false
 	}
-	fmt.Println(start.Before(time.Now()))
 	return !start.Before(time.Now())
 }
 

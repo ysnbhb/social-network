@@ -1,7 +1,7 @@
 package repo
 
 import (
-	"fmt"
+	"log"
 
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
@@ -68,7 +68,7 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 			&post.IsLiked,
 		)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		*postsResponse = append(*postsResponse, post)

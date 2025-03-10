@@ -46,6 +46,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/notifications", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetNotification)))
 	mux.Handle("/api/user/info", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetuserinfoByname)))
 	mux.Handle("/api/user/checklogin", middleware.AuthMiddleware(http.HandlerFunc(controllers.CheckLogin)))
+	mux.Handle("/api/acceptfollow", middleware.AuthMiddleware(http.HandlerFunc(controllers.AcceptFollow)))
 
 	return mux
 }

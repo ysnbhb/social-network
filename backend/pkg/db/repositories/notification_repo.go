@@ -22,7 +22,15 @@ func GetNotification(userid int) ([]models.UnreadNotification, error) {
 		var dataNotification models.UnreadNotification
 		err := rows.Scan(&dataNotification.Id, &Userid, &Senderid, &dataNotification.GroupId, &dataNotification.Type, &dataNotification.Details, &dataNotification.Readstatus, &Sent_at)
 		if err != nil {
-			return []models.UnreadNotification{}, err
+			continue
+		}
+		if dataNotification.Type == "follow" {
+			query := `SELECT status FROM followers WHERE follower_id = ? AND following_id = ?`
+			rows := db.DB.QueryRow(query, Senderid, Userid)
+			rows.Scan(&dataNotification.Status)
+			// if err != nil {
+			// 	return []models.UnreadNotification{}, err
+			// }
 		}
 		sender := GetNickName(Senderid)
 		Username := GetNickName(Userid)
@@ -113,9 +121,9 @@ func GetNotificationCount(userid int) (int, error) {
 	return notificationCount, nil
 }
 
-func AddNotificationFollow(exists bool ,userid int, receiverId int) error {
+func AddNotificationFollow(exists bool, userid int, receiverId int) error {
 	query := `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
-	if exists{
+	if exists {
 		_, err := db.DB.Exec(query, receiverId, userid, "follow", "You have a follow request from "+GetNickName(userid))
 		if err != nil {
 			return err

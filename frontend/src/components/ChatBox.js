@@ -33,18 +33,15 @@ function ChatBox({ user }) {
   if (isMobile) {
     if (Router.pathname !== "/chat") {
       if (document.querySelector(".user-list")) {
-        console.log("1");
         document.querySelector(".user-list").style.display = "none";;
       }
     } else {
       if (document.querySelector(".user-list")) {
-        console.log("2");
         document.querySelector(".user-list").style.display = "block";;
       }
     }
   } else if (!isMobile) {
     if (document.querySelector(".user-list")) {
-      console.log("3");
       document.querySelector(".user-list").style.display = "block";;
     }
   }
