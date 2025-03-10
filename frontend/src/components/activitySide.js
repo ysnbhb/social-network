@@ -68,11 +68,18 @@ import { API_URL } from "./api";
 }
 
 export function ShowUnfllowUser({ user }) {
-  const { status, handle } = useHandleFollowers(user.id);
+   const { status, handle } = useHandleFollowers(user.id);
    const handuleClick = async () => {
     await handle();  
-  };
-    return (
+  };  
+  return (
+    <div>
+      <Follow status={status} handuleClick ={handuleClick } user={user}/>
+    </div>
+  )
+}
+export   function Follow ({status,handuleClick,user}){
+  return (
     <div className="activity-item">
       <div>
         <p>
@@ -89,7 +96,7 @@ export function ShowUnfllowUser({ user }) {
       ) : status === "pending" ? (
         <button>pending</button>
       ) : (
-        <button onClick={() => handuleClick(user.id)}>follow</button>
+        <button onClick={() => handuleClick(user.id)} >follow</button>
       )}
     </div>
   );

@@ -3,8 +3,7 @@ import "../styles/profileSidebar.css";
 import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import PopupFollower from "./popupFollower";
-import { ShowUnfllowUser } from "./activitySide";
+import { Follow, ShowUnfllowUser } from "./activitySide";
 export default function ProfileSide({ classes }) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
@@ -17,6 +16,7 @@ export default function ProfileSide({ classes }) {
           setdataFollow(data)
           setShowPopup(!showPopup);
   };
+ console.log(follow);
  
   const {
     avatarUrl,
@@ -45,8 +45,8 @@ export default function ProfileSide({ classes }) {
               <div className="popup-form">
               {dataFollow ?(dataFollow).map((fl) => (
                 <div key={`${activeTab}-${fl.id}`}>
-                  <ShowUnfllowUser key={`${activeTab}-${fl.id}`} user={fl} />
-                </div>
+                   <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                 </div>
               )) :(<div>
                 No Follower
               </div>)}

@@ -153,7 +153,9 @@ func GetUserFollowing(userid int) (friend []models.UnfollowUser, errs error) {
     	u.first_name,
     	u.last_name,
     	u.nickname,
-    	u.avatar_url
+    	u.avatar_url,
+		 f.status
+
 FROM users u 
 JOIN followers f ON u.id = f.following_id 
 WHERE f.follower_id = ?;`
@@ -164,7 +166,7 @@ WHERE f.follower_id = ?;`
 	}
 	for row.Next() {
 		f := models.UnfollowUser{}
-		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar)
+		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar,&f.Status)
 		if err != nil {
 			return friend, err
 		}
@@ -178,7 +180,8 @@ func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
 				u.first_name,
 				u.last_name,
 				u.nickname,
-				u.avatar_url
+				u.avatar_url, 
+				f.status
 		FROM users u 
 		JOIN followers f ON u.id = f.follower_id 
 		WHERE f.following_id=?;`
@@ -188,7 +191,7 @@ func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
 	}
 	for row.Next() {
 		f := models.UnfollowUser{}
-		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar)
+		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar,&f.Status)
 		if err != nil {
 			return friend, err
 		}

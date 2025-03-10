@@ -16,6 +16,7 @@ type UnfollowUser struct {
 	LastName  string `json:"lastName"`
 	Nickname  string `json:"nickname"`
 	Avatar    any    `json:"avatar"`
+	Status    string `json:"status"`
 }
 
 type UserRelation struct {
