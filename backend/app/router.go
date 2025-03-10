@@ -31,7 +31,8 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/group/requested", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetGroup_Resuested)))
 
 	mux.Handle("/api/create/post", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreatePost)))
-	mux.Handle("/api/posts/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))
+	mux.Handle("/api/create/comment", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateComments)))
+	mux.Handle("/api/get/comments", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetComments)))
 	mux.Handle("/api/follow", middleware.AuthMiddleware(http.HandlerFunc(controllers.HandleFollow)))
 	mux.Handle("/api/unfollow", middleware.AuthMiddleware(http.HandlerFunc(controllers.ShowUnfollowUser)))
 	mux.Handle("/api/profile/posts/created", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetCreatedPosts)))

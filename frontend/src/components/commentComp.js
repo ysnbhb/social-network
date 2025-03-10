@@ -2,28 +2,70 @@
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { API_URL } from "./api";
- export function PostCompte({ post  , className, classes = {} }) {  
-   
+
+// Function to format date as "time ago"
+function timeAgo(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  const secondsAgo = Math.floor((now - date) / 1000);
+  
+  if (isNaN(secondsAgo) || secondsAgo < 0) {
+    return "just now";
+  }
+
+  const intervals = {
+    year: 31536000,
+    month: 2592000,
+    week: 604800,
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1
+  };
+
+  let counter;
+  for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+    counter = Math.floor(secondsAgo / secondsInUnit);
+    if (counter > 0) {
+      return counter === 1 ? `1 ${unit} ago` : `${counter} ${unit}s ago`;
+    }
+  }
+  
+  return "just now";
+}
+
+export function CommentCompte({ comment, className, classes = {} }) {  
+  const router = useRouter();
+  
+  // Early return if comment is undefined or null
+  if (!comment) {
+    return null; // Or return a loading/placeholder component
+  }
+  
+  // Destructure with default values to prevent errors
   const {
-    id,
-    content,
-    createdAt,
-    firstName,
-    imageUrl,
-    isLiked,
-    lastName,
-    nickName,
-    totalComments,
-    totalLikes,
-    avatarUrl,
-  } = post; 
+    id = "",
+    content = "",
+    createdAt = "",
+    firstName = "",
+    isLiked = false,
+    lastName = "",
+    nickName = "",
+    totalComments = 0,
+    totalLikes = 0,
+    avatarUrl = "",
+  } = comment || {}; 
+  
+  // Format the date as "time ago"
+  const formattedCreatedAt = timeAgo(createdAt);
   
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
+  
   const handleLike = async () => {
-    const res = await fetch(`${API_URL}/api/user/reactions`, {
+    if (!id) return;
+    
+    const res = await fetch("/api/user/reactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +74,6 @@ import { API_URL } from "./api";
         cardId: id,
         ReactionType: 1,
       }),
-      credentials: "include",
     });
 
     if (res.ok) {
@@ -42,55 +83,43 @@ import { API_URL } from "./api";
       setLikes(likesCount);
     }
   };
- 
-  const  handlecomment=()=>{
-    route.push('/comments?target_id='+id);
 
+  const handleIdUser = () => {
+    if (!id) return;
+    sessionStorage.setItem('selectedUserProfile', JSON.stringify(id));
+    router.push('/profile');
   }
+  
+  const handleComment = () => {
+    router.push('/comments?target_id=' + id);
+  }
+  
   return (
     <>
-      <div className={`post ${classes.post}`} >
+      <div className={`post ${classes.comment || ""} ${className || ""}`}>
         <div className="post-header">
           <div className="post-author">
-         
-            {avatarUrl ?(
-                  <Link href={{ pathname:  `/profile/${nickName}` }}>
-                  <img
-                  // onClick={()=>handleIduser(nickName)} 
-                    src={`${API_URL}/${avatarUrl}`}
-                    alt="Post"
-                     className="avatar" 
-                   />
-                  
-                  </Link>
-        ): (
-          <div className="avatar" ></div>
-        )
-        
-        }  
+            {avatarUrl ? (
+              <img
+                onClick={handleIdUser} 
+                src={avatarUrl}
+                alt="User avatar"
+                className="avatar" 
+              />
+            ) : (
+              <div className="avatar" onClick={handleIdUser}></div>
+            )}
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
-              <p className="text-muted">@{nickName}</p>
-              <p className="text-muted">{createdAt}</p>
+              <p className="text-muted">{formattedCreatedAt}</p>
             </div>
           </div>
         </div>
         <p>{content}</p>
-        {imageUrl && (
-          <img
-            src={`${API_URL}/${imageUrl}`}
-            alt="Post"
-            className="image-posts"
-            style={{ width: "100%", height: "auto",borderRadius:"10px" }}
-          />
-        )}
-         <div className="post-actions">
+        <div className="post-actions">
           <div
-            className={"like" + (like ? " active" : "")}
-            onClick={() => {
-              handleLike();
-              //  setLike(!like)
-            }}
+            className={`like${like ? " active" : ""}`}
+            onClick={handleLike}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +140,7 @@ import { API_URL } from "./api";
             </svg>
             <span>{likes}</span>
           </div>
-          <div className="comment" onClick={handlecomment}>
+          <div className="comment" onClick={handleComment}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
