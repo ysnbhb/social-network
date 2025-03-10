@@ -1,13 +1,15 @@
 package models
 
 type CommentRequest struct {
-	Id        int    `json:"id"`
-	UserId    int    `json:"userId"`
-	CardId    int    `json:"cardId"`
-	TargetId  int    `json:"targetId"`
-	Content   string `json:"content"`
-	GroupId   int    `json:"groupId"`
-	CreatedAt string `json:"createdAt"`
+	Id         int    `json:"id"`
+	UserId     int    `json:"userId"`
+	CardId     int    `json:"cardId"`
+	TargetId   int    `json:"targetId"`
+	Content    string `json:"content"`
+	GroupId    int    `json:"groupId"`
+	CreatedAt  string `json:"createdAt"`
+	ImageUrl   string `json:"imageUrl"`
+	ImgContant []byte `json:"-"`
 }
 
 type CommentResponse struct {

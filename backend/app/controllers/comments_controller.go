@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 	"log"
 	"net/http"
 	"strconv"
@@ -19,7 +19,7 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err := r.ParseMultipartForm(10 << 20) // 10 MB max memory
+	err := r.ParseMultipartForm(10 << 20)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("error parsing multipart form:", err)
@@ -27,7 +27,7 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var commentRequest models.CommentRequest
-	
+
 	content := r.FormValue("content")
 	groupIdStr := r.FormValue("groupId")
 	target := r.FormValue("targetId")
@@ -37,23 +37,39 @@ func CreateComments(w http.ResponseWriter, r *http.Request) {
 		log.Println("error converting groupId to int:", err)
 		return
 	}
+	file, headerFiel, _ := r.FormFile("image")
+	if file != nil {
+		commentRequest.ImgContant, err = utils.LimitRead(file, 3*1024*1024)
+		if err != nil {
+			utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		err = utils.ValidImg(headerFiel.Header.Get("Content-Type"), headerFiel.Size)
+		if err != nil {
+			utils.JsonResponse(w, errors.New("validating image: "+err.Error()), http.StatusBadRequest)
+			return
+		}
+		if utils.IsSVG(commentRequest.ImgContant) {
+			utils.JsonResponse(w, "img is svg", http.StatusBadRequest)
+			return
+		}
+	}
 	commentRequest.Content = content
 	commentRequest.GroupId = groupId
 	commentRequest.TargetId, err = strconv.Atoi(target)
 
 	user := r.Context().Value("userId").(int)
 	commentRequest.UserId = user
-	
+
 	// Add the comment
-	err = services.AddComments(&commentRequest)
+	card, err := services.AddComments(&commentRequest)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println(err)
 		return
 	}
 
-	// Success response
-	utils.JsonResponse(w, "Comment created successfully", http.StatusCreated)
+	utils.JsonResponse(w, card, http.StatusOK)
 }
 
 func GetComments(w http.ResponseWriter, r *http.Request) {
@@ -61,14 +77,11 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	fmt.Println("method pass success <<<1>>>")
 	cardId, err := strconv.Atoi(r.FormValue("target_id"))
 	if err != nil {
 		utils.JsonResponse(w, "Status Bad Request", http.StatusBadRequest)
 		return
 	}
-	fmt.Println(cardId, " << cardId pass success <<<2>>>")
-
 	userId := r.Context().Value("userId").(int)
 	var commentsResponse []models.CommentResponse
 	err = services.GetComments(&commentsResponse, userId, cardId)
@@ -76,8 +89,6 @@ func GetComments(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "Error getting comments", http.StatusInternalServerError)
 		log.Println(err)
 	}
-	fmt.Println(commentsResponse, " << comment resp pass success <<<1>>>")
-
 	err = json.NewEncoder(w).Encode(commentsResponse)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)

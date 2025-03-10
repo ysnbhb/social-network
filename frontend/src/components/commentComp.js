@@ -1,14 +1,15 @@
-"use client"
+"use client";
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
+import { API_URL } from "./api";
 
 // Function to format date as "time ago"
-function timeAgo(dateString) {
+export function timeAgo(dateString) {
   const date = new Date(dateString);
   const now = new Date();
   const secondsAgo = Math.floor((now - date) / 1000);
-  
+
   if (isNaN(secondsAgo) || secondsAgo < 0) {
     return "just now";
   }
@@ -20,7 +21,7 @@ function timeAgo(dateString) {
     day: 86400,
     hour: 3600,
     minute: 60,
-    second: 1
+    second: 1,
   };
 
   let counter;
@@ -30,19 +31,17 @@ function timeAgo(dateString) {
       return counter === 1 ? `1 ${unit} ago` : `${counter} ${unit}s ago`;
     }
   }
-  
+
   return "just now";
 }
 
-export function CommentCompte({ comment, className, classes = {} }) {  
+export function CommentCompte({ comment, className, classes = {} }) {
   const router = useRouter();
-  
-  // Early return if comment is undefined or null
+
   if (!comment) {
-    return null; // Or return a loading/placeholder component
+    return null; 
   }
-  
-  // Destructure with default values to prevent errors
+
   const {
     id = "",
     content = "",
@@ -54,18 +53,18 @@ export function CommentCompte({ comment, className, classes = {} }) {
     totalComments = 0,
     totalLikes = 0,
     avatarUrl = "",
-  } = comment || {}; 
-  
-  // Format the date as "time ago"
+    imageUrl
+  } = comment || {};
+
   const formattedCreatedAt = timeAgo(createdAt);
-  
+
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
-  
+
   const handleLike = async () => {
     if (!id) return;
-    
-    const res = await fetch("/api/user/reactions", {
+
+    const res = await fetch(`${API_URL}/api/user/reactions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,6 +73,7 @@ export function CommentCompte({ comment, className, classes = {} }) {
         cardId: id,
         ReactionType: 1,
       }),
+      credentials: "include",
     });
 
     if (res.ok) {
@@ -86,14 +86,13 @@ export function CommentCompte({ comment, className, classes = {} }) {
 
   const handleIdUser = () => {
     if (!id) return;
-    sessionStorage.setItem('selectedUserProfile', JSON.stringify(id));
-    router.push('/profile');
-  }
-  
+    router.push(`/profile/${nickName}`);
+  };
+
   const handleComment = () => {
-    router.push('/comments?target_id=' + id);
-  }
-  
+    router.push("/comments?target_id=" + id);
+  };
+
   return (
     <>
       <div className={`post ${classes.comment || ""} ${className || ""}`}>
@@ -101,10 +100,10 @@ export function CommentCompte({ comment, className, classes = {} }) {
           <div className="post-author">
             {avatarUrl ? (
               <img
-                onClick={handleIdUser} 
-                src={avatarUrl}
+                onClick={handleIdUser}
+                src={API_URL + avatarUrl}
                 alt="User avatar"
-                className="avatar" 
+                className="avatar"
               />
             ) : (
               <div className="avatar" onClick={handleIdUser}></div>
@@ -116,11 +115,16 @@ export function CommentCompte({ comment, className, classes = {} }) {
           </div>
         </div>
         <p>{content}</p>
+        {imageUrl && (
+          <img
+            src={`${API_URL}/${imageUrl}`}
+            alt="Post"
+            className="image-posts"
+            style={{ width: "100%", height: "auto",borderRadius:"10px" }}
+          />
+        )}
         <div className="post-actions">
-          <div
-            className={`like${like ? " active" : ""}`}
-            onClick={handleLike}
-          >
+          <div className={`like${like ? " active" : ""}`} onClick={handleLike}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

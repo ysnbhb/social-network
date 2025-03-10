@@ -9,17 +9,28 @@ import (
 	"social-network/pkg/utils"
 )
 
-func AddComments(commentRequest *models.CommentRequest) error {
+func AddComments(commentRequest *models.CommentRequest) (*models.PostsResponse, error) {
 	err := utils.ValidateComment(commentRequest)
 	if err != nil {
-		return errors.New("validating comment:")
+		return nil, errors.New("validating comment:")
+	}
+	if len(commentRequest.ImgContant) != 0 {
+		commentRequest.ImageUrl, err = utils.SaveImg(commentRequest.ImgContant)
+		if err != nil {
+			return nil, errors.New("field to save image")
+		}
+	}
+	groupId := repo.GetGroupIdFromPost(commentRequest.TargetId)
+	commentRequest.GroupId = groupId
+	if commentRequest.GroupId != 0 && !repo.CheckUserInGroup(commentRequest.GroupId, commentRequest.UserId) {
+		return nil, errors.New("you can't comment in this group")
 	}
 	commentRequest.Content = html.EscapeString(commentRequest.Content)
-	err = repo.AddComment(commentRequest)
+	card, err := repo.AddComment(commentRequest)
 	if err != nil {
-		return errors.New("adding comment to db:")
+		return nil, errors.New("adding comment in db:")
 	}
-	return nil
+	return repo.GetOneCard(card, commentRequest.UserId)
 }
 
 func GetComments(CommentResponse *[]models.CommentResponse, userId int, cardId int) error {

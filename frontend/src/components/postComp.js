@@ -4,6 +4,7 @@ import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { API_URL } from "./api";
+import { timeAgo } from "./commentComp";
  export function PostCompte({ post  , className, classes = {} }) {  
    
   const {
@@ -19,6 +20,7 @@ import { API_URL } from "./api";
     totalLikes,
     avatarUrl,
   } = post; 
+  const route = useRouter();
   
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
@@ -49,7 +51,7 @@ import { API_URL } from "./api";
   }
   return (
     <>
-      <div className={`post ${classes.post}`} >
+      <div className={`post`} >
         <div className="post-header">
           <div className="post-author">
          
@@ -71,18 +73,24 @@ import { API_URL } from "./api";
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
               <p className="text-muted">@{nickName}</p>
-              <p className="text-muted">{createdAt}</p>
+              <p className="text-muted">{timeAgo(createdAt)}</p>
             </div>
           </div>
         </div>
         <p>{content}</p>
         {imageUrl && (
-          <img
+          <div style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}>
+            <img
             src={`${API_URL}/${imageUrl}`}
             alt="Post"
             className="image-posts"
-            style={{ width: "100%", height: "auto",borderRadius:"10px" }}
           />
+          </div>
+          
         )}
          <div className="post-actions">
           <div

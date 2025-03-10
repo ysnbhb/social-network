@@ -2,19 +2,19 @@ package repo
 
 import (
 	"fmt"
+
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
 
-func AddComment(commentRequest *models.CommentRequest) error {
-	cardId, err := CreateCard(commentRequest.UserId, commentRequest.GroupId, commentRequest.Content, "")
+func AddComment(commentRequest *models.CommentRequest) (int, error) {
+	cardId, err := CreateCard(commentRequest.UserId, commentRequest.GroupId, commentRequest.Content, commentRequest.ImageUrl)
 	if err != nil {
-		return err
+		return 0, err
 	}
-	fmt.Println("target id>>>>.", commentRequest.TargetId)
 	query := `INSERT INTO comments(card_id, target_id) VALUES(?, ?);`
 	_, err = db.DB.Exec(query, cardId, commentRequest.TargetId)
-	return err
+	return cardId, err
 }
 
 func GetComments(commentsResponse *[]models.CommentResponse, userId int, targetcardId int) error {
@@ -29,7 +29,10 @@ func GetComments(commentsResponse *[]models.CommentResponse, userId int, targetc
 		u.nickname,
 		c.image_url,
 		COALESCE(u.avatar_url , '') AS avatar_url,
-		COUNT(DISTINCT cm.id) AS total_comments,
+		COALESCE((SELECT COUNT(*)
+        FROM comments cm
+        WHERE cm.target_id = c.id 
+        GROUP BY cm.card_id) , 0) AS total_comments,
 		COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
 		(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = ?)) AS isliked
 	FROM card c
@@ -83,6 +86,5 @@ func GetComments(commentsResponse *[]models.CommentResponse, userId int, targetc
 		}
 		*commentsResponse = append(*commentsResponse, comment)
 	}
-	fmt.Println("commentsResponse>>>>.   ", *commentsResponse)
 	return rows.Err()
 }

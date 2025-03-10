@@ -518,3 +518,149 @@
 2025/03/09 12:28:17 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
 2025/03/09 12:28:31 Websocket_controller.go:46: Failed to read message: websocket: close 1001 (going away)
 >>>>>>> origin/mbakhouc
+2025/03/10 13:21:34 server.go:27: Starting server on :8080
+2025/03/10 13:21:59 user_repo.go:33: <nil>
+2025/03/10 13:21:59 auth_controller.go:37: bhb475
+2025/03/10 13:22:23 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:22:31 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:23:35 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:23:44 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:24:31 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:24:32 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:24:35 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:24:59 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:25:17 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:25:27 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:30:20 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:30:35 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:31:46 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:31:47 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:32:15 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:32:16 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:33:06 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:33:15 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:33:43 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:34:04 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:34:11 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:44:22 server.go:27: Starting server on :8080
+2025/03/10 13:44:51 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:45:04 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:46:44 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:48:08 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:48:36 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:48:47 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:48:50 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:48:56 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:49:00 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:52:29 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:52:59 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:54:45 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:54:55 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:55:58 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:56:44 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:56:47 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:57:42 group_service.go:195: 2025-03-07T13:57
+2025/03/10 13:57:48 group_service.go:195: 2025-03-14T13:57
+2025/03/10 13:58:00 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 14:21:10 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 14:50:28 server.go:27: Starting server on :8080
+2025/03/10 14:51:57 server.go:27: Starting server on :8080
+2025/03/10 14:52:08 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 14:52:08 server.go:3634: http: superfluous response.WriteHeader call from social-network/pkg/utils.JsonResponse (json_response.go:10)
+2025/03/10 14:52:25 server.go:27: Starting server on :8080
+2025/03/10 14:52:27 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 14:52:27 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 14:52:28 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 14:52:28 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 14:52:40 server.go:27: Starting server on :8080
+2025/03/10 14:57:43 server.go:27: Starting server on :8080
+2025/03/10 14:58:45 server.go:27: Starting server on :8080
+2025/03/10 14:59:10 posts_controller.go:50: 0
+2025/03/10 14:59:29 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 14:59:56 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:00:18 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:00:29 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:00:39 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:01:36 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:02:16 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:02:25 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:02:28 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:02:30 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:02:31 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:10:37 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:11:46 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:11:54 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:12:55 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:14:10 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:28:20 server.go:27: Starting server on :8080
+2025/03/10 15:30:34 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:30:53 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:32:06 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:33:50 server.go:27: Starting server on :8080
+2025/03/10 15:37:11 server.go:27: Starting server on :8080
+2025/03/10 15:38:23 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:38:40 server.go:27: Starting server on :8080
+2025/03/10 15:39:26 server.go:27: Starting server on :8080
+2025/03/10 15:40:22 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:41:13 server.go:27: Starting server on :8080
+2025/03/10 15:42:27 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:42:36 posts_controller.go:50: 0
+2025/03/10 15:44:15 server.go:27: Starting server on :8080
+2025/03/10 15:46:01 server.go:27: Starting server on :8080
+2025/03/10 15:46:38 posts_controller.go:50: 0
+2025/03/10 15:47:57 server.go:27: Starting server on :8080
+2025/03/10 15:48:42 server.go:27: Starting server on :8080
+2025/03/10 15:48:45 post_repo.go:59: <nil>
+2025/03/10 15:49:01 post_repo.go:59: sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 15:52:24 server.go:27: Starting server on :8080
+2025/03/10 15:52:38 comments_controller.go:69: sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 15:53:16 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:54:35 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 15:54:40 comments_controller.go:69: sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 15:59:17 server.go:27: Starting server on :8080
+2025/03/10 16:06:21 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:06:33 server.go:27: Starting server on :8080
+2025/03/10 16:06:41 comments_controller.go:68: adding comment to db:
+2025/03/10 16:07:36 server.go:27: Starting server on :8080
+2025/03/10 16:07:45 comments_controller.go:68: adding comment to db:
+2025/03/10 16:08:04 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:08:41 server.go:27: Starting server on :8080
+2025/03/10 16:08:52 comments_controller.go:68: adding comment in db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:10:14 server.go:27: Starting server on :8080
+2025/03/10 16:10:20 comments_controller.go:68: sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:10:46 server.go:27: Starting server on :8080
+2025/03/10 16:11:19 posts_controller.go:50: 0
+2025/03/10 16:11:25 comments_controller.go:68: sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:11:29 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:11:31 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:11:37 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:11:38 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:11:45 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:11:47 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:11:49 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:11:49 home_controller.go:48: getting post from db:sql: Scan error on column index 0, name "id": converting NULL to int is unsupported
+2025/03/10 16:13:10 server.go:27: Starting server on :8080
+2025/03/10 16:14:44 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:14:53 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:16:07 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:16:17 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:16:44 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:16:54 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:17:46 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:17:56 posts_controller.go:50: 0
+2025/03/10 16:17:57 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:18:13 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:18:46 server.go:27: Starting server on :8080
+2025/03/10 16:21:34 server.go:27: Starting server on :8080
+2025/03/10 16:22:17 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:23:38 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:24:22 posts_controller.go:50: 0
+2025/03/10 16:24:54 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:25:08 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:26:31 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:29:47 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:31:17 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:31:20 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:31:40 posts_controller.go:50: 0
+2025/03/10 16:33:36 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 16:35:43 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
