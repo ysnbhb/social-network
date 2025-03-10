@@ -25800,3 +25800,4 @@ net/http.(*conn).serve(0xc000294090, {0x9698a8, 0xc0002240c0})
 	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:2102 +0x625
 created by net/http.(*Server).Serve in goroutine 1
 	/home/omrharbi/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.0.linux-amd64/src/net/http/server.go:3454 +0x485
+2025/03/10 15:49:28 server.go:27: Starting server on :8080

@@ -195,50 +195,58 @@ export default function Profile({ params }) {
 export function Updateprofile() {
   return (
     <div>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2>Account Settings</h2>
-          <button>&times;</button>
-        </div>
-        <div className={styles.tabs}>
-          <button className={styles.active}>Profile</button>
-          <button>Password</button>
-          <button>Email</button>
-          <button>Notification</button>
-          <button>Settings</button>
-        </div>
-        <div className={styles["avatar-section"]}>
-          <img src="https://via.placeholder.com/60" alt="Avatar" />
-          <div>
-            <button>Upload New</button>
-            <button>Delete Avatar</button>
+      <div className={styles.update}>
+        <div className={styles.container}>
+          <div className={styles.header}>
+            <h2>Account Settings</h2>
+            <button>&times;</button>
           </div>
-        </div>
-        <p>Avatar helps your teammates recognize you in Unity.</p>
-        <hr />
-        <div className={styles["form-group"]}>
-          <label>Your Full Name</label>
-          <input type="text"  />
-        </div>
-        <div className={styles["form-group"]}>
-          <label>Role</label>
-          <input type="text"  />
-        </div>
-        <div className={styles["form-group"]}>
-          <label>Location</label>
-          <input type="text" />
-        </div>
-        <div className={styles["form-group"]}>
-          <label>Company</label>
-          <input type="text"  />
-        </div>
-        <div className={styles["form-group"]}>
-          <label>Bio</label>
-          <textarea rows="4" onChange={()=>{const tes=""}}>
+          <div className={styles.tabs}>
+            <button className={styles.active}>Profile</button>
+            <button>Password</button>
+            <button>Email</button>
+            <button>Notification</button>
+            <button>Settings</button>
+          </div>
+          <div className={styles["avatar-section"]}>
+            <img src="https://via.placeholder.com/60" alt="Avatar" />
+            <div>
+              <button>Upload New</button>
+              <button>Delete Avatar</button>
+            </div>
+          </div>
+          <p>Avatar helps your teammates recognize you in Unity.</p>
+          <hr />
+          <div className={styles["form-group"]}>
+            <label>Your Full Name</label>
+            <input type="text" />
+          </div>
+          <div className={styles["form-group"]}>
+            <label>Role</label>
+            <input type="text" />
+          </div>
+          <div className={styles["form-group"]}>
+            <label>Location</label>
+            <input type="text" />
+          </div>
+          <div className={styles["form-group"]}>
+            <label>Company</label>
+            <input type="text" />
+          </div>
+          <div className={styles["form-group"]}>
+            <label>Bio</label>
+            <textarea
+              rows="4"
+              onChange={() => {
+                const tes = "";
+              }}>
               Lead Visual Designer at @Lenovo - Email: dbubu@writetome.net
-          </textarea>
+            </textarea>
+          </div>
+          <button className={styles["update-profile-btn"]}>
+            Update Profile
+          </button>
         </div>
-        <button className={styles["update-profile-btn"]}>Update Profile</button>
       </div>
     </div>
   );
