@@ -4,6 +4,7 @@
         "Creat",
         "divclasses",
         "Gooback",
+        "handule",
         "Homefeed",
         "Iduser",
         "objectfit",
@@ -12,6 +13,7 @@
         "setcheck",
         "setcookies",
         "setdata",
+        "Unfllow",
         "unfollow",
         "Userfollowing"
     ]

@@ -13,8 +13,7 @@ export default  function Home() {
       <main className="main-content">
       <ProfileSide  />
       <HomeFeed  />
-      <ActivitySide 
-           />
+      <ActivitySide />
       </main>
 
     </div>

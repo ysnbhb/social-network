@@ -5,7 +5,7 @@ import Link from "next/link";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
   
- export default function ActivitySidebar({ className, title }) {
+ export default function ActivitySidebar( ) {
   const [user, setUser] = useState([]);
   useEffect(() => {
     async function GetUser() {
@@ -19,7 +19,6 @@ import { API_URL } from "./api";
     GetUser();
   }, []);
   function serchfunc() {
-    console.log("222222222222222");
     
     const search = document.getElementById("search").value;
     console.log("search", search);
@@ -42,8 +41,6 @@ import { API_URL } from "./api";
         <input type="text" placeholder="Search.." id="search"></input>
         <button
           onClick={() => {
-            console.log("111111111111111111111111");
-            
             serchfunc();
           }}
         >
@@ -71,13 +68,10 @@ import { API_URL } from "./api";
 }
 
 export function ShowUnfllowUser({ user }) {
-    const { status, handle } = useHandleFollowers(user.id);
-
+  const { status, handle } = useHandleFollowers(user.id);
    const handuleClick = async () => {
     await handle();  
   };
-  console.log(status);
-  
     return (
     <div className="activity-item">
       <div>
