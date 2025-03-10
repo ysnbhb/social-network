@@ -15,8 +15,8 @@ SELECT DISTINCT
     u.nickname,
     u.avatar_url
 FROM users u
-LEFT JOIN followers f1 ON u.id = f1.following_id AND f1.follower_id = ? AND f1.status = 'accepted'
-LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accepted'
+LEFT JOIN followers f1 ON u.id = f1.following_id AND f1.follower_id = ? AND f1.status = 'accept'
+LEFT JOIN followers f2 ON u.id = f2.follower_id AND f2.following_id = ? AND f2.status = 'accept'
 LEFT JOIN chats c ON (u.id = c.sender_id AND c.recipient_id = ?)
                     OR (u.id = c.recipient_id AND c.sender_id = ?)
 WHERE
