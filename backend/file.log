@@ -152,3 +152,7 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/10 13:36:36 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
 2025/03/10 13:36:40 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
 2025/03/10 13:36:58 posts_controller.go:50: 0
+2025/03/10 13:53:18 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 13:57:32 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 14:01:54 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
+2025/03/10 14:03:37 Websocket_controller.go:47: Failed to read message: websocket: close 1001 (going away)
