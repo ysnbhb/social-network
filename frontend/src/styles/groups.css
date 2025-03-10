@@ -15,9 +15,9 @@
     padding-left: 0.5rem;
 }
 
-.groupsList {
+/* .groupsList {
     padding: 10px;
-}
+} */
 
 .group-item , .invitation-item {
     display: flex;
