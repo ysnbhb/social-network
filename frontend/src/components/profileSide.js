@@ -2,8 +2,8 @@ import useFollowing from "@/app/hooks/useFollowing";
 import "../styles/profileSidebar.css";
 import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Follow, ShowUnfllowUser } from "./activitySide";
+import {  useState } from "react";
+import { Follow } from "./activitySide";
 export default function ProfileSide({ classes }) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
@@ -15,8 +15,7 @@ export default function ProfileSide({ classes }) {
           setcheckFollow(text)
           setdataFollow(data)
           setShowPopup(!showPopup);
-  };
- console.log(follow);
+  }; 
  
   const {
     avatarUrl,
@@ -31,7 +30,6 @@ export default function ProfileSide({ classes }) {
  
   return (
     <div className="profile-page">
-      {showPopup && 
         <div  className="content-area">
         {showPopup && (
           <div className="popup-overlay">
@@ -55,7 +53,6 @@ export default function ProfileSide({ classes }) {
           </div>
         )}
       </div>
-       }
       {profile ? (
         <aside className="profile-sidebar">
           <div className="profile-header">
