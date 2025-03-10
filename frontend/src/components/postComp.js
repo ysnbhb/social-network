@@ -48,31 +48,32 @@ import { API_URL } from "./api";
       <div className={`post ${classes.post}`} >
         <div className="post-header">
           <div className="post-author">
-         
             {avatarUrl ?(
                   <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
-                  // onClick={()=>handleIduser(nickName)} 
-                    src={`${API_URL}/${avatarUrl}`}
+                     src={`${API_URL}/${avatarUrl}`}
                     alt="Post"
                      className="avatar" 
                    />
                   
                   </Link>
-        ): (
-          <div className="avatar" ></div>
-        )
-        
-        }  
-            <div>
-              <h4>{`${firstName} ${lastName}`}</h4>
-              <p className="text-muted">@{nickName}</p>
-              <p className="text-muted">{createdAt}</p>
-            </div>
+                  ): (
+                    <div className="avatar" ></div>
+                  )
+                  
+                  }  
+              <div className="row">
+                  <div className="info-user">
+                  <h4>{`${firstName} ${lastName}`}</h4>
+                  <p className="text-muted nikname">@{nickName}</p>
+                  </div>
+                  <p className="text-muted">{createdAt}</p>
+              </div>
           </div>
         </div>
         <p>{content}</p>
-        {imageUrl && (
+       <div className="image">
+       {imageUrl && (
           <img
             src={`${API_URL}/${imageUrl}`}
             alt="Post"
@@ -80,6 +81,7 @@ import { API_URL } from "./api";
             style={{ width: "100%", height: "auto",borderRadius:"10px" }}
           />
         )}
+       </div>
          <div className="post-actions">
           <div
             className={"like" + (like ? " active" : "")}

@@ -9,7 +9,11 @@
   justify-content: center;
   align-items: center;
 }
-
+.info-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .image-check {
   margin-left: 10px;
 }
@@ -171,11 +175,6 @@
 }
 
 /* Post content */
-.post p {
-  /* margin: 1rem 0; */
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
 
 .hashtag {
   color: #1da1f2;
@@ -450,14 +449,15 @@
 }
 
 .post-author h4 {
-  font-size: 0.95rem;
+  text-transform: capitalize;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
 
 /* Post content */
 .post p {
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -471,10 +471,17 @@
 .hashtag:hover {
   text-decoration: underline;
 }
-
+.image {
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
+}
 /* Post actions */
 img.image-posts {
-  max-height: 400px;
+  display: flex;
+  justify-content: center;
+  max-height: 339px;
+  max-width: 757px !important;
 }
 .post-actions {
   display: flex;
@@ -501,7 +508,9 @@ img.image-posts {
 .text-muted {
   color: #8e8e8e;
 }
-
+.nikname {
+  margin-left: 10px;
+}
 /* Animation */
 @keyframes fly-1 {
   from {
