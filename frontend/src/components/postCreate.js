@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/homeFeed.css";
+import "../styles/groupsFeed.css";
 import { CreatePost } from "../lib/createPost";
 import userProfile from "@/app/hooks/userProfile";
 
@@ -8,10 +9,13 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
   const [postType, setPostType] = useState("public");
   const [img, setImg] = useState(null);
   const [profiledata, errorPro] = userProfile();
+  const [showPopup, setShowPopup] = useState(false);
+  const togglePopup = () => setShowPopup(!showPopup);
   const { avatarUrl } = profiledata;
 
   const handalPost = async (e) => {
     e.preventDefault();
+    
     const res = await CreatePost(content, postType, img, groupid ? groupid : 0);
 
     if (res) {
@@ -23,6 +27,15 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
       // alert("errror");
     }
   };
+
+  useEffect(() => {
+    if (postType === "almostPrivate") {
+      setShowPopup(true);
+    } else {
+      setShowPopup(false);
+    }
+  }, [postType]);
+
   return (
     <div className={`feed ${classes.div_feed}`}>
       <div className="post-creator">
@@ -128,6 +141,50 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
           )}
         </div>
       </div>
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <div className="popup-header">
+              <h2 className="popup-title">Select users who can see your post:</h2>
+              <button className="popup-close" onClick={togglePopup}>
+                &times;
+              </button>
+            </div>
+            <div className="popup-form">
+            {[
+        { name: "bahbib yassine", username: "@yassine334" },
+        { name: "bahbib yassine", username: "@yassine.bahbib" },
+        { name: "bhb bhb", username: "@bhb475" },
+      ].map((user, index) => (
+        <div className="activity-item" key={index}>
+          <div>
+            <p>
+              <strong>{user.name}</strong>
+            </p>
+            <p className="text-muted">{user.username}</p>
+          </div>
+          <button>select</button>
+        </div>
+      ))}
+              <div className="popup-actions">
+                <button
+                  type="button"
+                  className="btn-cancel"
+                  onClick={togglePopup}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn-create" onClick={(e) => {
+                  e.preventDefault();
+                  handleJoinGroup()
+                }}>
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

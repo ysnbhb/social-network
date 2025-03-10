@@ -8,12 +8,15 @@ import {
   SendOnlineStatus,
 } from "../websocket/websocket.js";
 import { useRouter } from "next/navigation";
+import { API_URL } from "./api";
 export default function Navbar() {
 
 
   function logout() {
     document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    fetch("/api/logout")
+    fetch(`${API_URL}/api/logout`, {
+      credentials : "include"
+    })
     router.push("/login");
   }
 

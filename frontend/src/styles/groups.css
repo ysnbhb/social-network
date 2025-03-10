@@ -4,6 +4,7 @@
     padding: 1.5rem 0.5rem 1rem 0.5rem;
     position: -webkit-sticky;
     top: 80px;
+    position: sticky;
     height: -moz-fit-content;
     height: fit-content;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

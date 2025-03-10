@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { API_URL } from './api';
 
 export default function GroupMembers({ id }) {
     const [members, setMembers] = useState(null);
     const Router = useRouter();
     useEffect(() => {
         if (id) {
-            fetch(`/api/group/members?groupid=${id}`, {
+            fetch(`${API_URL}/api/group/members?groupid=${id}`, {
                 method: 'GET',
                 credentials: 'include'
             })

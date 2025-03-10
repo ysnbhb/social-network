@@ -145,9 +145,15 @@ body {
     display: flex;
     flex-direction: column;
   }
+
   .main-content .activity-sidebar,
   .main-content .groupInvitations {
     order: -1;
+    position: static;
+  }
+  
+  .main-content .myGroupsSide {
+    position: static;
   }
 
   .main-content .profile-page{
