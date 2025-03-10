@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Popup</title>
+   <style>
+ 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+        
+        .popup {
+            background-color: #1a1a1b;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 550px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .popup-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        
+        .popup-title {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .icon {
+            margin-right: 10px;
+            transform: rotate(45deg);
+        }
+        
+        .close-button {
+            background: none;
+            border: none;
+            color: #818384;
+            font-size: 20px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .popup-content {
+            color: #d7dadc;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        
+        .popup-content a {
+            color: #4f9eed;
+            text-decoration: none;
+        }
+        
+        .popup-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .popup-button {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .button {
+            background-color: #4f9eed;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .button:hover {
+            background-color: #3d7dcb;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+   </style>
+</head>
+<body>
+
+    <div class="background"></div>
+        <div class="popup">
+            <div class="popup-header">
+            <span class="close-btn">&times;</span>
+            <div class="popup-title">
+                <span class="icon">📌</span>
+                r/mildlinfuriating est une communauté bannie
+            </div>
+            <button class="close-button">✕</button>
+        </div>
+        
+        <div class="popup-content">
+            Tu es d'accord qu'en utilisant ce site tu acceptes le <a href="#">Le Contrat d'utilisation de Reddit</a> et la <a href="#">Politique de confidentialité</a>.
+        </div>
+        
+        <div class="popup-button">
+            <button class="button">Parcourir d'autres communautés</button>
+        </div>
+    </div>
+ 
+    <script  >
+       document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.querySelector('.close-btn');
+    const popup = document.getElementById('popup');
+
+    closeBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+});
+    </script>
+</body>
+</html>

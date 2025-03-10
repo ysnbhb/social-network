@@ -1,4 +1,5 @@
- import { useEffect, useState } from "react";
+ import { API_URL } from "@/components/api";
+import { useEffect, useState } from "react";
 
 export default function userProfile(params){ 
     const [profile,setProfile] =useState([])
@@ -6,8 +7,8 @@ export default function userProfile(params){
     
     const fetchProfile=async ()=>{
          const endpoint = params? 
-         `/api/profile?username=${params}` 
-         :"/api/profile"
+         `${API_URL}/api/profile?username=${params}` 
+         :`${API_URL}/api/profile`
         try {
             const response = await fetch(endpoint,{
                 credentials:'include'
@@ -24,9 +25,10 @@ export default function userProfile(params){
             setError(error.message)
         }
     }
-    useEffect(() => {
-         fetchProfile();
-    }, [params])
+   
+  useEffect(() => {
+    fetchProfile();
+  }, [params]);
 
-    return [profile, error]
+  return [profile, error];
 }

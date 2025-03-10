@@ -4,6 +4,7 @@ import "../styles/homeFeed.css";
 import { PostCompte } from "./postComp";
 import PostCreater from "./postCreate";
 import IsLoading from "./isloading";
+import { API_URL } from "./api";
 
 export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts"}) {
   const [posts, setPosts] = useState([]);
@@ -12,7 +13,7 @@ export default function HomeFeed({ className, classes = {}  ,  ishome = true , g
 
   const GetPost = async () => {
     setLoading(true);
-    const response = await fetch(`${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`, {
+    const response = await fetch(`${API_URL}${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

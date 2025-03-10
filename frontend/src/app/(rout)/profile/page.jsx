@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./[name]/profile.module.css";
 import bag from "../../../components/images/pxfuel.jpg";
@@ -10,13 +10,14 @@ import { notFound, useRouter } from "next/navigation";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "../../hooks/usehandleFollower";
 
-export default function Profile() {
+export default function Profile({searchParams}) {
   const router = useRouter();
   // const [username, setUsername] = useState(null);
   const [userLogin, setUserLogin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const searchParams = new URLSearchParams(window.location.search);
-  const usernames = searchParams.get('username');
+  // const searchParams = new URLSearchParams(window.location.search);
+  // const usernames = searchParams.get('username');
+  const {usernames} = use(searchParams)
   if (usernames === null) {
     notFound();
   }

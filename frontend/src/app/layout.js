@@ -1,7 +1,5 @@
 "use client";
-import { useEffect } from 'react';
-import { initializeWebSocket } from "../websocket/websocket.js";
-import Navbar from '../components/navbar.js';
+import { useEffect } from 'react'; 
 import { ContextProvider } from '../lib/Context.js';
 import "./globals.css";
 

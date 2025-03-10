@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import "../styles/groupsFeed.css";
+import { API_URL } from "./api";
 // import GroupList from "./groupList";
 
 export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
@@ -11,7 +12,7 @@ export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
   const [description, setDescription] = useState("");
   // const [groups, setGroups] = useState([]);
   const handleJoinGroup = async () => {
-    const res = await fetch("/api/group/create", {
+    const res = await fetch(`${API_URL}/api/group/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +37,7 @@ export default function GroupsFeed({ unjoined, setUnjoined, setJoinedGroup }) {
 
   useEffect(() => {
     const fetchGroups = async () => {
-      const response = await fetch("/api/group/unjoinedgroups", {
+      const response = await fetch(`${API_URL}/api/group/unjoinedgroups`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -121,7 +122,7 @@ function Unjoined({ group }) {
   const [statusingroup, setStatus] = useState(status);
   console.log();
   async function JoinToGroup(acceptJoin = 1) {
-    const res = await fetch(`/api/group/join?groupId=${id}`, {
+    const res = await fetch(`${API_URL}/api/group/join?groupId=${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

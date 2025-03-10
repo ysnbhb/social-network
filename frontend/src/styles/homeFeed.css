@@ -92,7 +92,6 @@
   transform: scale(0.95);
 }
 
-/* Post options */
 .post-options {
   display: flex;
   justify-content: space-between;
@@ -380,6 +379,25 @@
   stroke: #1da1f2;
 }
 
+.like.active svg {
+  animation: likeAnimation 0.5s ease-in-out;
+}
+
+@keyframes likeAnimation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .privacy {
   display: flex;
   align-items: center;
@@ -447,6 +465,9 @@
 }
 
 /* Post actions */
+img.image-posts{
+  max-height: 400px;
+}
 .post-actions {
   display: flex;
   gap: 2rem;

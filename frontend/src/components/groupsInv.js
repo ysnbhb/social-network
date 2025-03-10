@@ -1,11 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { API_URL } from "./api";
 
 export default function GroupsInv({ setInvition, invition , setJoinedGroup , setUnjoined }) {
   useEffect(() => {
     async function GetInvition() {
-      const res = await fetch(`/api/group/invitations`);
+      const res = await fetch(`${API_URL}/api/group/invitations` , {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
       const data = await res.json();
       console.log(data);
       setInvition(data);
@@ -34,7 +41,7 @@ export function Groupinv({ group, setJoinedGroup   , setUnjoined}) {
   const [totalmembers, setTotalmembers] = useState(totalMembers);
 
   async function JoinToGroup(acceptJoin = 1) {
-    const res = await fetch(`/api/group/join?groupId=${id}`, {
+    const res = await fetch(`${API_URL}/api/group/join?groupId=${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
