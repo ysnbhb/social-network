@@ -62,7 +62,6 @@
 }
 
 .notification-list .notification:first-child {
-
     border-radius: 7px 7px 0 0;
 }
 
@@ -106,3 +105,14 @@
     margin-top: 4px;
 }
 
+.notification{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px 15px 15px 15px;
+}
+.notification:hover{
+    scale: 1.02;
+}
+.notification:active{
+    scale: 0.95;
+}

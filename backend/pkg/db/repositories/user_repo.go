@@ -111,15 +111,15 @@ func GetUserIdByNickName(nickname string) int {
 	return userId
 }
 
-func GetUserIdById(nickname int) string {
-	query := `SELECT u.nickname FROM users u WHERE id = ?`
-	var userName string
-	err := db.DB.QueryRow(query, nickname).Scan(&userName)
-	if err != nil {
-		return ""
-	}
-	return userName
-}
+// func GetUserIdById(nickname int) string {
+// 	query := `SELECT u.nickname FROM users u WHERE id = ?`
+// 	var userName string
+// 	err := db.DB.QueryRow(query, nickname).Scan(&userName)
+// 	if err != nil {
+// 		return ""
+// 	}
+// 	return userName
+// }
 
 func UpdateProfile(user *models.User) error {
 	query := `UPDATE users 

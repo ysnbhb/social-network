@@ -1,7 +1,7 @@
 "use client";
 // import "../styles/chat.css";
 import "../styles/chatgroup.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { sendMessageGroupeIsRead } from "@/websocket/messages";
 import { sendMessageGroup } from "@/websocket/messages";
 export default function ChatBoxGroup({ groupid }) {
