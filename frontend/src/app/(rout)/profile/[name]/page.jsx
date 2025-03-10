@@ -9,8 +9,10 @@ import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
+import { useRouter } from "next/navigation";
 
 export default function Profile({ params }) {
+  const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
   const [cookie, setcookies] = useState(null);
@@ -120,7 +122,11 @@ export default function Profile({ params }) {
                             follow
                           </button>
                         )}
-                        <button className={style.moreButton}>
+                        <button
+                          onClick={() => {
+                            router.push(`/chat/${nickName}`);
+                          }}
+                          className={style.moreButton}>
                           Send Message
                         </button>
                       </div>

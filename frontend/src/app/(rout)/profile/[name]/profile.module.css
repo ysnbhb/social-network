@@ -117,9 +117,9 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  gap: 20px;
+  /* gap: 20px; */
   height: 92vh;
-  padding: 6px;
+  padding: 15px;
 }
 
 .card-profile::-webkit-scrollbar {

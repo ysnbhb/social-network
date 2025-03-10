@@ -16,7 +16,6 @@ func GetNotification(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "failed to get notification", http.StatusInternalServerError)
 		return
 	}
-
 	err = json.NewEncoder(w).Encode(dataNotification)
 	if err != nil {
 		utils.JsonResponse(w, err.Error(), http.StatusInternalServerError)

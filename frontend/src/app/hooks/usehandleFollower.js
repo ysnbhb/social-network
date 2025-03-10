@@ -7,8 +7,6 @@ export default function useHandleFollowers(param) {
 
   const handle = async () => {
     try {
-      console.log("test");
-
       const res = await fetch(`${API_URL}/api/follow`, {
         method: "POST",
         headers: {
