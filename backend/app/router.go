@@ -21,7 +21,7 @@ func SetupRoutes() http.Handler {
 	mux.Handle("/api/group/invitations", middleware.AuthMiddleware(http.HandlerFunc(controllers.ListInviGroups)))
 	mux.Handle("/api/group/create", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateGroup)))
 	mux.Handle("/api/group/join", middleware.AuthMiddleware(http.HandlerFunc(controllers.JoinToGroup)))
-	mux.Handle("/api/group/accepjoin", middleware.AuthMiddleware(http.HandlerFunc(controllers.AcceptJoin)))
+	mux.Handle("/api/group/acceptjoin", middleware.AuthMiddleware(http.HandlerFunc(controllers.AcceptJoin)))
 	mux.Handle("/api/group/posts", middleware.AuthMiddleware(http.HandlerFunc(controllers.GetGroupPost)))
 	mux.Handle("/api/group/groupInfo", middleware.AuthMiddleware(http.HandlerFunc(controllers.GroupInfo)))
 	mux.Handle("/api/group/create/event", middleware.AuthMiddleware(http.HandlerFunc(controllers.CreateEvent)))
