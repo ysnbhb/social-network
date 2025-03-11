@@ -2,6 +2,7 @@
 import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
+import styles from "./updateProfile.module.css";
 import bag from "@/components/images/pxfuel.jpg";
 import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
@@ -64,7 +65,7 @@ export default function Profile({ params }) {
         <PopUpError />
       ) : (
         <div>
-          {showPopup && <Updateprofile />}
+          {showPopup && <Updateprofile data={profiledata} />}
 
           {isLoading ? (
             <IsLoading></IsLoading>
@@ -192,62 +193,94 @@ export default function Profile({ params }) {
   );
 }
 
-export function Updateprofile() {
+export function Updateprofile({data}) {
+    console.log(data
+    );
+    
   return (
-    <div>
-      <div className={styles.update}>
-        <div className={styles.container}>
-          <div className={styles.header}>
-            <h2>Account Settings</h2>
-            <button>&times;</button>
-          </div>
-          <div className={styles.tabs}>
-            <button className={styles.active}>Profile</button>
-            <button>Password</button>
-            <button>Email</button>
-            <button>Notification</button>
-            <button>Settings</button>
-          </div>
-          <div className={styles["avatar-section"]}>
-            <img src="https://via.placeholder.com/60" alt="Avatar" />
-            <div>
-              <button>Upload New</button>
-              <button>Delete Avatar</button>
-            </div>
-          </div>
-          <p>Avatar helps your teammates recognize you in Unity.</p>
-          <hr />
-          <div className={styles["form-group"]}>
-            <label>Your Full Name</label>
-            <input type="text" />
-          </div>
-          <div className={styles["form-group"]}>
-            <label>Role</label>
-            <input type="text" />
-          </div>
-          <div className={styles["form-group"]}>
-            <label>Location</label>
-            <input type="text" />
-          </div>
-          <div className={styles["form-group"]}>
-            <label>Company</label>
-            <input type="text" />
-          </div>
-          <div className={styles["form-group"]}>
-            <label>Bio</label>
-            <textarea
-              rows="4"
-              onChange={() => {
-                const tes = "";
-              }}>
-              Lead Visual Designer at @Lenovo - Email: dbubu@writetome.net
-            </textarea>
-          </div>
-          <button className={styles["update-profile-btn"]}>
-            Update Profile
-          </button>
+    <div className={styles.update}>
+      <div className={styles.container}>
+         <div className={styles.header}>
+          <h2>Account Settings</h2>
+          <button className={styles.closeButton}>×</button>
         </div>
+         
+           <h3>Your Avatar</h3>
+          <div className={styles.avatarContainer}>
+            
+            <span className={styles["Circle-avart"]}>
+                    <img
+                      src={`${API_URL}${data.avatarUrl}`}
+                      className={`${styles["avatarContainer-profile"]} ${style.avatarContainer}`}
+                      srcSet=""
+                      alt="User Avatar"
+                      layout="fill"
+                      objectfit="cover"
+                    />
+                  </span>
+            
+          
+          <p className={styles.avatarText}>Avatar help your teammates recognize you in Unity.</p>
+        </div>
+        
+        <hr className={styles.hr} />
+        
+        {/* Form fields - first row */}
+        <div className={styles.formRow}>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>First Name</label>
+            <input 
+              className={styles.input} 
+              type="text" 
+              defaultValue={data.firstName}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Last Name</label>
+            <input 
+              className={styles.input} 
+              type="text" 
+              defaultValue={data.lastName}
+            />
+          </div>
+        </div>
+        
+        {/* Form fields - second row */}
+        <div className={styles.formRow}>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>User Name</label>
+            <input 
+              className={styles.input} 
+              type="text" 
+              defaultValue={data.nickName}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Email</label>
+            <input 
+              className={styles.input} 
+              type="text" 
+              defaultValue={data.email}
+            />
+          </div>
+        </div>
+        
+        {/* Bio textarea */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>About Me</label>
+          <textarea
+            className={styles.textarea}
+            rows="4"
+            defaultValue={data.aboutMe}
+          />
+        </div>
+        
+        {/* Update profile button */}
+        <button className={styles.updateButton}>
+          Update Profile
+        </button>
       </div>
     </div>
   );
+  
 }
