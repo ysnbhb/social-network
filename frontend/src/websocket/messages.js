@@ -2,6 +2,7 @@
 import { safeSend } from "./websocket.js";
 import { sendNotification } from "./notification.js";
 import { useEffect } from "react";
+import { API_URL } from "@/components/api.js";
 
 export function Getmessagesusers(data) {
     const messages = data.messages;
@@ -21,7 +22,7 @@ export function Getmessagesusers(data) {
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
             dev.innerHTML = `
                     <div class="sender-info">
-                        <img src="${info.avatar_url}" class="avatar"/>
+                        <img src="${API_URL}${info.avatar_url}" class="avatar"/>
                         <span>${info.sender}</span>
                         <span class="time">${info.timestamp}</span>
                     </div>
@@ -88,7 +89,7 @@ export function receiveMessageuser(data) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <img src="${data.avatar_url}" class="avatar"/>
+                    <img src="${API_URL}${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
@@ -145,7 +146,7 @@ export function receiveMessageGroup(data) {
             messageplace.innerHTML += `
              <div class="message ${data.sender !== data.you ? "sender" : "receiver"}">
                     <div class="sender-info">
-                    <img src="${data.avatar_url}" class="avatar"/>
+                    <img src="${API_URL}${data.avatar_url}" class="avatar"/>
                     <span>${data.sender}</span>
                     <span class="time">${data.time}</span>
                     </div>
@@ -199,7 +200,7 @@ export function Getmessagesgroups(data) {
             dev.classList.add("message", info.sender !== data.you ? "sender" : "receiver");
             dev.innerHTML = `
                     <div class="sender-info">
-                        <img src="${info.avatar_url}" class="avatar"/>
+                        <img src="${API_URL}${info.avatar_url}" class="avatar"/>
                         <span>${info.sender}</span>
                         <span class="time">${info.timestamp}</span>
                     </div>

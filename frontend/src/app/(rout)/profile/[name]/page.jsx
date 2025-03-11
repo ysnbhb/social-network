@@ -10,6 +10,7 @@ import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
 import { useRouter } from "next/navigation";
+import { API_URL } from "@/components/api";
 
 export default function Profile({ params }) {
   const router = useRouter();
@@ -80,7 +81,7 @@ export default function Profile({ params }) {
                   {/* Profile photo */}
                   <span className={style["Circle-image"]}>
                     <img
-                      src={avatarUrl}
+                      src={`${API_URL}${avatarUrl}`}
                       className={`${style["avatarContainer-profile"]} ${style.avatarContainer}`}
                       srcSet=""
                       alt="User Avatar"

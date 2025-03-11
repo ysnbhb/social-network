@@ -4,6 +4,7 @@ import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Follow, ShowUnfllowUser } from "./activitySide";
+import { API_URL } from "./api";
 export default function ProfileSide({ classes }) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
@@ -62,7 +63,7 @@ export default function ProfileSide({ classes }) {
             <div>
               {avatarUrl && (
                 <img
-                  src={`${avatarUrl}`}
+                  src={`${API_URL}${avatarUrl}`}
                   alt="Post"
                   style={{ width: "65px", height: "65px", borderRadius: "50%" }}
                 />
