@@ -4,6 +4,7 @@ import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { API_URL } from "./api";
+import { timeAgo } from "./commentComp";
 export function PostCompte({ post, className, classes = {} }) {
   const {
     id,
@@ -70,7 +71,7 @@ export function PostCompte({ post, className, classes = {} }) {
                 <h4>{`${firstName} ${lastName}`}</h4>
                 <p className="text-muted nikname">@{nickName}</p>
               </div>
-              <p className="text-muted">{createdAt}</p>
+              <p className="text-muted">{timeAgo(createdAt)}</p>
             </div>
           </div>
         </div>
