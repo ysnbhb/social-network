@@ -16,8 +16,7 @@ export default function ProfileSide({ classes }) {
           setcheckFollow(text)
           setdataFollow(data)
           setShowPopup(!showPopup);
-  };
- console.log(follow);
+  }; 
  
   const {
     avatarUrl,
@@ -32,7 +31,6 @@ export default function ProfileSide({ classes }) {
  
   return (
     <div className="profile-page">
-      {showPopup && 
         <div  className="content-area">
         {showPopup && (
           <div className="popup-overlay">
@@ -56,7 +54,6 @@ export default function ProfileSide({ classes }) {
           </div>
         )}
       </div>
-       }
       {profile ? (
         <aside className="profile-sidebar">
           <div className="profile-header">

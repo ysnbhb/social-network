@@ -116,9 +116,9 @@ export default function Navbar() {
 
             <circle
               id="notification-badge-message"
-              cx="18"
-              cy="5"
-              r="8"
+              cx="7"
+              cy="7"
+              r="7"
               fill="#FF3B30"
               stroke="white"
               strokeWidth="1"
@@ -126,8 +126,8 @@ export default function Navbar() {
             />
             <text
               id="notification-count-message"
-              x="18"
-              y="6"
+              x="7"
+              y="7"
               textAnchor="middle"
               fill="white"
               fontSize="12px"
@@ -161,9 +161,9 @@ export default function Navbar() {
             </g>
             <circle
               id="notification-badge"
-              cx="18"
-              cy="6"
-              r="8"
+              cx="7"
+              cy="7"
+              r="7"
               fill="#FF3B30"
               stroke="white"
               strokeWidth="1"
@@ -171,8 +171,8 @@ export default function Navbar() {
             ></circle>
             <text
               id="notification-count"
-              x="18"
-              y="6"
+              x="7"
+              y="7"
               textAnchor="middle"
               fill="white"
               fontSize="10px"
