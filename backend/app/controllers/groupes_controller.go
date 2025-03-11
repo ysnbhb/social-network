@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -141,6 +142,7 @@ func AcceptJoin(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, "uncorrected info", http.StatusBadRequest)
 		return
 	}
+	fmt.Println(gp_invi)
 	userId := r.Context().Value("userId").(int)
 	err, code := services.AcceptJoin(gp_invi, userId)
 	if err != nil {

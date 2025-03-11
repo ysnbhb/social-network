@@ -12,7 +12,7 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
 import { useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
-const check =false
+const check = false;
 export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
@@ -66,7 +66,11 @@ export default function Profile({ params }) {
       ) : (
         <div>
           {showPopup && (
-            <Updateprofile data={profiledata} show={showPopup} setShowPopup={setShowPopup} />
+            <Updateprofile
+              data={profiledata}
+              show={showPopup}
+              setShowPopup={setShowPopup}
+            />
           )}
 
           {isLoading ? (
@@ -195,10 +199,10 @@ export default function Profile({ params }) {
   );
 }
 
-export function Updateprofile({ data ,show ,  setShowPopup}) {
+export function Updateprofile({ data, show, setShowPopup }) {
   // const [show, setShowPopup] = useState(false);
   const togglePopup = () => {
-        setShowPopup(!show);
+    setShowPopup(!show);
   };
   return (
     <div>
@@ -207,7 +211,7 @@ export function Updateprofile({ data ,show ,  setShowPopup}) {
           <div className={styles.container}>
             <div className={styles.header}>
               <h2>Account Settings</h2>
-              <button className={styles.closeButton} onClick={ togglePopup}>
+              <button className={styles.closeButton} onClick={togglePopup}>
                 ×
               </button>
             </div>
@@ -225,7 +229,7 @@ export function Updateprofile({ data ,show ,  setShowPopup}) {
                 />
               </span>
               <p className={styles.avatarText}>
-                Avatar help your teammates recognize you in Unity.
+                Avatar help your teammates recognize you in Social Network .
               </p>
             </div>
 
@@ -270,7 +274,12 @@ export function Updateprofile({ data ,show ,  setShowPopup}) {
               </div>
             </div>
 
-            {/* Bio textarea */}
+            {/* About textarea */}
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Type Profile</label>
+                <input type="radio" className={styles.radio}/>
+                <input type="radio" className={styles.radio} />
+            </div>
             <div className={styles.formGroup}>
               <label className={styles.label}>About Me</label>
               <textarea

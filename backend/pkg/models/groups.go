@@ -12,9 +12,10 @@ type Groups struct {
 }
 
 type Group_Invi struct {
-	GroupId int `json:"groupId"`
-	UserId  int `json:"userId"`
-	Status  int `json:"status"`
+	GroupId int    `json:"groupId"`
+	UserId  int    `json:"userId"`
+	Status  string `json:"status"`
+	Sender  string `json:"sender"`
 }
 
 type Group_Jion struct {

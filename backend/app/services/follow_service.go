@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"log"
 
 	repo "social-network/pkg/db/repositories"
 	"social-network/pkg/models"
@@ -16,11 +17,16 @@ func AddFollow(followRequest *models.FollowRequest) (bool, error) {
 	} else {
 		followRequest.Status = "accept"
 	}
-	exists,err := repo.AddFollow(followRequest)
+	exists, err := repo.AddFollow(followRequest)
 	if err != nil {
 		return false, errors.New("Follow User in db: " + err.Error())
 	}
-	return exists,nil
+	err = repo.AddNotificationFollow(exists, followRequest.FollowerId, followRequest.FollowingId)
+	if err != nil {
+		log.Println("Add Notification in db:", err)
+		return false, errors.New("filed to add notification")
+	}
+	return exists, nil
 }
 
 func GetFollowers(userId int) ([]models.UnfollowUser, error) {
@@ -38,8 +44,8 @@ func AcceptFollow(userId int, follower string) error {
 	}
 	err = repo.Updatenotification(userId, follower, "accept")
 	return nil
-	
 }
+
 func RejectFollow(userId int, follower string) error {
 	err := repo.RejectFollow(userId, follower)
 	if err != nil {
