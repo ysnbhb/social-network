@@ -12,7 +12,7 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
 import { useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
-
+const check =false
 export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
@@ -66,7 +66,7 @@ export default function Profile({ params }) {
       ) : (
         <div>
           {showPopup && (
-            <Updateprofile data={profiledata} showPopup={showPopup} />
+            <Updateprofile data={profiledata} show={showPopup} setShowPopup={setShowPopup} />
           )}
 
           {isLoading ? (
@@ -195,14 +195,14 @@ export default function Profile({ params }) {
   );
 }
 
-export function Updateprofile({ data }) {
-  const [show, setShowPopup] = useState(false);
+export function Updateprofile({ data ,show ,  setShowPopup}) {
+  // const [show, setShowPopup] = useState(false);
   const togglePopup = () => {
-       setShowPopup(!show);
+        setShowPopup(!show);
   };
   return (
     <div>
-      {!show && (
+      {show && (
         <div className={styles.update}>
           <div className={styles.container}>
             <div className={styles.header}>
