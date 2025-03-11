@@ -177,10 +177,25 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 	if repo.GeTIdofAdminOfGroup(groupId.GroupId) != userid {
 		return errors.New("you have no right to this "), http.StatusUnauthorized
 	}
-	err := repo.JoinToGroup(groupId.GroupId, groupId.UserId)
-	if err != nil {
-		return errors.New("field to join to group"), http.StatusInternalServerError
+	groupId.UserId = repo.GetUserIdByNickName(groupId.Sender)
+	exist := repo.CheckUserInGroup(groupId.GroupId, groupId.UserId)
+	if exist {
+		return errors.New("user just to invitation ready in group"), http.StatusBadRequest
 	}
+	have, _ := repo.HasInvi(groupId.GroupId, groupId.UserId)
+	if have == "invitation" {
+		return errors.New("user just to invitation ready in group"), http.StatusBadRequest
+	}
+	if have == "" {
+		return errors.New("user just to invitation ready in group"), http.StatusBadRequest
+	}
+	if groupId.Status == "accept" {
+		err := repo.JoinToGroup(groupId.GroupId, groupId.UserId)
+		if err != nil {
+			return errors.New("field to join to group"), http.StatusInternalServerError
+		}
+	}
+	repo.Delete_group_Invi(groupId.GroupId, groupId.UserId)
 	return nil, http.StatusOK
 }
 
@@ -205,7 +220,7 @@ func CreateEvent(gp_env *models.Event) (error, int) {
 		log.Println(err)
 		return errors.New("field to create event"), http.StatusInternalServerError
 	}
-	err = repo.AddNotificationGroupEvent(gp_env.CreatorId ,gp_env.GroupId)
+	err = repo.AddNotificationGroupEvent(gp_env.CreatorId, gp_env.GroupId)
 	gp_env.Creator_User = repo.GetNickName(gp_env.CreatorId)
 	return nil, http.StatusOK
 }
