@@ -97,8 +97,6 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 				err = errors.New("field to join to group")
 				statusCode = http.StatusInternalServerError
 			}
-			// err = repo.AddNotification()
-			// err = errors.New("you joined to group")
 			statusCode = http.StatusCreated
 		} else if err != nil {
 			err = errors.New("field to join to group")
@@ -196,6 +194,10 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 		}
 	}
 	repo.Delete_group_Invi(groupId.GroupId, groupId.UserId)
+	err := repo.Updatenotification(userid, groupId.Sender, "joingroup(accept/reject)", groupId.GroupId)
+	if err != nil {
+	 return err, http.StatusInternalServerError
+	}
 	return nil, http.StatusOK
 }
 
