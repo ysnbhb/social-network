@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -168,7 +168,7 @@ func GroupInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	groupinfo, code, err := services.GroupInfo(group, userId)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		utils.JsonResponse(w, err.Error(), code)
 		return
 	}
@@ -256,7 +256,7 @@ func Groupmembers(w http.ResponseWriter, r *http.Request) {
 	}
 	users, err, code := services.MemberGroup(group, userId)
 	if err != nil {
-		fmt.Println("err", err)
+		log.Println(err)
 		utils.JsonResponse(w, err.Error(), code)
 		return
 	}
@@ -277,7 +277,7 @@ func GetGroup_Resuested(w http.ResponseWriter, r *http.Request) {
 	}
 	users, err, code := services.GetGroup_Resuest(group, userId)
 	if err != nil {
-		fmt.Println("err", err)
+		log.Println(err)
 		utils.JsonResponse(w, err.Error(), code)
 		return
 	}

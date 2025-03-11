@@ -31,3 +31,23 @@ func GetFollowers(userId int) ([]models.UnfollowUser, error) {
 	return users, nil
 }
 
+func AcceptFollow(userId int, follower string) error {
+	err := repo.AcceptFollow(userId, follower)
+	if err != nil {
+		return errors.New("field to accept follow")
+	}
+	err = repo.Updatenotification(userId, follower, "accept")
+	return nil
+	
+}
+func RejectFollow(userId int, follower string) error {
+	err := repo.RejectFollow(userId, follower)
+	if err != nil {
+		return errors.New("field to reject follow")
+	}
+	err = repo.Updatenotification(userId, follower, "reject")
+	if err != nil {
+		return errors.New("field to update notification")
+	}
+	return nil
+}

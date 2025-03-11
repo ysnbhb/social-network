@@ -1,8 +1,8 @@
 package services
 
 import (
-	"fmt"
 	"html"
+	"log"
 	"time"
 
 	repo "social-network/pkg/db/repositories"
@@ -119,7 +119,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 
 	err = repo.AddNotificationMsgGroup(msg, client, "messageGroup", Time, users)
 	if err != nil {
-		fmt.Println("Error adding notification:", err)
+		log.Println("Error adding notification:", err)
 		return err
 	}
 	return nil

@@ -62,7 +62,6 @@
 }
 
 .notification-list .notification:first-child {
-
     border-radius: 7px 7px 0 0;
 }
 
@@ -106,3 +105,43 @@
     margin-top: 4px;
 }
 
+.notification{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.notification:hover{
+    scale: 1.02;
+}
+.notification:active{
+    scale: 0.95;
+}
+
+.accept-button{
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.accept-button:hover{
+    scale: 1.02;
+}
+.Refuse-button{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.Refuse-button:hover{
+    scale: 1.02;
+}
+.buttons{
+    margin-right: 15px;
+}

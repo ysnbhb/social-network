@@ -2,7 +2,7 @@ package repo
 
 import (
 	"errors"
-	"fmt"
+	"log"
 	"strings"
 
 	db "social-network/pkg/db/sqlite"
@@ -71,7 +71,9 @@ func CheckGroup(groupId int) bool {
 		SELECT 1 FROM groups WHERE id = ?
 	)`
 	err := db.DB.QueryRow(query, groupId).Scan(&exists)
-	fmt.Println(err)
+	if err != nil {
+		log.Println(err)
+	}
 	return exists
 }
 
@@ -158,7 +160,6 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
 		if err != nil {
 			continue
 		}
-		fmt.Println(post)
 		posts = append(posts, post)
 	}
 	return posts, nil
@@ -195,7 +196,7 @@ func ListGroups(userid int) ([]models.Groups, error) {
 		group := models.Groups{}
 		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Status, &group.IsMember, &group.TotalMembers)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		groups = append(groups, group)
@@ -229,7 +230,7 @@ func ListJionGroups(userid int) ([]models.Groups, error) {
 		group := models.Groups{}
 		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.TotalMembers)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		groups = append(groups, group)
@@ -274,7 +275,7 @@ func ListUnJoinGroups(userid int) ([]models.Groups, error) {
 		group := models.Groups{}
 		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.Owner, &group.TotalMembers, &group.Status)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		groups = append(groups, group)
@@ -318,7 +319,7 @@ func ListInviGroups(userid int) ([]models.Groups, error) {
 		group := models.Groups{}
 		err = rows.Scan(&group.Id, &group.Title, &group.Description, &group.TotalMembers, &group.Status)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		groups = append(groups, group)
@@ -426,7 +427,7 @@ func AddNotificationGroupEvent(userId, groupid int) error {
 		query := `INSERT INTO notifications (user_id , sender_id ,group_id,type, details) VALUES (?,?, ?, ?, ?)`
 		_, err := db.DB.Exec(query, Member.Id, userId, groupid, "group_event", GetNickName(userId)+" created an event in "+GetgroupnameById(groupid))
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			continue
 		}
 		connreciever, ok := models.Clients[Member.Nickname]

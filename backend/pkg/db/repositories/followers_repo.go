@@ -9,7 +9,7 @@ import (
 
 func AddFollow(followRequest *models.FollowRequest) (bool, error) {
 	existing := GetExistingFollow(followRequest.FollowerId, followRequest.FollowingId)
-	exists := false 
+	exists := false
 	if existing {
 		err := DeleteFollow(followRequest.FollowerId, followRequest.FollowingId)
 		followRequest.Status = ""
@@ -20,10 +20,10 @@ func AddFollow(followRequest *models.FollowRequest) (bool, error) {
 	} else if !existing {
 		err := insertFollow(followRequest.FollowerId, followRequest.FollowingId, followRequest.Status)
 		exists = true
-		return exists , err
+		return exists, err
 	}
 
-	return exists ,nil
+	return exists, nil
 }
 
 func insertFollow(FollowerId, FollowingId int, Status string) error {
@@ -58,4 +58,25 @@ func IsFollowing(FollowerId, FollowingId int) bool {
 		return false
 	}
 	return exists
+}
+
+func AcceptFollow(userId int, follower string) error {
+	followerId := GetUserIdByNickName(follower)
+	query := `UPDATE followers SET status = 'accept' WHERE follower_id = ? AND following_id = ?`
+	_, err := db.DB.Exec(query, followerId, userId)
+	return err
+}
+
+func RejectFollow(userId int, follower string) error {
+	followerId := GetUserIdByNickName(follower)
+	query := `DELETE FROM followers WHERE follower_id = ? AND following_id = ?`
+	_, err := db.DB.Exec(query, followerId, userId)
+	return err
+}
+
+func Updatenotification(userId int, follower string, Type string) error {
+	followerId := GetUserIdByNickName(follower)
+	query := `UPDATE notifications SET type= ? WHERE sender_id = ? AND user_id =? AND type ='follow'`
+	_, err := db.DB.Exec(query, Type,followerId, userId)
+	return err
 }

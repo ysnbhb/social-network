@@ -54,12 +54,10 @@ import { timeAgo } from "./commentComp";
       <div className={`post`} >
         <div className="post-header">
           <div className="post-author">
-         
             {avatarUrl ?(
                   <Link href={{ pathname:  `/profile/${nickName}` }}>
                   <img
-                  // onClick={()=>handleIduser(nickName)} 
-                    src={`${API_URL}/${avatarUrl}`}
+                     src={`${API_URL}/${avatarUrl}`}
                     alt="Post"
                      className="avatar" 
                    />
@@ -92,6 +90,7 @@ import { timeAgo } from "./commentComp";
           </div>
           
         )}
+       </div>
          <div className="post-actions">
           <div
             className={"like" + (like ? " active" : "")}
@@ -144,7 +143,6 @@ import { timeAgo } from "./commentComp";
             <span>{totalComments}</span>
           </div>
         </div>
-      </div>
     </>
   );
 }

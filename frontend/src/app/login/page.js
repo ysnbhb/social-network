@@ -28,8 +28,6 @@ export default function Login() {
     const formData = new FormData(event.target);
     if (img) {
       formData.append("file", img)
-      console.log(img);
-
     }
     if (profile){
       formData.append("profile_type", profile)
@@ -81,7 +79,6 @@ export default function Login() {
     }
 
   };
-  // console.log(data_profile);  
   
 
   useEffect(() => {

@@ -9,5 +9,5 @@ type UnreadNotification struct {
 	Details    string
 	Readstatus string
 	Sent_at    string
-
+	Status string
 }

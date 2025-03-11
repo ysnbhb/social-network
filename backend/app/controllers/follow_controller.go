@@ -38,6 +38,7 @@ func HandleFollow(w http.ResponseWriter, r *http.Request) {
 		log.Println("Add Notification in db:", err)
 		return
 	}
+	log.Println(followRequest)
 	utils.JsonResponse(w, followRequest, http.StatusOK)
 }
 

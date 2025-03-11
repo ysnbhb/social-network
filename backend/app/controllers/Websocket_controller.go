@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -22,18 +23,30 @@ var upgrader = websocket.Upgrader{
 func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Println("Failed to upgrade connection:", err)
+		log.Printf("Error upgrading connection: %v", err)
+		http.Error(w, "Failed to establish WebSocket connection", http.StatusInternalServerError)
 		return
 	}
-	defer conn.Close()
-	defer RemoveClient(conn)
-	userID := r.Context().Value("userId").(int)
-	username := repo.GetNickName(userID)
-	if username == "" {
-		log.Println("User not found")
+	userID, ok := r.Context().Value("userId").(int)
+	if !ok {
+		log.Println("Error: User ID not provided in request context")
+		conn.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseInternalServerErr, "Authentication error"))
 		conn.Close()
 		return
 	}
+
+	username := repo.GetNickName(userID)
+	if username == "" {
+		log.Printf("Error: User with ID %d not found", userID)
+		conn.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, "User not found"))
+		conn.Close()
+		return
+	}
+	defer func() {
+		log.Printf("Closing connection for user: %s (ID: %d)", username, userID)
+		RemoveClient(conn)
+		conn.Close()
+	}()
 	AddClient(conn, userID, username)
 	Notification(models.Clients[username])
 	HandleMessages(models.Clients[username])
@@ -41,12 +54,16 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 
 func HandleMessages(client *models.Client) {
 	for {
-		var msg models.Message
-		err := client.Conn.ReadJSON(&msg)
+		_, messageData, err := client.Conn.ReadMessage()
 		if err != nil {
-			log.Println("Failed to read message:", err)
 			break
 		}
+		var msg models.Message
+		if err := json.Unmarshal(messageData, &msg); err != nil {
+			log.Println("Invalid message format:", err)
+			continue
+		}
+
 		err = Handlemessagetype(msg, client)
 		if err != nil {
 			log.Println("Failed to handle message:", err)

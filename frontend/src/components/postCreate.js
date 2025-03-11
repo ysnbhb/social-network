@@ -12,6 +12,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
   const { avatarUrl } = profiledata;
+ 
 
   const handalPost = async (e) => {
     e.preventDefault();
@@ -93,6 +94,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
         </button>
       </div>
       <div className="post-options">
+        <div className="containe-image">
         <label className="image" htmlFor="img">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +116,10 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
           }}
           accept="image/*"
         />
-
+        {img && <div className="image-check">
+         <img src="checkmark.png"/>
+          </div>}
+        </div>
         <div className="privacy">
           {ishome && (
             <>
@@ -152,20 +157,20 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
             </div>
             <div className="popup-form">
             {[
-        { name: "bahbib yassine", username: "@yassine334" },
-        { name: "bahbib yassine", username: "@yassine.bahbib" },
-        { name: "bhb bhb", username: "@bhb475" },
-      ].map((user, index) => (
-        <div className="activity-item" key={index}>
-          <div>
-            <p>
-              <strong>{user.name}</strong>
-            </p>
-            <p className="text-muted">{user.username}</p>
+              { name: "bahbib yassine", username: "@yassine334" },
+              { name: "bahbib yassine", username: "@yassine.bahbib" },
+              { name: "bhb bhb", username: "@bhb475" },
+            ].map((user, index) => (
+          <div className="activity-item" key={index}>
+            <div>
+              <p>
+                <strong>{user.name}</strong>
+              </p>
+              <p className="text-muted">{user.username}</p>
+            </div>
+            <button>select</button>
           </div>
-          <button>select</button>
-        </div>
-      ))}
+        ))}
               <div className="popup-actions">
                 <button
                   type="button"
