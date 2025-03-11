@@ -12,6 +12,7 @@
   flex-direction: column;
   color: black;
   opacity: 1;
+  height: auto;
   width: 61%;
 }
 .update {
@@ -177,4 +178,13 @@
 .avatarContainer-profile{
   width: 75px !important;
     height: 75px !important;
+}
+.formRow-radio{
+  margin-bottom: 18px;
+}
+.formradio{
+display: flex;
+}
+.radio{
+
 }

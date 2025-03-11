@@ -275,11 +275,27 @@ export function Updateprofile({ data, show, setShowPopup }) {
             </div>
 
             {/* About textarea */}
-            <div className={styles.formGroup}>
+            <div className={styles["formRow-radio"]}>
               <label className={styles.label}>Type Profile</label>
-                <input type="radio" className={styles.radio}/>
-                <input type="radio" className={styles.radio} />
+              <div className={styles.formradio}>
+                <label className={styles.label}>Public</label>
+                <input
+                  className={styles.radio}
+                  type="radio"
+                 />
+              </div>
+
+              <div className={styles.formradio}>
+                <label className={styles.label}>Private</label>
+                <input
+                  className={styles.radio}
+                  type="radio"
+                  
+                />
+              </div>
             </div>
+
+
             <div className={styles.formGroup}>
               <label className={styles.label}>About Me</label>
               <textarea
