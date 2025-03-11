@@ -53,7 +53,7 @@ export default function Notification() {
       case "messageGroup":
         router.push(`/group/${notification.GroupId}/chat`);
       default:
-        // Default action for other types
+        
         break;
     }
   };
