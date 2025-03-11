@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sendMessageuser } from "../websocket/messages.js";
 import '../styles/chat.css';
 import { useRouter } from "next/navigation";
+import { API_URL } from "./api.js";
 
 function ChatBox({ user }) {
   const [newMessage, setNewMessage] = useState("");
@@ -73,7 +74,7 @@ function ChatBox({ user }) {
       <div className="chat-header">
         <div className="user-info">
           <div className="avatar">
-            <img src={`${user.avatar}`} alt="Post" />
+            <img src={`${API_URL}${user.avatar}`} alt="Post" />
           </div>
           <span>{user.nickname}</span>
         </div>

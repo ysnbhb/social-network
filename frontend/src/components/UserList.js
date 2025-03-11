@@ -70,7 +70,7 @@ function UserList() {
                             ) => handleSelectUser(user)}  // Handle user selection
                         >
                             <div className="avatar">
-                                <img src={`${user.avatar}`} alt="Post" />
+                                <img src={`${API_URL}${user.avatar}`} alt="Post" />
                             </div>
                             <div className={`statue`}></div>
                             <div className="user-info">

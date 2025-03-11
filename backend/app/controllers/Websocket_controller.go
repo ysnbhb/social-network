@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -53,16 +54,16 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 
 func HandleMessages(client *models.Client) {
 	for {
-		var msg models.Message
-		err := client.Conn.ReadJSON(&msg)
+		_, messageData, err := client.Conn.ReadMessage()
 		if err != nil {
-			if websocket.IsCloseError(err) {
-				log.Println("Connection closed:", err)
-				break
-			}
-			log.Println("Failed to read message, retrying:", err)
+			break
+		}
+		var msg models.Message
+		if err := json.Unmarshal(messageData, &msg); err != nil {
+			log.Println("Invalid message format:", err)
 			continue
 		}
+
 		err = Handlemessagetype(msg, client)
 		if err != nil {
 			log.Println("Failed to handle message:", err)

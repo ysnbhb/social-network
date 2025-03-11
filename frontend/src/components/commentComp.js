@@ -1,30 +1,69 @@
-"use client"
+"use client";
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { API_URL } from "./api";
-import { timeAgo } from "./commentComp";
- export function PostCompte({ post  , className, classes = {} }) {  
-   
+
+// Function to format date as "time ago"
+export function timeAgo(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  const secondsAgo = Math.floor((now - date) / 1000);
+
+  if (isNaN(secondsAgo) || secondsAgo < 0) {
+    return "just now";
+  }
+
+  const intervals = {
+    year: 31536000,
+    month: 2592000,
+    week: 604800,
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1,
+  };
+
+  let counter;
+  for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+    counter = Math.floor(secondsAgo / secondsInUnit);
+    if (counter > 0) {
+      return counter === 1 ? `1 ${unit} ago` : `${counter} ${unit}s ago`;
+    }
+  }
+
+  return "just now";
+}
+
+export function CommentCompte({ comment, className, classes = {} }) {
+  const router = useRouter();
+
+  if (!comment) {
+    return null; 
+  }
+
   const {
-    id,
-    content,
-    createdAt,
-    firstName,
-    imageUrl,
-    isLiked,
-    lastName,
-    nickName,
-    totalComments,
-    totalLikes,
-    avatarUrl,
-  } = post; 
-  const route = useRouter();
-  
+    id = "",
+    content = "",
+    createdAt = "",
+    firstName = "",
+    isLiked = false,
+    lastName = "",
+    nickName = "",
+    totalComments = 0,
+    totalLikes = 0,
+    avatarUrl = "",
+    imageUrl
+  } = comment || {};
+
+  const formattedCreatedAt = timeAgo(createdAt);
+
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
+
   const handleLike = async () => {
+    if (!id) return;
+
     const res = await fetch(`${API_URL}/api/user/reactions`, {
       method: "POST",
       headers: {
@@ -44,61 +83,48 @@ import { timeAgo } from "./commentComp";
       setLikes(likesCount);
     }
   };
- 
-  const  handlecomment=()=>{
-    route.push('/comments?target_id='+id);
 
-  }
+  const handleIdUser = () => {
+    if (!id) return;
+    router.push(`/profile/${nickName}`);
+  };
+
+  const handleComment = () => {
+    router.push("/comments?target_id=" + id);
+  };
+
   return (
     <>
-      <div className={`post`} >
+      <div className={`post ${classes.comment || ""} ${className || ""}`}>
         <div className="post-header">
           <div className="post-author">
-            {avatarUrl ?(
-                  <Link href={{ pathname:  `/profile/${nickName}` }}>
-                  <img
-                     src={`${API_URL}/${avatarUrl}`}
-                    alt="Post"
-                     className="avatar" 
-                   />
-                  
-                  </Link>
-        ): (
-          <div className="avatar" ></div>
-        )
-        
-        }  
+            {avatarUrl ? (
+              <img
+                onClick={handleIdUser}
+                src={API_URL + avatarUrl}
+                alt="User avatar"
+                className="avatar"
+              />
+            ) : (
+              <div className="avatar" onClick={handleIdUser}></div>
+            )}
             <div>
               <h4>{`${firstName} ${lastName}`}</h4>
-              <p className="text-muted">@{nickName}</p>
-              <p className="text-muted">{timeAgo(createdAt)}</p>
+              <p className="text-muted">{formattedCreatedAt}</p>
             </div>
           </div>
         </div>
         <p>{content}</p>
         {imageUrl && (
-          <div style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}>
-            <img
+          <img
             src={`${API_URL}/${imageUrl}`}
             alt="Post"
             className="image-posts"
+            style={{ width: "100%", height: "auto",borderRadius:"10px" }}
           />
-          </div>
-          
         )}
-       </div>
-         <div className="post-actions">
-          <div
-            className={"like" + (like ? " active" : "")}
-            onClick={() => {
-              handleLike();
-              //  setLike(!like)
-            }}
-          >
+        <div className="post-actions">
+          <div className={`like${like ? " active" : ""}`} onClick={handleLike}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -118,7 +144,7 @@ import { timeAgo } from "./commentComp";
             </svg>
             <span>{likes}</span>
           </div>
-          <div className="comment" onClick={handlecomment}>
+          <div className="comment" onClick={handleComment}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -143,6 +169,7 @@ import { timeAgo } from "./commentComp";
             <span>{totalComments}</span>
           </div>
         </div>
+      </div>
     </>
   );
 }

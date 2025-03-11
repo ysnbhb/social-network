@@ -25,8 +25,8 @@ export default function Notification() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data",data);
-        
+        console.log("data", data);
+
         setNotifications(data);
         setLoading(false);
       })
@@ -79,10 +79,33 @@ export default function Notification() {
       });
   };
 
+  function AcceptJoinGroup(notification, action) {
+    fetch(`http://localhost:8080/api/group/acceptjoin`, {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({
+        groupId: notification.GroupId,
+        sender: notification.Sender, 
+        status: action,
+      })
+    })
+      .then((response) => {
+        response.json()
+        if (response.status === 200) {
+          Notifications();
+          sendChangeUnreadNotification(notification.Id);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   if (loading) {
     return <h1>Loading Notifications...</h1>;
   }
 
+  console.log("notifications", notifications);
 
 
   return (
@@ -126,6 +149,18 @@ export default function Notification() {
                       }}>Accept</button>
                       <button className="Refuse-button" onClick={(event) => {
                         Acceptfollow(notification, "Reject")
+                        event.stopPropagation();
+                      }}>Reject</button>
+                    </div>
+                  )}
+                  {notification.Type === "group_request_join" && (
+                    <div className="buttons">
+                      <button className="accept-button" onClick={(event) => {
+                        AcceptJoinGroup(notification, "Accept")
+                        event.stopPropagation();
+                      }}>Accept</button>
+                      <button className="Refuse-button" onClick={(event) => {
+                        AcceptJoinGroup(notification, "Reject")
                         event.stopPropagation();
                       }}>Reject</button>
                     </div>

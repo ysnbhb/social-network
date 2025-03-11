@@ -3,6 +3,7 @@ import "../styles/homeFeed.css";
 import "../styles/groupsFeed.css";
 import { CreatePost } from "../lib/createPost";
 import userProfile from "@/app/hooks/userProfile";
+import { API_URL } from "./api";
 
 export default function PostCreater({ setPosts, classes, ishome, groupid }) {
   const [content, setContent] = useState("");
@@ -41,7 +42,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
     <div className={`feed ${classes.div_feed}`}>
       <div className="post-creator">
         {avatarUrl ? (
-          <img src={`${avatarUrl}`} alt="Post" className="avatar" />
+          <img src={`${API_URL}${avatarUrl}`} alt="Post" className="avatar" />
         ) : (
           <div className="avatar"></div>
         )}

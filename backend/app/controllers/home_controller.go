@@ -33,3 +33,20 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+func GetOneCard(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
+		log.Println("method not allowed")
+		return
+	}
+	postId, _ := strconv.Atoi(r.FormValue("cardId"))
+	userId := r.Context().Value("userId").(int)
+	postResponse, err := services.GetOneCard(postId, userId)
+	if err != nil {
+		utils.JsonResponse(w, "Error getting post", http.StatusInternalServerError)
+		log.Println(err)
+		return
+	}
+	utils.JsonResponse(w, postResponse, http.StatusOK)
+}

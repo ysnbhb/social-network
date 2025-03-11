@@ -74,9 +74,9 @@ func RejectFollow(userId int, follower string) error {
 	return err
 }
 
-func Updatenotification(userId int, follower string) error {
+func Updatenotification(userId int, follower string, Type string) error {
 	followerId := GetUserIdByNickName(follower)
-	query := `UPDATE notifications SET type='reject' WHERE sender_id = ? AND user_id =? AND type ='follow'`
-	_, err := db.DB.Exec(query, followerId, userId)
+	query := `UPDATE notifications SET type= ? WHERE sender_id = ? AND user_id =? AND type ='follow'`
+	_, err := db.DB.Exec(query, Type,followerId, userId)
 	return err
 }
