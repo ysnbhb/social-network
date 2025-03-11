@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import { useState } from "react";
 import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { API_URL } from "./api";
- export function PostCompte({ post  , className, classes = {} }) {  
-   
+export function PostCompte({ post, className, classes = {} }) {
   const {
     id,
     content,
@@ -18,8 +17,14 @@ import { API_URL } from "./api";
     totalComments,
     totalLikes,
     avatarUrl,
-  } = post; 
-  
+  } = post;
+
+  const router = useRouter();
+
+  const handleComment = () => {
+    router.push("/comments?target_id=" + id);
+  };
+
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
   const handleLike = async () => {
@@ -34,6 +39,7 @@ import { API_URL } from "./api";
       }),
       credentials: "include",
     });
+   
 
     if (res.ok) {
       const data = await res.json();
@@ -42,46 +48,43 @@ import { API_URL } from "./api";
       setLikes(likesCount);
     }
   };
- 
+
   return (
     <>
-      <div className={`post ${classes.post}`} >
+      <div className={`post ${classes.post}`}>
         <div className="post-header">
           <div className="post-author">
-            {avatarUrl ?(
-                  <Link href={{ pathname:  `/profile/${nickName}` }}>
-                  <img
-                     src={`${API_URL}/${avatarUrl}`}
-                    alt="Post"
-                     className="avatar" 
-                   />
-                  
-                  </Link>
-                  ): (
-                    <div className="avatar" ></div>
-                  )
-                  
-                  }  
-              <div className="row">
-                  <div className="info-user">
-                  <h4>{`${firstName} ${lastName}`}</h4>
-                  <p className="text-muted nikname">@{nickName}</p>
-                  </div>
-                  <p className="text-muted">{createdAt}</p>
+            {avatarUrl ? (
+              <Link href={{ pathname: `/profile/${nickName}` }}>
+                <img
+                  src={`${API_URL}/${avatarUrl}`}
+                  alt="Post"
+                  className="avatar"
+                />
+              </Link>
+            ) : (
+              <div className="avatar"></div>
+            )}
+            <div className="row">
+              <div className="info-user">
+                <h4>{`${firstName} ${lastName}`}</h4>
+                <p className="text-muted nikname">@{nickName}</p>
               </div>
+              <p className="text-muted">{createdAt}</p>
+            </div>
           </div>
         </div>
         <p>{content}</p>
-       <div className="image">
-       {imageUrl && (
-          <img
-            src={`${API_URL}/${imageUrl}`}
-            alt="Post"
-            className="image-posts"
-          />
-        )}
-       </div>
-         <div className="post-actions">
+        <div className="image">
+          {imageUrl && (
+            <img
+              src={`${API_URL}/${imageUrl}`}
+              alt="Post"
+              className="image-posts"
+            />
+          )}
+        </div>
+        <div className="post-actions">
           <div
             className={"like" + (like ? " active" : "")}
             onClick={() => {
@@ -108,7 +111,12 @@ import { API_URL } from "./api";
             </svg>
             <span>{likes}</span>
           </div>
-          <div className="comment">
+          <div
+            className="comment"
+            onClick={() => {
+              handleComment();
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
