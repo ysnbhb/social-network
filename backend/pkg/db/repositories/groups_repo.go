@@ -106,10 +106,10 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	if err != nil {
 		return err
 	}
-	query = `INSERT INTO notifications (user_id, sender_id, type, details) VALUES (?, ?, ?, ?)`
+	query = `INSERT INTO notifications (user_id, sender_id,group_id ,  type, details) VALUES (?, ?, ?, ? , ?)`
 	adminid := GeTIdofAdminOfGroup(groupId)
 	adminname := GetNickName(adminid)
-	_, err = db.DB.Exec(query, adminid, userId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
+	_, err = db.DB.Exec(query, adminid, userId, groupId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
 	adminconnection, ok := models.Clients[adminname]
 	if ok {
 		err = adminconnection.Conn.WriteJSON(map[string]interface{}{

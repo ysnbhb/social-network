@@ -4,7 +4,6 @@ import "../styles/homeFeed.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { API_URL } from "./api";
-import { timeAgo } from "./commentComp";
  export function PostCompte({ post  , className, classes = {} }) {  
    
   const {
@@ -20,7 +19,6 @@ import { timeAgo } from "./commentComp";
     totalLikes,
     avatarUrl,
   } = post; 
-  const route = useRouter();
   
   const [like, setLike] = useState(isLiked);
   const [likes, setLikes] = useState(totalLikes);
@@ -45,13 +43,9 @@ import { timeAgo } from "./commentComp";
     }
   };
  
-  const  handlecomment=()=>{
-    route.push('/comments?target_id='+id);
-
-  }
   return (
     <>
-      <div className={`post`} >
+      <div className={`post ${classes.post}`} >
         <div className="post-header">
           <div className="post-author">
             {avatarUrl ?(
@@ -63,32 +57,28 @@ import { timeAgo } from "./commentComp";
                    />
                   
                   </Link>
-        ): (
-          <div className="avatar" ></div>
-        )
-        
-        }  
-            <div>
-              <h4>{`${firstName} ${lastName}`}</h4>
-              <p className="text-muted">@{nickName}</p>
-              <p className="text-muted">{timeAgo(createdAt)}</p>
-            </div>
+                  ): (
+                    <div className="avatar" ></div>
+                  )
+                  
+                  }  
+              <div className="row">
+                  <div className="info-user">
+                  <h4>{`${firstName} ${lastName}`}</h4>
+                  <p className="text-muted nikname">@{nickName}</p>
+                  </div>
+                  <p className="text-muted">{createdAt}</p>
+              </div>
           </div>
         </div>
         <p>{content}</p>
-        {imageUrl && (
-          <div style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}>
-            <img
+       <div className="image">
+       {imageUrl && (
+          <img
             src={`${API_URL}/${imageUrl}`}
             alt="Post"
             className="image-posts"
           />
-          </div>
-          
         )}
        </div>
          <div className="post-actions">
@@ -118,7 +108,7 @@ import { timeAgo } from "./commentComp";
             </svg>
             <span>{likes}</span>
           </div>
-          <div className="comment" onClick={handlecomment}>
+          <div className="comment">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -143,6 +133,7 @@ import { timeAgo } from "./commentComp";
             <span>{totalComments}</span>
           </div>
         </div>
+      </div>
     </>
   );
 }

@@ -189,7 +189,7 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 	if have == "" {
 		return errors.New("user just to invitation ready in group"), http.StatusBadRequest
 	}
-	if groupId.Status == "accept" {
+	if groupId.Status == "Accept" {
 		err := repo.JoinToGroup(groupId.GroupId, groupId.UserId)
 		if err != nil {
 			return errors.New("field to join to group"), http.StatusInternalServerError
