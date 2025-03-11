@@ -1,5 +1,3 @@
-
-
 .chat-container-group {
     flex: 1;
     display: flex;
@@ -113,7 +111,7 @@
     flex-direction: column;
     gap: 15px;
     overflow-y: auto;
-    max-height: 70vh;
+    min-height: 70vh;
     scrollbar-color: #1da1f2 #f0f4f8;
     scrollbar-width: thin;
     word-wrap: break-word;
@@ -374,7 +372,7 @@ button:hover {
         height: auto;
         max-height: 40vh;
     }
-    
+
     .user-list-container {
         height: auto;
         max-height: calc(40vh - 70px);
@@ -404,7 +402,7 @@ button:hover {
         grid-template-columns: repeat(6, 1fr);
         max-height: 180px;
     }
-    
+
     .emoji-picker button {
         font-size: 20px;
         height: 36px;
@@ -416,11 +414,11 @@ button:hover {
     .chat-input-group {
         padding: 10px;
     }
-    
+
     .input-field-group {
         padding: 8px 12px;
     }
-    
+
     .emoji-picker {
         right: 10px;
         bottom: 55px;
@@ -429,14 +427,14 @@ button:hover {
         padding: 8px;
         grid-gap: 3px;
     }
-    
+
     .emoji-picker button {
         font-size: 18px;
         height: 32px;
         width: 32px;
         padding: 3px;
     }
-    
+
     .chat-input-group button {
         min-width: 50px;
         padding: 8px 12px;
@@ -448,7 +446,7 @@ button:hover {
     .emoji-picker {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .chat-input-group button {
         min-width: 40px;
         padding: 6px 10px;

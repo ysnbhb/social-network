@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import sendChangeUnreadNotification from '../../../websocket/notification.js';
 import ProfileSide from '../../../components/profileSide.js';
 import '../../../styles/notification.css';
-import useFollowing from '@/app/hooks/useFollowing.js';
 
 export default function Notification() {
   const [notifications, setNotifications] = useState([]);
@@ -41,6 +40,7 @@ export default function Notification() {
 
     switch (notification.Type) {
       case "group_request_join":
+      case "joingroup(accept/reject)":
         router.push('/groups');
         break;
       case "follow":
@@ -53,7 +53,7 @@ export default function Notification() {
       case "messageGroup":
         router.push(`/group/${notification.GroupId}/chat`);
       default:
-        // Default action for other types
+        
         break;
     }
   };
@@ -85,7 +85,7 @@ export default function Notification() {
       credentials: 'include',
       body: JSON.stringify({
         groupId: notification.GroupId,
-        sender: notification.Sender, 
+        sender: notification.Sender,
         status: action,
       })
     })
@@ -133,11 +133,8 @@ export default function Notification() {
                   <div className="avatar"></div>
                   <div className="content">
                     <div>
-                      {/* <span className="name">{notification.Sender}</span> */}
                       <span className="action">{notification.Details}</span>
-                      {/* <span className="group">Sketch</span> */}
                     </div>
-                    {/* <div className="description">Please bring coloured icons to demo...</div> */}
                     <div className="time">{notification.Sent_at}</div>
                     <div className="unread-indicator"></div>
                   </div>

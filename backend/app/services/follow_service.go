@@ -42,7 +42,7 @@ func AcceptFollow(userId int, follower string) error {
 	if err != nil {
 		return errors.New("field to accept follow")
 	}
-	err = repo.Updatenotification(userId, follower, "accept")
+	err = repo.Updatenotification(userId, follower, "accept", nil)
 	return nil
 }
 
@@ -51,7 +51,7 @@ func RejectFollow(userId int, follower string) error {
 	if err != nil {
 		return errors.New("field to reject follow")
 	}
-	err = repo.Updatenotification(userId, follower, "reject")
+	err = repo.Updatenotification(userId, follower, "reject", nil)
 	if err != nil {
 		return errors.New("field to update notification")
 	}
