@@ -65,7 +65,9 @@ export default function Profile({ params }) {
         <PopUpError />
       ) : (
         <div>
-          {showPopup && <Updateprofile data={profiledata} />}
+          {showPopup && (
+            <Updateprofile data={profiledata} showPopup={showPopup} />
+          )}
 
           {isLoading ? (
             <IsLoading></IsLoading>
@@ -193,94 +195,96 @@ export default function Profile({ params }) {
   );
 }
 
-export function Updateprofile({data}) {
-    console.log(data
-    );
-    
+export function Updateprofile({ data }) {
+  const [show, setShowPopup] = useState(false);
+  const togglePopup = () => {
+       setShowPopup(!show);
+  };
   return (
-    <div className={styles.update}>
-      <div className={styles.container}>
-         <div className={styles.header}>
-          <h2>Account Settings</h2>
-          <button className={styles.closeButton}>×</button>
-        </div>
-         
-           <h3>Your Avatar</h3>
-          <div className={styles.avatarContainer}>
-            
-            <span className={styles["Circle-avart"]}>
-                    <img
-                      src={`${API_URL}${data.avatarUrl}`}
-                      className={`${styles["avatarContainer-profile"]} ${style.avatarContainer}`}
-                      srcSet=""
-                      alt="User Avatar"
-                      layout="fill"
-                      objectfit="cover"
-                    />
-                  </span>
-            
-          
-          <p className={styles.avatarText}>Avatar help your teammates recognize you in Unity.</p>
-        </div>
-        
-        <hr className={styles.hr} />
-        
-        {/* Form fields - first row */}
-        <div className={styles.formRow}>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>First Name</label>
-            <input 
-              className={styles.input} 
-              type="text" 
-              defaultValue={data.firstName}
-            />
+    <div>
+      {!show && (
+        <div className={styles.update}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <h2>Account Settings</h2>
+              <button className={styles.closeButton} onClick={ togglePopup}>
+                ×
+              </button>
+            </div>
+
+            <h3>Your Avatar</h3>
+            <div className={styles.avatarContainer}>
+              <span className={styles["Circle-avart"]}>
+                <img
+                  src={`${API_URL}${data.avatarUrl}`}
+                  className={`${styles["avatarContainer-profile"]} ${style.avatarContainer}`}
+                  srcSet=""
+                  alt="User Avatar"
+                  layout="fill"
+                  objectfit="cover"
+                />
+              </span>
+              <p className={styles.avatarText}>
+                Avatar help your teammates recognize you in Unity.
+              </p>
+            </div>
+
+            <hr className={styles.hr} />
+
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>First Name</label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  defaultValue={data.firstName}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Last Name</label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  defaultValue={data.lastName}
+                />
+              </div>
+            </div>
+
+            {/* Form fields - second row */}
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>User Name</label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  defaultValue={data.nickName}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Email</label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  defaultValue={data.email}
+                />
+              </div>
+            </div>
+
+            {/* Bio textarea */}
+            <div className={styles.formGroup}>
+              <label className={styles.label}>About Me</label>
+              <textarea
+                className={styles.textarea}
+                rows="4"
+                defaultValue={data.aboutMe}
+              />
+            </div>
+
+            {/* Update profile button */}
+            <button className={styles.updateButton}>Update Profile</button>
           </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>Last Name</label>
-            <input 
-              className={styles.input} 
-              type="text" 
-              defaultValue={data.lastName}
-            />
-          </div>
         </div>
-        
-        {/* Form fields - second row */}
-        <div className={styles.formRow}>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>User Name</label>
-            <input 
-              className={styles.input} 
-              type="text" 
-              defaultValue={data.nickName}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>Email</label>
-            <input 
-              className={styles.input} 
-              type="text" 
-              defaultValue={data.email}
-            />
-          </div>
-        </div>
-        
-        {/* Bio textarea */}
-        <div className={styles.formGroup}>
-          <label className={styles.label}>About Me</label>
-          <textarea
-            className={styles.textarea}
-            rows="4"
-            defaultValue={data.aboutMe}
-          />
-        </div>
-        
-        {/* Update profile button */}
-        <button className={styles.updateButton}>
-          Update Profile
-        </button>
-      </div>
+      )}
     </div>
   );
-  
 }
