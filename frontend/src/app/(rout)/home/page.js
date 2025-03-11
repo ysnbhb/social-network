@@ -8,11 +8,10 @@ export default  function Home() {
       
      return (
     <div>
-      {/* Use Navbar as a JSX element */}
-      {/* Other content for the home page */}
+
       <main className="main-content">
-      <ProfileSide  />
-      <HomeFeed  />
+      <ProfileSide />
+      <HomeFeed />
       <ActivitySide />
       </main>
 
