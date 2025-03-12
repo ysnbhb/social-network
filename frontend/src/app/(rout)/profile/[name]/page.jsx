@@ -216,7 +216,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
     const formObject = {};
     for (const [key, value] of formData.entries()) {
       formObject[key] = value;
-    } 
+    }
     setProfile(formObject);
     router.push(`/profile/${formObject.nickName}`, undefined, { shallow: true });
   };
@@ -334,7 +334,9 @@ export function Updateprofile({ data, show, setShowPopup }) {
               </div>
 
               {/* Update profile button */}
-              <button className={styles.updateButton} onClick={togglePopup}>Update Profile</button>
+              <button className={styles.updateButton}  >
+                Update Profile
+              </button>
             </form>
           </div>
         </div>
