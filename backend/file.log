@@ -272,3 +272,4 @@
 2025/03/12 15:38:05 Websocket_controller.go:40: Error: User with ID 1 not found
 2025/03/12 15:39:19 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
 2025/03/12 15:39:27 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
+2025/03/12 15:44:20 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)

@@ -219,11 +219,9 @@ export function Updateprofile({ data, show, setShowPopup }) {
     }
     setProfile(formObject);
     router.push(`/profile/${formObject.nickName}`);
-    router.refresh();
-  };
+   };
   const change = () => {
-    console.log("kjhjkh",data.nickName);
-    
+     
     router.push(`/profile/${data.nickName}`);
     router.refresh();
   };
