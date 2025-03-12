@@ -36,6 +36,7 @@ func CheckEmail(email string) error {
 
 	return nil
 }
+
 func GetUserNameByEmail(email string) (string, error) {
 	var username string
 	query := "select nickname from users where email=?"
@@ -47,6 +48,7 @@ func GetUserNameByEmail(email string) (string, error) {
 
 	return username, nil
 }
+
 func GetUserId(login *models.Login) {
 	query := `SELECT u.id FROM users u WHERE email = ?`
 	var userId int
@@ -124,11 +126,15 @@ func GetUserIdByNickName(nickname string) int {
 func UpdateProfile(user *models.User) error {
 	query := `UPDATE users 
 	SET 
-    	about_me = CASE WHEN ? <> '' THEN ? ELSE about_me END, 
-    	profile_type = ?
-	WHERE id = ?;
+    	profile_type = ?,
+        first_name=?,
+        last_name=?,
+        nickname=?,
+        about_me=?
+	WHERE id =?;
 `
-	_, err := db.DB.Exec(query, user.AboutMe, user.Profile_Type, user.Id)
+
+	_, err := db.DB.Exec(query, user.Profile_Type, user.FirstName, user.LastName, user.NickName, user.AboutMe, user.Id)
 	return err
 }
 

@@ -12,6 +12,7 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
 import { useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
+import useEditProfile from "@/app/hooks/useEditProfile";
 const check = false;
 export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
@@ -175,8 +176,7 @@ export default function Profile({ params }) {
                           following
                         </span>
                       </div>
-
-                      {/* Skill tags to match example */}
+ 
                     </div>
                   </div>
                 </div>
@@ -200,10 +200,30 @@ export default function Profile({ params }) {
 }
 
 export function Updateprofile({ data, show, setShowPopup }) {
-  // const [show, setShowPopup] = useState(false);
+  const [profileType, setProfileType] = useState("public");
+  const [profile, setProfile] = useState("public");
+  const newdata = useEditProfile(profile);
+ 
+
+  const handleRadioChange = (event) => {
+    setProfileType(event.target.value);
+  };
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const formObject = {};
+    for (const [key, value] of formData.entries()) {
+      formObject[key] = value;
+    }
+    setProfile(formObject);
+    console.log(formObject);
+  };
+
   const togglePopup = () => {
     setShowPopup(!show);
   };
+
   return (
     <div>
       {show && (
@@ -234,79 +254,87 @@ export function Updateprofile({ data, show, setShowPopup }) {
             </div>
 
             <hr className={styles.hr} />
+            <form onSubmit={handleSignUp}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>First Name</label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    defaultValue={data.firstName}
+                    name="firstName"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Last Name</label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    defaultValue={data.lastName}
+                    name="lastName"
+                  />
+                </div>
+              </div>
 
-            <div className={styles.formRow}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>User Name</label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    defaultValue={data.nickName}
+                    name="nickName"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Email</label>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    defaultValue={data.email}
+                    name="email"
+                  />
+                </div>
+              </div>
+
+              <div className={styles["formRow-radio"]}>
+                <label className={styles.label}>Type Profile</label>
+                <div className={styles.formradio}>
+                  <label className={styles.label}>Public</label>
+                  <input
+                    className={styles.radio}
+                    type="radio"
+                    name="public"
+                    value="public"
+                    checked={profileType === "public"}
+                    onChange={handleRadioChange}
+                  />
+
+                  <label className={styles.label}>Private</label>
+                  <input
+                    className={styles.radio}
+                    type="radio"
+                    name="private"
+                    value="private"
+                    checked={profileType === "private"}
+                    onChange={handleRadioChange}
+                  />
+                </div>
+              </div>
+
               <div className={styles.formGroup}>
-                <label className={styles.label}>First Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.firstName}
+                <label className={styles.label}>About Me</label>
+                <textarea
+                  className={styles.textarea}
+                  rows="4"
+                  name="aboutMe"
+                  defaultValue={data.aboutMe}
                 />
               </div>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Last Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.lastName}
-                />
-              </div>
-            </div>
 
-            {/* Form fields - second row */}
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>User Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.nickName}
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Email</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.email}
-                />
-              </div>
-            </div>
-
-            {/* About textarea */}
-            <div className={styles["formRow-radio"]}>
-              <label className={styles.label}>Type Profile</label>
-              <div className={styles.formradio}>
-                <label className={styles.label}>Public</label>
-                <input
-                  className={styles.radio}
-                  type="radio"
-                 />
-              </div>
-
-              <div className={styles.formradio}>
-                <label className={styles.label}>Private</label>
-                <input
-                  className={styles.radio}
-                  type="radio"
-                  
-                />
-              </div>
-            </div>
-
-
-            <div className={styles.formGroup}>
-              <label className={styles.label}>About Me</label>
-              <textarea
-                className={styles.textarea}
-                rows="4"
-                defaultValue={data.aboutMe}
-              />
-            </div>
-
-            {/* Update profile button */}
-            <button className={styles.updateButton}>Update Profile</button>
+              {/* Update profile button */}
+              <button className={styles.updateButton}>Update Profile</button>
+            </form>
           </div>
         </div>
       )}
