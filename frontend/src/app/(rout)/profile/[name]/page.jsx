@@ -218,10 +218,15 @@ export function Updateprofile({ data, show, setShowPopup }) {
       formObject[key] = value;
     }
     setProfile(formObject);
-    router.push(`/profile/${formObject.nickName}`, undefined, { shallow: true });
+    router.push(`/profile/${formObject.nickName}`);
     router.refresh();
   };
-
+  const change = () => {
+    console.log("kjhjkh",data.nickName);
+    
+    router.push(`/profile/${data.nickName}`);
+    router.refresh();
+  };
   const togglePopup = () => {
     setShowPopup(!show);
   };
@@ -335,7 +340,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
               </div>
 
               {/* Update profile button */}
-              <button className={styles.updateButton}  >
+              <button className={styles.updateButton} onClick={change}>
                 Update Profile
               </button>
             </form>
