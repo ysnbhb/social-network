@@ -160,9 +160,9 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	users.Id = userId
-	if users.Profile_Type != "private" && users.Profile_Type != "public" {
-		users.Profile_Type = "public"
-	}
+	// if users.Profile_Type != "private" && users.Profile_Type != "public" {
+	// 	users.Profile_Type = "public"
+	// }
 	err = services.UpdateProfile(&users)
 	if err != nil {
 		utils.JsonResponse(w, "field to update profile", http.StatusBadRequest)

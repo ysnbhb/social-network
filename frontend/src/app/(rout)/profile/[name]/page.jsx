@@ -199,7 +199,7 @@ export default function Profile({ params }) {
 
 export function Updateprofile({ data, show, setShowPopup }) {
   const router = useRouter();
-  const [profileType, setProfileType] = useState("public");
+  const [profileType, setProfileType] = useState("Public");
   const params = useParams();
   const name = params.name;
   const [profile, setProfile] = useState({ username: name });
@@ -216,10 +216,9 @@ export function Updateprofile({ data, show, setShowPopup }) {
     const formObject = {};
     for (const [key, value] of formData.entries()) {
       formObject[key] = value;
-    }
+    } 
     setProfile(formObject);
-
-    router.push(`/profile/${formObject.nickName}`);
+    router.push(`/profile/${formObject.nickName}`, undefined, { shallow: true });
   };
 
   const togglePopup = () => {
@@ -306,8 +305,8 @@ export function Updateprofile({ data, show, setShowPopup }) {
                   <input
                     className={styles.radio}
                     type="radio"
-                    name="public"
-                    value="public"
+                    name="profile_type"
+                    value="Public"
                     checked={profileType === "Public"}
                     onChange={handleRadioChange}
                   />
@@ -316,8 +315,8 @@ export function Updateprofile({ data, show, setShowPopup }) {
                   <input
                     className={styles.radio}
                     type="radio"
-                    name="private"
-                    value="private"
+                    name="profile_type"
+                    value="Private"
                     checked={profileType === "Private"}
                     onChange={handleRadioChange}
                   />
@@ -335,7 +334,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
               </div>
 
               {/* Update profile button */}
-              <button className={styles.updateButton}>Update Profile</button>
+              <button className={styles.updateButton} onClick={togglePopup}>Update Profile</button>
             </form>
           </div>
         </div>
