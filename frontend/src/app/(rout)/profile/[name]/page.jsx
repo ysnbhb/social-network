@@ -219,6 +219,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
     }
     setProfile(formObject);
     router.push(`/profile/${formObject.nickName}`, undefined, { shallow: true });
+    router.refresh();
   };
 
   const togglePopup = () => {

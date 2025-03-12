@@ -259,3 +259,5 @@
 2025/03/12 15:31:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
 2025/03/12 15:31:03 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
 2025/03/12 15:31:26 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/12 15:34:51 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/12 15:35:32 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
