@@ -10,10 +10,9 @@ import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
 import useEditProfile from "@/app/hooks/useEditProfile";
-const check = false;
 export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
@@ -176,7 +175,6 @@ export default function Profile({ params }) {
                           following
                         </span>
                       </div>
- 
                     </div>
                   </div>
                 </div>
@@ -200,10 +198,12 @@ export default function Profile({ params }) {
 }
 
 export function Updateprofile({ data, show, setShowPopup }) {
+  const router = useRouter();
   const [profileType, setProfileType] = useState("public");
-  const [profile, setProfile] = useState("public");
-  const newdata = useEditProfile(profile);
- 
+  const params = useParams();
+  const name = params.name;
+  const [profile, setProfile] = useState({ username: name });
+  const updatedProfile = useEditProfile(profile);
 
   const handleRadioChange = (event) => {
     setProfileType(event.target.value);
@@ -212,12 +212,14 @@ export function Updateprofile({ data, show, setShowPopup }) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
+    formData.append("profile_type", profileType);
     const formObject = {};
     for (const [key, value] of formData.entries()) {
       formObject[key] = value;
     }
     setProfile(formObject);
-    console.log(formObject);
+
+    router.push(`/profile/${formObject.nickName}`);
   };
 
   const togglePopup = () => {
@@ -306,7 +308,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
                     type="radio"
                     name="public"
                     value="public"
-                    checked={profileType === "public"}
+                    checked={profileType === "Public"}
                     onChange={handleRadioChange}
                   />
 
@@ -316,7 +318,7 @@ export function Updateprofile({ data, show, setShowPopup }) {
                     type="radio"
                     name="private"
                     value="private"
-                    checked={profileType === "private"}
+                    checked={profileType === "Private"}
                     onChange={handleRadioChange}
                   />
                 </div>
