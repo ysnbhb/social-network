@@ -140,13 +140,3 @@ func GetAvatarUrl(userId int) string {
 	db.DB.QueryRow(query, userId).Scan(&avatar)
 	return avatar
 }
-
-func GetSession(userId int) (bool, error) {
-	query := `SELECT EXISTS (SELECT 1 FROM sessions WHERE user_id = ?)`
-	var exists bool
-	err := db.DB.QueryRow(query, userId).Scan(&exists)
-	if err != nil {
-		return false, err
-	}
-	return exists, nil
-}

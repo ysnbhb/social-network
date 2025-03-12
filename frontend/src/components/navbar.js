@@ -2,6 +2,7 @@
 import Link from "next/link";
 import "../styles/navbar.css";
 import { usePathname } from "next/navigation";
+import {Closeconnection} from "../websocket/websocket.js";
 import { useState, useEffect } from 'react';
 
 import {
@@ -13,20 +14,18 @@ import { API_URL } from "./api";
 
 export default function Navbar() {
   const [cookie, setCookie] = useState(document.cookie);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  let intervalId;
 
   const listenForCookieChanges = () => {
-    if (isLoggedIn) {
-      setInterval(() => {
-        const newCookie = document.cookie;
-        if (newCookie !== cookie) {
-          setCookie(newCookie);
-          console.log('Cookie has changed:', newCookie);
-          checkLoginStatus();
-        }
-      }, 1000);
-    }
+    intervalId = setInterval(() => {
+      const newCookie = document.cookie;
+      if (newCookie !== cookie) {
+        setCookie(newCookie);
+        checkLoginStatus();
+      }
+    }, 1000);
   };
+
   const checkLoginStatus = async () => {
     try {
       const res = await fetch(`${API_URL}/api/user/checklogin`, {
@@ -38,16 +37,17 @@ export default function Navbar() {
       });
 
       if (res.status === 200) {
-        setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false);
         document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         router.push('/login');
+        clearInterval(intervalId);
+        Closeconnection()
       }
     } catch (error) {
       console.error("Error checking login:", error);
-      setIsLoggedIn(false);
       router.push('/login');
+      clearInterval(intervalId);
+      Closeconnection()
     }
   };
 

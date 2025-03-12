@@ -101,6 +101,14 @@ export function SendOnlineStatus() {
 
 }
 
+export function Closeconnection(){
+    socket.close();
+    const data = {
+        type: "closeconnection",
+    };
+    safeSend(data);
+}
+
 
 export function ReceiveOnlineStatus(data) {
     const onlineUsers = data.onlineUsers;

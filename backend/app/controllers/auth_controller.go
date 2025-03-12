@@ -172,18 +172,4 @@ func Session_id(w http.ResponseWriter, r *http.Request) {
 }
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
-	userid := r.Context().Value("userId").(int)
-	checksession, err := services.GetSession(userid)
-	if err != nil {
-		utils.JsonResponse(w, "you are not loged", http.StatusInternalServerError)
-		log.Println("error in check session", err)
-		http.Redirect(w, r, "/login", http.StatusSeeOther)
-		return
-	}
-	if !checksession {
-		utils.JsonResponse(w, "you are not loged", http.StatusInternalServerError)
-		http.Redirect(w, r, "/login", http.StatusSeeOther)
-		return
-	}
-	utils.JsonResponse(w, "you are loged", http.StatusOK)
 }

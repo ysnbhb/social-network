@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"social-network/app/services"
@@ -20,9 +21,10 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			cookie = r.URL.Query().Get("session_id")
 		} else {
 			cookies, err := r.Cookie("session_id")
+			fmt.Println("cookies", cookies)
 			if err != nil {
 				http.Error(w, "Unauthorized", http.StatusUnauthorized)
-
+				http.Redirect(w, r, "/login", http.StatusSeeOther)
 				return
 			}
 			cookie = cookies.Value
@@ -32,7 +34,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
- 
+
 		ctx := context.WithValue(r.Context(), "userId", userId)
 		ctx = context.WithValue(ctx, "username", username)
 		r = r.WithContext(ctx)

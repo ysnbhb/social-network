@@ -53,7 +53,3 @@ func GetUserIdBySession(cookie string) (int, string, error) {
 	return repo.GetUserIdBySession(cookie)
 }
 
-func GetSession(userid int) (bool, error) {
-	check, err := repo.GetSession(userid)
-	return check, err
-}

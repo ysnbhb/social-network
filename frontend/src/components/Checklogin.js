@@ -4,7 +4,8 @@ import { useEffect } from "react";
 
 export default function Checklogin() {
     const router = useRouter();
-
+    
+    console.log("Checklogin component rendered");
     useEffect(() => {
         const checkLogin = async () => {
             try {
@@ -24,7 +25,6 @@ export default function Checklogin() {
                 console.error("Error checking login:", error);
             }
         };
-
         checkLogin();
     }, [router]);
 
