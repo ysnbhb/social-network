@@ -7,7 +7,6 @@ import { API_URL } from "./api";
   
 export default function ActivitySidebar() {
   const [user, setUser] = useState([]);
-  let databool = false;
   
   useEffect(() => {
     async function GetUser() {
@@ -16,8 +15,7 @@ export default function ActivitySidebar() {
         credentials: "include",
       });
       const data = await res.json();
-      setUser(data);
-      databool = true;
+      data != null ? setUser(data) : setUser([])
     }
     GetUser();
   }, []);
@@ -35,9 +33,11 @@ export default function ActivitySidebar() {
       credentials: "include",
     })
     .then((response) => response.json())
-    .then((data) => data ? setUser(data) : setUser([]))
+    .then((data) => data != null ? setUser(data) : setUser([]))
     .catch((error) => console.error(error));
   }
+  console.log(user);
+  
 
   return (
     <aside className={`activity-sidebar`} style={{ marginBottom: "20px" }}>

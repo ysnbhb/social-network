@@ -10,7 +10,6 @@ import (
 )
 
 func SearchUsers(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("///////////////////////////////")
 	if r.Method != http.MethodGet {
 		utils.JsonResponse(w, "Method not allowed", http.StatusMethodNotAllowed)
 		log.Println("method not allowed")
@@ -18,12 +17,12 @@ func SearchUsers(w http.ResponseWriter, r *http.Request) {
 	}
 	searchContent := r.FormValue("searchContent")
 	fmt.Println("search", searchContent)
-	users, err := services.SearchUsersByContent(searchContent)
+	userId := r.Context().Value("userId").(int)
+	users, err := services.SearchUsersByContent(searchContent, userId)
 	if err != nil {
 		utils.JsonResponse(w, "Failed to search users", http.StatusInternalServerError)
 		log.Println("Error searching users:", err)
 		return
 	}
-	fmt.Println(users)
 	utils.JsonResponse(w, users, http.StatusOK)
 }

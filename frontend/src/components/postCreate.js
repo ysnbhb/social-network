@@ -31,7 +31,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
   };
 
   useEffect(() => {
-    if (postType === "almostPrivate") {
+    if (postType === "private") {
       setShowPopup(true);
     } else {
       setShowPopup(false);

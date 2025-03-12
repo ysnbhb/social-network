@@ -5,10 +5,11 @@ import (
 	"social-network/pkg/models"
 )
 
-func GetUsersByNikename(searchContent string) ([]models.UserBySearch, error) {
+func GetUsersByNikename(searchContent string, userId int) ([]models.UserBySearch, error) {
 	var users []models.UserBySearch
-	query := `SELECT id, first_name, last_name, nickname, avatar_url FROM users WHERE nickname LIKE ?`
-	rows, err := db.DB.Query(query, "%"+searchContent+"%")
+
+	query := `SELECT id, first_name, last_name, nickname, avatar_url FROM users WHERE nickname LIKE ? AND id != ?`
+	rows, err := db.DB.Query(query, "%"+searchContent+"%", userId)
 	if err != nil {
 		return nil, err
 	}
