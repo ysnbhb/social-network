@@ -191,25 +191,3 @@ body {
     font-size: 12px;
   }
 }
-
-.no-data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #333;
-  padding: 20px;
-}
-
-.no-data h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-
-}
-
-.no-data svg {
-  width: 80px;
-  height: 80px;
-  margin-top: 10px;
-}
