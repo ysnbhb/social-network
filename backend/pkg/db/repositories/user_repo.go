@@ -36,6 +36,7 @@ func CheckEmail(email string) error {
 
 	return nil
 }
+
 func GetUserNameByEmail(email string) (string, error) {
 	var username string
 	query := "select nickname from users where email=?"
@@ -47,6 +48,7 @@ func GetUserNameByEmail(email string) (string, error) {
 
 	return username, nil
 }
+
 func GetUserId(login *models.Login) {
 	query := `SELECT u.id FROM users u WHERE email = ?`
 	var userId int
@@ -137,4 +139,14 @@ func GetAvatarUrl(userId int) string {
 	var avatar string
 	db.DB.QueryRow(query, userId).Scan(&avatar)
 	return avatar
+}
+
+func GetSession(userId int) (bool, error) {
+	query := `SELECT EXISTS (SELECT 1 FROM sessions WHERE user_id = ?)`
+	var exists bool
+	err := db.DB.QueryRow(query, userId).Scan(&exists)
+	if err != nil {
+		return false, err
+	}
+	return exists, nil
 }

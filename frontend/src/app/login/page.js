@@ -3,36 +3,36 @@ import { useRef, useEffect, useState, useContext, } from "react";
 import { Context } from '../../lib/Context.js';
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import Checklogin from "../../components/Checklogin.js";
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
- 
+
+
+
 export default function Login() {
-  const contextValues = useContext(Context); 
-   
+  Checklogin()
   const containerRef = useRef(null);
   const Router = useRouter();
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState("Public")
- 
+
   const handleFileChange = (e) => {
-    setImg(e.target.files[0]); 
+    setImg(e.target.files[0]);
 
   }
-  const handleTypeProfile= (e) => {
-       setProfile(e.target);  
-   }
+  const handleTypeProfile = (e) => {
+    setProfile(e.target);
+  }
   const handleSignUp = async (event) => {
     event.preventDefault();
-
-    // const dataObject = {};
     const formData = new FormData(event.target);
     if (img) {
       formData.append("file", img)
     }
-    if (profile){
+    if (profile) {
       formData.append("profile_type", profile)
     }
- 
+
     const response = await fetch(signUpEndpoints, {
       method: 'POST',
       credentials: 'include',
@@ -43,7 +43,6 @@ export default function Login() {
       alert(content)
     } else {
       Router.push('/home')
-      // redirect('/home')
     }
 
   };
@@ -64,22 +63,21 @@ export default function Login() {
       credentials: 'include',
       body: JSON.stringify(dataObject)
     });
-   
-    
-    if (response.ok) { 
+
+
+    if (response.ok) {
       const content = await response.json();
-      localStorage.setItem("username",content.nickName)
+      localStorage.setItem("username", content.nickName)
       console.log(content);
-      
+
       Router.push('/home')
-      
+
     } else {
       alert("Login failed")
-      // redirect('/home')
     }
 
   };
-  
+
 
   useEffect(() => {
     const container = containerRef.current;
@@ -112,12 +110,12 @@ export default function Login() {
               <span>or use your email for registration</span>
               <input type="text" placeholder="First Name" name="firstName" required />
               <input type="text" placeholder="Last Name" name="lastName" required />
-              <input type="text" placeholder="Nickname" name="nickName"  />
+              <input type="text" placeholder="Nickname" name="nickName" />
               <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
               <input type="email" placeholder="Email" name="email" required />
               <input type="password" placeholder="Password" name="password" required />
-              <select className={styles.select} onChange={handleTypeProfile}   name="profile_type">
-                <option  value={"Public"}>Public</option>
+              <select className={styles.select} onChange={handleTypeProfile} name="profile_type">
+                <option value={"Public"}>Public</option>
                 <option value={"Private"}>Private</option>
               </select>
               <textarea placeholder="About Me" name="aboutMe" />

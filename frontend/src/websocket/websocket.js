@@ -1,7 +1,7 @@
 "use client";
 
 import { handleNotification, sendNotification } from './notification.js'
-import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
+import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, Getmessagesgroups } from './messages.js';
 
 export let socket;
 let connectionPromise = null;
