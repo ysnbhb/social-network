@@ -5,19 +5,21 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Follow, ShowUnfllowUser } from "./activitySide";
 import { API_URL } from "./api";
-export default function ProfileSide({ classes }) {
+export default function ProfileSide({ classes  , setUser}) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
   const [checkFollow, setcheckFollow] = useState("");
   const [dataFollow, setdataFollow] = useState([]);
   const [profile, error] = userProfile();
-  const [follow, errorfollow] = useFollowing();
+  const [follow, errorfollow] = useFollowing(setUser);
   const togglePopup = (data, text) => {
-          setcheckFollow(text)
-          setdataFollow(data)
-          setShowPopup(!showPopup);
+    setcheckFollow(text)
+    setdataFollow(data)
+    setShowPopup(!showPopup);
   }; 
+
  
+  // setJoinedGroup(prev => [...prev, data]);
   const {
     avatarUrl,
     firstName,

@@ -1,7 +1,7 @@
 import { API_URL } from "@/components/api";
 import { useEffect, useState } from "react";
 
-export default function useFollowing( ) {
+export default function useFollowing( setUser) {
   const [Following, setFollowing] = useState([]);
   const [error, setError] = useState(null);
   const dataFollowing = async () => {
@@ -13,6 +13,7 @@ export default function useFollowing( ) {
 
       if (response.ok) {
         setFollowing(data || []);
+        setUser(data.Follower)
       } else {
         setError(data);
       }

@@ -6,7 +6,7 @@ import PostCreater from "./postCreate";
 import IsLoading from "./isloading";
 import { API_URL } from "./api";
 
-export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts"}) {
+export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts" , dadfollow}) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   let offset = 0;
@@ -52,7 +52,7 @@ export default function HomeFeed({ className, classes = {}  ,  ishome = true , g
   return (
     <>
       <section className={`${className} section-home`}>
-        <PostCreater setPosts={setPosts} classes={classes}  ishome={ishome} groupid={groupid}/>
+        <PostCreater setPosts={setPosts} classes={classes}  ishome={ishome} groupid={groupid} dataFollow={dadfollow}/>
 
 
         {posts.length === 0 && (

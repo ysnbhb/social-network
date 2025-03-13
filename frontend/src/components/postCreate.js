@@ -4,16 +4,24 @@ import "../styles/groupsFeed.css";
 import { CreatePost } from "../lib/createPost";
 import userProfile from "@/app/hooks/userProfile";
 import { API_URL } from "./api";
+import useFollowing from "@/app/hooks/useFollowing";
+import { Follow, ShowUnfllowUser } from "./activitySide";
 
-export default function PostCreater({ setPosts, classes, ishome, groupid }) {
+export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFollow}) {
   const [content, setContent] = useState("");
   const [postType, setPostType] = useState("public");
   const [img, setImg] = useState(null);
   const [profiledata, errorPro] = userProfile();
+  const [checkFollow, setcheckFollow] = useState("");
   const [showPopup, setShowPopup] = useState(false);
-  const togglePopup = () => setShowPopup(!showPopup);
   const { avatarUrl } = profiledata;
- 
+  console.log(dataFollow);
+  const activeTab = 0
+  const togglePopup = (data, text) => {
+    setcheckFollow(text)
+    // setdataFollow(data)
+    setShowPopup(!showPopup);
+}; 
 
   const handalPost = async (e) => {
     e.preventDefault();
@@ -157,21 +165,14 @@ export default function PostCreater({ setPosts, classes, ishome, groupid }) {
               </button>
             </div>
             <div className="popup-form">
-            {[
-              { name: "bahbib yassine", username: "@yassine334" },
-              { name: "bahbib yassine", username: "@yassine.bahbib" },
-              { name: "bhb bhb", username: "@bhb475" },
-            ].map((user, index) => (
-          <div className="activity-item" key={index}>
-            <div>
-              <p>
-                <strong>{user.name}</strong>
-              </p>
-              <p className="text-muted">{user.username}</p>
-            </div>
-            <button>select</button>
-          </div>
-        ))}
+                      {dataFollow ? (dataFollow).map((fl) => (
+                        <div key={`${activeTab}-${fl.id}`}>
+                           <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                         </div>
+                      )) : (<div>
+                        No Follower
+                      </div>)}
+
               <div className="popup-actions">
                 <button
                   type="button"
