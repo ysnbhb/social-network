@@ -1,6 +1,5 @@
 import { API_URL } from "@/components/api";
-import { useEffect, useState } from "react";
-  export default async  function useEditProfile(data  ) {
+   export default async  function useEditProfile(data  ) {
     
         try {
             const response = await fetch(`${API_URL}/api/profile/edit`, {

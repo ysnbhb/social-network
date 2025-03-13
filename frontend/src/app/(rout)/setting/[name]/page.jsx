@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { API_URL } from "@/components/api";
 import styles from "./updateProfile.module.css";
 import { useParams } from "next/navigation";
@@ -13,9 +13,16 @@ export default function setting({}) {
   const [profileType, setProfileType] = useState("Public");
   const params = useParams();
   const username = params.name;
-  console.log(username);
   const [profiledata, errorPro] = userProfile(username);
   const [error, setupdate] = useState(null);
+  const [show, setShow] = useState(true);
+
+  const showPopUp = (check) => {
+    setShow(check);
+  };
+  // useEffect(()=>{
+  //   setShow(true);
+  // },[show])
 
   const handleRadioChange = (event) => {
     setProfileType(event.target.value);
@@ -36,24 +43,30 @@ export default function setting({}) {
     }
     const error = await useEditProfile(formObject);
     if (error) {
+      showPopUp(true)
       setupdate(error);
       return;
     } else {
       router.push(`/profile/${formObject.nickName}`);
     }
   };
+  console.log(show);
 
   return (
     <div>
-      {error && (
-        <div className={styles["container-popup"]}>
-          <div className={styles.popupError}>
-            <div className={styles["error-icon"]}></div>
-            <h2 className={styles["error-title"]}>Error</h2>
-            <p className={styles["error-message"]}>{error}</p>
-            <a href="#"  className={styles["try-again-btn"]}>
-              Try again
-            </a>
+      {error && show && (
+        <div>
+          <div className={styles["container-popup"]}>
+            <div className={styles.popupError}>
+              <div className={styles["error-icon"]}></div>
+              <h2 className={styles["error-title"]}>Error</h2>
+              <p className={styles["error-message"]}>{error}</p>
+              <button
+                onClick={() => showPopUp(false)}
+                className={styles["try-again-btn"]}>
+                Try again
+              </button>
+            </div>
           </div>
         </div>
       )}
