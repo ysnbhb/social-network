@@ -1,0 +1,358 @@
+2025/03/13 12:01:13 server.go:27: Starting server on :8080
+2025/03/13 12:03:39 user_repo.go:33: <nil>
+2025/03/13 12:03:39 auth_controller.go:37: gtrgrtgtP_21
+2025/03/13 12:04:10 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:04:40 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:08:04 server.go:27: Starting server on :8080
+2025/03/13 12:08:18 user_repo.go:66: user nickname already exist
+2025/03/13 12:08:18 auth_controller.go:167: error in update profile
+2025/03/13 12:10:40 user_repo.go:66: user nickname already exist
+2025/03/13 12:10:40 auth_controller.go:167: error in update profile
+2025/03/13 12:11:02 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:11:02 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:02 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:04 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:05 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:13 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:22 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:54 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:15:57 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:16:06 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
+2025/03/13 12:16:06 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:16:06 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 12:16:06 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 12:16:09 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:16:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 12:16:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 12:16:18 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:16:18 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 12:16:18 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 12:16:20 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:17:05 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:17:05 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:23:07 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:23:30 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 12:23:30 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 12:23:30 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 12:24:10 Websocket_controller.go:46: Closing connection for user: dd (ID: 3)
+2025/03/13 12:24:11 Websocket_controller.go:40: Error: User with ID 3 not found
+2025/03/13 12:24:36 user_repo.go:66: user nickname already exist
+2025/03/13 12:24:36 auth_controller.go:167: error in update profile
+2025/03/13 12:24:58 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:25:01 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:25:06 user_repo.go:66: user nickname already exist
+2025/03/13 12:25:06 auth_controller.go:167: error in update profile
+2025/03/13 12:25:21 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:25:24 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:25:27 user_repo.go:66: user nickname already exist
+2025/03/13 12:25:27 auth_controller.go:167: error in update profile
+2025/03/13 12:25:44 user_repo.go:66: user nickname already exist
+2025/03/13 12:25:44 auth_controller.go:167: error in update profile
+2025/03/13 12:26:19 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:26:20 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:26:25 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:26:28 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:26:37 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:26:44 user_repo.go:66: user nickname already exist
+2025/03/13 12:26:44 auth_controller.go:167: error in update profile
+2025/03/13 12:27:21 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:27:34 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:27:46 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:27:49 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:27:50 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:09 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:12 user_repo.go:66: user nickname already exist
+2025/03/13 12:28:12 auth_controller.go:167: error in update profile
+2025/03/13 12:28:30 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:33 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:38 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:39 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:44 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:48 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:28:55 user_repo.go:66: user nickname already exist
+2025/03/13 12:28:55 auth_controller.go:167: error in update profile
+2025/03/13 12:29:21 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:29:52 user_repo.go:66: user nickname already exist
+2025/03/13 12:29:52 auth_controller.go:167: error in update profile
+2025/03/13 12:29:59 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:30:42 user_repo.go:66: user nickname already exist
+2025/03/13 12:30:42 auth_controller.go:167: error in update profile
+2025/03/13 12:30:51 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 12:30:54 user_repo.go:66: user nickname already exist
+2025/03/13 12:30:54 auth_controller.go:167: error in update profile
+2025/03/13 12:31:18 user_repo.go:66: user nickname already exist
+2025/03/13 12:31:18 auth_controller.go:167: error in update profile
+2025/03/13 13:28:18 Websocket_controller.go:46: Closing connection for user: ddd (ID: 3)
+2025/03/13 13:31:14 server.go:27: Starting server on :8080
+2025/03/13 13:31:38 user_repo.go:67: user nickname already exist
+2025/03/13 13:31:38 auth_controller.go:167: error in update profile
+2025/03/13 13:32:01 user_repo.go:67: user nickname already exist
+2025/03/13 13:32:01 auth_controller.go:167: error in update profile
+2025/03/13 13:35:02 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 13:37:16 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:36 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:36 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:36 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:36 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:38 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:38:44 user_repo.go:67: user nickname already exist
+2025/03/13 13:38:44 auth_controller.go:167: error in update profile
+2025/03/13 13:40:13 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:40:26 user_repo.go:67: user nickname already exist
+2025/03/13 13:40:26 auth_controller.go:167: error in update profile
+2025/03/13 13:40:41 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:40:44 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:40:46 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:40:54 user_repo.go:67: user nickname already exist
+2025/03/13 13:40:54 auth_controller.go:167: error in update profile
+2025/03/13 13:41:02 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:09 user_repo.go:67: user nickname already exist
+2025/03/13 13:42:09 auth_controller.go:167: error in update profile
+2025/03/13 13:42:48 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:48 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:48 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:48 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:51 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:55 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:56 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:58 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:42:59 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:43:06 user_repo.go:67: user nickname already exist
+2025/03/13 13:43:06 auth_controller.go:167: error in update profile
+2025/03/13 13:44:02 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:44:10 user_repo.go:67: user nickname already exist
+2025/03/13 13:44:10 auth_controller.go:167: error in update profile
+2025/03/13 13:44:43 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:48:31 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:48:33 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:48:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:49:08 user_repo.go:67: user nickname already exist
+2025/03/13 13:49:08 auth_controller.go:167: error in update profile
+2025/03/13 13:49:17 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:49:30 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:50:19 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:50:21 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:50:42 user_repo.go:67: user nickname already exist
+2025/03/13 13:50:42 auth_controller.go:167: error in update profile
+2025/03/13 13:50:55 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:50:55 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:50:58 user_repo.go:67: user nickname already exist
+2025/03/13 13:50:58 auth_controller.go:167: error in update profile
+2025/03/13 13:51:23 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:51:25 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:51:31 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:51:35 user_repo.go:67: user nickname already exist
+2025/03/13 13:51:35 auth_controller.go:167: error in update profile
+2025/03/13 13:51:54 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:09 user_repo.go:67: user nickname already exist
+2025/03/13 13:53:09 auth_controller.go:167: error in update profile
+2025/03/13 13:53:15 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:15 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:15 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:26 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:28 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:38 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:42 user_repo.go:67: user nickname already exist
+2025/03/13 13:53:42 auth_controller.go:167: error in update profile
+2025/03/13 13:53:50 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:53:53 user_repo.go:67: user nickname already exist
+2025/03/13 13:53:53 auth_controller.go:167: error in update profile
+2025/03/13 13:55:14 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:14 auth_controller.go:167: error in update profile
+2025/03/13 13:55:17 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:17 auth_controller.go:167: error in update profile
+2025/03/13 13:55:18 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:18 auth_controller.go:167: error in update profile
+2025/03/13 13:55:18 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:18 auth_controller.go:167: error in update profile
+2025/03/13 13:55:25 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:25 auth_controller.go:167: error in update profile
+2025/03/13 13:55:25 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:25 auth_controller.go:167: error in update profile
+2025/03/13 13:55:26 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:26 auth_controller.go:167: error in update profile
+2025/03/13 13:55:26 user_repo.go:67: user nickname already exist
+2025/03/13 13:55:26 auth_controller.go:167: error in update profile
+2025/03/13 13:58:31 user_repo.go:67: user nickname already exist
+2025/03/13 13:58:31 auth_controller.go:167: error in update profile
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 13:58:38 user_repo.go:67: user nickname already exist
+2025/03/13 13:58:38 auth_controller.go:167: error in update profile
+2025/03/13 13:59:25 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:00:11 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:00:14 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:00:18 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:18 auth_controller.go:167: error in update profile
+2025/03/13 14:00:21 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:21 auth_controller.go:167: error in update profile
+2025/03/13 14:00:22 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:22 auth_controller.go:167: error in update profile
+2025/03/13 14:00:27 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:27 auth_controller.go:167: error in update profile
+2025/03/13 14:00:28 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:28 auth_controller.go:167: error in update profile
+2025/03/13 14:00:28 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:28 auth_controller.go:167: error in update profile
+2025/03/13 14:00:28 user_repo.go:67: user nickname already exist
+2025/03/13 14:00:28 auth_controller.go:167: error in update profile
+2025/03/13 14:00:34 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:01:08 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:01:35 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:35 auth_controller.go:167: error in update profile
+2025/03/13 14:01:36 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:36 auth_controller.go:167: error in update profile
+2025/03/13 14:01:44 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:01:44 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:01:47 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:47 auth_controller.go:167: error in update profile
+2025/03/13 14:01:48 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:48 auth_controller.go:167: error in update profile
+2025/03/13 14:01:49 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:49 auth_controller.go:167: error in update profile
+2025/03/13 14:01:49 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:49 auth_controller.go:167: error in update profile
+2025/03/13 14:01:54 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:01:59 user_repo.go:67: user nickname already exist
+2025/03/13 14:01:59 auth_controller.go:167: error in update profile
+2025/03/13 14:02:23 user_repo.go:67: user nickname already exist
+2025/03/13 14:02:23 auth_controller.go:167: error in update profile
+2025/03/13 14:02:25 user_repo.go:67: user nickname already exist
+2025/03/13 14:02:25 auth_controller.go:167: error in update profile
+2025/03/13 14:02:31 user_repo.go:67: user nickname already exist
+2025/03/13 14:02:31 auth_controller.go:167: error in update profile
+2025/03/13 14:02:32 user_repo.go:67: user nickname already exist
+2025/03/13 14:02:32 auth_controller.go:167: error in update profile
+2025/03/13 14:02:53 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:02:53 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:03:01 user_repo.go:67: user nickname already exist
+2025/03/13 14:03:01 auth_controller.go:167: error in update profile
+2025/03/13 14:03:30 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:03:32 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:05:55 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:05:56 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:05:58 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:06:01 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:06:03 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:06:19 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:06:21 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:06:25 user_repo.go:67: user nickname already exist
+2025/03/13 14:06:25 auth_controller.go:167: error in update profile
+2025/03/13 14:06:27 user_repo.go:67: user nickname already exist
+2025/03/13 14:06:27 auth_controller.go:167: error in update profile
+2025/03/13 14:06:30 user_repo.go:67: user nickname already exist
+2025/03/13 14:06:30 auth_controller.go:167: error in update profile
+2025/03/13 14:06:31 user_repo.go:67: user nickname already exist
+2025/03/13 14:06:31 auth_controller.go:167: error in update profile
+2025/03/13 14:13:37 Websocket_controller.go:46: Closing connection for user: Omrharbi (ID: 3)
+2025/03/13 14:14:25 Websocket_controller.go:46: Closing connection for user: Yassinebhbp (ID: 3)
+2025/03/13 14:14:30 user_repo.go:67: user nickname already exist
+2025/03/13 14:14:30 auth_controller.go:167: error in update profile
+2025/03/13 14:14:32 user_repo.go:67: user nickname already exist
+2025/03/13 14:14:32 auth_controller.go:167: error in update profile
+2025/03/13 14:14:34 user_repo.go:67: user nickname already exist
+2025/03/13 14:14:34 auth_controller.go:167: error in update profile
+2025/03/13 14:16:11 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:16:11 Websocket_controller.go:46: Closing connection for user: Yassinebhbp (ID: 3)
+2025/03/13 14:16:13 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:16:38 user_repo.go:67: user nickname already exist
+2025/03/13 14:16:38 auth_controller.go:167: error in update profile
+2025/03/13 14:16:40 user_repo.go:67: user nickname already exist
+2025/03/13 14:16:40 auth_controller.go:167: error in update profile
+2025/03/13 14:17:54 user_repo.go:67: user nickname already exist
+2025/03/13 14:17:54 auth_controller.go:167: error in update profile
+2025/03/13 14:17:56 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:17:56 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:18:00 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:00 auth_controller.go:167: error in update profile
+2025/03/13 14:18:10 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:18:12 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:18:16 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:16 auth_controller.go:167: error in update profile
+2025/03/13 14:18:19 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:19 auth_controller.go:167: error in update profile
+2025/03/13 14:18:37 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:18:40 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:18:44 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:44 auth_controller.go:167: error in update profile
+2025/03/13 14:18:46 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:46 auth_controller.go:167: error in update profile
+2025/03/13 14:18:47 user_repo.go:67: user nickname already exist
+2025/03/13 14:18:47 auth_controller.go:167: error in update profile
+2025/03/13 14:19:54 Websocket_controller.go:46: Closing connection for user: Omar (ID: 3)
+2025/03/13 14:20:11 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:20:18 user_repo.go:67: user nickname already exist
+2025/03/13 14:20:18 auth_controller.go:167: error in update profile
+2025/03/13 14:20:21 user_repo.go:67: user nickname already exist
+2025/03/13 14:20:21 auth_controller.go:167: error in update profile
+2025/03/13 14:20:23 user_repo.go:67: user nickname already exist
+2025/03/13 14:20:23 auth_controller.go:167: error in update profile
+2025/03/13 14:22:57 user_repo.go:67: user nickname already exist
+2025/03/13 14:22:57 auth_controller.go:167: error in update profile
+2025/03/13 14:23:26 user_repo.go:33: <nil>
+2025/03/13 14:23:26 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:23:31 user_repo.go:67: user nickname already exist
+2025/03/13 14:23:31 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:24:07 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:25:05 Websocket_controller.go:46: Closing connection for user: omar148 (ID: 4)
+2025/03/13 14:25:11 user_repo.go:67: user nickname already exist
+2025/03/13 14:25:11 auth_controller.go:167: error in update profile
+2025/03/13 14:25:14 Websocket_controller.go:46: Closing connection for user: omar148 (ID: 4)
+2025/03/13 14:26:10 user_repo.go:33: <nil>
+2025/03/13 14:26:10 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:28:28 user_repo.go:33: <nil>
+2025/03/13 14:28:28 auth_controller.go:37: Yassinebh
+2025/03/13 14:28:33 user_repo.go:67: user nickname already exist
+2025/03/13 14:28:33 auth_controller.go:167: error in update profile
+2025/03/13 14:28:51 Websocket_controller.go:46: Closing connection for user: omar148 (ID: 4)
+2025/03/13 14:28:51 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:29:01 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:29:04 user_repo.go:67: user nickname already exist
+2025/03/13 14:29:04 auth_controller.go:167: error in update profile
+2025/03/13 14:29:12 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:29:26 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:29:30 user_repo.go:67: user nickname already exist
+2025/03/13 14:29:30 auth_controller.go:167: error in update profile
+2025/03/13 14:29:32 user_repo.go:67: user nickname already exist
+2025/03/13 14:29:32 auth_controller.go:167: error in update profile
+2025/03/13 14:29:33 user_repo.go:67: user nickname already exist
+2025/03/13 14:29:33 auth_controller.go:167: error in update profile
+2025/03/13 14:29:48 Websocket_controller.go:46: Closing connection for user: Yassinebh (ID: 3)
+2025/03/13 14:32:51 user_repo.go:33: <nil>
+2025/03/13 14:32:51 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:33:42 user_repo.go:33: <nil>
+2025/03/13 14:33:42 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:34:36 user_repo.go:33: <nil>
+2025/03/13 14:34:36 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:36:33 user_repo.go:33: <nil>
+2025/03/13 14:36:33 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:36:41 user_repo.go:67: user nickname already exist
+2025/03/13 14:36:41 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:36:47 user_repo.go:67: user nickname already exist
+2025/03/13 14:36:47 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:16 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:16 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:30 user_repo.go:33: <nil>
+2025/03/13 14:37:30 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:37:33 user_repo.go:33: <nil>
+2025/03/13 14:37:33 auth_controller.go:115: adding user to db: email already exist
+2025/03/13 14:37:37 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:37 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:39 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:39 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:40 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:40 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:44 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:44 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:37:46 user_repo.go:67: user nickname already exist
+2025/03/13 14:37:46 auth_controller.go:115: adding user to db: nickname already exist
+2025/03/13 14:39:05 auth_controller.go:34: sorry, this email does not exist
+2025/03/13 14:40:05 auth_controller.go:34: sorry, this email does not exist
+2025/03/13 14:40:07 auth_controller.go:34: sorry, this email does not exist
+2025/03/13 14:40:10 user_repo.go:33: <nil>
+2025/03/13 14:40:10 auth_controller.go:37: Omar
