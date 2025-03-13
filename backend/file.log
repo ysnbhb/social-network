@@ -356,3 +356,6 @@
 2025/03/13 14:40:07 auth_controller.go:34: sorry, this email does not exist
 2025/03/13 14:40:10 user_repo.go:33: <nil>
 2025/03/13 14:40:10 auth_controller.go:37: Omar
+2025/03/13 14:53:42 server.go:27: Starting server on :8080
+2025/03/13 14:54:22 user_repo.go:67: user nickname already exist
+2025/03/13 14:54:22 auth_controller.go:167: error in update profile

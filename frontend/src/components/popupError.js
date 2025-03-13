@@ -16,7 +16,7 @@ export default function PopUpError({ message, onClose }) {
           <div className="popups-header">
             <div className="popups-title">
               <span className="icon">📌</span>
-              The username '{username}' does not exist.
+              {/* The username '{username}' does not exist. */}
             </div>
             <span className="close-button" onClick={Gooback}>&times;</span>
           </div>
