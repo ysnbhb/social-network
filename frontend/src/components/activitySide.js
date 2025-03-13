@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
+import { sendFollow } from "@/websocket/notification";
   
 export default function ActivitySidebar() {
   const [user, setUser] = useState([]);
@@ -99,6 +100,36 @@ export function ShowUnfllowUser({ user }) {
 }
 
 export function Follow ({status, handuleClick, user}) {
+  const [param, setParam] = useState(user.status);
+  console.log(user);
+  
+  if (handuleClick === undefined) {
+    handuleClick = async () => {
+          try {
+            const res = await fetch(`${API_URL}/api/follow`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              credentials: "include",
+              body: JSON.stringify({
+                followingId: user.id,
+              }),
+            });
+      
+            const data = await res.json();
+      
+            if (res.ok) {
+              setParam(data.status);
+              sendFollow(data.followingId+"");
+            } else {
+              console.log("errr");
+            }
+          } catch (error) {
+            console.log(error, "fefr");
+          }
+        };
+  }  
   return (
     <div className="activity-item">
       <div>
@@ -111,9 +142,9 @@ export function Follow ({status, handuleClick, user}) {
         </p>
         <p className="text-muted">@{user.nickname || "N/A"}</p>
       </div>
-      {status === "accept" ? (
-        <button>unfollow</button>
-      ) : status === "pending" ? (
+      {param === "accept"  || status === "accept" ? (
+        <button onClick={() => handuleClick(user.id)}>unfollow</button>
+      ) : param === "pending"  || status === "pending" ? (
         <button>pending</button>
       ) : (
         <button onClick={() => handuleClick(user.id)} >follow</button>

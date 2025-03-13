@@ -149,16 +149,15 @@ func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
 
 func GetUserFollowing(userid int) (friend []models.UnfollowUser, errs error) {
 	following := `SELECT
-    	 
+    	 u.id,
     	u.first_name,
     	u.last_name,
     	u.nickname,
     	u.avatar_url,
-		 f.status
-
-FROM users u 
-JOIN followers f ON u.id = f.following_id 
-WHERE f.follower_id = ?;`
+		f.status
+	FROM users u 
+	JOIN followers f ON u.id = f.following_id 
+	WHERE f.follower_id = $1;`
 
 	row, err := db.DB.Query(following, userid)
 	if err != nil {
@@ -166,7 +165,7 @@ WHERE f.follower_id = ?;`
 	}
 	for row.Next() {
 		f := models.UnfollowUser{}
-		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar,&f.Status)
+		err := row.Scan(&f.Id, &f.FirstName, &f.LastName, &f.Nickname, &f.Avatar, &f.Status)
 		if err != nil {
 			return friend, err
 		}
@@ -177,21 +176,23 @@ WHERE f.follower_id = ?;`
 
 func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
 	follower := ` SELECT
+				u.id,
 				u.first_name,
 				u.last_name,
 				u.nickname,
 				u.avatar_url, 
-				f.status
+				COALESCE((SELECT status FROM followers WHERE follower_id = $1 AND following_id = u.id),'') AS status
+
 		FROM users u 
 		JOIN followers f ON u.id = f.follower_id 
-		WHERE f.following_id=?;`
+		WHERE f.following_id=$1;`
 	row, err := db.DB.Query(follower, userid)
 	if err != nil {
 		return friend, err
 	}
 	for row.Next() {
 		f := models.UnfollowUser{}
-		err := row.Scan(&f.FirstName, &f.LastName, &f.Nickname, &f.Avatar,&f.Status)
+		err := row.Scan(&f.Id, &f.FirstName, &f.LastName, &f.Nickname, &f.Avatar, &f.Status)
 		if err != nil {
 			return friend, err
 		}

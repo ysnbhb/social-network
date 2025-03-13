@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Follow, ShowUnfllowUser } from "./activitySide";
 import { API_URL } from "./api";
+import useHandleFollowers from "@/app/hooks/usehandleFollower";
 export default function ProfileSide({ classes }) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
@@ -28,7 +29,6 @@ export default function ProfileSide({ classes }) {
     posts_count,
   } = profile;
   
- 
   return (
     <div className="profile-page">
         <div  className="content-area">
@@ -44,7 +44,7 @@ export default function ProfileSide({ classes }) {
               <div className="popup-form">
               {dataFollow ?(dataFollow).map((fl) => (
                 <div key={`${activeTab}-${fl.id}`}>
-                   <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                   <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl} />
                  </div>
               )) :(<div>
                 No Follower
