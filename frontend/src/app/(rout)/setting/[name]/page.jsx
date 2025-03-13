@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { API_URL } from "@/components/api";
 import styles from "./updateProfile.module.css";
+import style from "@/styles/errorPopUp.module.css";
 import { useParams } from "next/navigation";
 import userProfile from "@/app/hooks/userProfile";
 import useEditProfile from "@/app/hooks/useEditProfile";
@@ -56,14 +57,14 @@ export default function setting({}) {
     <div>
       {error && show && (
         <div>
-          <div className={styles["container-popup"]}>
-            <div className={styles.popupError}>
-              <div className={styles["error-icon"]}></div>
-              <h2 className={styles["error-title"]}>Error</h2>
-              <p className={styles["error-message"]}>{error}</p>
+          <div className={style["container-popup"]}>
+            <div className={style.popupError}>
+              <div className={style["error-icon"]}></div>
+              <h2 className={style["error-title"]}>Error</h2>
+              <p className={style["error-message"]}>{error}</p>
               <button
                 onClick={() => showPopUp(false)}
-                className={styles["try-again-btn"]}>
+                className={style["try-again-btn"]}>
                 Try again
               </button>
             </div>
