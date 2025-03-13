@@ -7,12 +7,14 @@ import (
 
 	repo "social-network/pkg/db/repositories"
 	models "social-network/pkg/models"
+
+	"github.com/gorilla/websocket"
 )
 
-func SendMessageuser(msg models.Message, client *models.Client) error {
+func SendMessageuser(msg models.Message, client *models.Client, conn *websocket.Conn) error {
 	err := repo.CheckCanUSendMessage(msg.Receivers[0], client.Userid)
 	if err != nil {
-		client.Conn.WriteJSON(map[string]interface{}{
+		conn.WriteJSON(map[string]interface{}{
 			"type":    "error",
 			"content": "you can't send message to this user: " + err.Error(),
 		})
@@ -21,7 +23,7 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 	Time := time.Now().Format("2006-01-02 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
-		client.Conn.WriteJSON(map[string]interface{}{
+		conn.WriteJSON(map[string]interface{}{
 			"type":    "error",
 			"content": "message is too long",
 		})
@@ -35,19 +37,21 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 		return err
 	}
 	avatar_url := repo.GetAvatarUrl(client.Userid)
-	receiverConn := models.Clients[msg.Receivers[0]]
-	if receiverConn != nil {
-		receiverConn.Conn.WriteJSON(map[string]interface{}{
-			"type":       "messageuser",
-			"sender":     client.Username,
-			"avatar_url": avatar_url,
-			"content":    msg.Content,
-			"time":       Time,
-			"you":        receiverConn,
-		})
+	receiverConns := models.Clients[msg.Receivers[0]]
+	for _, receiverConn := range receiverConns.Connections {
+		if receiverConn != nil {
+			receiverConn.WriteJSON(map[string]interface{}{
+				"type":       "messageuser",
+				"sender":     client.Username,
+				"avatar_url": avatar_url,
+				"content":    msg.Content,
+				"time":       Time,
+				"you":        receiverConn,
+			})
+		}
 	}
 
-	err = client.Conn.WriteJSON(map[string]interface{}{
+	err = conn.WriteJSON(map[string]interface{}{
 		"type":       "messageuser",
 		"sender":     client.Username,
 		"avatar_url": avatar_url,
@@ -62,10 +66,10 @@ func SendMessageuser(msg models.Message, client *models.Client) error {
 	return nil
 }
 
-func SendMessageGroup(msg models.Message, client *models.Client) error {
+func SendMessageGroup(msg models.Message, client *models.Client, conn *websocket.Conn) error {
 	err := repo.CheckCanUSendMessageGroup(msg, client)
 	if err != nil {
-		client.Conn.WriteJSON(map[string]interface{}{
+		conn.WriteJSON(map[string]interface{}{
 			"type":    "error",
 			"content": "you can't send message to this group: " + err.Error(),
 		})
@@ -75,7 +79,7 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 	Time := time.Now().Format("02/01/2006 15:04:05")
 	msg.Content = html.EscapeString(msg.Content)
 	if len(msg.Content) > 250 {
-		client.Conn.WriteJSON(map[string]interface{}{
+		conn.WriteJSON(map[string]interface{}{
 			"type":    "error",
 			"content": "message is too long",
 		})
@@ -93,20 +97,22 @@ func SendMessageGroup(msg models.Message, client *models.Client) error {
 
 	avatar_url := repo.GetAvatarUrl(client.Userid)
 	for _, receiver := range users {
-		receiverConn := models.Clients[receiver.Nickname]
-		if receiverConn != nil {
-			receiverConn.Conn.WriteJSON(map[string]interface{}{
-				"type":       "messageGroup",
-				"sender":     client.Username,
-				"content":    msg.Content,
-				"avatar_url": avatar_url,
-				"time":       Time,
-				"groupid":    msg.Groupid,
-				"you":        receiverConn,
-			})
+		receiverConns := models.Clients[receiver.Nickname]
+		for _, receiverConn := range receiverConns.Connections {
+			if receiverConn != nil {
+				receiverConn.WriteJSON(map[string]interface{}{
+					"type":       "messageGroup",
+					"sender":     client.Username,
+					"content":    msg.Content,
+					"avatar_url": avatar_url,
+					"time":       Time,
+					"groupid":    msg.Groupid,
+					"you":        receiverConn,
+				})
+			}
 		}
 	}
-	client.Conn.WriteJSON(map[string]interface{}{
+	conn.WriteJSON(map[string]interface{}{
 		"type":       "messageGroup",
 		"sender":     client.Username,
 		"content":    msg.Content,

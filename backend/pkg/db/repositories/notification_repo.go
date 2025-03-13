@@ -57,9 +57,10 @@ func AddNotification(msg models.Message, client *models.Client, Type string, sen
 			return err
 		}
 		if Type != "messageuser" {
-			receiverConn := models.Clients[receiver]
-			if receiverConn != nil {
-				receiverConn.Conn.WriteJSON(map[string]interface{}{
+			receiverConns := models.Clients[receiver]
+			if receiverConns != nil {
+				for _,receiverConn := range receiverConns.Connections {
+				receiverConn.WriteJSON(map[string]interface{}{
 					"type":           Type,
 					"sender":         client.Username,
 					"content":        msg.Content,
@@ -67,12 +68,13 @@ func AddNotification(msg models.Message, client *models.Client, Type string, sen
 					"notificationid": id,
 				})
 			}
+			}
 		}
 	}
 	return nil
 }
 
-func ChangeUnreadNotification(msg models.Message, client *models.Client) error {
+func ChangeUnreadNotification(msg models.Message) error {
 	query := `UPDATE notifications SET read_status = 'read' WHERE id = ? `
 	_, err := db.DB.Exec(query, msg.Notificationid)
 	if err != nil {
@@ -150,10 +152,12 @@ func AddNotificationMsgGroup(msg models.Message, client *models.Client, Type str
 			if err != nil {
 				return err
 			}
-			receiverConn.Conn.WriteJSON(map[string]interface{}{
-				"type":              "Notification",
-				"countNotification": GetNotificationCount,
-			})
+			for _, receiverConn := range receiverConn.Connections {
+				receiverConn.WriteJSON(map[string]interface{}{
+					"type":              "Notification",
+					"countNotification": GetNotificationCount,
+				})
+			}
 		}
 	}
 	return nil

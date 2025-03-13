@@ -110,11 +110,16 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	adminid := GeTIdofAdminOfGroup(groupId)
 	adminname := GetNickName(adminid)
 	_, err = db.DB.Exec(query, adminid, userId, groupId, "group_request_join", GetNickName(userId)+" sent an invitation request to your group "+GetgroupnameById(groupId))
-	adminconnection, ok := models.Clients[adminname]
+	adminconnections, ok := models.Clients[adminname]
 	if ok {
-		err = adminconnection.Conn.WriteJSON(map[string]interface{}{
-			"type": "realNotification",
-		})
+		for _, conn := range adminconnections.Connections {
+			err = conn.WriteJSON(map[string]interface{}{
+				"type": "realNotification",
+			})
+			if err != nil {
+				log.Println(err)
+			}
+		}
 	}
 	return err
 }
@@ -432,9 +437,15 @@ func AddNotificationGroupEvent(userId, groupid int) error {
 		}
 		connreciever, ok := models.Clients[Member.Nickname]
 		if ok {
-			err = connreciever.Conn.WriteJSON(map[string]interface{}{
-				"type": "realNotification",
-			})
+			for _, conn := range connreciever.Connections {
+				err = conn.WriteJSON(map[string]interface{}{
+					"type": "realNotification",
+				})
+				if err != nil {
+					log.Println(err)
+					continue
+				}
+			}
 		}
 	}
 	return nil
