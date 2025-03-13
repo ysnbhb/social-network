@@ -273,3 +273,392 @@
 2025/03/12 15:39:19 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
 2025/03/12 15:39:27 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
 2025/03/12 15:44:20 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
+2025/03/13 10:04:11 server.go:27: Starting server on :8080
+2025/03/13 10:04:24 user_repo.go:33: <nil>
+2025/03/13 10:04:24 auth_controller.go:37: ggg
+2025/03/13 10:04:53 Websocket_controller.go:46: Closing connection for user: ggg (ID: 1)
+2025/03/13 10:05:02 Websocket_controller.go:46: Closing connection for user: ggg (ID: 1)
+2025/03/13 10:05:29 Websocket_controller.go:46: Closing connection for user: ggg (ID: 1)
+2025/03/13 10:06:03 Websocket_controller.go:46: Closing connection for user: ggg (ID: 1)
+2025/03/13 10:07:00 Websocket_controller.go:46: Closing connection for user: ggg (ID: 1)
+2025/03/13 10:07:01 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:07:01 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:07:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:07:01 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:07:29 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:07:29 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:07:29 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:07:33 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:07:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:07:33 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:10:27 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:10:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:10:27 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:11:05 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:11:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:11:05 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:11:09 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:11:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:11:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:14:00 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:14:00 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:14:00 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:14:12 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:14:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:14:12 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:14:14 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:14:14 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:14:14 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:14:22 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:14:22 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:14:22 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:14:45 Websocket_controller.go:46: Closing connection for user: frr (ID: 1)
+2025/03/13 10:14:55 Websocket_controller.go:46: Closing connection for user: frr (ID: 1)
+2025/03/13 10:15:01 Websocket_controller.go:46: Closing connection for user: frr (ID: 1)
+2025/03/13 10:15:02 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:15:02 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:15:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:15:02 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:15:14 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:17:16 Websocket_controller.go:46: Closing connection for user: dd (ID: 1)
+2025/03/13 10:17:16 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:17:16 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:17:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:17:16 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:17:39 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:17:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:17:39 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:17:41 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:17:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:17:41 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:17:47 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:17:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:17:47 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:17:53 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:17:53 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:17:53 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:17:53 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:18:21 Websocket_controller.go:46: Closing connection for user:  ffrf (ID: 1)
+2025/03/13 10:18:21 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:18:21 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:18:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:18:21 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:18:26 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:19:02 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:19:09 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:19:48 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:20:07 Websocket_controller.go:46: Closing connection for user: frf (ID: 1)
+2025/03/13 10:20:08 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:20:08 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:20:08 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:20:08 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:20:52 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:20:52 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:20:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:20:52 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:21:05 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:21:05 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:21:05 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:21:05 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:21:32 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:21:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:21:32 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:21:47 Websocket_controller.go:46: Closing connection for user: cds  (ID: 1)
+2025/03/13 10:21:52 Websocket_controller.go:46: Closing connection for user: ddd (ID: 1)
+2025/03/13 10:21:52 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:21:52 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:21:52 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:21:52 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:22:09 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:22:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:22:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:22:20 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:22:20 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:22:20 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:22:24 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:22:24 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:22:24 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:22:24 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:22:25 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:22:45 Websocket_controller.go:46: Closing connection for user: fdv (ID: 1)
+2025/03/13 10:24:37 Websocket_controller.go:46: Closing connection for user: fdv (ID: 1)
+2025/03/13 10:25:06 Websocket_controller.go:46: Closing connection for user: fdv (ID: 1)
+2025/03/13 10:25:09 Websocket_controller.go:46: Closing connection for user: fdv (ID: 1)
+2025/03/13 10:25:09 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:25:09 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:25:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:25:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:25:18 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:26:16 Websocket_controller.go:46: Closing connection for user: qerfr (ID: 1)
+2025/03/13 10:26:16 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:26:16 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:26:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:26:16 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:26:55 server.go:27: Starting server on :8080
+2025/03/13 10:27:10 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:27:12 Websocket_controller.go:46: Closing connection for user: ewqde (ID: 1)
+2025/03/13 10:27:12 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:27:12 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:27:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:27:12 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:28:20 server.go:27: Starting server on :8080
+2025/03/13 10:28:35 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:28:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:28:35 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:28:37 Websocket_controller.go:46: Closing connection for user: dede  (ID: 1)
+2025/03/13 10:28:37 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:28:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:28:37 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:28:43 Websocket_controller.go:46: Closing connection for user: dede  (ID: 1)
+2025/03/13 10:28:44 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:28:44 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:28:44 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:28:45 Websocket_controller.go:46: Closing connection for user: dede  (ID: 1)
+2025/03/13 10:28:46 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:28:46 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:28:46 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:28:57 Websocket_controller.go:46: Closing connection for user: dede  (ID: 1)
+2025/03/13 10:29:01 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:29:03 Websocket_controller.go:46: Closing connection for user: sss (ID: 1)
+2025/03/13 10:29:04 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:29:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:29:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:29:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:29:31 Websocket_controller.go:46: Closing connection for user: test (ID: 1)
+2025/03/13 10:29:35 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:30:02 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:30:02 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:02 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:02 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:03 Websocket_controller.go:46: Closing connection for user: test (ID: 1)
+2025/03/13 10:30:03 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:30:03 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:03 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:03 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:21 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:21 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:21 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:23 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:23 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:23 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:27 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:27 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:31 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:31 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:31 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:32 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:30:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:30:32 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:30:34 server.go:27: Starting server on :8080
+2025/03/13 10:30:47 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 10:30:51 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:31:25 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:31:25 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:31:25 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:31:25 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:31:25 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 10:31:26 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:31:26 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:31:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:31:26 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:31:39 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:31:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:31:39 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:31:40 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:31:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:31:40 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:31:52 server.go:27: Starting server on :8080
+2025/03/13 10:32:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:32:07 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:32:12 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:12 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:12 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:32:27 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:27 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:27 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:32:32 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:32 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:32 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:32:40 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:40 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:40 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:32:42 server.go:27: Starting server on :8080
+2025/03/13 10:32:57 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:32:57 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:32:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:32:57 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:33:07 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:33:34 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:33:34 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:33:34 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:33:58 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
+2025/03/13 10:34:30 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:34:35 Websocket_controller.go:46: Closing connection for user: ded (ID: 1)
+2025/03/13 10:34:35 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:34:35 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:34:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:34:35 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:35:01 Websocket_controller.go:46: Closing connection for user: dede (ID: 1)
+2025/03/13 10:35:03 auth_controller.go:163: {1         0001-01-01 00:00:00 +0000 UTC   []}
+2025/03/13 10:35:10 auth_controller.go:163: {1 rharbiomar@gmail.com  dedwde rrrrr   dede  0001-01-01 00:00:00 +0000 UTC  Public []}
+2025/03/13 10:38:21 server.go:27: Starting server on :8080
+2025/03/13 10:38:26 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:38:26 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:38:26 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:38:26 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:38:34 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:38:34 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:38:34 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:38:38 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:38:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:38:38 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:38:41 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:38:41 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:38:41 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:38:41 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:38:59 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:39:27 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:39:36 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:41:38 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:41:38 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:42:06 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:42:21 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:43:24 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:43:58 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:44:03 Websocket_controller.go:46: Closing connection for user: cd (ID: 1)
+2025/03/13 10:44:04 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:44:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:44:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:44:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:44:55 Websocket_controller.go:46: Closing connection for user: fer (ID: 1)
+2025/03/13 10:44:55 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 10:44:55 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:44:55 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:44:55 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:45:56 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:45:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:45:56 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:16 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:16 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:33 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:33 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:33 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:35 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:35 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:35 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:37 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:37 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:37 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:38 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:38 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:46:39 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:46:39 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:46:39 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:48:01 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:48:01 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:48:01 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:48:07 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:48:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:48:07 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:48:09 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 10:48:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 10:48:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 10:48:23 Websocket_controller.go:46: Closing connection for user: ferf (ID: 1)
+2025/03/13 10:48:31 Websocket_controller.go:46: Closing connection for user: erqf (ID: 1)
+2025/03/13 10:49:00 Websocket_controller.go:46: Closing connection for user: erqf (ID: 1)
+2025/03/13 10:49:20 Websocket_controller.go:46: Closing connection for user: erqf (ID: 1)
+2025/03/13 10:49:32 Websocket_controller.go:46: Closing connection for user: erqf (ID: 1)
+2025/03/13 10:49:35 Websocket_controller.go:46: Closing connection for user: omrharbi (ID: 1)
+2025/03/13 10:49:37 Websocket_controller.go:46: Closing connection for user: omrharbi (ID: 1)
+2025/03/13 10:49:39 Websocket_controller.go:46: Closing connection for user: omrharbi (ID: 1)
+2025/03/13 10:57:29 Websocket_controller.go:46: Closing connection for user: omrharbi (ID: 1)
+2025/03/13 10:57:29 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 10:58:33 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 10:58:33 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:26 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:26 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:26 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:26 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:28 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:00:42 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:12:19 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:12:19 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:12:23 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:12:38 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:03 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:07 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:11 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:16 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:31 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:35 Websocket_controller.go:46: Closing connection for user: omrharbid (ID: 1)
+2025/03/13 11:13:36 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 11:13:36 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:13:36 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:13:36 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:13:49 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:13:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:13:49 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:13:51 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:13:51 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:13:51 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:13:53 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:13:53 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:13:53 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:13:57 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:13:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:13:57 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:14:07 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 11:14:07 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:14:07 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:14:07 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:14:08 Websocket_controller.go:40: Error: User with ID 1 not found
+2025/03/13 11:14:28 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:14:55 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:15:02 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:15:16 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:15:29 auth_controller.go:159: EOF
+2025/03/13 11:15:29 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:15:57 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:16:07 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:16:29 server.go:27: Starting server on :8080
+2025/03/13 11:16:33 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:16:41 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:17:02 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:17:07 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:17:39 server.go:27: Starting server on :8080
+2025/03/13 11:17:55 user_repo.go:33: <nil>
+2025/03/13 11:17:55 auth_controller.go:37: de
+2025/03/13 11:18:33 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:18:38 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:19:11 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:19:47 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:20:03 Websocket_controller.go:46: Closing connection for user: de (ID: 1)
+2025/03/13 11:20:04 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:20:04 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:20:04 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:20:09 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:20:09 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:20:09 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:20:10 Websocket_controller.go:46: Closing connection for user: degg (ID: 1)
+2025/03/13 11:20:10 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/13 11:20:10 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/13 11:20:10 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/13 11:20:11 Websocket_controller.go:46: Closing connection for user: degg (ID: 1)
+2025/03/13 11:25:15 Websocket_controller.go:46: Closing connection for user: degg (ID: 1)
+2025/03/13 11:27:17 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:27:17 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:27:17 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:27:17 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:27:19 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:29:57 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
