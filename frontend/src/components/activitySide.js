@@ -69,7 +69,7 @@ import { sendFollow } from "@/websocket/notification";
 }
 
 export function ShowUnfllowUser({ user }) {
-   const { status, handle } = useHandleFollowers(user.id);
+   const { status, handle } = useHandleFollowers(user.id , user.status);
    const handuleClick = async () => {
     await handle();  
   };  
@@ -92,9 +92,9 @@ export   function Follow ({status,handuleClick,user}){
         </p>
         <p className="text-muted">@{user.nickname || "N/A"}</p>
       </div>
-      {param === "accept"  || status === "accept" ? (
+      { status === "accept" ? (
         <button onClick={() => handuleClick(user.id)}>unfollow</button>
-      ) : param === "pending"  || status === "pending" ? (
+      ) :  status === "pending" ? (
         <button>pending</button>
       ) : (
         <button onClick={() => handuleClick(user.id)} >follow</button>

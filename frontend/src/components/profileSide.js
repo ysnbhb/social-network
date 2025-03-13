@@ -44,7 +44,8 @@ export default function ProfileSide({ classes }) {
               <div className="popup-form">
               {dataFollow ?(dataFollow).map((fl) => (
                 <div key={`${activeTab}-${fl.id}`}>
-                   <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl} />
+                   {/* <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl} /> */}
+                   <User key={`${activeTab}-${fl.id}`}  user={fl} />
                  </div>
               )) :(<div>
                 No Follower
@@ -103,4 +104,15 @@ export default function ProfileSide({ classes }) {
       )}
     </div>
   );
+}
+
+
+function User({user}) {
+    const { status, handle } = useHandleFollowers(user.id , user.status);
+     const handuleClick = async () => {
+      await handle();  
+    };
+  return <>
+  <Follow  status={status}   user={user}  handuleClick={handuleClick} />
+  </>
 }
