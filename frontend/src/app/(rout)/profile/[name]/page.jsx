@@ -2,7 +2,6 @@
 import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
-import styles from "./updateProfile.module.css";
 import bag from "@/components/images/pxfuel.jpg";
 import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
@@ -10,9 +9,10 @@ import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
-const check = false;
+import Link from "next/link";
+
 export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
@@ -65,13 +65,13 @@ export default function Profile({ params }) {
         <PopUpError />
       ) : (
         <div>
-          {showPopup && (
+          {/* {showPopup && (
             <Updateprofile
               data={profiledata}
               show={showPopup}
               setShowPopup={setShowPopup}
             />
-          )}
+          )} */}
 
           {isLoading ? (
             <IsLoading></IsLoading>
@@ -107,11 +107,11 @@ export default function Profile({ params }) {
                   <div className={style.buttonContainer}>
                     {isOwnProfile ? (
                       <div>
-                        <button
-                          onClick={togglePopup}
+                        <Link
+                          href={{ pathname: `/setting/${nickName}` }}
                           className={style.moreButton}>
                           Edit Profile
-                        </button>
+                        </Link>
                       </div>
                     ) : (
                       <div>
@@ -175,8 +175,6 @@ export default function Profile({ params }) {
                           following
                         </span>
                       </div>
-
-                      {/* Skill tags to match example */}
                     </div>
                   </div>
                 </div>
@@ -193,121 +191,6 @@ export default function Profile({ params }) {
               </div>
             </div>
           )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-export function Updateprofile({ data, show, setShowPopup }) {
-  // const [show, setShowPopup] = useState(false);
-  const togglePopup = () => {
-    setShowPopup(!show);
-  };
-  return (
-    <div>
-      {show && (
-        <div className={styles.update}>
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <h2>Account Settings</h2>
-              <button className={styles.closeButton} onClick={togglePopup}>
-                ×
-              </button>
-            </div>
-
-            <h3>Your Avatar</h3>
-            <div className={styles.avatarContainer}>
-              <span className={styles["Circle-avart"]}>
-                <img
-                  src={`${API_URL}${data.avatarUrl}`}
-                  className={`${styles["avatarContainer-profile"]} ${style.avatarContainer}`}
-                  srcSet=""
-                  alt="User Avatar"
-                  layout="fill"
-                  objectfit="cover"
-                />
-              </span>
-              <p className={styles.avatarText}>
-                Avatar help your teammates recognize you in Social Network .
-              </p>
-            </div>
-
-            <hr className={styles.hr} />
-
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>First Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.firstName}
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Last Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.lastName}
-                />
-              </div>
-            </div>
-
-            {/* Form fields - second row */}
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>User Name</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.nickName}
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Email</label>
-                <input
-                  className={styles.input}
-                  type="text"
-                  defaultValue={data.email}
-                />
-              </div>
-            </div>
-
-            {/* About textarea */}
-            <div className={styles["formRow-radio"]}>
-              <label className={styles.label}>Type Profile</label>
-              <div className={styles.formradio}>
-                <label className={styles.label}>Public</label>
-                <input
-                  className={styles.radio}
-                  type="radio"
-                 />
-              </div>
-
-              <div className={styles.formradio}>
-                <label className={styles.label}>Private</label>
-                <input
-                  className={styles.radio}
-                  type="radio"
-                  
-                />
-              </div>
-            </div>
-
-
-            <div className={styles.formGroup}>
-              <label className={styles.label}>About Me</label>
-              <textarea
-                className={styles.textarea}
-                rows="4"
-                defaultValue={data.aboutMe}
-              />
-            </div>
-
-            {/* Update profile button */}
-            <button className={styles.updateButton}>Update Profile</button>
-          </div>
         </div>
       )}
     </div>

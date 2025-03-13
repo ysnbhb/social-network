@@ -10,8 +10,7 @@ export default function ChatPage({ params }) {
     const [selectedUser, setSelectedUser] = useState(null);
     const [has , setHas] = useState(true);
     const { name } = use(params)
-    const router = useRouter();
-    
+     
     useEffect(() => {
         if (name) {
             fetch(`${API_URL}/api/user/info?username=${name}`, {

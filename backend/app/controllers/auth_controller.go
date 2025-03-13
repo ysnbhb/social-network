@@ -151,20 +151,26 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	userId := r.Context().Value("userId").(int)
-	var user models.User
-	user.Id = userId
-	user.AboutMe = r.FormValue("aboutMe")
-	user.Profile_Type = r.FormValue("profile_type")
-	if user.Profile_Type != "private" && user.Profile_Type != "public" {
-		user.Profile_Type = "public"
+	var users models.User
+
+	err := json.NewDecoder(r.Body).Decode(&users)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println(err)
+		return
 	}
-	err := services.UpdateProfile(&user)
+	users.Id = userId
+	// if users.Profile_Type != "private" && users.Profile_Type != "public" {
+	// 	users.Profile_Type = "public"
+	// }
+	err = services.UpdateProfile(&users)
 	if err != nil {
 		utils.JsonResponse(w, "field to update profile", http.StatusBadRequest)
 		log.Println("error in update profile")
 		return
 	}
-	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
+	newUser, err := services.UserProfile(users.NickName, userId)
+	utils.JsonResponse(w, newUser, http.StatusOK)
 }
 
 func Session_id(w http.ResponseWriter, r *http.Request) {

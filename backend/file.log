@@ -1,3 +1,0 @@
-2025/03/11 15:40:39 server.go:27: Starting server on :8080
-2025/03/11 15:40:59 auth_controller.go:34: sorry, this email does not exist
-2025/03/11 16:17:40 Websocket_controller.go:46: Closing connection for user: gtrgrtgtP_21 (ID: 3)
