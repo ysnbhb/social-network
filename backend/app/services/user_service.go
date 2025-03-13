@@ -67,6 +67,10 @@ func LogoutUser(userId int) error {
 }
 
 func UpdateProfile(user *models.User) error {
-	err := repo.UpdateProfile(user)
+	err := repo.CheckNickName(user.NickName)
+	if err != nil {
+		return err
+	}
+	err = repo.UpdateProfile(user)
 	return err
 }

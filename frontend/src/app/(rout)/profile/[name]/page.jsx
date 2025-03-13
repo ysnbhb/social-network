@@ -14,17 +14,14 @@ import { API_URL } from "@/components/api";
 import Link from "next/link";
 
 export default function Profile({ params }) {
-  const [showPopup, setShowPopup] = useState(false);
-  const router = useRouter();
+   const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
   const [cookie, setcookies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
+ 
 
   useEffect(() => {
     const allCookies = document.cookie;
@@ -65,14 +62,6 @@ export default function Profile({ params }) {
         <PopUpError />
       ) : (
         <div>
-          {/* {showPopup && (
-            <Updateprofile
-              data={profiledata}
-              show={showPopup}
-              setShowPopup={setShowPopup}
-            />
-          )} */}
-
           {isLoading ? (
             <IsLoading></IsLoading>
           ) : (
