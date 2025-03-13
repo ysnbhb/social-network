@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 
 	"social-network/app/services"
@@ -21,7 +20,6 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			cookie = r.URL.Query().Get("session_id")
 		} else {
 			cookies, err := r.Cookie("session_id")
-			fmt.Println("cookies", cookies)
 			if err != nil {
 				http.Error(w, "Unauthorized", http.StatusUnauthorized)
 				http.Redirect(w, r, "/login", http.StatusSeeOther)
