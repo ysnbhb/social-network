@@ -11,7 +11,6 @@ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
 import { useParams, useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
-import useEditProfile from "@/app/hooks/useEditProfile";
 import Link from "next/link";
 
 export default function Profile({ params }) {
@@ -66,13 +65,13 @@ export default function Profile({ params }) {
         <PopUpError />
       ) : (
         <div>
-          {showPopup && (
+          {/* {showPopup && (
             <Updateprofile
               data={profiledata}
               show={showPopup}
               setShowPopup={setShowPopup}
             />
-          )}
+          )} */}
 
           {isLoading ? (
             <IsLoading></IsLoading>
@@ -109,7 +108,7 @@ export default function Profile({ params }) {
                     {isOwnProfile ? (
                       <div>
                         <Link
-                          href={{ pathname: `/settings/${nickName}` }}
+                          href={{ pathname: `/setting/` }}
                           className={style.moreButton}>
                           Edit Profile
                         </Link>

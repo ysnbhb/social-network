@@ -662,3 +662,5 @@
 2025/03/13 11:27:17 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
 2025/03/13 11:27:19 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
 2025/03/13 11:29:57 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:34:18 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
+2025/03/13 11:34:28 Websocket_controller.go:46: Closing connection for user: omar (ID: 1)
