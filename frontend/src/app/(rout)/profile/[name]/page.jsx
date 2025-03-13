@@ -108,7 +108,7 @@ export default function Profile({ params }) {
                     {isOwnProfile ? (
                       <div>
                         <Link
-                          href={{ pathname: `/setting/` }}
+                          href={{ pathname: `/setting/${nickName}` }}
                           className={style.moreButton}>
                           Edit Profile
                         </Link>
