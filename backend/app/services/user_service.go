@@ -16,11 +16,11 @@ func RegisterUser(user *models.User) error {
 	}
 	if (user.NickName) == "" {
 		user.NickName = utils.GenerateUsername(user.FirstName, user.LastName)
-		for err = repo.CheckNickName(user.NickName); err != nil; {
+		for err = repo.CheckNickName(user.NickName, user.Id); err != nil; {
 			user.NickName = utils.GenerateUsername(user.FirstName, user.LastName)
 		}
 	} else {
-		err = repo.CheckNickName(user.NickName)
+		err = repo.CheckNickName(user.NickName, user.Id)
 	}
 	if err != nil {
 		return errors.New("nickname already exist")
@@ -67,7 +67,7 @@ func LogoutUser(userId int) error {
 }
 
 func UpdateProfile(user *models.User) error {
-	err := repo.CheckNickName(user.NickName)
+	err := repo.CheckNickName(user.NickName, user.Id)
 	if err != nil {
 		return err
 	}

@@ -57,11 +57,12 @@ func GetUserId(login *models.Login) {
 	login.Id = userId
 }
 
-func CheckNickName(nickname string) error {
-	query := `SELECT u.nickname FROM users u WHERE nickname = ?`
+func CheckNickName(nickname string, userid int) error {
+	query := `SELECT u.nickname FROM users u 
+				WHERE nickname = ? AND u.id!=?`
 	var existingNickname string
 
-	db.DB.QueryRow(query, nickname).Scan(&existingNickname)
+	db.DB.QueryRow(query, nickname, userid).Scan(&existingNickname)
 	if existingNickname != "" {
 		log.Println(errors.New("user nickname already exist"))
 		return errors.New("user nickname already exist")
