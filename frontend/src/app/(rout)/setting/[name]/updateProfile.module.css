@@ -20,7 +20,7 @@
   justify-content: center;
   width: 100%;
   position: relative;
-z-index: 1;
+  z-index: 1;
 }
 .header {
   display: flex;
@@ -170,14 +170,24 @@ z-index: 1;
   margin-top: 24px;
 }
 .Circle-avart {
+  margin-top: 20px;
   border-radius: 50%;
+  width: 83px;
   background: #fff;
   border: 4px solid #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 83px;
+  margin-right: 22px;
+  margin-bottom: 23px;
 }
 .avatarContainer-profile {
   width: 75px !important;
   height: 75px !important;
+  border-radius: 50% !important;
+}
+.your-avatar {
+  margin-top: 10px;
+  width: 10vw;
 }
 .radio {
   appearance: none;
@@ -208,4 +218,250 @@ z-index: 1;
   display: flex;
   width: 20%;
   justify-content: space-between;
+}
+
+/* Extra Small Devices (Phones - < 576px) */
+@media only screen and (max-width: 575.98px) {
+  
+  .container {
+    overflow: scroll;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    height: 90%;
+  }
+  .Circle-avart {
+    height: 70px;
+    width: 70px;
+  }
+  .formradio {
+    width: 60%;
+  }
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .tabContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabButton {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatarContainer-profile {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .your-avatar {
+    width: 15vw;
+  }
+
+  .formRow {
+    flex-direction: column;
+  }
+
+  .input,
+  .textarea {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .updateButton {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+/* Small Devices (Phones - 576px to 767.98px) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    overflow: scroll;
+    height: 70%;
+    width: 85%;
+    margin: 30px auto;
+    padding: 25px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .Circle-avart {
+    height: 40%;
+  }
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .tabButton {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .avatarContainer-profile {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .your-avatar {
+    width: 12vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 13px;
+  }
+
+  .updateButton {
+    padding: 11px 22px;
+  }
+}
+
+/* Medium Devices (Tablets - 768px to 991.98px) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    height: 80%;
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    overflow-y: scroll;
+  }
+  .formradio {
+    width: 28%;
+  }
+  .Circle-avart {
+    height:  46%;
+  }
+  .header h2 {
+    font-size: 21px;
+  }
+
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+
+  .avatarContainer-profile {
+    width: 75px !important;
+    height: 75px !important;
+  }
+
+  .your-avatar {
+    width: 10vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
+}
+
+/* Large Devices (Laptops - 992px to 1199.98px) */
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    overflow: scroll;
+    height: 80%;
+    width: 70%;
+    margin: 45px auto;
+    padding: 35px;
+  }
+  .Circle-avart {
+    height: 90px;
+    width: 90px;
+  }
+  .header h2 {
+    font-size: 22px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarContainer-profile {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .your-avatar {
+    width: 8vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
+}
+
+/* Extra Large Devices (Desktops - ≥ 1200px) */
+@media only screen and (min-width: 1200px) {
+  .container {
+    overflow: scroll;
+    height: 70%;
+    width: 61%; /* Default width for large screens */
+    margin: 50px auto;
+    padding: 30px;
+  }
+
+  .header h2 {
+    font-size: 22px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarContainer-profile {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .your-avatar {
+    width: 8vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
 }

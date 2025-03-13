@@ -1,5 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
 import './globals.css';
 import { useRouter } from 'next/navigation';
 import { API_URL } from '@/components/api';
