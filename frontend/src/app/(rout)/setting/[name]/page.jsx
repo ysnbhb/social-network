@@ -2,12 +2,13 @@
 import { useEffect, useState } from "react";
 import { API_URL } from "@/components/api";
 import styles from "./updateProfile.module.css";
-import style from "@/styles/errorPopUp.module.css";
+
 import { useParams } from "next/navigation";
 import userProfile from "@/app/hooks/userProfile";
 import useEditProfile from "@/app/hooks/useEditProfile";
 import { useRouter } from "next/navigation";
 import PopUpError from "@/components/popupError";
+import ErrorPopUp from "@/components/errorPopUp";
 
 export default function setting({}) {
   const router = useRouter();
@@ -44,7 +45,7 @@ export default function setting({}) {
     }
     const error = await useEditProfile(formObject);
     if (error) {
-      showPopUp(true)
+      showPopUp(true);
       setupdate(error);
       return;
     } else {
@@ -57,18 +58,7 @@ export default function setting({}) {
     <div>
       {error && show && (
         <div>
-          <div className={style["container-popup"]}>
-            <div className={style.popupError}>
-              <div className={style["error-icon"]}></div>
-              <h2 className={style["error-title"]}>Error</h2>
-              <p className={style["error-message"]}>{error}</p>
-              <button
-                onClick={() => showPopUp(false)}
-                className={style["try-again-btn"]}>
-                Try again
-              </button>
-            </div>
-          </div>
+          <ErrorPopUp showPopUp={showPopUp} error={error} />
         </div>
       )}
 
