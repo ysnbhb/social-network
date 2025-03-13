@@ -441,7 +441,6 @@ button:hover {
     }
 }
 
-/* Fix for very small screens */
 @media screen and (max-width: 350px) {
     .emoji-picker {
         grid-template-columns: repeat(4, 1fr);

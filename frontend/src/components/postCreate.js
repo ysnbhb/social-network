@@ -5,7 +5,8 @@ import { CreatePost } from "../lib/createPost";
 import userProfile from "@/app/hooks/userProfile";
 import { API_URL } from "./api";
 import useFollowing from "@/app/hooks/useFollowing";
-import { Follow, ShowUnfllowUser } from "./activitySide";
+import { Followers, ShowUnfllowUser } from "./activitySide";
+import { UsersSelected } from "./activitySide";
 
 export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFollow}) {
   const [content, setContent] = useState("");
@@ -15,7 +16,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
   const [checkFollow, setcheckFollow] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const { avatarUrl } = profiledata;
-  console.log(dataFollow);
+  console.log("UsersSelected", UsersSelected);
   const activeTab = 0
   const togglePopup = (data, text) => {
     setcheckFollow(text)
@@ -167,7 +168,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
             <div className="popup-form">
                       {dataFollow ? (dataFollow).map((fl) => (
                         <div key={`${activeTab}-${fl.id}`}>
-                           <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                           <Followers  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
                          </div>
                       )) : (<div>
                         No Follower
@@ -179,7 +180,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
                   className="btn-cancel"
                   onClick={togglePopup}
                 >
-                  Cancel
+                Cancel
                 </button>
                 <button type="submit" className="btn-create" onClick={(e) => {
                   e.preventDefault();
@@ -195,3 +196,4 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
     </div>
   );
 }
+

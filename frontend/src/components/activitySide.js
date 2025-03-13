@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
+export let UsersSelected = []
   
 export default function ActivitySidebar() {
   const [user, setUser] = useState([]);
@@ -121,3 +122,37 @@ export function Follow ({status, handuleClick, user}) {
     </div>
   );
 }
+
+  export function Followers ({status, user}) {
+    const [isSelected, setIsSelected] = useState(false);
+  
+    const handleSelect = (nickname) => {
+      return () => {
+        setIsSelected(!isSelected);
+        if (!isSelected) {
+          UsersSelected.push(nickname);
+        } else {
+          UsersSelected = UsersSelected.filter((item) => item !== nickname);
+        }
+      };
+    };
+
+    return (
+      <div className="activity-item">
+        <div>
+          <p>
+            <strong>
+              <Link className="link" href={{ pathname: `/profile/${user.nickname}` }}>
+                {user.lastName} {user.firstName}
+              </Link>
+            </strong>
+          </p>
+          <p className="text-muted">@{user.nickname || "N/A"}</p>
+        </div>
+        {status === "accept" && (
+          <button className={isSelected || UsersSelected.includes(user.nickname) ? "Deselect" : "Select"} onClick={handleSelect(user.nickname)}> {isSelected || UsersSelected.includes(user.nickname) ? "Deselect" : "Select"}</button>
+        )}
+      </div>
+    );
+  }
+
