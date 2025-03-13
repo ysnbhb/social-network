@@ -45,7 +45,18 @@ export default function setting({}) {
 
   return (
     <div>
-      <div>{error}</div>
+      {error && (
+        <div className={styles["container-popup"]}>
+          <div className={styles.popupError}>
+            <div className={styles["error-icon"]}></div>
+            <h2 className={styles["error-title"]}>Error</h2>
+            <p className={styles["error-message"]}>{error}</p>
+            <a href="#"  className={styles["try-again-btn"]}>
+              Try again
+            </a>
+          </div>
+        </div>
+      )}
 
       <div className={styles.update}>
         <div className={styles.container}>
