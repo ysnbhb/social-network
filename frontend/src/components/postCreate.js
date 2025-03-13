@@ -16,7 +16,6 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
   const [checkFollow, setcheckFollow] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const { avatarUrl } = profiledata;
-  console.log("UsersSelected", UsersSelected);
   const activeTab = 0
   const togglePopup = (data, text) => {
     setcheckFollow(text)
@@ -27,8 +26,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
   const handalPost = async (e) => {
     e.preventDefault();
     
-    const res = await CreatePost(content, postType, img, groupid ? groupid : 0);
-
+    const res = await CreatePost(content, postType, img, groupid ? groupid : 0, UsersSelected);
     if (res) {
       setContent("");
       setImg(null);
@@ -161,9 +159,6 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
           <div className="popup-content">
             <div className="popup-header">
               <h2 className="popup-title">Select users who can see your post:</h2>
-              <button className="popup-close" onClick={togglePopup}>
-                &times;
-              </button>
             </div>
             <div className="popup-form">
                       {dataFollow ? (dataFollow).map((fl) => (
@@ -175,16 +170,11 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
                       </div>)}
 
               <div className="popup-actions">
-                <button
-                  type="button"
-                  className="btn-cancel"
-                  onClick={togglePopup}
-                >
-                Cancel
-                </button>
                 <button type="submit" className="btn-create" onClick={(e) => {
                   e.preventDefault();
-                  handleJoinGroup()
+                  if (UsersSelected.length > 0) {
+                    togglePopup()
+                  }
                 }}>
                   Confirm
                 </button>
