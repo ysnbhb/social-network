@@ -1,8 +1,8 @@
 "use client";
-import { useRef, useEffect, useState, useContext, } from "react";
-import { Context } from '../../lib/Context.js';
+import { useRef, useEffect, useState, } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import ErrorPopUp from "@/components/errorPopUp";
 import Checklogin from "../../components/Checklogin.js";
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
@@ -15,6 +15,8 @@ export default function Login() {
   const Router = useRouter();
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState("Public")
+  const [error, setupdate] = useState(null);
+  const [show, setShow] = useState(true);
 
   const handleFileChange = (e) => {
     setImg(e.target.files[0]);
@@ -25,6 +27,7 @@ export default function Login() {
   }
   const handleSignUp = async (event) => {
     event.preventDefault();
+
     const formData = new FormData(event.target);
     if (img) {
       formData.append("file", img)
@@ -40,7 +43,8 @@ export default function Login() {
     });
     const content = await response.json();
     if (!response.ok) {
-      alert(content)
+      setupdate(content)
+      showPopUp(true);
     } else {
       Router.push('/home')
     }
@@ -65,15 +69,16 @@ export default function Login() {
     });
 
 
+    const content = await response.json();
     if (response.ok) {
-      const content = await response.json();
       localStorage.setItem("username", content.nickName)
       console.log(content);
 
       Router.push('/home')
 
     } else {
-      alert("Login failed")
+      setupdate(content)
+      showPopUp(true);
     }
 
   };
@@ -100,10 +105,22 @@ export default function Login() {
       signInButton.removeEventListener("click", handleSignInClick);
     };
   }, []);
+
+  const showPopUp = (check) => {
+    setShow(check);
+  };
   return (
+
     <div className={styles.page}>
+
       <main className={styles.main}>
+
         <div className={styles.container} id="container" ref={containerRef}>
+          {error && show && (
+            <div>
+              <ErrorPopUp showPopUp={showPopUp} error={error} />
+            </div>
+          )}
           <div className={styles.formContainer + " " + styles.signUpContainer}>
             <form onSubmit={handleSignUp} encType="multipart/form-data">
               <h1>Create Account</h1>

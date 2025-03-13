@@ -16,11 +16,10 @@ type Message struct {
 	Offset         int      `json:"offset"`
 }
 type Client struct {
-	Conn     *websocket.Conn
-	Userid   int
-	Username string
+    Connections []*websocket.Conn
+    Userid      int
+    Username    string
 }
-
 var (
 	Clients = make(map[string]*Client)
 	Mu      sync.Mutex

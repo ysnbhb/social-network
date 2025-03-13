@@ -1,13 +1,13 @@
 import { useRouter } from "next/navigation";
 import "../styles/popuperror.css";
 export default function PopUpError({ message, onClose }) {
-  const roote=useRouter()
+  const rooter=useRouter()
   const path = window.location.href;
   console.log(path.includes("profile/"), path.length);
   const url = path.indexOf("profile/");
   const username = path.slice(url - path.length).split("profile/")[1];
   function Gooback (){
-    roote.push("/home")
+    rooter.push("/home")
   }
   return (
     <div>
