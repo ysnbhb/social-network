@@ -3,7 +3,6 @@ package controllers // auth_controller.go
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -177,5 +176,4 @@ func Session_id(w http.ResponseWriter, r *http.Request) {
 }
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("CheckLogin")
 }

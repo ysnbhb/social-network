@@ -22,7 +22,6 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			cookies, err := r.Cookie("session_id")
 			if err != nil {
 				http.Error(w, "Unauthorized", http.StatusUnauthorized)
-
 				return
 			}
 			cookie = cookies.Value
@@ -32,7 +31,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
- 
+
 		ctx := context.WithValue(r.Context(), "userId", userId)
 		ctx = context.WithValue(ctx, "username", username)
 		r = r.WithContext(ctx)

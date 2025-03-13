@@ -102,6 +102,8 @@ func Handlemessagetype(msg models.Message, client *models.Client) error {
 		return sendNotification(msg)
 	case "changeunreadmessagegroupe":
 		return repo.ChangeUnreadMessageGroup(msg, client)
+	case "closeconnection":
+		RemoveClient(client.Conn)
 	default:
 		return fmt.Errorf("Invalid message type: %s", msg.Type)
 	}

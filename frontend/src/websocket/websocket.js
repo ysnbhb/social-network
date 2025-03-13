@@ -1,7 +1,7 @@
 "use client";
 
 import { handleNotification, sendNotification } from './notification.js'
-import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, receiveTyping, Getmessagesgroups } from './messages.js';
+import { Getmessagesusers, receiveMessageuser, receiveMessageGroup, Getmessagesgroups } from './messages.js';
 
 export let socket;
 let connectionPromise = null;
@@ -99,6 +99,14 @@ export function SendOnlineStatus() {
     };
     safeSend(data);
 
+}
+
+export function Closeconnection(){
+    socket.close();
+    const data = {
+        type: "closeconnection",
+    };
+    safeSend(data);
 }
 
 

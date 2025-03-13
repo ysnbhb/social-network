@@ -52,3 +52,4 @@ func ClearSession(w http.ResponseWriter) {
 func GetUserIdBySession(cookie string) (int, string, error) {
 	return repo.GetUserIdBySession(cookie)
 }
+
