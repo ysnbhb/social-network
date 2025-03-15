@@ -9,19 +9,31 @@ import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
-import { useParams, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
 import Link from "next/link";
+import useFollowing from "@/app/hooks/useFollowing";
+import User from "@/components/userFollowers";
 
 export default function Profile({ params }) {
-   const router = useRouter();
+  const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
   const [cookie, setcookies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
- 
+  const [checkFollow, setcheckFollow] = useState("");
+  const [dataFollow, setdataFollow] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [activeTab, setActiveTab] = useState("following");
+
+  const [follow] = useFollowing();
+  const togglePopup = (data, text) => {
+    setcheckFollow(text);
+    setdataFollow(data);
+    setShowPopup(!showPopup);
+  };
 
   useEffect(() => {
     const allCookies = document.cookie;
@@ -44,7 +56,6 @@ export default function Profile({ params }) {
   const isOwnProfile = uuid === cookie;
   const { status, handle } = useHandleFollowers(id);
   const handleClick = async () => {
-    
     await handle();
   };
 
@@ -68,6 +79,29 @@ export default function Profile({ params }) {
           ) : (
             <div className={style.container}>
               <div className={style["card-profile"]}>
+                {showPopup && (
+                  <div className="popup-overlay">
+                    <div className="popup-content">
+                      <div className="popup-header">
+                        <h2 className="popup-title">{checkFollow}</h2>
+                        <button className="popup-close" onClick={togglePopup}>
+                          &times;
+                        </button>
+                      </div>
+                      <div className="popup-form">
+                        {dataFollow ? (
+                          dataFollow.map((fl) => (
+                            <div key={`${activeTab}-${fl.id}`}>
+                               <User key={`${activeTab}-${fl.id}`} user={fl} />
+                            </div>
+                          ))
+                        ) : (
+                          <div>No Follower</div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className={style["card-profile-posts"]}>
                   {/* Cover photo */}
                   <div className={`${style["avatar-user"]}`}>
@@ -152,13 +186,29 @@ export default function Profile({ params }) {
                       </div>
 
                       <div className={style.stats}>
-                        <span className={style.statText}>
+                        <span
+                          className={style.statText}
+                          onClick={() =>
+                            togglePopup(
+                              follow.Follower,
+                              "Follower",
+                              setActiveTab("Follower")
+                            )
+                          }>
                           <span className={style.statNumber}>
                             {follower_count}
                           </span>{" "}
                           followers
                         </span>
-                        <span className={style.statText}>
+                        <span
+                          className={style.statText}
+                          onClick={() =>
+                            togglePopup(
+                              follow.Following,
+                              "Following",
+                              setActiveTab("Following")
+                            )
+                          }>
                           <span className={style.statNumber}>
                             {following_count}
                           </span>{" "}
@@ -168,7 +218,6 @@ export default function Profile({ params }) {
                     </div>
                   </div>
                 </div>
-
                 {profile.map((post) => (
                   <PostCompte
                     className={style["image"]}

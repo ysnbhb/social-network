@@ -9,11 +9,13 @@
         "handule",
         "Homefeed",
         "Iduser",
+        "isloading",
         "myuserid",
         "newdata",
         "objectfit",
         "profiledata",
         "Salsabilla",
+        "serchfunc",
         "setcheck",
         "setcookies",
         "setdata",
@@ -22,6 +24,7 @@
         "Unfllow",
         "unfollow",
         "Updateprofile",
+        "usehandle",
         "Userfollowing"
     ]
 }

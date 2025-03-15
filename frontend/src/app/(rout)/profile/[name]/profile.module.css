@@ -268,6 +268,7 @@
   align-items: center;
   gap: 1rem;
   margin-top: 0.25rem;
+  cursor: pointer;
 }
 
 .statText {

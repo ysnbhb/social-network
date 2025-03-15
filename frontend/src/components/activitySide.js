@@ -1,10 +1,9 @@
 "use client";
 import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import useHandleFollowers from "@/app/hooks/usehandleFollower";
+ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
-import { sendFollow } from "@/websocket/notification";
+ import Follow from "./Follow";
   
  export default function ActivitySidebar( ) {
   const [user, setUser] = useState([]);
@@ -78,27 +77,4 @@ export function ShowUnfllowUser({ user }) {
       <Follow status={status} handuleClick ={handuleClick } user={user}/>
     </div>
   )
-}
-export   function Follow ({status,handuleClick,user}){
-  return (
-    <div className="activity-item">
-      <div>
-        <p>
-          <strong>
-             <Link className="link" href={{ pathname:`/profile/${user.nickname}`}}>
-              {user.lastName} {user.firstName}
-            </Link>
-          </strong>
-        </p>
-        <p className="text-muted">@{user.nickname || "N/A"}</p>
-      </div>
-      { status === "accept" ? (
-        <button onClick={() => handuleClick(user.id)}>unfollow</button>
-      ) :  status === "pending" ? (
-        <button>pending</button>
-      ) : (
-        <button onClick={() => handuleClick(user.id)} >follow</button>
-      )}
-    </div>
-  );
 }
