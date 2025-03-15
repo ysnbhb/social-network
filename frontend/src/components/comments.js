@@ -6,18 +6,24 @@ import CommentCreater from "./commentCreate.js";
 import { useSearchParams } from "next/navigation";
 import { API_URL } from "./api";
 import { PostCompte } from "./postComp";
+import ErrorPopUp from "./errorPopUp";
+import { useRouter } from "next/navigation";
 
 export default function Comments({ className, classes = {} }) {
+    const router = useRouter();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
   const [card, setCard] = useState(null);
+  const [error, setUpdate] = useState(null);
+  const [show, setShow] = useState(true);
   const id = searchParams.get("target_id");
   const GetComments = async () => {
     try {
       if (!id) {
-        console.error("No target_id found in query parameters");
-        setLoading(false);
+        // console.error("No target_id found in query parameters");
+    //  setLoading(false);
+     router.push("/404");
         return;
       }
 
@@ -29,15 +35,14 @@ export default function Comments({ className, classes = {} }) {
         },
         credentials: "include",
       });
-      
+      const data = await response.json();
       if (!response.ok) {
-        console.error("Failed to fetch comments:", response.status);
-        setLoading(false);
-        return;
+           
+          setUpdate("Error fetching data. Please try again later.");
+         return;
       }
       
-      const data = await response.json();
-
+     
       if (data) {
         setPosts(data);
       }
@@ -61,10 +66,15 @@ export default function Comments({ className, classes = {} }) {
       credentials: "include",
     });
     const data = await res.json();
-    console.log(data);
-    if (data && data.id) {
-      setCard(data);
+     if (res.ok){
+      if (data && data.id) {
+        setCard(data);
+      }
+    }else{
+      // showPopUp(true);
+      setUpdate(data);
     }
+   
 
   }
 
@@ -73,10 +83,17 @@ export default function Comments({ className, classes = {} }) {
     GetCard();
     GetComments();
   }, [id]); 
-
+  const showPopUp = (check) => {
+    setShow(check);
+   router.push("/home")
+  };
   return (
-    <>
-      <section className={`${className || ""} section-home`}>
+       <section className={`${className || ""} section-home`}> 
+       {error && show && (
+               <div>
+                 <ErrorPopUp showPopUp={showPopUp} error={error} classes={{style:"errorImportant"}} />
+               </div>
+             )}
         {card && card.id && (
           <PostCompte post={card} />
         )}
@@ -98,6 +115,6 @@ export default function Comments({ className, classes = {} }) {
           </div>
         )}
       </section>
-    </>
+     
   );
 }

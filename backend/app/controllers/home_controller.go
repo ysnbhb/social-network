@@ -44,7 +44,7 @@ func GetOneCard(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("userId").(int)
 	postResponse, err := services.GetOneCard(postId, userId)
 	if err != nil {
-		utils.JsonResponse(w, "Error getting post", http.StatusInternalServerError)
+		utils.JsonResponse(w, "No comments available.", http.StatusInternalServerError)
 		log.Println(err)
 		return
 	}

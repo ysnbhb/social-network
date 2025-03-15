@@ -14,6 +14,8 @@
   opacity: 1;
   height: auto;
   width: 61%;
+  scrollbar-width: thin;
+  scrollbar-color: #4169e1 #f9f9f9;
 }
 .update {
   display: flex;
@@ -222,12 +224,13 @@
 
 /* Extra Small Devices (Phones - < 576px) */
 @media only screen and (max-width: 575.98px) {
-  
   .container {
-    overflow: scroll;
+    overflow-y: scroll;
     width: 90%;
     margin: 20px auto;
+    /* scrollbar-width: none; */
     padding: 20px;
+    scrollbar-width: thin;
     height: 90%;
   }
   .Circle-avart {
@@ -280,12 +283,14 @@
     font-size: 12px;
   }
 }
-
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
 /* Small Devices (Phones - 576px to 767.98px) */
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
   .container {
-    overflow: scroll;
-    height: 70%;
+    overflow-y: scroll;
+    /* height: 70%; */
     width: 85%;
     margin: 30px auto;
     padding: 25px;
@@ -341,7 +346,7 @@
     width: 28%;
   }
   .Circle-avart {
-    height:  46%;
+    height: 46%;
   }
   .header h2 {
     font-size: 21px;
@@ -378,7 +383,7 @@
 /* Large Devices (Laptops - 992px to 1199.98px) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .container {
-    overflow: scroll;
+    /* overflow-y: scroll; */
     height: 80%;
     width: 70%;
     margin: 45px auto;
@@ -425,8 +430,6 @@
 /* Extra Large Devices (Desktops - ≥ 1200px) */
 @media only screen and (min-width: 1200px) {
   .container {
-    overflow: scroll;
-    height: 70%;
     width: 61%; /* Default width for large screens */
     margin: 50px auto;
     padding: 30px;

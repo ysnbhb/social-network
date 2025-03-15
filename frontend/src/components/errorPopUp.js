@@ -1,8 +1,8 @@
 import style from "@/styles/errorPopUp.module.css";
-export default function ErrorPopUp({showPopUp,error}){
+export default function ErrorPopUp({showPopUp,error,classes={}}){
     return (
         <div>
-          <div className={style["container-popup"]}>
+          <div className={`${style["container-popup"]} ${classes?.style|| ""}`}  >
             <div className={style.popupError}>
               <div className={style["error-icon"]}></div>
               <h2 className={style["error-title"]}>Error</h2>

@@ -21,9 +21,7 @@ export default function setting({}) {
   const showPopUp = (check) => {
     setShow(check);
   };
-  // useEffect(()=>{
-  //   setShow(true);
-  // },[show])
+  
 
   const handleRadioChange = (event) => {
     setProfileType(event.target.value);

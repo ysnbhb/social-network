@@ -4,6 +4,9 @@
   flex-direction: column;
   gap: 1rem;
 }
+.errorImportant {
+  width: 45% !important;
+}
 .containe-image {
   display: flex;
   justify-content: center;
@@ -149,6 +152,7 @@
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
+  margin-bottom: 10px;
 }
 
 .post:hover {
@@ -482,6 +486,9 @@ img.image-posts {
   justify-content: center;
   max-height: 339px;
   max-width: 757px !important;
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
 }
 .post-actions {
   display: flex;
