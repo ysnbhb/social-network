@@ -2,6 +2,8 @@
 import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./profile.module.css";
+// import "../../../../styles/homeFeed.css";
+import "../../../../styles/activitySidebar.css";
 import bag from "@/components/images/pxfuel.jpg";
 import { PostCompte } from "../../../../components/postComp.js";
 import useGetProfile from "@/app/hooks/useGetProfile";
@@ -9,7 +11,7 @@ import userProfile from "@/app/hooks/userProfile";
 import IsLoading from "@/components/isloading";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import PopUpError from "@/components/popupError";
-import {  useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { API_URL } from "@/components/api";
 import Link from "next/link";
 import useFollowing from "@/app/hooks/useFollowing";
@@ -92,7 +94,7 @@ export default function Profile({ params }) {
                         {dataFollow ? (
                           dataFollow.map((fl) => (
                             <div key={`${activeTab}-${fl.id}`}>
-                               <User key={`${activeTab}-${fl.id}`} user={fl} />
+                              <User key={`${activeTab}-${fl.id}`} user={fl} />
                             </div>
                           ))
                         ) : (
