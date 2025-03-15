@@ -425,12 +425,12 @@
 /* Extra Large Devices (Desktops - ≥ 1200px) */
 @media only screen and (min-width: 1200px) {
   .container {
-    overflow: scroll;
+    /* overflow: scroll;
     height: 70%;
     width: 61%; /* Default width for large screens */
     margin: 50px auto;
     padding: 30px;
-  }
+  } */
 
   .header h2 {
     font-size: 22px;
