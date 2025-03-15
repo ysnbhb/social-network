@@ -147,19 +147,26 @@ func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
 	return user, nil
 }
 
-func GetUserFollowing(userid int) (friend []models.UnfollowUser, errs error) {
+func GetUserFollowing(userid int, othersUser int) (friend []models.UnfollowUser, errs error) {
 	following := `SELECT
-    	 u.id,
-    	u.first_name,
-    	u.last_name,
-    	u.nickname,
-    	u.avatar_url,
+		u.id,
+		u.first_name,
+		u.last_name,
+		u.nickname,
+		u.avatar_url,
 		f.status
-	FROM users u 
-	JOIN followers f ON u.id = f.following_id 
-	WHERE f.follower_id = $1;`
+		FROM users u
+	LEFT JOIN followers f ON u.id = f.following_id AND f.follower_id = $1
+	WHERE 
+     (u.id = $2) 
+    OR 
+     (
+        (u.profile_type = 'Public')  
+        OR 
+        (u.profile_type = 'Private' AND f.status = 'accept')  
+    );`
 
-	row, err := db.DB.Query(following, userid)
+	row, err := db.DB.Query(following, userid, othersUser)
 	if err != nil {
 		return friend, err
 	}

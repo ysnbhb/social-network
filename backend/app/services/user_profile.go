@@ -9,7 +9,7 @@ import (
 
 func GetPostsUserProfile(username string, userid, offset int) []models.PostsResponse {
 	var postsResponse []models.PostsResponse
-	err := repo.GetCreatedUserPosts(&postsResponse,userid , username, offset)
+	err := repo.GetCreatedUserPosts(&postsResponse, userid, username, offset)
 	if err != nil {
 		log.Println("Get Created Posts:", err)
 		return nil
@@ -24,12 +24,12 @@ func UserProfile(username string, userId int) (models.UserProfile, error) {
 		log.Println("Error To Get User Profile", err)
 		return models.UserProfile{}, err
 	}
-	profile.IsFollowing = repo.GetIsFollowing(userId,profile.Id)
+	profile.IsFollowing = repo.GetIsFollowing(userId, profile.Id)
 	return *profile, nil
 }
 
-func GetUserFollowing(user int) ([]models.UnfollowUser, error) {
-	return repo.GetUserFollowing(user)
+func GetUserFollowing(user, othersUser int) ([]models.UnfollowUser, error) {
+	return repo.GetUserFollowing(user, othersUser)
 }
 
 func GetUserFollower(user int) ([]models.UnfollowUser, error) {
