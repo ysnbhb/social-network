@@ -28,8 +28,8 @@ func UserProfile(username string, userId int) (models.UserProfile, error) {
 	return *profile, nil
 }
 
-func GetUserFollowing(user, othersUser int) ([]models.UnfollowUser, error) {
-	return repo.GetUserFollowing(user, othersUser)
+func GetUserFollowing(user int, nickname string) ([]models.UnfollowUser, error) {
+	return repo.GetUserFollowing(user, nickname)
 }
 
 func GetUserFollower(user int) ([]models.UnfollowUser, error) {

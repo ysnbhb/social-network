@@ -98,7 +98,8 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 	var err error
 
 	user := r.Context().Value("userId").(int)
-	following.Following, err = services.GetUserFollowing(user, user)
+	username := r.Context().Value("username").(string)
+	following.Following, err = services.GetUserFollowing(user, username)
 	if err != nil {
 		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
 		log.Println(err.Error())

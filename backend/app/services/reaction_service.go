@@ -29,11 +29,11 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
 			}
-		} else if postinfo.Privacy == "private" {
+		} else if postinfo.Privacy == "" {
 			if !repo.AllToSee(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you can not see this post")
 			}
-		} else if postinfo.Privacy == "almostPrivate" {
+		} else if postinfo.Privacy == "almost" {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
 			}
