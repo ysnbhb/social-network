@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { sendFollow } from '@/websocket/notification';
 import { API_URL } from '@/components/api';
 
-export default function useHandleFollowers(param) {
-  const [status, setStatus] = useState(null);
+export default function useHandleFollowers(param , statu) {
+  const [status, setStatus] = useState(statu);
 
   const handle = async () => {
     try {

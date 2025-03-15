@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
+import { sendFollow } from "@/websocket/notification";
   
  export default function ActivitySidebar( ) {
   const [user, setUser] = useState([]);
@@ -68,7 +69,7 @@ import { API_URL } from "./api";
 }
 
 export function ShowUnfllowUser({ user }) {
-   const { status, handle } = useHandleFollowers(user.id);
+   const { status, handle } = useHandleFollowers(user.id , user.status);
    const handuleClick = async () => {
     await handle();  
   };  
@@ -91,9 +92,9 @@ export   function Follow ({status,handuleClick,user}){
         </p>
         <p className="text-muted">@{user.nickname || "N/A"}</p>
       </div>
-      {status === "accept" ? (
-        <button>unfollow</button>
-      ) : status === "pending" ? (
+      { status === "accept" ? (
+        <button onClick={() => handuleClick(user.id)}>unfollow</button>
+      ) :  status === "pending" ? (
         <button>pending</button>
       ) : (
         <button onClick={() => handuleClick(user.id)} >follow</button>

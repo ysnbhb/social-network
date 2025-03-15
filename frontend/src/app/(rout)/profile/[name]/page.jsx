@@ -44,6 +44,7 @@ export default function Profile({ params }) {
   const isOwnProfile = uuid === cookie;
   const { status, handle } = useHandleFollowers(id);
   const handleClick = async () => {
+    
     await handle();
   };
 

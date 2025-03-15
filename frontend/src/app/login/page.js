@@ -1,36 +1,41 @@
 "use client";
-import { useRef, useEffect, useState,  } from "react";
- import { useRouter } from "next/navigation";
+import { useRef, useEffect, useState, } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import ErrorPopUp from "@/components/errorPopUp";
+import Checklogin from "../../components/Checklogin.js";
 const signUpEndpoints = 'http://localhost:8080/api/signup'
 const loginEndpoints = 'http://localhost:8080/api/login'
- 
+
+
+
 export default function Login() {
-   const containerRef = useRef(null);
+  Checklogin()
+  const containerRef = useRef(null);
   const Router = useRouter();
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState("Public")
   const [error, setupdate] = useState(null);
   const [show, setShow] = useState(true);
+
   const handleFileChange = (e) => {
-    setImg(e.target.files[0]); 
+    setImg(e.target.files[0]);
 
   }
-  const handleTypeProfile= (e) => {
-       setProfile(e.target);  
-   }
+  const handleTypeProfile = (e) => {
+    setProfile(e.target);
+  }
   const handleSignUp = async (event) => {
     event.preventDefault();
- 
+
     const formData = new FormData(event.target);
     if (img) {
       formData.append("file", img)
     }
-    if (profile){
+    if (profile) {
       formData.append("profile_type", profile)
     }
- 
+
     const response = await fetch(signUpEndpoints, {
       method: 'POST',
       credentials: 'include',
@@ -42,7 +47,6 @@ export default function Login() {
       showPopUp(true);
     } else {
       Router.push('/home')
-      // redirect('/home')
     }
 
   };
@@ -63,22 +67,22 @@ export default function Login() {
       credentials: 'include',
       body: JSON.stringify(dataObject)
     });
-   
-    
+
+
     const content = await response.json();
-    if (response.ok) { 
-      localStorage.setItem("username",content.nickName)
+    if (response.ok) {
+      localStorage.setItem("username", content.nickName)
       console.log(content);
-      
+
       Router.push('/home')
-      
+
     } else {
       setupdate(content)
       showPopUp(true);
     }
 
   };
-  
+
 
   useEffect(() => {
     const container = containerRef.current;
@@ -106,13 +110,13 @@ export default function Login() {
     setShow(check);
   };
   return (
-   
+
     <div className={styles.page}>
-      
+
       <main className={styles.main}>
-     
+
         <div className={styles.container} id="container" ref={containerRef}>
-        {error && show && (
+          {error && show && (
             <div>
               <ErrorPopUp showPopUp={showPopUp} error={error} />
             </div>
@@ -123,12 +127,12 @@ export default function Login() {
               <span>or use your email for registration</span>
               <input type="text" placeholder="First Name" name="firstName" required />
               <input type="text" placeholder="Last Name" name="lastName" required />
-              <input type="text" placeholder="Nickname" name="nickName"  />
+              <input type="text" placeholder="Nickname" name="nickName" />
               <input type="date" placeholder="Date Of Birth" name="dateOfBirth" required />
               <input type="email" placeholder="Email" name="email" required />
               <input type="password" placeholder="Password" name="password" required />
-              <select className={styles.select} onChange={handleTypeProfile}   name="profile_type">
-                <option  value={"Public"}>Public</option>
+              <select className={styles.select} onChange={handleTypeProfile} name="profile_type">
+                <option value={"Public"}>Public</option>
                 <option value={"Private"}>Private</option>
               </select>
               <textarea placeholder="About Me" name="aboutMe" />

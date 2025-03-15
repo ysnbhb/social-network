@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { API_URL } from "@/components/api";
 import styles from "./updateProfile.module.css";
 
@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 import userProfile from "@/app/hooks/userProfile";
 import useEditProfile from "@/app/hooks/useEditProfile";
 import { useRouter } from "next/navigation";
-import PopUpError from "@/components/popupError";
 import ErrorPopUp from "@/components/errorPopUp";
 
 export default function setting({}) {
@@ -68,7 +67,6 @@ export default function setting({}) {
             <h2>Account Settings</h2>
           </div>
 
-          <h3>Your Avatar</h3>
           <div className={styles.avatarContainer}>
             <span className={styles["Circle-avart"]}>
               <img
@@ -79,6 +77,7 @@ export default function setting({}) {
                 layout="fill"
                 objectfit="cover"
               />
+              <h3 className={styles["your-avatar"]}>Your Avatar</h3>
             </span>
             <p className={styles.avatarText}>
               Avatar help your teammates recognize you in Social Network .
