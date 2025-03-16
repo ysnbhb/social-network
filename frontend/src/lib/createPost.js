@@ -4,7 +4,15 @@ async function CreatePost(content, postType, img, groupId = 0, UsersSelected) {
   data.append("postType", postType);
   if (img) data.append("img", img);
   data.append("groupId", groupId);
-  data.append("UsersSelected", UsersSelected);
+
+  console.log("usersSelected", UsersSelected);
+  
+  UsersSelected.forEach(user => {
+    data.append("usersSelected", user);
+  });
+
+  console.log("data", data.get("usersSelected"));
+
   try {
     const respons = await fetch("http://localhost:8080/api/create/post", {
       method: "POST",

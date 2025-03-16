@@ -1,6 +1,6 @@
 module social-network
 
-go 1.24.0
+go 1.23
 
 require github.com/mattn/go-sqlite3 v1.14.24
 
@@ -11,8 +11,8 @@ require (
 )
 
 require (
-	github.com/gorilla/websocket v1.5.3 // indirect
-	github.com/hashicorp/errwrap v1.1.0 // indirect
-	github.com/hashicorp/go-multierror v1.1.1 // indirect
-	go.uber.org/atomic v1.7.0 // indirect
+	github.com/gorilla/websocket v1.5.3
+	github.com/hashicorp/errwrap v1.1.0
+	github.com/hashicorp/go-multierror v1.1.1
+	go.uber.org/atomic v1.7.0
 )

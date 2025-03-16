@@ -47,6 +47,7 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	postRequest.GroupId, _ = strconv.Atoi(r.FormValue("groupId"))
+	postRequest.UsersSelected = r.Form["usersSelected"] 
 	
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user

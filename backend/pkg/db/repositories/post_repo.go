@@ -6,16 +6,32 @@ import (
 )
 
 func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
-	cardId, err := CreateCard(postRequest.UserId, postRequest.GroupId, postRequest.Content, postRequest.ImageUrl)
-	if err != nil {
-		return nil, err
-	}
 
-	query := `INSERT INTO posts(card_id, privacy) VALUES(?, ?);`
-	_, err = db.DB.Exec(query, cardId, postRequest.Privacy)
-	if err != nil {
-		return nil, err
-	}
+		cardId, err := CreateCard(postRequest.UserId, postRequest.GroupId, postRequest.Content, postRequest.ImageUrl)
+		if err != nil {
+			return nil, err
+		}
+
+		query := `INSERT INTO posts(card_id, privacy) VALUES(?, ?);`
+		result, err := db.DB.Exec(query, cardId, postRequest.Privacy)
+		if err != nil {
+			return nil, err
+		}
+
+		postId, err := result.LastInsertId()
+		if err != nil {
+			return nil, err
+		}
+
+		if postRequest.Privacy == "private" && len(postRequest.UsersSelected) > 0 {
+			for _, userID := range postRequest.UsersSelected {
+				_, err := db.DB.Exec(`INSERT INTO post_visibility (post_id, user_id) VALUES (?, ?)`, postId, userID)
+				if err != nil {
+					return nil, err
+				}
+			}
+		}
+
 	return GetOneCard(cardId, postRequest.UserId)
 }
 
