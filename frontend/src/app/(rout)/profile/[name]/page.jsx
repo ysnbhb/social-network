@@ -30,7 +30,7 @@ export default function Profile({ params }) {
   const [showPopup, setShowPopup] = useState(false);
   const [activeTab, setActiveTab] = useState("following");
 
-  const [follow] = useFollowing();
+  const [follow] = useFollowing(usernames);
   const togglePopup = (data, text) => {
     setcheckFollow(text);
     setdataFollow(data);

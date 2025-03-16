@@ -109,6 +109,7 @@ func GetUserIdByNickName(nickname string) int {
 	var userId int
 	err := db.DB.QueryRow(query, nickname).Scan(&userId)
 	if err != nil {
+		log.Println(err)
 		return -1
 	}
 	return userId

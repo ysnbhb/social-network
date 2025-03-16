@@ -147,24 +147,44 @@ func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
 	return user, nil
 }
 
-func GetUserFollowing(userid int, nickname string) (friend []models.UnfollowUser, errs error) {
-	following := `SELECT
-		u.id,
-		u.first_name,
-		u.last_name,
-		u.nickname,
-		u.avatar_url,
-		f.status
-		FROM users u
-	LEFT JOIN followers f ON u.id = f.following_id AND f.follower_id = $1
-	WHERE 
-     u.nickname != $2
-    OR 
+func GetUserFollowing(current_userId int, my_userid int) (friend []models.UnfollowUser, errs error) {
+	following := ` SELECT
+    u.id,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    u.avatar_url,
+    CASE 
+        WHEN $1 = $2 THEN COALESCE((
+            SELECT status 
+            FROM followers 
+            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the follower
+        ), '') 
+        ELSE ''
+    END AS status 
+FROM users u
+JOIN followers f ON u.id =  f.following_id  -- Focus on users who are followers
+WHERE 
+    f.follower_id = $1 -- Focus on followers of the profile being viewed ($2)
+	  
+    AND 
     (
- 	  (u.profile_type = 'Private' AND f.status = 'accept')  
+        -- Case 1: Viewing your own profile
+        ($1 = $2) 
+        OR 
+        -- Case 2: Viewing another user's profile
+        (
+            (u.profile_type = 'Public') -- Show Public profiles
+            OR 
+            (u.profile_type = 'Private' AND EXISTS (
+                SELECT 1 
+                FROM followers 
+                WHERE  following_id  = u.id AND follower_id = $2 AND status = 'accept'  OR status = 'pending'
+            ))  
+        )
     );`
 
-	row, err := db.DB.Query(following, userid, nickname)
+	row, err := db.DB.Query(following, current_userId, my_userid)
 	if err != nil {
 		return friend, err
 	}
@@ -179,19 +199,43 @@ func GetUserFollowing(userid int, nickname string) (friend []models.UnfollowUser
 	return friend, nil
 }
 
-func GetUserFollower(userid int) (friend []models.UnfollowUser, errs error) {
-	follower := ` SELECT
-				u.id,
-				u.first_name,
-				u.last_name,
-				u.nickname,
-				u.avatar_url, 
-				COALESCE((SELECT status FROM followers WHERE follower_id = $1 AND following_id = u.id),'') AS status
-
-		FROM users u 
-		JOIN followers f ON u.id = f.follower_id 
-		WHERE f.following_id=$1;`
-	row, err := db.DB.Query(follower, userid)
+func GetUserFollower(current_userId int, my_userid int) (friend []models.UnfollowUser, errs error) {
+	follower := `
+	SELECT
+    u.id,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    u.avatar_url,
+    CASE 
+        WHEN $1 = $2 THEN COALESCE((
+            SELECT status 
+            FROM followers 
+            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the follower
+        ), '') 
+        ELSE ''
+    END AS status 
+FROM users u
+JOIN followers f ON u.id = f.follower_id -- Focus on users who are followers
+WHERE 
+    f.following_id = $1 -- Focus on followers of the profile being viewed ($2)
+    AND 
+    (
+        -- Case 1: Viewing your own profile
+        ($1 = $2) 
+        OR 
+        -- Case 2: Viewing another user's profile
+        (
+            (u.profile_type = 'Public') -- Show Public profiles
+            OR 
+            (u.profile_type = 'Private' AND EXISTS (
+                SELECT 1 
+                FROM followers 
+                WHERE follower_id = u.id AND following_id = $2 AND status = 'accept'
+            )) -- Show Private profiles only if the user is an accepted follower of the profile being viewed
+        )
+    );`
+	row, err := db.DB.Query(follower, current_userId, my_userid)
 	if err != nil {
 		return friend, err
 	}

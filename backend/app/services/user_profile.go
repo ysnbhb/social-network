@@ -28,10 +28,12 @@ func UserProfile(username string, userId int) (models.UserProfile, error) {
 	return *profile, nil
 }
 
-func GetUserFollowing(user int, nickname string) ([]models.UnfollowUser, error) {
-	return repo.GetUserFollowing(user, nickname)
+func GetUserFollowing(current_username string, my_userid int) ([]models.UnfollowUser, error) {
+	current_userId := repo.GetUserIdByNickName(current_username)
+	return repo.GetUserFollowing(current_userId, my_userid)
 }
 
-func GetUserFollower(user int) ([]models.UnfollowUser, error) {
-	return repo.GetUserFollower(user)
+func GetUserFollower(current_username string, my_userid int) ([]models.UnfollowUser, error) {
+	current_userId := repo.GetUserIdByNickName(current_username)
+	return repo.GetUserFollower(current_userId, my_userid)
 }

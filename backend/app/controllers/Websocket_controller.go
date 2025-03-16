@@ -43,7 +43,7 @@ func HandleWebsocket(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer func() {
-		log.Printf("Closing connection for user: %s (ID: %d)", username, userID)
+		// log.Printf("Closing connection for user: %s (ID: %d)", username, userID)
 		RemoveClient(conn)
 		conn.Close()
 	}()
