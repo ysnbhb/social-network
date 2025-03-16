@@ -148,40 +148,29 @@ func GetUserInfoByUsername(username string) (models.Userdataforchat, error) {
 }
 
 func GetUserFollowing(current_userId int, my_userid int) (friend []models.UnfollowUser, errs error) {
-	following := ` SELECT
+	following := `SELECT
     u.id,
     u.first_name,
     u.last_name,
     u.nickname,
     u.avatar_url,
     CASE 
-        WHEN $1 = $2 THEN COALESCE((
+        WHEN $1 = $2 THEN COALESCE(f.status, '') -- When viewing your own profile
+        ELSE COALESCE((
             SELECT status 
             FROM followers 
-            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the follower
-        ), '') 
-        ELSE ''
+            WHERE follower_id = $1 AND following_id = u.id -- Check if viewer follows this person
+        ), '') -- Show status if viewer follows this person, otherwise empty
     END AS status 
 FROM users u
-JOIN followers f ON u.id =  f.following_id  -- Focus on users who are followers
+JOIN followers f ON u.id = f.following_id AND f.follower_id = $2 -- Users being followed by profile owner
 WHERE 
-    f.follower_id = $1 -- Focus on followers of the profile being viewed ($2)
-	  
-    AND 
     (
         -- Case 1: Viewing your own profile
         ($1 = $2) 
         OR 
         -- Case 2: Viewing another user's profile
-        (
-            (u.profile_type = 'Public') -- Show Public profiles
-            OR 
-            (u.profile_type = 'Private' AND EXISTS (
-                SELECT 1 
-                FROM followers 
-                WHERE  following_id  = u.id AND follower_id = $2 AND status = 'accept'  OR status = 'pending'
-            ))  
-        )
+        ($1 != $2)
     );`
 
 	row, err := db.DB.Query(following, current_userId, my_userid)
