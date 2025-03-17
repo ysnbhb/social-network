@@ -9,42 +9,50 @@ import (
 
 func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int) error {
 	query := `
-	SELECT 
+SELECT 
     c.id,
     c.user_id,
     c.content,
     c.created_at,
     u.first_name,
     u.last_name,
-	u.nickname,
-	c.image_url,
-	COALESCE(u.avatar_url , '') AS avatar_url,
+    u.nickname,
+    c.image_url,
+    COALESCE(u.avatar_url , '') AS avatar_url,
     COUNT(DISTINCT cm.id) AS total_comments,
     COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-	(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
-	FROM card c
-	JOIN posts p ON c.id = p.card_id
-	JOIN users u ON c.user_id = u.id
-	LEFT JOIN comments cm ON c.id = cm.target_id
-	LEFT JOIN likes l ON c.id = l.card_id
-	WHERE (u.profile_type = 'Public' AND p.privacy = 'public' AND  (c.group_id is NULL  or c.group_id = 0)) OR
-    ((p.privacy = 'almostPrivate') AND 
-     EXISTS (SELECT 1 FROM followers WHERE (follower_id = $1 AND following_id =u.id )  AND status = 'accept')
-    ) OR 
-    p.privacy = 'private' AND EXISTS(SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1 )
-    OR (u.profile_type = 'Private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE (follower_id = u.id AND following_id = $1)  AND status = 'accept') AND  (c.group_id is NULL  or c.group_id = 0))
-    OR (c.user_id = $1 AND  (c.group_id is NULL  or c.group_id = 0))
-	GROUP BY 
+    (SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
+FROM card c
+JOIN posts p ON c.id = p.card_id
+JOIN users u ON c.user_id = u.id
+LEFT JOIN comments cm ON c.id = cm.target_id
+LEFT JOIN likes l ON c.id = l.card_id
+LEFT JOIN post_visibility pv ON p.id = pv.post_id AND pv.user_id = $1
+WHERE 
+    (
+        (u.profile_type = 'Public' AND p.privacy = 'public' AND (c.group_id IS NULL OR c.group_id = 0)) 
+        OR 
+        (p.privacy = 'almostPrivate' AND EXISTS (SELECT 1 FROM followers WHERE follower_id = $1 AND following_id = u.id AND status = 'accept'))
+        OR 
+        (p.privacy = 'private' AND EXISTS (SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1) 
+            OR pv.user_id IS NOT NULL)
+        OR 
+        (u.profile_type = 'Private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept') AND (c.group_id IS NULL OR c.group_id = 0))
+        OR 
+        (c.user_id = $1 AND (c.group_id IS NULL OR c.group_id = 0))
+    )
+GROUP BY 
     c.id, 
     c.user_id, 
     c.content, 
     c.created_at, 
     u.first_name, 
     u.last_name,
-	u.nickname
-	ORDER BY c.created_at DESC
-	LIMIT 10 OFFSET $2
-	`
+    u.nickname
+ORDER BY 
+    c.created_at DESC
+LIMIT 10 OFFSET $2;
+`
 	rows, err := db.DB.Query(query, userId, offset)
 	if err != nil {
 		return err
@@ -98,14 +106,16 @@ func GetPostInfo(postId int) (*models.PostInfo, error) {
 	return &post, err
 }
 
-func AllToSee(postId int, userId int) bool {
-	var allowed bool
-	query := `
-	SELECT EXISTS (
-    SELECT 1 FROM private_members WHERE user_id = ? AND post_id = ?
-	) AS allowed`
-	db.DB.QueryRow(query, postId).Scan(
-		&allowed,
-	)
-	return allowed
-}
+// func AllToSee(userId, postId int) bool {
+// 	var allowed bool
+// 	fmt.Println("userIdddddd", userId)
+// 	fmt.Println("postIdddddd", postId)
+// 	query := `
+// 	SELECT EXISTS (
+//     SELECT 1 FROM post_visibility WHERE user_id = ? AND post_id = ?
+// 	) AS allowed`
+// 	db.DB.QueryRow(query, postId).Scan(
+// 		&allowed,
+// 	)
+// 	return allowed
+// }

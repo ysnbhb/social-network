@@ -48,7 +48,7 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 	}
 	postRequest.GroupId, _ = strconv.Atoi(r.FormValue("groupId"))
 	postRequest.UsersSelected = r.Form["usersSelected"] 
-	
+
 	user := r.Context().Value("userId").(int)
 	postRequest.UserId = user
 	post, err := services.CreatPost(&postRequest)
@@ -57,6 +57,6 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
-	log.Println("postRequestpostRequestpostRequestpostRequestpostRequestpostRequestpostRequestpostRequestpostRequest", postRequest)
+	
 	utils.JsonResponse(w, post, http.StatusCreated)
 }

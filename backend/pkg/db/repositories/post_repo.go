@@ -24,14 +24,20 @@ func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 		}
 
 		if postRequest.Privacy == "private" && len(postRequest.UsersSelected) > 0 {
-			for _, userID := range postRequest.UsersSelected {
-				_, err := db.DB.Exec(`INSERT INTO post_visibility (post_id, user_id) VALUES (?, ?)`, postId, userID)
+			for _, userNickname := range postRequest.UsersSelected {
+				var userId int
+				query := `SELECT id FROM users WHERE nickname = ? LIMIT 1`
+				err := db.DB.QueryRow(query, userNickname).Scan(&userId)
+				if err != nil {
+					return nil, err
+				}
+	
+				_, err = db.DB.Exec(`INSERT INTO post_visibility (post_id, user_id) VALUES (?, ?)`, postId, userId)
 				if err != nil {
 					return nil, err
 				}
 			}
 		}
-
 	return GetOneCard(cardId, postRequest.UserId)
 }
 

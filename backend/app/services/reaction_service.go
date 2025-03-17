@@ -29,10 +29,6 @@ func AddReaction(reactionRequest *models.ReactionRequest) error {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
 			}
-		} else if postinfo.Privacy == "private" {
-			if !repo.AllToSee(reactionRequest.UserId, postinfo.UserId) {
-				return errors.New("you can not see this post")
-			}
 		} else if postinfo.Privacy == "almostPrivate" {
 			if !repo.IsFollowing(reactionRequest.UserId, postinfo.UserId) {
 				return errors.New("you have to follow the user first")
