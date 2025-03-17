@@ -155,25 +155,37 @@ func GetUserFollowing(current_userId int, my_userid int) (friend []models.Unfoll
     u.nickname,
     u.avatar_url,
     CASE 
-        WHEN $1 = $2 THEN COALESCE(f.status, '') -- When viewing your own profile
+        WHEN $1 = $2 THEN COALESCE(f.status, '') -- Show status when viewing your own profile
         ELSE COALESCE((
             SELECT status 
             FROM followers 
-            WHERE follower_id = $1 AND following_id = u.id -- Check if viewer follows this person
-        ), '') -- Show status if viewer follows this person, otherwise empty
-    END AS status 
+            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the person they're following
+        ), '')
+    END AS status
 FROM users u
-JOIN followers f ON u.id = f.following_id AND f.follower_id = $2 -- Users being followed by profile owner
+JOIN followers f ON u.id = f.following_id -- Focus on users being followed
 WHERE 
+    f.follower_id = $2 
+	AND u.id!=$1
+    AND 
     (
         -- Case 1: Viewing your own profile
         ($1 = $2) 
         OR 
         -- Case 2: Viewing another user's profile
-        ($1 != $2)
-    );`
+        (
+            (u.profile_type = 'Public') -- Show Public profiles
+            OR 
+            (u.profile_type = 'Private' AND EXISTS (
+                SELECT 1 
+                FROM followers 
+                WHERE follower_id = $2 AND following_id = u.id AND (status = 'accept' OR status = 'pending')
+            )) -- Show Private profiles only if the profile owner follows them and the status is 'accept' or 'pending'
+        )
+    );
+`
 
-	row, err := db.DB.Query(following, current_userId, my_userid)
+	row, err := db.DB.Query(following, my_userid, current_userId)
 	if err != nil {
 		return friend, err
 	}
