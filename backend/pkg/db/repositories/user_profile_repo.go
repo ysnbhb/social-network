@@ -180,7 +180,7 @@ WHERE
                 SELECT 1 
                 FROM followers 
                 WHERE follower_id = $2 AND following_id = u.id AND (status = 'accept' OR status = 'pending')
-            )) -- Show Private profiles only if the profile owner follows them and the status is 'accept' or 'pending'
+            ))  
         )
     );
 `
@@ -209,34 +209,34 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
     u.nickname,
     u.avatar_url,
     CASE 
-        WHEN $1 = $2 THEN COALESCE((
+        WHEN $1 = $2 THEN COALESCE(f.status, '')  
+        ELSE COALESCE((
             SELECT status 
             FROM followers 
-            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the follower
+            WHERE follower_id = $1 AND following_id = u.id  
         ), '') 
-        ELSE ''
     END AS status 
 FROM users u
-JOIN followers f ON u.id = f.follower_id -- Focus on users who are followers
+JOIN followers f ON u.id = f.follower_id 
 WHERE 
-    f.following_id = $1 -- Focus on followers of the profile being viewed ($2)
+    f.following_id = $2  
+    AND u.id != $1  
     AND 
     (
-        -- Case 1: Viewing your own profile
-        ($1 = $2) 
+         ($1 = $2) 
         OR 
-        -- Case 2: Viewing another user's profile
-        (
-            (u.profile_type = 'Public') -- Show Public profiles
+         (
+            (u.profile_type = 'Public')  
             OR 
             (u.profile_type = 'Private' AND EXISTS (
                 SELECT 1 
                 FROM followers 
-                WHERE follower_id = u.id AND following_id = $2 AND status = 'accept'
-            )) -- Show Private profiles only if the user is an accepted follower of the profile being viewed
+                WHERE follower_id = u.id AND following_id = $2 AND status = 'accept'  OR status = 'pending'
+            ))  
         )
-    );`
-	row, err := db.DB.Query(follower, current_userId, my_userid)
+    );
+`
+	row, err := db.DB.Query(follower, my_userid,current_userId)
 	if err != nil {
 		return friend, err
 	}
