@@ -1,17 +1,17 @@
 "use client";
 import "../styles/activitySidebar.css";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import useHandleFollowers from "@/app/hooks/usehandleFollower";
+ import useHandleFollowers from "@/app/hooks/usehandleFollower";
 import { API_URL } from "./api";
 export let UsersSelected = []
+import Follow from "./Follow";
   
-export default function ActivitySidebar() {
+ export default function ActivitySidebar( ) {
   const [user, setUser] = useState([]);
   
   useEffect(() => {
     async function GetUser() {
-      const res = await fetch(`${API_URL}/api/unfollow`, {
+      const res = await fetch(`${API_URL}/api/unfollow` , {
         method: "GET",
         credentials: "include",
       });
@@ -20,15 +20,14 @@ export default function ActivitySidebar() {
     }
     GetUser();
   }, []);
-  
   function serchfunc() {
+    
     const search = document.getElementById("search").value;
     console.log("search", search);
     
     if (search.length === 0) {
       return;
     }
-
     fetch(`${API_URL}/api/search/users?searchContent=${search}`, {
       method: "GET",
       credentials: "include",
@@ -63,21 +62,6 @@ export default function ActivitySidebar() {
           </svg>
         </button>
       </div>
-
-      {user.length === 0 && (
-  <div className="no-data" >
- 
-    <h1>There are no users</h1>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-    </svg>
-
-  </div>
-
-)}
-
-
-
       <div className="users-list">
         {user.map((item) => (
           <ShowUnfllowUser key={item.id} user={item} />
@@ -88,39 +72,15 @@ export default function ActivitySidebar() {
 }
 
 export function ShowUnfllowUser({ user }) {
-   const { status, handle } = useHandleFollowers(user.id);
+   const { status, handle } = useHandleFollowers(user.id , user.status);
    const handuleClick = async () => {
     await handle();  
-  };
+  };  
   return (
     <div>
-      <Follow status={status} handuleClick ={handuleClick} user={user}/>
+      <Follow status={status} handuleClick ={handuleClick } user={user}/>
     </div>
-  );
-}
-
-export function Follow ({status, handuleClick, user}) {
-  return (
-    <div className="activity-item">
-      <div>
-        <p>
-          <strong>
-            <Link className="link" href={{ pathname: `/profile/${user.nickname}` }}>
-              {user.lastName} {user.firstName}
-            </Link>
-          </strong>
-        </p>
-        <p className="text-muted">@{user.nickname || "N/A"}</p>
-      </div>
-      {status === "accept" ? (
-        <button>unfollow</button>
-      ) : status === "pending" ? (
-        <button>pending</button>
-      ) : (
-        <button onClick={() => handuleClick(user.id)} >follow</button>
-      )}
-    </div>
-  );
+  )
 }
 
   export function Followers ({status, user}) {

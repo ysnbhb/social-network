@@ -1,0 +1,470 @@
+.container {
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: fixed;
+  /* left: 0; */
+  height: 74%;
+  display: flex;
+  box-shadow: 0 6px 67px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  flex-direction: column;
+  color: black;
+  opacity: 1;
+  height: auto;
+  width: 61%;
+  scrollbar-width: thin;
+  scrollbar-color: #4169e1 #f9f9f9;
+}
+.update {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.tabContainer {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 24px;
+}
+
+.tabButton {
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.activeTab {
+  color: #4169e1;
+  border-bottom: 2px solid #4169e1;
+  font-weight: 500;
+}
+
+.avatarSection h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.avatarContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.avatarButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.uploadButton {
+  background-color: #4169e1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.deleteButton {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.avatarText {
+  color: #888;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.hr {
+  border: none;
+  height: 1px;
+  background-color: #eee;
+  margin: 24px 0;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.formGroup {
+  flex: 1;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  font-family: inherit;
+  min-height: 120px;
+}
+
+.updateButton {
+  background-color: #4169e1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+.Circle-avart {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 83px;
+  background: #fff;
+  border: 4px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 83px;
+  margin-right: 22px;
+  margin-bottom: 23px;
+}
+.avatarContainer-profile {
+  width: 75px !important;
+  height: 75px !important;
+  border-radius: 50% !important;
+}
+.your-avatar {
+  margin-top: 10px;
+  width: 10vw;
+}
+.radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+.radio:checked {
+  border-color: #4a90e2;
+}
+.radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #4a90e2;
+  border-radius: 50%;
+}
+.formradio {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+/* Extra Small Devices (Phones - < 576px) */
+@media only screen and (max-width: 575.98px) {
+  .container {
+    overflow-y: scroll;
+    width: 90%;
+    margin: 20px auto;
+    /* scrollbar-width: none; */
+    padding: 20px;
+    scrollbar-width: thin;
+    height: 90%;
+  }
+  .Circle-avart {
+    height: 70px;
+    width: 70px;
+  }
+  .formradio {
+    width: 60%;
+  }
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .tabContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabButton {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatarContainer-profile {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .your-avatar {
+    width: 15vw;
+  }
+
+  .formRow {
+    flex-direction: column;
+  }
+
+  .input,
+  .textarea {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .updateButton {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+/* Small Devices (Phones - 576px to 767.98px) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    overflow-y: scroll;
+    /* height: 70%; */
+    width: 85%;
+    margin: 30px auto;
+    padding: 25px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .Circle-avart {
+    height: 40%;
+  }
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .tabButton {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .avatarContainer-profile {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .your-avatar {
+    width: 12vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 13px;
+  }
+
+  .updateButton {
+    padding: 11px 22px;
+  }
+}
+
+/* Medium Devices (Tablets - 768px to 991.98px) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    height: 80%;
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    overflow-y: scroll;
+  }
+  .formradio {
+    width: 28%;
+  }
+  .Circle-avart {
+    height: 46%;
+  }
+  .header h2 {
+    font-size: 21px;
+  }
+
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+
+  .avatarContainer-profile {
+    width: 75px !important;
+    height: 75px !important;
+  }
+
+  .your-avatar {
+    width: 10vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
+}
+
+/* Large Devices (Laptops - 992px to 1199.98px) */
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    /* overflow-y: scroll; */
+    height: 80%;
+    width: 70%;
+    margin: 45px auto;
+    padding: 35px;
+  }
+  .Circle-avart {
+    height: 90px;
+    width: 90px;
+  }
+  .header h2 {
+    font-size: 22px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarContainer-profile {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .your-avatar {
+    width: 8vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
+}
+
+/* Extra Large Devices (Desktops - ≥ 1200px) */
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 61%; /* Default width for large screens */
+    margin: 50px auto;
+    padding: 30px;
+  }
+
+  .header h2 {
+    font-size: 22px;
+  }
+  .formradio {
+    width: 46%;
+  }
+  .tabButton {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarContainer-profile {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .your-avatar {
+    width: 8vw;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+
+  .updateButton {
+    padding: 12px 24px;
+  }
+}

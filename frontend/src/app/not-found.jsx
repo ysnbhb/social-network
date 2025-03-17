@@ -1,14 +1,26 @@
-"use client"
-import {  useSearchParams } from "next/navigation";
+"use client";
+import { useRouter } from "next/navigation";
+import "../styles/NotFound.css";
 
-export default function NotFound() {
-    // const searchParams = useSearchParams(); // Use useSearchParams to get query params
-    // const message = searchParams.get("message"); // Get the 'message' query parameter
-  
-    return (
-      <div className="error-page">
-        <h1>Error</h1>
-        <p>{decodeURIComponent("An unexpected error occurred.")}</p>
+const NotFound = () => {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push("/");
+  };
+
+  return (
+    <div className="container">
+      <div className="error-content">
+        <h1>404</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <a href="#" onClick={handleRedirect}>
+          Go to Homepage
+        </a>
       </div>
-    ); 
-}
+    </div>
+  );
+  
+};
+
+export default NotFound;

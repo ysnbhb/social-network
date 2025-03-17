@@ -3,7 +3,6 @@ package controllers // auth_controller.go
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -151,20 +150,24 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	userId := r.Context().Value("userId").(int)
-	var user models.User
-	user.Id = userId
-	user.AboutMe = r.FormValue("aboutMe")
-	user.Profile_Type = r.FormValue("profile_type")
-	if user.Profile_Type != "private" && user.Profile_Type != "public" {
-		user.Profile_Type = "public"
-	}
-	err := services.UpdateProfile(&user)
+	var users models.User
+
+	err := json.NewDecoder(r.Body).Decode(&users)
 	if err != nil {
-		utils.JsonResponse(w, "field to update profile", http.StatusBadRequest)
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
+		log.Println(err)
+		return
+	}
+	users.Id = userId
+
+	err = services.UpdateProfile(&users)
+	if err != nil {
+		utils.JsonResponse(w, err.Error(), http.StatusBadRequest)
 		log.Println("error in update profile")
 		return
 	}
-	utils.JsonResponse(w, "User profile updated successfully", http.StatusOK)
+	newUser, err := services.UserProfile(users.NickName, userId)
+	utils.JsonResponse(w, newUser, http.StatusOK)
 }
 
 func Session_id(w http.ResponseWriter, r *http.Request) {
@@ -173,5 +176,4 @@ func Session_id(w http.ResponseWriter, r *http.Request) {
 }
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("CheckLogin")
 }

@@ -6,18 +6,24 @@ import CommentCreater from "./commentCreate.js";
 import { useSearchParams } from "next/navigation";
 import { API_URL } from "./api";
 import { PostCompte } from "./postComp";
+import ErrorPopUp from "./errorPopUp";
+import { useRouter } from "next/navigation";
 
 export default function Comments({ className, classes = {} }) {
+    const router = useRouter();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
   const [card, setCard] = useState(null);
+  const [error, setUpdate] = useState(null);
+  const [show, setShow] = useState(true);
   const id = searchParams.get("target_id");
   const GetComments = async () => {
     try {
       if (!id) {
-        console.error("No target_id found in query parameters");
-        setLoading(false);
+        // console.error("No target_id found in query parameters");
+    //  setLoading(false);
+     router.push("/404");
         return;
       }
 
@@ -29,15 +35,14 @@ export default function Comments({ className, classes = {} }) {
         },
         credentials: "include",
       });
-      
+      const data = await response.json();
       if (!response.ok) {
-        console.error("Failed to fetch comments:", response.status);
-        setLoading(false);
-        return;
+           
+          setUpdate("Error fetching data. Please try again later.");
+         return;
       }
       
-      const data = await response.json();
-
+     
       if (data) {
         setPosts(data);
       }
@@ -61,10 +66,15 @@ export default function Comments({ className, classes = {} }) {
       credentials: "include",
     });
     const data = await res.json();
-    console.log(data);
-    if (data && data.id) {
-      setCard(data);
+     if (res.ok){
+      if (data && data.id) {
+        setCard(data);
+      }
+    }else{
+      // showPopUp(true);
+      setUpdate(data);
     }
+   
 
   }
 
@@ -73,10 +83,17 @@ export default function Comments({ className, classes = {} }) {
     GetCard();
     GetComments();
   }, [id]); 
-
+  const showPopUp = (check) => {
+    setShow(check);
+   router.push("/home")
+  };
   return (
-    <>
-      <section className={`${className || ""} section-home`}>
+       <section className={`${className || ""} section-home`}> 
+       {error && show && (
+               <div>
+                 <ErrorPopUp showPopUp={showPopUp} error={error} classes={{style:"errorImportant"}} />
+               </div>
+             )}
         {card && card.id && (
           <PostCompte post={card} />
         )}
@@ -87,12 +104,7 @@ export default function Comments({ className, classes = {} }) {
             post ? <CommentCompte key={post.id || index} comment={post} /> : null
           ))
         ) : !loading ? (
-          <div className="no-data" >
-          <h1>There are no comments</h1>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-          </svg>
-        </div>
+          <div className="no-comments">No comments found</div>
         ) : null}
         
         {loading && (
@@ -103,6 +115,6 @@ export default function Comments({ className, classes = {} }) {
           </div>
         )}
       </section>
-    </>
+     
   );
 }

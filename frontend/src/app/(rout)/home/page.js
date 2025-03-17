@@ -9,7 +9,8 @@ export default  function Home() {
       const [user, setUser] = useState([]);
      return (
     <div>
-
+      {/* Use Navbar as a JSX element */}
+      {/* Other content for the home page */}
       <main className="main-content">
       <ProfileSide setUser={setUser} />
       <HomeFeed dadfollow={user}/>

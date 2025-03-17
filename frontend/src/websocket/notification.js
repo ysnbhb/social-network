@@ -2,7 +2,7 @@
 
 import { safeSend } from "./websocket.js";
 
-export function handleNotification(data) {
+export function handleNotification(data) {    
     AddMessagesymbole(data.countunreadmessages)
     ShowNotification(data.countNotification);
     if (window.location.pathname === "/notification") {

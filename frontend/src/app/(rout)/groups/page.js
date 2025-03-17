@@ -14,7 +14,7 @@ export default function Groups() {
        <main className="main-content">
        <GroupsSide  setJoinedGroup={setJoinedGroup} groups={joinedGroup} />
        <GroupsFeed unjoined={unjoined} setUnjoined={setUnjoined} setJoinedGroup={setJoinedGroup} />
-       <GroupsInv setInvition={setInvition} invition={invition} setJoinedGroup = {setJoinedGroup} setUnjoined={setUnjoined} />
+       <GroupsInv  setInvition={setInvition} invition={invition} setJoinedGroup = {setJoinedGroup} setUnjoined={setUnjoined} />
        </main>
     </div>
   );

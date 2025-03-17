@@ -2,16 +2,16 @@ import useFollowing from "@/app/hooks/useFollowing";
 import "../styles/profileSidebar.css";
 import userProfile from "@/app/hooks/userProfile";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Follow, ShowUnfllowUser } from "./activitySide";
+import {  useState } from "react";
 import { API_URL } from "./api";
-export default function ProfileSide({ classes  , setUser}) {
+ import User from "./userFollowers";
+export default function ProfileSide({ classes }) {
   const [activeTab, setActiveTab] = useState("following");
   const [showPopup, setShowPopup] = useState(false);
   const [checkFollow, setcheckFollow] = useState("");
   const [dataFollow, setdataFollow] = useState([]);
   const [profile, error] = userProfile();
-  const [follow, errorfollow] = useFollowing(setUser);
+  const [follow] = useFollowing();
   const togglePopup = (data, text) => {
     setcheckFollow(text)
     setdataFollow(data)
@@ -30,7 +30,6 @@ export default function ProfileSide({ classes  , setUser}) {
     posts_count,
   } = profile;
   
- 
   return (
     <div className="profile-page">
         <div  className="content-area">
@@ -46,7 +45,7 @@ export default function ProfileSide({ classes  , setUser}) {
               <div className="popup-form">
               {dataFollow ?(dataFollow).map((fl) => (
                 <div key={`${activeTab}-${fl.id}`}>
-                   <Follow  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                    <User key={`${activeTab}-${fl.id}`}  user={fl} />
                  </div>
               )) :(<div>
                 No Follower
@@ -106,3 +105,14 @@ export default function ProfileSide({ classes  , setUser}) {
     </div>
   );
 }
+
+
+// function User({user}) {
+//     const { status, handle } = useHandleFollowers(user.id , user.status);
+//      const handuleClick = async () => {
+//       await handle();  
+//     };
+//   return <>
+//   <Follow  status={status}   user={user}  handuleClick={handuleClick} />
+//   </>
+// }

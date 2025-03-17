@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"social-network/app/services"
+	"social-network/pkg/utils"
 )
 
 type infoUser struct {
@@ -21,18 +22,18 @@ func AuthMiddleware(next http.Handler) http.Handler {
 		} else {
 			cookies, err := r.Cookie("session_id")
 			if err != nil {
-				http.Error(w, "Unauthorized", http.StatusUnauthorized)
-
+				utils.JsonResponse(w, "Unauthorized", http.StatusUnauthorized)
+				http.Redirect(w, r, "/login", http.StatusSeeOther)
 				return
 			}
 			cookie = cookies.Value
 		}
 		userId, username, err := services.GetUserIdBySession(cookie)
 		if err != nil || userId == 0 {
-			http.Error(w, "Unauthorized", http.StatusUnauthorized)
+			utils.JsonResponse(w, "Unauthorized", http.StatusUnauthorized)
 			return
 		}
- 
+
 		ctx := context.WithValue(r.Context(), "userId", userId)
 		ctx = context.WithValue(ctx, "username", username)
 		r = r.WithContext(ctx)

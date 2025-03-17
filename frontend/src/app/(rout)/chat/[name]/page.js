@@ -4,14 +4,13 @@ import React, { useState, useEffect } from "react";
 import UserList from "../../../../components/UserList";
 import ChatBox from "../../../../components/ChatBox";
 import { sendGetmessagesusers, sendMessageIsRead } from "../../../../websocket/messages.js";
-import { notFound, useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import { API_URL } from "@/components/api";
 export default function ChatPage({ params }) {
     const [selectedUser, setSelectedUser] = useState(null);
     const [has , setHas] = useState(true);
     const { name } = use(params)
-    const router = useRouter();
-    
+     
     useEffect(() => {
         if (name) {
             fetch(`${API_URL}/api/user/info?username=${name}`, {

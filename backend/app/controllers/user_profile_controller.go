@@ -96,15 +96,21 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 	}
 	following := models.UserRelation{}
 	var err error
-
+	var username string
 	user := r.Context().Value("userId").(int)
-	following.Following, err = services.GetUserFollowing(user)
+	username = r.Context().Value("username").(string)
+	current_username := r.URL.Query().Get("current_username")
+	if current_username == "" {
+		current_username = username
+	}
+	log.Println(current_username)
+	following.Following, err = services.GetUserFollowing(current_username, user)
 	if err != nil {
 		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
 		log.Println(err.Error())
 		return
 	}
-	following.Follower, err = services.GetUserFollower(user)
+	following.Follower, err = services.GetUserFollower(current_username, user)
 	if err != nil {
 		utils.JsonResponse(w, "Error To Get Follower", http.StatusMethodNotAllowed)
 		log.Println(err.Error())

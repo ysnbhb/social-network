@@ -6,6 +6,8 @@ import (
 
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
+
+	"github.com/gorilla/websocket"
 )
 
 func CheckCanUSendMessage(Receivers string, Userid int) error {
@@ -65,7 +67,7 @@ func AddmessagesGroup(msg models.Message, client *models.Client) error {
 	return nil
 }
 
-func Getmessagesusers(msg models.Message, client *models.Client) error {
+func Getmessagesusers(msg models.Message, client *models.Client, conn *websocket.Conn) error {
 	recieverid := GetUserIdByNickName(msg.Receivers[0])
 	query := `SELECT sender_id, recipient_id, message, sent_at FROM chats
 			WHERE (sender_id = ? AND recipient_id = ?) OR (sender_id = ? AND recipient_id = ?)
@@ -95,7 +97,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 		})
 	}
 
-	client.Conn.WriteJSON(map[string]interface{}{
+	conn.WriteJSON(map[string]interface{}{
 		"type":     "getmessagesusers",
 		"messages": messages,
 		"you":      GetNickName(client.Userid),
@@ -105,7 +107,7 @@ func Getmessagesusers(msg models.Message, client *models.Client) error {
 	return nil
 }
 
-func Getmessagesgroups(msg models.Message, client *models.Client) error {
+func Getmessagesgroups(msg models.Message, client *models.Client, conn *websocket.Conn) error {
 	query := `SELECT 
 					group_chats.user_id, 
 					group_chats.message, 
@@ -138,7 +140,7 @@ func Getmessagesgroups(msg models.Message, client *models.Client) error {
 			"avatar_url": avatarUrl,
 		})
 	}
-	client.Conn.WriteJSON(map[string]interface{}{
+	conn.WriteJSON(map[string]interface{}{
 		"Groupname": GetgroupnameById(msg.Groupid),
 		"type":      "getmessagesgroups",
 		"messages":  messages,
