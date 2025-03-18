@@ -19,7 +19,7 @@ func GetPostsUserProfile(username string, userid, offset int) []models.PostsResp
 
 func UserProfile(username string, userId int) (models.UserProfile, error) {
 	profile := &models.UserProfile{}
-	err := repo.InfoUserProfile(profile, username)
+	err := repo.InfoUserProfile(profile, username, userId)
 	if err != nil {
 		log.Println("Error To Get User Profile", err)
 		return models.UserProfile{}, err

@@ -1,43 +1,243 @@
-2025/03/17 11:49:06 server.go:27: Starting server on :8080
-2025/03/18 11:12:19 server.go:27: Starting server on :8080
-2025/03/18 11:12:25 user_profile_controller.go:106: omarrharbi
-2025/03/18 11:12:29 user_profile_controller.go:106: omarrharbi
-2025/03/18 11:17:56 server.go:27: Starting server on :8080
-2025/03/18 11:21:50 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:23:10 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:25:05 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func24 (session_middleware.go:26)
-2025/03/18 11:25:05 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
-2025/03/18 11:25:06 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
-2025/03/18 11:25:21 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
-2025/03/18 11:25:25 user_repo.go:33: <nil>
-2025/03/18 11:25:25 auth_controller.go:36: OmarRharbi
-2025/03/18 11:25:25 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:25:30 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:53:02 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:57:32 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:57:36 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:57:39 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:57:45 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:57:52 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:58:01 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:58:03 user_profile_controller.go:106: OmarRharbi
-2025/03/18 11:59:34 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:19:54 server.go:27: Starting server on :8080
-2025/03/18 12:19:58 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
-2025/03/18 12:20:03 user_repo.go:33: <nil>
-2025/03/18 12:20:03 auth_controller.go:36: OmarRharbi
-2025/03/18 12:20:04 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:20:08 user_profile_controller.go:106: test.testr
-2025/03/18 12:20:13 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:20:14 user_profile_controller.go:106: bhb708
-2025/03/18 12:20:21 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:20:24 user_profile_controller.go:106: simo
-2025/03/18 12:20:38 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:20:41 user_profile_controller.go:106: rttttest
-2025/03/18 12:20:47 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:20:48 user_profile_controller.go:106: rttttest
-2025/03/18 12:21:01 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:21:12 user_profile_controller.go:106: Yassinebhb
-2025/03/18 12:21:17 user_profile_controller.go:106: OmarRharbi
-2025/03/18 12:21:20 user_profile_controller.go:106: saljaoui
-2025/03/18 12:21:24 user_profile_controller.go:106: OmarRharbi
+2025/03/18 14:21:27 server.go:27: Starting server on :8080
+2025/03/18 14:21:43 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:21:51 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:22:21 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:22:23 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func2 (session_middleware.go:26)
+2025/03/18 14:22:23 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:22:24 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:22:40 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:22:40 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:23:24 user_profile_controller.go:106: simo364
+2025/03/18 14:23:25 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func2 (session_middleware.go:26)
+2025/03/18 14:23:25 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:23:26 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:32:23 user_profile_controller.go:106: test980
+2025/03/18 14:32:25 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func2 (session_middleware.go:26)
+2025/03/18 14:32:25 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:32:26 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:32:52 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:33:04 user_repo.go:33: <nil>
+2025/03/18 14:33:04 auth_controller.go:114: adding user to db: email already exist
+2025/03/18 14:33:20 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:33:36 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:33:41 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:33:44 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:33:56 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:34:04 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func23 (session_middleware.go:26)
+2025/03/18 14:34:04 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func27 (session_middleware.go:26)
+2025/03/18 14:34:04 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func24 (session_middleware.go:26)
+2025/03/18 14:34:04 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func1 (session_middleware.go:26)
+2025/03/18 14:34:04 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 14:34:08 user_repo.go:33: <nil>
+2025/03/18 14:34:08 auth_controller.go:36: test980
+2025/03/18 14:34:08 user_profile_controller.go:106: test980
+2025/03/18 14:34:13 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:35:45 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:36:00 server.go:27: Starting server on :8080
+2025/03/18 14:36:02 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:36:04 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:36:08 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:36:52 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:36:52 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:38:41 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:39:34 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:40:06 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:40:20 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:40:44 user_profile_controller.go:106: test980
+2025/03/18 14:40:48 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:40:57 user_profile_controller.go:106: test980
+2025/03/18 14:41:02 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:41:08 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:41:10 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:41:12 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:41:14 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:41:23 user_profile_controller.go:106: test980
+2025/03/18 14:41:25 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:41:42 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:42:05 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:42:43 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:42:57 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:43:12 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:43:33 user_profile_controller.go:106: test980
+2025/03/18 14:43:44 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:43:47 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:43:51 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:43:52 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:44:06 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:44:30 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:44:31 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:44:33 user_profile_controller.go:106: simo364
+2025/03/18 14:44:34 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:44:37 user_profile_controller.go:106: test980
+2025/03/18 14:44:44 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:45:10 server.go:27: Starting server on :8080
+2025/03/18 14:45:13 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:45:15 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:45:16 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:45:24 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:45:35 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:45:44 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:45:57 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:46:01 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:46:24 server.go:27: Starting server on :8080
+2025/03/18 14:46:27 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:46:31 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:26 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:26 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:30 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:30 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:41 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:41 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:44 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:44 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:47 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:47 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:50 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:50 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:54 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:47:54 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:59 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:47:59 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:03 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:03 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:06 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:10 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:10 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:14 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:14 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:25 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:25 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:28 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:34 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:34 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:36 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:36 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:47 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:51 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:48:55 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:48:59 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:49:06 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:49:09 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:50:04 server.go:27: Starting server on :8080
+2025/03/18 14:50:06 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:50:13 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:50:16 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:50:18 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:50:21 user_profile_controller.go:106: simo364
+2025/03/18 14:50:22 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:50:24 user_profile_controller.go:106: test980
+2025/03/18 14:50:27 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:50:30 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:52:21 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:52:21 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:52:27 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:52:42 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:52:56 server.go:27: Starting server on :8080
+2025/03/18 14:52:59 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:53:10 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:53:27 user_profile_controller.go:106: test980
+2025/03/18 14:53:47 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:53:53 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:54:47 server.go:27: Starting server on :8080
+2025/03/18 14:54:54 server.go:27: Starting server on :8080
+2025/03/18 14:54:58 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:55:04 user_profile_controller.go:106: omar_rharbi
+2025/03/18 14:55:06 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:55:18 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:55:21 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:56:47 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:56:49 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:58:04 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:58:06 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:58:27 user_profile_controller.go:106: Omrharbi
+2025/03/18 14:59:10 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:59:27 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:59:32 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:59:35 user_profile_controller.go:106: yassin.yassin
+2025/03/18 14:59:51 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:00:08 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:00:15 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:00:17 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:00:44 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:00:45 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:00:46 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:00:50 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:00:57 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:01:18 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:01:20 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:01:38 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:04:33 server.go:27: Starting server on :8080
+2025/03/18 15:04:35 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:05:02 user_profile_controller.go:106: test980
+2025/03/18 15:05:26 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:06:08 server.go:27: Starting server on :8080
+2025/03/18 15:06:11 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:06:16 user_profile_controller.go:106: Omrharbi
+2025/03/18 15:06:22 user_profile_controller.go:106: test980
+2025/03/18 15:06:23 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:06:26 user_profile_controller.go:106: simo364
+2025/03/18 15:06:31 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:18:46 server.go:27: Starting server on :8080
+2025/03/18 15:18:49 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 1
+2025/03/18 15:18:49 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 1
+2025/03/18 15:18:49 user_profile_controller.go:106: yassin.yassin
+2025/03/18 15:18:50 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 1
+2025/03/18 15:18:50 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 1
+2025/03/18 15:18:50 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:18:50 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 1
+2025/03/18 15:18:50 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 1
+2025/03/18 15:20:16 server.go:27: Starting server on :8080
+2025/03/18 15:20:20 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 2
+2025/03/18 15:20:20 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 2
+2025/03/18 15:20:20 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:20:20 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 2
+2025/03/18 15:20:20 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 2
+2025/03/18 15:20:23 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 2
+2025/03/18 15:20:23 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 2
+2025/03/18 15:20:23 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:20:23 user_profile.go:24: Error To Get User Profile not enough args to execute query: want 3 got 2
+2025/03/18 15:20:23 user_profile_controller.go:51: User with this UserName is not found not enough args to execute query: want 3 got 2
+2025/03/18 15:21:54 server.go:27: Starting server on :8080
+2025/03/18 15:21:56 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:21:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:21:56 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:21:56 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:21:56 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:22:09 server.go:27: Starting server on :8080
+2025/03/18 15:22:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:22:11 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:22:11 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:22:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:22:11 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:23:50 server.go:27: Starting server on :8080
+2025/03/18 15:23:51 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:23:59 user_profile_controller.go:106: simo364
+2025/03/18 15:25:53 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:27:21 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func2 (session_middleware.go:26)
+2025/03/18 15:27:21 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 15:27:22 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 15:27:22 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 15:27:31 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:27:34 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 15:27:40 auth_controller.go:33: sorry, this email does not exist
+2025/03/18 15:27:42 user_repo.go:33: <nil>
+2025/03/18 15:27:42 auth_controller.go:36: simo364
+2025/03/18 15:27:43 user_profile_controller.go:106: simo364
+2025/03/18 15:27:53 user_profile_controller.go:106: simo364
+2025/03/18 15:31:44 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:32:14 server.go:27: Starting server on :8080
+2025/03/18 15:32:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:32:16 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:32:16 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:32:16 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/18 15:32:16 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/18 15:33:11 server.go:27: Starting server on :8080
+2025/03/18 15:33:13 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:33:17 user_profile_controller.go:106: simo364
+2025/03/18 15:33:28 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:33:42 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:33:51 user_profile_controller.go:106: simo364
+2025/03/18 15:33:52 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:33:55 user_profile_controller.go:106: simo364
+2025/03/18 15:33:59 user_profile_controller.go:106: omar_rharbi
+2025/03/18 15:34:01 user_profile_controller.go:106: simo364

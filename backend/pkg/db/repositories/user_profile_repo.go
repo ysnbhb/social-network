@@ -99,31 +99,41 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int, user
 	return rows.Err()
 }
 
-func InfoUserProfile(profile *models.UserProfile, username string) error {
+func InfoUserProfile(profile *models.UserProfile, username string, userId int) error {
 	query := `SELECT 
-	 		s.user_uuid,
-                u.id,
-                u.first_name,
-                u.last_name,
-                u.nickname,
-                COALESCE(u.about_me, '') AS about_me,
-                u.email,
-                u.date_of_birth,
-				u.profile_type,
-                COALESCE(u.avatar_url, '') AS avatar_url,
-                COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
-                COUNT(DISTINCT p.id) AS posts,
-                COUNT(DISTINCT f1.follower_id) AS follower_count,  
-                COUNT(DISTINCT f2.following_id) AS following_count 
-            FROM users u 
-			 JOIN sessions s on s.user_id=u.id
-            LEFT JOIN card c ON c.user_id = u.id
-            LEFT JOIN followers f1 ON f1.following_id = u.id  
-            LEFT JOIN followers f2 ON f2.follower_id = u.id   
-            LEFT JOIN posts p on p.card_id=c.id
-            WHERE u.nickname = ? 
-            GROUP BY u.nickname;`
-	err := db.DB.QueryRow(query, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.Profile_Type, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+    s.user_uuid,
+    u.id,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    COALESCE(u.about_me, '') AS about_me,
+    u.email,
+    u.date_of_birth,
+    u.profile_type,
+    COALESCE(u.avatar_url, '') AS avatar_url,
+    COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
+    COUNT(DISTINCT p.id) AS posts,
+    COUNT(DISTINCT CASE WHEN f1.follower_id != ? THEN f1.follower_id END) AS follower_count, -- Exclude your user ID
+    COUNT(DISTINCT CASE WHEN f2.following_id != ? THEN f2.following_id END) AS following_count -- Exclude your user ID
+FROM users u 
+    JOIN sessions s ON s.user_id = u.id
+    LEFT JOIN card c ON c.user_id = u.id
+    LEFT JOIN followers f1 ON f1.following_id = u.id  
+    LEFT JOIN followers f2 ON f2.follower_id = u.id   
+    LEFT JOIN posts p ON p.card_id = c.id
+WHERE u.nickname = ?
+GROUP BY 
+    s.user_uuid,
+    u.id,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    u.about_me,
+    u.email,
+    u.date_of_birth,
+    u.profile_type,
+    u.avatar_url;`
+	err := db.DB.QueryRow(query, userId,userId,username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.Profile_Type, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}
@@ -156,26 +166,24 @@ func GetUserFollowing(current_userId int, my_userid int) (friend []models.Unfoll
     u.nickname,
     u.avatar_url,
     CASE 
-        WHEN $1 = $2 THEN COALESCE(f.status, '') -- Show status when viewing your own profile
+        WHEN $1 = $2 THEN COALESCE(f.status, '') 
         ELSE COALESCE((
             SELECT status 
             FROM followers 
-            WHERE follower_id = $1 AND following_id = u.id -- Check if you follow the person they're following
+            WHERE follower_id = $1 AND following_id = u.id 
         ), '')
     END AS status
-FROM users u
-JOIN followers f ON u.id = f.following_id -- Focus on users being followed
-WHERE 
+	FROM users u
+	JOIN followers f ON u.id = f.following_id
+	WHERE 
     f.follower_id = $2 
-	AND u.id!=$1
+ 	AND u.id!=$1
     AND 
     (
-        -- Case 1: Viewing your own profile
         ($1 = $2) 
         OR 
-        -- Case 2: Viewing another user's profile
-        (
-            (u.profile_type = 'Public') -- Show Public profiles
+         (
+            (u.profile_type = 'Public') 
             OR 
             (u.profile_type = 'Private' AND EXISTS (
                 SELECT 1 
