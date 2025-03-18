@@ -1,0 +1,24 @@
+2025/03/17 11:49:06 server.go:27: Starting server on :8080
+2025/03/18 11:12:19 server.go:27: Starting server on :8080
+2025/03/18 11:12:25 user_profile_controller.go:106: omarrharbi
+2025/03/18 11:12:29 user_profile_controller.go:106: omarrharbi
+2025/03/18 11:17:56 server.go:27: Starting server on :8080
+2025/03/18 11:21:50 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:23:10 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:25:05 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func24 (session_middleware.go:26)
+2025/03/18 11:25:05 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 11:25:06 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 11:25:21 server.go:3634: http: superfluous response.WriteHeader call from social-network/app.SetupRoutes.AuthMiddleware.func32 (session_middleware.go:26)
+2025/03/18 11:25:25 user_repo.go:33: <nil>
+2025/03/18 11:25:25 auth_controller.go:36: OmarRharbi
+2025/03/18 11:25:25 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:25:30 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:53:02 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:57:32 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:57:36 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:57:39 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:57:45 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:57:52 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:58:01 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:58:03 user_profile_controller.go:106: OmarRharbi
+2025/03/18 11:59:34 user_profile_controller.go:106: OmarRharbi

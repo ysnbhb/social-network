@@ -11,13 +11,13 @@ import ErrorPopUp from "@/components/errorPopUp";
 
 export default function setting({}) {
   const router = useRouter();
-// This initializes with data from the API, or defaults to "Public" if not available
-const params = useParams();
-const username = params.name;
-const [profiledata] = userProfile(username);
-const [error, setUpdate] = useState(null);
-const [show, setShow] = useState(true);
-const [profileType, setProfileType] = useState("Public");
+  // This initializes with data from the API, or defaults to "Public" if not available
+  const params = useParams();
+  const username = params.name;
+  const [profiledata] = userProfile(username);
+  const [error, setUpdate] = useState(null);
+  const [show, setShow] = useState(true);
+  const [profileType, setProfileType] = useState("Public");
 
   const showPopUp = (check) => {
     setShow(check);
@@ -149,8 +149,7 @@ const [profileType, setProfileType] = useState("Public");
                   type="radio"
                   name="profile_type"
                   value="Public"
-                  // checked={profileType === "Public"}
-                  checked={ profileType === "Public"}
+                  checked={profileType === "Public"}
                   onChange={handleRadioChange}
                 />
                 <label className={styles.label}>Private</label>
@@ -159,7 +158,6 @@ const [profileType, setProfileType] = useState("Public");
                   type="radio"
                   name="profile_type"
                   value="Private"
-                  // checked={profileType === "Private"}
                   checked={profileType === "Private"}
                   onChange={handleRadioChange}
                 />
@@ -175,8 +173,6 @@ const [profileType, setProfileType] = useState("Public");
                 defaultValue={aboutMe}
               />
             </div>
-
-            {/* Update profile button */}
             <button className={styles.updateButton}>Update Profile</button>
           </form>
         </div>
