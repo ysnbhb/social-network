@@ -23,7 +23,6 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			cookies, err := r.Cookie("session_id")
 			if err != nil {
 				utils.JsonResponse(w, "Unauthorized", http.StatusUnauthorized)
-				http.Redirect(w, r, "/login", http.StatusSeeOther)
 				return
 			}
 			cookie = cookies.Value

@@ -37,17 +37,22 @@ func SendMessageuser(msg models.Message, client *models.Client, conn *websocket.
 		return err
 	}
 	avatar_url := repo.GetAvatarUrl(client.Userid)
-	receiverConns := models.Clients[msg.Receivers[0]]
-	for _, receiverConn := range receiverConns.Connections {
-		if receiverConn != nil {
-			receiverConn.WriteJSON(map[string]interface{}{
-				"type":       "messageuser",
-				"sender":     client.Username,
-				"avatar_url": avatar_url,
-				"content":    msg.Content,
-				"time":       Time,
-				"you":        receiverConn,
-			})
+	receiverConns, ok := models.Clients[msg.Receivers[0]]
+	if ok {
+		for _, receiverConn := range receiverConns.Connections {
+			if receiverConn != nil {
+				err = receiverConn.WriteJSON(map[string]interface{}{
+					"type":       "messageuser",
+					"sender":     client.Username,
+					"avatar_url": avatar_url,
+					"content":    msg.Content,
+					"time":       Time,
+					"you":        receiverConn,
+				})
+				if err != nil {
+					log.Println("Error sending message to a connection:", err)
+				}
+			}
 		}
 	}
 
