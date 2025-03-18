@@ -245,3 +245,4 @@
 2025/03/18 15:33:59 user_profile_controller.go:106: omar_rharbi
 2025/03/18 15:34:01 user_profile_controller.go:106: simo364
 >>>>>>> omrharbi
+2025/03/18 15:35:56 server.go:27: Starting server on :8080
