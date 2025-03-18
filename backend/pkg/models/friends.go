@@ -11,6 +11,7 @@ type Friends struct {
 }
 
 type UnfollowUser struct {
+	Uuid      string `json:"uuid"`
 	Id        int    `json:"id"`
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
