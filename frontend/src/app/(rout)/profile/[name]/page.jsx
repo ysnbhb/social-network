@@ -21,6 +21,8 @@ export default function Profile({ params }) {
   const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
+  console.log(usernames);
+  
   const [cookie, setcookies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
