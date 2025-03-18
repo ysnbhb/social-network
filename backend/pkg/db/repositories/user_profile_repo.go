@@ -177,11 +177,7 @@ func GetUserFollowing(current_userId int, my_userid int) (friend []models.Unfoll
 	JOIN followers f ON u.id = f.following_id
 	WHERE 
     f.follower_id = $2 
-<<<<<<< HEAD
 	AND u.id!=$2
-=======
- 	AND u.id!=$1
->>>>>>> omrharbi
     AND 
     (
         ($1 = $2) 

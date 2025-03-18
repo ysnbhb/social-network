@@ -1,5 +1,5 @@
 # Ignore SQLite database
-./pkg/db/sqlite/database.db
+# ./pkg/db/sqlite/database.db
 
 # Ignore log file
 /backend/file.log
