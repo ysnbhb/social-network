@@ -167,7 +167,7 @@ FROM users u
 JOIN followers f ON u.id = f.following_id -- Focus on users being followed
 WHERE 
     f.follower_id = $2 
-	AND u.id!=$1
+	AND u.id!=$2
     AND 
     (
         -- Case 1: Viewing your own profile
