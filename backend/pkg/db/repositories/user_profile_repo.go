@@ -109,6 +109,7 @@ func InfoUserProfile(profile *models.UserProfile, username string) error {
                 COALESCE(u.about_me, '') AS about_me,
                 u.email,
                 u.date_of_birth,
+				u.profile_type,
                 COALESCE(u.avatar_url, '') AS avatar_url,
                 COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
                 COUNT(DISTINCT p.id) AS posts,
@@ -122,7 +123,7 @@ func InfoUserProfile(profile *models.UserProfile, username string) error {
             LEFT JOIN posts p on p.card_id=c.id
             WHERE u.nickname = ? 
             GROUP BY u.nickname;`
-	err := db.DB.QueryRow(query, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.Profile_Type, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}
@@ -236,7 +237,7 @@ WHERE
         )
     );
 `
-	row, err := db.DB.Query(follower, my_userid,current_userId)
+	row, err := db.DB.Query(follower, my_userid, current_userId)
 	if err != nil {
 		return friend, err
 	}

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { API_URL } from "@/components/api";
 import styles from "./updateProfile.module.css";
 
@@ -11,23 +11,36 @@ import ErrorPopUp from "@/components/errorPopUp";
 
 export default function setting({}) {
   const router = useRouter();
-  const [profileType, setProfileType] = useState("Public");
+  // This initializes with data from the API, or defaults to "Public" if not available
   const params = useParams();
   const username = params.name;
-  const [profiledata, errorPro] = userProfile(username);
-  const [error, setupdate] = useState(null);
+  const [profiledata] = userProfile(username);
+  const [error, setUpdate] = useState(null);
   const [show, setShow] = useState(true);
+  const [profileType, setProfileType] = useState("Public");
 
   const showPopUp = (check) => {
     setShow(check);
   };
-  
 
   const handleRadioChange = (event) => {
     setProfileType(event.target.value);
   };
-  const { avatarUrl, firstName, lastName, aboutMe, nickName, email } =
-    profiledata;
+  const {
+    avatarUrl,
+    firstName,
+    lastName,
+    aboutMe,
+    nickName,
+    email,
+    profile_type,
+  } = profiledata;
+  console.log(profiledata);
+  useEffect(() => {
+    if (profiledata && profile_type) {
+      setProfileType(profile_type);
+    }
+  }, [profiledata]);
   const handleEditProfile = async (event) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -43,7 +56,7 @@ export default function setting({}) {
     const error = await useEditProfile(formObject);
     if (error) {
       showPopUp(true);
-      setupdate(error);
+      setUpdate(error);
       return;
     } else {
       router.push(`/profile/${formObject.nickName}`);
@@ -122,6 +135,7 @@ export default function setting({}) {
                   type="text"
                   defaultValue={email}
                   name="email"
+                  disabled
                 />
               </div>
             </div>
@@ -138,7 +152,6 @@ export default function setting({}) {
                   checked={profileType === "Public"}
                   onChange={handleRadioChange}
                 />
-
                 <label className={styles.label}>Private</label>
                 <input
                   className={styles.radio}
@@ -160,8 +173,6 @@ export default function setting({}) {
                 defaultValue={aboutMe}
               />
             </div>
-
-            {/* Update profile button */}
             <button className={styles.updateButton}>Update Profile</button>
           </form>
         </div>
