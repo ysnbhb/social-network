@@ -21,6 +21,7 @@ export default function ProfileSide({ classes }) {
  
   // setJoinedGroup(prev => [...prev, data]);
   const {
+    id,
     avatarUrl,
     firstName,
     follower_count,
@@ -29,7 +30,7 @@ export default function ProfileSide({ classes }) {
     nickName,
     posts_count,
   } = profile;
-  
+   
   return (
     <div className="profile-page">
         <div  className="content-area">
@@ -45,7 +46,7 @@ export default function ProfileSide({ classes }) {
               <div className="popup-form">
               {dataFollow ?(dataFollow).map((fl) => (
                 <div key={`${activeTab}-${fl.id}`}>
-                    <User key={`${activeTab}-${fl.id}`}  user={fl} />
+                    <User key={`${activeTab}-${fl.id}`}  user={fl}  iduser={id}/>
                  </div>
               )) :(<div>
                 No Follower

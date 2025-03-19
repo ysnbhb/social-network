@@ -94,7 +94,7 @@ export default function Profile({ params }) {
                         {dataFollow ? (
                           dataFollow.map((fl) => (
                             <div key={`${activeTab}-${fl.id}`}>
-                              <User key={`${activeTab}-${fl.id}`} user={fl} />
+                              <User key={`${activeTab}-${fl.id}`} user={fl}   />
                             </div>
                           ))
                         ) : (
@@ -179,10 +179,11 @@ export default function Profile({ params }) {
                   <div className={style["user"]}>
                     <div className={style.content}>
                       <div className={style.about}>
-                        <h1
-                          className={
-                            style.name
-                          }>{`${firstName} ${lastName}`}</h1>
+                        <h1 className={style.name}>
+                          {`${firstName} ${lastName}`}
+                          <span>{` @${nickName}`} </span>{" "}
+                        </h1>
+
                         <h1 className={style["about-me"]}>About Me</h1>
                         <p className={style.jobTitle}>{aboutMe}</p>
                       </div>

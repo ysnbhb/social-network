@@ -1,8 +1,8 @@
 import Link from "next/link";
  import "../styles/profileSidebar.css";
 import "../styles/groupsFeed.css";
-export  default function Follow ({status,handuleClick,user}){
-  console.log(user);
+export  default function Follow ({status,handuleClick,user,iduser}){
+  console.log(user );
   
     return (
       <div className="activity-item">
@@ -16,6 +16,7 @@ export  default function Follow ({status,handuleClick,user}){
           </p>
           <p className="text-muted">@{user.nickname || "N/A"}</p>
         </div>
+        
         { status === "accept" ? (
           <button onClick={() => handuleClick(user.id)}>unfollow</button>
         ) :  status === "pending" ? (
