@@ -13,18 +13,9 @@ import { useRouter } from "next/navigation";
 import { API_URL } from "./api";
 
 export default function Navbar() {
-  const [cookie, setCookie] = useState(document.cookie);
+  // const [cookie, setCookie] = useState(document.cookie);
   let intervalId;
 
-  const listenForCookieChanges = () => {
-    intervalId = setInterval(() => {
-      const newCookie = document.cookie;
-      if (newCookie !== cookie) {
-        setCookie(newCookie);
-        checkLoginStatus();
-      }
-    }, 1000);
-  };
 
   const checkLoginStatus = async () => {
     try {
@@ -64,7 +55,7 @@ export default function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
-    listenForCookieChanges()
+    // listenForCookieChanges()
     initializeWebSocket()
       .then(() => {
         SendOnlineStatus();

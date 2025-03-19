@@ -9,15 +9,15 @@ import { PostCompte } from "./postComp";
 import ErrorPopUp from "./errorPopUp";
 import { useRouter } from "next/navigation";
 
-export default function Comments({ className, classes = {} }) {
+export default function Comments({ className, classes = {}  ,id }) {
     const router = useRouter();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [card, setCard] = useState(null);
   const [error, setUpdate] = useState(null);
   const [show, setShow] = useState(true);
-  const id = searchParams.get("target_id");
+  // const id = searchParams.get("target_id");
   const GetComments = async () => {
     try {
       if (!id) {
