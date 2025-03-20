@@ -9,8 +9,10 @@ import { PostCompte } from "./postComp";
 import ErrorPopUp from "./errorPopUp";
 import { useRouter } from "next/navigation";
 
-export default function Comments({ className, classes = {}  ,id }) {
-    const router = useRouter();
+export default function Comments({ className, classes = {}, id }) {
+  console.log(id);
+  
+  const router = useRouter();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   // const searchParams = useSearchParams();
@@ -21,28 +23,27 @@ export default function Comments({ className, classes = {}  ,id }) {
   const GetComments = async () => {
     try {
       if (!id) {
-        // console.error("No target_id found in query parameters");
-    //  setLoading(false);
-     router.push("/404");
+        // router.push("/404");
         return;
       }
 
       setLoading(true);
-      const response = await fetch(`${API_URL}/api/get/comments?target_id=${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${API_URL}/api/get/comments?target_id=${id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (!response.ok) {
-           
-          setUpdate("Error fetching data. Please try again later.");
-         return;
+        setUpdate("Error fetching data. Please try again later.");
+        return;
       }
-      
-     
+
       if (data) {
         setPosts(data);
       }
@@ -51,9 +52,9 @@ export default function Comments({ className, classes = {}  ,id }) {
     } finally {
       setLoading(false);
     }
-  };;
+  };
 
-  const GetCard = async()=> {
+  const GetCard = async () => {
     if (!id) {
       console.error("No target_id found in query parameters");
       return;
@@ -66,55 +67,53 @@ export default function Comments({ className, classes = {}  ,id }) {
       credentials: "include",
     });
     const data = await res.json();
-     if (res.ok){
+    if (res.ok) {
       if (data && data.id) {
         setCard(data);
       }
-    }else{
+    } else {
       // showPopUp(true);
       setUpdate(data);
     }
-   
-
-  }
-
+  };
 
   useEffect(() => {
     GetCard();
     GetComments();
-  }, [id]); 
+  }, [id]);
   const showPopUp = (check) => {
     setShow(check);
-   router.push("/home")
+    router.push("/home");
   };
   return (
-       <section className={`${className || ""} section-home`}> 
-       {error && show && (
-               <div>
-                 <ErrorPopUp showPopUp={showPopUp} error={error} classes={{style:"errorImportant"}} />
-               </div>
-             )}
-        {card && card.id && (
-          <PostCompte post={card} />
-        )}
-        <CommentCreater setPosts={setPosts} classes={classes} />
-        
-        {posts && posts.length > 0 ? (
-          posts.map((post, index) => (
-            post ? <CommentCompte key={post.id || index} comment={post} /> : null
-          ))
-        ) : !loading ? (
-          <div className="no-comments">No comments found</div>
-        ) : null}
-        
-        {loading && (
-          <div className="rl-loading-container">
-            <div className="rl-loading-thumb rl-loading-thumb-1"></div>
-            <div className="rl-loading-thumb rl-loading-thumb-2"></div>
-            <div className="rl-loading-thumb rl-loading-thumb-3"></div>
-          </div>
-        )}
-      </section>
-     
+    <section className={`${className || ""} section-home`}>
+      {error && show && (
+        <div>
+          <ErrorPopUp
+            showPopUp={showPopUp}
+            error={error}
+            classes={{ style: "errorImportant" }}
+          />
+        </div>
+      )}
+      {card && card.id && <PostCompte post={card} />}
+      <CommentCreater setPosts={setPosts} classes={classes} />
+
+      {posts && posts.length > 0 ? (
+        posts.map((post, index) =>
+          post ? <CommentCompte key={post.id || index} comment={post} /> : null
+        )
+      ) : !loading ? (
+        <div className="no-comments">No comments found</div>
+      ) : null}
+
+      {loading && (
+        <div className="rl-loading-container">
+          <div className="rl-loading-thumb rl-loading-thumb-1"></div>
+          <div className="rl-loading-thumb rl-loading-thumb-2"></div>
+          <div className="rl-loading-thumb rl-loading-thumb-3"></div>
+        </div>
+      )}
+    </section>
   );
 }

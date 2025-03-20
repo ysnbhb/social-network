@@ -35995,3 +35995,45 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/19 14:20:23 user_profile_controller.go:106: bhb.bhb
 =======
 >>>>>>> 075dce9d76d21cf4c0eb8c66063fc46093361a32
+2025/03/19 14:30:28 server.go:27: Starting server on :8080
+2025/03/20 10:40:50 server.go:27: Starting server on :8080
+2025/03/20 10:41:08 user_repo.go:33: <nil>
+2025/03/20 10:41:08 auth_controller.go:36: bhb.bhb
+2025/03/20 10:41:08 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:08 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:11 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:11 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:14 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:14 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:18 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:18 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:19 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:19 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:21 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:21 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:23 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:23 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:27 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:27 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:29 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:29 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:41:35 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:41:35 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:42:56 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:42:56 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:42:59 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:42:59 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:43:19 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:43:19 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:43:22 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:43:22 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:43:35 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:43:35 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:43:49 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:43:49 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:43:51 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:43:51 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:47:08 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:47:08 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 10:47:10 user_profile_controller.go:106: bhb.bhb
+2025/03/20 10:47:10 user_profile_controller.go:110: near "<<": syntax error
