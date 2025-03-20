@@ -1,6 +1,8 @@
 package repo
 
 import (
+	"log"
+
 	db "social-network/pkg/db/sqlite"
 	"social-network/pkg/models"
 )
@@ -133,7 +135,7 @@ GROUP BY
     u.date_of_birth,
     u.profile_type,
     u.avatar_url;`
-	err := db.DB.QueryRow(query, userId,userId,username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.Profile_Type, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
+	err := db.DB.QueryRow(query, userId, userId, username).Scan(&profile.Uuid, &profile.Id, &profile.FirstName, &profile.LastName, &profile.NickName, &profile.AboutMe, &profile.Email, &profile.DateOfBirth, &profile.Profile_Type, &profile.AvatarUrl, &profile.Image_count, &profile.Count_Posts, &profile.Follower_count, &profile.Following_count)
 	if err != nil {
 		return err
 	}
@@ -177,7 +179,7 @@ func GetUserFollowing(current_userId int, my_userid int) (friend []models.Unfoll
 	JOIN followers f ON u.id = f.following_id
 	WHERE 
     f.follower_id = $2 
-	AND u.id!=$2
+	AND u.id!=$1
     AND 
     (
         ($1 = $2) 
@@ -218,12 +220,15 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
     u.nickname,
     u.avatar_url,
     CASE 
-        WHEN $1 = $2 THEN COALESCE(f.status, '')  
-        ELSE COALESCE((
-            SELECT status 
-            FROM followers 
-            WHERE follower_id = $1 AND following_id = u.id  
-        ), '') 
+        WHEN $1 = $2 AND EXISTS (
+                SELECT 1 
+                FROM followers 
+                WHERE follower_id = $1 AND following_id = u.id
+            ) THEN  
+                (SELECT status 
+                 FROM followers 
+                 WHERE follower_id = $1 AND following_id = u.id)
+        ELSE ''
     END AS status 
 FROM users u
 JOIN followers f ON u.id = f.follower_id 
@@ -240,13 +245,14 @@ WHERE
             (u.profile_type = 'Private' AND EXISTS (
                 SELECT 1 
                 FROM followers 
-                WHERE follower_id = u.id AND following_id = $2 AND status = 'accept'  OR status = 'pending'
+                WHERE follower_id = u.id AND following_id = $2 AND (status = 'accept' OR status = 'pending')
             ))  
         )
     );
 `
 	row, err := db.DB.Query(follower, my_userid, current_userId)
 	if err != nil {
+		log.Println(err)
 		return friend, err
 	}
 	for row.Next() {
@@ -260,12 +266,37 @@ WHERE
 	return friend, nil
 }
 
-func GetIsFollowing(userId int, profileId int) bool {
-	query := `SELECT EXISTS (SELECT 1 FROM followers WHERE follower_id = ? AND following_id = ? AND status = 'accept');`
-	var exists bool
-	err := db.DB.QueryRow(query, userId, profileId).Scan(&exists)
+func GetIsFollowing(userId int, profileId int) string {
+	query := ` SELECT 
+    f.status
+FROM followers f
+LEFT JOIN users u ON f.following_id = u.id
+WHERE 
+    f.follower_id = $1 -- Viewer ID
+    AND f.following_id = $2 -- Target User ID
+    AND (
+        -- Case 1: Viewer is viewing their own profile
+        ($1 = $2)
+        OR 
+        -- Case 2: Profile is public
+        (u.profile_type = 'Public')
+        OR 
+        -- Case 3: Profile is private and there is an accepted or pending follow relationship
+        (
+            u.profile_type = 'Private'
+            AND EXISTS (
+                SELECT 1
+                FROM followers
+                WHERE follower_id = $1
+                  AND following_id = $2
+                  AND status IN ('accept', 'pending')
+            )
+        )
+    );`
+	var status string
+	err := db.DB.QueryRow(query, userId, profileId).Scan(&status)
 	if err != nil {
-		return false
+		return err.Error()
 	}
-	return exists
+	return status
 }

@@ -22,17 +22,20 @@ export default function Profile({ params }) {
   const serverParams = use(params);
   const usernames = serverParams.name;
   console.log(usernames);
-  
+
   const [cookie, setcookies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
+  console.log(profiledata, "here");
+
+  const [follow] = useFollowing(usernames);
   const [checkFollow, setcheckFollow] = useState("");
   const [dataFollow, setdataFollow] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [activeTab, setActiveTab] = useState("following");
+  // console.log(follow,"here  ");
 
-  const [follow] = useFollowing(usernames);
   const togglePopup = (data, text) => {
     setcheckFollow(text);
     setdataFollow(data);
@@ -55,14 +58,17 @@ export default function Profile({ params }) {
     lastName,
     aboutMe,
     nickName,
+    profile_type,
     posts_count,
   } = profiledata;
+  
   const isOwnProfile = uuid === cookie;
   const { status, handle } = useHandleFollowers(id);
   const handleClick = async () => {
     await handle();
   };
-
+  
+  console.log(profiledata);
   useEffect(() => {
     if (firstName && lastName) {
       const timer = setTimeout(() => {
@@ -93,12 +99,14 @@ export default function Profile({ params }) {
                         </button>
                       </div>
                       <div className="popup-form">
-                        {dataFollow ? (
+                        {dataFollow    && ( profile_type==="Public"  || (profile_type==="Private" &&  profiledata.isFollowing ==="accept" ))?  (
                           dataFollow.map((fl) => (
                             <div key={`${activeTab}-${fl.id}`}>
-                              <User key={`${activeTab}-${fl.id}`} user={fl}   />
+                              <User key={`${activeTab}-${fl.id}`} user={fl} />
                             </div>
                           ))
+                        ) : profile_type==="Private" && profiledata.isFollowing !=="accept"  ? (
+                          <div>No access to private followers</div>
                         ) : (
                           <div>No Follower</div>
                         )}
@@ -143,21 +151,17 @@ export default function Profile({ params }) {
                       </div>
                     ) : (
                       <div>
-                        {status === "accept" ? (
+                        {profiledata.isFollowing === "accept" ||
+                        status === "accept" ? (
                           <button
                             className={style.followButton}
                             onClick={() => handleClick(id)}>
                             unfollow
                           </button>
-                        ) : status === "pending" ? (
+                        ) : profiledata.isFollowing === "pending" ||
+                          status === "pending" ? (
                           <button className={style.followButton}>
                             pending
-                          </button>
-                        ) : profiledata.isFollowing ? (
-                          <button
-                            className={style.followButton}
-                            onClick={() => handleClick(id)}>
-                            unfollow
                           </button>
                         ) : (
                           <button

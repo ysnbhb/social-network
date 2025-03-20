@@ -1,8 +1,10 @@
 import { API_URL } from "@/components/api";
 import { useEffect, useState } from "react";
 
-export default function useFollowing( setUser, params) {
+export default function useFollowing( params ) {
   const [Following, setFollowing] = useState([]);
+  console.log(params,"dweed");
+  
   const [error, setError] = useState(null);
   const dataFollowing = async () => {
     try {
