@@ -172,9 +172,7 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
               <div className="popup-actions">
                 <button type="submit" className="btn-create" onClick={(e) => {
                   e.preventDefault();
-                  if (UsersSelected.length > 0) {
                     togglePopup()
-                  }
                 }}>
                   Confirm
                 </button>
