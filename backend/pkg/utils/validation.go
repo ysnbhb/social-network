@@ -23,10 +23,10 @@ func ValidateUser(user *models.User) error {
 		return errors.New("invalid last name")
 	}
 
-	// nickName := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
-	// if !nickName.MatchString(user.NickName) {
-	// 	return errors.New("invalid nickname")
-	// }
+	nickName := regexp.MustCompile(`^[a-zA-Z0-9][\w]{2,10}[a-zA-Z0-9]$`)
+	if !nickName.MatchString(user.NickName) && user.NickName != "" {
+		return errors.New("invalid nickname")
+	}
 
 	_, err := mail.ParseAddress(user.Email)
 	if err != nil {

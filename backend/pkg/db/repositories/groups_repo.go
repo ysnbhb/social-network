@@ -124,6 +124,29 @@ func InsertIntoGroup_Invi(groupId, userId int, status string) error {
 	return err
 }
 
+func InsertIntoGroup_Invitation(groupId, userId int, senderId int, status string) error {
+	query := `INSERT INTO group_invitations(group_id , user_id , status) VALUES(? ,? , ?)`
+	_, err := db.DB.Exec(query, groupId, userId, status)
+	if err != nil {
+		return err
+	}
+	query = `INSERT INTO notifications (user_id, sender_id,group_id ,  type, details) VALUES (?, ?, ?, ? , ?)`
+	_, err = db.DB.Exec(query, userId, senderId, groupId, "joingroup(accept/reject)", GetNickName(senderId)+" sent an invitation to join in "+GetgroupnameById(groupId))
+	adminname := GetNickName(userId)
+	adminconnections, ok := models.Clients[adminname]
+	if ok {
+		for _, conn := range adminconnections.Connections {
+			err = conn.WriteJSON(map[string]interface{}{
+				"type": "realNotification",
+			})
+			if err != nil {
+				log.Println(err)
+			}
+		}
+	}
+	return err
+}
+
 func Delete_group_Invi(groupId, userid int) {
 	query := `DELETE FROM group_invitations WHERE group_id = ? AND user_id = ?`
 	db.DB.Exec(query, groupId, userid)

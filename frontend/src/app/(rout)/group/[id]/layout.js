@@ -9,7 +9,6 @@ export default async function RootLayout({ children  , params}) {
         <main className="main-content">
         <GroupNav id={id} />
         {children}
-        <GroupMembers id={id} />
         </main>
     </div>
   );

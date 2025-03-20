@@ -36055,3 +36055,17 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/20 10:47:10 user_profile_controller.go:106: bhb.bhb
 2025/03/20 10:47:10 user_profile_controller.go:110: near "<<": syntax error
 >>>>>>> 3a66a264d82d375ab9c7b3e5a33af76f63dd3efa
+2025/03/20 11:34:17 server.go:27: Starting server on :8080
+2025/03/20 11:44:49 user_profile_controller.go:106: Yassinebh
+2025/03/20 11:44:53 user_profile_controller.go:106: Yassinebh
+2025/03/20 11:45:39 user_profile_controller.go:106: Yassinebhb
+2025/03/20 12:16:40 server.go:27: Starting server on :8080
+2025/03/20 12:19:04 user_profile_controller.go:106: Yassinebhb
+2025/03/20 12:19:05 user_profile_controller.go:106: Yassinebhb
+2025/03/20 12:20:17 user_profile_controller.go:106: Yassinebhb
+2025/03/20 12:21:26 user_profile_controller.go:106: Yassinebh
+2025/03/20 12:23:34 server.go:27: Starting server on :8080
+2025/03/20 12:24:21 group_service.go:213: 2025-03-20T12:25
+2025/03/20 12:24:24 user_profile_controller.go:106: Yassinebh
+2025/03/20 12:25:34 user_profile_controller.go:106: Yassinebh
+2025/03/20 12:25:50 user_profile_controller.go:106: Yassinebh

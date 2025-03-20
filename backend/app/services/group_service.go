@@ -109,11 +109,6 @@ func JoinToGroup(groupId models.Group_Jion, userId int) (statusCode int, err err
 }
 
 func SendInvi(gpInvi models.Group_Invi, userId int) (code int, err error) {
-	if !(repo.IsFollowing(userId, gpInvi.UserId)) {
-		err = errors.New("you can't send invitation to this user")
-		code = http.StatusBadGateway
-		return
-	}
 	exist := repo.CheckGroup(gpInvi.GroupId)
 	if !exist {
 		err = errors.New("group you want join into dons't exist")
@@ -138,7 +133,13 @@ func SendInvi(gpInvi models.Group_Invi, userId int) (code int, err error) {
 		code = http.StatusBadRequest
 		return
 	}
-	err = repo.InsertIntoGroup_Invi(gpInvi.GroupId, gpInvi.UserId, "invitation")
+	has, _ := repo.HasInvi(gpInvi.GroupId, gpInvi.UserId)
+	if has != "" {
+		err = errors.New("invitation already sended")
+		code = http.StatusOK
+		return
+	}
+	err = repo.InsertIntoGroup_Invitation(gpInvi.GroupId, gpInvi.UserId, userId, "invitation")
 	if err != nil {
 		err = errors.New("field to join to group")
 		code = http.StatusInternalServerError
@@ -196,7 +197,7 @@ func AcceptJoin(groupId models.Group_Invi, userid int) (error, int) {
 	repo.Delete_group_Invi(groupId.GroupId, groupId.UserId)
 	err := repo.Updatenotification(userid, groupId.Sender, "joingroup(accept/reject)", groupId.GroupId)
 	if err != nil {
-	 return err, http.StatusInternalServerError
+		return err, http.StatusInternalServerError
 	}
 	return nil, http.StatusOK
 }
