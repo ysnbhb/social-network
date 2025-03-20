@@ -36291,3 +36291,21 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/20 14:05:09 user_repo.go:33: <nil>
 2025/03/20 14:05:09 auth_controller.go:36: test
 >>>>>>> omrharbi
+2025/03/20 15:14:14 server.go:27: Starting server on :8080
+2025/03/20 15:14:33 server.go:27: Starting server on :8080
+2025/03/20 15:15:07 user_repo.go:33: <nil>
+2025/03/20 15:15:07 auth_controller.go:33: sorry, your password was incorrect
+2025/03/20 15:15:13 user_repo.go:33: <nil>
+2025/03/20 15:15:13 auth_controller.go:36: Yassinebh
+2025/03/20 15:15:13 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:15:26 user_repo.go:33: <nil>
+2025/03/20 15:15:26 auth_controller.go:36: Yassinebhb
+2025/03/20 15:15:26 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:15:37 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:16:54 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:16:56 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:16:59 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:17:01 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:17:05 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:17:12 user_profile_controller.go:110: near "<<": syntax error
+2025/03/20 15:17:15 user_profile_controller.go:110: near "<<": syntax error

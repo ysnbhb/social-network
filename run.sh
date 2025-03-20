@@ -3,6 +3,7 @@
 # Navigate to backend and start the server
 echo "Starting backend..."
 cd backend
+go run .  &
 BACKEND_PID=$!
 cd ..
 
