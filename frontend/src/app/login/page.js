@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import ErrorPopUp from "@/components/errorPopUp";
 import Checklogin from "../../components/Checklogin.js";
 import { API_URL } from "@/components/api";
-const signUpEndpoints = `${API_URL}/api/signu`
+const signUpEndpoints = `${API_URL}/api/signup`
 const loginEndpoints = `${API_URL}/api/login`
 
 
