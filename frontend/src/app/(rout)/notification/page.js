@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import sendChangeUnreadNotification from '../../../websocket/notification.js';
 import ProfileSide from '../../../components/profileSide.js';
 import '../../../styles/notification.css';
+import { API_URL } from '@/components/api.js';
 
 export default function Notification() {
   const [notifications, setNotifications] = useState([]);
@@ -18,7 +19,7 @@ export default function Notification() {
   }, []);
 
   const Notifications = () => {
-    fetch('http://localhost:8080/api/notifications', {
+    fetch(`${API_URL}/api/notifications`, {
       method: 'GET',
       credentials: 'include'
     })
@@ -59,7 +60,7 @@ export default function Notification() {
   };
 
   const Acceptfollow = (notification, action) => {
-    fetch(`http://localhost:8080/api/acceptfollow`, {
+    fetch(`${API_URL}/api/acceptfollow`, {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify({
@@ -80,7 +81,7 @@ export default function Notification() {
   };
 
   function AcceptJoinGroup(notification, action) {
-    fetch(`http://localhost:8080/api/group/acceptjoin`, {
+    fetch(`${API_URL}/api/group/acceptjoin`, {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify({

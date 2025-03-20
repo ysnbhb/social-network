@@ -1,3 +1,4 @@
+import { API_URL } from "@/components/api";
 
 
 async function CreateComment(content, target,img ,  groupId = 0) {
@@ -9,7 +10,7 @@ async function CreateComment(content, target,img ,  groupId = 0) {
 
 
   try {
-    const response = await fetch("http://localhost:8080/api/create/comment", {
+    const response = await fetch(`${API_URL}/api/create/comment`, {
       method: "POST",
       credentials: "include",
       body: formData, // Use FormData instead of JSON

@@ -1,3 +1,5 @@
+import { API_URL } from "@/components/api";
+
 async function CreatePost(content, postType, img, groupId = 0, UsersSelected) {
   const data = new FormData();
   data.append("content", content);
@@ -14,7 +16,7 @@ async function CreatePost(content, postType, img, groupId = 0, UsersSelected) {
   console.log("data", data.get("usersSelected"));
 
   try {
-    const respons = await fetch("http://localhost:8080/api/create/post", {
+    const respons = await fetch(`${API_URL}/api/create/post`, {
       method: "POST",
       credentials: "include",
       body: data,

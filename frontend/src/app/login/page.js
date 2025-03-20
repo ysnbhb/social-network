@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import ErrorPopUp from "@/components/errorPopUp";
 import Checklogin from "../../components/Checklogin.js";
-const signUpEndpoints = 'http://localhost:8080/api/signup'
-const loginEndpoints = 'http://localhost:8080/api/login'
-
+import { API_URL } from "@/components/api";
+const signUpEndpoints = `${API_URL}/api/signu`
+const loginEndpoints = `${API_URL}/api/login`
 
 
 export default function Login() {
