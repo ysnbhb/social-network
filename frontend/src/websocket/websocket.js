@@ -6,6 +6,7 @@ import {
   receiveMessageGroup,
   Getmessagesgroups,
 } from "./messages.js";
+import { API_URL_WS } from "@/components/api.js";
 
 export let socket;
 let connectionPromise = null;
@@ -28,7 +29,7 @@ export function initializeWebSocket() {
 
   connectionPromise = new Promise((resolve, reject) => {
     const sessionId = getCookie("session_id");
-    socket = new WebSocket(`ws://localhost:8080/ws?session_id=${sessionId}`);
+    socket = new WebSocket(`${API_URL_WS}/ws?session_id=${sessionId}`);
 
     socket.onopen = function () {
       console.log("WebSocket connection established.");
