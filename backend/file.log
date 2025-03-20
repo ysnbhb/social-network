@@ -1,0 +1,219 @@
+2025/03/18 15:52:00 server.go:27: Starting server on :8080
+2025/03/18 15:52:02 user_profile_controller.go:106: yassin297
+2025/03/18 15:52:15 server.go:27: Starting server on :8080
+2025/03/18 15:52:17 user_profile_controller.go:106: yassin297
+2025/03/18 15:52:18 user_profile_controller.go:106: yassin297
+2025/03/18 15:52:19 user_profile_controller.go:106: yassin297
+2025/03/18 15:55:07 user_profile_controller.go:106: yassin297
+2025/03/18 15:55:10 user_profile_controller.go:106: yassin297
+2025/03/18 15:55:55 user_profile_controller.go:106: yassin297
+2025/03/18 15:56:04 user_profile_controller.go:106: yassin297
+2025/03/18 15:58:35 user_profile_controller.go:106: yassin297
+2025/03/18 15:58:38 user_profile_controller.go:106: yassin297
+2025/03/20 11:21:43 server.go:27: Starting server on :8080
+2025/03/20 11:22:08 user_repo.go:33: <nil>
+2025/03/20 11:22:08 auth_controller.go:36: omar.rharbi
+2025/03/20 11:22:08 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:22:16 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:22:27 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:22:32 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:23:18 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:23:20 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:24:01 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:24:06 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:24:53 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:25:47 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:25:59 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:26:05 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:26:14 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:26:16 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:27:31 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:27:52 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:28:26 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:28:49 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:29:04 user_profile_controller.go:106: simo.simo
+2025/03/20 11:29:24 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:29:28 user_profile_controller.go:106: simo.simo
+2025/03/20 11:41:35 server.go:27: Starting server on :8080
+2025/03/20 11:41:38 user_profile_controller.go:106: simo.simo
+2025/03/20 11:41:44 user_profile_controller.go:106: med535
+2025/03/20 11:41:55 user_profile_controller.go:106: omar.rharbi
+2025/03/20 11:42:33 user_profile_controller.go:106: simo.simo
+2025/03/20 11:51:04 user_profile_controller.go:106: test959
+2025/03/20 11:54:53 server.go:27: Starting server on :8080
+2025/03/20 11:55:39 server.go:27: Starting server on :8080
+2025/03/20 11:57:36 server.go:27: Starting server on :8080
+2025/03/20 12:00:01 server.go:27: Starting server on :8080
+2025/03/20 12:00:43 server.go:27: Starting server on :8080
+2025/03/20 12:00:51 auth_controller.go:33: sorry, this email does not exist
+2025/03/20 12:01:07 user_profile_controller.go:106:  
+2025/03/20 12:01:07 user_profile_controller.go:116: near "OR": syntax error
+2025/03/20 12:01:47 server.go:27: Starting server on :8080
+2025/03/20 12:03:02 user_repo.go:33: <nil>
+2025/03/20 12:03:02 auth_controller.go:114: adding user to db: email already exist
+2025/03/20 12:03:08 user_profile_controller.go:106: testtest
+2025/03/20 12:03:08 user_profile_controller.go:116: near "OR": syntax error
+2025/03/20 12:03:17 user_profile_controller.go:106: testtest
+2025/03/20 12:03:17 user_profile_controller.go:116: near "OR": syntax error
+2025/03/20 12:03:42 user_profile_controller.go:106: testtest
+2025/03/20 12:03:42 user_profile_controller.go:116: near "OR": syntax error
+2025/03/20 12:03:57 user_profile_controller.go:106: testtest
+2025/03/20 12:03:57 user_profile_controller.go:116: near "OR": syntax error
+2025/03/20 12:04:37 server.go:27: Starting server on :8080
+2025/03/20 12:05:00 user_profile_controller.go:106: simosimo
+2025/03/20 12:05:10 user_profile_controller.go:106: simosimo
+2025/03/20 12:05:18 user_profile_controller.go:106: testtest
+2025/03/20 12:05:23 user_profile_controller.go:106: simosimo
+2025/03/20 12:05:25 user_profile_controller.go:106: testtest
+2025/03/20 12:06:25 user_profile_controller.go:106: testtest
+2025/03/20 12:06:26 user_profile_controller.go:106: testtest
+2025/03/20 12:06:29 user_profile_controller.go:106: testtest
+2025/03/20 12:07:09 user_profile_controller.go:106: testtest
+2025/03/20 12:07:10 user_profile_controller.go:106: testtest
+2025/03/20 12:07:20 user_profile_controller.go:106: testtest
+2025/03/20 12:07:33 user_profile_controller.go:106: testtest
+2025/03/20 12:07:36 user_profile_controller.go:106: testtest
+2025/03/20 12:07:38 user_profile_controller.go:106: testtest
+2025/03/20 12:07:40 user_profile_controller.go:106: testtest
+2025/03/20 12:07:44 user_profile_controller.go:106: testtest
+2025/03/20 12:07:53 user_profile_controller.go:106: testtest
+2025/03/20 12:09:25 server.go:27: Starting server on :8080
+2025/03/20 12:09:27 user_profile_repo.go:272: true
+2025/03/20 12:09:33 user_profile_repo.go:272: true
+2025/03/20 12:09:33 user_profile_repo.go:272: true
+2025/03/20 12:09:36 user_profile_repo.go:272: true
+2025/03/20 12:11:00 user_profile_repo.go:272: true
+2025/03/20 12:11:02 user_profile_repo.go:272: true
+2025/03/20 12:12:01 user_profile_repo.go:272: true
+2025/03/20 12:12:01 user_profile_repo.go:272: true
+2025/03/20 12:12:24 server.go:27: Starting server on :8080
+2025/03/20 12:14:35 server.go:27: Starting server on :8080
+2025/03/20 12:14:37 user_profile_repo.go:273: pending
+2025/03/20 12:15:44 user_profile_repo.go:273: pending
+2025/03/20 12:15:45 user_profile_repo.go:273: pending
+2025/03/20 12:15:48 user_profile_repo.go:273: pending
+2025/03/20 12:16:01 user_profile_repo.go:273: pending
+2025/03/20 12:16:02 user_profile_repo.go:273: pending
+2025/03/20 12:16:18 user_profile_repo.go:273: accept
+2025/03/20 12:16:30 user_profile_repo.go:273: pending
+2025/03/20 12:17:21 user_profile_repo.go:273: pending
+2025/03/20 12:17:25 user_profile_repo.go:273: pending
+2025/03/20 12:17:37 user_profile_repo.go:273: pending
+2025/03/20 12:17:48 user_profile_repo.go:273: pending
+2025/03/20 12:17:58 user_profile_repo.go:273: pending
+2025/03/20 12:18:09 user_profile_repo.go:273: accept
+2025/03/20 12:20:31 server.go:27: Starting server on :8080
+2025/03/20 12:20:34 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:20:34 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:20:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:20:38 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:20:38 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:20:38 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:21:48 server.go:27: Starting server on :8080
+2025/03/20 12:21:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:21:50 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:21:50 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:21:50 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:22:47 user_profile.go:14: Get Created Posts: sql: no rows in result set
+2025/03/20 12:22:47 user_repo.go:112: sql: no rows in result set
+2025/03/20 12:22:47 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:22:47 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:22:47 user_repo.go:112: sql: no rows in result set
+2025/03/20 12:22:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:22:49 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:22:49 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/03/20 12:22:49 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/03/20 12:22:59 server.go:27: Starting server on :8080
+2025/03/20 12:23:43 user_profile_repo.go:273: pending
+2025/03/20 12:23:43 user_profile_repo.go:273: pending
+2025/03/20 12:23:48 user_profile_repo.go:273: pending
+2025/03/20 12:23:51 user_profile_repo.go:273: pending
+2025/03/20 12:23:55 user_profile_repo.go:273: pending
+2025/03/20 12:23:55 user_profile_repo.go:273: pending
+2025/03/20 12:23:58 user_profile_repo.go:273: pending
+2025/03/20 12:24:01 user_profile_repo.go:273: pending
+2025/03/20 12:24:01 user_profile_repo.go:273: pending
+2025/03/20 12:24:27 user_profile_repo.go:273: pending
+2025/03/20 12:31:10 server.go:27: Starting server on :8080
+2025/03/20 12:31:13 user_profile_repo.go:297: accept
+2025/03/20 12:31:20 user_profile_repo.go:297: pending
+2025/03/20 12:31:24 user_profile_repo.go:297: accept
+2025/03/20 12:31:29 user_profile_repo.go:297: accept
+2025/03/20 12:31:33 user_profile_repo.go:297: accept
+2025/03/20 13:01:18 user_repo.go:33: <nil>
+2025/03/20 13:01:18 auth_controller.go:36: test
+2025/03/20 13:02:01 user_profile_repo.go:297: pending
+2025/03/20 13:02:51 user_profile_repo.go:297: pending
+2025/03/20 13:02:56 user_profile_repo.go:297: pending
+2025/03/20 13:03:28 user_profile_repo.go:297: pending
+2025/03/20 13:04:14 user_profile_repo.go:297: pending
+2025/03/20 13:04:27 user_profile_repo.go:297: pending
+2025/03/20 13:04:35 user_profile_repo.go:297: pending
+2025/03/20 13:04:48 user_profile_repo.go:297: pending
+2025/03/20 13:04:50 user_profile_repo.go:297: pending
+2025/03/20 13:04:54 user_profile_repo.go:297: pending
+2025/03/20 13:04:57 user_profile_repo.go:297: pending
+2025/03/20 13:05:20 user_profile_repo.go:297: pending
+2025/03/20 13:05:29 user_profile_repo.go:297: pending
+2025/03/20 13:05:46 user_profile_repo.go:297: pending
+2025/03/20 13:07:04 user_profile_repo.go:297: pending
+2025/03/20 13:07:43 user_profile_repo.go:297: pending
+2025/03/20 13:08:00 user_profile_repo.go:297: pending
+2025/03/20 13:08:25 user_profile_repo.go:297: accept
+2025/03/20 13:08:32 user_profile_repo.go:297: accept
+2025/03/20 13:09:17 user_profile_repo.go:297: accept
+2025/03/20 13:09:31 user_profile_repo.go:297: accept
+2025/03/20 13:09:42 user_profile_repo.go:297: accept
+2025/03/20 13:10:07 user_profile_repo.go:297: accept
+2025/03/20 13:10:08 user_profile_repo.go:297: accept
+2025/03/20 13:10:15 user_profile_repo.go:297: accept
+2025/03/20 13:10:33 user_profile_repo.go:297: accept
+2025/03/20 13:10:38 user_profile_repo.go:297: accept
+2025/03/20 13:10:45 user_profile_repo.go:297: accept
+2025/03/20 13:10:57 user_profile_repo.go:297: accept
+2025/03/20 13:11:15 user_profile_repo.go:297: accept
+2025/03/20 13:11:24 user_profile_repo.go:297: accept
+2025/03/20 13:11:45 user_profile_repo.go:297: accept
+2025/03/20 13:11:53 user_profile_repo.go:297: accept
+2025/03/20 13:12:06 user_profile_repo.go:297: pending
+2025/03/20 13:12:25 user_profile_repo.go:297: pending
+2025/03/20 13:12:31 user_profile_repo.go:297: pending
+2025/03/20 13:12:42 user_profile_repo.go:297: pending
+2025/03/20 13:12:43 user_profile_repo.go:297: pending
+2025/03/20 13:12:55 user_profile_repo.go:297: pending
+2025/03/20 13:13:00 user_profile_repo.go:297: pending
+2025/03/20 13:13:07 user_profile_repo.go:297: accept
+2025/03/20 13:13:49 user_profile_repo.go:297: accept
+2025/03/20 13:13:56 user_profile_repo.go:297: accept
+2025/03/20 13:14:25 user_profile_repo.go:297: accept
+2025/03/20 13:14:27 user_profile_repo.go:297: accept
+2025/03/20 13:14:39 user_profile_repo.go:297: accept
+2025/03/20 13:14:42 user_profile_repo.go:297: accept
+2025/03/20 13:15:10 user_profile_repo.go:297: accept
+2025/03/20 13:15:13 user_profile_repo.go:297: accept
+2025/03/20 13:15:37 user_profile_repo.go:297: pending
+2025/03/20 13:15:48 user_profile_repo.go:297: pending
+2025/03/20 13:15:55 user_profile_repo.go:297: accept
+2025/03/20 13:16:16 user_profile_repo.go:297: accept
+2025/03/20 13:16:52 user_profile_repo.go:297: accept
+2025/03/20 13:17:17 user_profile_repo.go:297: pending
+2025/03/20 13:17:25 user_profile_repo.go:297: pending
+2025/03/20 13:17:48 user_profile_repo.go:297: accept
+2025/03/20 13:18:04 user_profile_repo.go:297: accept
+2025/03/20 13:20:16 user_profile_repo.go:297: accept
+2025/03/20 13:34:21 server.go:27: Starting server on :8080
+2025/03/20 13:34:24 user_profile_controller.go:119: [{ 3 simo simo simosimo /uploads/default.webp accept} { 4 other other other /uploads/default.webp accept}]
+2025/03/20 13:46:53 server.go:27: Starting server on :8080
+2025/03/20 13:46:56 user_profile_controller.go:119: [{ 3 simo simo simosimo /uploads/default.webp accept} { 4 other other other /uploads/default.webp accept}]
+2025/03/20 13:48:34 server.go:27: Starting server on :8080
+2025/03/20 13:53:54 server.go:27: Starting server on :8080
+2025/03/20 13:54:01 user_profile_repo.go:253: no such column: follower.id
+2025/03/20 13:54:01 user_profile_controller.go:116: no such column: follower.id
+2025/03/20 13:56:43 server.go:27: Starting server on :8080
+2025/03/20 14:03:33 server.go:27: Starting server on :8080
+2025/03/20 14:04:55 user_repo.go:33: <nil>
+2025/03/20 14:04:55 auth_controller.go:36: test
+2025/03/20 14:05:01 user_repo.go:33: <nil>
+2025/03/20 14:05:01 auth_controller.go:36: other
+2025/03/20 14:05:09 user_repo.go:33: <nil>
+2025/03/20 14:05:09 auth_controller.go:36: test
