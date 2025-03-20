@@ -1,8 +1,8 @@
 import Link from "next/link";
  import "../styles/profileSidebar.css";
 import "../styles/groupsFeed.css";
-export  default function Follow ({status,handuleClick,user,iduser}){
-  console.log(user );
+export  default function Follow ({status,handuleClick,user}){
+  // console.log(user );
   
     return (
       <div className="activity-item">

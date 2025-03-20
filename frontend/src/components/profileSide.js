@@ -11,15 +11,14 @@ export default function ProfileSide({ classes }) {
   const [checkFollow, setcheckFollow] = useState("");
   const [dataFollow, setdataFollow] = useState([]);
   const [profile, error] = userProfile();
+    // const [profiledata, errorPro] = userProfile(usernames);
   const [follow] = useFollowing();
   const togglePopup = (data, text) => {
     setcheckFollow(text)
     setdataFollow(data)
     setShowPopup(!showPopup);
   }; 
-
  
-  // setJoinedGroup(prev => [...prev, data]);
   const {
     id,
     avatarUrl,
@@ -30,6 +29,7 @@ export default function ProfileSide({ classes }) {
     nickName,
     posts_count,
   } = profile;
+   console.log(follow,"test");
    
   return (
     <div className="profile-page">

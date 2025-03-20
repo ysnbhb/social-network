@@ -103,7 +103,7 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 	if current_username == "" {
 		current_username = username
 	}
-	log.Println(current_username)
+	// log.Println(current_username)
 	following.Following, err = services.GetUserFollowing(current_username, user)
 	if err != nil {
 		utils.JsonResponse(w, "Error To Get following", http.StatusMethodNotAllowed)
@@ -116,6 +116,8 @@ func Userfollowing(w http.ResponseWriter, r *http.Request) {
 		log.Println(err.Error())
 		return
 	}
+	// log.Println(following.Follower)
+
 	err = json.NewEncoder(w).Encode(following)
 	if err != nil {
 		log.Println("error encoding json userInfo:", err)
