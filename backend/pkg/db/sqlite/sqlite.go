@@ -20,7 +20,17 @@ func InitDB() error {
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
-
+	if err := DB.Ping(); err != nil {
+		return fmt.Errorf("failed to ping database: %w", err)
+	}
+	_, err = DB.Exec("PRAGMA foreign_keys = ON;")
+    if err != nil {
+        return fmt.Errorf("failed to enable foreign keys: %w", err)
+    }
+	_, err = DB.Exec("PRAGMA journal_mode=WAL;")
+    if err != nil {
+        return fmt.Errorf("failed to set WAL mode: %w", err)
+    }
 	if err := runMigrations(); err != nil {
 		return fmt.Errorf("failed to apply migrations: %w", err)
 	}
