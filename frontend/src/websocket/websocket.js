@@ -1,5 +1,6 @@
 "use client";
 import { handleNotification, sendNotification } from "./notification.js";
+import { redirect, useRouter } from "next/navigation";
 import {
   Getmessagesusers,
   receiveMessageuser,
@@ -29,7 +30,14 @@ export function initializeWebSocket() {
 
   connectionPromise = new Promise((resolve, reject) => {
     const sessionId = getCookie("session_id");
+    // if (!sessionId) {
+    //   console.log("Session ID not found in cookies.");
+    //   router.push('/login');
+    //   return;
+    // }
     socket = new WebSocket(`${API_URL_WS}/ws?session_id=${sessionId}`);
+
+
 
     socket.onopen = function () {
       console.log("WebSocket connection established.");
@@ -85,6 +93,20 @@ export function initializeWebSocket() {
 }
 
 export function safeSend(data) {
+  console.log("Sending data:", data);
+
+  const sessionId = getCookie("session_id");
+  console.log("jjjjjjjjjjjjjjjjjjjjjjjjj", sessionId);
+
+  if ((sessionId === null|| sessionId == "") && data.type !== "closeconnection" ) {
+    console.log("Session ID not found in cookies.");
+    Closeconnection();
+    redirect('/login');
+    return;
+    // router.push('/login');
+    // return;
+  }
+
   if (socket && socket.readyState === WebSocket.OPEN) {
     socket.send(JSON.stringify(data));
     return true;
