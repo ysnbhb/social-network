@@ -54,7 +54,7 @@ export default function Notification() {
       case "messageGroup":
         router.push(`/group/${notification.GroupId}/chat`);
       default:
-        
+
         break;
     }
   };
@@ -106,8 +106,9 @@ export default function Notification() {
     return <h1>Loading Notifications...</h1>;
   }
 
-  console.log("notifications", notifications);
-
+  if (notifications === "Unauthorized") {
+    return null
+  }
 
   return (
     <main className="main-content">

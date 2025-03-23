@@ -36309,3 +36309,26 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/20 15:17:05 user_profile_controller.go:110: near "<<": syntax error
 2025/03/20 15:17:12 user_profile_controller.go:110: near "<<": syntax error
 2025/03/20 15:17:15 user_profile_controller.go:110: near "<<": syntax error
+2025/03/23 14:44:41 server.go:27: Starting server on :8080
+2025/03/23 14:46:22 user_repo.go:33: <nil>
+2025/03/23 14:46:22 auth_controller.go:36: Yassinebh
+2025/03/23 14:48:43 user_repo.go:33: <nil>
+2025/03/23 14:48:43 auth_controller.go:36: Yassinebh
+2025/03/23 14:49:22 user_repo.go:33: <nil>
+2025/03/23 14:49:22 auth_controller.go:36: Yassinebh
+2025/03/23 14:49:29 user_repo.go:33: <nil>
+2025/03/23 14:49:29 auth_controller.go:36: Yassinebh
+2025/03/23 14:49:37 user_repo.go:33: <nil>
+2025/03/23 14:49:37 auth_controller.go:36: Yassinebh
+2025/03/23 14:51:20 user_repo.go:33: <nil>
+2025/03/23 14:51:20 auth_controller.go:36: Yassinebh
+2025/03/23 14:51:40 user_repo.go:33: <nil>
+2025/03/23 14:51:40 auth_controller.go:36: Yassinebh
+2025/03/23 14:51:53 user_repo.go:33: <nil>
+2025/03/23 14:51:53 auth_controller.go:36: Yassinebh
+2025/03/23 14:52:08 user_repo.go:33: <nil>
+2025/03/23 14:52:08 auth_controller.go:36: Yassinebh
+2025/03/23 14:52:20 user_repo.go:33: <nil>
+2025/03/23 14:52:20 auth_controller.go:36: Yassinebh
+2025/03/23 14:52:41 user_repo.go:33: <nil>
+2025/03/23 14:52:41 auth_controller.go:36: Yassinebh

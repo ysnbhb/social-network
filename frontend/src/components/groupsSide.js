@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import GroupList from "./groupList";
 import { API_URL } from "./api";
 
-export default function GroupsSide({ groups , setJoinedGroup }) {
+export default function GroupsSide({ groups, setJoinedGroup }) {
   useEffect(() => {
     const getJoinedGroups = async () => {
       const res = await fetch(`${API_URL}/api/group/joinlist`, {
@@ -18,7 +18,10 @@ export default function GroupsSide({ groups , setJoinedGroup }) {
       setJoinedGroup(data);
     };
     getJoinedGroups()
-  } , []);
+  }, []);
+  if (groups === "Unauthorized") {
+    return null
+  }
   return (
     <div className="myGroupsSide">
       <div className="header">
