@@ -36332,3 +36332,181 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/23 14:52:20 auth_controller.go:36: Yassinebh
 2025/03/23 14:52:41 user_repo.go:33: <nil>
 2025/03/23 14:52:41 auth_controller.go:36: Yassinebh
+2025/03/24 14:25:40 server.go:27: Starting server on :8080
+2025/03/24 14:27:06 user_repo.go:33: <nil>
+2025/03/24 14:27:06 auth_controller.go:36: Yassinebhb
+2025/03/24 14:27:25 group_service.go:213: 2025-03-15T14:27
+2025/03/24 14:27:39 group_service.go:213: 2025-03-24T14:27
+2025/03/24 14:28:02 group_service.go:213: 2025-03-31T14:27
+2025/03/24 14:28:12 server.go:3489: http: panic serving [::1]:35776: runtime error: invalid memory address or nil pointer dereference
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849d80?, 0xb715b0?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/runtime/panic.go:791 +0x132
+social-network/app/services.SendMessageGroup({{0xc0003c1530, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0003c153c, 0x4}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0003c1530, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0003c153c, 0x4}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000232b00, {0xc000200990?, 0xc000200990?})
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944838, 0xc00022c540}, 0xc000212640)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc000212280?, {0x944838?, 0xc00022c540?}, 0x93fc70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944838, 0xc00022c540}, 0xc000212280)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d00e0?, {0x944838?, 0xc00022c540?}, 0x8b00f0?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000202720?, {0x944838, 0xc00022c540}, 0xc000212280)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944838, 0xc00022c540}, 0xc000212280)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x179
+net/http.HandlerFunc.ServeHTTP(0x469219?, {0x944838?, 0xc00022c540?}, 0xc00006ab70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0002022a0?}, {0x944838?, 0xc00022c540?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc00012e360, {0x944ec8, 0xc00009fe60})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/03/24 14:30:01 posts_controller.go:57: validating post: post content cannot be empty
+2025/03/24 14:34:36 user_repo.go:33: <nil>
+2025/03/24 14:34:36 auth_controller.go:36: Yassinebh
+2025/03/24 14:34:58 server.go:3489: http: panic serving 127.0.0.1:59732: runtime error: invalid memory address or nil pointer dereference
+goroutine 389 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849d80?, 0xb715b0?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/runtime/panic.go:791 +0x132
+social-network/app/services.SendMessageGroup({{0xc00047f840, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00047f838, 0x4}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00047f840, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00047f838, 0x4}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0002ce6e0, {0xc0000f2298?, 0xc0000f2298?})
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944838, 0xc0001981c0}, 0xc0000be500)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000be3c0?, {0x944838?, 0xc0001981c0?}, 0x93fc70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944838, 0xc0001981c0}, 0xc0000be3c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d00e0?, {0x944838?, 0xc0001981c0?}, 0x8b00f0?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00019c420?, {0x944838, 0xc0001981c0}, 0xc0000be3c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944838, 0xc0001981c0}, 0xc0000be3c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x179
+net/http.HandlerFunc.ServeHTTP(0x469219?, {0x944838?, 0xc0001981c0?}, 0xc00006fb70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00019c360?}, {0x944838?, 0xc0001981c0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc0000d8360, {0x944ec8, 0xc00009fe60})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/03/24 14:35:22 server.go:3489: http: panic serving 127.0.0.1:34790: runtime error: invalid memory address or nil pointer dereference
+goroutine 421 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849d80?, 0xb715b0?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/runtime/panic.go:791 +0x132
+social-network/app/services.SendMessageGroup({{0xc0002a9ea0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0002a9e98, 0x3}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0002a9ea0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0002a9e98, 0x3}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000232c60, {0xc00030e168?, 0xc00030e168?})
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944838, 0xc0000d02a0}, 0xc000175400)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0001752c0?, {0x944838?, 0xc0000d02a0?}, 0x93fc70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944838, 0xc0000d02a0}, 0xc0001752c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d00e0?, {0x944838?, 0xc0000d02a0?}, 0x8b00f0?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0002b3d40?, {0x944838, 0xc0000d02a0}, 0xc0001752c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944838, 0xc0000d02a0}, 0xc0001752c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x179
+net/http.HandlerFunc.ServeHTTP(0x469219?, {0x944838?, 0xc0000d02a0?}, 0xc00034db70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0002b3cb0?}, {0x944838?, 0xc0000d02a0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc00012ecf0, {0x944ec8, 0xc00009fe60})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/03/24 14:35:58 server.go:3489: http: panic serving 127.0.0.1:42348: runtime error: invalid memory address or nil pointer dereference
+goroutine 431 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849d80?, 0xb715b0?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/runtime/panic.go:791 +0x132
+social-network/app/services.SendMessageGroup({{0xc00011ef40, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00011ef38, 0x2}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00011ef40, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00011ef38, 0x2}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000306b00, {0xc00030f758?, 0xc00030f758?})
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944838, 0xc0002ea700}, 0xc0002e7900)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0002e77c0?, {0x944838?, 0xc0002ea700?}, 0x93fc70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944838, 0xc0002ea700}, 0xc0002e77c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d00e0?, {0x944838?, 0xc0002ea700?}, 0x8b00f0?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0001d64b0?, {0x944838, 0xc0002ea700}, 0xc0002e77c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944838, 0xc0002ea700}, 0xc0002e77c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x179
+net/http.HandlerFunc.ServeHTTP(0x469219?, {0x944838?, 0xc0002ea700?}, 0xc000348b70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001d6420?}, {0x944838?, 0xc0002ea700?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc00012f7a0, {0x944ec8, 0xc00009fe60})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/03/24 14:39:09 server.go:3489: http: panic serving 127.0.0.1:37096: runtime error: invalid memory address or nil pointer dereference
+goroutine 514 [running]:
+net/http.(*conn).serve.func1()
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849d80?, 0xb715b0?})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/runtime/panic.go:791 +0x132
+social-network/app/services.SendMessageGroup({{0xc00011ecf0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00011ece8, 0x5}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00011ecf0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00011ece8, 0x5}, 0x1, ...}, ...)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0002cf1e0, {0xc00011e7d8?, 0xc00011e7d8?})
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944838, 0xc0000d08c0}, 0xc000302a00)
+	/home/yhamdoun/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0003028c0?, {0x944838?, 0xc0000d08c0?}, 0x93fc70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944838, 0xc0000d08c0}, 0xc0003028c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d00e0?, {0x944838?, 0xc0000d08c0?}, 0x8b00f0?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000202ba0?, {0x944838, 0xc0000d08c0}, 0xc0003028c0)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944838, 0xc0000d08c0}, 0xc0003028c0)
+	/home/yhamdoun/mysocialnetwork/backend/middleware/open_Crose.go:20 +0x179
+net/http.HandlerFunc.ServeHTTP(0x469219?, {0x944838?, 0xc0000d08c0?}, 0xc00034db70?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc000202b10?}, {0x944838?, 0xc0000d08c0?}, 0x6?)
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc0000d8750, {0x944ec8, 0xc00009fe60})
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/yhamdoun/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/03/24 14:40:18 user_repo.go:33: disk I/O error: no such file or directory
+2025/03/24 14:40:18 user_repo.go:45: disk I/O error: no such file or directory
+2025/03/24 14:40:18 auth_controller.go:33:  This userName isn't exists
+2025/03/24 14:40:23 user_repo.go:33: disk I/O error
+2025/03/24 14:40:23 user_repo.go:45: disk I/O error
+2025/03/24 14:40:23 auth_controller.go:33:  This userName isn't exists
+2025/03/24 14:42:01 user_repo.go:33: disk I/O error: no such file or directory
+2025/03/24 14:42:01 auth_controller.go:114: adding user to db: email already exist
+2025/03/24 14:42:18 server.go:27: Starting server on :8080
