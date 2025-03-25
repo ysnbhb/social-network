@@ -19,3 +19,4 @@ func ComparePassword(login *models.Login) error {
 	err := bcrypt.CompareHashAndPassword([]byte(login.HashedPassword), []byte(login.Password))
 	return err
 }
+
