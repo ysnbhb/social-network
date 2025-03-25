@@ -36510,3 +36510,15 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/24 14:42:01 user_repo.go:33: disk I/O error: no such file or directory
 2025/03/24 14:42:01 auth_controller.go:114: adding user to db: email already exist
 2025/03/24 14:42:18 server.go:27: Starting server on :8080
+2025/03/25 20:09:22 server.go:27: Starting server on :8080
+2025/03/25 20:39:59 auth_controller.go:33: sorry, this email does not exist
+2025/03/25 20:40:48 user_repo.go:33: <nil>
+2025/03/25 20:40:48 auth_controller.go:114: adding user to db: email already exist
+2025/03/25 20:46:31 user_repo.go:33: <nil>
+2025/03/25 20:46:31 auth_controller.go:36: yassine_bhb
+2025/03/25 20:46:44 posts_controller.go:57: creating post in db:FOREIGN KEY constraint failed
+2025/03/25 20:46:52 posts_controller.go:57: creating post in db:FOREIGN KEY constraint failed
+2025/03/25 20:47:57 posts_controller.go:57: creating post in db:FOREIGN KEY constraint failed
+2025/03/25 20:52:41 server.go:27: Starting server on :8080
+2025/03/25 20:55:31 auth_controller.go:100: invalid first name
+2025/03/25 21:02:12 server.go:27: Starting server on :8080
