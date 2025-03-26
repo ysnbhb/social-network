@@ -234,16 +234,16 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
         WHEN $1 = $2 AND EXISTS (
                 SELECT 1 
                 FROM followers 
-                WHERE follower_id = $1 AND following_id = u.id
+                WHERE following_id = $1 AND follower_id = u.id
             ) THEN  
                 (SELECT status 
                  FROM followers 
                  WHERE follower_id = $1 AND following_id = u.id)
         ELSE ''
     END AS status 
-FROM users u
-JOIN followers f ON u.id = f.follower_id 
-WHERE 
+	FROM users u
+	JOIN followers f ON u.id = f.follower_id 
+	WHERE 
     f.following_id = $2  
     AND u.id != $1  
     AND 

@@ -16,3 +16,7 @@
 2025/03/26 14:18:46 user_profile.go:14: Get Created Posts: no such column: pv.user_id
 2025/03/26 14:19:04 server.go:27: Starting server on :8080
 2025/03/26 14:19:44 server.go:27: Starting server on :8080
+2025/03/26 14:51:10 user_repo.go:33: <nil>
+2025/03/26 14:51:10 auth_controller.go:36: other_other
+2025/03/26 14:54:00 server.go:27: Starting server on :8080
+2025/03/26 14:55:37 server.go:27: Starting server on :8080
