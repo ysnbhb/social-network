@@ -4,3 +4,15 @@
 2025/03/26 13:17:41 server.go:27: Starting server on :8080
 2025/03/26 13:19:24 user_repo.go:33: <nil>
 2025/03/26 13:19:24 auth_controller.go:36: other_other
+2025/03/26 13:30:33 user_repo.go:33: <nil>
+2025/03/26 13:30:33 auth_controller.go:36: other_other
+2025/03/26 14:12:39 user_repo.go:33: <nil>
+2025/03/26 14:12:39 auth_controller.go:36: other_other
+2025/03/26 14:16:17 server.go:27: Starting server on :8080
+2025/03/26 14:16:21 user_profile.go:14: Get Created Posts: near "OR": syntax error
+2025/03/26 14:18:39 server.go:27: Starting server on :8080
+2025/03/26 14:18:43 user_profile.go:14: Get Created Posts: no such column: pv.user_id
+2025/03/26 14:18:45 user_profile.go:14: Get Created Posts: no such column: pv.user_id
+2025/03/26 14:18:46 user_profile.go:14: Get Created Posts: no such column: pv.user_id
+2025/03/26 14:19:04 server.go:27: Starting server on :8080
+2025/03/26 14:19:44 server.go:27: Starting server on :8080

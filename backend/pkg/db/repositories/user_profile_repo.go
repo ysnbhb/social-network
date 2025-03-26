@@ -14,62 +14,73 @@ func GetCreatedUserPosts(postsResponse *[]models.PostsResponse, userId int, user
 	}
 	query := `
 		SELECT 
-			c.id,
-			c.user_id,
-			c.content,
-			c.created_at,
-			u.avatar_url,
-			u.first_name,
-			u.last_name,
-			u.nickname,
-			c.image_url,
-			COUNT(DISTINCT cm.id) AS total_comments,
-			COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
-			(SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
-		FROM card c
-		JOIN posts p ON c.id = p.card_id
-		JOIN users u ON c.user_id = u.id
-		LEFT JOIN comments cm ON c.id = cm.target_id
-		LEFT JOIN likes l ON c.id = l.card_id
-		WHERE (
-			-- If it's the logged-in user viewing their own profile, show all posts
-			(c.user_id = $1 AND u.id = $2) 
-			OR 
-			(
-				-- Cases for viewing other users' profiles
-				u.id = $2 AND 
-				(
-					-- Public profile with public posts
-					(u.profile_type = 'Public' AND p.privacy = 'public' AND (c.group_id IS NULL OR c.group_id = 0))
-					OR 
-					-- Almost private posts where the viewer is an accepted follower
-					(p.privacy = 'almostPrivate' AND 
-					EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept')
-					)
-					OR 
-					-- Private posts where the viewer is a private member
-					(p.privacy = 'private' AND 
-					EXISTS (SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1)
-					)
-					OR 
-					-- Private profile with public posts where the viewer is an accepted follower
-					(u.profile_type = 'Private' AND p.privacy = 'public' AND 
-					EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept') AND
-					(c.group_id IS NULL OR c.group_id = 0)
-					)
-				)
-			)
-		)
-		GROUP BY 
-			c.id, 
-			c.user_id, 
-			c.content, 
-			c.created_at,
-			u.avatar_url,
-			u.first_name, 
-			u.last_name,
-			u.nickname
-		ORDER BY c.created_at DESC
+    c.id,
+    c.user_id,
+    c.content,
+    c.created_at,
+    u.avatar_url,
+    u.first_name,
+    u.last_name,
+    u.nickname,
+    c.image_url,
+    COUNT(DISTINCT cm.id) AS total_comments,
+    COUNT(DISTINCT CASE WHEN l.reaction_type = 1 THEN l.id END) AS total_likes,
+    (SELECT EXISTS (SELECT 1 FROM likes WHERE card_id = c.id AND user_id = $1)) AS isliked
+FROM card c
+JOIN posts p ON c.id = p.card_id
+JOIN users u ON c.user_id = u.id
+LEFT JOIN comments cm ON c.id = cm.target_id
+LEFT JOIN likes l ON c.id = l.card_id
+WHERE (
+    -- Case 1: The viewer ($1) is viewing their own profile
+    (c.user_id = $1 AND u.id = $2)
+    OR 
+    -- Case 2: The viewer ($1) is viewing another user's profile ($2)
+    (u.id = $2 AND 
+        (
+            -- Public profile with public posts
+            (u.profile_type = 'Public' AND p.privacy = 'public' AND (c.group_id IS NULL OR c.group_id = 0))
+            OR 
+            -- Almost private posts where the viewer is an accepted follower
+            (p.privacy = 'almostPrivate' AND 
+                EXISTS (
+                    SELECT 1 
+                    FROM followers 
+                    WHERE follower_id = $1 AND following_id = $2 AND status = 'accept'
+                )
+            )
+            OR 
+            -- Private posts where the viewer is a private member
+            (p.privacy = 'private' AND 
+                EXISTS (
+                    SELECT 1 
+                    FROM private_members 
+                    WHERE post_id = p.id AND user_id = $1
+                )
+            )
+            OR 
+            -- Private profile with public posts where the viewer is an accepted follower
+            (u.profile_type = 'Private' AND p.privacy = 'public' AND 
+                EXISTS (
+                    SELECT 1 
+                    FROM followers 
+                    WHERE follower_id = $1 AND following_id = $2 AND status = 'accept'
+                ) AND
+                (c.group_id IS NULL OR c.group_id = 0)
+            )
+        )
+    )
+)
+GROUP BY 
+    c.id, 
+    c.user_id, 
+    c.content, 
+    c.created_at,
+    u.avatar_url,
+    u.first_name, 
+    u.last_name,
+    u.nickname
+ORDER BY c.created_at DESC;
 			`
 	rows, err := db.DB.Query(query, userId, data.Id, offset)
 	if err != nil {
