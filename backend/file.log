@@ -36291,3 +36291,12 @@ created by net/http.(*Server).Serve in goroutine 1
 2025/03/20 14:05:09 user_repo.go:33: <nil>
 2025/03/20 14:05:09 auth_controller.go:36: test
 >>>>>>> omrharbi
+2025/03/20 15:16:09 server.go:27: Starting server on :8080
+2025/03/20 15:16:25 auth_controller.go:33: sorry, this email does not exist
+2025/03/20 15:16:38 auth_controller.go:33: sorry, this email does not exist
+2025/03/20 15:16:41 auth_controller.go:33: sorry, this email does not exist
+2025/03/20 15:17:07 user_repo.go:33: <nil>
+2025/03/20 15:17:07 auth_controller.go:114: adding user to db: email already exist
+2025/03/26 11:39:01 server.go:27: Starting server on :8080
+2025/03/26 11:39:09 user_repo.go:33: <nil>
+2025/03/26 11:39:09 auth_controller.go:36: rharbi663
