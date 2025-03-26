@@ -1,0 +1,6 @@
+2025/03/26 11:41:51 server.go:27: Starting server on :8080
+2025/03/26 11:43:02 auth_controller.go:33: sorry, this email does not exist
+2025/03/26 11:43:19 auth_controller.go:100: invalid first name
+2025/03/26 13:17:41 server.go:27: Starting server on :8080
+2025/03/26 13:19:24 user_repo.go:33: <nil>
+2025/03/26 13:19:24 auth_controller.go:36: other_other
