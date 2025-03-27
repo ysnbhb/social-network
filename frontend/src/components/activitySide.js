@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "./api";
 export let UsersSelected = []
 import Follow from "./Follow";
+import Link from "next/link";
   
  export default function ActivitySidebar( ) {
   const [user, setUser] = useState([]);

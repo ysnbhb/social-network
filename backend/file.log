@@ -20,3 +20,17 @@
 2025/03/26 14:51:10 auth_controller.go:36: other_other
 2025/03/26 14:54:00 server.go:27: Starting server on :8080
 2025/03/26 14:55:37 server.go:27: Starting server on :8080
+2025/03/27 06:47:58 server.go:27: Starting server on :8080
+2025/03/27 06:59:07 auth_controller.go:100: invalid nickname
+2025/03/27 06:59:16 auth_controller.go:33: sorry, this email does not exist
+2025/03/27 06:59:25 auth_controller.go:33: sorry, this email does not exist
+2025/03/27 06:59:36 auth_controller.go:100: invalid nickname
+2025/03/27 07:03:04 auth_controller.go:33: sorry, this email does not exist
+2025/03/27 07:03:36 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/03/27 07:06:52 user_repo.go:33: <nil>
+2025/03/27 07:06:52 auth_controller.go:36: soso
+2025/03/27 07:07:18 user_repo.go:33: <nil>
+2025/03/27 07:07:19 auth_controller.go:36: soso
+2025/03/27 08:29:47 posts_controller.go:57: validating post: post content cannot be empty
+2025/03/27 08:29:56 posts_controller.go:57: creating post in db:no such table: privete_members
+2025/03/27 08:31:53 posts_controller.go:57: creating post in db:no such table: privete_members

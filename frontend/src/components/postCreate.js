@@ -9,6 +9,7 @@ import { Followers, ShowUnfllowUser } from "./activitySide";
 import { UsersSelected } from "./activitySide";
 
 export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFollow}) {
+
   const [content, setContent] = useState("");
   const [postType, setPostType] = useState("public");
   const [img, setImg] = useState(null);
@@ -16,6 +17,8 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
   const [checkFollow, setcheckFollow] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const { avatarUrl } = profiledata;
+    const [follow] = useFollowing();
+    console.log('dataFollowdataFollow', follow.Follower);
   const activeTab = 0
   const togglePopup = (data, text) => {
     setcheckFollow(text)
@@ -161,9 +164,9 @@ export default function PostCreater({ setPosts, classes, ishome, groupid ,dataFo
               <h2 className="popup-title">Select users who can see your post:</h2>
             </div>
             <div className="popup-form">
-                      {dataFollow ? (dataFollow).map((fl) => (
+                      {follow.Follower ? (follow.Follower).map((fl) => (
                         <div key={`${activeTab}-${fl.id}`}>
-                           <Followers  key={`${activeTab}-${fl.id}`} status={fl.status}   user={fl}/>
+                           <Followers  key={`${activeTab}-${fl.id}`} status={fl.status} user={fl}/>
                          </div>
                       )) : (<div>
                         No Follower
