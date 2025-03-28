@@ -32,7 +32,7 @@ func CreatPost(postRequest *models.PostRequest) (*models.PostsResponse, error) {
 					return nil, err
 				}
 	
-				_, err = db.DB.Exec(`INSERT INTO privete_members (post_id, user_id) VALUES (?, ?)`, postId, userId)
+				_, err = db.DB.Exec(`INSERT INTO post_visibility (post_id, user_id) VALUES (?, ?)`, postId, userId)
 				if err != nil {
 					return nil, err
 				}

@@ -34,3 +34,16 @@
 2025/03/27 08:29:47 posts_controller.go:57: validating post: post content cannot be empty
 2025/03/27 08:29:56 posts_controller.go:57: creating post in db:no such table: privete_members
 2025/03/27 08:31:53 posts_controller.go:57: creating post in db:no such table: privete_members
+2025/03/28 12:24:32 server.go:27: Starting server on :8080
+2025/03/28 12:25:53 user_repo.go:33: <nil>
+2025/03/28 12:25:53 auth_controller.go:114: adding user to db: email already exist
+2025/03/28 12:26:12 user_repo.go:33: <nil>
+2025/03/28 12:26:12 auth_controller.go:36: soufianAl
+2025/03/28 12:26:13 user_repo.go:33: <nil>
+2025/03/28 12:26:13 auth_controller.go:36: soufianAl
+2025/03/28 12:27:09 posts_controller.go:57: creating post in db:no such table: privete_members
+2025/03/28 12:29:08 server.go:27: Starting server on :8080
+2025/03/28 12:30:13 user_repo.go:33: <nil>
+2025/03/28 12:30:13 auth_controller.go:36: soufianAl
+2025/03/28 12:30:37 user_repo.go:33: <nil>
+2025/03/28 12:30:37 auth_controller.go:36: soso
