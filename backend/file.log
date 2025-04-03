@@ -47,3 +47,6 @@
 2025/03/28 12:30:13 auth_controller.go:36: soufianAl
 2025/03/28 12:30:37 user_repo.go:33: <nil>
 2025/03/28 12:30:37 auth_controller.go:36: soso
+2025/04/03 11:28:44 server.go:27: Starting server on :8080
+2025/04/03 11:28:49 user_repo.go:33: <nil>
+2025/04/03 11:28:49 auth_controller.go:36: omar519
