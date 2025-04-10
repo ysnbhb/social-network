@@ -11,7 +11,9 @@ export default function HomeFeed({ className, classes = {}  ,  ishome = true , g
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   let offset = 0;
-
+  // console.log(groupid,"groupid");
+  console.log(`${API_URL}${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`);
+  
   const GetPost = async () => {
     setLoading(true);
     console.log('url',`${API_URL}${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`);
@@ -35,7 +37,7 @@ export default function HomeFeed({ className, classes = {}  ,  ishome = true , g
         return uniquePosts;
       });
     else window.removeEventListener("scroll", handleScroll);
-    setLoading(false);
+    setLoading(false); 
   };
 
   const handleScroll = throttle(() => {

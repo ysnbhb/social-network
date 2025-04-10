@@ -171,7 +171,7 @@ func GetGroupPost(groupId, offste, userid int) ([]models.PostsResponse, error) {
     FROM users u
     INNER JOIN card c ON u.id = c.user_id
     INNER JOIN posts p ON p.card_id = c.id
-    LEFT JOIN comments cm ON cm.card_id = c.id  
+    LEFT JOIN comments cm ON cm.target_id = c.id  
     LEFT JOIN likes l ON c.id = l.card_id
     WHERE c.group_id = ?
     GROUP BY c.id, u.nickname, u.avatar_url, u.first_name, u.last_name, c.content, c.image_url, c.created_at
