@@ -18,6 +18,7 @@ func GetHomePosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	offset, _ := strconv.Atoi(r.FormValue("offset"))
+ 
 	userId := r.Context().Value("userId").(int)
 	var postsResponse []models.PostsResponse
 	err := services.GetHomePosts(&postsResponse, userId, offset)

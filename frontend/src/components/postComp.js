@@ -19,6 +19,7 @@ export function PostCompte({ post, className, classes = {} }) {
     totalLikes,
     avatarUrl,
   } = post;
+console.log(totalComments);
 
   const router = useRouter();
 

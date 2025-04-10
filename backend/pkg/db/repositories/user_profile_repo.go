@@ -127,8 +127,8 @@ func InfoUserProfile(profile *models.UserProfile, username string, userId int) e
     COALESCE(u.avatar_url, '') AS avatar_url,
     COUNT(DISTINCT CASE WHEN c.image_url IS NOT NULL AND c.image_url <> '' THEN c.image_url END) AS image_count,
     COUNT(DISTINCT p.id) AS posts,
-    COUNT(DISTINCT CASE WHEN f1.follower_id != ? THEN f1.follower_id END) AS follower_count, -- Exclude your user ID
-    COUNT(DISTINCT CASE WHEN f2.following_id != ? THEN f2.following_id END) AS following_count -- Exclude your user ID
+    COUNT(DISTINCT CASE WHEN f1.follower_id != ? THEN f1.follower_id END) AS follower_count, 
+    COUNT(DISTINCT CASE WHEN f2.following_id != ? THEN f2.following_id END) AS following_count
 FROM users u 
     JOIN sessions s ON s.user_id = u.id
     LEFT JOIN card c ON c.user_id = u.id

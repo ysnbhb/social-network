@@ -203,3 +203,56 @@
 2025/04/10 15:39:47 auth_controller.go:36: user6
 2025/04/10 15:40:06 user_repo.go:33: <nil>
 2025/04/10 15:40:07 auth_controller.go:36: user5
+2025/04/10 15:46:52 server.go:27: Starting server on :8080
+2025/04/10 15:54:39 server.go:27: Starting server on :8080
+2025/04/10 16:05:27 server.go:27: Starting server on :8080
+2025/04/10 16:07:17 server.go:27: Starting server on :8080
+2025/04/10 16:07:40 server.go:27: Starting server on :8080
+2025/04/10 16:07:58 server.go:27: Starting server on :8080
+2025/04/10 16:08:08 server.go:27: Starting server on :8080
+2025/04/10 16:08:48 home_controller.go:22: 0 test
+2025/04/10 16:08:49 home_controller.go:22: 0 test
+2025/04/10 16:08:50 home_controller.go:22: 0 test
+2025/04/10 16:09:04 home_controller.go:22: 0 test
+2025/04/10 16:09:40 server.go:27: Starting server on :8080
+2025/04/10 16:10:20 home_controller.go:22:  test
+2025/04/10 16:10:38 server.go:27: Starting server on :8080
+2025/04/10 16:10:45 home_controller.go:22: 0 test
+2025/04/10 16:10:47 home_controller.go:22: 0 test
+2025/04/10 16:11:13 home_controller.go:22: 0 test
+2025/04/10 16:11:31 home_controller.go:22: 0 test
+2025/04/10 16:11:49 home_controller.go:22: 0 test
+2025/04/10 16:12:28 server.go:27: Starting server on :8080
+2025/04/10 16:12:30 home_controller.go:22:  test
+2025/04/10 16:13:07 server.go:27: Starting server on :8080
+2025/04/10 16:13:14 home_controller.go:22:  test
+2025/04/10 16:13:50 home_controller.go:22:  test
+2025/04/10 16:14:05 home_controller.go:22:  test
+2025/04/10 16:14:15 home_controller.go:22:  test
+2025/04/10 16:16:30 server.go:27: Starting server on :8080
+2025/04/10 16:16:31 groupes_controller.go:85: 2
+2025/04/10 16:20:34 groupes_controller.go:85: 2
+2025/04/10 16:20:36 groupes_controller.go:85: 2
+2025/04/10 16:20:38 groupes_controller.go:85: 2
+2025/04/10 16:20:39 groupes_controller.go:85: 2
+2025/04/10 16:20:45 groupes_controller.go:85: 2
+2025/04/10 16:20:46 groupes_controller.go:85: 2
+2025/04/10 16:20:46 groupes_controller.go:85: 2
+2025/04/10 16:20:48 groupes_controller.go:85: 2
+2025/04/10 16:20:48 groupes_controller.go:85: 2
+2025/04/10 16:20:50 groupes_controller.go:85: 2
+2025/04/10 16:20:50 groupes_controller.go:85: 2
+2025/04/10 16:20:51 groupes_controller.go:85: 2
+2025/04/10 16:20:51 groupes_controller.go:85: 2
+2025/04/10 16:22:07 groupes_controller.go:85: 2
+2025/04/10 16:22:07 groupes_controller.go:85: 2
+2025/04/10 16:22:08 groupes_controller.go:85: 2
+2025/04/10 16:22:08 groupes_controller.go:85: 2
+2025/04/10 16:23:46 groupes_controller.go:85: 2
+2025/04/10 16:23:46 groupes_controller.go:85: 2
+2025/04/10 16:23:47 groupes_controller.go:85: 2
+2025/04/10 16:23:47 groupes_controller.go:85: 2
+2025/04/10 16:23:48 groupes_controller.go:85: 2
+2025/04/10 16:27:26 server.go:27: Starting server on :8080
+2025/04/10 16:28:10 server.go:27: Starting server on :8080
+2025/04/10 16:31:50 server.go:27: Starting server on :8080

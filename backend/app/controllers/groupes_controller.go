@@ -82,6 +82,7 @@ func GetGroupPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	groupId := r.FormValue("groupId")
+ 
 	if groupId == "" {
 		utils.JsonResponse(w, "group id is required", http.StatusMethodNotAllowed)
 		return
