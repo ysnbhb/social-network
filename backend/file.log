@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2025/03/26 11:41:51 server.go:27: Starting server on :8080
 2025/03/26 11:43:02 auth_controller.go:33: sorry, this email does not exist
 2025/03/26 11:43:19 auth_controller.go:100: invalid first name
@@ -123,3 +124,14 @@
 2025/04/10 12:47:45 auth_controller.go:36: user3
 2025/04/10 12:48:00 user_repo.go:33: <nil>
 2025/04/10 12:48:00 auth_controller.go:36: user2
+=======
+2025/04/10 12:55:38 server.go:27: Starting server on :8080
+2025/04/10 12:55:38 server.go:29: Server error: listen tcp 0.0.0.0:8080: bind: address already in use
+2025/04/10 12:56:05 server.go:27: Starting server on :8080
+2025/04/10 12:56:36 auth_controller.go:100: sorry, this service is only available to users who are 16 years or older
+2025/04/10 12:56:40 auth_controller.go:100: sorry, this service is only available to users who are 16 years or older
+2025/04/10 12:57:38 user_repo.go:33: <nil>
+2025/04/10 12:57:38 auth_controller.go:114: adding user to db: email already exist
+2025/04/10 12:59:54 server.go:27: Starting server on :8080
+2025/04/10 12:59:58 user_profile_controller.go:72: error checking if user can send message: You are not following this user
+>>>>>>> 7d8b1d76d1e1955cd952309b0241d827b3aa16b6

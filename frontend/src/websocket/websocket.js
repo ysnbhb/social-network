@@ -85,6 +85,9 @@ export function initializeWebSocket() {
         case "realNotification":
           sendNotification();
           break;
+        case "error":
+            showError(data.content)
+            break;
       }
     };
   });
@@ -150,4 +153,22 @@ export function ReceiveOnlineStatus(data) {
       spanonline.style.backgroundColor = "#d3d3d3";
     }
   });
+}
+
+
+
+
+function setupMessageClose(messageElement, duration = 3000) {
+  const closeTimeout = setTimeout(() => {
+      messageElement.remove()
+      clearTimeout(closeTimeout)
+  }, duration)
+}
+
+export function showError(message) {
+  const errorMessage = document.createElement('dv')
+  errorMessage.id = 'errorMessage'
+  errorMessage.textContent = message;
+  document.body.appendChild(errorMessage)
+  setupMessageClose(errorMessage);
 }
