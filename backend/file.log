@@ -256,3 +256,410 @@
 2025/04/10 16:27:26 server.go:27: Starting server on :8080
 2025/04/10 16:28:10 server.go:27: Starting server on :8080
 2025/04/10 16:31:50 server.go:27: Starting server on :8080
+2025/04/10 16:33:03 group_service.go:213: 2025-04-10T10:10
+2025/04/10 16:33:12 group_service.go:213: 2026-04-10T10:10
+2025/04/10 16:33:52 user_repo.go:33: <nil>
+2025/04/10 16:33:52 auth_controller.go:36: user2
+2025/04/10 16:34:40 server.go:3489: http: panic serving 127.0.0.1:38116: runtime error: invalid memory address or nil pointer dereference
+goroutine 62 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b36e0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b36f0, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b36e0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b36f0, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000362b00, {0xc00031b548?, 0xc00031b548?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00033b6c0}, 0xc00032bb80)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc00032ba40?, {0x944af8?, 0xc00033b6c0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00033b6c0}, 0xc00032ba40)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00033b6c0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00031d920?, {0x944af8, 0xc00033b6c0}, 0xc00032ba40)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00033b6c0}, 0xc00032ba40)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00033b6c0?}, 0xc000070b70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00031d890?}, {0x944af8?, 0xc00033b6c0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000288900, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:34:45 server.go:3489: http: panic serving 127.0.0.1:34338: runtime error: invalid memory address or nil pointer dereference
+goroutine 156 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b3bb0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b3bc0, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b3bb0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b3bc0, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0001b69a0, {0xc0004b3918?, 0xc0004b3918?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc000204e00}, 0xc0000c3400)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000c32c0?, {0x944af8?, 0xc000204e00?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc000204e00}, 0xc0000c32c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc000204e00?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00036d1a0?, {0x944af8, 0xc000204e00}, 0xc0000c32c0)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc000204e00}, 0xc0000c32c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc000204e00?}, 0xc00006cb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00036d110?}, {0x944af8?, 0xc000204e00?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000319050, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:35:02 server.go:3489: http: panic serving 127.0.0.1:43010: runtime error: invalid memory address or nil pointer dereference
+goroutine 187 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0001174d0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc000117500, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0001174d0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc000117500, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0002222c0, {0xc000116c88?, 0xc000116c88?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc000205b20}, 0xc000212280)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc000212140?, {0x944af8?, 0xc000205b20?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc000205b20}, 0xc000212140)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc000205b20?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00016a360?, {0x944af8, 0xc000205b20}, 0xc000212140)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc000205b20}, 0xc000212140)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc000205b20?}, 0xc00006cb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00016a2d0?}, {0x944af8?, 0xc000205b20?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc0002886c0, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:35:32 user_repo.go:33: <nil>
+2025/04/10 16:35:32 auth_controller.go:36: user5
+2025/04/10 16:35:53 server.go:3489: http: panic serving 127.0.0.1:40142: runtime error: invalid memory address or nil pointer dereference
+goroutine 283 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b0080, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0078, 0x2}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b0080, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0078, 0x2}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004391e0, {0xc0002738f8?, 0xc0002738f8?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043c460}, 0xc00041d400)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc00041d2c0?, {0x944af8?, 0xc00043c460?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043c460}, 0xc00041d2c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043c460?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000486330?, {0x944af8, 0xc00043c460}, 0xc00041d2c0)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043c460}, 0xc00041d2c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043c460?}, 0xc00006cb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004862a0?}, {0x944af8?, 0xc00043c460?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000494000, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:23 server.go:3489: http: panic serving 127.0.0.1:35978: runtime error: invalid memory address or nil pointer dereference
+goroutine 289 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b0540, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0550, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b0540, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0550, 0x5}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004ae580, {0xc0004b02a8?, 0xc0004b02a8?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043ca80}, 0xc0004e2000)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc00041de00?, {0x944af8?, 0xc00043ca80?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043ca80}, 0xc00041de00)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043ca80?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc000487e90?, {0x944af8, 0xc00043ca80}, 0xc00041de00)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043ca80}, 0xc00041de00)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043ca80?}, 0xc00006cb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc000487e00?}, {0x944af8?, 0xc00043ca80?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000494900, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:36 server.go:3489: http: panic serving 127.0.0.1:57234: runtime error: invalid memory address or nil pointer dereference
+goroutine 293 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b0520, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b052c, 0x3}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b0520, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b052c, 0x3}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004ae160, {0xc0004b02e8?, 0xc0004b02e8?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043c0e0}, 0xc0000c0280)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000c0000?, {0x944af8?, 0xc00043c0e0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043c0e0}, 0xc0000c0000)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043c0e0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0004e0180?, {0x944af8, 0xc00043c0e0}, 0xc0000c0000)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043c0e0}, 0xc0000c0000)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043c0e0?}, 0xc00006fb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004e00f0?}, {0x944af8?, 0xc00043c0e0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000494000, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:38 server.go:3489: http: panic serving 127.0.0.1:38826: runtime error: invalid memory address or nil pointer dereference
+goroutine 295 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b0ab0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0aa8, 0x4}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b0ab0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0aa8, 0x4}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004ae6e0, {0xc0004b0888?, 0xc0004b0888?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043c2a0}, 0xc0000c0500)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000c03c0?, {0x944af8?, 0xc00043c2a0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043c2a0}, 0xc0000c03c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043c2a0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0004e14a0?, {0x944af8, 0xc00043c2a0}, 0xc0000c03c0)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043c2a0}, 0xc0000c03c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043c2a0?}, 0xc00006fb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004e1410?}, {0x944af8?, 0xc00043c2a0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc0004945a0, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:41 server.go:3489: http: panic serving 127.0.0.1:38836: runtime error: invalid memory address or nil pointer dereference
+goroutine 297 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc0004b0ff0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0fe8, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc0004b0ff0, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc0004b0fe8, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004ae9a0, {0xc0004b0cd8?, 0xc0004b0cd8?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043c380}, 0xc0000c0780)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000c0640?, {0x944af8?, 0xc00043c380?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043c380}, 0xc0000c0640)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043c380?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00031c600?, {0x944af8, 0xc00043c380}, 0xc0000c0640)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043c380}, 0xc0000c0640)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043c380?}, 0xc00006fb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00031c570?}, {0x944af8?, 0xc00043c380?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000494e10, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:50 server.go:3489: http: panic serving 127.0.0.1:38852: runtime error: invalid memory address or nil pointer dereference
+goroutine 299 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc00050cc10, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00050cc08, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00050cc10, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00050cc08, 0x6}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0004aec60, {0xc0004b1218?, 0xc0004b1218?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc00043c460}, 0xc0000c0a00)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0000c08c0?, {0x944af8?, 0xc00043c460?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc00043c460}, 0xc0000c08c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc00043c460?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00031db30?, {0x944af8, 0xc00043c460}, 0xc0000c08c0)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc00043c460}, 0xc0000c08c0)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc00043c460?}, 0xc00006fb70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00031daa0?}, {0x944af8?, 0xc00043c460?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000495710, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:36:54 server.go:3489: http: panic serving 127.0.0.1:55422: runtime error: invalid memory address or nil pointer dereference
+goroutine 309 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc00020cd50, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00023c200, 0x34}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00020cd50, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00023c200, 0x34}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000184840, {0xc00050ce98?, 0xc00050ce98?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc0004b42a0}, 0xc0004fc640)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0004fc500?, {0x944af8?, 0xc0004b42a0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc0004b42a0}, 0xc0004fc500)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc0004b42a0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0004a8360?, {0x944af8, 0xc0004b42a0}, 0xc0004fc500)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc0004b42a0}, 0xc0004fc500)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc0004b42a0?}, 0xc000247b70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0004a82d0?}, {0x944af8?, 0xc0004b42a0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc00012ad80, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:37:42 server.go:3489: http: panic serving 127.0.0.1:55714: runtime error: invalid memory address or nil pointer dereference
+goroutine 305 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc00039ed80, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00039ed90, 0x9}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00039ed80, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00039ed90, 0x9}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc000185760, {0xc00020d428?, 0xc00020d428?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc0004b48c0}, 0xc0004fd040)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc0004fcf00?, {0x944af8?, 0xc0004b48c0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc0004b48c0}, 0xc0004fcf00)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc0004b48c0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00016b4a0?, {0x944af8, 0xc0004b48c0}, 0xc0004fcf00)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc0004b48c0}, 0xc0004fcf00)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc0004b48c0?}, 0xc000247b70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc00016b3e0?}, {0x944af8?, 0xc0004b48c0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000495d40, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 16:37:54 server.go:3489: http: panic serving 127.0.0.1:53554: runtime error: invalid memory address or nil pointer dereference
+goroutine 255 [running]:
+net/http.(*conn).serve.func1()
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:1947 +0xbe
+panic({0x849de0?, 0xb715b0?})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/runtime/panic.go:785 +0x132
+social-network/app/services.SendMessageGroup({{0xc00020de70, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00020de7c, 0x3}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/services/websocket_service.go:106 +0x421
+social-network/app/controllers.Handlemessagetype({{0xc00020de70, 0xc}, {0x0, 0x0}, {0x0, 0x0, 0x0}, {0xc00020de7c, 0x3}, 0x2, ...}, ...)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:83 +0x145
+social-network/app/controllers.HandleClientConnection(0xc0002a4840, {0xc00039efe8?, 0xc00039efe8?})
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:70 +0x1a8
+social-network/app/controllers.HandleWebsocket({0x944af8, 0xc0002ac2a0}, 0xc000288640)
+	/home/saljaoui/mysocialnetwork/backend/app/controllers/Websocket_controller.go:52 +0x349
+net/http.HandlerFunc.ServeHTTP(0xc000288500?, {0x944af8?, 0xc0002ac2a0?}, 0x93ff00?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+social-network/app.SetupRoutes.AuthMiddleware.func28({0x944af8, 0xc0002ac2a0}, 0xc000288500)
+	/home/saljaoui/mysocialnetwork/backend/middleware/session_middleware.go:39 +0x1de
+net/http.HandlerFunc.ServeHTTP(0xc0000d20e0?, {0x944af8?, 0xc0002ac2a0?}, 0x8b27a1?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc0003a95c0?, {0x944af8, 0xc0002ac2a0}, 0xc000288500)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2747 +0x1ca
+main.main.WithCORS.func1({0x944af8, 0xc0002ac2a0}, 0xc000288500)
+	/home/saljaoui/mysocialnetwork/backend/middleware/open_Crose.go:26 +0x1bf
+net/http.HandlerFunc.ServeHTTP(0x469179?, {0x944af8?, 0xc0002ac2a0?}, 0xc000242b70?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2220 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003a9500?}, {0x944af8?, 0xc0002ac2a0?}, 0x6?)
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3210 +0x8e
+net/http.(*conn).serve(0xc000296e10, {0x945188, 0xc0000a1e90})
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/home/saljaoui/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.3.linux-amd64/src/net/http/server.go:3360 +0x485
+2025/04/10 17:08:10 auth_controller.go:33: sorry, this email does not exist
+2025/04/10 17:08:30 user_repo.go:33: <nil>
+2025/04/10 17:08:30 auth_controller.go:33: sorry, your password was incorrect
+2025/04/10 17:08:37 user_repo.go:33: <nil>
+2025/04/10 17:08:37 auth_controller.go:33: sorry, your password was incorrect
+2025/04/10 17:08:44 user_repo.go:33: <nil>
+2025/04/10 17:08:44 auth_controller.go:33: sorry, your password was incorrect
+2025/04/10 17:08:50 user_repo.go:33: <nil>
+2025/04/10 17:08:50 auth_controller.go:36: user1
+2025/04/10 17:08:58 user_repo.go:33: <nil>
+2025/04/10 17:08:58 auth_controller.go:36: user1
+2025/04/10 17:09:26 user_repo.go:33: <nil>
+2025/04/10 17:09:26 auth_controller.go:36: user1
+2025/04/10 17:13:26 user_repo.go:33: <nil>
+2025/04/10 17:13:26 auth_controller.go:36: user2
+2025/04/10 17:13:33 user_repo.go:33: <nil>
+2025/04/10 17:13:33 auth_controller.go:36: user1
