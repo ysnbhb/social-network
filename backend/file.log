@@ -50,3 +50,66 @@
 2025/04/03 11:28:44 server.go:27: Starting server on :8080
 2025/04/03 11:28:49 user_repo.go:33: <nil>
 2025/04/03 11:28:49 auth_controller.go:36: omar519
+2025/04/10 11:00:09 server.go:27: Starting server on :8080
+2025/04/10 11:01:51 server.go:27: Starting server on :8080
+2025/04/10 11:03:52 auth_controller.go:100: invalid first name
+2025/04/10 11:22:26 user_repo.go:33: <nil>
+2025/04/10 11:22:26 auth_controller.go:36: user2
+2025/04/10 11:23:01 user_repo.go:33: <nil>
+2025/04/10 11:23:01 auth_controller.go:36: user1
+2025/04/10 11:23:01 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:01 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:41 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:41 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:52 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:55 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:55 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:59 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:23:59 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:31:31 server.go:27: Starting server on :8080
+2025/04/10 11:31:35 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:31:35 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:31:53 user_repo.go:33: <nil>
+2025/04/10 11:31:53 auth_controller.go:36: user2
+2025/04/10 11:34:08 user_repo.go:33: <nil>
+2025/04/10 11:34:08 auth_controller.go:36: user1
+2025/04/10 11:34:08 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:34:08 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:34:29 user_repo.go:33: <nil>
+2025/04/10 11:34:29 auth_controller.go:36: user2
+2025/04/10 11:35:04 server.go:27: Starting server on :8080
+2025/04/10 11:35:28 auth_controller.go:33: sorry, this email does not exist
+2025/04/10 11:35:34 user_repo.go:33: <nil>
+2025/04/10 11:35:34 auth_controller.go:36: user1
+2025/04/10 11:35:34 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:35:34 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:35:48 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:35:52 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:35:52 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:37:49 user_repo.go:33: <nil>
+2025/04/10 11:37:49 auth_controller.go:36: user1
+2025/04/10 11:37:50 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:37:50 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:38:10 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:38:10 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:38:25 user_repo.go:33: <nil>
+2025/04/10 11:38:25 auth_controller.go:36: user2
+2025/04/10 11:39:10 user_repo.go:33: <nil>
+2025/04/10 11:39:10 auth_controller.go:36: user3
+2025/04/10 11:39:37 user_repo.go:33: <nil>
+2025/04/10 11:39:38 auth_controller.go:36: user1
+2025/04/10 11:39:38 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:39:38 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:48:44 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:48:44 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:49:11 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:49:11 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:11 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:19 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:23 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:25 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:25 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 11:52:28 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 12:05:28 server.go:27: Starting server on :8080
+2025/04/10 12:06:26 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+2025/04/10 12:06:26 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
