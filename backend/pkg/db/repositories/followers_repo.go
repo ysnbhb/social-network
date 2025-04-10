@@ -1,7 +1,6 @@
 package repo
 
 import (
-	"fmt"
 	"log"
 
 	db "social-network/pkg/db/sqlite"
@@ -76,7 +75,6 @@ func RejectFollow(userId int, follower string) error {
 }
 
 func Updatenotification(userId int, follower string, Type string, groupid any) error {
-	fmt.Println("///////////////////////////////")
 	followerId := GetUserIdByNickName(follower)
 	if groupid == nil {
 		query := `UPDATE notifications SET type= ? WHERE sender_id = ? AND user_id =? AND type ='follow'`

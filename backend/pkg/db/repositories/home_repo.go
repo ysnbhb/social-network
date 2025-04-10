@@ -82,7 +82,6 @@ LIMIT 10 OFFSET $2;
 		}
 		*postsResponse = append(*postsResponse, post)
 	}
-
 	return rows.Err()
 }
 
@@ -106,5 +105,3 @@ func GetPostInfo(postId int) (*models.PostInfo, error) {
 	)
 	return &post, err
 }
-
-

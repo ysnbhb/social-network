@@ -2,9 +2,16 @@
 
 import { safeSend } from "./websocket.js";
 
-export function handleNotification(data) {    
-    AddMessagesymbole(data.countunreadmessages)
-    ShowNotification(data.countNotification);
+export function handleNotification(data) {
+    console.log(data.countunreadmessages);
+     if (data.countunreadmessages === undefined){
+         ShowNotification(data.countNotification);
+     } else if (data.countNotification === undefined){
+         AddMessagesymbole(data.countunreadmessages)
+     } else {
+        ShowNotification(data.countNotification)
+        AddMessagesymbole(data.countunreadmessages)
+     }
     if (window.location.pathname === "/notification") {
         const notificationEvente = new CustomEvent("notificationEvent")
         window.dispatchEvent(notificationEvente)

@@ -102,18 +102,20 @@ func SendMessageGroup(msg models.Message, client *models.Client, conn *websocket
 
 	avatar_url := repo.GetAvatarUrl(client.Userid)
 	for _, receiver := range users {
-		receiverConns := models.Clients[receiver.Nickname]
-		for _, receiverConn := range receiverConns.Connections {
-			if receiverConn != nil {
-				receiverConn.WriteJSON(map[string]interface{}{
-					"type":       "messageGroup",
-					"sender":     client.Username,
-					"content":    msg.Content,
-					"avatar_url": avatar_url,
-					"time":       Time,
-					"groupid":    msg.Groupid,
-					"you":        receiverConn,
-				})
+		receiverConns, exists := models.Clients[receiver.Nickname]
+		if exists && receiverConns != nil {
+			for _, receiverConn := range receiverConns.Connections {
+				if receiverConn != nil {
+					receiverConn.WriteJSON(map[string]interface{}{
+						"type":       "messageGroup",
+						"sender":     client.Username,
+						"content":    msg.Content,
+						"avatar_url": avatar_url,
+						"time":       Time,
+						"groupid":    msg.Groupid,
+						"you":        receiverConn,
+					})
+				}
 			}
 		}
 	}

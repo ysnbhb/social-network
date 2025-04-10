@@ -25,7 +25,6 @@ export default function Notification() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
 
         setNotifications(data);
         setLoading(false);

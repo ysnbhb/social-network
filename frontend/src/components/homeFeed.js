@@ -7,12 +7,15 @@ import IsLoading from "./isloading";
 import { API_URL } from "./api";
 
 export default function HomeFeed({ className, classes = {}  ,  ishome = true , groupid  , page = "/api/home/posts" , dadfollow}) {
+  
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   let offset = 0;
 
   const GetPost = async () => {
     setLoading(true);
+    console.log('url',`${API_URL}${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`);
+    
     const response = await fetch(`${API_URL}${page}?offset=${offset}${groupid ? `&groupId=${groupid}` : ""}`, {
       method: "GET",
       headers: {

@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -16,7 +15,6 @@ func SearchUsers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	searchContent := r.FormValue("searchContent")
-	fmt.Println("search", searchContent)
 	userId := r.Context().Value("userId").(int)
 	users, err := services.SearchUsersByContent(searchContent, userId)
 	if err != nil {

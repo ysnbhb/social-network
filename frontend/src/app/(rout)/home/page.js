@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 export default  function Home() { 
       const [user, setUser] = useState([]);
-      console.log("useruseruser", user);
       
      return (
     <div>
