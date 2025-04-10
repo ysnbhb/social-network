@@ -50,3 +50,24 @@
 2025/04/03 11:28:44 server.go:27: Starting server on :8080
 2025/04/03 11:28:49 user_repo.go:33: <nil>
 2025/04/03 11:28:49 auth_controller.go:36: omar519
+2025/04/10 10:58:24 server.go:27: Starting server on :8080
+2025/04/10 10:58:38 user_repo.go:33: <nil>
+2025/04/10 10:58:38 auth_controller.go:36: omar519
+2025/04/10 11:03:46 user_repo.go:33: <nil>
+2025/04/10 11:03:46 auth_controller.go:36: omar519
+2025/04/10 11:07:29 server.go:27: Starting server on :8080
+2025/04/10 11:08:07 server.go:27: Starting server on :8080
+2025/04/10 11:09:18 server.go:27: Starting server on :8080
+2025/04/10 11:09:30 server.go:27: Starting server on :8080
+2025/04/10 11:11:22 server.go:27: Starting server on :8080
+2025/04/10 11:12:14 server.go:27: Starting server on :8080
+2025/04/10 11:13:22 server.go:27: Starting server on :8080
+2025/04/10 11:13:34 user_repo.go:33: <nil>
+2025/04/10 11:13:34 auth_controller.go:36: omar519
+2025/04/10 11:13:54 user_repo.go:33: <nil>
+2025/04/10 11:13:54 auth_controller.go:114: adding user to db: email already exist
+2025/04/10 11:14:43 server.go:27: Starting server on :8080
+2025/04/10 11:14:57 user_repo.go:33: <nil>
+2025/04/10 11:14:57 auth_controller.go:36: rharbi442
+2025/04/10 11:15:03 user_repo.go:33: <nil>
+2025/04/10 11:15:03 auth_controller.go:36: rharbi442
