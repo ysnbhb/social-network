@@ -176,4 +176,5 @@ func Session_id(w http.ResponseWriter, r *http.Request) {
 }
 
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 }

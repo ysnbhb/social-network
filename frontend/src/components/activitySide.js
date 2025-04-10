@@ -97,7 +97,8 @@ export function ShowUnfllowUser({ user }) {
         }
       };
     };
-
+    console.log("statusstatusstatus", user);
+    
     return (
       <div className="activity-item">
         <div>
@@ -110,9 +111,9 @@ export function ShowUnfllowUser({ user }) {
           </p>
           <p className="text-muted">@{user.nickname || "N/A"}</p>
         </div>
-        {status === "accept" && (
+        
           <button className={isSelected || UsersSelected.includes(user.nickname) ? "Deselect" : "Select"} onClick={handleSelect(user.nickname)}> {isSelected || UsersSelected.includes(user.nickname) ? "Deselect" : "Select"}</button>
-        )}
+        
       </div>
     );
   }

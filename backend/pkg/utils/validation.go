@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"net/mail"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -28,7 +29,19 @@ func ValidateUser(user *models.User) error {
 		return errors.New("invalid nickname")
 	}
 
-	_, err := mail.ParseAddress(user.Email)
+	t := time.Now()
+	year := t.Year()
+	yearOfBirthS := user.DateOfBirth[:4]
+	yearOfBirthInt, err := strconv.Atoi(yearOfBirthS)
+	if err != nil {
+		return err
+	}
+	if year-yearOfBirthInt < 16 {
+		return errors.New("sorry, this service is only available to users who are 16 years or older")
+	} else if year-yearOfBirthInt > 100 {
+		return errors.New("invalid age. please enter a realistic birthdate")
+	}
+	_, err = mail.ParseAddress(user.Email)
 	if err != nil {
 		return errors.New("invalid email")
 	}

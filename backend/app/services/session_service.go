@@ -29,6 +29,7 @@ func RegisterSession(userId int, w http.ResponseWriter) error {
 		Value:    session.UserUUID,
 		Path:     "/",
 		SameSite: http.SameSiteStrictMode,
+		// Domain:   "10.1.6.8",
 		MaxAge:   86400, // 1 day
 	}
 	http.SetCookie(w, cookie)

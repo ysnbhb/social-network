@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025/03/26 11:41:51 server.go:27: Starting server on :8080
 2025/03/26 11:43:02 auth_controller.go:33: sorry, this email does not exist
 2025/03/26 11:43:19 auth_controller.go:100: invalid first name
@@ -113,3 +114,12 @@
 2025/04/10 12:05:28 server.go:27: Starting server on :8080
 2025/04/10 12:06:26 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
 2025/04/10 12:06:26 user_profile_controller.go:116: sql: Scan error on column index 5, name "status": converting NULL to string is unsupported
+=======
+>>>>>>> 2a48b4277c41fb0621ca422e39178f80307f88c1
+2025/04/10 12:07:55 server.go:27: Starting server on :8080
+2025/04/10 12:08:10 user_repo.go:33: <nil>
+2025/04/10 12:08:10 auth_controller.go:36: user1
+2025/04/10 12:47:45 user_repo.go:33: <nil>
+2025/04/10 12:47:45 auth_controller.go:36: user3
+2025/04/10 12:48:00 user_repo.go:33: <nil>
+2025/04/10 12:48:00 auth_controller.go:36: user2
