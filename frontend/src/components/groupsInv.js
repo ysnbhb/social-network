@@ -19,7 +19,9 @@ export default function GroupsInv({ setInvition, invition , setJoinedGroup , set
     }
     GetInvition();
   }, []);
-
+  if (invition === "Unauthorized") {
+    return null
+  }
   return (
     <div className="groupInvitations">
       <div className="header">

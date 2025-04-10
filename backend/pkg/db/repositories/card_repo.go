@@ -5,8 +5,14 @@ import (
 )
 
 func CreateCard(userId, groupId int, content, imageUrl string) (int, error) {
+	var group any
+
+	if groupId != 0 {
+		group = groupId
+	}
+
 	query := `INSERT INTO card (user_id, group_id, content, image_url) VALUES (?, ?, ?, ?)`
-	result, err := db.DB.Exec(query, userId, groupId, content, imageUrl)
+	result, err := db.DB.Exec(query, userId, group, content, imageUrl)
 	if err != nil {
 		return 0, err
 	}

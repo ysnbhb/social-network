@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 export default  function Home() { 
       const [user, setUser] = useState([]);
+      console.log("useruseruser", user);
+      
      return (
     <div>
       {/* Use Navbar as a JSX element */}

@@ -21,7 +21,7 @@ func main() {
 	logexplore.LogFile()
 	router := app.SetupRoutes()
 	server := &http.Server{
-		Addr:    ":8080",
+		Addr:    "0.0.0.0:8080",
 		Handler: middleware.WithCORS(router),
 	}
 	log.Println("Starting server on :8080")

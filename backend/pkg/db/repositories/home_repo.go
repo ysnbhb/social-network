@@ -37,7 +37,7 @@ WHERE
         (p.privacy = 'private' AND EXISTS (SELECT 1 FROM private_members WHERE post_id = p.id AND user_id = $1) 
             OR pv.user_id IS NOT NULL)
         OR 
-        (u.profile_type = 'Private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE follower_id = u.id AND following_id = $1 AND status = 'accept') AND (c.group_id IS NULL OR c.group_id = 0))
+        (u.profile_type = 'Private' AND p.privacy = 'public' AND EXISTS (SELECT 1 FROM followers WHERE follower_id = $1  AND following_id = u.id AND status = 'accept') AND (c.group_id IS NULL OR c.group_id = 0))
         OR 
         (c.user_id = $1 AND (c.group_id IS NULL OR c.group_id = 0))
     )
@@ -52,6 +52,7 @@ GROUP BY
 ORDER BY 
     c.created_at DESC
 LIMIT 10 OFFSET $2;
+
 `
 	rows, err := db.DB.Query(query, userId, offset)
 	if err != nil {
@@ -106,16 +107,4 @@ func GetPostInfo(postId int) (*models.PostInfo, error) {
 	return &post, err
 }
 
-// func AllToSee(userId, postId int) bool {
-// 	var allowed bool
-// 	fmt.Println("userIdddddd", userId)
-// 	fmt.Println("postIdddddd", postId)
-// 	query := `
-// 	SELECT EXISTS (
-//     SELECT 1 FROM post_visibility WHERE user_id = ? AND post_id = ?
-// 	) AS allowed`
-// 	db.DB.QueryRow(query, postId).Scan(
-// 		&allowed,
-// 	)
-// 	return allowed
-// }
+

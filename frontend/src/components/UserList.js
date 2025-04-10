@@ -8,14 +8,14 @@ import { API_URL } from './api.js';
 
 function UserList() {
     console.log("UserList component rendered");
-    
+
     const pathname = usePathname();
     const [users, setUsers] = useState([]); // State to hold the list of users
     const Router = useRouter();
 
     useEffect(() => {
         Getfriends();
-        
+
         const handleUpdateUserList = () => {
             Getfriends();
         };
@@ -52,11 +52,15 @@ function UserList() {
         }
 
     };
+    if (users === "Unauthorized") {
+        return null
+    }
 
     return (
         <div className="user-list">
             <h3>Users:</h3>
             <div className="user-list-container">
+                {console.log("test", users)}
                 {users === null ? (
                     <div className="no-users-message">No users available</div>
                 ) : (

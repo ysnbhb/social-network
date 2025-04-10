@@ -140,8 +140,9 @@
 }
 
 .users-list {
-    max-height: 70vh;
+    max-height: 29vh;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .no-data {

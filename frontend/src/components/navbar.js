@@ -56,6 +56,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // listenForCookieChanges()
+    checkLoginStatus();
     initializeWebSocket()
       .then(() => {
         SendOnlineStatus();
