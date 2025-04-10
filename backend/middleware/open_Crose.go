@@ -25,7 +25,7 @@ func WithCORS(next http.Handler) http.Handler {
             w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 			w.Header().Set("Access-Control-Allow-Credentials", "true")
         }
-
+		export const  API_URL_WS = 'ws://localhost:8080';
         // Handle preflight requests
         if r.Method == http.MethodOptions {
             w.WriteHeader(http.StatusOK)
