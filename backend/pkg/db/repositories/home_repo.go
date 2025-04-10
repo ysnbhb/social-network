@@ -82,7 +82,6 @@ func GetHomePosts(postsResponse *[]models.PostsResponse, userId int, offset int)
 		}
 		*postsResponse = append(*postsResponse, post)
 	}
-
 	return rows.Err()
 }
 
@@ -106,5 +105,3 @@ func GetPostInfo(postId int) (*models.PostInfo, error) {
 	)
 	return &post, err
 }
-
-

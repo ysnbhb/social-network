@@ -1,7 +1,6 @@
 package repo
 
 import (
-	"fmt"
 	"log"
 
 	db "social-network/pkg/db/sqlite"
@@ -286,7 +285,6 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
 		}
 		friend = append(friend, f)
 	}
-	fmt.Println("friends", friend)
 	return friend, nil
 }
 

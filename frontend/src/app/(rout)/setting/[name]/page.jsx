@@ -62,7 +62,6 @@ export default function setting({}) {
       router.push(`/profile/${formObject.nickName}`);
     }
   };
-  console.log(show);
 
   return (
     <div>

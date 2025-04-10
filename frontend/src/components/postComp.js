@@ -6,6 +6,7 @@ import Link from "next/link";
 import { API_URL } from "./api";
 import { timeAgo } from "./commentComp";
 export function PostCompte({ post, className, classes = {} }) {
+  
   const {
     id,
     content,

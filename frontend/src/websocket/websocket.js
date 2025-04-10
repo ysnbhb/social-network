@@ -13,7 +13,12 @@ export let socket;
 let connectionPromise = null;
 
 function getCookie(name) {
-  let cookieArray = document.cookie.split(";");
+  if (typeof document === 'undefined') {
+    return null;
+  }
+  let cookieArray = document.cookie.split(";")
+  
+  
   for (let i = 0; i < cookieArray.length; i++) {
     let cookie = cookieArray[i].trim();
     if (cookie.startsWith(name + "=")) {
@@ -96,11 +101,9 @@ export function initializeWebSocket() {
 }
 
 export function safeSend(data) {
-  console.log("Sending data:", data);
-
+ 
   const sessionId = getCookie("session_id");
-  console.log("jjjjjjjjjjjjjjjjjjjjjjjjj", sessionId);
-
+  
   if ((sessionId === null|| sessionId == "") && data.type !== "closeconnection" ) {
     console.log("Session ID not found in cookies.");
     Closeconnection();
@@ -135,7 +138,9 @@ export function SendOnlineStatus() {
 }
 
 export function Closeconnection() {
-  socket.close();
+  if (socket && socket.readyState === WebSocket.OPEN) {
+    socket.close();
+  }
   const data = {
     type: "closeconnection",
   };

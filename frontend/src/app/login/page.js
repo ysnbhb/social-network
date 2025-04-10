@@ -72,7 +72,6 @@ export default function Login() {
     const content = await response.json();
     if (response.ok) {
       localStorage.setItem("username", content.nickName)
-      console.log(content);
 
       Router.push('/home')
 

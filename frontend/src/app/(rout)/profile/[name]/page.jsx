@@ -21,13 +21,11 @@ export default function Profile({ params }) {
   const router = useRouter();
   const serverParams = use(params);
   const usernames = serverParams.name;
-  console.log(usernames);
 
   const [cookie, setcookies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profile, error] = useGetProfile(usernames);
   const [profiledata, errorPro] = userProfile(usernames);
-  console.log(profiledata, "here");
 
   const [follow] = useFollowing(usernames);
   const [checkFollow, setcheckFollow] = useState("");
@@ -68,7 +66,6 @@ export default function Profile({ params }) {
     await handle();
   };
   
-  console.log(profiledata);
   useEffect(() => {
     if (firstName && lastName) {
       const timer = setTimeout(() => {
