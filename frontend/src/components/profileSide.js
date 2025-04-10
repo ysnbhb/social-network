@@ -29,7 +29,7 @@ export default function ProfileSide({ classes }) {
     nickName,
     posts_count,
   } = profile;
-   console.log(follow,"test");
+   console.log(follow,"testtesttesttesttesttest");
    
   return (
     <div className="profile-page">
@@ -44,14 +44,19 @@ export default function ProfileSide({ classes }) {
                 </button>
               </div>
               <div className="popup-form">
-              {dataFollow ?(dataFollow).map((fl) => (
-                <div key={`${activeTab}-${fl.id}`}>
-                    <User key={`${activeTab}-${fl.id}`}  user={fl}  iduser={id}/>
-                 </div>
-              )) :(<div>
-                No Follower
-              </div>)}
-              </div>
+  {dataFollow && dataFollow.length > 0 ? (
+    dataFollow.map((fl) => {
+      if (fl.status === 'pending') return null;
+      return (
+        <div key={`${activeTab}-${fl.id}`}>
+          <User user={fl} iduser={id} />
+        </div>
+      );
+    })
+  ) : (
+    <div>No Follower</div>
+  )}
+</div>
             </div>
           </div>
         )}

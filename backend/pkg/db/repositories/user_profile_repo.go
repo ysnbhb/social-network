@@ -1,6 +1,7 @@
 package repo
 
 import (
+	"fmt"
 	"log"
 
 	db "social-network/pkg/db/sqlite"
@@ -131,10 +132,11 @@ func InfoUserProfile(profile *models.UserProfile, username string, userId int) e
 FROM users u 
     JOIN sessions s ON s.user_id = u.id
     LEFT JOIN card c ON c.user_id = u.id
-    LEFT JOIN followers f1 ON f1.following_id = u.id  
-    LEFT JOIN followers f2 ON f2.follower_id = u.id   
+LEFT JOIN followers f1 ON f1.following_id = u.id AND f1.status != 'pending'
+    LEFT JOIN followers f2 ON f2.follower_id = u.id AND f2.status != 'pending'
     LEFT JOIN posts p ON p.card_id = c.id
 WHERE u.nickname = ?
+
 GROUP BY 
     s.user_uuid,
     u.id,
@@ -235,7 +237,7 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
             COALESCE(
                 (SELECT status 
                  FROM followers 
-                 WHERE follower_id = $1 AND following_id = u.id),
+                 WHERE following_id = $1 AND follower_id = u.id),
                 ''
             )
          
@@ -247,7 +249,7 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
             COALESCE(
             (SELECT status 
              FROM followers 
-             WHERE follower_id = $1 AND following_id = u.id),
+             WHERE following_id = $1 AND follower_id = u.id),
             ''
         )
     END AS status
@@ -284,6 +286,7 @@ func GetUserFollower(current_userId int, my_userid int) (friend []models.Unfollo
 		}
 		friend = append(friend, f)
 	}
+	fmt.Println("friends", friend)
 	return friend, nil
 }
 

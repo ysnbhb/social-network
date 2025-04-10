@@ -135,3 +135,71 @@
 2025/04/10 12:59:54 server.go:27: Starting server on :8080
 2025/04/10 12:59:58 user_profile_controller.go:72: error checking if user can send message: You are not following this user
 >>>>>>> 7d8b1d76d1e1955cd952309b0241d827b3aa16b6
+2025/04/10 13:13:33 server.go:27: Starting server on :8080
+2025/04/10 13:13:58 user_repo.go:33: <nil>
+2025/04/10 13:13:58 auth_controller.go:36: user4
+2025/04/10 13:15:28 auth_controller.go:100: sorry, this service is only available to users who are 16 years or older
+2025/04/10 13:17:44 user_repo.go:33: <nil>
+2025/04/10 13:17:44 auth_controller.go:36: user5
+2025/04/10 13:18:03 user_repo.go:33: <nil>
+2025/04/10 13:18:03 auth_controller.go:36: user6
+2025/04/10 13:22:29 server.go:27: Starting server on :8080
+2025/04/10 13:25:05 server.go:27: Starting server on :8080
+2025/04/10 13:25:16 user_repo.go:33: <nil>
+2025/04/10 13:25:16 auth_controller.go:36: user6
+2025/04/10 13:25:57 server.go:27: Starting server on :8080
+2025/04/10 14:49:28 server.go:27: Starting server on :8080
+2025/04/10 14:53:43 user_repo.go:33: <nil>
+2025/04/10 14:53:43 auth_controller.go:36: user1
+2025/04/10 14:55:09 server.go:27: Starting server on :8080
+2025/04/10 14:55:12 user_profile_repo.go:278: near "CASE": syntax error
+2025/04/10 14:55:12 user_profile_controller.go:116: near "CASE": syntax error
+2025/04/10 14:55:12 user_profile_repo.go:278: near "CASE": syntax error
+2025/04/10 14:55:12 user_profile_controller.go:116: near "CASE": syntax error
+2025/04/10 14:55:30 server.go:27: Starting server on :8080
+2025/04/10 14:55:33 user_profile_controller.go:116: sql: expected 7 destination arguments in Scan, not 6
+2025/04/10 14:55:33 user_profile_controller.go:116: sql: expected 7 destination arguments in Scan, not 6
+2025/04/10 15:00:46 server.go:27: Starting server on :8080
+2025/04/10 15:01:32 server.go:27: Starting server on :8080
+2025/04/10 15:03:01 server.go:27: Starting server on :8080
+2025/04/10 15:03:25 user_repo.go:33: <nil>
+2025/04/10 15:03:25 auth_controller.go:36: user6
+2025/04/10 15:09:49 auth_controller.go:33: sorry, this email does not exist
+2025/04/10 15:09:58 user_repo.go:33: <nil>
+2025/04/10 15:09:58 auth_controller.go:36: user1
+2025/04/10 15:10:15 auth_controller.go:33: sorry, this email does not exist
+2025/04/10 15:10:21 user_repo.go:33: <nil>
+2025/04/10 15:10:21 auth_controller.go:36: user6
+2025/04/10 15:30:15 server.go:27: Starting server on :8080
+2025/04/10 15:30:19 user_profile.go:24: Error To Get User Profile no such column: followers.status
+2025/04/10 15:30:19 user_profile_controller.go:51: User with this UserName is not found no such column: followers.status
+2025/04/10 15:30:19 user_profile.go:24: Error To Get User Profile no such column: followers.status
+2025/04/10 15:30:19 user_profile_controller.go:51: User with this UserName is not found no such column: followers.status
+2025/04/10 15:30:47 server.go:27: Starting server on :8080
+2025/04/10 15:30:54 server.go:27: Starting server on :8080
+2025/04/10 15:30:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:30:57 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:30:57 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:30:57 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:34:39 server.go:27: Starting server on :8080
+2025/04/10 15:34:43 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:34:43 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:34:43 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:34:43 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:35:23 server.go:27: Starting server on :8080
+2025/04/10 15:35:28 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:35:28 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:35:28 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:35:28 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:36:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:36:11 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:36:11 user_profile.go:24: Error To Get User Profile sql: no rows in result set
+2025/04/10 15:36:11 user_profile_controller.go:51: User with this UserName is not found sql: no rows in result set
+2025/04/10 15:36:15 server.go:27: Starting server on :8080
+2025/04/10 15:38:36 server.go:27: Starting server on :8080
+2025/04/10 15:38:58 user_repo.go:33: <nil>
+2025/04/10 15:38:58 auth_controller.go:36: user5
+2025/04/10 15:39:47 user_repo.go:33: <nil>
+2025/04/10 15:39:47 auth_controller.go:36: user6
+2025/04/10 15:40:06 user_repo.go:33: <nil>
+2025/04/10 15:40:07 auth_controller.go:36: user5
