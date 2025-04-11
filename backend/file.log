@@ -1497,3 +1497,8 @@ created by net/http.(*Server).Serve in goroutine 1
 >>>>>>> 1913ddb687cb7e1dbe2febbc63d8e69522b6a72a
 2025/04/10 17:51:59 server.go:27: Starting server on :8080
 >>>>>>> 71bafbbb47f22fa3b3fa100653dcc86678cd5303
+2025/04/11 11:10:56 server.go:27: Starting server on :8080
+2025/04/11 11:10:56 server.go:29: Server error: listen tcp 0.0.0.0:8080: bind: address already in use
+2025/04/11 11:11:04 server.go:27: Starting server on :8080
+2025/04/11 11:12:46 user_repo.go:33: <nil>
+2025/04/11 11:12:46 auth_controller.go:36: user1
