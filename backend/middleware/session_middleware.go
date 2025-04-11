@@ -8,11 +8,6 @@ import (
 	"social-network/pkg/utils"
 )
 
-type infoUser struct {
-	userid   int
-	username string
-}
-
 // AuthMiddleware ensures the user is authenticated via session ID.
 func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

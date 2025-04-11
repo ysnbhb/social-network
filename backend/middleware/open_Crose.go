@@ -1,7 +1,5 @@
 package middleware
 
-import "slices"
-
 import "net/http"
 
 func WithCORS(next http.Handler) http.Handler {
